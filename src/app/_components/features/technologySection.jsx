@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Grid, HStack, Text } from "@chakra-ui/react";
-import theme from "@/app/theme";
+import theme from "../../theme";
 import { Heading } from "@chakra-ui/react";
 import { ServiceCard } from "../primitives/serviceCard";
 import TrustedAIIcon from "../svg/trustedAI";
@@ -13,7 +13,7 @@ const TechnologySection = () => {
   return (
     <>
       <HStack
-        mt={{md:"15rem", base:"5rem"}}
+        mt={{ md: "15rem", base: "5rem" }}
         w={"100%"}
         display={"flex"}
         flexDirection={"column"}
@@ -32,7 +32,7 @@ const TechnologySection = () => {
           fontWeight={"500"}
           fontSize={"1rem"}
           lineHeight={"2.25rem"}
-          px={{ md:"20rem" }}
+          px={{ md: "20rem" }}
         >
           Our technology services deliver cutting-edge solutions tailored to
           drive efficiency, enhance performance, and fuel growth in today's
@@ -40,10 +40,10 @@ const TechnologySection = () => {
         </Text>
       </HStack>
 
-      <Container display={'flex'} pt={{md:'2rem'}} px={{md:'10rem'}} justifyContent={"center"} minW={{ md:'100%', base:'100%' }}>
+      <Container display={'flex'} pt={{ md: '2rem' }} px={{ md: '10rem' }} justifyContent={"center"} minW={{ md: '100%', base: '100%' }}>
         <Grid
           templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
-          gap={{ md:10 , base:10}}
+          gap={{ md: 10, base: 10 }}
           flexWrap="wrap"
         >
           <ServiceCard

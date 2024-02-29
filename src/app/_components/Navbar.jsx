@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import '@/app/globals.css'
+import '../globals.css'
 import { images } from '../../../public/Images/images';
 import { DownArrow } from '../_utilities/icons/DownArrow'
 

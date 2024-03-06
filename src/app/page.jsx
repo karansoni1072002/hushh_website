@@ -177,7 +177,7 @@ export default function Home() {
             <NextImage
               style={{
                 position: "absolute",
-                top: "1490.75px",
+                top: "1590.75px",
                 left: "40px",
                 zIndex: "1",
                 rotate: "10.02",

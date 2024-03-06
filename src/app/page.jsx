@@ -216,8 +216,8 @@ export default function Home() {
             </Text>
 
             <Box pt={{ md:'40px', base:'20px'}} display={"flex"} gap={{ md:"4rem", base:'2rem'}}>
-              <VStack maxW={{ md: '290px', base:'100px'}} textAlign={'left'} alignItems={'left'}>
-                <HStack gap={"2rem"}>
+              <VStack maxW={{ md: '290px', base:'120px'}} textAlign={'left'} alignItems={'left'}>
+                <HStack gap={{ md:"2rem"}}>
                   <ShieldIcon />
                   <Text
                     fontWeight={"500"}
@@ -227,14 +227,14 @@ export default function Home() {
                     Data <br></br> Autonomy
                   </Text>
                 </HStack>
-                <Divider mt={'1rem'} className="divider" width={'12rem'}/>
+                <Divider mt={'1rem'} className="divider" width={{ md:'12rem', base:'6rem'}}/>
                 <Text fontWeight={'500'} lineHeight={{ md:'36px', base:'18px'}} mt={'20px'} color={extendedTheme.colors.secondary}>
                 Empower your customers with full control over their personal data
                 </Text>
               </VStack>
 
-              <VStack maxW={'290px'} mt={'-0.5rem'} textAlign={'left'} alignItems={'left'}>
-              <HStack gap={"2rem"}>
+              <VStack maxW={{md:'290px', base:'120px'}} mt={'-0.5rem'} textAlign={'left'} alignItems={'left'}>
+              <HStack gap={{ md:"2rem"}}>
                 <KeyIcon />
                 <Text
                   fontWeight={"500"}
@@ -244,8 +244,8 @@ export default function Home() {
                   Promoting <br></br> Data Equity
                 </Text>
               </HStack>
-              <Divider mt={'1rem'} className="divider" width={'12rem'}/>
-              <Text fontWeight={'500'} lineHeight={'36px'} mt={'20px'} color={extendedTheme.colors.secondary}>
+              <Divider mt={'1rem'} className="divider" width={{ md:'12rem', base:'6rem'}}/>
+              <Text fontWeight={'500'} lineHeight={{ md:'36px', base:'18px'}} mt={'20px'} color={extendedTheme.colors.secondary}>
               Creating a fair and equitable environment for data sharing.​
               </Text>
               </VStack>

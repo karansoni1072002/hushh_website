@@ -112,11 +112,13 @@ body {
 .wrapper{
     box-sizing: content-box;
     display: flex;
+    overflow:hidden;
+    max-width: 100%;
     box-shadow: 0 20px 25px rgba(0,0,0,0.2);
 }
 .words{
-  overflow: hidden;
-  width: max-content;
+  flex-shrink: 0;
+  white-space: nowrap;
   height: 6.6rem;
 
 }
@@ -156,5 +158,15 @@ body {
     100% {
         transform: translateY(-400%);
     }
+}
+
+@media screen and (max-width: 768px) {
+  .slideText {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .words {
+    height: 2.6rem;
+  }
 }
 

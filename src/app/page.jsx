@@ -108,7 +108,7 @@ export default function Home() {
         </Box>
 
         <HStack
-          pt={"8rem"}
+          pt={{ md: "8rem", base:"6rem"}}
           justify={"center"}
           display={"flex"}
           flexDirection={"column"}
@@ -124,12 +124,12 @@ export default function Home() {
           </Heading>
           <Text
             align={"center"}
-            lineHeight={{ md: "4rem" }}
-            pl={{ md: "16rem" }}
-            pr={{ md: "16rem" }}
+            lineHeight={{ md: "4rem", base:'2rem' }}
+            pl={{ md: "16rem", base:'2rem' }}
+            pr={{ md: "16rem", base:'2rem' }}
             color={theme.colors.secondary}
             fontWeight={"300"}
-            fontSize={{ md: "3.75rem", base: "1.5rem" }}
+            fontSize={{ md: "3.75rem", base: "1rem" }}
           >
             Discover the brands that {"  "}
             <span className="trust-text bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
@@ -144,12 +144,12 @@ export default function Home() {
         <Box
           display="flex"
           h={"full"}
-          pt={"10rem"}
+          pt={{ md:"10rem", base:"6rem"}}
           justifyContent="space-between"
           gap="5rem"
         >
           {/* Left side box */}
-          <Box flex="1" bg={extendedTheme.colors._black}>
+          <Box flex="1" bg={extendedTheme.colors._black} display={{base:'none'}}>
             <NextImage
               src={LouisVuitton}
               alt="Louis Vuitton"
@@ -189,7 +189,7 @@ export default function Home() {
             />
           </Box>
           {/* Right side box */}
-          <VStack alignItems={"left"} textAlign="left" flex="1">
+          <VStack alignItems={"left"} ml={{base:'2rem'}} textAlign="left" flex="1">
             <Text
               className="color-gradient"
               fontWeight={600}
@@ -204,19 +204,19 @@ export default function Home() {
                 className="gradient"
                 lineHeight={"63px"}
                 fontWeight={"400"}
-                fontSize={"3.75rem"}
+                fontSize={{ md:"3.75rem", base:"2.5rem"}}
               >
                 Why Us?
               </Text>
             </Heading>
-            <Text pt={"2rem"} fontWeight={'500'} color={extendedTheme.colors.secondary}>
+            <Text pt={{ md:"2rem"}} maxW={{base:'18rem'}} fontWeight={'500'} color={extendedTheme.colors.secondary}>
               Empower individuals with data control. Today, we're a cutting-edge
               platform fostering trust, transparency, and personalized
               experiences.
             </Text>
 
-            <Box pt={'40px'} display={"flex"} gap={"4rem"}>
-              <VStack maxW={'290px'} textAlign={'left'} alignItems={'left'}>
+            <Box pt={{ md:'40px', base:'20px'}} display={"flex"} gap={{ md:"4rem", base:'2rem'}}>
+              <VStack maxW={{ md: '290px', base:'100px'}} textAlign={'left'} alignItems={'left'}>
                 <HStack gap={"2rem"}>
                   <ShieldIcon />
                   <Text
@@ -228,7 +228,7 @@ export default function Home() {
                   </Text>
                 </HStack>
                 <Divider mt={'1rem'} className="divider" width={'12rem'}/>
-                <Text fontWeight={'500'} lineHeight={'36px'} mt={'20px'} color={extendedTheme.colors.secondary}>
+                <Text fontWeight={'500'} lineHeight={{ md:'36px', base:'18px'}} mt={'20px'} color={extendedTheme.colors.secondary}>
                 Empower your customers with full control over their personal data
                 </Text>
               </VStack>

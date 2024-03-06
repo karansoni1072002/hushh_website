@@ -16,13 +16,14 @@ const Header = () => {
                 <div className="">
                     <HushhHeaderLogo />
                 </div>
-                <div className="text-white flex gap-20 flex-1 justify-center">
+                {!isMobile && (
+                <div className="text-white flex gap-20 ">
                     <Link href='/'>HOME</Link>
                     <Link href='https://www.linkedin.com/company/hushh-ai/about'>ABOUT US</Link>
                     <Link href='#'>INVESTORS</Link>
                     <Link href='https://www.linkedin.com/company/hushh-ai/jobs'>WORK WITH US</Link>
                 </div>
-
+                )}
 
                 <div className="">
                     <Button

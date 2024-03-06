@@ -1,24 +1,30 @@
+'use client'
 import React from 'react'
 import HushhHeaderLogo from './svg/hushhHeaderLogo'
 import Link from 'next/link'
 import { Button } from '@chakra-ui/react'
 import theme from '../theme'
+import { useResponsiveSizes } from '../context/responsive'
 
 const Header = () => {
+    const { isMobile } = useResponsiveSizes()
+
     return (
         <div className='fixed top-0 z-50'>
-            <div className=' bg-myBG w-screen flex items-center px-32 py-10'>
+            <div className=' bg-myBG w-screen flex justify-between items-center px-4 py-2 md:px-32 md:py-10'>
 
                 <div className="">
                     <HushhHeaderLogo />
                 </div>
                 <div className="text-white flex gap-20 flex-1 justify-center">
                     <Link href='/'>HOME</Link>
-                    <Link href='https://sites.google.com/hush1one.com/drops/home'>ABOUT US</Link>
-                    <Link href='https://www.linkedin.com/company/hushh-ai/jobs/'>WORK WITH US</Link>
+                    <Link href='https://www.linkedin.com/company/hushh-ai/about'>ABOUT US</Link>
+                    <Link href='#'>INVESTORS</Link>
+                    <Link href='https://www.linkedin.com/company/hushh-ai/jobs'>WORK WITH US</Link>
                 </div>
 
-                {/* <div className="">
+
+                <div className="">
                     <Button
                         border={"1px solid #606060"}
                         borderRadius={"5px"}
@@ -36,7 +42,7 @@ const Header = () => {
                     >
                         LOGIN
                     </Button>
-                </div> */}
+                </div>
             </div>
         </div>
     )

@@ -1,94 +1,90 @@
 "use client";
-import HP_TopData from "../../public/Animations/HP_TopData.json";
-import "../app/globals.css";
-// import { HP_Scrolling } from "./_components/features/HP_Scrolling";
-// import DataConsent_Data from "../../public/Animations/DataConsent_Data.json";
-// import DataSecurity_Data from "../../public/Animations/DataSecurity_Data.json";
-// import ZeroParty_Data from "../../public/Animations/ZeroParty_Data.json";
-// import { images } from "../../public/Images/images";
-import { BrandSlider } from "./_components/features/brandSlider";
-import { Box, Button, Container, Grid, HStack, Heading, Text, VStack } from "@chakra-ui/react";
-import theme from "./theme";
 
-import TechnologySection from "./_components/features/technologySection";
-import React from "react";
-import { ServiceCard } from "./_components/primitives/serviceCard";
-import TransparentSecureIcon from "./_components/svg/tranparentSecure";
-import HushhWalletIcon from "./_components/svg/hushhWalletIcon";
-import HushhButtonIcon from "./_components/svg/hushhButton";
-import VibeSearchIcon from "./_components/svg/vibeSearch";
+import "../app/globals.css";
+
+import {
+  Box,
+  Button,
+  Container,
+  Divider,
+  Grid,
+  HStack,
+  Heading,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+
+import { BrandSlider } from "./_components/features/brandSlider";
+import BrandWalletSection from "./_components/features/brandWalletSection";
 import ChromeExtentionLogo from "./_components/svg/ChromeExtensionLogo";
+import FendiCard from "../../public/Images/Fendi.png";
+import HushhButtonIcon from "./_components/svg/hushhButton";
+import HushhWalletIcon from "./_components/svg/hushhWalletIcon";
+import KeyIcon from "./_components/svg/keyIcon";
+import LockIcon from "./_components/svg/LockIcon";
+import LouisVuitton from "../../public/Images/LouisVuitton.png";
+import NextImage from "next/image";
+import React from "react";
+import SearchBar from "./_components/features/searchBar";
+import SephoraCard from "../../public/Images/Sephora.png";
+import { ServiceCard } from "./_components/primitives/serviceCard";
+import ShieldIcon from "./_components/svg/ShieldIcon";
+import TechnologySection from "./_components/features/technologySection";
+import VibeSearchIcon from "./_components/svg/vibeSearch";
+import extendedTheme from "./theme";
+import theme from "./theme";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  // const defaultOptionsHP_Top = {
-  //   loop: true,
-  //   autoplay: true,
-  //   animationData: HP_TopData,
-  //   rendererSettings: {
-  //     preserveAspectRatio: "xMidYMid slice",
-  //   },
-  // };
-  // const defaultOptionsDataSecurity = {
-  //   loop: true,
-  //   autoplay: true,
-  //   animationData: DataSecurity_Data,
-  //   rendererSettings: {
-  //     preserveAspectRatio: "xMidYMid slice",
-  //   },
-  // };
-  // const defaultOptionsDataConsent = {
-  //   loop: true,
-  //   autoplay: true,
-  //   animationData: DataConsent_Data,
-  //   rendererSettings: {
-  //     preserveAspectRatio: "xMidYMid slice",
-  //   },
-  // };
-  // const defaultOptionsZeroParty = {
-  //   loop: true,
-  //   autoplay: true,
-  //   animationData: ZeroParty_Data,
-  //   rendererSettings: {
-  //     preserveAspectRatio: "xMidYMid slice",
-  //   },
-  // };
+  const router = useRouter();
 
   return (
     <main className="bg-myBG  font-Figtree">
       <div className="pb-32">
-        <Box pt={20} display={'flex'} px={{ base: '0.5rem', md: '32px' }}>
+        <Box pt={20} display={"flex"} px={{ base: "0.5rem", md: "32px" }}>
           <VStack
             align={"flex-start"}
             w={"full"}
-            mr={{ md: "50%", base:'10%' }}
+            mr={{ md: "60%", base: "10%" }}
             display={"flex"}
             gap={"1.5rem"}
-            mt={{ md:'5rem', base:'4rem' }}
-            ml={{ base:'1rem', md:'5.5rem' }}
+            mt={{ md: "5rem", base: "1rem" }}
+            ml={{ base: "1rem", md: "5.5rem" }}
           >
             <HStack>
               <Heading
-                fontSize={{ md: "5rem", base:'2rem' }}
+                as={"h1"}
+                fontSize={{ md: "5rem", base: "2rem" }}
                 className="text-headText"
-                lineHeight={{ md: "5.5rem", base:'2.5rem' }}
+                lineHeight={{ md: "5.5rem", base: "2.5rem" }}
                 fontWeight={"400"}
+                display={'flex'}
+                flexDirection={'column'}
               >
                 Intelligence as a service powered by your{" "}
-                <span
-                  // className="gradient-text"
-                  className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text"
-                >
-                  Data
-                </span>{" "}
+                <span className="wrapper">
+                  <div className="words">
+                    <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                      Data
+                    </span>
+                    <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                      Social Media
+                    </span>
+                    <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                      Phone Data
+                    </span>
+                    <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                      Shopping History
+                    </span>
+                  </div>
+                </span>
               </Heading>
             </HStack>
+
             <Text color={"#656565"} fontSize={"18px"}>
-              Unlock the value of{" "}
-              <span className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text">
-                "Your"
-              </span>{" "}
-              data with rich insights!
+            We're a data API business helping users manage and monetize their data, turning it into a financial asset.
             </Text>
+            
             <Button
               border={"3px solid #606060"}
               borderRadius={"2px"}
@@ -101,9 +97,13 @@ export default function Home() {
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               }}
+              onClick={() =>
+                router.push("https://sites.google.com/hush1one.com/drops/home/journey")
+              }
             >
               LEARN MORE
             </Button>
+            <SearchBar />
           </VStack>
         </Box>
 
@@ -117,8 +117,8 @@ export default function Home() {
             as={"h2"}
             className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text"
             fontWeight={600}
-            letterSpacing={'0.25rem'}
-            fontSize={'1rem'}
+            letterSpacing={"0.25rem"}
+            fontSize={"1rem"}
           >
             BRANDS WE WORK WITH
           </Heading>
@@ -132,28 +132,155 @@ export default function Home() {
             fontSize={{ md: "3.75rem", base: "1.5rem" }}
           >
             Discover the brands that {"  "}
-            <span className="trust-text bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text">
+            <span className="trust-text bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
               trust us
             </span>{" "}
-            to unlock the potential of their data.
+            to unlock the potential of their clearn more customer data.
           </Text>
         </HStack>
 
         <BrandSlider />
 
-        <TechnologySection />
+        <Box
+          display="flex"
+          h={"full"}
+          pt={"10rem"}
+          justifyContent="space-between"
+          gap="5rem"
+        >
+          {/* Left side box */}
+          <Box flex="1" bg={extendedTheme.colors._black}>
+            <NextImage
+              src={LouisVuitton}
+              alt="Louis Vuitton"
+              width={350.62}
+              height={363.19}
+              style={{
+                zIndex: "1",
+                position: "relative",
+                top: "25px",
+                left: "100px",
+              }}
+            />
+            <NextImage
+              style={{
+                position: "relative",
+                top: "-90.67px",
+                left: "319px",
+                zIndex: "2",
+              }}
+              src={SephoraCard}
+              alt="Sephora Card"
+              width={420.62}
+              height={363.19}
+            />
+            <NextImage
+              style={{
+                position: "absolute",
+                top: "1490.75px",
+                left: "40px",
+                zIndex: "1",
+                rotate: "10.02",
+              }}
+              src={FendiCard}
+              alt="Fendi Card"
+              width={570.62}
+              height={363.19}
+            />
+          </Box>
+          {/* Right side box */}
+          <VStack alignItems={"left"} textAlign="left" flex="1">
+            <Text
+              className="color-gradient"
+              fontWeight={600}
+              letterSpacing={"0.25rem"}
+              fontSize={"1rem"}
+            >
+              OUR ADVANTAGES
+            </Text>
+
+            <Heading>
+              <Text
+                className="gradient"
+                lineHeight={"63px"}
+                fontWeight={"400"}
+                fontSize={"3.75rem"}
+              >
+                Why Us?
+              </Text>
+            </Heading>
+            <Text pt={"2rem"} fontWeight={'500'} color={extendedTheme.colors.secondary}>
+              Empower individuals with data control. Today, we're a cutting-edge
+              platform fostering trust, transparency, and personalized
+              experiences.
+            </Text>
+
+            <Box pt={'40px'} display={"flex"} gap={"4rem"}>
+              <VStack maxW={'290px'} textAlign={'left'} alignItems={'left'}>
+                <HStack gap={"2rem"}>
+                  <ShieldIcon />
+                  <Text
+                    fontWeight={"500"}
+                    fontSize={"1rem"}
+                    color={extendedTheme.colors.secondary}
+                  >
+                    Data <br></br> Autonomy
+                  </Text>
+                </HStack>
+                <Divider mt={'1rem'} className="divider" width={'12rem'}/>
+                <Text fontWeight={'500'} lineHeight={'36px'} mt={'20px'} color={extendedTheme.colors.secondary}>
+                Empower your customers with full control over their personal data
+                </Text>
+              </VStack>
+
+              <VStack maxW={'290px'} mt={'-0.5rem'} textAlign={'left'} alignItems={'left'}>
+              <HStack gap={"2rem"}>
+                <KeyIcon />
+                <Text
+                  fontWeight={"500"}
+                  fontSize={"1rem"}
+                  color={extendedTheme.colors.secondary}
+                >
+                  Promoting <br></br> Data Equity
+                </Text>
+              </HStack>
+              <Divider mt={'1rem'} className="divider" width={'12rem'}/>
+              <Text fontWeight={'500'} lineHeight={'36px'} mt={'20px'} color={extendedTheme.colors.secondary}>
+              Creating a fair and equitable environment for data sharing.​
+              </Text>
+              </VStack>
+            </Box>
+            <VStack mt={'1.5rem'} textAlign={'left'} alignItems={'left'}>
+              <HStack gap={"2rem"}>
+                <LockIcon />
+                <Text
+                  fontWeight={"500"}
+                  fontSize={"1rem"}
+                  color={extendedTheme.colors.secondary}
+                >
+                  Consent-Driven <br></br> Excellence
+                </Text>
+              </HStack>
+              <Divider mt={'1rem'} className="divider" width={'22rem'}/>
+              <Text fontWeight={'500'} lineHeight={'36px'} mt={'20px'} color={extendedTheme.colors.secondary}>
+              Creating a fair and equitable environment for data sharing.​
+              </Text>
+              </VStack>
+          </VStack>
+        </Box>
 
         <HStack
-        pt={"8rem"}
-        justify={"center"}
-        display={"flex"}
-        flexDirection={"column"}>
-         <Heading
+          pt={"8rem"}
+          justify={"center"}
+          display={"flex"}
+          flexDirection={"column"}
+        >
+          <Heading
             as={"h2"}
             className="color-gradient"
             fontWeight={600}
-            letterSpacing={'0.25rem'}
-            fontSize={'1rem'}
+            letterSpacing={"0.25rem"}
+            fontSize={"1rem"}
           >
             PRODUCT SHOWCASE
           </Heading>
@@ -166,49 +293,80 @@ export default function Home() {
             fontWeight={"300"}
             fontSize={{ md: "3.75rem", base: "1.5rem" }}
           >
-           Technology For Everyone!
+            Technology For Everyone!
           </Text>
           <Text
             className="description"
-            textAlign={'center'}
-            px={{md:'24rem'}}
-            color={theme.colors.secondary}>
-              We have seamless data capturing capabilities, robust security with trust measures in place and in-depth insights and transparency around the value of your data.
+            textAlign={"center"}
+            px={{ md: "24rem" }}
+            color={theme.colors.secondary}
+          >
+            We have seamless data capturing capabilities, robust security with
+            trust measures in place and in-depth insights and transparency
+            around the value of your data.
           </Text>
-          <Container display={'flex'} pt={{md:'2rem'}} px={{md:'10rem'}} justifyContent={"center"} textAlign={'center'} minW={{ md:'100%', base:'100%' }}>
-        <Grid
-          templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
-          gap={{ md:20 , base:5}}
-          flexWrap="wrap"
-        >
-          <ServiceCard
-            icon={<HushhWalletIcon />}
-            title="Hushh Wallet App​"
-            alignItems={'center'}
-            description="Customer User Flow + Client Advisor User Flow​"
-          />
-          <ServiceCard
-            icon={<HushhButtonIcon />}
-            title="Hushh Button​​​"
-            alignItems={'center'}
-            description="Seamless Data Sharing for Personalized Experiences and recommendations​​"
-          />
-          <ServiceCard
-            icon={<VibeSearchIcon />}
-            title="Vibe Search​"
-            alignItems={'center'}
-            description="Find perfect items to express your individuality in just one click"
-          />
-          <ServiceCard
-            icon={<VibeSearchIcon />}
-            title="Chrome Extension​"
-            alignItems={'center'}
-            description="Improved product recommendations & effective marketing campaigns"
-          />
-        </Grid>
-      </Container>
+          <Container
+            display={"flex"}
+            pt={{ md: "2rem" }}
+            px={{ md: "10rem" }}
+            justifyContent={"center"}
+            textAlign={"center"}
+            minW={{ md: "100%", base: "100%" }}
+          >
+            <Grid
+              templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
+              gap={{ md: 20, base: 5 }}
+              flexWrap="wrap"
+            >
+              <ServiceCard
+                icon={<HushhWalletIcon />}
+                title="Hushh Wallet App​"
+                alignItems={"center"}
+                textAlign={'center'}
+                description="Customer User Flow + Client Advisor User Flow​"
+                onClick={() =>
+                  router.push("https://hushhwallet.framer.ai/")
+                }
+              />
+              <ServiceCard
+                icon={<HushhButtonIcon />}
+                title="Hushh Button​​​"
+                textAlign={'center'}
+                alignItems={"center"}
+                description="Seamless Data Sharing for Personalized Experiences and recommendations​​"
+                onClick={() =>
+                  router.push("https://hushhbutton.framer.ai/")
+                }
+              />
+              <ServiceCard
+                icon={<VibeSearchIcon />}
+                title="Vibe Search​"
+                textAlign={'center'}
+                alignItems={"center"}
+                description="Find perfect items to express your individuality in just one click"
+                onClick={() =>
+                  router.push("https://hushhvibesearch.framer.ai/")
+                }
+              />
+              <ServiceCard
+                icon={<ChromeExtentionLogo />}
+                title="Chrome Extension​"
+                alignItems={"center"}
+                textAlign={'center'}
+                description="Improved product recommendations & effective marketing campaigns"
+                onClick={() =>
+                  router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+                }
+              />
+            </Grid>
+          </Container>
         </HStack>
 
+        <TechnologySection />
+
+       
+
+        <BrandWalletSection/>
 
         {/* <div className="pt-5">
           <HP_Scrolling />
@@ -281,7 +439,6 @@ export default function Home() {
           </div>
         </div>
         <hr className=" h-0.5 bg-gradient-to-r from-myBG via-myBorder to-myBG" /> */}
-
       </div>
     </main>
   );

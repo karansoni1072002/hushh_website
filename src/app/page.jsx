@@ -144,12 +144,14 @@ export default function Home() {
         <Box
           display="flex"
           h={"full"}
+          flexDirection={{ base: "column", md: "row" }} // For mobile, stack images vertically, for desktop, display them side by side
+          alignItems={{ base: "center", md: "flex-start" }}
           pt={{ md:"10rem", base:"6rem"}}
           justifyContent="space-between"
           gap="5rem"
         >
           {/* Left side box */}
-          <Box flex="1" bg={extendedTheme.colors._black} display={{base:'none'}}>
+          <Box flex="1" bg={extendedTheme.colors._black} display={{ base: "none", md: "block" }}>
             <NextImage
               src={LouisVuitton}
               alt="Louis Vuitton"
@@ -189,7 +191,7 @@ export default function Home() {
             />
           </Box>
           {/* Right side box */}
-          <VStack alignItems={"left"} ml={{base:'2rem'}} textAlign="left" flex="1">
+          <VStack alignItems={{md:"left", base:""}}  textAlign={{ md:"left",base:"center"}} flex="1">
             <Text
               className="color-gradient"
               fontWeight={600}
@@ -204,12 +206,13 @@ export default function Home() {
                 className="gradient"
                 lineHeight={"63px"}
                 fontWeight={"400"}
+                alignItems={{md:"left", base:"center"}} textAlign={{ md:"left",base:"center"}} 
                 fontSize={{ md:"3.75rem", base:"2.5rem"}}
               >
                 Why Us?
               </Text>
             </Heading>
-            <Text pt={{ md:"2rem"}} maxW={{base:'18rem'}} fontWeight={'500'} color={extendedTheme.colors.secondary}>
+            <Text px={{base:'2rem', md:'0'}} alignItems={{base:"center"}} pt={{ md:"1rem"}}  fontWeight={'500'} color={extendedTheme.colors.secondary}>
               Empower individuals with data control. Today, we're a cutting-edge
               platform fostering trust, transparency, and personalized
               experiences.
@@ -228,7 +231,7 @@ export default function Home() {
                   </Text>
                 </HStack>
                 <Divider mt={'1rem'} className="divider" width={{ md:'12rem', base:'6rem'}}/>
-                <Text fontWeight={'500'} lineHeight={{ md:'36px', base:'18px'}} mt={'20px'} color={extendedTheme.colors.secondary}>
+                <Text fontWeight={'500'} fontSize={{base:'0.75rem'}} lineHeight={{ md:'36px', base:'18px'}} mt={{ md:'1.25rem', base:"0.75rem"}} color={extendedTheme.colors.secondary}>
                 Empower your customers with full control over their personal data
                 </Text>
               </VStack>
@@ -245,12 +248,12 @@ export default function Home() {
                 </Text>
               </HStack>
               <Divider mt={'1rem'} className="divider" width={{ md:'12rem', base:'6rem'}}/>
-              <Text fontWeight={'500'} lineHeight={{ md:'36px', base:'18px'}} mt={'20px'} color={extendedTheme.colors.secondary}>
+              <Text fontWeight={'500'} lineHeight={{ md:'36px', base:'18px'}} fontSize={{base:'0.75rem'}} mt={{ md:'1.25rem', base:"0.75rem"}} color={extendedTheme.colors.secondary}>
               Creating a fair and equitable environment for data sharing.​
               </Text>
               </VStack>
             </Box>
-            <VStack mt={'1.5rem'} textAlign={'left'} alignItems={'left'}>
+            <VStack alignContent={'left'} mt={'1.5rem'} textAlign={'left'} alignItems={'left'}>
               <HStack gap={"2rem"}>
                 <LockIcon />
                 <Text
@@ -261,8 +264,8 @@ export default function Home() {
                   Consent-Driven <br></br> Excellence
                 </Text>
               </HStack>
-              <Divider mt={'1rem'} className="divider" width={'22rem'}/>
-              <Text fontWeight={'500'} lineHeight={'36px'} mt={'20px'} color={extendedTheme.colors.secondary}>
+              <Divider mt={'1rem'} className="divider" width={{ md:'22rem', base:"14rem"}}/>
+              <Text fontWeight={'500'} lineHeight={{ md:'36px', base:'18px'}} mt={{ md:'1.25rem', base:"0.75rem"}} fontSize={{base:'0.75rem'}} color={extendedTheme.colors.secondary}>
               Creating a fair and equitable environment for data sharing.​
               </Text>
               </VStack>

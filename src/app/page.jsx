@@ -218,13 +218,16 @@ export default function Home() {
               experiences.
             </Text>
 
-            <Box pt={{ md:'40px', base:'20px'}} display={"flex"} gap={{ md:"4rem", base:'2rem'}}>
-              <VStack maxW={{ md: '290px', base:'120px'}} textAlign={'left'} alignItems={'left'}>
+            <Box pt={{ md:'40px', base:'20px'}} width={'100%'} px={{base:'1.25rem'}} justifyContent={{ base: 'space-between'}} display={"flex"} gap={{ md:"4rem"}}>
+              <VStack maxW={{ md: '290px'}} textAlign={'left'} alignItems={'left'}>
                 <HStack gap={{ md:"2rem"}}>
                   <ShieldIcon />
                   <Text
                     fontWeight={"500"}
                     fontSize={"1rem"}
+                    ml={{base:'0.5rem'}}
+
+                    // lineHeight={{base:'18px'}}
                     color={extendedTheme.colors.secondary}
                   >
                     Data <br></br> Autonomy
@@ -236,12 +239,13 @@ export default function Home() {
                 </Text>
               </VStack>
 
-              <VStack maxW={{md:'290px', base:'120px'}} mt={'-0.5rem'} textAlign={'left'} alignItems={'left'}>
+              <VStack maxW={{md:'290px'}} mt={'-0.5rem'} textAlign={'left'} alignItems={'left'}>
               <HStack gap={{ md:"2rem"}}>
                 <KeyIcon />
                 <Text
                   fontWeight={"500"}
                   fontSize={"1rem"}
+                  ml={{base:'0.5rem'}}
                   color={extendedTheme.colors.secondary}
                 >
                   Promoting <br></br> Data Equity

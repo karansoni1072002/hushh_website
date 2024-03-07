@@ -135,7 +135,7 @@ export default function Home() {
             <span className="trust-text bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
               trust us
             </span>{" "}
-            to unlock the potential of their clearn more customer data.
+            to unlock the potential of their customer data.
           </Text>
         </HStack>
 

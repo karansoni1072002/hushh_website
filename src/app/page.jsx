@@ -1,7 +1,6 @@
 "use client";
 
 import "../app/globals.css";
-
 import {
   Box,
   Button,
@@ -13,7 +12,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-
 import { BrandSlider } from "./_components/features/brandSlider";
 import BrandWalletSection from "./_components/features/brandWalletSection";
 import ChromeExtentionLogo from "./_components/svg/ChromeExtensionLogo";

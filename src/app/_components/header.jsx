@@ -20,8 +20,9 @@ const Header = () => {
                 <div className="text-white flex gap-20 ">
                     <Link href='/'>HOME</Link>
                     <Link href='https://www.linkedin.com/company/hushh-ai/about'>ABOUT US</Link>
-                    <Link href='#'>INVESTORS</Link>
-                    <Link href='https://www.linkedin.com/company/hushh-ai/jobs'>WORK WITH US</Link>
+                    <Link href='#'>PRODUCTS</Link>
+                    <Link href='#'>LABS</Link>
+                    <Link href='#'>CONTACT US</Link>
                 </div>
                 )}
 

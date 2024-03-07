@@ -34,6 +34,7 @@ import VibeSearchIcon from "./_components/svg/vibeSearch";
 import extendedTheme from "./theme";
 import theme from "./theme";
 import { useRouter } from "next/navigation";
+import HushhCoinUiBox from "./_components/features/hushhCoinUiBox";
 
 export default function Home() {
   const router = useRouter();
@@ -370,9 +371,9 @@ export default function Home() {
 
         <TechnologySection />
 
-       
-
         <BrandWalletSection/>
+
+        <HushhCoinUiBox/>
 
         {/* <div className="pt-5">
           <HP_Scrolling />

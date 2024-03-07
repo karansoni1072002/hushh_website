@@ -212,7 +212,7 @@ export default function Home() {
                 Why Us?
               </Text>
             </Heading>
-            <Text px={{base:'2rem', md:'0'}} alignItems={{base:"center"}} pt={{ md:"1rem"}}  fontWeight={'500'} color={extendedTheme.colors.secondary}>
+            <Text px={{base:'1rem', md:'0'}} alignItems={{base:"center"}} pt={{ md:"1rem"}}  fontWeight={'500'} color={extendedTheme.colors.secondary}>
               Empower individuals with data control. Today, we're a cutting-edge
               platform fostering trust, transparency, and personalized
               experiences.
@@ -226,20 +226,19 @@ export default function Home() {
                     fontWeight={"500"}
                     fontSize={"1rem"}
                     ml={{base:'0.5rem'}}
-
                     // lineHeight={{base:'18px'}}
                     color={extendedTheme.colors.secondary}
                   >
                     Data <br></br> Autonomy
                   </Text>
                 </HStack>
-                <Divider mt={'1rem'} className="divider" width={{ md:'12rem', base:'6rem'}}/>
-                <Text fontWeight={'500'} fontSize={{base:'0.75rem'}} lineHeight={{ md:'36px', base:'18px'}} mt={{ md:'1.25rem', base:"0.75rem"}} color={extendedTheme.colors.secondary}>
+                <Divider mt={'1rem'} className="divider" width={{ md:'12rem', base:'8rem'}}/>
+                <Text fontWeight={'500'} fontSize={{base:'0.75rem'}} lineHeight={{ md:'30px', base:'18px'}} mt={{ md:'1.25rem', base:"0.75rem"}} color={extendedTheme.colors.secondary}>
                 Empower your customers with full control over their personal data
                 </Text>
               </VStack>
 
-              <VStack maxW={{md:'290px'}} mt={'-0.5rem'} textAlign={'left'} alignItems={'left'}>
+              <VStack maxW={{md:'290px'}} mt={'-0.68rem'} textAlign={'left'} alignItems={'left'}>
               <HStack gap={{ md:"2rem"}}>
                 <KeyIcon />
                 <Text
@@ -248,17 +247,17 @@ export default function Home() {
                   ml={{base:'0.5rem'}}
                   color={extendedTheme.colors.secondary}
                 >
-                  Promoting <br></br> Data Equity
+                  Data <br></br> Equity
                 </Text>
               </HStack>
-              <Divider mt={'1rem'} className="divider" width={{ md:'12rem', base:'6rem'}}/>
-              <Text fontWeight={'500'} lineHeight={{ md:'36px', base:'18px'}} fontSize={{base:'0.75rem'}} mt={{ md:'1.25rem', base:"0.75rem"}} color={extendedTheme.colors.secondary}>
+              <Divider mt={'1rem'} className="divider" width={{ md:'12rem', base:'8rem'}}/>
+              <Text fontWeight={'500'} lineHeight={{ md:'30px', base:'18px'}} fontSize={{base:'0.75rem'}} mt={{ md:'1.25rem', base:"0.75rem"}} color={extendedTheme.colors.secondary}>
               Creating a fair and equitable environment for data sharing.​
               </Text>
               </VStack>
             </Box>
-            <VStack alignContent={'left'} mt={'1.5rem'} textAlign={'left'} alignItems={'left'}>
-              <HStack gap={"2rem"}>
+            <VStack px={'1.25rem'} alignContent={'left'} mt={'1.5rem'} textAlign={'left'} alignItems={'left'}>
+              <HStack gap={"1rem"}>
                 <LockIcon />
                 <Text
                   fontWeight={"500"}
@@ -269,7 +268,7 @@ export default function Home() {
                 </Text>
               </HStack>
               <Divider mt={'1rem'} className="divider" width={{ md:'22rem', base:"14rem"}}/>
-              <Text fontWeight={'500'} lineHeight={{ md:'36px', base:'18px'}} mt={{ md:'1.25rem', base:"0.75rem"}} fontSize={{base:'0.75rem'}} color={extendedTheme.colors.secondary}>
+              <Text fontWeight={'500'} lineHeight={{ md:'30px', base:'18px'}} mt={{ md:'1.25rem', base:"0.75rem"}} fontSize={{base:'0.75rem'}} color={extendedTheme.colors.secondary}>
               Creating a fair and equitable environment for data sharing.​
               </Text>
               </VStack>
@@ -277,7 +276,7 @@ export default function Home() {
         </Box>
 
         <HStack
-          pt={"8rem"}
+          pt={{ md: "8rem", base:"5rem"}}
           justify={"center"}
           display={"flex"}
           flexDirection={"column"}
@@ -314,8 +313,8 @@ export default function Home() {
           </Text>
           <Container
             display={"flex"}
-            pt={{ md: "2rem" }}
-            px={{ md: "10rem" }}
+            pt={{ md: "2rem", base:"1rem" }}
+            px={{ md: "10rem", base:"0.5rem" }}
             justifyContent={"center"}
             textAlign={"center"}
             minW={{ md: "100%", base: "100%" }}

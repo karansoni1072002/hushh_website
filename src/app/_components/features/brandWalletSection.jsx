@@ -39,8 +39,7 @@ const BrandWalletSection = () => {
         lineHeight={{ md: "36px", base: "22px" }}
         mb={"1rem"}
       >
-        "Experience elegance and durability with our brand wallet - a statement
-        of luxury and utility."
+        Take control of your digital identity with our innovative "Build Your Own Brand Wallet" feature.
       </Text>
       <Grid
         templateColumns={{ md: "1fr 2fr 1fr", base: "repeat(1, 1fr)" }}
@@ -68,11 +67,10 @@ const BrandWalletSection = () => {
               fontSize={{ md: "1.25rem", base: "1rem" }}
               color={extendedTheme.colors._white}
             >
-              Send & Receive
+              HUSHH Bot
             </Heading>
             <Text color={extendedTheme.colors._white}>
-              Utilize our platform's robust capabilities for effortless data
-              sharing and secure transactions.
+            Your all-in-one digital assistant designed to simplify your life, streamline tasks, and enhance productivity..
             </Text>
           </HStack>
           <HStack
@@ -89,11 +87,10 @@ const BrandWalletSection = () => {
               fontSize={{ md: "1.25rem", base: "1rem" }}
               color={extendedTheme.colors._white}
             >
-              100% Secure Wallet
+              100% SECURE WALLET
             </Heading>
             <Text color={extendedTheme.colors._white}>
-              Safeguard your valuable data with our 100% secure wallet. We
-              implement advanced encryption and security measures
+              Rest assured knowing that your digital assets are in safe hands with Hushh Bot, your 100% secure wallet solution.
             </Text>
           </HStack>
         </VStack>
@@ -115,14 +112,14 @@ const BrandWalletSection = () => {
           >
             <SendReceiveIcon width={20} height={20} />
             <Heading fontSize={"0.875rem"} color={extendedTheme.colors._white}>
-              Send & Receive
+              HUSHH BOT
             </Heading>
             <Text
               fontSize={"0.75rem"}
               color={extendedTheme.colors._white}
               textAlign="center"
             >
-              Utilize our platform's robust capabilities for effortless data sharing & secure transactions.
+              Your all-in-one digital assistant designed to simplify your life, streamline tasks, and enhance productivity..
             </Text>
           </VStack>
           <VStack
@@ -135,14 +132,14 @@ const BrandWalletSection = () => {
           >
             <WalletIcon width={20} height={20} /> {/* Adjust icon size */}
             <Heading fontSize={"0.875rem"} color={extendedTheme.colors._white}>
-              Secure Wallet
+            100% SECURE WALLET
             </Heading>
             <Text
               fontSize={"0.75rem"}
               color={extendedTheme.colors._white}
               textAlign="center"
             >
-              Safeguard your valuable data with our 100% secure wallet with advanced encryption security.
+              Rest assured knowing that your digital assets are in safe hands with Hushh Bot, your 100% secure wallet solution.
             </Text>
           </VStack>
         </HStack>
@@ -162,8 +159,7 @@ const BrandWalletSection = () => {
               iOS & ANDROID APP
             </Heading>
             <Text color={extendedTheme.colors._white}>
-              Download our apps for android as well as for iOS to experience the
-              new gen AI features of our products.
+            Experience the convenience of managing your digital life with Hushh, available on both iOS and Android platforms.
             </Text>
             <Box align={"center"} mt={"1.40rem"}>
               <NextImage src={BrandWalletMobile} />
@@ -193,11 +189,10 @@ const BrandWalletSection = () => {
               fontSize={{ md: "1.25rem", base: "1rem" }}
               color={extendedTheme.colors._white}
             >
-              Seamless Integration
+              SHARE AND BENEFIT
             </Heading>
             <Text color={extendedTheme.colors._white}>
-              We offer robust APIs and developer tools for effortless
-              integration with trusted brands.
+               Share your data, earn points, and unlock rewards like discounts, gift cards, and cashback offers from our partner brands!
             </Text>
           </HStack>
           <HStack
@@ -214,12 +209,10 @@ const BrandWalletSection = () => {
               fontSize={{ md: "1.25rem", base: "1rem" }}
               color={extendedTheme.colors._white}
             >
-              Optimized Data Sharing
+              RECEIPT RADAR
             </Heading>
             <Text color={extendedTheme.colors._white}>
-              Effortlessly share and manage your data with our optimized data
-              sharing solutions & enabling you to control and monitor data
-              access
+               With automatic scanning, smart categorization, and customizable options, managing expenses becomes a breeze.
             </Text>
           </HStack>
         </VStack>

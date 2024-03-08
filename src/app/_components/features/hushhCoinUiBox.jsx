@@ -45,10 +45,10 @@ const HushhCoinUiBox = () => {
                 Lowest fees in market
               </Text>
             </Box>
-            <Box display="flex" gap={"1rem"} ml={{ md:'-0.5rem'}} alignItems="center">
+            <Box display="flex" gap={"1rem"} ml={{ md:'-0.5rem', base:'-0.5rem'}} alignItems="center">
               <BoltIcon />
-              <Text ml={{md:'-0.3rem'}} color={extendedTheme.colors._white}>
-                Fast and secure transactions
+              <Text ml={{md:'-0.3rem', base:'-0.3rem'}} color={extendedTheme.colors._white}>
+                Fast & secure transactions
               </Text>
             </Box>
             <Box display="flex" gap={"1rem"} alignItems="center">

@@ -22,7 +22,7 @@ const TechnologySection = () => {
         <Heading
           as={"h1"}
           className="gradient"
-          fontSize={"3.75rem"}
+          fontSize={{ md:"3.75rem", base:'1.5rem'}}
           display={"flex"}
         >
           Our Technology Services
@@ -31,8 +31,8 @@ const TechnologySection = () => {
           color={extendedTheme.colors.secondary}
           fontWeight={"500"}
           fontSize={"1rem"}
-          lineHeight={"2.25rem"}
-          px={{ md:"20rem" }}
+          lineHeight={{ md:"2.25rem", base:'1.5rem'}}
+          px={{ md:"20rem", base:'1rem' }}
         >
           Our technology services deliver cutting-edge solutions tailored to
           drive efficiency, enhance performance, and fuel growth in today's

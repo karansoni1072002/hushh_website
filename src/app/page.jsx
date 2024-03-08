@@ -306,6 +306,7 @@ export default function Home() {
             w={'full'}
             px={{ md: "24rem", base:'2rem' }}
             color={theme.colors.secondary}
+            fontSize={{base:"0.75rem", md:'1rem'}}
           >
             We have seamless data capturing capabilities, robust security with
             trust measures in place and in-depth insights and transparency

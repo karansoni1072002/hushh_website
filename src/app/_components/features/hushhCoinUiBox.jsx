@@ -4,16 +4,20 @@ import React from "react";
 import LVCardMobile from "../../../../public/Images/mobileIcons/LVCardMobile.png";
 import MarketIcon from "../svg/marketIcon";
 import extendedTheme from "../../theme";
+import TransparentLock from "../svg/transparetLock";
+import BoltIcon from "../svg/boltIcon";
 
 const HushhCoinUiBox = () => {
   return (
     <>
       <Container
-        mt={{ base: "2rem", md: "5rem" }}
+        mt={{ base: "2rem", md: "8rem" }}
         display="flex"
         alignItems="center"
         justifyContent="space-between"
         flexDirection={{ base: "column", md: "row" }}
+        minW={"100%"}
+        px={"10rem"}
       >
         <Box maxWidth={{ base: "100%", md: "40%" }}>
           <NextImage src={LVCardMobile} alt="CoinBox" />
@@ -28,29 +32,29 @@ const HushhCoinUiBox = () => {
             fontWeight="700"
             fontSize={{ md: "3.75rem", base: "2rem" }}
           >
-            Earn hushh coins on your valuable data sharing
+            Earn <span className="color-gradient"> hushh coins</span> on your
+            valuable data sharing
           </Heading>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
-            nulla suspendisse tortor aene.
+          <Text color={extendedTheme.colors.secondary} lineHeight={{base:'18px',md:'36px'}} mt={{base:'1rem', md:'2rem'}}>
+          Unlock exclusive rewards by securely sharing your valuable data with Hushh. Our platform ensures your privacy while offering unparalleled benefits. Join the Hushh community today and start earning Hushh coins for every interaction
           </Text>
-          <VStack align="flex-start" spacing={4} w="100%">
-            <Box display="flex" alignItems="center">
+          <VStack align="flex-start" spacing={4} w="100%" mt={{base:'1rem', md:'2rem'}}>
+            <Box display="flex" gap={"1rem"} alignItems="center">
               <MarketIcon />
               <Text color={extendedTheme.colors._white}>
                 Lowest fees in market
               </Text>
             </Box>
-            <Box display="flex" alignItems="center">
-              <MarketIcon />
-              <Text color={extendedTheme.colors._white}>
-                Lowest fees in market
+            <Box display="flex" gap={"1rem"} ml={{ md:'-0.5rem'}} alignItems="center">
+              <BoltIcon />
+              <Text ml={{md:'-0.3rem'}} color={extendedTheme.colors._white}>
+                Fast and secure transactions
               </Text>
             </Box>
-            <Box display="flex" alignItems="center">
-              <MarketIcon />
-              <Text color={extendedTheme.colors._white}>
-                Lowest fees in market
+            <Box display="flex" gap={"1rem"} alignItems="center">
+              <TransparentLock />
+              <Text ml={{ md:'0.5rem'}} color={extendedTheme.colors._white}>
+                256-bit secure encryption
               </Text>
             </Box>
           </VStack>

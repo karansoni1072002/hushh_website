@@ -27,40 +27,41 @@ const BrandWalletSection = () => {
       <Heading
         className="gradient"
         fontSize={{ md: "3.75rem", base: "1.5rem" }}
+        mx={'0.5rem'}
+        textAlign={'center'}
       >
         Build your own brand wallet
       </Heading>
       <Text
         textAlign={"center"}
         fontSize={{ md: "1rem" }}
-        pl={{ md: "30rem" }}
-        pr={{ md: "30rem" }}
+        px={{md:'30rem', base:'3rem'}}
         color={extendedTheme.colors.secondary}
-        lineHeight={"36px"}
+        lineHeight={{ md:"36px", base:'22px'}}
         mb={"1rem"}
       >
         "Experience elegance and durability with our brand wallet - a statement
         of luxury and utility."
       </Text>
       <Grid
-        templateColumns={{ md: "1fr 2fr 1fr", base: "1fr" }}
+        templateColumns={{ md: "1fr 2fr 1fr", base: "repeat(1, 1fr)" }}
         gap={{ md: "4rem", base: "1rem" }}
         mt={{ md: "2rem", base: "1rem" }}
-        px={{ md: "10rem" }}
+        px={{ md: "10rem",base:'1rem' }}
       >
         {/* Left column */}
-        <VStack w={"20rem"} display={{ md: "flex", base: "none" }} gap="2rem">
+        <VStack w={{ md:"20rem", base:'10rem'}} display={{ md:"flex", base:'none'}} gap="2rem">
           <HStack
             align={"left"}
-            flexDirection="column"
+            flexDirection={"column"}
             bg="#1C1C1C"
-            px="2rem"
-            py="3rem"
+            px={{ md:"2rem", base:'1rem'}}
+            py={{ md:"3rem", base:'1rem'}}
             gap={"1rem"}
             borderRadius={"2.5rem"}
           >
             <SendReceiveIcon />
-            <Heading fontSize="1.25rem" color={extendedTheme.colors._white}>
+            <Heading  fontSize={{ md:"1.25rem", base:'1rem'}} color={extendedTheme.colors._white}>
               Send & Receive
             </Heading>
             <Text color={extendedTheme.colors._white}>
@@ -77,7 +78,7 @@ const BrandWalletSection = () => {
             borderRadius={"2.5rem"}
           >
             <WalletIcon />
-            <Heading fontSize="1.25rem" color={extendedTheme.colors._white}>
+            <Heading fontSize={{ md:"1.25rem", base:'1rem'}} color={extendedTheme.colors._white}>
               100% Secure Wallet
             </Heading>
             <Text color={extendedTheme.colors._white}>
@@ -86,12 +87,33 @@ const BrandWalletSection = () => {
           </HStack>
         </VStack>
 
+        {/* Responsive column for mobile */}
+        <HStack spacing="1rem" w={'full'} display={{ base: "flex", md: "none" }} justifyContent="center">
+          <VStack align={"left"} bg="#1C1C1C" px="1rem" py="1rem" gap={"1rem"} borderRadius={"2.5rem"}>
+            <SendReceiveIcon />
+            <Heading fontSize={'1rem'} color={extendedTheme.colors._white}>Send & Receive</Heading>
+            <Text fontSize={'0.75rem'} color={extendedTheme.colors._white}>
+              Utilize our platform's robust capabilities for effortless data sharing and secure transactions.
+            </Text>
+          </VStack>
+          <VStack align={"left"} bg="#1C1C1C" px="1rem" py="1rem" gap={"1rem"} borderRadius={"2.5rem"}>
+            <WalletIcon />
+            <Heading fontSize={'1rem'} color={extendedTheme.colors._white}>100% Secure Wallet</Heading>
+            <Text fontSize={'0.75rem'} color={extendedTheme.colors._white}>
+              Safeguard your valuable data with our 100% secure wallet. We implement advanced encryption and security measures.
+            </Text>
+          </VStack>
+        </HStack>
+
         {/* Center column */}
         <Box
           borderRadius={"2.5rem"}
           w={"full"}
-          gridColumn={{ md: "2", base: "1 / span 1" }}
+          gridColumnStart={{ base: 1, md: 2 }} // Ensure it's placed in the second column or full width on mobile
+          gridRowStart={{ base: 2, md: 1 }}
+          // gridColumn={{ md: "2", base: "2" }}
           className="gradient-bg"
+          // display={{base:'none', md:'flex'}}
         >
           <VStack align={"left"} px={"2rem"} pt={"2rem"} gap={"1.6rem"}>
             <Heading fontSize={"20px"} color={extendedTheme.colors._white}>
@@ -106,8 +128,10 @@ const BrandWalletSection = () => {
           </VStack>
         </Box>
 
+
         {/* Right column */}
-        <VStack w={"20rem"} display={{ md: "flex", base: "none" }} gap="2rem">
+        <VStack w={"20rem"} display={{ md:'flex', base:'none'}} gap="2rem" gridColumnStart={{ base: 1, md: 3 }} // Start from the first column on mobile, third on desktop
+            gridRowStart={{ base: 3, md: 1 }}>
           <HStack
             align={"left"}
             flexDirection="column"
@@ -118,7 +142,7 @@ const BrandWalletSection = () => {
             borderRadius={"2.5rem"}
           >
             <ChartIcon />
-            <Heading fontSize="1.25rem" color={extendedTheme.colors._white}>
+            <Heading  fontSize={{ md:"1.25rem", base:'1rem'}} color={extendedTheme.colors._white}>
               Seamless Integration
             </Heading>
             <Text color={extendedTheme.colors._white}>
@@ -135,7 +159,7 @@ const BrandWalletSection = () => {
             borderRadius={"2.5rem"}
           >
             <RefreshIcon />
-            <Heading fontSize="1.25rem" color={extendedTheme.colors._white}>
+            <Heading  fontSize={{ md:"1.25rem", base:'1rem'}} color={extendedTheme.colors._white}>
             Optimized Data Sharing 
             </Heading>
             <Text color={extendedTheme.colors._white}>

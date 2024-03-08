@@ -11,13 +11,13 @@ const HushhCoinUiBox = () => {
   return (
     <>
       <Container
-        mt={{ base: "2rem", md: "8rem" }}
+        mt={{ base: "4rem", md: "8rem" }}
         display="flex"
         alignItems="center"
         justifyContent="space-between"
         flexDirection={{ base: "column", md: "row" }}
         minW={"100%"}
-        px={"10rem"}
+        px={{ md:"10rem", base:'2rem'}}
       >
         <Box maxWidth={{ base: "100%", md: "40%" }}>
           <NextImage src={LVCardMobile} alt="CoinBox" />

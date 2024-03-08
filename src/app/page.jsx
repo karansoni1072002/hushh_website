@@ -303,7 +303,8 @@ export default function Home() {
           <Text
             className="description"
             textAlign={"center"}
-            px={{ md: "24rem" }}
+            w={'full'}
+            px={{ md: "24rem", base:'2rem' }}
             color={theme.colors.secondary}
           >
             We have seamless data capturing capabilities, robust security with

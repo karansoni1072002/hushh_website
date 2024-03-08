@@ -18,7 +18,7 @@ module.exports = {
         figtree: ['figtree'],
       },
       colors: {
-        myBorder: '#8736D2',
+        myBorder: '#606060',
         myBG: 'black',
         headText: '#BEBEBF',
         normText: 'rgba(101, 101, 101, 1)',

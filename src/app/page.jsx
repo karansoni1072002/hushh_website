@@ -1,7 +1,6 @@
 "use client";
 
 import "../app/globals.css";
-
 import {
   Box,
   Button,
@@ -13,7 +12,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-
 import { BrandSlider } from "./_components/features/brandSlider";
 import BrandWalletSection from "./_components/features/brandWalletSection";
 import ChromeExtentionLogo from "./_components/svg/ChromeExtensionLogo";
@@ -34,6 +32,7 @@ import VibeSearchIcon from "./_components/svg/vibeSearch";
 import extendedTheme from "./theme";
 import theme from "./theme";
 import { useRouter } from "next/navigation";
+import HushhCoinUiBox from "./_components/features/hushhCoinUiBox";
 
 export default function Home() {
   const router = useRouter();
@@ -304,8 +303,10 @@ export default function Home() {
           <Text
             className="description"
             textAlign={"center"}
-            px={{ md: "24rem" }}
+            w={'full'}
+            px={{ md: "24rem", base:'2rem' }}
             color={theme.colors.secondary}
+            fontSize={{base:"0.75rem", md:'1rem'}}
           >
             We have seamless data capturing capabilities, robust security with
             trust measures in place and in-depth insights and transparency
@@ -370,9 +371,9 @@ export default function Home() {
 
         <TechnologySection />
 
-       
-
         <BrandWalletSection/>
+
+        <HushhCoinUiBox/>
 
         {/* <div className="pt-5">
           <HP_Scrolling />

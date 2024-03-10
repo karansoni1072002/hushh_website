@@ -33,6 +33,7 @@ import extendedTheme from "./theme";
 import theme from "./theme";
 import { useRouter } from "next/navigation";
 import HushhCoinUiBox from "./_components/features/hushhCoinUiBox";
+import ReviewSlider from "./_components/features/reviewSlider";
 
 export default function Home() {
   const router = useRouter();
@@ -375,6 +376,7 @@ export default function Home() {
 
         <HushhCoinUiBox/>
 
+         <ReviewSlider/>
         {/* <div className="pt-5">
           <HP_Scrolling />
         </div>

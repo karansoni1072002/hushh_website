@@ -28,9 +28,9 @@ const ReviewSlider = () => {
     <Swiper
       spaceBetween={40}
       slidesPerView={3}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
+      navigation={true}
+      pagination={{ clickable: true, hide:true }}
+      scrollbar={{ draggable: true, clickable:true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >

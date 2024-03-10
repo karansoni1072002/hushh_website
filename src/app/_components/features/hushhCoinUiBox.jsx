@@ -1,7 +1,7 @@
 import { Container, Box, VStack, Heading, Text } from "@chakra-ui/react";
 import NextImage from "next/image";
 import React from "react";
-import LVCardMobile from "../../../../public/Images/mobileIcons/LVCardMobile.png";
+import ReceiptRadar from "../../../../public/Images/mobileIcons/receiptRadar.png";
 import MarketIcon from "../svg/marketIcon";
 import extendedTheme from "../../theme";
 import TransparentLock from "../svg/transparetLock";
@@ -19,8 +19,8 @@ const HushhCoinUiBox = () => {
         minW={"100%"}
         px={{ md: "10rem", base: "2rem" }}
       >
-        <Box maxWidth={{ base: "100%", md: "40%" }}>
-          <NextImage src={LVCardMobile} alt="CoinBox" />
+        <Box maxWidth={{ base: "100%", md: "40%" }} display={{base:"none", md:'flex'}} mb={{base:'2rem'}}>
+          <NextImage src={ReceiptRadar} alt="receiptRadar" />
         </Box>
         <VStack
           alignItems={{ base: "center", md: "flex-start" }}
@@ -36,10 +36,13 @@ const HushhCoinUiBox = () => {
           >
             INTRODUCING RECEIPT RADAR
           </Heading>{" "}
+          <Box maxWidth={{ base: "100%", md: "40%" }} display={{base:"flex", md:'none'}} mb={{base:'2rem'}}>
+          <NextImage src={ReceiptRadar} alt="receiptRadar" />
+        </Box>
           <Heading
             className="gradient"
             fontWeight="700"
-            fontSize={{ md: "3.75rem", base: "2rem" }}
+            fontSize={{ md: "3.75rem", base: "1.25rem" }}
           >
             Effortless Receipt Management
           </Heading>

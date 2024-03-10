@@ -82,6 +82,7 @@ const ReviewSlider = () => {
         navigation 
         pagination={{
           clickable: true,
+          loop:true
         }} 
       >
         {customerReviews.map((customer, index) => (

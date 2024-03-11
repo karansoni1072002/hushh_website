@@ -70,7 +70,7 @@ const BrandWalletSection = () => {
               HUSHH Bot
             </Heading>
             <Text color={extendedTheme.colors._white}>
-            Your all-in-one digital assistant designed to simplify your life, streamline tasks, and enhance productivity..
+            Your personal AI, learning from you. Get things done, find answers, and live smarter
             </Text>
           </HStack>
           <HStack
@@ -159,7 +159,7 @@ const BrandWalletSection = () => {
               iOS & ANDROID APP
             </Heading>
             <Text color={extendedTheme.colors._white}>
-            Experience the convenience of managing your digital life with Hushh, available on both iOS and Android platforms.
+            Experience the convenience of managing your digital life with Hushh, available on both iOS and Android.
             </Text>
             <Box align={"center"} mt={"1.40rem"}>
               <NextImage src={BrandWalletMobile} />

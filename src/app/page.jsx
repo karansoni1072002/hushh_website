@@ -331,7 +331,7 @@ export default function Home() {
                 title="Hushh Wallet App​"
                 alignItems={"center"}
                 textAlign={'center'}
-                description="Customer User Flow + Client Advisor User Flow​"
+                description="Helps you collect and share data with trusted brands​"
                 onClick={() =>
                   router.push("https://hushhwallet.framer.ai/")
                 }
@@ -341,7 +341,7 @@ export default function Home() {
                 title="Hushh Button​​​"
                 textAlign={'center'}
                 alignItems={"center"}
-                description="Seamless Data Sharing for Personalized Experiences and recommendations​​"
+                description="Plugin that helps you exchange data with brands​"
                 onClick={() =>
                   router.push("https://hushhbutton.framer.ai/")
                 }
@@ -351,17 +351,17 @@ export default function Home() {
                 title="Vibe Search​"
                 textAlign={'center'}
                 alignItems={"center"}
-                description="Find perfect items to express your individuality in just one click"
+                description="Personalized search engine that lets you search across brands"
                 onClick={() =>
                   router.push("https://hushhvibesearch.framer.ai/")
                 }
               />
               <ServiceCard
                 icon={<ChromeExtentionLogo />}
-                title="Chrome Extension​"
+                title="Browser Companion​"
                 alignItems={"center"}
                 textAlign={'center'}
-                description="Improved product recommendations & effective marketing campaigns"
+                description="Collects your web activity and preferences as you browse"
                 onClick={() =>
                   router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
                 }

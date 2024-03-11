@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import {
   Box,
   Button,
+  Container,
   HStack,
   Heading,
   Input,
@@ -26,12 +27,13 @@ export default function ContactForm() {
 
   return (
     <>
-      <Box
-        w={"1196px"}
+      <Container
+        maxW={"74rem"}
         height={"667px"}
         p={"1rem"}
         display={"flex"}
         bg={"#1D1D1D"}
+        mt={'5rem'}
       >
         <Box
           p={"2rem"}
@@ -73,35 +75,46 @@ export default function ContactForm() {
         {/* Contact Form */}
         <Box p={"4rem"} display={"flex"}>
           <form onSubmit={handleSubmit(onSubmit)} style={{ color: "white" }}>
-            <HStack gap={"2rem"} mb={"1rem"}>
+            <HStack gap={"2rem"} mb={"2rem"}>
               <Stack gap={"1rem"}>
-                <Text color={"white"}>First Name</Text>
+                <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>First Name</Text>
                 <Input
+                  size={'sm'}
+                  w={'12rem'}
+                  variant="unstyled"
+                  borderBottom="1px solid white"
                   type="text"
                   // value={"fname"}
-                  placeholder="First name"
+                  placeholder="Harry"
                   {...register("First name", { required: true, maxLength: 80 })}
                 />
               </Stack>
 
               <Stack gap={"1rem"}>
-                <Text color={"white"}>Last Name</Text>
+                <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Last Name</Text>
                 <Input
+                  size={'sm'}
+                  w={'12rem'}
+                  variant="unstyled"
+                  borderBottom="1px solid white"
                   type="text"
                   // value={"lname"}
-                  placeholder="Last name"
+                  placeholder="Roger"
                   {...register("Last name", { required: true, maxLength: 100 })}
                 />
               </Stack>
             </HStack>
 
-            <HStack gap={"1rem"} mb={"1rem"}>
+            <HStack gap={"2rem"} mb={"2rem"}>
               <Stack gap={"1rem"}>
-                <Text color={"white"}>Email</Text>
+                <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Email</Text>
                 <Input
-                  type="text"
+                  size={'sm'}
+                  w={'12rem'}
+                  variant="unstyled"
+                  borderBottom="1px solid white"
                   // value={"email"}
-                  placeholder="Email"
+                  placeholder="harry@gmail.com"
                   {...register("Email", {
                     required: true,
                     pattern: /^\S+@\S+$/i,
@@ -109,9 +122,13 @@ export default function ContactForm() {
                 />
               </Stack>
               <Stack gap={"1rem"}>
-                <Text color={"white"}>Phone Number</Text>
+                <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Phone Number</Text>
                 <Input
                   type="tel"
+                  size={'sm'}
+                  w={'12rem'}
+                  variant="unstyled"
+                  borderBottom="1px solid white"
                   // value={"number"}
                   placeholder="Mobile number"
                   {...register("Mobile number", {
@@ -124,79 +141,85 @@ export default function ContactForm() {
             </HStack>
 
             <HStack
-              mb={"1rem"}
+              mb={"2rem"}
               py={"1rem"}
               display={"flex"}
               alignItems={"left"}
               flexDirection={"column"}
             >
-              <Text color={"white"}>Select Subject: </Text>
+              <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Select Subject: </Text>
               <RadioGroup defaultValue="ProductInquiry">
                 <HStack spacing={"2rem"} align={"stretch"}>
                   <Radio
                     {...register("Select Subject", { required: true })}
                     colorScheme="white"
-                    value="ProductInquiry"
+                    value="productInquiry"
                     name="selectSubject"
-                    fontSize={"0.5rem"}
-                    style={{ fontSize: "0.5rem" }}
                   >
-                    Product Inquirey
+                   <Text fontSize={'0.75rem'}>Explore Hushh Products</Text> 
                   </Radio>
                   <Radio
                     {...register("Select Subject", { required: true })}
                     colorScheme="white"
-                    value="GeneralInquiry"
+                    value="clientInquiry"
                     name="selectSubject"
-                    fontSize={"0.5rem"}
-                    style={{ fontSize: "0.5rem" }}
+                    className="radio-option"
                   >
-                    General Inquiry
+                    <Text fontSize={'0.75rem'}>Enhance my client</Text>
+                  </Radio>
+                  <Radio
+                    {...register("Select Subject", { required: true })}
+                    colorScheme="white"
+                    value="partnerInquiry"
+                    name="selectSubject"
+                  >
+                    <Text fontSize={'0.75rem'}>Partner with Hushh</Text>
                   </Radio>
                   <Radio
                     {...register("Select Subject", { required: true })}
                     colorScheme="white"
                     value="Support"
                     name="selectSubject"
-                    fontSize={"0.5rem"}
-                    style={{ fontSize: "0.5rem" }}
+                    className="radio-option"
                   >
-                    Support
+                    <Text fontSize={'0.75rem'}>Get Support</Text>
                   </Radio>
                 </HStack>
               </RadioGroup>
             </HStack>
-            <HStack textAlign={'left'} flexDirection={'column'}>
-              <Text textAlign={'left'} color={"white"}>Message</Text>
+            <HStack mb={"4rem"} alignItems={"left"} flexDirection={"column"}>
+              <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Message</Text>
               <Textarea
+                h={"100px"}
                 placeholder="Type your message here"
                 {...register("Message", { required: true })}
               />
             </HStack>
-
-            <Button
-              bg={"transparent"}
-              px={"2rem"}
-              py={"1.25rem"}
-              border={"3px solid #606060"}
-              borderRadius={"2px"}
-              _hover={{
-                background:
-                  "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-              }}
-            >
-              <Text
-                color={"white"}
-                fontSize={"1rem"}
-                letterSpacing={"0.29rem"}
-                lineHeight={"28px"}
+            <HStack justifyContent="flex-end" w={"100%"}>
+              <Button
+                bg={"transparent"}
+                px={"2rem"}
+                py={"1.25rem"}
+                border={"3px solid #606060"}
+                borderRadius={"2px"}
+                _hover={{
+                  background:
+                    "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                }}
               >
-                HUSHH IT!
-              </Text>
-            </Button>
+                <Text
+                  color={"white"}
+                  fontSize={"1rem"}
+                  letterSpacing={"0.29rem"}
+                  lineHeight={"28px"}
+                >
+                  HUSHH IT!
+                </Text>
+              </Button>
+            </HStack>
           </form>
         </Box>
-      </Box>
+      </Container>
     </>
   );
 }

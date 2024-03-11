@@ -14,7 +14,6 @@ import {
   Textarea,
   VStack,
 } from "@chakra-ui/react";
-import extendedTheme from "../../theme";
 
 export default function ContactForm() {
   const {
@@ -28,12 +27,13 @@ export default function ContactForm() {
   return (
     <>
       <Container
-        maxW={"74rem"}
-        height={"667px"}
+        maxW={{ md:"74rem"}}
+        height={{ md:"667px"}}
         p={"1rem"}
         display={"flex"}
+        flexDirection={{base:'column', md:'row'}}
         bg={"#1D1D1D"}
-        mt={'5rem'}
+        mt={{ md:'5rem', base:'2rem'}}
       >
         <Box
           p={"2rem"}
@@ -45,12 +45,12 @@ export default function ContactForm() {
             textAlign={"left"}
             alignItems={"left"}
             flexDirection={"column"}
-            mb={"6rem"}
+            mb={{ md:"6rem", base:'2rem'}}
           >
             <Heading
               color={"#FFFFFF"}
               fontWeight={"600"}
-              fontSize={"3.75rem"}
+              fontSize={{ md:"3.75rem", base:'2rem'}}
               lineHeight={{ base: "28px", md: "55px" }}
             >
               Connect with hushh
@@ -58,7 +58,7 @@ export default function ContactForm() {
             <Text color={"#C9C9C9"}>Say something to reach out to us</Text>
           </HStack>
           <HStack
-            gap={"3rem"}
+            gap={{ md:"3rem", base:'0.5rem'}}
             textAlign={"left"}
             alignItems={"left"}
             flexDirection={"column"}
@@ -73,9 +73,9 @@ export default function ContactForm() {
         </Box>
 
         {/* Contact Form */}
-        <Box p={"4rem"} display={"flex"}>
+        <Box p={{md:"4rem",base:'1rem'}} display={"flex"}>
           <form onSubmit={handleSubmit(onSubmit)} style={{ color: "white" }}>
-            <HStack gap={"2rem"} mb={"2rem"}>
+            <HStack display={{base:'block', md:'flex'}} flexDirection={{base:'column', md:'row'}} gap={{ md:"2rem", base:'1rem'}} mb={{md:"2rem", base:'1rem'}}>
               <Stack gap={"1rem"}>
                 <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>First Name</Text>
                 <Input
@@ -105,7 +105,7 @@ export default function ContactForm() {
               </Stack>
             </HStack>
 
-            <HStack gap={"2rem"} mb={"2rem"}>
+            <HStack display={{base:'block', md:'flex'}} flexDirection={{base:'column', md:'row'}} gap={{ md:"2rem", base:'1rem'}} mb={{md:"2rem", base:'1rem'}}>
               <Stack gap={"1rem"}>
                 <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Email</Text>
                 <Input

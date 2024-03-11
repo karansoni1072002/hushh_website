@@ -187,10 +187,11 @@ export default function ContactForm() {
                 </HStack>
               </RadioGroup>
             </HStack>
-            <HStack mb={"4rem"} alignItems={"left"} flexDirection={"column"}>
+            <HStack mb={{ md:"4rem", base:'2rem'}} alignItems={"left"} flexDirection={"column"}>
               <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Message</Text>
               <Textarea
-                h={"100px"}
+                h={"6.25rem"}
+                w={{base:'15.625rem'}}
                 placeholder="Type your message here"
                 {...register("Message", { required: true })}
               />

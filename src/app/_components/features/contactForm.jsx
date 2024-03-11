@@ -76,7 +76,7 @@ export default function ContactForm() {
         <Box p={{md:"4rem",base:'1rem'}} display={"flex"}>
           <form onSubmit={handleSubmit(onSubmit)} style={{ color: "white" }}>
             <HStack display={{base:'block', md:'flex'}} flexDirection={{base:'column', md:'row'}} gap={{ md:"2rem", base:'1rem'}} mb={{md:"2rem", base:'1rem'}}>
-              <Stack gap={"1rem"}>
+              <Stack gap={{ md:"1rem",base:'0.5rem'}} mb={{base:'1rem'}}>
                 <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>First Name</Text>
                 <Input
                   size={'sm'}
@@ -90,7 +90,7 @@ export default function ContactForm() {
                 />
               </Stack>
 
-              <Stack gap={"1rem"}>
+              <Stack gap={{ md:"1rem",base:'0.5rem'}} mb={{base:'1rem'}}>
                 <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Last Name</Text>
                 <Input
                   size={'sm'}
@@ -106,7 +106,7 @@ export default function ContactForm() {
             </HStack>
 
             <HStack display={{base:'block', md:'flex'}} flexDirection={{base:'column', md:'row'}} gap={{ md:"2rem", base:'1rem'}} mb={{md:"2rem", base:'1rem'}}>
-              <Stack gap={"1rem"}>
+              <Stack gap={{ md:"1rem",base:'0.5rem'}} mb={{base:'1rem'}}>
                 <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Email</Text>
                 <Input
                   size={'sm'}
@@ -121,7 +121,7 @@ export default function ContactForm() {
                   })}
                 />
               </Stack>
-              <Stack gap={"1rem"}>
+              <Stack gap={{ md:"1rem",base:'0.5rem'}}>
                 <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Phone Number</Text>
                 <Input
                   type="tel"
@@ -149,7 +149,7 @@ export default function ContactForm() {
             >
               <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Select Subject: </Text>
               <RadioGroup defaultValue="ProductInquiry">
-                <HStack spacing={"2rem"} align={"stretch"}>
+                <HStack display={{md:'flex',base:'flex'}} flexDirection={{base:'column',md:'row'}} spacing={{ md:"2rem", base:'1rem'}} align={"stretch"}>
                   <Radio
                     {...register("Select Subject", { required: true })}
                     colorScheme="white"

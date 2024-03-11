@@ -31,6 +31,11 @@
   background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
 }
 
+.new-gradient-bg {
+  background: linear-gradient(256.5deg, #E0055F 6.97%, #2020ED 92.26%);
+}
+
+
 .border-gradient {
   background: linear-gradient(to right, white 0%, purple 20%, white 100%);
 }

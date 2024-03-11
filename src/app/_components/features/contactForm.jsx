@@ -121,7 +121,7 @@ export default function ContactForm() {
                   })}
                 />
               </Stack>
-              <Stack gap={{ md:"1rem",base:'0.5rem'}}>
+              <Stack gap={{ md:"1rem",base:'0.5rem'}} mb={{base:'1rem'}}>
                 <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Phone Number</Text>
                 <Input
                   type="tel"
@@ -191,7 +191,7 @@ export default function ContactForm() {
               <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Message</Text>
               <Textarea
                 h={"6.25rem"}
-                w={{base:'15.625rem'}}
+                w={{base:'15.625rem', md:'100%'}}
                 placeholder="Type your message here"
                 {...register("Message", { required: true })}
               />

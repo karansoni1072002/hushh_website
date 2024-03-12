@@ -144,7 +144,9 @@ const ReviewSlider = () => {
                   opacity={hoveredIndex !== index && !isActive ? 1 : 0}
                   transition="opacity 0.3s ease"
                 ></Box>
+                
                 <Text
+                  className="review-text"
                   color="black"
                   fontWeight={"400"}
                   fontSize={{ md: "1rem", base: "0.75rem" }}
@@ -154,6 +156,7 @@ const ReviewSlider = () => {
                     ? customer.review.substring(0, maxContentLength) + "..."
                     : customer.review}
                 </Text>
+                
                 <HStack display={"flex"} flexDirection={"row"}>
                   <Image
                     width={60}

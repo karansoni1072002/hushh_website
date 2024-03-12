@@ -172,3 +172,29 @@ body {
   background-color: #FFFFFF !important;
 }
 
+.review-text::before,
+.review-text::after {
+  font-family:'Figtree';
+  background: linear-gradient(to right, #E54D60, #A342FF); 
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 2em; /* Adjust the size */
+}
+
+.review-text::before {
+  content: '“';
+  margin-right: 0.1em;
+}
+
+.review-text::after {
+  content: '”'; 
+  margin-left: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .review-text::before,
+  .review-text::after {
+    font-size: 1.5em; 
+  }
+}
+

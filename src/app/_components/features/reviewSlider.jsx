@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import SwiperCore from 'swiper';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,6 +21,7 @@ import customer6 from "../../../../public/Images/customers/customer6.png";
 // SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const ReviewSlider = () => {
+
   const customerReviews = [
     {
       name: "Emily Smith",
@@ -66,8 +67,11 @@ const ReviewSlider = () => {
     },
   ];
   const [hoveredIndex, setHoveredIndex] = useState(-1);
-
+  const [isLoaded, setIsLoaded] = useState(false);
   const maxContentLength = 200;
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   return (
     <>
@@ -101,6 +105,7 @@ const ReviewSlider = () => {
           clickable: true,
           loop: true,
         }}
+        style={{ visibility: isLoaded ? "visible" : "hidden" }}
       >
         {customerReviews.map((customer, index) => (
           <SwiperSlide key={index}>
@@ -171,7 +176,7 @@ const ReviewSlider = () => {
                     <FontAwesomeIcon
                       key={index}
                       icon={faStar}
-                      color="#ffe234"
+                      color="#FFD700"
                     />
                   ))}
                 </Box>

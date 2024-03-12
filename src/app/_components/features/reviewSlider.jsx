@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import SwiperCore from 'swiper';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { Pagination, Scrollbar, Navigation } from 'swiper/modules';
+import { Pagination, Scrollbar, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -11,45 +11,56 @@ import "swiper/css/scrollbar";
 import { Box, HStack, Heading, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import user1 from "../../../../public/Images/customers/user1.png";
+import customer1 from "../../../../public/Images/customers/customer1.png";
+import customer2 from "../../../../public/Images/customers/customer2.png";
+import customer3 from "../../../../public/Images/customers/customer3.png";
+import customer4 from "../../../../public/Images/customers/customer4.png";
+import customer5 from "../../../../public/Images/customers/customer5.png";
+import customer6 from "../../../../public/Images/customers/customer6.png";
 
 // SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
-
 const ReviewSlider = () => {
-
   const customerReviews = [
     {
       name: "Emily Smith",
+      imageUrl: customer1,
       review:
         "I absolutely love the Hushh Wallet App! It's incredibly user-friendly and helps me keep all my data organized and full control over my digital identity. It's a win-win for both customers and brands!",
     },
     {
       name: "David Johnson",
+      imageUrl: customer2,
       review:
         "Hushh Button has made my online shopping experience so much smoother and quick. With just a click, my preferences are synced across brands & giving me a personalized shopping every time.",
     },
     {
       name: "Sophia Martinez",
+      imageUrl: customer3,
       review:
         "Hushh Chrome Extension is a must-have for anyone concerned about their online privacy. It gives me full control over my digital identity & allows me to choose what information I want to share.",
     },
     {
       name: "Michael Brown",
+      imageUrl: customer4,
       review:
         "The Vibe Search App has revolutionized how I shop online. I no longer have to spend hours browsing through endless product pages. With Vibe Search, I can simply upload a picture & find similar products.",
     },
     {
       name: "Olivia Wilson",
+      imageUrl: customer5,
       review:
         "Hushh Wallet App has helped me take control of my digital identity. I can now manage my data across different platforms and earn rewards for sharing it with trusted brands. It's empowering and rewarding!",
     },
     {
       name: "Ethan Thompson",
+      imageUrl: customer6,
       review:
         "As a frequent online shopper, the Hushh Button has been a game-changer. It streamlines the shopping process & ensures that I receive personalized recommendations based on my preferences.",
     },
     {
       name: "Ava Anderson",
+      imageUrl: user1,
       review:
         "With Hushh Chrome Extension, I finally feel in control of my online data. I can choose what information to keep private and customize and what to share, giving me peace of mind while browsing.",
     },
@@ -60,7 +71,13 @@ const ReviewSlider = () => {
 
   return (
     <>
-      <Heading textAlign={"center"} mt={{base:'3rem',md:'5rem'}} fontSize={{base:'2.5rem',md:'3.75rem'}} fontWeight={"700"} className="gradient">
+      <Heading
+        textAlign={"center"}
+        mt={{ base: "3rem", md: "5rem" }}
+        fontSize={{ base: "2.5rem", md: "3.75rem" }}
+        fontWeight={"700"}
+        className="gradient"
+      >
         What our users say?
       </Heading>
       <Swiper
@@ -79,11 +96,11 @@ const ReviewSlider = () => {
           },
         }}
         modules={[Pagination, Navigation]}
-        navigation 
+        navigation
         pagination={{
           clickable: true,
-          loop:true,
-        }} 
+          loop: true,
+        }}
       >
         {customerReviews.map((customer, index) => (
           <SwiperSlide key={index}>
@@ -105,7 +122,23 @@ const ReviewSlider = () => {
                 flexDirection={"column"}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(-1)}
+                boxShadow={
+                  hoveredIndex !== index && !isActive
+                    ? "0px 4px 10px rgba(0, 0, 0, 0.1)"
+                    : "none"
+                }
               >
+                <Box
+                  position="absolute"
+                  top="0"
+                  left="0"
+                  width="100%"
+                  height="100%"
+                  borderRadius="40px"
+                  bg="rgba(0, 0, 0, 0.3)"
+                  opacity={hoveredIndex !== index && !isActive ? 1 : 0}
+                  transition="opacity 0.3s ease"
+                ></Box>
                 <Text
                   color="black"
                   fontWeight={"400"}
@@ -118,9 +151,10 @@ const ReviewSlider = () => {
                 </Text>
                 <HStack display={"flex"} flexDirection={"row"}>
                   <Image
-                    width={{ base: "5px" }}
-                    height={{ base: "5px" }}
-                    src={user1}
+                    width={60}
+                    height={60}
+                    alt={customer.name}
+                    src={customer.imageUrl}
                   />
                   <Text
                     color="black"

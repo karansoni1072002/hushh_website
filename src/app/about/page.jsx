@@ -2,6 +2,7 @@ import { Heading, Stack, Text, VStack } from '@chakra-ui/react'
 import extendedTheme from '../theme'
 import React from 'react'
 import GroupPhoto from '../_components/svg/aboutImages/groupPhoto'
+import TeamSection from '../_components/features/teamSection'
 export default function About() {
   return (
     <Stack pt={'10.5rem'} background={extendedTheme.colors.black} fontFamily={'Figtree'}>
@@ -25,6 +26,7 @@ export default function About() {
         <VStack>
 
         </VStack>
+        <TeamSection/>
       </Stack>
   )
 }

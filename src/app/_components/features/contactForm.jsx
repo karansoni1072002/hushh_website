@@ -65,9 +65,11 @@ export default function ContactForm() {
             color={"#FFFFFF"}
           >
             <Text>info@hush1one.com</Text>
-            <Text>+14252969050</Text>
+            <Text>+1(877)487-4494</Text>
             <Text>
-               Kirkland, WA
+            Hushh.ai <br></br>
+            1021 5th St W <br></br>
+            Kirkland, WA 98033
             </Text>
           </HStack>
         </Box>

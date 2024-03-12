@@ -77,10 +77,11 @@ const ReviewSlider = () => {
     <>
       <Heading
         textAlign={"center"}
-        mt={{ base: "3rem", md: "5rem" }}
-        fontSize={{ base: "2.5rem", md: "3.75rem" }}
+        mt={{ base: "3rem", md: "7rem" }}
+        fontSize={{ base: "2rem", md: "3.75rem" }}
         fontWeight={"700"}
         className="gradient"
+        visibility={'visible'}
       >
         What our users say?
       </Heading>
@@ -122,8 +123,9 @@ const ReviewSlider = () => {
                 borderRadius={"40px"}
                 mt={{ base: "2rem", md: "3rem" }}
                 display={"flex"}
-                gap={{ md: "0.75rem", base: "0.5rem" }}
-                p={{ md: "3rem", base: "1.5rem" }}
+                mx={{ base:'1rem',md:'0'}}
+                gap={{ md: "0.5rem", base: "0.5rem" }}
+                p={{ md: "2rem", base: "1.5rem" }}
                 flexDirection={"column"}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(-1)}

@@ -279,6 +279,10 @@ export default function Home() {
           </VStack>
         </Box>
 
+        <ReviewSlider/>
+
+
+        {/* Product Showcase section below */}
         <HStack
           pt={{ md: "8rem", base:"5rem"}}
           justify={"center"}
@@ -413,7 +417,6 @@ export default function Home() {
         <HushhCoinUiBox/>
 
         <ContactForm/>
-         <ReviewSlider/>
         {/* <div className="pt-5">
           <HP_Scrolling />
         </div>

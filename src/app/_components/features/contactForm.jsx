@@ -64,10 +64,10 @@ export default function ContactForm() {
             flexDirection={"column"}
             color={"#FFFFFF"}
           >
-            <Text>demo@gmail.com</Text>
-            <Text>+1012 3456 789</Text>
+            <Text>info@hush1one.com</Text>
+            <Text>+14252969050</Text>
             <Text>
-              132 Dartmouth Street Boston, Massachusetts 02156 United States
+               Kirkland, WA
             </Text>
           </HStack>
         </Box>

@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Header CSS */
+.login {
+  display: flex;
+  gap: 5rem;
+}
+
+.search-icon {
+  width: 32;
+  height: 32;
+}
+
+/*  */
+
 .scrolled {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

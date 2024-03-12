@@ -1,14 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Input } from "@chakra-ui/react";
+import { Flex, IconButton, Input } from "@chakra-ui/react";
+import { SearchIcon } from "@chakra-ui/icons";
+import { useResponsiveSizes } from "../../context/responsive";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
   const inputRef = useRef(null);
+  const isMobile = useResponsiveSizes();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (inputRef.current && !inputRef.current.contains(event.target)) {
         setSearchQuery("");
+        setIsClicked(false);
         removeSearchEffect();
       }
     };
@@ -65,30 +70,43 @@ const SearchBar = () => {
   };
 
   return (
-    <Input
-      ref={inputRef}
-      placeholder="Search..."
-      value={searchQuery}
-      onChange={(e) => setSearchQuery(e.target.value)}
-      variant="filled"
-      borderRadius="none"
-      width={"50%"}
-      size="md"
-      bg="black"
-      _hover={{
-        background: "none",
-      }}
-      border={"3px solid #606060"}
-      _focus={{ color: "#FFFFFF", border: "1px solid #FFFFFF" }}
-      _placeholder={{ color: "gray.400" }}
-      px="4"
-      py="2"
-      onKeyPress={(e) => {
-        if (e.key === "Enter") {
-          handleSearch();
-        }
-      }}
-    />
+    <Flex alignItems="center">
+    {!isClicked ? (
+      <IconButton
+        icon={<SearchIcon color={'#606060'} boxSize={ isMobile ? 20 : 32 } />}
+        aria-label="Search"
+        className="search-icon"
+        onClick={() => setIsClicked(true)}
+        // size={{ md:'md', base: 'lg'}}        
+        colorScheme="#606060"
+      />
+    ) : (
+      <Input
+        ref={inputRef}
+        placeholder="Search..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        variant="filled"
+        borderRadius="none"
+        width={"100%"}
+        size="md"
+        bg="black"
+        _hover={{
+          background: "none",
+        }}
+        border={"3px solid #606060"}
+        _focus={{ color: "#FFFFFF", border: "1px solid #FFFFFF" }}
+        _placeholder={{ color: "gray.400" }}
+        px="4"
+        py="2"
+        onKeyPress={(e) => {
+          if (e.key === "Enter") {
+            handleSearch();
+          }
+        }}
+      />
+    )}
+  </Flex>
   );
 };
 

@@ -107,7 +107,6 @@ export default function Home() {
             >
               LEARN MORE
             </Button>
-            <SearchBar />
           </VStack>
         </Box>
 

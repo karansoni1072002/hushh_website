@@ -36,7 +36,7 @@ const ReviewSlider = () => {
         "Hushh Button has made my online shopping experience so much smoother and quick. With just a click, my preferences are synced across brands & giving me a personalized shopping every time.",
     },
     {
-      name: "Sophia Martinez",
+      name: "Ethan Thompson",
       imageUrl: customer3,
       review:
         "Hushh Chrome Extension is a must-have for anyone concerned about their online privacy. It gives me full control over my digital identity & allows me to choose what information I want to share.",
@@ -48,13 +48,13 @@ const ReviewSlider = () => {
         "The Vibe Search App has revolutionized how I shop online. I no longer have to spend hours browsing through endless product pages. With Vibe Search, I can simply upload a picture & find similar products.",
     },
     {
-      name: "Olivia Wilson",
+      name: "Ethan Miller",
       imageUrl: customer5,
       review:
         "Hushh Wallet App has helped me take control of my digital identity. I can now manage my data across different platforms and earn rewards for sharing it with trusted brands. It's empowering and rewarding!",
     },
     {
-      name: "Ethan Thompson",
+      name: "Sophia Martinez",
       imageUrl: customer6,
       review:
         "As a frequent online shopper, the Hushh Button has been a game-changer. It streamlines the shopping process & ensures that I receive personalized recommendations based on my preferences.",

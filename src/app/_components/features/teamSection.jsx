@@ -91,7 +91,7 @@ const TeamSection = () => {
         </VStack>
 
         {/* Team section */}
-        <VStack>
+        <VStack mt={{base:'2rem', md:'5rem'}}>
           <Heading
             as={"h2"}
             className="color-gradient"
@@ -118,7 +118,7 @@ const TeamSection = () => {
             ac ultrices odio.
           </Text>
         </VStack>
-        <Grid templateColumns="repeat(4, 1fr)">
+        <Grid templateColumns="repeat(4, 1fr)" mb={{base:'2rem', md:'4rem'}}>
         <VStack mb={{ md:"3rem", base:"1.5rem"}}>
             <Image alt="vivek" src={vivek} width={260} height={276} />
             <Text

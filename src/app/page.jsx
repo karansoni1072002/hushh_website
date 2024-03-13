@@ -14,6 +14,9 @@ import {
 } from "@chakra-ui/react";
 import { BrandSlider } from "./_components/features/brandSlider";
 import BrandWalletSection from "./_components/features/brandWalletSection";
+// import ConceirgeApp from './_components/svg/';
+// import VibeSearchApi from './_components/svg/vibeSearchApi';
+// import ValetChat from './_components/svg/valetChat';
 import ChromeExtentionLogo from "./_components/svg/ChromeExtensionLogo";
 import FendiCard from "../../public/Images/Fendi.png";
 import HushhButtonIcon from "./_components/svg/hushhButton";
@@ -22,8 +25,8 @@ import KeyIcon from "./_components/svg/keyIcon";
 import LockIcon from "./_components/svg/LockIcon";
 import LouisVuitton from "../../public/Images/LouisVuitton.png";
 import NextImage from "next/image";
+import { useState, useEffect } from "react";
 import React from "react";
-import SearchBar from "./_components/features/searchBar";
 import SephoraCard from "../../public/Images/Sephora.png";
 import { ServiceCard } from "./_components/primitives/serviceCard";
 import ShieldIcon from "./_components/svg/ShieldIcon";
@@ -34,12 +37,26 @@ import theme from "./theme";
 import { useRouter } from "next/navigation";
 import HushhCoinUiBox from "./_components/features/hushhCoinUiBox";
 import ContactForm from "./_components/features/contactForm";
+// import ReviewSlider from "./_components/features/reviewSlider";
+import NotificationPopup from './_components/features/popupNotification'
 
 export default function Home() {
   const router = useRouter();
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    // Set a timeout to show the popup after 5 seconds
+    const timeoutId = setTimeout(() => {
+      setShowPopup(true);
+    }, 3000);
+
+    // Clean up the timeout when the component unmounts
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   return (
     <main className="bg-myBG  font-Figtree">
+            {showPopup && <NotificationPopup message="Welcome! How can I help you today?" />}
       <div className="pb-32">
         <Box pt={20} display={"flex"} px={{ base: "0.5rem", md: "32px" }}>
           <VStack
@@ -103,7 +120,6 @@ export default function Home() {
             >
               LEARN MORE
             </Button>
-            <SearchBar />
           </VStack>
         </Box>
 
@@ -275,6 +291,10 @@ export default function Home() {
           </VStack>
         </Box>
 
+        {/* <ReviewSlider/> */}
+
+
+        {/* Product Showcase section below */}
         <HStack
           pt={{ md: "8rem", base:"5rem"}}
           justify={"center"}
@@ -324,7 +344,8 @@ export default function Home() {
             <Grid
               templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
               gap={{ md: 20, base: 5 }}
-              flexWrap="wrap"
+              justifyContent="center"
+              // flexWrap="wrap"
             >
               <ServiceCard
                 icon={<HushhWalletIcon />}
@@ -366,6 +387,10 @@ export default function Home() {
                   router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
                 }
               />
+              {/* 2nd row */}
+            
+           
+            
             </Grid>
           </Container>
         </HStack>
@@ -377,6 +402,77 @@ export default function Home() {
         <HushhCoinUiBox/>
 
         <ContactForm/>
+        {/* <div className="pt-5">
+          <HP_Scrolling />
+        </div>
+        <hr className=" h-0.5 bg-gradient-to-r from-myBG via-myBorder to-myBG" />
+
+        <div className="flex flex-col justify-center w-full pb-32">
+          <div className=" space-y-5">
+            <h1 className="text-center font-bold text-5xl text-headText pt-20">
+              Consent In Data-Sharing Is Crucial
+            </h1>
+            <p className="text-2xl font-normal text-center text-normText">
+              and
+            </p>
+            <p className="text-myBorder text-center font-bold text-5xl">
+              Hushh Does It Right.
+            </p>
+          </div>
+          <div className="flex gap-16 pt-20">
+            <div className="flex-1 bg-white shadow-lg rounded-xl px-4 py-6">
+              <div className="flex items-center gap-6 border-b border-myBorder border-opacity-30 pb-3">
+                <div className="w-1/3 h-28">
+                  <Lottie options={defaultOptionsZeroParty} />
+                </div>
+                <h1 className="text-3xl font-semibold">
+                  Zero-Party <br /> Data
+                </h1>
+              </div>
+              <div className="pt-4">
+                <p className="text-center text-lg text-normText">
+                  With relevant information about your clients based on their
+                  activity across various brands, understand your client like
+                  never before.
+                </p>
+              </div>
+            </div>
+            <div className="flex-1 bg-white shadow-lg rounded-xl px-4 py-6">
+              <div className="flex items-center gap-4 border-b border-myBorder border-opacity-30 pb-3">
+                <div className="w-1/3 h-28">
+                  <Lottie options={defaultOptionsDataSecurity} />
+                </div>
+                <h1 className="text-3xl font-semibold">
+                  Ethical Data <br /> Practices
+                </h1>
+              </div>
+              <div className="pt-4">
+                <p className="text-center text-lg text-normText">
+                  Our platform prioritizes data security and powers users with
+                  easy data sharing and control over its usage creating ethical
+                  data handling culture and trust.
+                </p>
+              </div>
+            </div>
+            <div className="flex-1 bg-white shadow-lg rounded-xl px-4 py-6">
+              <div className="flex items-center gap-4 border-b border-myBorder border-opacity-30 pb-3">
+                <div className="w-1/3 h-28">
+                  <Lottie options={defaultOptionsDataConsent} />
+                </div>
+                <h1 className="text-3xl font-semibold">
+                  Powered By <br /> Consent
+                </h1>
+              </div>
+              <div className="pt-4">
+                <p className="text-center text-lg text-normText">
+                  We empower users with data control enabling businesses to
+                  provide exceptional experiences through user consent.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr className=" h-0.5 bg-gradient-to-r from-myBG via-myBorder to-myBG" /> */}
       </div>
     </main>
   );

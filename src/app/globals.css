@@ -176,6 +176,21 @@ body {
   }
 }
 
+
+
+/* Chatbot Popup Notification CSS */
+.popup {
+  margin-bottom: 1rem;
+  position: fixed;
+  bottom: 80px; /* Adjust based on the chatbot icon's positioning */
+  right: 80px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  z-index: 1000; /* Ensure it's above other content */
+}
 /* Customer review Slider CSS */
 .swiper-pagination {
   top: -10 !important;

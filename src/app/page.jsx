@@ -25,8 +25,8 @@ import KeyIcon from "./_components/svg/keyIcon";
 import LockIcon from "./_components/svg/LockIcon";
 import LouisVuitton from "../../public/Images/LouisVuitton.png";
 import NextImage from "next/image";
+import { useState, useEffect } from "react";
 import React from "react";
-import SearchBar from "./_components/features/searchBar";
 import SephoraCard from "../../public/Images/Sephora.png";
 import { ServiceCard } from "./_components/primitives/serviceCard";
 import ShieldIcon from "./_components/svg/ShieldIcon";
@@ -37,13 +37,26 @@ import theme from "./theme";
 import { useRouter } from "next/navigation";
 import HushhCoinUiBox from "./_components/features/hushhCoinUiBox";
 import ContactForm from "./_components/features/contactForm";
+import NotificationPopup from './_components/features/popupNotification'
 import ReviewSlider from "./_components/features/reviewSlider";
 
 export default function Home() {
   const router = useRouter();
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    // Set a timeout to show the popup after 5 seconds
+    const timeoutId = setTimeout(() => {
+      setShowPopup(true);
+    }, 3000);
+
+    // Clean up the timeout when the component unmounts
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   return (
     <main className="bg-myBG  font-Figtree">
+            {showPopup && <NotificationPopup message="Welcome! How can I help you today?" />}
       <div className="pb-32">
         <Box pt={20} display={"flex"} px={{ base: "0.5rem", md: "32px" }}>
           <VStack

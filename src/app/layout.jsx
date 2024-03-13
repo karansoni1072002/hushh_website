@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
 
-      <body className={`${mulish.variable} font-sans`} >
+      <body style={{backgroundColor:'black'}} className={`${mulish.variable} font-sans`} >
         <ResponsiveSizeProvider>
         <header className='h-full absolute z-50'>
           <Header />

@@ -1,11 +1,11 @@
-import { Heading, Stack, Text, VStack } from '@chakra-ui/react'
+import { Box, Container, Heading, Stack, Text, VStack } from '@chakra-ui/react'
 import extendedTheme from '../theme'
 import React from 'react'
 import GroupPhoto from '../_components/svg/aboutImages/groupPhoto'
 import TeamSection from '../_components/features/teamSection'
 export default function About() {
   return (
-    <Stack pt={'10.5rem'} background={extendedTheme.colors.black} fontFamily={'Figtree'}>
+    <Box w={'100%'} h={'100%'} pt={'10.5rem'} background={'black'} fontFamily={'Figtree'}>
         <VStack px={'5rem'} alignItems={'left'}>
            <Heading as={'h1'} 
               fontWeight={'300'}
@@ -27,6 +27,6 @@ export default function About() {
 
         </VStack>
         <TeamSection/>
-      </Stack>
+      </Box>
   )
 }

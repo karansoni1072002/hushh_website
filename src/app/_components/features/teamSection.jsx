@@ -133,7 +133,7 @@ const TeamSection = () => {
               <Image
                 alt="vivekLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>
@@ -153,7 +153,7 @@ const TeamSection = () => {
               <Image
                 alt="subashLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>
@@ -173,7 +173,7 @@ const TeamSection = () => {
               <Image
                 alt="karthickLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>
@@ -195,7 +195,7 @@ const TeamSection = () => {
               <Image
                 alt="rohanLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>
@@ -277,7 +277,7 @@ const TeamSection = () => {
               <Image
                 alt="vasundharaLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>
@@ -297,7 +297,7 @@ const TeamSection = () => {
               <Image
                 alt="deveshLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>
@@ -317,7 +317,7 @@ const TeamSection = () => {
               <Image
                 alt="susannaLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>
@@ -339,7 +339,7 @@ const TeamSection = () => {
               <Image
                 alt="ankitLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>
@@ -359,7 +359,7 @@ const TeamSection = () => {
               <Image
                 alt="kavyaLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>
@@ -376,7 +376,12 @@ const TeamSection = () => {
             </Text>
             <Text color={"#ABABAB"} fontSize={{ md:"1rem", base:"0.5rem" }}>Software Engineer</Text>
             <Link href={"https://www.linkedin.com/in/yashmakan/"}>
-              <Image alt="yashLinkedIn" src={linkedln} width={ isMobile ? 12: 24} height={24} />
+              <Image 
+                alt="yashLinkedIn" 
+                src={linkedln}                 
+                width={{base: 12, md:24}}
+                height={24} 
+              />
             </Link>
           </VStack>
 
@@ -394,7 +399,7 @@ const TeamSection = () => {
               <Image
                 alt="anuragLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>
@@ -413,7 +418,7 @@ const TeamSection = () => {
               <Image
                 alt="akashLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>
@@ -432,7 +437,7 @@ const TeamSection = () => {
               <Image
                 alt="karanLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>
@@ -451,7 +456,7 @@ const TeamSection = () => {
               <Image
                 alt="neeleshLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>
@@ -470,7 +475,7 @@ const TeamSection = () => {
               <Image
                 alt="apoorvLinkedIn"
                 src={linkedln}
-                width={ isMobile ? 12: 24}
+                width={{base: 12, md:24}}
                 height={24}
               />
             </Link>

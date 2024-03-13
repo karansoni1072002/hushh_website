@@ -14,9 +14,9 @@ import {
 } from "@chakra-ui/react";
 import { BrandSlider } from "./_components/features/brandSlider";
 import BrandWalletSection from "./_components/features/brandWalletSection";
-// import ConceirgeApp from './_components/svg/';
-// import VibeSearchApi from './_components/svg/vibeSearchApi';
-// import ValetChat from './_components/svg/valetChat';
+import ConceirgeApp from "./_components/svg/conciergeApp";
+import VibeSearchApi from './_components/svg/vibeSearchApi';
+import ValetChat from './_components/svg/valetChat';
 import ChromeExtentionLogo from "./_components/svg/ChromeExtensionLogo";
 import FendiCard from "../../public/Images/Fendi.png";
 import HushhButtonIcon from "./_components/svg/hushhButton";
@@ -37,8 +37,8 @@ import theme from "./theme";
 import { useRouter } from "next/navigation";
 import HushhCoinUiBox from "./_components/features/hushhCoinUiBox";
 import ContactForm from "./_components/features/contactForm";
-// import ReviewSlider from "./_components/features/reviewSlider";
 import NotificationPopup from './_components/features/popupNotification'
+import ReviewSlider from "./_components/features/reviewSlider";
 
 export default function Home() {
   const router = useRouter();
@@ -291,7 +291,7 @@ export default function Home() {
           </VStack>
         </Box>
 
-        {/* <ReviewSlider/> */}
+        <ReviewSlider/>
 
 
         {/* Product Showcase section below */}
@@ -388,9 +388,36 @@ export default function Home() {
                 }
               />
               {/* 2nd row */}
-            
-           
-            
+              <ServiceCard
+                icon={<ConceirgeApp />}
+                title="Concierge App​"
+                alignItems={"center"}
+                textAlign={'center'}
+                description="App for HNWIs  discreetly sharing user data for personalized, real-time luxury experiences"
+                // onClick={() =>
+                //   router.push("")
+                // }
+              />
+              <ServiceCard
+                icon={<ValetChat />}
+                title="Valet Chat​"
+                alignItems={"center"}
+                textAlign={'center'}
+                description="Ditch receipts, unlock insights: Valet Chat, your AI finance genie"
+                // onClick={() =>
+                //   router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+                // }
+              />
+              <ServiceCard
+                icon={<VibeSearchApi />}
+                title="VIBE Search APIs​"
+                alignItems={"center"}
+                textAlign={'center'}
+                description="List products effortlessly on Vibe Search App with seamless management and insightful analytics"
+                // onClick={() =>
+                //   router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+                // }
+              />
             </Grid>
           </Container>
         </HStack>

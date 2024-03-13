@@ -63,10 +63,12 @@ export default function ContactForm() {
             flexDirection={"column"}
             color={"#FFFFFF"}
           >
-            <Text>demo@gmail.com</Text>
-            <Text>+1012 3456 789</Text>
+            <Text>info@hush1one.com</Text>
+            <Text>+1(877)487-4494</Text>
             <Text>
-              132 Dartmouth Street Boston, Massachusetts 02156 United States
+            Hushh.ai <br></br>
+            1021 5th St W <br></br>
+            Kirkland, WA 98033
             </Text>
           </HStack>
         </Box>

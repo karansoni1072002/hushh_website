@@ -12,6 +12,8 @@ import extendedTheme from "../../theme";
 import FramCard1 from "../../_components/svg/card/frameCardHushhButton.svg";
 import FrameCard2 from "../../_components/svg/card/buttonvoucherCard.svg";
 import Image from "next/image";
+import BarIcon from '../../_components/svg/icons/barIcon.svg';
+import DirectionLine from '../../_components/svg/icons/directionLine.svg';
 const hushhButton = () => {
   return (
     <>
@@ -132,11 +134,22 @@ const hushhButton = () => {
             justifyContent={"center"}
             w={"100%"}
             h={"100%"}
+            mb={'2rem'}
           >
+            <Image 
+              src={BarIcon}
+              alt="barIcon"
+              style={{ position:'absolute',left:'2rem', top:'50rem',transform: 'rotate(35deg)'}}
+            />
             <Image
               alt="hushhButtonCard2"
               style={{ position: "absolute", left: "12rem" }}
               src={FrameCard2}
+            />
+            <Image
+              alt="directionLine"
+              style={{ position: "absolute", left: "8rem",bottom:'0' }}
+              src={DirectionLine}
             />
             <iframe
               src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710411292%2FHushh_button_-_developer_walkthrough_uwwiy0.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true&player[pictureInPictureToggle]=false&source[poster]=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fimage%2Fupload%2FScreenshot_2024-03-14_160021_hapzpw.jpg"

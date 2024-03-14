@@ -20,6 +20,9 @@ import BarIcon from "../../_components/svg/icons/barIcon.svg";
 import DirectionLine from "../../_components/svg/icons/directionLine.svg";
 import { useResponsiveSizes } from "../../context/responsive";
 import HushhEmoji from '../../_components/svg/card/hushhCircleEmoji.svg';
+import HushhBrandCard from '../../_components/svg/card/hushhBrandCard.svg';
+import HushhButtonBg from '../../_components/svg/hushhButtonBg.svg'; 
+
 const hushhButton = () => {
     const isMobile = useResponsiveSizes;
   return (
@@ -207,7 +210,7 @@ const hushhButton = () => {
             <Text fontSize={"2rem"}>Hushh For</Text>
             <Text fontSize={"3.75rem"}>Customers</Text>
           </Heading>
-            <UnorderedList mt={{base:'0.75rem',md:'1.5rem'}} fontWeight={'400'} fontSize={'1rem'} lineHeight={'28.8px'} color={extendedTheme.colors.secondary}>
+            <UnorderedList mb={'1rem'} mt={{base:'0.75rem',md:'1.5rem'}} fontWeight={'400'} fontSize={'1rem'} lineHeight={'28.8px'} color={extendedTheme.colors.secondary}>
               <ListItem mb={'1rem'}>
                 Sync your preferences, past purchases, sizing information to
                 brands with a single click
@@ -239,6 +242,53 @@ const hushhButton = () => {
           </VStack>
           <VStack w={'60%'}>
             <Image src={HushhEmoji} alt="hushhButtonCircle"/>
+          </VStack>
+        </Stack>
+        <Stack
+          fontWeight={"700"}
+          mt={{ md:"9rem",base:'3.5rem' }}
+          mb={{md:'4rem'}}
+          px={{ md:"15rem",base:'2rem' }}
+          display={"flex"}
+          alignItems="flex-start" 
+          justifyContent="flex-start"
+          flexDirection={{ base: "column", md: "row" }}
+          gap={{md:'6rem',base:'2rem'}}
+        >
+          <VStack mt={'3rem'} w={'40%'}>
+              <Image src={HushhBrandCard} alt="hushhButtonCircle"/>
+          </VStack>
+          <VStack w={'50%'} display={'flex'} alignItems="flex-start" justifyContent="flex-start">
+          <Heading className="gradient">
+            <Text fontSize={"2rem"}>Hushh For</Text>
+            <Text fontSize={"3.75rem"}>Brands</Text>
+          </Heading>
+            <UnorderedList mt={{base:'0.75rem',md:'1.5rem'}} mb={'1rem'} fontWeight={'400'} fontSize={'1rem'} lineHeight={'28.8px'} color={extendedTheme.colors.secondary}>
+              <ListItem mb={'1rem'}>
+              Access authentic data from Hushh users who opt-in, allowing for personalized product recommendations and marketing campaigns
+              </ListItem>
+              <ListItem mb={'1rem'}>
+              Simplified data collection and ensures compliance with user privacy preferences
+              </ListItem>
+              <ListItem mb={'1rem'}>
+              Create a more personalized and rewarding shopping experience that drives loyalty and sales
+              </ListItem>
+            </UnorderedList>
+            <Button
+              border={"1px solid #606060"}
+              borderRadius={"2px"}
+              w={"16rem"}
+              color={extendedTheme.colors._white}
+              lineHeight={"28px"}
+              background={"transparent"}
+              letterSpacing={"0.5rem"}
+              _hover={{
+                background:
+                  "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              }}
+            >
+                GET IT NOW
+            </Button>
           </VStack>
         </Stack>
       </Container>

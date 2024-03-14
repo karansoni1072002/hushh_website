@@ -231,3 +231,22 @@ body {
   }
 }
 
+
+
+/* Hushh Button CSS  */
+.frameCard1 {
+  position: absolute;
+  top: 80rem;
+  right: 16rem;
+}
+@media screen and (max-width: 1024px) {  
+  .frameCard1 {
+    display: none;
+  }
+  .hushhbuttonFrame2 {
+    display: none;
+  }
+  
+}
+
+/*  */

@@ -6,18 +6,24 @@ import {
   Text,
   Button,
   HStack,
+  Stack,
+  VStack,
+  UnorderedList,
+  ListItem,
 } from "@chakra-ui/react";
 import React from "react";
 import extendedTheme from "../../theme";
 import FramCard1 from "../../_components/svg/card/frameCardHushhButton.svg";
 import FrameCard2 from "../../_components/svg/card/buttonvoucherCard.svg";
 import Image from "next/image";
-import BarIcon from '../../_components/svg/icons/barIcon.svg';
-import DirectionLine from '../../_components/svg/icons/directionLine.svg';
+import BarIcon from "../../_components/svg/icons/barIcon.svg";
+import DirectionLine from "../../_components/svg/icons/directionLine.svg";
+import { useResponsiveSizes } from "../../context/responsive";
 const hushhButton = () => {
+    const isMobile = useResponsiveSizes;
   return (
     <>
-      <Container maxW={"100%"} display={"flex"} flexDirection={"column"}>
+      <Container maxW={"100%"} minW={'100%'} display={"flex"} flexDirection={"column"}>
         <Box
           alignItems={"center"}
           w={"100%"}
@@ -26,10 +32,10 @@ const hushhButton = () => {
         >
           <Heading
             fontWeight={"700"}
-            lineHeight={{ md: "255.6px", base: "120px" }}
+            lineHeight={{ md: "255.6px", base: "100px" }}
             textAlign={"center"}
             fontSize={{ md: "8.8rem", base: "4.4rem" }}
-            pt={{ md: "10rem", base: "2.5rem" }}
+            pt={{ md: "10rem", base: "3.5rem" }}
             className="gradient"
           >
             Hushh Button
@@ -63,7 +69,7 @@ const hushhButton = () => {
             LEARN MORE
           </Button>
         </Box>
-        <HStack mt={"2rem"} gap={"3rem"} px={"4rem"}>
+        <HStack mt={"2rem"} gap={"3rem"} px={"4rem"} display={'flex'} flexDirection={{base:'column',md:'row'}}>
           <Box
             gap={"0rem"}
             display={"flex"}
@@ -91,7 +97,7 @@ const hushhButton = () => {
             </Text>
           </Box>
           <Button
-            ml={"55rem"}
+            ml={{ md:"55rem", base:'1rem'}}
             display={"flex"}
             border={"1px solid #606060"}
             borderRadius={"4rem"}
@@ -111,15 +117,15 @@ const hushhButton = () => {
         </HStack>
         <HStack
           mt={"4rem"}
-          px={"15rem"}
+          px={{md:"15rem",base:'2rem'}}
           minW={"100%"}
           bg={"#FFFFFF"}
           display={"flex"}
           flexDirection={"column"}
           textAlign={"center"}
-          py={"3rem"}
+          py={{ md:"3rem",base:'1.5rem'}}
         >
-          <Heading color={"#0D0D25"} fontWeight={"700"} fontSize={"3.5rem"}>
+          <Heading color={"#0D0D25"} fontWeight={"700"} fontSize={{ md:"3.5rem",base:"1.75rem"}}>
             Seamless Data Sharing for Personalized Experiences
           </Heading>
           <Text mt={"1rem"} color={"#656565"} fontSize={"1rem"}>
@@ -134,21 +140,34 @@ const hushhButton = () => {
             justifyContent={"center"}
             w={"100%"}
             h={"100%"}
-            mb={'2rem'}
+            mb={"2rem"}
           >
-            <Image 
+            <Image
               src={BarIcon}
               alt="barIcon"
-              style={{ position:'absolute',left:'2rem', top:'50rem',transform: 'rotate(35deg)'}}
+              style={{
+                position: "absolute",
+                left: "2rem",
+                top: "50rem",
+                transform: "rotate(35deg)",
+              }}
+              className="hushhbuttonFrame1"
             />
             <Image
               alt="hushhButtonCard2"
               style={{ position: "absolute", left: "12rem" }}
               src={FrameCard2}
+              className="hushhbuttonFrame2"
             />
             <Image
               alt="directionLine"
-              style={{ position: "absolute", left: "8rem",bottom:'0' }}
+              className="hushhbuttonFrame3"
+              style={{
+                position: "absolute",
+                left: "8rem",
+                bottom: "0",
+                top: "83rem",
+              }}
               src={DirectionLine}
             />
             <iframe
@@ -165,13 +184,56 @@ const hushhButton = () => {
               allowFullScreen
               frameBorder="0"
             ></iframe>
-            <Image
-              style={{ position: "absolute", top: "80rem", right: "16rem" }}
-              alt="HushhButtonframeCard"
+             <Image
+              className="frameCard1"
+              alt="HushhButtonframeCard4"
               src={FramCard1}
             />
           </Box>
         </HStack>
+        <Stack
+          fontWeight={"700"}
+          mt={{md:"9rem",base:'3.5rem'}}
+          px={{md:"15rem",base:'2rem'}}
+          display={"flex"}
+          flexDirection={{ base: "column", md: "column" }}
+        >
+          <Heading className="gradient">
+            <Text fontSize={"2rem"}>Hushh For</Text>
+            <Text fontSize={"3.75rem"}>Customers</Text>
+          </Heading>
+          <VStack display={'flex'} textAlign={'left'}>
+            <UnorderedList fontWeight={'400'} fontSize={'1rem'} lineHeight={'28.8px'} color={extendedTheme.colors.secondary}>
+              <ListItem mb={'1.5rem'}>
+                Sync your preferences, past purchases, sizing information to
+                brands with a single click
+              </ListItem>
+              <ListItem mb={'1.5rem'}>
+                Get your brand-specific data sent directly to your Hushh Wallet
+                for secure storage and management
+              </ListItem>
+              <ListItem mb={'1.5rem'}>
+                Brands can offer products and services based on your unique
+                profile, leading to a more relevant shopping experience
+              </ListItem>
+            </UnorderedList>
+            <Button
+              border={"1px solid #606060"}
+              borderRadius={"2px"}
+              w={"16rem"}
+              color={extendedTheme.colors._white}
+              lineHeight={"28px"}
+              background={"transparent"}
+              letterSpacing={"0.5rem"}
+              _hover={{
+                background:
+                  "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              }}
+            >
+              LEARN MORE
+            </Button>
+          </VStack>
+        </Stack>
       </Container>
     </>
   );

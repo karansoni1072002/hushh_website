@@ -16,8 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
-      <body className={`${mulish.variable} font-sans`} >
+      <body style={{backgroundColor:'black'}} className={`${mulish.variable} font-sans`} >
       <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
       <script src="https://mediafiles.botpress.cloud/fbf5d1e1-066c-4f35-a420-7128eae2130c/webchat/config.js" defer></script>
         <ResponsiveSizeProvider>

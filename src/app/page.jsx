@@ -37,8 +37,10 @@ import theme from "./theme";
 import { useRouter } from "next/navigation";
 import HushhCoinUiBox from "./_components/features/hushhCoinUiBox";
 import ContactForm from "./_components/features/contactForm";
+import FooterComponent from "./_components/features/FooterComponent";
 import NotificationPopup from './_components/features/popupNotification'
 import ReviewSlider from "./_components/features/reviewSlider";
+
 
 export default function Home() {
   const router = useRouter();
@@ -56,8 +58,8 @@ export default function Home() {
 
   return (
     <main className="bg-myBG  font-Figtree">
-            {showPopup && <NotificationPopup message="Welcome! How can I help you today?" />}
-      <div className="pb-32">
+      <div className="">
+        {showPopup && <NotificationPopup message="Welcome! How can I help you today?" />}
         <Box pt={20} display={"flex"} px={{ base: "0.5rem", md: "32px" }}>
           <VStack
             align={"flex-start"}
@@ -99,9 +101,9 @@ export default function Home() {
             </HStack>
 
             <Text color={"#656565"} fontSize={"18px"}>
-            We're the Data API Business that helps you collect, manage, and monetize your data            
+              We're the Data API Business that helps you collect, manage, and monetize your data
             </Text>
-            
+
             <Button
               border={"3px solid #606060"}
               borderRadius={"2px"}
@@ -124,7 +126,7 @@ export default function Home() {
         </Box>
 
         <HStack
-          pt={{ md: "8rem", base:"6rem"}}
+          pt={{ md: "8rem", base: "6rem" }}
           justify={"center"}
           display={"flex"}
           flexDirection={"column"}
@@ -140,9 +142,9 @@ export default function Home() {
           </Heading>
           <Text
             align={"center"}
-            lineHeight={{ md: "4rem", base:'2rem' }}
-            pl={{ md: "16rem", base:'2rem' }}
-            pr={{ md: "16rem", base:'2rem' }}
+            lineHeight={{ md: "4rem", base: '2rem' }}
+            pl={{ md: "16rem", base: '2rem' }}
+            pr={{ md: "16rem", base: '2rem' }}
             color={theme.colors.secondary}
             fontWeight={"300"}
             fontSize={{ md: "3.75rem", base: "1rem" }}
@@ -162,7 +164,7 @@ export default function Home() {
           h={"full"}
           flexDirection={{ base: "column", md: "row" }} // For mobile, stack images vertically, for desktop, display them side by side
           alignItems={{ base: "center", md: "flex-start" }}
-          pt={{ md:"10rem", base:"6rem"}}
+          pt={{ md: "10rem", base: "6rem" }}
           justifyContent="space-between"
           gap="5rem"
         >
@@ -207,7 +209,7 @@ export default function Home() {
             />
           </Box>
           {/* Right side box */}
-          <VStack alignItems={{md:"left", base:""}}  textAlign={{ md:"left",base:"center"}} flex="1">
+          <VStack alignItems={{ md: "left", base: "" }} textAlign={{ md: "left", base: "center" }} flex="1">
             <Text
               className="color-gradient"
               fontWeight={600}
@@ -222,54 +224,54 @@ export default function Home() {
                 className="gradient"
                 lineHeight={"63px"}
                 fontWeight={"400"}
-                alignItems={{md:"left", base:"center"}} textAlign={{ md:"left",base:"center"}} 
-                fontSize={{ md:"3.75rem", base:"2.5rem"}}
+                alignItems={{ md: "left", base: "center" }} textAlign={{ md: "left", base: "center" }}
+                fontSize={{ md: "3.75rem", base: "2.5rem" }}
               >
                 Why Us?
               </Text>
             </Heading>
-            <Text px={{base:'1rem', md:'0'}} alignItems={{base:"center"}} pt={{ md:"1rem"}}  fontWeight={'500'} color={extendedTheme.colors.secondary}>
+            <Text px={{ base: '1rem', md: '0' }} alignItems={{ base: "center" }} pt={{ md: "1rem" }} fontWeight={'500'} color={extendedTheme.colors.secondary}>
               Empower individuals with data control. Today, we're a cutting-edge
               platform fostering trust, transparency, and personalized
               experiences.
             </Text>
 
-            <Box pt={{ md:'40px', base:'20px'}} width={'100%'} px={{base:'1.25rem'}} justifyContent={{ base: 'space-between'}} display={"flex"} gap={{ md:"4rem"}}>
-              <VStack maxW={{ md: '290px'}} textAlign={'left'} alignItems={'left'}>
-                <HStack gap={{ md:"2rem"}}>
+            <Box pt={{ md: '40px', base: '20px' }} width={'100%'} px={{ base: '1.25rem' }} justifyContent={{ base: 'space-between' }} display={"flex"} gap={{ md: "4rem" }}>
+              <VStack maxW={{ md: '290px' }} textAlign={'left'} alignItems={'left'}>
+                <HStack gap={{ md: "2rem" }}>
                   <ShieldIcon />
                   <Text
                     fontWeight={"500"}
                     fontSize={"1rem"}
-                    ml={{base:'0.5rem'}}
+                    ml={{ base: '0.5rem' }}
                     // lineHeight={{base:'18px'}}
                     color={extendedTheme.colors.secondary}
                   >
                     Data <br></br> Autonomy
                   </Text>
                 </HStack>
-                <Divider mt={'1rem'} className="divider" width={{ md:'12rem', base:'8rem'}}/>
-                <Text fontWeight={'500'} fontSize={{base:'0.75rem'}} lineHeight={{ md:'30px', base:'18px'}} mt={{ md:'1.25rem', base:"0.75rem"}} color={extendedTheme.colors.secondary}>
-                Empower your customers with full control over their personal data
+                <Divider mt={'1rem'} className="divider" width={{ md: '12rem', base: '8rem' }} />
+                <Text fontWeight={'500'} fontSize={{ base: '0.75rem' }} lineHeight={{ md: '30px', base: '18px' }} mt={{ md: '1.25rem', base: "0.75rem" }} color={extendedTheme.colors.secondary}>
+                  Empower your customers with full control over their personal data
                 </Text>
               </VStack>
 
-              <VStack maxW={{md:'290px'}} mt={'-0.68rem'} textAlign={'left'} alignItems={'left'}>
-              <HStack gap={{ md:"2rem"}}>
-                <KeyIcon />
-                <Text
-                  fontWeight={"500"}
-                  fontSize={"1rem"}
-                  ml={{base:'0.5rem'}}
-                  color={extendedTheme.colors.secondary}
-                >
-                  Data <br></br> Equity
+              <VStack maxW={{ md: '290px' }} mt={'-0.68rem'} textAlign={'left'} alignItems={'left'}>
+                <HStack gap={{ md: "2rem" }}>
+                  <KeyIcon />
+                  <Text
+                    fontWeight={"500"}
+                    fontSize={"1rem"}
+                    ml={{ base: '0.5rem' }}
+                    color={extendedTheme.colors.secondary}
+                  >
+                    Data <br></br> Equity
+                  </Text>
+                </HStack>
+                <Divider mt={'1rem'} className="divider" width={{ md: '12rem', base: '8rem' }} />
+                <Text fontWeight={'500'} lineHeight={{ md: '30px', base: '18px' }} fontSize={{ base: '0.75rem' }} mt={{ md: '1.25rem', base: "0.75rem" }} color={extendedTheme.colors.secondary}>
+                  Creating a fair and equitable environment for data sharing.
                 </Text>
-              </HStack>
-              <Divider mt={'1rem'} className="divider" width={{ md:'12rem', base:'8rem'}}/>
-              <Text fontWeight={'500'} lineHeight={{ md:'30px', base:'18px'}} fontSize={{base:'0.75rem'}} mt={{ md:'1.25rem', base:"0.75rem"}} color={extendedTheme.colors.secondary}>
-              Creating a fair and equitable environment for data sharing.​
-              </Text>
               </VStack>
             </Box>
             <VStack px={'1.25rem'} alignContent={'left'} mt={'1.5rem'} textAlign={'left'} alignItems={'left'}>
@@ -283,11 +285,11 @@ export default function Home() {
                   Consent-Driven <br></br> Excellence
                 </Text>
               </HStack>
-              <Divider mt={'1rem'} className="divider" width={{ md:'22rem', base:"14rem"}}/>
-              <Text fontWeight={'500'} lineHeight={{ md:'30px', base:'18px'}} mt={{ md:'1.25rem', base:"0.75rem"}} fontSize={{base:'0.75rem'}} color={extendedTheme.colors.secondary}>
-              Creating a fair and equitable environment for data sharing.​
+              <Divider mt={'1rem'} className="divider" width={{ md: '22rem', base: "14rem" }} />
+              <Text fontWeight={'500'} lineHeight={{ md: '30px', base: '18px' }} mt={{ md: '1.25rem', base: "0.75rem" }} fontSize={{ base: '0.75rem' }} color={extendedTheme.colors.secondary}>
+                Creating a fair and equitable environment for data sharing.
               </Text>
-              </VStack>
+            </VStack>
           </VStack>
         </Box>
 
@@ -296,7 +298,7 @@ export default function Home() {
 
         {/* Product Showcase section below */}
         <HStack
-          pt={{ md: "8rem", base:"5rem"}}
+          pt={{ md: "8rem", base: "5rem" }}
           justify={"center"}
           display={"flex"}
           flexDirection={"column"}
@@ -325,9 +327,9 @@ export default function Home() {
             className="description"
             textAlign={"center"}
             w={'full'}
-            px={{ md: "24rem", base:'2rem' }}
+            px={{ md: "24rem", base: '2rem' }}
             color={theme.colors.secondary}
-            fontSize={{base:"0.75rem", md:'1rem'}}
+            fontSize={{ base: "0.75rem", md: '1rem' }}
           >
             We have seamless data capturing capabilities, robust security with
             trust measures in place and in-depth insights and transparency
@@ -335,8 +337,8 @@ export default function Home() {
           </Text>
           <Container
             display={"flex"}
-            pt={{ md: "2rem", base:"1rem" }}
-            px={{ md: "10rem", base:"0.5rem" }}
+            pt={{ md: "2rem", base: "1rem" }}
+            px={{ md: "10rem", base: "0.5rem" }}
             justifyContent={"center"}
             textAlign={"center"}
             minW={{ md: "100%", base: "100%" }}
@@ -424,9 +426,9 @@ export default function Home() {
 
         <TechnologySection />
 
-        <BrandWalletSection/>
+        <BrandWalletSection />
 
-        <HushhCoinUiBox/>
+        <HushhCoinUiBox />
 
         <ContactForm/>
         {/* <div className="pt-5">

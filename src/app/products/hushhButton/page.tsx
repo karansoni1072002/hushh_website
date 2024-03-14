@@ -19,6 +19,7 @@ import Image from "next/image";
 import BarIcon from "../../_components/svg/icons/barIcon.svg";
 import DirectionLine from "../../_components/svg/icons/directionLine.svg";
 import { useResponsiveSizes } from "../../context/responsive";
+import HushhEmoji from '../../_components/svg/card/hushhCircleEmoji.svg';
 const hushhButton = () => {
     const isMobile = useResponsiveSizes;
   return (
@@ -196,23 +197,26 @@ const hushhButton = () => {
           mt={{md:"9rem",base:'3.5rem'}}
           px={{md:"15rem",base:'2rem'}}
           display={"flex"}
-          flexDirection={{ base: "column", md: "column" }}
+          alignItems="flex-start" // Align items to the start (left)
+          justifyContent="flex-start"
+          flexDirection={{ base: "column", md: "row" }}
+          gap={{md:'6rem',base:'2rem'}}
         >
+          <VStack display={'flex'} alignItems="flex-start" justifyContent="flex-start">
           <Heading className="gradient">
             <Text fontSize={"2rem"}>Hushh For</Text>
             <Text fontSize={"3.75rem"}>Customers</Text>
           </Heading>
-          <VStack display={'flex'} textAlign={'left'}>
-            <UnorderedList fontWeight={'400'} fontSize={'1rem'} lineHeight={'28.8px'} color={extendedTheme.colors.secondary}>
-              <ListItem mb={'1.5rem'}>
+            <UnorderedList mt={{base:'0.75rem',md:'1.5rem'}} fontWeight={'400'} fontSize={'1rem'} lineHeight={'28.8px'} color={extendedTheme.colors.secondary}>
+              <ListItem mb={'1rem'}>
                 Sync your preferences, past purchases, sizing information to
                 brands with a single click
               </ListItem>
-              <ListItem mb={'1.5rem'}>
+              <ListItem mb={'1rem'}>
                 Get your brand-specific data sent directly to your Hushh Wallet
                 for secure storage and management
               </ListItem>
-              <ListItem mb={'1.5rem'}>
+              <ListItem mb={'1rem'}>
                 Brands can offer products and services based on your unique
                 profile, leading to a more relevant shopping experience
               </ListItem>
@@ -232,6 +236,9 @@ const hushhButton = () => {
             >
               LEARN MORE
             </Button>
+          </VStack>
+          <VStack w={'60%'}>
+            <Image src={HushhEmoji} alt="hushhButtonCircle"/>
           </VStack>
         </Stack>
       </Container>

@@ -24,7 +24,6 @@ export default function ContactForm() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
-  console.log(errors);
 
   return (
     <>
@@ -58,24 +57,26 @@ export default function ContactForm() {
                   fontSize={{ md: "3.75rem", base: '2rem' }}
                   lineHeight={{ base: "28px", md: "55px" }}
                 >
-                  Connect with hushh
-                </Heading>
-                <Text color={"#C9C9C9"}>Say something to reach out to us</Text>
-              </HStack>
-              <HStack
-                gap={{ md: "3rem", base: '0.5rem' }}
-                textAlign={"left"}
-                alignItems={"left"}
-                flexDirection={"column"}
-                color={"#FFFFFF"}
-              >
-                <Text>demo@gmail.com</Text>
-                <Text>+1012 3456 789</Text>
-                <Text>
-                  132 Dartmouth Street Boston, Massachusetts 02156 United States
-                </Text>
-              </HStack>
-            </Box>
+              Connect with hushh
+            </Heading>
+            <Text color={"#C9C9C9"}>Say something to reach out to us</Text>
+          </HStack>
+          <HStack
+            gap={{ md:"3rem", base:'0.5rem'}}
+            textAlign={"left"}
+            alignItems={"left"}
+            flexDirection={"column"}
+            color={"#FFFFFF"}
+          >
+            <Text>info@hush1one.com</Text>
+            <Text>+1(877)487-4494</Text>
+            <Text>
+            Hushh.ai <br></br>
+            1021 5th St W <br></br>
+            Kirkland, WA 98033
+            </Text>
+          </HStack>
+        </Box>
 
             {/* Contact Form */}
             <Box p={{ md: "4rem", base: '1rem' }} display={"flex"}>

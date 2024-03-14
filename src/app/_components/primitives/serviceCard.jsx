@@ -6,7 +6,7 @@ const ServiceCard = ({ icon, title, description, alignItems, additionalProps , t
     <GridItem cursor={'pointer'} onClick={onClick} width={{ base: "100%", md: "100%" }} px={{base:'1rem'}} >
       <VStack display={'flex'} alignItems={{ md: alignItems || 'flex-start', base:'center'}} gap={'1rem'} {...additionalProps}>
         {icon}
-        <Heading textAlign={{base:'center', md:'left'}} fontSize={{ md:'1.5rem', base:'1rem'}} fontWeight={700} color={'white'}>{title}</Heading>
+        <Heading textAlign={{base:'center', md:'left'}} fontSize={{ md:'1.25rem', base:'1rem'}} fontWeight={700} color={'white'}>{title}</Heading>
         <Text textAlign={ { md:  textAlign || 'left', base: 'center' || textAlign}} fontWeight={500} lineHeight={{ md: '25px', base: '15px' }} color={'#ABABAB'} fontSize={{ md: '1rem', base: '0.75rem' }}>{description}</Text>
       </VStack>
     </GridItem>

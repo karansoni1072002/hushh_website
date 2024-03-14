@@ -9,8 +9,9 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import extendedTheme from "../../theme";
-import { AspectRatio } from "@chakra-ui/react";
-
+import FramCard1 from "../../_components/svg/card/frameCardHushhButton.svg";
+import FrameCard2 from "../../_components/svg/card/buttonvoucherCard.svg";
+import Image from "next/image";
 const hushhButton = () => {
   return (
     <>
@@ -108,12 +109,13 @@ const hushhButton = () => {
         </HStack>
         <HStack
           mt={"4rem"}
-          px={"10rem"}
+          px={"15rem"}
           minW={"100%"}
           bg={"#FFFFFF"}
           display={"flex"}
           flexDirection={"column"}
           textAlign={"center"}
+          py={"3rem"}
         >
           <Heading color={"#0D0D25"} fontWeight={"700"} fontSize={"3.5rem"}>
             Seamless Data Sharing for Personalized Experiences
@@ -124,11 +126,22 @@ const hushhButton = () => {
             share your personal data with brands to enhance your browsing
             experience and receive tailored recommendations.
           </Text>
-          <Box display={"flex"} justifyContent={"center"} w={"100%"} h={"100%"}>
+          <Box
+            mt={"3rem"}
+            display={"flex"}
+            justifyContent={"center"}
+            w={"100%"}
+            h={"100%"}
+          >
+            <Image
+              alt="hushhButtonCard2"
+              style={{ position: "absolute", left: "12rem" }}
+              src={FrameCard2}
+            />
             <iframe
-              src="https://player.cloudinary.com/embed/?public_id=samples%2Fcld-sample-video&cloud_name=dr5alaq5u&player[hideContextMenu]=false&player[floatingWhenNotVisible]=false&player[showJumpControls]=true&player[pictureInPictureToggle]=false&player[posterOptions][transformation][startOffset]=0&player[loop]=true&source[autoplayOnScroll]=false"
-              width="640"
-              height="360"
+              src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710411292%2FHushh_button_-_developer_walkthrough_uwwiy0.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true&player[pictureInPictureToggle]=false&source[poster]=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fimage%2Fupload%2FScreenshot_2024-03-14_160021_hapzpw.jpg"
+              width="4  40"
+              height="250"
               style={{
                 height: "auto",
                 width: "60%",
@@ -139,6 +152,11 @@ const hushhButton = () => {
               allowFullScreen
               frameBorder="0"
             ></iframe>
+            <Image
+              style={{ position: "absolute", top: "80rem", right: "16rem" }}
+              alt="HushhButtonframeCard"
+              src={FramCard1}
+            />
           </Box>
         </HStack>
       </Container>

@@ -26,10 +26,10 @@ import HushhButtonUser from "../../_components/svg/hushhButtonUser.svg";
 import HushhButtonCard3 from "../../_components/svg/hushhButtonCard3.svg";
 import HushhLogoIcon from "../../_components/svg/icons/hushhLogoIcon.svg";
 import StatisticCard from "../../_components/svg/card/statisticCard.svg";
+import HushhButtonOnlyUser from "../../_components/svg/hushhButtonOnlyUser.svg";
 
 const hushhButton = () => {
-
-    const isMobile = useResponsiveSizes; 
+  const isMobile = useResponsiveSizes;
 
   return (
     <>
@@ -47,7 +47,7 @@ const hushhButton = () => {
         >
           <Heading
             fontWeight={"700"}
-            lineHeight={{ md: "255.6px",base:'80px' }}
+            lineHeight={{ md: "255.6px", base: "80px" }}
             textAlign={"center"}
             fontSize={{ md: "8.8rem", base: "3.4rem" }}
             pt={{ md: "10rem", base: "3rem" }}
@@ -97,29 +97,35 @@ const hushhButton = () => {
             flexDirection={"column"}
             color={"white"}
           >
-            <Text fontWeight={"800"} fontSize={{ md:"2.8rem",base:'1.25rem'}}>
+            <Text
+              fontWeight={"800"}
+              fontSize={{ md: "2.8rem", base: "1.25rem" }}
+            >
               42k
             </Text>
-            <Text fontSize={{ md:"1rem", base:'0.75rem'}} fontWeight={"500"}>
+            <Text fontSize={{ md: "1rem", base: "0.75rem" }} fontWeight={"500"}>
               Integrations
             </Text>
           </Box>
-            <Box
+          <Box
             gap={"0rem"}
             display={"flex"}
             flexDirection={"column"}
             color={"white"}
           >
-            <Text fontWeight={"800"} fontSize={{ md:"2.8rem",base:'1.25rem'}}>
+            <Text
+              fontWeight={"800"}
+              fontSize={{ md: "2.8rem", base: "1.25rem" }}
+            >
               1.2b
             </Text>
-            <Text fontSize={{ md:"1rem", base:'0.75rem'}} fontWeight={"500"}>
+            <Text fontSize={{ md: "1rem", base: "0.75rem" }} fontWeight={"500"}>
               Users
             </Text>
-            </Box>
-            <Button
-            ml={{ md: "55rem"}}
-            display={{ md:"flex",base:'none'}}
+          </Box>
+          <Button
+            ml={{ md: "55rem" }}
+            display={{ md: "flex", base: "none" }}
             border={"1px solid #606060"}
             borderRadius={"4rem"}
             w={"9rem"}
@@ -134,9 +140,13 @@ const hushhButton = () => {
             padding={"15px 68px 15px 68px"}
           >
             PLAY DEMO
-           </Button>          
+          </Button>
         </HStack>
-         <Box display={{ base:'flex', md:'none'}} mt={'2rem'} justifyContent={'center'}>  
+        <Box
+          display={{ base: "flex", md: "none" }}
+          mt={"2rem"}
+          justifyContent={"center"}
+        >
           <Button
             ml={{ md: "55rem" }}
             display={"flex"}
@@ -155,12 +165,12 @@ const hushhButton = () => {
           >
             PLAY DEMO
           </Button>
-          </Box> 
+        </Box>
 
         <HStack
           position={"relative"}
           mt={"4rem"}
-          px={{ md: "15rem",base:'0' }}
+          px={{ md: "15rem", base: "0" }}
           minW={"100%"}
           bg={"#FFFFFF"}
           display={"flex"}
@@ -175,7 +185,11 @@ const hushhButton = () => {
           >
             Seamless Data Sharing for Personalized Experiences
           </Heading>
-          <Text mt={"1rem"} color={"#656565"} fontSize={{ md:"1rem", base:'0.75rem'}}>
+          <Text
+            mt={"1rem"}
+            color={"#656565"}
+            fontSize={{ md: "1rem", base: "0.75rem" }}
+          >
             Hushh is your one-stop solution for seamless data sharing between
             you and your favorite websites. With Hushh, you can effortlessly
             share your personal data with brands to enhance your browsing
@@ -183,7 +197,7 @@ const hushhButton = () => {
           </Text>
           <Box
             mt={"1.5rem"}
-            display={{ md:"none", base:'flex'}}
+            display={{ md: "none", base: "flex" }}
             justifyContent={"center"}
             w={"100%"}
             h={"100%"}
@@ -194,7 +208,7 @@ const hushhButton = () => {
               className="hushhbuttonFrame3"
               style={{
                 position: "absolute",
-                height:'4rem',
+                height: "4rem",
                 left: "-20%",
                 bottom: "0",
               }}
@@ -217,7 +231,7 @@ const hushhButton = () => {
           </Box>
           <Box
             mt={"3rem"}
-            display={{ md:"flex", base:'none'}}
+            display={{ md: "flex", base: "none" }}
             justifyContent={"center"}
             w={"100%"}
             h={"100%"}
@@ -287,36 +301,46 @@ const hushhButton = () => {
             alignItems="flex-start"
             justifyContent="flex-start"
           >
-           <Box display={{ base:'flex',md:'none'}} gap={'1rem'}>
-           <Heading className="gradient">
-              <Text fontSize={{ md:"2rem", base:'1.5rem'}}>Hushh For</Text>
-              <Text fontSize={{ md:"3.75rem", base:'2rem'}}>Customers</Text>
-            </Heading>
-           <Image src={HushhEmoji} alt="hushhButtonCircle" style={{width:'30%'}} />
-            </Box> 
+            <Box display={{ base: "flex", md: "none" }} gap={"1rem"}>
+              <Heading className="gradient">
+                <Text fontSize={{ md: "2rem", base: "1.5rem" }}>Hushh For</Text>
+                <Text fontSize={{ md: "3.75rem", base: "2rem" }}>
+                  Customers
+                </Text>
+              </Heading>
+              <Image
+                src={HushhEmoji}
+                alt="hushhButtonCircle"
+                style={{ width: "30%" }}
+              />
+            </Box>
 
-           <Heading className="gradient" display={{md:'flex',base:'none'}} flexDirection={'column'}>
-              <Text fontSize={{ md:"2rem", base:'1.5rem'}}>Hushh For</Text>
-              <Text fontSize={{ md:"3.75rem", base:'2rem'}}>Customers</Text>
-            </Heading>  
+            <Heading
+              className="gradient"
+              display={{ md: "flex", base: "none" }}
+              flexDirection={"column"}
+            >
+              <Text fontSize={{ md: "2rem", base: "1.5rem" }}>Hushh For</Text>
+              <Text fontSize={{ md: "3.75rem", base: "2rem" }}>Customers</Text>
+            </Heading>
 
             <UnorderedList
               mb={"1rem"}
               mt={{ base: "0.75rem", md: "1.5rem" }}
               fontWeight={"400"}
               fontSize={"1rem"}
-              lineHeight={{ md:"28.8px"}}
+              lineHeight={{ md: "28.8px" }}
               color={extendedTheme.colors.secondary}
             >
-              <ListItem mb={{ md:"1rem", base:'0.5rem'}}>
+              <ListItem mb={{ md: "1rem", base: "0.5rem" }}>
                 Sync your preferences, past purchases, sizing information to
                 brands with a single click
               </ListItem>
-              <ListItem mb={{ md:"1rem", base:'0.5rem'}}>
+              <ListItem mb={{ md: "1rem", base: "0.5rem" }}>
                 Get your brand-specific data sent directly to your Hushh Wallet
                 for secure storage and management
               </ListItem>
-              <ListItem mb={{ md:"1rem", base:'0.5rem'}}>
+              <ListItem mb={{ md: "1rem", base: "0.5rem" }}>
                 Brands can offer products and services based on your unique
                 profile, leading to a more relevant shopping experience
               </ListItem>
@@ -337,15 +361,18 @@ const hushhButton = () => {
               LEARN MORE
             </Button>
           </VStack>
-          <VStack display={{base:'none', md:'flex'}} w={{ md:"60%", base:'50%'}}>
+          <VStack
+            display={{ base: "none", md: "flex" }}
+            w={{ md: "60%", base: "50%" }}
+          >
             <Image src={HushhEmoji} alt="hushhButtonCircle" />
           </VStack>
         </Stack>
-        
+
         <Stack
           fontWeight={"700"}
-          mt={{ md: "9rem", base: "3.5rem" }}
-          mb={{ md: "4rem" }}
+          mt={{ md: "9rem", base: "5rem" }}
+          mb={{ md: "4rem", base: "2rem" }}
           px={{ md: "15rem", base: "2rem" }}
           display={"flex"}
           alignItems="flex-start"
@@ -353,25 +380,41 @@ const hushhButton = () => {
           flexDirection={{ base: "column", md: "row" }}
           gap={{ md: "6rem", base: "2rem" }}
         >
-          <VStack mt={"3rem"} w={"40%"}>
+          <VStack display={{ md: "flex", base: "none" }} mt={"3rem"} w={"40%"}>
             <Image src={HushhBrandCard} alt="hushhButtonCircle" />
           </VStack>
           <VStack
-            w={"50%"}
+            w={{ md: "50%" }}
             display={"flex"}
             alignItems="flex-start"
             justifyContent="flex-start"
           >
-            <Heading className="gradient">
-              <Text fontSize={"2rem"}>Hushh For</Text>
-              <Text fontSize={"3.75rem"}>Brands</Text>
+            <HStack display={{ md: "none", base: "flex" }} gap={"1.5rem"}>
+              <Image
+                src={HushhBrandCard}
+                style={{ width: "40%" }}
+                alt="hushhButtonCircle"
+              />
+              <Heading className="gradient">
+                <Text fontSize={{ md: "2rem", base: "1.5rem" }}>Hushh For</Text>
+                <Text fontSize={{ md: "3.75rem", base: "2rem" }}>Brands</Text>
+              </Heading>
+            </HStack>
+
+            <Heading
+              className="gradient"
+              display={{ md: "flex", base: "none" }}
+              flexDirection={{ md:'column'}}
+            >
+              <Text fontSize={{ md: "2rem", base: "1.5rem" }}>Hushh For</Text>
+              <Text fontSize={{ md: "3.75rem", base: "2rem" }}>Brands</Text>
             </Heading>
             <UnorderedList
               mt={{ base: "0.75rem", md: "1.5rem" }}
               mb={"1rem"}
               fontWeight={"400"}
               fontSize={"1rem"}
-              lineHeight={"28.8px"}
+              lineHeight={{ md: "28.8px" }}
               color={extendedTheme.colors.secondary}
             >
               <ListItem mb={"1rem"}>
@@ -404,27 +447,27 @@ const hushhButton = () => {
             </Button>
           </VStack>
         </Stack>
+
         <Stack
           bg={"white"}
           pos={"relative"}
-          display={"flex"}
+          display={{ md: "flex", base: "none" }}
           flexDirection={"row"}
         >
           <Image src={HushhButtonBg} alt="hushhbuttonBg" />
-
           <VStack
-            gap={"2.5rem"}
-            mt={"10rem"}
-            mr={"50%"}
+            gap={{ md: "2.5rem", base: "1rem" }}
+            mt={{ md: "10rem" }}
+            mr={{ md: "50%" }}
             alignItems="flex-start"
             justifyContent="flex-start"
-            pl={"3rem"}
+            pl={{ md: "3rem" }}
             pos={"absolute"}
           >
             <Box
               fontWeight={"400"}
               lineHeight={{ md: "60.6px", base: "30.3px" }}
-              fontSize={{ md: "3.75rem", base: "1.75rem" }}
+              fontSize={{ md: "3.75rem", base: "1.5rem" }}
             >
               <Text color={"#0D0D25"}>
                 The <br></br> Hushh Button{" "}
@@ -437,7 +480,7 @@ const hushhButton = () => {
             <Text
               color={"#0D0D25"}
               fontWeight={"400"}
-              fontSize={"1.25rem"}
+              fontSize={{ md: "1.25rem", base: "0.75rem" }}
               lineHeight={{ base: "", md: "27px" }}
             >
               Customers enjoy a seamless and personalized shopping experience,
@@ -471,6 +514,7 @@ const hushhButton = () => {
           </VStack>
           <VStack
             right={0}
+            display={{ md: "flex", base: "none" }}
             alignItems="flex-end"
             justifyContent="flex-end"
             pr={"3rem"}
@@ -494,6 +538,136 @@ const hushhButton = () => {
             />
           </VStack>
         </Stack>
+
+        <Stack
+          display={{ lg: "none", base: "flex" }} // 'lg' hides on larger screens
+          bg="white"
+          direction="row"
+          align="left"
+          justify="left"
+          position={"relative"}
+        >
+          <Image
+            src={HushhButtonBg}
+            alt="hushhbuttonBg"
+            style={{ boxSizing: "content-box", height: "20rem" }}
+          />
+          <VStack
+            gap="1rem"
+            mt="2rem"
+            alignItems="left"
+            pr={"40%"}
+            justifyContent="flex-start"
+            pl="1rem"
+            pos="absolute"
+            top="0" // Adjusted for mobile
+            left="0" // Adjusted for mobile
+            right="0" // Adjusted for mobile
+            textAlign="left" // Center text for mobile
+          >
+            <Box
+              fontWeight={"400"}
+              lineHeight={{ md: "60.6px", base: "30.3px" }}
+              fontSize={{ md: "3.75rem", base: "1.5rem" }}
+            >
+              <Text color={"#0D0D25"}>
+                The Hushh Button{" "}
+                <span style={{ fontWeight: "700" }}> is a </span>{" "}
+              </Text>
+              <Text className="hushh-gradient" fontWeight={"700"}>
+                win-win
+              </Text>
+            </Box>
+            <Text
+              color={"#0D0D25"}
+              fontWeight={"400"}
+              fontSize={{ md: "1.25rem", base: "0.75rem" }}
+              lineHeight={{ base: "", md: "27px" }}
+            >
+              Customers enjoy a seamless and personalized shopping experience,
+              while brands gain valuable insights and build stronger
+              relationships with their audience
+            </Text>
+            <Button
+              pos={"relative"}
+              border={"2px solid"}
+              borderLeftColor={"#E54D60"}
+              borderRightColor={"#A342FF"}
+              borderTopColor={"#E54D60"}
+              borderBottomColor={"#A342FF"}
+              borderEndColor={"#E54D60"}
+              borderStartColor={"#A342FF"}
+              borderRadius={"2px"}
+              w={"8rem"}
+              h={"2.25rem"}
+              fontSize={"0.75rem"}
+              className="hushh-gradient"
+              lineHeight={"28px"}
+              background={"transparent"}
+              letterSpacing={"0.1rem"}
+              _hover={{
+                background:
+                  "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                color: "white",
+              }}
+            >
+              GET IT NOW
+            </Button>
+          </VStack>
+
+          <VStack
+            right={0}
+            bottom={0}
+            ml={"4rem"}
+            display={{ md: "none", base: "flex" }}
+            alignItems="flex-end"
+            justifyContent="flex-end"
+            pos={"absolute"}
+            w={"84%"}
+            mt={"5rem"}
+          >
+            <Image
+              src={HushhButtonOnlyUser}
+              alt="HushhButtonOnlyUser"
+              style={{ height: "65%", width: "50%" }}
+            />
+            <Image
+              src={HushhButtonCard3}
+              alt="hushhButtonCard3"
+              style={{
+                position: "absolute",
+                bottom: "0",
+                marginBottom: "9rem",
+                right: "0",
+                width: "8em",
+                height: "4em",
+              }}
+            />
+            <Image
+              src={HushhLogoIcon}
+              alt="hushhLogoIcon"
+              style={{
+                position: "absolute",
+                marginBottom: "4.75rem",
+                marginRight: "1.4em",
+                width: "1em",
+                height: "1em",
+              }}
+            />
+            <Image
+              src={StatisticCard}
+              alt="statisticCard"
+              style={{
+                position: "absolute",
+                marginBottom: "12rem",
+                right: "37%",
+                width: "4em",
+                height: "8em",
+              }}
+            />
+          </VStack>
+        </Stack>
+
         <Stack margin={{ md: "10rem", base: "3.5rem" }}>
           <VStack px={{ md: "10rem", base: "1rem" }}>
             {/* GIF Pending */}
@@ -521,9 +695,13 @@ const hushhButton = () => {
             </Text>
           </VStack>
         </Stack>
-        <HStack pb={{base:'3rem',md:'6rem'}} px={{ md: "10rem", base: "2rem" }} gap={"5rem"}>
+        <HStack
+          pb={{ base: "3rem", md: "6rem" }}
+          px={{ md: "10rem", base: "2rem" }}
+          gap={"5rem"}
+        >
           <VStack gap={"2rem"} alignItems={"flex-start"} textAlign={"left"}>
-          {/* GIF Pending */}
+            {/* GIF Pending */}
             <Heading
               fontWeight={"400"}
               fontSize={{ md: "3.75rem", base: "1.5rem" }}
@@ -532,7 +710,11 @@ const hushhButton = () => {
             >
               Hush Button <br></br> Magic
             </Heading>
-            <Text lineHeight={{ md:'31.5px'}} color={"white"} fontSize={"1.125rem"}>
+            <Text
+              lineHeight={{ md: "31.5px" }}
+              color={"white"}
+              fontSize={"1.125rem"}
+            >
               The widget allows users to create their cookies and control what
               information they want to share with different websites. This gives
               users complete control over their data privacy while enjoying a
@@ -548,7 +730,11 @@ const hushhButton = () => {
             >
               Data Retrieval Made Easy
             </Heading>
-            <Text lineHeight={{ md:'31.5px'}} color={"white"} fontSize={"1.125rem"}>
+            <Text
+              lineHeight={{ md: "31.5px" }}
+              color={"white"}
+              fontSize={"1.125rem"}
+            >
               The widget allows users to create their cookies and control what
               information they want to share with different websites. This gives
               users complete control over their data privacy while enjoying a

@@ -44,14 +44,17 @@ const hushhButton = () => {
           w={"100%"}
           display={"flex"}
           flexDirection={"column"}
+          mt={{base:'3rem'}}
         >
           <Heading
             fontWeight={"700"}
-            lineHeight={{ md: "255.6px", base: "80px" }}
+            lineHeight={{ md: "255.6px", base: "60px" }}
             textAlign={"center"}
-            fontSize={{ md: "8.8rem", base: "3.4rem" }}
+            fontSize={{ md: "8.8rem", base: "2.5rem" }}
             pt={{ md: "10rem", base: "3rem" }}
             className="gradient"
+            px={{base:'0.5rem'}}
+            mb={{base:'0.5rem'}}
           >
             Hushh Button
           </Heading>
@@ -68,11 +71,11 @@ const hushhButton = () => {
           <Button
             border={"1px solid #606060"}
             borderRadius={"2px"}
-            w={"16rem"}
+            w={{ md:"16rem", base:"10rem"}}
             color={extendedTheme.colors._white}
-            lineHeight={"28px"}
+            lineHeight={{ md:"28px", base:'14px'}}
             background={"transparent"}
-            letterSpacing={"0.5rem"}
+            letterSpacing={{ md:"0.5rem", base:"0.25rem"}}
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
@@ -112,6 +115,9 @@ const hushhButton = () => {
             display={"flex"}
             flexDirection={"column"}
             color={"white"}
+            alignItems={{base:'center'}}
+            justifyContent={{base:'center'}}
+            textAlign={{base:'center'}}
           >
             <Text
               fontWeight={"800"}
@@ -348,11 +354,11 @@ const hushhButton = () => {
             <Button
               border={"1px solid #606060"}
               borderRadius={"2px"}
-              w={"16rem"}
+              w={{ md:"16rem", base:"10rem"}}
               color={extendedTheme.colors._white}
-              lineHeight={"28px"}
+              lineHeight={{ md:"28px", base:'14px'}}
               background={"transparent"}
-              letterSpacing={"0.5rem"}
+              letterSpacing={{ md:"0.5rem", base:"0.25rem"}}
               _hover={{
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
@@ -433,11 +439,11 @@ const hushhButton = () => {
             <Button
               border={"1px solid #606060"}
               borderRadius={"2px"}
-              w={"16rem"}
+              w={{ md:"16rem", base:"10rem"}}
               color={extendedTheme.colors._white}
-              lineHeight={"28px"}
+              lineHeight={{ md:"28px", base:'14px'}}
               background={"transparent"}
-              letterSpacing={"0.5rem"}
+              letterSpacing={{ md:"0.5rem", base:"0.25rem"}}
               _hover={{
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
@@ -669,13 +675,13 @@ const hushhButton = () => {
         </Stack>
 
         <Stack margin={{ md: "10rem", base: "3.5rem" }}>
-          <VStack px={{ md: "10rem", base: "1rem" }}>
+          <VStack px={{ md: "10rem", base: "0rem" }}>
             {/* GIF Pending */}
             <Heading
               textAlign={"center"}
               className="gradient"
               fontWeight={"400"}
-              fontSize={{ md: "3.75rem", base: "1.5rem" }}
+              fontSize={{ md: "3.75rem", base: "1.25rem" }}
               lineHeight={{ base: "45px", md: "75px" }}
             >
               Transformed Shopping <br></br> Experience
@@ -685,7 +691,7 @@ const hushhButton = () => {
               color={"white"}
               textAlign={"center"}
               fontWeight={"400"}
-              lineHeight={"31.5px"}
+              lineHeight={{md:"31.5px", base:'20px'}}
               fontSize={{ md: "1.125rem", base: "0.75rem" }}
             >
               With the Hushh Widget, websites and apps seamlessly change to
@@ -697,15 +703,15 @@ const hushhButton = () => {
         </Stack>
         <HStack
           pb={{ base: "3rem", md: "6rem" }}
-          px={{ md: "10rem", base: "2rem" }}
-          gap={"5rem"}
+          px={{ md: "10rem", base: "1rem" }}
+          gap={{ md:"5rem", base:'1.25rem'}}
         >
-          <VStack gap={"2rem"} alignItems={"flex-start"} textAlign={"left"}>
+          <VStack gap={{ md:"2rem", base:'0.5rem'}} alignItems={"flex-start"} textAlign={"left"}>
             {/* GIF Pending */}
             <Heading
               fontWeight={"400"}
-              fontSize={{ md: "3.75rem", base: "1.5rem" }}
-              lineHeight={{ md: "75px", base: "37px" }}
+              fontSize={{ md: "3.75rem", base: "1.25rem" }}
+              lineHeight={{ md: "75px", base: "30px" }}
               className="gradient"
             >
               Hush Button <br></br> Magic
@@ -713,7 +719,7 @@ const hushhButton = () => {
             <Text
               lineHeight={{ md: "31.5px" }}
               color={"white"}
-              fontSize={"1.125rem"}
+              fontSize={{ md:"1.125rem", base:'0.56rem'}}
             >
               The widget allows users to create their cookies and control what
               information they want to share with different websites. This gives
@@ -721,19 +727,19 @@ const hushhButton = () => {
               personalized shopping experience.
             </Text>
           </VStack>
-          <VStack alignItems={"flex-start"} textAlign={"left"} gap={"2rem"}>
+          <VStack alignItems={"flex-start"} textAlign={"left"} gap={{ md:"2rem", base:'0.5rem'}}>
             <Heading
-              className="gradient"
               fontWeight={"400"}
-              fontSize={{ md: "3.75rem", base: "1.5rem" }}
-              lineHeight={{ md: "75px", base: "37px" }}
+              fontSize={{ md: "3.75rem", base: "1.25rem" }}
+              lineHeight={{ md: "75px", base: "30px" }}
+              className="gradient"
             >
               Data Retrieval Made Easy
             </Heading>
             <Text
               lineHeight={{ md: "31.5px" }}
               color={"white"}
-              fontSize={"1.125rem"}
+              fontSize={{ md:"1.125rem", base:'0.56rem'}}
             >
               The widget allows users to create their cookies and control what
               information they want to share with different websites. This gives

@@ -33,7 +33,7 @@ const hushhButton = () => {
 
   return (
     <>
-      <Container
+      <Box
         maxW={"100%"}
         minW={"100%"}
         display={"flex"}
@@ -160,7 +160,7 @@ const hushhButton = () => {
         <HStack
           position={"relative"}
           mt={"4rem"}
-          px={{ md: "15rem" }}
+          px={{ md: "15rem",base:'0' }}
           minW={"100%"}
           bg={"#FFFFFF"}
           display={"flex"}
@@ -175,15 +175,49 @@ const hushhButton = () => {
           >
             Seamless Data Sharing for Personalized Experiences
           </Heading>
-          <Text mt={"1rem"} color={"#656565"} fontSize={"1rem"}>
+          <Text mt={"1rem"} color={"#656565"} fontSize={{ md:"1rem", base:'0.75rem'}}>
             Hushh is your one-stop solution for seamless data sharing between
             you and your favorite websites. With Hushh, you can effortlessly
             share your personal data with brands to enhance your browsing
             experience and receive tailored recommendations.
           </Text>
           <Box
+            mt={"1.5rem"}
+            display={{ md:"none", base:'flex'}}
+            justifyContent={"center"}
+            w={"100%"}
+            h={"100%"}
+            mb={"2rem"}
+          >
+            <Image
+              alt="directionLine"
+              className="hushhbuttonFrame3"
+              style={{
+                position: "absolute",
+                height:'4rem',
+                left: "-20%",
+                bottom: "0",
+              }}
+              src={DirectionLine}
+            />
+            <iframe
+              src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710411292%2FHushh_button_-_developer_walkthrough_uwwiy0.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true&player[pictureInPictureToggle]=false&source[poster]=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fimage%2Fupload%2FScreenshot_2024-03-14_160021_hapzpw.jpg"
+              width="4  40"
+              height="250"
+              style={{
+                height: "auto",
+                width: "80%",
+                aspectRatio: "640 / 360",
+                borderRadius: "1rem",
+              }}
+              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+              allowFullScreen
+              frameBorder="0"
+            ></iframe>
+          </Box>
+          <Box
             mt={"3rem"}
-            display={"flex"}
+            display={{ md:"flex", base:'none'}}
             justifyContent={"center"}
             w={"100%"}
             h={"100%"}
@@ -253,27 +287,36 @@ const hushhButton = () => {
             alignItems="flex-start"
             justifyContent="flex-start"
           >
-            <Heading className="gradient">
-              <Text fontSize={"2rem"}>Hushh For</Text>
-              <Text fontSize={"3.75rem"}>Customers</Text>
+           <Box display={{ base:'flex',md:'none'}} gap={'1rem'}>
+           <Heading className="gradient">
+              <Text fontSize={{ md:"2rem", base:'1.5rem'}}>Hushh For</Text>
+              <Text fontSize={{ md:"3.75rem", base:'2rem'}}>Customers</Text>
             </Heading>
+           <Image src={HushhEmoji} alt="hushhButtonCircle" style={{width:'30%'}} />
+            </Box> 
+
+           <Heading className="gradient" display={{md:'flex',base:'none'}} flexDirection={'column'}>
+              <Text fontSize={{ md:"2rem", base:'1.5rem'}}>Hushh For</Text>
+              <Text fontSize={{ md:"3.75rem", base:'2rem'}}>Customers</Text>
+            </Heading>  
+
             <UnorderedList
               mb={"1rem"}
               mt={{ base: "0.75rem", md: "1.5rem" }}
               fontWeight={"400"}
               fontSize={"1rem"}
-              lineHeight={"28.8px"}
+              lineHeight={{ md:"28.8px"}}
               color={extendedTheme.colors.secondary}
             >
-              <ListItem mb={"1rem"}>
+              <ListItem mb={{ md:"1rem", base:'0.5rem'}}>
                 Sync your preferences, past purchases, sizing information to
                 brands with a single click
               </ListItem>
-              <ListItem mb={"1rem"}>
+              <ListItem mb={{ md:"1rem", base:'0.5rem'}}>
                 Get your brand-specific data sent directly to your Hushh Wallet
                 for secure storage and management
               </ListItem>
-              <ListItem mb={"1rem"}>
+              <ListItem mb={{ md:"1rem", base:'0.5rem'}}>
                 Brands can offer products and services based on your unique
                 profile, leading to a more relevant shopping experience
               </ListItem>
@@ -294,10 +337,11 @@ const hushhButton = () => {
               LEARN MORE
             </Button>
           </VStack>
-          <VStack w={"60%"}>
+          <VStack display={{base:'none', md:'flex'}} w={{ md:"60%", base:'50%'}}>
             <Image src={HushhEmoji} alt="hushhButtonCircle" />
           </VStack>
         </Stack>
+        
         <Stack
           fontWeight={"700"}
           mt={{ md: "9rem", base: "3.5rem" }}
@@ -488,7 +532,7 @@ const hushhButton = () => {
             >
               Hush Button <br></br> Magic
             </Heading>
-            <Text lineHeight={'31.5px'} color={"white"} fontSize={"1.125rem"}>
+            <Text lineHeight={{ md:'31.5px'}} color={"white"} fontSize={"1.125rem"}>
               The widget allows users to create their cookies and control what
               information they want to share with different websites. This gives
               users complete control over their data privacy while enjoying a
@@ -504,7 +548,7 @@ const hushhButton = () => {
             >
               Data Retrieval Made Easy
             </Heading>
-            <Text lineHeight={'31.5px'} color={"white"} fontSize={"1.125rem"}>
+            <Text lineHeight={{ md:'31.5px'}} color={"white"} fontSize={"1.125rem"}>
               The widget allows users to create their cookies and control what
               information they want to share with different websites. This gives
               users complete control over their data privacy while enjoying a
@@ -512,7 +556,7 @@ const hushhButton = () => {
             </Text>
           </VStack>
         </HStack>
-      </Container>
+      </Box>
     </>
   );
 };

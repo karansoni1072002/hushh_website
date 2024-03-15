@@ -453,7 +453,7 @@ const hushhButton = () => {
             </Text>
           </VStack>
         </Stack>
-        <HStack px={{ md: "10rem", base: "2rem" }} gap={"5rem"}>
+        <HStack pb={{base:'3rem',md:'6rem'}} px={{ md: "10rem", base: "2rem" }} gap={"5rem"}>
           <VStack gap={"2rem"} alignItems={"flex-start"} textAlign={"left"}>
           {/* GIF Pending */}
             <Heading

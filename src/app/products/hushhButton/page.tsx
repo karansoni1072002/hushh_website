@@ -339,7 +339,12 @@ const hushhButton = () => {
                  <Image src={HushhLogoIcon} alt="hushhLogoIcon" style={{position:'absolute', top:'50%',right:'23%'}}/>
                  <Image src={StatisticCard} alt="statisticCard" style={{position:'absolute',bottom:'4%',left:'0'}}/>
             </VStack>
-            
+        </Stack>
+        <Stack margin={{ md:"10rem",base:'3.5rem' }}>
+            <VStack px={{md:'10rem',base:'1rem'}}>
+                <Heading textAlign={'center'} className="gradient" fontWeight={'400'} fontSize={{md:'3.75rem',base:'1.5rem'}} lineHeight={{base:"45px",md:"75px"}}>Transformed Shopping <br></br> Experience</Heading>
+                <Text mt={{ md:'2rem',base:'1rem'}} color={'white'} textAlign={'center'} fontWeight={'400'} lineHeight={'31.5px'} fontSize={{md:'1.125rem', base:'0.75rem'}}>With the Hushh Widget, websites and apps seamlessly change to showcase products that align with the user's preferences. It's like having a personalized shopping assistant that curates recommendations based on their unique style.</Text>
+            </VStack>
         </Stack>
       </Container>
     </>

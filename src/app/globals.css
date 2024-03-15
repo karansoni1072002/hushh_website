@@ -28,10 +28,11 @@
 }
 
 .gradient {
-  background: linear-gradient(to right, #7A7A7E, #FFFFFF);
+  background: linear-gradient(90deg, #7A7A7E 0.7%, #FFFFFF 100%);
   -webkit-background-clip: text;
   color: transparent;
 }
+
 
 .color-gradient {
   background: linear-gradient(to right, #E54D60, #A342FF); 

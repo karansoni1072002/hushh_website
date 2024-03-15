@@ -28,6 +28,9 @@ import HushhLogoIcon from "../../_components/svg/icons/hushhLogoIcon.svg";
 import StatisticCard from "../../_components/svg/card/statisticCard.svg";
 
 const hushhButton = () => {
+
+    const isMobile = useResponsiveSizes; 
+
   return (
     <>
       <Container
@@ -44,10 +47,10 @@ const hushhButton = () => {
         >
           <Heading
             fontWeight={"700"}
-            lineHeight={{ md: "255.6px", base: "100px" }}
+            lineHeight={{ md: "255.6px",base:'80px' }}
             textAlign={"center"}
-            fontSize={{ md: "8.8rem", base: "4.4rem" }}
-            pt={{ md: "10rem", base: "3.5rem" }}
+            fontSize={{ md: "8.8rem", base: "3.4rem" }}
+            pt={{ md: "10rem", base: "3rem" }}
             className="gradient"
           >
             Hushh Button
@@ -86,7 +89,7 @@ const hushhButton = () => {
           gap={"3rem"}
           px={"4rem"}
           display={"flex"}
-          flexDirection={{ base: "column", md: "row" }}
+          flexDirection={{ base: "row", md: "row" }}
         >
           <Box
             gap={"0rem"}
@@ -94,28 +97,48 @@ const hushhButton = () => {
             flexDirection={"column"}
             color={"white"}
           >
-            <Text fontWeight={"800"} fontSize={"2.8rem"}>
+            <Text fontWeight={"800"} fontSize={{ md:"2.8rem",base:'1.25rem'}}>
               42k
             </Text>
-            <Text fontSize={"1rem"} fontWeight={"500"}>
+            <Text fontSize={{ md:"1rem", base:'0.75rem'}} fontWeight={"500"}>
               Integrations
             </Text>
           </Box>
-          <Box
+            <Box
             gap={"0rem"}
             display={"flex"}
             flexDirection={"column"}
             color={"white"}
           >
-            <Text fontWeight={"800"} fontSize={"2.8rem"}>
+            <Text fontWeight={"800"} fontSize={{ md:"2.8rem",base:'1.25rem'}}>
               1.2b
             </Text>
-            <Text fontSize={"1rem"} fontWeight={"500"}>
+            <Text fontSize={{ md:"1rem", base:'0.75rem'}} fontWeight={"500"}>
               Users
             </Text>
-          </Box>
+            </Box>
+            <Button
+            ml={{ md: "55rem"}}
+            display={{ md:"flex",base:'none'}}
+            border={"1px solid #606060"}
+            borderRadius={"4rem"}
+            w={"9rem"}
+            color={extendedTheme.colors._white}
+            lineHeight={"28px"}
+            background={"transparent"}
+            letterSpacing={"0.2rem"}
+            _hover={{
+              background:
+                "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+            }}
+            padding={"15px 68px 15px 68px"}
+          >
+            PLAY DEMO
+           </Button>          
+        </HStack>
+         <Box display={{ base:'flex', md:'none'}} mt={'2rem'} justifyContent={'center'}>  
           <Button
-            ml={{ md: "55rem", base: "1rem" }}
+            ml={{ md: "55rem" }}
             display={"flex"}
             border={"1px solid #606060"}
             borderRadius={"4rem"}
@@ -132,22 +155,23 @@ const hushhButton = () => {
           >
             PLAY DEMO
           </Button>
-        </HStack>
+          </Box> 
+
         <HStack
           position={"relative"}
           mt={"4rem"}
-          px={{ md: "15rem", base: "2rem" }}
+          px={{ md: "15rem" }}
           minW={"100%"}
           bg={"#FFFFFF"}
           display={"flex"}
           flexDirection={"column"}
           textAlign={"center"}
-          py={{ md: "3rem", base: "1.5rem" }}
+          py={{ md: "3rem", base: "1rem" }}
         >
           <Heading
             color={"#0D0D25"}
             fontWeight={"700"}
-            fontSize={{ md: "3.5rem", base: "1.75rem" }}
+            fontSize={{ md: "3.5rem", base: "1.5rem" }}
           >
             Seamless Data Sharing for Personalized Experiences
           </Heading>

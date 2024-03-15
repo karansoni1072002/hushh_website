@@ -39,6 +39,12 @@
   color: transparent;
 }
 
+.hushh-gradient {
+  background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%); 
+  -webkit-background-clip: text;
+  color: transparent;
+  border-color: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
+}
 
 .gradient-bg {
   background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
@@ -234,11 +240,7 @@ body {
 
 
 /* Hushh Button CSS  */
-.frameCard1 {
-  position: absolute;
-  top: 80rem;
-  right: 16rem;
-}
+
 @media screen and (max-width: 1024px) {  
   .frameCard1 {
     display: none;
@@ -246,7 +248,7 @@ body {
   .hushhbuttonFrame2 {
     display: none;
   }
-  
+
 }
 
 /*  */

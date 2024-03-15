@@ -22,9 +22,13 @@ import { useResponsiveSizes } from "../../context/responsive";
 import HushhEmoji from '../../_components/svg/card/hushhCircleEmoji.svg';
 import HushhBrandCard from '../../_components/svg/card/hushhBrandCard.svg';
 import HushhButtonBg from '../../_components/svg/hushhButtonBg.svg'; 
+import HushhButtonUser from '../../_components/svg/hushhButtonUser.svg';
+import HushhButtonCard3 from '../../_components/svg/hushhButtonCard3.svg';
+import HushhLogoIcon from '../../_components/svg/icons/hushhLogoIcon.svg';
+import StatisticCard from '../../_components/svg/card/statisticCard.svg';
 
 const hushhButton = () => {
-    const isMobile = useResponsiveSizes;
+
   return (
     <>
       <Container maxW={"100%"} minW={'100%'} display={"flex"} flexDirection={"column"}>
@@ -120,6 +124,7 @@ const hushhButton = () => {
           </Button>
         </HStack>
         <HStack
+          position={'relative'}
           mt={"4rem"}
           px={{md:"15rem",base:'2rem'}}
           minW={"100%"}
@@ -151,15 +156,15 @@ const hushhButton = () => {
               alt="barIcon"
               style={{
                 position: "absolute",
-                left: "2rem",
-                top: "50rem",
+                left: "2%",
+                top: "2%",
                 transform: "rotate(35deg)",
               }}
               className="hushhbuttonFrame1"
             />
             <Image
               alt="hushhButtonCard2"
-              style={{ position: "absolute", left: "12rem" }}
+              style={{ position: "absolute", left: "12%" }}
               src={FrameCard2}
               className="hushhbuttonFrame2"
             />
@@ -168,9 +173,8 @@ const hushhButton = () => {
               className="hushhbuttonFrame3"
               style={{
                 position: "absolute",
-                left: "8rem",
+                left: "8%",
                 bottom: "0",
-                top: "83rem",
               }}
               src={DirectionLine}
             />
@@ -192,6 +196,7 @@ const hushhButton = () => {
               className="frameCard1"
               alt="HushhButtonframeCard4"
               src={FramCard1}
+              style={{position:'absolute', right:'16rem',bottom:'0rem'}}
             />
           </Box>
         </HStack>
@@ -200,7 +205,7 @@ const hushhButton = () => {
           mt={{md:"9rem",base:'3.5rem'}}
           px={{md:"15rem",base:'2rem'}}
           display={"flex"}
-          alignItems="flex-start" // Align items to the start (left)
+          alignItems="flex-start"
           justifyContent="flex-start"
           flexDirection={{ base: "column", md: "row" }}
           gap={{md:'6rem',base:'2rem'}}
@@ -290,6 +295,51 @@ const hushhButton = () => {
                 GET IT NOW
             </Button>
           </VStack>
+        </Stack>
+        <Stack bg={'white'} pos={'relative'} display={'flex'} flexDirection={'row'}>
+            <Image src={HushhButtonBg} alt="hushhbuttonBg"/>
+
+            <VStack gap={'2.5rem'} mt={'10rem'} mr={'50%'} alignItems="flex-start" justifyContent="flex-start" pl={'3rem'} pos={'absolute'}>
+                <Box fontWeight={'400'} lineHeight={{md:'60.6px',base:'30.3px'}} fontSize={{md:'3.75rem',base:'1.75rem'}}>
+                    <Text color={'#0D0D25'}>The <br></br> Hushh Button <span style={{fontWeight:'700'}}> is a </span> </Text>
+                    <Text className="hushh-gradient" fontWeight={'700'} >win-win</Text>
+                </Box>
+                <Text color={'#0D0D25'} fontWeight={'400'} fontSize={'1.25rem'} lineHeight={{base:'',md:'27px'}}>Customers enjoy a seamless and personalized shopping experience, while brands gain valuable insights and build stronger relationships with their audience</Text>
+            <Button
+              pos={'relative'}
+              border={"3px solid"}
+
+              borderLeftColor={'#E54D60'}
+              borderRightColor={'#A342FF'}
+
+              borderTopColor={'#E54D60'}
+              borderBottomColor={'#A342FF'}
+              borderEndColor={'#E54D60'}
+              borderStartColor={'#A342FF'}
+
+              borderRadius={"2px"}
+              w={"16rem"}
+              h={'3.75rem'}
+              className="hushh-gradient"
+              lineHeight={"28px"}
+              background={"transparent"}
+              letterSpacing={"0.5rem"}
+              _hover={{
+                background:
+                  "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                  color:'white'
+              }}    
+            >
+                GET IT NOW
+            </Button>
+            </VStack>
+            <VStack right={0} alignItems="flex-end" justifyContent="flex-end" pr={'3rem'} pos={'absolute'}>
+                 <Image src={HushhButtonUser}  alt="hushhButtonUser"/>
+                 <Image src={HushhButtonCard3} alt="hushhButtonCard3" style={{position:"absolute", top:'20%',right:'0%'}}  />
+                 <Image src={HushhLogoIcon} alt="hushhLogoIcon" style={{position:'absolute', top:'50%',right:'23%'}}/>
+                 <Image src={StatisticCard} alt="statisticCard" style={{position:'absolute',bottom:'4%',left:'0'}}/>
+            </VStack>
+            
         </Stack>
       </Container>
     </>

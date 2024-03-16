@@ -27,6 +27,7 @@ import HushhButtonCard3 from "../../_components/svg/hushhButtonCard3.svg";
 import HushhLogoIcon from "../../_components/svg/icons/hushhLogoIcon.svg";
 import StatisticCard from "../../_components/svg/card/statisticCard.svg";
 import HushhButtonOnlyUser from "../../_components/svg/hushhButtonOnlyUser.svg";
+import HushhButtonWin from '../../_components/svg/hushhButtonWin.svg';
 
 const hushhButton = () => {
   const isMobile = useResponsiveSizes;
@@ -523,25 +524,10 @@ const hushhButton = () => {
             display={{ md: "flex", base: "none" }}
             alignItems="flex-end"
             justifyContent="flex-end"
-            pr={"3rem"}
+            pr={"1rem"}
             pos={"absolute"}
           >
-            <Image src={HushhButtonUser} alt="hushhButtonUser" />
-            <Image
-              src={HushhButtonCard3}
-              alt="hushhButtonCard3"
-              style={{ position: "absolute", top: "20%", right: "0%" }}
-            />
-            <Image
-              src={HushhLogoIcon}
-              alt="hushhLogoIcon"
-              style={{ position: "absolute", top: "50%", right: "23%" }}
-            />
-            <Image
-              src={StatisticCard}
-              alt="statisticCard"
-              style={{ position: "absolute", bottom: "4%", left: "0" }}
-            />
+            <Image src={HushhButtonWin} alt="hushhButtonUser" />
           </VStack>
         </Stack>
 

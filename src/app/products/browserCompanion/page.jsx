@@ -3,7 +3,9 @@ import { Box, Button, HStack, Heading, Text } from '@chakra-ui/react'
 import extendedTheme from '../../theme'
 import Image from 'next/image'
 import DirectionLine from "../../_components/svg/icons/directionLine.svg"
-
+import BarIcon from "../../_components/svg/icons/barIcon.svg";
+import FrameCard2 from "../../_components/svg/card/buttonvoucherCard.svg";
+import FramCard1 from "../../_components/svg/card/frameCardHushhButton.svg";
 
 
 const browserCompanion = () => {
@@ -163,17 +165,15 @@ const browserCompanion = () => {
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
           >
-            Seamless Data Sharing for Personalized Experiences
+             Introducing Hushh, the Browser Companion That Empowers You
           </Heading>
           <Text
             mt={"1rem"}
             color={"#656565"}
             fontSize={{ md: "1rem", base: "0.75rem" }}
           >
-            Hushh is your one-stop solution for seamless data sharing between
-            you and your favorite websites. With Hushh, you can effortlessly
-            share your personal data with brands to enhance your browsing
-            experience and receive tailored recommendations.
+            Tired of being tracked online? Every click, scroll, and search query leaves a trail of your identity, 
+            exploited by third-party organizations for targeted advertising. With Hushh, the power is back in your hands
           </Text>
           <Box
             mt={"1.5rem"}

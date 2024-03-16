@@ -532,9 +532,10 @@ const hushhButton = () => {
         </Stack>
 
         <Stack
-          display={{ lg: "none", base: "flex" }} // 'lg' hides on larger screens
+          display={{ lg: "none", base: "flex" }}
           bg="white"
           direction="row"
+          pb={'4rem'}
           align="left"
           justify="left"
           position={"relative"}
@@ -548,14 +549,14 @@ const hushhButton = () => {
             gap="1rem"
             mt="2rem"
             alignItems="left"
-            pr={"40%"}
             justifyContent="flex-start"
             pl="1rem"
+            mr={'50%'}
             pos="absolute"
-            top="0" // Adjusted for mobile
-            left="0" // Adjusted for mobile
-            right="0" // Adjusted for mobile
-            textAlign="left" // Center text for mobile
+            top="0" 
+            left="0"
+            right="0"
+            textAlign="left"
           >
             <Box
               fontWeight={"400"}
@@ -610,52 +611,14 @@ const hushhButton = () => {
           <VStack
             right={0}
             bottom={0}
-            ml={"4rem"}
             display={{ md: "none", base: "flex" }}
             alignItems="flex-end"
             justifyContent="flex-end"
-            pos={"absolute"}
-            w={"84%"}
-            mt={"5rem"}
           >
             <Image
-              src={HushhButtonOnlyUser}
+              src={HushhButtonWin}
               alt="HushhButtonOnlyUser"
-              style={{ height: "65%", width: "50%" }}
-            />
-            <Image
-              src={HushhButtonCard3}
-              alt="hushhButtonCard3"
-              style={{
-                position: "absolute",
-                bottom: "0",
-                marginBottom: "9rem",
-                right: "0",
-                width: "8em",
-                height: "4em",
-              }}
-            />
-            <Image
-              src={HushhLogoIcon}
-              alt="hushhLogoIcon"
-              style={{
-                position: "absolute",
-                marginBottom: "4.75rem",
-                marginRight: "1.4em",
-                width: "1em",
-                height: "1em",
-              }}
-            />
-            <Image
-              src={StatisticCard}
-              alt="statisticCard"
-              style={{
-                position: "absolute",
-                marginBottom: "12rem",
-                right: "37%",
-                width: "4em",
-                height: "8em",
-              }}
+              style={{ height: "100%",position:'absolute', width: "50%" }}
             />
           </VStack>
         </Stack>

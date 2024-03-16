@@ -6,6 +6,7 @@ import DirectionLine from "../../_components/svg/icons/directionLine.svg";
 import BarIcon from "../../_components/svg/icons/barIcon.svg";
 import FrameCard2 from "../../_components/svg/card/buttonvoucherCard.svg";
 import FramCard1 from "../../_components/svg/card/frameCardHushhButton.svg";
+import BrowserBox from "../../_components/svg/browserCompanionBoxImg.svg";
 
 const browserCompanion = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -272,10 +273,10 @@ const browserCompanion = () => {
         </HStack>
 
         <HStack
-          mt={{ md: "8rem", base: "3rem" }}
+          my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
         >
-          <Box display={"flex"} flexDirection={"column"}>
+          <Box display={"flex"} flexDirection={"column"} gap={'1rem'} flex={1}>
             <Text
               className="default-gradient"
               letterSpacing={"0.255rem"}
@@ -325,8 +326,28 @@ const browserCompanion = () => {
             >
               Track your own browsing activity
             </Box>
+            <Box fontSize={'1.25rem'} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'30.04px'} color={'#ABACB0'} gap={'1rem'}>
+            <Text>Choose what data to collect</Text>
+            <Text>Track your interests over time</Text>
+            <Text>Export your data</Text>
+            <Text>Sell your data responsibly</Text>
+            </Box>
           </Box>
-          <Box></Box>
+          <Box display={'flex'} flexDirection={'column'} flex={1} gap={'1rem'}>
+            <Image src={BrowserBox} alt="BrowserBox"/>
+            <Text fontSize={{ md:'1rem', base:'0.75rem'}} color={'#ABABAB'} lineHeight={{md:'36px', base:'18px'}}>See exactly what data is being collected about you, including search queries, brand interactions, interests, preferences, likes, and clicks. Gain insights into your online behavior and understand what shapes your digital footprint</Text>
+            <Button 
+             borderRadius={'3.3rem'}
+             w={'fit-content'}
+             p={'1rem 2rem'}
+             _hover={{
+              color:'white',
+              bg:'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
+             }}
+            >
+              Explore
+            </Button>
+          </Box>
         </HStack>
       </Box>
     </>

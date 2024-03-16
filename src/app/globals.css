@@ -28,10 +28,11 @@
 }
 
 .gradient {
-  background: linear-gradient(to right, #7A7A7E, #FFFFFF);
+  background: linear-gradient(90deg, #7A7A7E 0.7%, #FFFFFF 100%);
   -webkit-background-clip: text;
   color: transparent;
 }
+
 
 .color-gradient {
   background: linear-gradient(to right, #E54D60, #A342FF); 
@@ -39,6 +40,12 @@
   color: transparent;
 }
 
+.hushh-gradient {
+  background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%); 
+  -webkit-background-clip: text;
+  color: transparent;
+  border-color: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
+}
 
 .gradient-bg {
   background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
@@ -231,3 +238,18 @@ body {
   }
 }
 
+
+
+/* Hushh Button CSS  */
+
+@media screen and (max-width: 1024px) {  
+  .frameCard1 {
+    display: none;
+  }
+  .hushhbuttonFrame2 {
+    display: none;
+  }
+
+}
+
+/*  */

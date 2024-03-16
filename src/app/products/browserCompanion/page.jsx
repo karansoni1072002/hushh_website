@@ -1,17 +1,18 @@
-import React from 'react'
-import { Box, Button, HStack, Heading, Text } from '@chakra-ui/react'
-import extendedTheme from '../../theme'
-import Image from 'next/image'
-import DirectionLine from "../../_components/svg/icons/directionLine.svg"
+import React from "react";
+import { Box, Button, Divider, HStack, Heading, Text } from "@chakra-ui/react";
+import extendedTheme from "../../theme";
+import Image from "next/image";
+import DirectionLine from "../../_components/svg/icons/directionLine.svg";
 import BarIcon from "../../_components/svg/icons/barIcon.svg";
 import FrameCard2 from "../../_components/svg/card/buttonvoucherCard.svg";
 import FramCard1 from "../../_components/svg/card/frameCardHushhButton.svg";
 
-
 const browserCompanion = () => {
+  const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
+
   return (
     <>
-     <Box
+      <Box
         maxW={"100%"}
         minW={"100%"}
         display={"flex"}
@@ -22,7 +23,7 @@ const browserCompanion = () => {
           w={"100%"}
           display={"flex"}
           flexDirection={"column"}
-          mt={{base:'3rem'}}
+          mt={{ base: "3rem" }}
         >
           <Heading
             fontWeight={"700"}
@@ -31,8 +32,8 @@ const browserCompanion = () => {
             fontSize={{ md: "8.8rem", base: "2.5rem" }}
             pt={{ md: "10rem", base: "3rem" }}
             className="gradient"
-            px={{base:'0.5rem'}}
-            mb={{base:'0.5rem'}}
+            px={{ base: "0.5rem" }}
+            mb={{ base: "0.5rem" }}
           >
             Browser Companion
           </Heading>
@@ -42,16 +43,17 @@ const browserCompanion = () => {
             textAlign={"center"}
             color={"#656565"}
           >
-            The Hushh Web Browser Extension takes personalized online experiences to the next level. Here's what it offers
+            The Hushh Web Browser Extension takes personalized online
+            experiences to the next level. Here's what it offers
           </Text>
           <Button
             border={"1px solid #606060"}
             borderRadius={"2px"}
-            w={{ md:"16rem", base:"10rem"}}
+            w={{ md: "16rem", base: "10rem" }}
             color={extendedTheme.colors._white}
-            lineHeight={{ md:"28px", base:'14px'}}
+            lineHeight={{ md: "28px", base: "14px" }}
             background={"transparent"}
-            letterSpacing={{ md:"0.5rem", base:"0.25rem"}}
+            letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
@@ -91,9 +93,9 @@ const browserCompanion = () => {
             display={"flex"}
             flexDirection={"column"}
             color={"white"}
-            alignItems={{base:'center'}}
-            justifyContent={{base:'center'}}
-            textAlign={{base:'center'}}
+            alignItems={{ base: "center" }}
+            justifyContent={{ base: "center" }}
+            textAlign={{ base: "center" }}
           >
             <Text
               fontWeight={"800"}
@@ -165,15 +167,17 @@ const browserCompanion = () => {
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
           >
-             Introducing Hushh, the Browser Companion That Empowers You
+            Introducing Hushh, the Browser Companion That Empowers You
           </Heading>
           <Text
             mt={"1rem"}
             color={"#656565"}
             fontSize={{ md: "1rem", base: "0.75rem" }}
           >
-            Tired of being tracked online? Every click, scroll, and search query leaves a trail of your identity, 
-            exploited by third-party organizations for targeted advertising. With Hushh, the power is back in your hands
+            Tired of being tracked online? Every click, scroll, and search query
+            leaves a trail of your identity, exploited by third-party
+            organizations for targeted advertising. With Hushh, the power is
+            back in your hands
           </Text>
           <Box
             mt={"1.5rem"}
@@ -266,9 +270,67 @@ const browserCompanion = () => {
             />
           </Box>
         </HStack>
-       </Box> 
-    </>
-  )
-}
 
-export default browserCompanion
+        <HStack
+          mt={{ md: "8rem", base: "3rem" }}
+          px={{ md: "7rem", base: "1.25rem" }}
+        >
+          <Box display={"flex"} flexDirection={"column"}>
+            <Text
+              className="default-gradient"
+              letterSpacing={"0.255rem"}
+              lineHeight={"1rem"}
+              fontWeight={"600"}
+              fontSize={"1rem"}
+            >
+              HUSHH
+            </Text>
+            <Text
+              className="gradient"
+              fontSize={{ md: "3.75rem", base: "1.75rem" }}
+              fontWeight={"400"}
+              lineHeight={{ md: "63.3px", base: "31.2px" }}
+            >
+              Browser Companion{" "}
+            </Text>
+            <Text
+              className="gradient"
+              fontSize={{ md: "3.75rem", base: "1.75rem" }}
+              fontWeight={"700"}
+              lineHeight={{ md: "63.3px", base: "31.2px" }}
+            >
+              that empowers you
+            </Text>
+            <Box
+              position="relative"
+              fontSize={{ base: "1.25rem", md: "1.75rem" }}
+              fontWeight="700"
+              css={{
+                "&::before": {
+                  content: '"–"',
+                  display: "inline-block",
+                  width: "22px",
+                  height: "1em",
+                  background: gradient,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  border: "0 solid",
+                  borderImageSource: gradient,
+                  borderImageSlice: 1,
+                },
+                background: gradient,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Track your own browsing activity
+            </Box>
+          </Box>
+          <Box></Box>
+        </HStack>
+      </Box>
+    </>
+  );
+};
+
+export default browserCompanion;

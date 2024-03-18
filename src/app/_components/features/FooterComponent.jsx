@@ -74,28 +74,30 @@ const FooterComponent = () => {
 
             {/* Mobile View */}
             <div className="mobile-view">
-                <div className="flex flex-col justify-center items-center gap-10 pb-10 pt-10 text-center">
-                    <div className="w-96 gap-4 flex flex-col justify-center items-center">
+                <div className="flex flex-col justify-center items-center gap-10 pb-10 pt-10">
+                    <div className="w-full px-5 gap-4 flex flex-col justify-center items-start">
                         <HushhMobileFooterLogo />
                         <h1 className='font-semibold text-xl leading-10'>We help you in growing your business<br />with personal AI manager.</h1>
                         <p className='text-base'>Manish Sainani, 2024</p>
                     </div>
 
                     <div className="flex flex-col text-left px-5 gap-5 justify-between w-full flex-1">
-                        <div className="flex flex-col gap-3">
-                            <p className='text-sm font-medium opacity-80 leading-6'>Platform</p>
-                            <div className="flex flex-col text-base gap-2 leading-5">
-                                <Link href='#'>Plans & Pricing</Link>
-                                <Link href='#'>Personal AI Manager</Link>
-                                <Link href='#'>AI Business Writer</Link>
+                        <div className="flex">
+                            <div className="flex flex-1 flex-col gap-3">
+                                <p className='text-sm font-medium opacity-80 leading-6'>Platform</p>
+                                <div className="flex flex-col text-base gap-2 leading-5">
+                                    <Link href='#'>Plans & Pricing</Link>
+                                    <Link href='#'>Personal AI Manager</Link>
+                                    <Link href='#'>AI Business Writer</Link>
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex flex-col gap-3">
-                            <p className='text-sm font-medium opacity-80 leading-6'>Company</p>
-                            <div className="flex flex-col text-base gap-2 leading-5">
-                                <Link href='#'>Blog</Link>
-                                <Link href='#'>Careers</Link>
-                                <Link href='#'>News</Link>
+                            <div className="flex flex-1 flex-col gap-3">
+                                <p className='text-sm font-medium opacity-80 leading-6'>Company</p>
+                                <div className="flex flex-col text-base gap-2 leading-5">
+                                    <Link href='#'>Blog</Link>
+                                    <Link href='#'>Careers</Link>
+                                    <Link href='#'>News</Link>
+                                </div>
                             </div>
                         </div>
                         <div className="flex flex-col gap-3">

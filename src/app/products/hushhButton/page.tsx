@@ -29,11 +29,20 @@ import StatisticCard from "../../_components/svg/card/statisticCard.svg";
 import HushhButtonOnlyUser from "../../_components/svg/hushhButtonOnlyUser.svg";
 import HushhButtonWin from '../../_components/svg/hushhButtonWin.svg';
 import { useRouter } from "next/navigation";
+import { animateScroll as scroll } from 'react-scroll';
 
 
 const hushhButton = () => {
   const isMobile = useResponsiveSizes;
   const router = useRouter();
+
+  const scrollTo = () => {
+    scroll.scrollTo(850); // Scrolling to 100px from the top of the page.
+  };
+
+  const scrollInMobile = () => {
+    scroll.scrollTo(450);
+  }
 
   return (
     <>
@@ -143,6 +152,7 @@ const hushhButton = () => {
             lineHeight={"28px"}
             background={"transparent"}
             letterSpacing={"0.2rem"}
+            onClick={scrollTo}
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
@@ -167,6 +177,7 @@ const hushhButton = () => {
             lineHeight={"28px"}
             background={"transparent"}
             letterSpacing={"0.2rem"}
+            onClick={scrollInMobile}
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",

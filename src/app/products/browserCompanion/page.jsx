@@ -12,34 +12,13 @@ import BrowserFaq from "../../_components/features/faq/browserFaq";
 import HushhWalletBox from '../../_components/svg/walletIntegrationBox.svg'
 import { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation";
-import { useScroll, scroller, Events,scrollEvent, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll';
 
 
 const browserCompanion = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
-  const [shouldScroll, setShouldScroll] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    
-    // Registering the 'begin' event and logging it to the console when triggered.
-    Events.scrollEvent.register('begin', (to, element) => {
-      console.log('begin', to, element);
-    });
-
-    // Registering the 'end' event and logging it to the console when triggered.
-    Events.scrollEvent.register('end', (to, element) => {
-      console.log('end', to, element);
-    });
-
-    // Updating scrollSpy when the component mounts.
-    scrollSpy.update();
-
-    return () => {
-      Events.scrollEvent.remove('begin');
-      Events.scrollEvent.remove('end');
-    };
-  }, []);
 
   const scrollTo = () => {
     scroll.scrollTo(850); // Scrolling to 100px from the top of the page.

@@ -414,9 +414,9 @@ export default function Home() {
                 alignItems={"center"}
                 textAlign={'center'}
                 description="List products effortlessly on Vibe Search App with seamless management and insightful analytics"
-                // onClick={() =>
-                //   router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
-                // }
+                onClick={() =>
+                  router.push("/products/vibeSearch")
+                }
               />
             </Grid>
           </Container>

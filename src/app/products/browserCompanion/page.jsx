@@ -1,5 +1,5 @@
 'use client'
-import React from "react";
+import React, { useRef } from "react";
 import { Box, Button, HStack, Heading, Stack, Text, VStack } from "@chakra-ui/react";
 import extendedTheme from "../../theme";
 import Image from "next/image";
@@ -10,9 +10,46 @@ import FramCard1 from "../../_components/svg/card/frameCardHushhButton.svg";
 import BrowserBox from "../../_components/svg/browserCompanionBoxImg.svg";
 import BrowserFaq from "../../_components/features/faq/browserFaq";
 import HushhWalletBox from '../../_components/svg/walletIntegrationBox.svg'
+import { useState, useEffect } from 'react';
+import { useRouter } from "next/navigation";
+import { useScroll, scroller, Events,scrollEvent, animateScroll as scroll, scrollSpy } from 'react-scroll';
+
 
 const browserCompanion = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
+  const [shouldScroll, setShouldScroll] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    
+    // Registering the 'begin' event and logging it to the console when triggered.
+    Events.scrollEvent.register('begin', (to, element) => {
+      console.log('begin', to, element);
+    });
+
+    // Registering the 'end' event and logging it to the console when triggered.
+    Events.scrollEvent.register('end', (to, element) => {
+      console.log('end', to, element);
+    });
+
+    // Updating scrollSpy when the component mounts.
+    scrollSpy.update();
+
+    return () => {
+      Events.scrollEvent.remove('begin');
+      Events.scrollEvent.remove('end');
+    };
+  }, []);
+
+  const scrollTo = () => {
+    scroll.scrollTo(850); // Scrolling to 100px from the top of the page.
+  };
+
+  const scrollInMobile = () => {
+    scroll.scrollTo(450);
+  }
+
+
 
   return (
     <>
@@ -121,6 +158,7 @@ const browserCompanion = () => {
             lineHeight={"28px"}
             background={"transparent"}
             letterSpacing={"0.2rem"}
+            onClick={scrollTo}
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
@@ -138,8 +176,9 @@ const browserCompanion = () => {
           <Button
             ml={{ md: "55rem" }}
             display={"flex"}
-            border={"1px #606060"}
+            border={"1px solid #606060"}
             borderRadius={"4rem"}
+            onClick={scrollInMobile}
             w={"12rem"}
             color={extendedTheme.colors._white}
             lineHeight={"32.4px"}
@@ -349,6 +388,10 @@ const browserCompanion = () => {
               color:'white',
               bg:'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
              }}
+             onClick={() =>
+              router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+            }
+
             >
               Explore
             </Button>
@@ -426,7 +469,7 @@ const browserCompanion = () => {
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               }}
               onClick={() =>
-                router.push("https://sites.google.com/hush1one.com/drops/home/journey")
+                router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
               }
             >
               REQUEST ACCESS

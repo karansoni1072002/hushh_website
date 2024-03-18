@@ -28,9 +28,12 @@ import HushhLogoIcon from "../../_components/svg/icons/hushhLogoIcon.svg";
 import StatisticCard from "../../_components/svg/card/statisticCard.svg";
 import HushhButtonOnlyUser from "../../_components/svg/hushhButtonOnlyUser.svg";
 import HushhButtonWin from '../../_components/svg/hushhButtonWin.svg';
+import { useRouter } from "next/navigation";
+
 
 const hushhButton = () => {
   const isMobile = useResponsiveSizes;
+  const router = useRouter();
 
   return (
     <>
@@ -81,9 +84,9 @@ const hushhButton = () => {
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
-            //   onClick={() =>
-            //     router.push("https://sites.google.com/hush1one.com/drops/home/journey")
-            //   }
+              onClick={() =>
+                router.push("https://sites.google.com/hush1one.com/drops/products/hushh-button")
+              }
           >
             LEARN MORE
           </Button>
@@ -364,6 +367,9 @@ const hushhButton = () => {
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               }}
+              onClick={() =>
+                router.push("https://sites.google.com/hush1one.com/drops/products/hushh-button")
+              }
             >
               LEARN MORE
             </Button>
@@ -449,6 +455,9 @@ const hushhButton = () => {
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               }}
+              onClick={() =>
+                router.push("https://sites.google.com/hush1one.com/drops/products/hushh-button")
+              }
             >
               GET IT NOW
             </Button>
@@ -515,6 +524,9 @@ const hushhButton = () => {
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 color: "white",
               }}
+              onClick={() =>
+                router.push("https://sites.google.com/hush1one.com/drops/products/hushh-button")
+              }
             >
               GET IT NOW
             </Button>
@@ -603,6 +615,9 @@ const hushhButton = () => {
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 color: "white",
               }}
+              onClick={() =>
+                router.push("https://sites.google.com/hush1one.com/drops/products/hushh-button")
+              }
             >
               GET IT NOW
             </Button>

@@ -1,5 +1,6 @@
+'use client'
 import React from "react";
-import { Box, Button, HStack, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, HStack, Heading, Stack, Text, VStack } from "@chakra-ui/react";
 import extendedTheme from "../../theme";
 import Image from "next/image";
 import DirectionLine from "../../_components/svg/icons/directionLine.svg";
@@ -8,6 +9,7 @@ import FrameCard2 from "../../_components/svg/card/buttonvoucherCard.svg";
 import FramCard1 from "../../_components/svg/card/frameCardHushhButton.svg";
 import BrowserBox from "../../_components/svg/browserCompanionBoxImg.svg";
 import BrowserFaq from "../../_components/features/faq/browserFaq";
+import HushhWalletBox from '../../_components/svg/walletIntegrationBox.svg'
 
 const browserCompanion = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -136,13 +138,13 @@ const browserCompanion = () => {
           <Button
             ml={{ md: "55rem" }}
             display={"flex"}
-            border={"1px solid #606060"}
+            border={"1px #606060"}
             borderRadius={"4rem"}
-            w={"9rem"}
+            w={"12rem"}
             color={extendedTheme.colors._white}
-            lineHeight={"28px"}
+            lineHeight={"32.4px"}
             background={"transparent"}
-            letterSpacing={"0.2rem"}
+            letterSpacing={"0.29rem"}
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
@@ -350,8 +352,112 @@ const browserCompanion = () => {
             </Button>
           </Box>
         </HStack>
+
+        <HStack
+          my={{ md: "8rem", base: "3rem" }}
+          px={{ md: "7rem", base: "1.25rem" }}
+          gap={'2rem'}
+        >
+          <Box display={'flex'} flexDirection={'column'} flex={1} gap={'2rem'}>
+            <Image src={HushhWalletBox} alt="HushhWalletBox"/>
+            {/* <Text fontSize={{ md:'1rem', base:'0.75rem'}} color={'#ABABAB'} lineHeight={{md:'36px', base:'18px'}}>See exactly what data is being collected about you, including search queries, brand interactions, interests, preferences, likes, and clicks. Gain insights into your online behavior and understand what shapes your digital footprint</Text> */}
+            
+          </Box>
+
+          <Box display={"flex"} flexDirection={"column"} gap={'2rem'} flex={1}>
+            <Text
+              className="default-gradient"
+              letterSpacing={"0.255rem"}
+              lineHeight={"1rem"}
+              fontWeight={"600"}
+              fontSize={"1rem"}
+            >
+              Convenient
+            </Text>
+            <Text
+              className="gradient"
+              fontSize={{ md: "3.75rem", base: "1.75rem" }}
+              fontWeight={"400"}
+              lineHeight={{ md: "63.3px", base: "31.2px" }}
+            >
+               Wallet Integration            
+            </Text>
+            <Box
+              position="relative"
+              fontSize={{ base: "1.25rem", md: "1.75rem" }}
+              fontWeight="700"
+              css={{
+                "&::before": {
+                  content: '"–"',
+                  display: "inline-block",
+                  width: "22px",
+                  height: "1em",
+                  background: gradient,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  border: "0 solid",
+                  borderImageSource: gradient,
+                  borderImageSlice: 1,
+                },
+                background: gradient,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Streamlined Integration via Browser Companion
+            </Box>
+            <Box fontSize={'1rem'} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'36px'} color={'#ABABAB'} gap={'1rem'}>
+            <Text>Hushh Web Browser Extension also enables users to share their user activity in their Hushh Wallet. This makes it easy to organize and access important information, such as receipts, warranty details, and more, all in one secure place.</Text>
+            </Box>
+            <Button
+              border={"3px solid #606060"}
+              borderRadius={"2px"}
+              w={"16rem"}
+              color={extendedTheme.colors._white}
+              lineHeight={"28px"}
+              background={"transparent"}
+              letterSpacing={"0.4rem"}
+              _hover={{
+                background:
+                  "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              }}
+              onClick={() =>
+                router.push("https://sites.google.com/hush1one.com/drops/home/journey")
+              }
+            >
+              REQUEST ACCESS
+            </Button>
+          </Box>
+          
+        </HStack>
+
+        <Stack margin={{ md: "10rem", base: "3.5rem" }}>
+          <VStack px={{ md: "10rem", base: "0rem" }}>
+            {/* GIF Pending */}
+            <Heading
+              textAlign={"center"}
+              className="gradient"
+              fontWeight={"400"}
+              fontSize={{ md: "3.75rem", base: "1.25rem" }}
+              lineHeight={{ base: "45px", md: "75px" }}
+            >
+              Intelligent Insights and <br></br> Recommendations
+            </Heading>
+            <Text
+              mt={{ md: "2rem", base: "1rem" }}
+              color={"white"}
+              textAlign={"center"}
+              fontWeight={"400"}
+              lineHeight={{md:"31.5px", base:'20px'}}
+              fontSize={{ md: "1.125rem", base: "0.75rem" }}
+            >
+              The extension utilizes advanced algorithms and AI technology to analyze the captured data and generate brilliant insights. Users receive personalized recommendations, discover new products and brands aligned with their interests, and stay up-to-date with the latest trends.
+            </Text>
+          </VStack>
+        </Stack>
         <BrowserFaq/>
       </Box>
+
     </>
   );
 };

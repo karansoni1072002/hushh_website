@@ -258,4 +258,18 @@ body {
 
 }
 
-/*  */
+/* CSS for FAQ Accordian Tabs  */
+
+.gradientText {
+  background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.gradientUnderline {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
+}

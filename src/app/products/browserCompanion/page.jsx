@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Divider, HStack, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, HStack, Heading, Text } from "@chakra-ui/react";
 import extendedTheme from "../../theme";
 import Image from "next/image";
 import DirectionLine from "../../_components/svg/icons/directionLine.svg";
@@ -7,6 +7,7 @@ import BarIcon from "../../_components/svg/icons/barIcon.svg";
 import FrameCard2 from "../../_components/svg/card/buttonvoucherCard.svg";
 import FramCard1 from "../../_components/svg/card/frameCardHushhButton.svg";
 import BrowserBox from "../../_components/svg/browserCompanionBoxImg.svg";
+import BrowserFaq from "../../_components/features/faq/browserFaq";
 
 const browserCompanion = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -349,6 +350,7 @@ const browserCompanion = () => {
             </Button>
           </Box>
         </HStack>
+        <BrowserFaq/>
       </Box>
     </>
   );

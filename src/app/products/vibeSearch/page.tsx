@@ -365,7 +365,7 @@ const vibeSearch = () => {
               bg:'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
              }}
              onClick={() =>
-                router.push("https://sites.google.com/hush1one.com/drops/mlds#h.phjv03hn3bq")
+                router.push("https://sites.google.com/hush1one.com/drops/mlds#h.tzh0jcbjtatx")
               }
 
             >
@@ -461,6 +461,24 @@ const vibeSearch = () => {
             <Text display={'flex'} color={'#ABABAB'} lineHeight={'25px'} fontSize={{md:'0.8rem', base:'0.8rem'}}>Vibe search is more than just an app its your personal stylist on tap of a button</Text>
             <Box>
                 <Image src={VibeSearchBg} alt="VibeSearchBg" />
+                
+                <Button  border={"1px solid #606060"}
+            borderRadius={"2px"}
+            w={{ md: "16rem", base: "10rem" }}
+            color={extendedTheme.colors._white}
+            lineHeight={{ md: "28px", base: "14px" }}
+            background={"transparent"}
+            letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
+            _hover={{
+              background:
+                "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+            }}
+            onClick={() =>
+                router.push("https://testflight.apple.com/join/CDYPEfJ5")
+              }            
+              >
+                Download App
+            </Button>
             </Box>
         </Stack>
 

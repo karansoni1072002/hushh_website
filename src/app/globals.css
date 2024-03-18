@@ -39,6 +39,19 @@
   color: transparent;
 }
 
+.hushh-gradient {
+  background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%); 
+  -webkit-background-clip: text;
+  color: transparent;
+  border-color: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
+}
+
+.default-gradient {
+  background: linear-gradient(#E54D60 8.81%, #A342FF 94.26%);
+  -webkit-background-clip: text;
+  color: transparent;
+  border-color: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
+}
 
 .gradient-bg {
   background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
@@ -262,4 +275,34 @@ body {
   .review-text::after {
     font-size: 1.5em;
   }
+}
+
+
+
+/* Hushh Button CSS  */
+
+@media screen and (max-width: 1024px) {  
+  .frameCard1 {
+    display: none;
+  }
+  .hushhbuttonFrame2 {
+    display: none;
+  }
+
+}
+
+/* CSS for FAQ Accordian Tabs  */
+
+.gradientText {
+  background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.gradientUnderline {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
 }

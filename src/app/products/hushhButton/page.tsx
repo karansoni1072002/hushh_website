@@ -30,7 +30,7 @@ import HushhButtonOnlyUser from "../../_components/svg/hushhButtonOnlyUser.svg";
 import HushhButtonWin from '../../_components/svg/hushhButtonWin.svg';
 import { useRouter } from "next/navigation";
 import { animateScroll as scroll } from 'react-scroll';
-
+import HushhButtonFaq from "../../_components/features/faq/hushhButtonFaq"
 
 const hushhButton = () => {
   const isMobile = useResponsiveSizes;
@@ -723,6 +723,7 @@ const hushhButton = () => {
             </Text>
           </VStack>
         </HStack>
+        <HushhButtonFaq/>
       </Box>
     </>
   );

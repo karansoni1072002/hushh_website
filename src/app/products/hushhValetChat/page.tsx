@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef } from "react";
+import React from "react";
 import { Box, Button, HStack, Heading, Stack, Text, VStack } from "@chakra-ui/react";
 import extendedTheme from "../../theme";
 import Image from "next/image";
@@ -7,10 +7,6 @@ import DirectionLine from "../../_components/svg/icons/directionLine.svg";
 import BarIcon from "../../_components/svg/icons/barIcon.svg";
 import FrameCard2 from "../../_components/svg/card/buttonvoucherCard.svg";
 import FramCard1 from "../../_components/svg/card/frameCardHushhButton.svg";
-import BrowserBox from "../../_components/svg/browserCompanionBoxImg.svg";
-import BrowserFaq from "../../_components/features/faq/browserFaq";
-import HushhWalletBox from '../../_components/svg/walletIntegrationBox.svg'
-import { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation";
 import { animateScroll as scroll } from 'react-scroll';
 import ManageFinanceBox from '../../_components/svg/managefinanceBox.svg';
@@ -23,7 +19,7 @@ const hushhValetChat = () => {
 
 
   const scrollTo = () => {
-    scroll.scrollTo(850); // Scrolling to 100px from the top of the page.
+    scroll.scrollTo(850);
   };
 
   const scrollInMobile = () => {

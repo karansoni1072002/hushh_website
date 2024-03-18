@@ -13,7 +13,7 @@ import HushhWalletBox from '../../_components/svg/walletIntegrationBox.svg'
 import { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation";
 import { animateScroll as scroll } from 'react-scroll';
-
+import ContactForm from '../../_components/features/contactForm'
 
 const browserCompanion = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -78,9 +78,9 @@ const browserCompanion = () => {
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
-              onClick={() =>
-                router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
-              }
+            onClick={() =>
+              router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+            }
           >
             LEARN MORE
           </Button>
@@ -296,8 +296,8 @@ const browserCompanion = () => {
         <HStack
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
-          display={{ base:'flex'}}
-          flexDirection={{base:'column', md:'row'}}
+          display={{ base: 'flex' }}
+          flexDirection={{ base: 'column', md: 'row' }}
         >
           <Box display={"flex"} flexDirection={"column"} gap={'1rem'} flex={1}>
             <Text
@@ -305,7 +305,7 @@ const browserCompanion = () => {
               letterSpacing={"0.255rem"}
               lineHeight={"1rem"}
               fontWeight={"600"}
-              fontSize={{ md:"1rem",base:'0.75rem'}}
+              fontSize={{ md: "1rem", base: '0.75rem' }}
             >
               HUSHH
             </Text>
@@ -349,27 +349,27 @@ const browserCompanion = () => {
             >
               Track your own browsing activity
             </Box>
-            <Box fontSize={{ md:'1.25rem', base:'0.75rem'}} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'30.04px'} color={'#ABACB0'} gap={{ md:'1rem', base:'0rem'}}>
-            <Text>Choose what data to collect</Text>
-            <Text>Track your interests over time</Text>
-            <Text>Export your data</Text>
-            <Text>Sell your data responsibly</Text>
+            <Box fontSize={{ md: '1.25rem', base: '0.75rem' }} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'30.04px'} color={'#ABACB0'} gap={{ md: '1rem', base: '0rem' }}>
+              <Text>Choose what data to collect</Text>
+              <Text>Track your interests over time</Text>
+              <Text>Export your data</Text>
+              <Text>Sell your data responsibly</Text>
             </Box>
           </Box>
           <Box display={'flex'} flexDirection={'column'} flex={1} gap={'1rem'}>
-            <Image src={BrowserBox} alt="BrowserBox"/>
-            <Text fontSize={{ md:'1rem', base:'0.75rem'}} color={'#ABABAB'} lineHeight={{md:'36px', base:'18px'}}>See exactly what data is being collected about you, including search queries, brand interactions, interests, preferences, likes, and clicks. Gain insights into your online behavior and understand what shapes your digital footprint</Text>
-            <Button 
-             borderRadius={'3.3rem'}
-             w={'fit-content'}
-             p={'1rem 2rem'}
-             _hover={{
-              color:'white',
-              bg:'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
-             }}
-             onClick={() =>
-              router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
-            }
+            <Image src={BrowserBox} alt="BrowserBox" />
+            <Text fontSize={{ md: '1rem', base: '0.75rem' }} color={'#ABABAB'} lineHeight={{ md: '36px', base: '18px' }}>See exactly what data is being collected about you, including search queries, brand interactions, interests, preferences, likes, and clicks. Gain insights into your online behavior and understand what shapes your digital footprint</Text>
+            <Button
+              borderRadius={'3.3rem'}
+              w={'fit-content'}
+              p={'1rem 2rem'}
+              _hover={{
+                color: 'white',
+                bg: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
+              }}
+              onClick={() =>
+                router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+              }
 
             >
               Explore
@@ -380,14 +380,14 @@ const browserCompanion = () => {
         <HStack
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
-          gap={{ md:'2rem', base:'0.25rem'}}
+          gap={{ md: '2rem', base: '0.25rem' }}
           display={'flex'}
-          flexDirection={{md:'row', base:'column'}}
+          flexDirection={{ md: 'row', base: 'column' }}
         >
-          <Box display={'flex'} flexDirection={'column'} flex={1} gap={{ md:'2rem', base:'1rem'}}>
-            <Image src={HushhWalletBox} alt="HushhWalletBox"/>
+          <Box display={'flex'} flexDirection={'column'} flex={1} gap={{ md: '2rem', base: '1rem' }}>
+            <Image src={HushhWalletBox} alt="HushhWalletBox" />
             {/* <Text fontSize={{ md:'1rem', base:'0.75rem'}} color={'#ABABAB'} lineHeight={{md:'36px', base:'18px'}}>See exactly what data is being collected about you, including search queries, brand interactions, interests, preferences, likes, and clicks. Gain insights into your online behavior and understand what shapes your digital footprint</Text> */}
-            
+
           </Box>
 
           <Box display={"flex"} flexDirection={"column"} gap={'2rem'} flex={1}>
@@ -406,7 +406,7 @@ const browserCompanion = () => {
               fontWeight={"400"}
               lineHeight={{ md: "63.3px", base: "31.2px" }}
             >
-               Wallet Integration            
+              Wallet Integration
             </Text>
             <Box
               position="relative"
@@ -433,7 +433,7 @@ const browserCompanion = () => {
               Streamlined Integration via Browser Companion
             </Box>
             <Box fontSize={'1rem'} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'36px'} color={'#ABABAB'} gap={'1rem'}>
-            <Text>Hushh Web Browser Extension also enables users to share their user activity in their Hushh Wallet. This makes it easy to organize and access important information, such as receipts, warranty details, and more, all in one secure place.</Text>
+              <Text>Hushh Web Browser Extension also enables users to share their user activity in their Hushh Wallet. This makes it easy to organize and access important information, such as receipts, warranty details, and more, all in one secure place.</Text>
             </Box>
             <Button
               border={"3px solid #606060"}
@@ -454,7 +454,7 @@ const browserCompanion = () => {
               REQUEST ACCESS
             </Button>
           </Box>
-          
+
         </HStack>
 
         <Stack margin={{ md: "10rem", base: "3.5rem" }}>
@@ -474,16 +474,16 @@ const browserCompanion = () => {
               color={"white"}
               textAlign={"center"}
               fontWeight={"400"}
-              lineHeight={{md:"31.5px", base:'20px'}}
+              lineHeight={{ md: "31.5px", base: '20px' }}
               fontSize={{ md: "1.125rem", base: "0.75rem" }}
             >
               The extension utilizes advanced algorithms and AI technology to analyze the captured data and generate brilliant insights. Users receive personalized recommendations, discover new products and brands aligned with their interests, and stay up-to-date with the latest trends.
             </Text>
           </VStack>
         </Stack>
-        <BrowserFaq/>
+        <BrowserFaq />
       </Box>
-
+      <ContactForm />
     </>
   );
 };

@@ -12,7 +12,7 @@ import { animateScroll as scroll } from 'react-scroll';
 import ManageFinanceBox from '../../_components/svg/managefinanceBox.svg';
 import ValetIntegrationBox from '../../_components/svg/valetIntegrationBox.svg';
 import ValetChatFaq from '../../_components/features/faq/valetChatFaq';
-
+import ContactForm from '../../_components/features/contactForm'
 const hushhValetChat = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
@@ -188,7 +188,7 @@ const hushhValetChat = () => {
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
           >
-            Manage all your receipts at one place and get insights on your finance 
+            Manage all your receipts at one place and get insights on your finance
           </Heading>
           <Text
             mt={"1rem"}
@@ -292,8 +292,8 @@ const hushhValetChat = () => {
         <HStack
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
-          display={{ base:'flex'}}
-          flexDirection={{base:'column', md:'row'}}
+          display={{ base: 'flex' }}
+          flexDirection={{ base: 'column', md: 'row' }}
         >
           <Box display={"flex"} flexDirection={"column"} gap={'1rem'} flex={1}>
             <Text
@@ -301,7 +301,7 @@ const hushhValetChat = () => {
               letterSpacing={"0.255rem"}
               lineHeight={"1rem"}
               fontWeight={"600"}
-              fontSize={{ md:"1rem",base:'0.75rem'}}
+              fontSize={{ md: "1rem", base: '0.75rem' }}
             >
               HUSHH
             </Text>
@@ -345,25 +345,25 @@ const hushhValetChat = () => {
             >
               Track your recipts
             </Box>
-            <Box fontSize={{ md:'1.25rem', base:'0.75rem'}} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'30.04px'} color={'#ABACB0'} gap={{ md:'1rem', base:'0rem'}}>
-            <Text>Sync all your receipts automatically </Text>
-            <Text>Chat with our AI to understand your Finances better</Text>
-            <Text>Manage and categories receipts for easy access</Text>
-            <Text>Share your receipts with people and receive insights</Text>
+            <Box fontSize={{ md: '1.25rem', base: '0.75rem' }} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'30.04px'} color={'#ABACB0'} gap={{ md: '1rem', base: '0rem' }}>
+              <Text>Sync all your receipts automatically </Text>
+              <Text>Chat with our AI to understand your Finances better</Text>
+              <Text>Manage and categories receipts for easy access</Text>
+              <Text>Share your receipts with people and receive insights</Text>
             </Box>
           </Box>
           <Box display={'flex'} flexDirection={'column'} flex={1} gap={'1rem'}>
-            <Image src={ManageFinanceBox} alt="ManageFinanceBox"/>
-            <Text fontSize={{ md:'1rem', base:'0.75rem'}} color={'#ABABAB'} lineHeight={{md:'36px', base:'18px'}}>See all the different spending habits you have from your receipts to better understand your spending habits. Manage and gain insightful data on your finance</Text>
-            <Button 
-             borderRadius={'3.3rem'}
-             w={'fit-content'}
-             p={'1rem 2rem'}
-             _hover={{
-              color:'white',
-              bg:'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
-             }}
-             onClick={() =>
+            <Image src={ManageFinanceBox} alt="ManageFinanceBox" />
+            <Text fontSize={{ md: '1rem', base: '0.75rem' }} color={'#ABABAB'} lineHeight={{ md: '36px', base: '18px' }}>See all the different spending habits you have from your receipts to better understand your spending habits. Manage and gain insightful data on your finance</Text>
+            <Button
+              borderRadius={'3.3rem'}
+              w={'fit-content'}
+              p={'1rem 2rem'}
+              _hover={{
+                color: 'white',
+                bg: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
+              }}
+              onClick={() =>
                 router.push("https://sites.google.com/hush1one.com/drops/mlds#h.phjv03hn3bq")
               }
 
@@ -376,14 +376,14 @@ const hushhValetChat = () => {
         <HStack
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
-          gap={{ md:'2rem', base:'0.25rem'}}
+          gap={{ md: '2rem', base: '0.25rem' }}
           display={'flex'}
-          flexDirection={{md:'row', base:'column'}}
+          flexDirection={{ md: 'row', base: 'column' }}
         >
-          <Box display={'flex'} flexDirection={'column'} flex={1} gap={{ md:'2rem', base:'1rem'}}>
-            <Image src={ValetIntegrationBox} alt="ValetIntegrationBox"/>
+          <Box display={'flex'} flexDirection={'column'} flex={1} gap={{ md: '2rem', base: '1rem' }}>
+            <Image src={ValetIntegrationBox} alt="ValetIntegrationBox" />
             {/* <Text fontSize={{ md:'1rem', base:'0.75rem'}} color={'#ABABAB'} lineHeight={{md:'36px', base:'18px'}}>See exactly what data is being collected about you, including search queries, brand interactions, interests, preferences, likes, and clicks. Gain insights into your online behavior and understand what shapes your digital footprint</Text> */}
-            
+
           </Box>
 
           <Box display={"flex"} flexDirection={"column"} gap={'2rem'} flex={1}>
@@ -402,7 +402,7 @@ const hushhValetChat = () => {
               fontWeight={"400"}
               lineHeight={{ md: "63.3px", base: "31.2px" }}
             >
-               Wallet Integration            
+              Wallet Integration
             </Text>
             <Box
               position="relative"
@@ -429,7 +429,7 @@ const hushhValetChat = () => {
               Streamlined Integration via Valet Chat
             </Box>
             <Box fontSize={'1rem'} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'36px'} color={'#ABABAB'} gap={'1rem'}>
-            <Text>Hushh Valet chat also enables users to share their Reciepts in their Hushh Wallet. This makes it easy to organize and access important information, such as receipts, warranty details, and more, all in one secure place.</Text>
+              <Text>Hushh Valet chat also enables users to share their Reciepts in their Hushh Wallet. This makes it easy to organize and access important information, such as receipts, warranty details, and more, all in one secure place.</Text>
             </Box>
             <Button
               border={"3px solid #606060"}
@@ -450,7 +450,7 @@ const hushhValetChat = () => {
               REQUEST ACCESS
             </Button>
           </Box>
-          
+
         </HStack>
 
         <Stack margin={{ md: "10rem", base: "3.5rem" }}>
@@ -470,16 +470,16 @@ const hushhValetChat = () => {
               color={"white"}
               textAlign={"center"}
               fontWeight={"400"}
-              lineHeight={{md:"31.5px", base:'20px'}}
+              lineHeight={{ md: "31.5px", base: '20px' }}
               fontSize={{ md: "1.125rem", base: "0.75rem" }}
             >
               The Valet chat app utilizes advanced algorithms and AI technology to analyze the captured data and generate brilliant insights. Users receive personalized Insights on receipts, Manage their Receipts and receive intelligent insights on their spendings and Finance
             </Text>
           </VStack>
         </Stack>
-        <ValetChatFaq/>
+        <ValetChatFaq />
       </Box>
-
+      <ContactForm />
     </>
   );
 };

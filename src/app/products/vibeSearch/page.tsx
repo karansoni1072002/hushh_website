@@ -13,7 +13,7 @@ import VibeSearchFaq from '../../_components/features/faq/vibeSearchFaq';
 import FindYourStyleBox from '../../_components/svg/findYourStyleBox.svg';
 import VibeSearchIntegrationBox from '../../_components/svg/vibeIntegrationBox.svg';
 import VibeSearchBg from '../../_components/svg/vibeBg.svg';
-
+import ContactForm from '../../_components/features/contactForm'
 const vibeSearch = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
@@ -66,7 +66,7 @@ const vibeSearch = () => {
             textAlign={"center"}
             color={"#656565"}
           >
-            The vibe search app lets find and store all your favorite products that you come across by just taking a picture or by typing 
+            The vibe search app lets find and store all your favorite products that you come across by just taking a picture or by typing
           </Text>
           <Button
             border={"1px solid #606060"}
@@ -189,14 +189,14 @@ const vibeSearch = () => {
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
           >
-             Introducing Vibe search your companion for fashion and style 
+            Introducing Vibe search your companion for fashion and style
           </Heading>
           <Text
             mt={"1rem"}
             color={"#656565"}
             fontSize={{ md: "1rem", base: "0.75rem" }}
           >
-             Want to know where you can buy that cute dress you saw the other day? don’t know what style fits you best . Don,t worry vibe search is all you need . VIbe search is your fashion companion that helps you find your style           </Text>
+            Want to know where you can buy that cute dress you saw the other day? don’t know what style fits you best . Don,t worry vibe search is all you need . VIbe search is your fashion companion that helps you find your style           </Text>
           <Box
             mt={"1.5rem"}
             display={{ md: "none", base: "flex" }}
@@ -217,8 +217,8 @@ const vibeSearch = () => {
               src={DirectionLine}
             />
             <iframe
-  src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710776445%2FvibeSearchDemo_s1bdkh.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true"
-  width="4  40"
+              src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710776445%2FvibeSearchDemo_s1bdkh.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true"
+              width="4  40"
               height="250"
               style={{
                 height: "auto",
@@ -267,8 +267,8 @@ const vibeSearch = () => {
               src={DirectionLine}
             />
             <iframe
-  src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710776445%2FvibeSearchDemo_s1bdkh.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true"
-  width="4  40"
+              src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710776445%2FvibeSearchDemo_s1bdkh.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true"
+              width="4  40"
               height="250"
               style={{
                 height: "auto",
@@ -292,8 +292,8 @@ const vibeSearch = () => {
         <HStack
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
-          display={{ base:'flex'}}
-          flexDirection={{base:'column', md:'row'}}
+          display={{ base: 'flex' }}
+          flexDirection={{ base: 'column', md: 'row' }}
         >
           <Box display={"flex"} flexDirection={"column"} gap={'1rem'} flex={1}>
             <Text
@@ -301,7 +301,7 @@ const vibeSearch = () => {
               letterSpacing={"0.255rem"}
               lineHeight={"1rem"}
               fontWeight={"600"}
-              fontSize={{ md:"1rem",base:'0.75rem'}}
+              fontSize={{ md: "1rem", base: '0.75rem' }}
             >
               HUSHH
             </Text>
@@ -345,26 +345,26 @@ const vibeSearch = () => {
             >
               Find The Style that fits you best
             </Box>
-            <Box fontSize={{ md:'1.25rem', base:'0.75rem'}} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'30.04px'} color={'#ABACB0'} gap={{ md:'1rem', base:'0rem'}}>
-            <Text>Find  products based on image and text </Text>
-            <Text>Save all your liked products </Text>
-            <Text>Get insights on your Fit and Style</Text>
-            <Text>Share your best Fit with Family and Friends</Text>
+            <Box fontSize={{ md: '1.25rem', base: '0.75rem' }} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'30.04px'} color={'#ABACB0'} gap={{ md: '1rem', base: '0rem' }}>
+              <Text>Find  products based on image and text </Text>
+              <Text>Save all your liked products </Text>
+              <Text>Get insights on your Fit and Style</Text>
+              <Text>Share your best Fit with Family and Friends</Text>
             </Box>
           </Box>
           <Box display={'flex'} flexDirection={'column'} flex={1} gap={'1rem'}>
-            <Image src={FindYourStyleBox} alt="FindYourStyleBox"/>
-            <Text fontSize={{ md:'1rem', base:'0.75rem'}} color={'#ABABAB'} lineHeight={{md:'36px', base:'18px'}}>
-                  Find that perfect Fit and perfect look with just a click of a button. Search products with just and image and text save them for later to buy or create a whilst to share it with friends and family            </Text>
-            <Button 
-             borderRadius={'3.3rem'}
-             w={'fit-content'}
-             p={'1rem 2rem'}
-             _hover={{
-              color:'white',
-              bg:'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
-             }}
-             onClick={() =>
+            <Image src={FindYourStyleBox} alt="FindYourStyleBox" />
+            <Text fontSize={{ md: '1rem', base: '0.75rem' }} color={'#ABABAB'} lineHeight={{ md: '36px', base: '18px' }}>
+              Find that perfect Fit and perfect look with just a click of a button. Search products with just and image and text save them for later to buy or create a whilst to share it with friends and family            </Text>
+            <Button
+              borderRadius={'3.3rem'}
+              w={'fit-content'}
+              p={'1rem 2rem'}
+              _hover={{
+                color: 'white',
+                bg: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
+              }}
+              onClick={() =>
                 router.push("https://sites.google.com/hush1one.com/drops/mlds#h.tzh0jcbjtatx")
               }
 
@@ -377,14 +377,14 @@ const vibeSearch = () => {
         <HStack
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
-          gap={{ md:'2rem', base:'0.25rem'}}
+          gap={{ md: '2rem', base: '0.25rem' }}
           display={'flex'}
-          flexDirection={{md:'row', base:'column'}}
+          flexDirection={{ md: 'row', base: 'column' }}
         >
-          <Box display={'flex'} flexDirection={'column'} flex={1} gap={{ md:'2rem', base:'1rem'}}>
-            <Image src={VibeSearchIntegrationBox} alt="VibeSearchIntegrationBox"/>
+          <Box display={'flex'} flexDirection={'column'} flex={1} gap={{ md: '2rem', base: '1rem' }}>
+            <Image src={VibeSearchIntegrationBox} alt="VibeSearchIntegrationBox" />
             {/* <Text fontSize={{ md:'1rem', base:'0.75rem'}} color={'#ABABAB'} lineHeight={{md:'36px', base:'18px'}}>See exactly what data is being collected about you, including search queries, brand interactions, interests, preferences, likes, and clicks. Gain insights into your online behavior and understand what shapes your digital footprint</Text> */}
-            
+
           </Box>
 
           <Box display={"flex"} flexDirection={"column"} gap={'2rem'} flex={1}>
@@ -403,7 +403,7 @@ const vibeSearch = () => {
               fontWeight={"400"}
               lineHeight={{ md: "63.3px", base: "31.2px" }}
             >
-               Vibe Search Integration            
+              Vibe Search Integration
             </Text>
             <Box
               position="relative"
@@ -427,10 +427,10 @@ const vibeSearch = () => {
                 WebkitTextFillColor: "transparent",
               }}
             >
-             Integrate You Vibe with Vibe Search
+              Integrate You Vibe with Vibe Search
             </Box>
             <Box fontSize={'1rem'} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'36px'} color={'#ABABAB'} gap={'1rem'}>
-            <Text>Hushh vibe search also enables users to share your style preferences in their Hushh Wallet. This makes it easy to share and access important information, such as Your Size, FIt, Brands , Budget and Purchase history.</Text>
+              <Text>Hushh vibe search also enables users to share your style preferences in their Hushh Wallet. This makes it easy to share and access important information, such as Your Size, FIt, Brands , Budget and Purchase history.</Text>
             </Box>
             <Button
               border={"3px solid #606060"}
@@ -451,35 +451,35 @@ const vibeSearch = () => {
               REQUEST ACCESS
             </Button>
           </Box>
-          
+
         </HStack>
 
-        <Stack display={'flex'} gap={{ md:'1rem', base:'0.5rem'}} textAlign={'center'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
-            <Heading fontWeight={'400'} color={'#FFFFFF'} lineHeight={{md:'25.83px', base:'16px'}} fontSize={{md:'1.25rem', base:'1rem'}}>Our Uniqueness</Heading>
-            <Text alignItems={'center'} justifyContent={'center'} lineHeight={{md:"88.14px", base:'44px'}} color={'white'} fontWeight={'700'} fontSize={{md:'5.6rem', base:'2.5rem'}}>More Than Just </Text>
-            <Text alignItems={'center'} justifyContent={'center'} lineHeight={{md:"88.14px", base:'44px'}} color={'white'} fontWeight={'700'} fontSize={{md:'5.6rem', base:'2.5rem'}}> An App</Text>
-            <Text display={'flex'} color={'#ABABAB'} lineHeight={'25px'} fontSize={{md:'0.8rem', base:'0.8rem'}}>Vibe search is more than just an app its your personal stylist on tap of a button</Text>
-            <Box>
-                <Image src={VibeSearchBg} alt="VibeSearchBg" />
-                
-                <Button  border={"1px solid #606060"}
-            borderRadius={"2px"}
-            w={{ md: "16rem", base: "10rem" }}
-            color={extendedTheme.colors._white}
-            lineHeight={{ md: "28px", base: "14px" }}
-            background={"transparent"}
-            letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
-            _hover={{
-              background:
-                "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-            }}
-            onClick={() =>
+        <Stack display={'flex'} gap={{ md: '1rem', base: '0.5rem' }} textAlign={'center'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
+          <Heading fontWeight={'400'} color={'#FFFFFF'} lineHeight={{ md: '25.83px', base: '16px' }} fontSize={{ md: '1.25rem', base: '1rem' }}>Our Uniqueness</Heading>
+          <Text alignItems={'center'} justifyContent={'center'} lineHeight={{ md: "88.14px", base: '44px' }} color={'white'} fontWeight={'700'} fontSize={{ md: '5.6rem', base: '2.5rem' }}>More Than Just </Text>
+          <Text alignItems={'center'} justifyContent={'center'} lineHeight={{ md: "88.14px", base: '44px' }} color={'white'} fontWeight={'700'} fontSize={{ md: '5.6rem', base: '2.5rem' }}> An App</Text>
+          <Text display={'flex'} color={'#ABABAB'} lineHeight={'25px'} fontSize={{ md: '0.8rem', base: '0.8rem' }}>Vibe search is more than just an app its your personal stylist on tap of a button</Text>
+          <Box>
+            <Image src={VibeSearchBg} alt="VibeSearchBg" />
+
+            <Button border={"1px solid #606060"}
+              borderRadius={"2px"}
+              w={{ md: "16rem", base: "10rem" }}
+              color={extendedTheme.colors._white}
+              lineHeight={{ md: "28px", base: "14px" }}
+              background={"transparent"}
+              letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
+              _hover={{
+                background:
+                  "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              }}
+              onClick={() =>
                 router.push("https://testflight.apple.com/join/CDYPEfJ5")
-              }            
-              >
-                Download App
+              }
+            >
+              Download App
             </Button>
-            </Box>
+          </Box>
         </Stack>
 
         <Stack margin={{ md: "10rem", base: "3.5rem" }}>
@@ -492,22 +492,22 @@ const vibeSearch = () => {
               fontSize={{ md: "3.75rem", base: "1.25rem" }}
               lineHeight={{ base: "35px", md: "75px" }}
             >
-             Your Personal Fashion Stylist at <br></br> your Fingertips
+              Your Personal Fashion Stylist at <br></br> your Fingertips
             </Heading>
             <Text
               mt={{ md: "2rem", base: "1rem" }}
               color={"white"}
               textAlign={"center"}
               fontWeight={"400"}
-              lineHeight={{md:"31.5px", base:'20px'}}
+              lineHeight={{ md: "31.5px", base: '20px' }}
               fontSize={{ md: "1.125rem", base: "0.75rem" }}
             >
               The Vibe search utilizes advanced algorithms and AI technology to analyze the captured data Fid the best fit and style for you. Users receive personalized recommendations, discover new products and brands aligned with their interests, and stay up-to-date with the latest trends.            </Text>
           </VStack>
         </Stack>
-        <VibeSearchFaq/>
+        <VibeSearchFaq />
       </Box>
-
+      <ContactForm />
     </>
   );
 };

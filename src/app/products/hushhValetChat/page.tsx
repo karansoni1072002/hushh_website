@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import { animateScroll as scroll } from 'react-scroll';
 import ManageFinanceBox from '../../_components/svg/managefinanceBox.svg';
 import ValetIntegrationBox from '../../_components/svg/valetIntegrationBox.svg';
+import ValetChatFaq from '../../_components/features/faq/valetChatFaq';
 
 const hushhValetChat = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -478,7 +479,7 @@ const hushhValetChat = () => {
             </Text>
           </VStack>
         </Stack>
-        <BrowserFaq/>
+        <ValetChatFaq/>
       </Box>
 
     </>

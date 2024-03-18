@@ -47,12 +47,10 @@ export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    // Set a timeout to show the popup after 5 seconds
     const timeoutId = setTimeout(() => {
       setShowPopup(true);
     }, 3000);
 
-    // Clean up the timeout when the component unmounts
     return () => clearTimeout(timeoutId);
   }, []);
 
@@ -162,7 +160,7 @@ export default function Home() {
         <Box
           display="flex"
           h={"full"}
-          flexDirection={{ base: "column", md: "row" }} // For mobile, stack images vertically, for desktop, display them side by side
+          flexDirection={{ base: "column", md: "row" }}
           alignItems={{ base: "center", md: "flex-start" }}
           pt={{ md: "10rem", base: "6rem" }}
           justifyContent="space-between"

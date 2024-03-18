@@ -30,6 +30,10 @@ const hushhValetChat = () => {
     scroll.scrollTo(450);
   }
 
+  const learnMoreScroll = () => {
+    scroll.scrollTo(1500);
+  }
+
 
 
   return (
@@ -79,9 +83,7 @@ const hushhValetChat = () => {
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
-              onClick={() =>
-                router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
-              }
+            onClick={learnMoreScroll}
           >
             LEARN MORE
           </Button>
@@ -219,7 +221,7 @@ const hushhValetChat = () => {
               src={DirectionLine}
             />
             <iframe
-              src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710411292%2FHushh_button_-_developer_walkthrough_uwwiy0.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true&player[pictureInPictureToggle]=false&source[poster]=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fimage%2Fupload%2FScreenshot_2024-03-14_160021_hapzpw.jpg"
+              src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710763036%2FValet_Chat_Hushh_Research_and_Labs_pfjt3j.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true"
               width="4  40"
               height="250"
               style={{
@@ -269,7 +271,7 @@ const hushhValetChat = () => {
               src={DirectionLine}
             />
             <iframe
-              src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710411292%2FHushh_button_-_developer_walkthrough_uwwiy0.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true&player[pictureInPictureToggle]=false&source[poster]=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fimage%2Fupload%2FScreenshot_2024-03-14_160021_hapzpw.jpg"
+              src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710763036%2FValet_Chat_Hushh_Research_and_Labs_pfjt3j.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true"
               width="4  40"
               height="250"
               style={{
@@ -366,8 +368,8 @@ const hushhValetChat = () => {
               bg:'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
              }}
              onClick={() =>
-              router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
-            }
+                router.push("https://sites.google.com/hush1one.com/drops/mlds#h.phjv03hn3bq")
+              }
 
             >
               Explore
@@ -446,7 +448,7 @@ const hushhValetChat = () => {
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               }}
               onClick={() =>
-                router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+                router.push("https://sites.google.com/hush1one.com/drops/mlds#h.phjv03hn3bq")
               }
             >
               REQUEST ACCESS

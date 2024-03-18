@@ -404,9 +404,9 @@ export default function Home() {
                 alignItems={"center"}
                 textAlign={'center'}
                 description="Ditch receipts, unlock insights: Valet Chat, your AI finance genie"
-                // onClick={() =>
-                //   router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
-                // }
+                onClick={() =>
+                  router.push("/products/hushhValetChat")
+                }
               />
               <ServiceCard
                 icon={<VibeSearchApi />}

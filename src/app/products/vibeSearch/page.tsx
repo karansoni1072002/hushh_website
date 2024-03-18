@@ -445,7 +445,7 @@ const vibeSearch = () => {
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               }}
               onClick={() =>
-                router.push("https://sites.google.com/hush1one.com/drops/mlds#h.phjv03hn3bq")
+                router.push("https://testflight.apple.com/join/CDYPEfJ5")
               }
             >
               REQUEST ACCESS

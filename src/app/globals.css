@@ -28,11 +28,10 @@
 }
 
 .gradient {
-  background: linear-gradient(90deg, #7A7A7E 0.7%, #FFFFFF 100%);
+  background: linear-gradient(to right, #7A7A7E, #FFFFFF);
   -webkit-background-clip: text;
   color: transparent;
 }
-
 
 .color-gradient {
   background: linear-gradient(to right, #E54D60, #A342FF); 
@@ -42,6 +41,13 @@
 
 .hushh-gradient {
   background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%); 
+  -webkit-background-clip: text;
+  color: transparent;
+  border-color: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
+}
+
+.default-gradient {
+  background: linear-gradient(#E54D60 8.81%, #A342FF 94.26%);
   -webkit-background-clip: text;
   color: transparent;
   border-color: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
@@ -252,4 +258,18 @@ body {
 
 }
 
-/*  */
+/* CSS for FAQ Accordian Tabs  */
+
+.gradientText {
+  background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.gradientUnderline {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
+}

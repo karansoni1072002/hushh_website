@@ -366,7 +366,7 @@ export default function Home() {
                 alignItems={"center"}
                 description="Plugin that helps you exchange data with brands​"
                 onClick={() =>
-                  router.push("https://hushhbutton.framer.ai/")
+                  router.push("/products/hushhButton")
                 }
               />
               <ServiceCard
@@ -386,7 +386,7 @@ export default function Home() {
                 textAlign={'center'}
                 description="Collects your web activity and preferences as you browse"
                 onClick={() =>
-                  router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+                  router.push("/products/browserCompanion")
                 }
               />
               {/* 2nd row */}

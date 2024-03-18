@@ -9,11 +9,10 @@ import FrameCard2 from "../../_components/svg/card/buttonvoucherCard.svg";
 import FramCard1 from "../../_components/svg/card/frameCardHushhButton.svg";
 import { useRouter } from "next/navigation";
 import { animateScroll as scroll } from 'react-scroll';
-import ManageFinanceBox from '../../_components/svg/managefinanceBox.svg';
-import ValetIntegrationBox from '../../_components/svg/valetIntegrationBox.svg';
 import VibeSearchFaq from '../../_components/features/faq/vibeSearchFaq';
 import FindYourStyleBox from '../../_components/svg/findYourStyleBox.svg';
-import VibeSearchIntegrationBox from '../../_components/svg/valetIntegrationBox.svg'
+import VibeSearchIntegrationBox from '../../_components/svg/vibeIntegrationBox.svg';
+import VibeSearchBg from '../../_components/svg/vibeBg.svg';
 
 const vibeSearch = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -455,6 +454,16 @@ const vibeSearch = () => {
           
         </HStack>
 
+        <Stack display={'flex'} gap={{ md:'1rem', base:'0.5rem'}} textAlign={'center'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
+            <Heading fontWeight={'400'} color={'#FFFFFF'} lineHeight={{md:'25.83px', base:'16px'}} fontSize={{md:'1.25rem', base:'1rem'}}>Our Uniqueness</Heading>
+            <Text alignItems={'center'} justifyContent={'center'} lineHeight={{md:"88.14px", base:'44px'}} color={'white'} fontWeight={'700'} fontSize={{md:'5.6rem', base:'2.5rem'}}>More Than Just </Text>
+            <Text alignItems={'center'} justifyContent={'center'} lineHeight={{md:"88.14px", base:'44px'}} color={'white'} fontWeight={'700'} fontSize={{md:'5.6rem', base:'2.5rem'}}> An App</Text>
+            <Text display={'flex'} color={'#ABABAB'} lineHeight={'25px'} fontSize={{md:'0.8rem', base:'0.8rem'}}>Vibe search is more than just an app its your personal stylist on tap of a button</Text>
+            <Box>
+                <Image src={VibeSearchBg} alt="VibeSearchBg" />
+            </Box>
+        </Stack>
+
         <Stack margin={{ md: "10rem", base: "3.5rem" }}>
           <VStack px={{ md: "10rem", base: "0rem" }}>
             {/* GIF Pending */}
@@ -463,7 +472,7 @@ const vibeSearch = () => {
               className="gradient"
               fontWeight={"400"}
               fontSize={{ md: "3.75rem", base: "1.25rem" }}
-              lineHeight={{ base: "45px", md: "75px" }}
+              lineHeight={{ base: "35px", md: "75px" }}
             >
              Your Personal Fashion Stylist at <br></br> your Fingertips
             </Heading>

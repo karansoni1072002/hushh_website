@@ -217,8 +217,8 @@ const vibeSearch = () => {
               src={DirectionLine}
             />
             <iframe
-              src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710763036%2FValet_Chat_Hushh_Research_and_Labs_pfjt3j.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true"
-              width="4  40"
+  src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710776445%2FvibeSearchDemo_s1bdkh.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true"
+  width="4  40"
               height="250"
               style={{
                 height: "auto",
@@ -267,8 +267,8 @@ const vibeSearch = () => {
               src={DirectionLine}
             />
             <iframe
-              src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710763036%2FValet_Chat_Hushh_Research_and_Labs_pfjt3j.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true"
-              width="4  40"
+  src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710776445%2FvibeSearchDemo_s1bdkh.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true"
+  width="4  40"
               height="250"
               style={{
                 height: "auto",

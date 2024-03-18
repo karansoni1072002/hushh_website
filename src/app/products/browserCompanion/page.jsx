@@ -62,9 +62,9 @@ const browserCompanion = () => {
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
-            //   onClick={() =>
-            //     router.push("https://sites.google.com/hush1one.com/drops/home/journey")
-            //   }
+              onClick={() =>
+                router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+              }
           >
             LEARN MORE
           </Button>
@@ -278,6 +278,8 @@ const browserCompanion = () => {
         <HStack
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
+          display={{ base:'flex'}}
+          flexDirection={{base:'column', md:'row'}}
         >
           <Box display={"flex"} flexDirection={"column"} gap={'1rem'} flex={1}>
             <Text
@@ -285,7 +287,7 @@ const browserCompanion = () => {
               letterSpacing={"0.255rem"}
               lineHeight={"1rem"}
               fontWeight={"600"}
-              fontSize={"1rem"}
+              fontSize={{ md:"1rem",base:'0.75rem'}}
             >
               HUSHH
             </Text>
@@ -329,7 +331,7 @@ const browserCompanion = () => {
             >
               Track your own browsing activity
             </Box>
-            <Box fontSize={'1.25rem'} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'30.04px'} color={'#ABACB0'} gap={'1rem'}>
+            <Box fontSize={{ md:'1.25rem', base:'0.75rem'}} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'30.04px'} color={'#ABACB0'} gap={{ md:'1rem', base:'0rem'}}>
             <Text>Choose what data to collect</Text>
             <Text>Track your interests over time</Text>
             <Text>Export your data</Text>
@@ -356,9 +358,11 @@ const browserCompanion = () => {
         <HStack
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
-          gap={'2rem'}
+          gap={{ md:'2rem', base:'0.25rem'}}
+          display={'flex'}
+          flexDirection={{md:'row', base:'column'}}
         >
-          <Box display={'flex'} flexDirection={'column'} flex={1} gap={'2rem'}>
+          <Box display={'flex'} flexDirection={'column'} flex={1} gap={{ md:'2rem', base:'1rem'}}>
             <Image src={HushhWalletBox} alt="HushhWalletBox"/>
             {/* <Text fontSize={{ md:'1rem', base:'0.75rem'}} color={'#ABABAB'} lineHeight={{md:'36px', base:'18px'}}>See exactly what data is being collected about you, including search queries, brand interactions, interests, preferences, likes, and clicks. Gain insights into your online behavior and understand what shapes your digital footprint</Text> */}
             

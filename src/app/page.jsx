@@ -374,7 +374,7 @@ export default function Home() {
                 alignItems={"center"}
                 description="Personalized search engine that lets you search across brands"
                 onClick={() =>
-                  router.push("https://hushhvibesearch.framer.ai/")
+                  router.push("/products/vibeSearch")
                 }
               />
               <ServiceCard

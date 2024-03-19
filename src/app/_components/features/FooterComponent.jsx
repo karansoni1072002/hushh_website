@@ -25,11 +25,14 @@ const FooterComponent = () => {
 
                     <div className="flex justify-between w-full flex-1">
                         <div className="flex flex-col gap-4">
-                            <p className='text-base font-medium opacity-80 leading-6'>Platform</p>
+                            <p className='text-base font-medium opacity-80 leading-6'>Our Products</p>
                             <div className="flex flex-col text-lg gap-5 leading-5">
-                                <Link href='#'>Plans & Pricing</Link>
-                                <Link href='#'>Personal AI Manager</Link>
-                                <Link href='#'>AI Business Writer</Link>
+                                <Link href='products/hushhButton'>Hushh Button</Link>
+                                <Link href='products/walletApp'>Hushh Wallet App</Link>
+                                <Link href='products/vibeSearch'>Vibe Search</Link>
+                                <Link href='products/browserCompanion'>Browser Companion</Link>
+                                <Link href='products/conciergeApp'>Concierge App​</Link>
+                                <Link href='products/hushhValetChat'>Valet Chat</Link>
                             </div>
                         </div>
                         <div className="flex flex-col gap-4">

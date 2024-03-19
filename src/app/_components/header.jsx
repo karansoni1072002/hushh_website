@@ -8,11 +8,21 @@ import { useResponsiveSizes } from "../context/responsive";
 import { Bars3Icon } from "./svg/icons/hamburgerMenuIcon";
 import { CloseMenuIcon } from "./svg/icons/closeMenuIcon";
 import SearchBar from "./features/searchBar";
+import { ChevronArrowIcon } from "./svg/icons/chevronArrowIcon";
+import HushhWalletIcon from "./svg/hushhWalletIcon";
+import HushhButtonIcon from "./svg/hushhButton";
+import VibeSearchIcon from "./svg/vibeSearch";
+import ChromeExtentionLogo from "./svg/ChromeExtensionLogo";
+import ConciergeApp from "./svg/conciergeApp";
+import ValetChat from "./svg/valetChat";
+import VibeSearchApi from "./svg/vibeSearchApi";
+import { headerAssets } from './svg/icons/HeaderIcons/headerAssets'
 
 const Header = () => {
   const { isMobile } = useResponsiveSizes();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [productsSubmenu, setProductsSubmenu] = useState(false)
+  const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false)
   const handleMenuIconToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -34,88 +44,280 @@ const Header = () => {
 
   return (
     <div className="fixed top-0 z-50 w-full">
-      <div className=" bg-myBG flex items-center justify-between px-6 py-2 md:px-32 md:py-10">
+      <div className=" bg-myBG flex items-center justify-between w-full px-6 py-2 md:px-32 md:py-5">
         <div className="">
           <HushhHeaderLogo />
         </div>
-        <div className="">
-          {isMobile ? (
-            <>
-              <Container display={'flex'} gap={'1rem'}>
+        {isMobile ? (
+          <div className="w-full flex justify-end">
+            <Container display={'flex'} gap={'1rem'}>
               <SearchBar />
               <div className=" text-white" onClick={handleMenuIconToggle}>
                 {isMenuOpen ? <CloseMenuIcon /> : <Bars3Icon />}
               </div>
-              </Container>
-            </>
-          ) : (
-            <div className="text-white flex gap-20 ">
+            </Container>
+          </div>
+        ) : (
+          <div className="w-full">
+            <div className="text-white flex w-full justify-between gap-20 px-7">
               <Link href="/">HOME</Link>
-              <Link href="https://www.linkedin.com/company/hushh-ai/about">
+              <Link href="/about">
                 ABOUT US
               </Link>
-              <Link href="#">INVESTORS</Link>
-              <Link href="https://www.linkedin.com/company/hushh-ai/jobs">
-                WORK WITH US
+              <Link href="#" className="flex items-center gap-2 group" onMouseEnter={() => setProductsSubmenu(true)}>
+                PRODUCTS
+                <ChevronArrowIcon className='group-hover:rotate-180 transition-all duration-300' />
               </Link>
+              <Link href="https://sites.google.com/hush1one.com/drops/home">
+                LABS
+              </Link>
+              <Link href="/contact">
+                CONTACT US
+              </Link>
+            </div>
+            {
+              productsSubmenu &&
+              <div className="bg-white flex flex-col gap-4 absolute pl-12 pr-7 mt-4 pt-5 pb-7 rounded-2xl shadow-lg shadow-[#A7AEBA1F]" onMouseEnter={() => setProductsSubmenu(true)} onMouseLeave={() => setProductsSubmenu(false)}>
+                <p className="text-xs text-fontColor2 font-semibold">HUSHH PRODUCTS</p>
+                <div className="flex gap-10" >
+                  <div className="flex-1 flex flex-col gap-5">
+                    <Link href={'/'} className="flex gap-4 items-start">
+                      <div className="">
+                        <HushhButtonIcon size={24} />
+                      </div>
+                      <div className="">
+                        <h1 className='font-semibold'>Hushh Button</h1>
+                        <p className='text-sm font-medium text-fontColor3'>Share data for personalized <br /> recommendations.</p>
+                      </div>
+                    </Link>
+                    <Link href={'/'} className="flex gap-4">
+                      <div className="">
+                        <ChromeExtentionLogo className='w-6 h-6' />
+                      </div>
+                      <div className="">
+                        <h1 className='font-semibold'>Hushh Chrome Extension</h1>
+                        <p className='text-sm font-medium text-fontColor3'>Enhanced recommendations &<br /> impactful marketing.</p>
+                      </div>
+                    </Link>
+                    <Link href={'/'} className="flex gap-4">
+                      <div className="">
+                        <ConciergeApp className='w-6 h-6' />
+                      </div>
+                      <div className="">
+                        <h1 className='font-semibold'>Hushh Concierge App</h1>
+                        <p className='text-sm font-medium text-fontColor3'>Speak your wish, get luxury <br /> redefined: Hushh Concierge</p>
+                      </div>
+                    </Link>
+                    <Link href={'/'} className="flex gap-4">
+                      <div className="">
+                        <VibeSearchIcon className='w-6 h-6' />
+                      </div>
+                      <div className="">
+                        <h1 className='font-semibold'>VIBE Search App</h1>
+                        <p className='text-sm font-medium text-fontColor3'>Find perfect items to express your <br /> individuality in just one click.</p>
+                      </div>
+                    </Link>
+                  </div>
+
+                  <div className="flex-1 flex flex-col gap-5 w-full pr-12">
+                    <Link href={'/'} className="flex gap-4 items-start">
+                      <div className="">
+                        <HushhWalletIcon className='w-6 h-6' />
+                      </div>
+                      <div className="">
+                        <h1 className='font-semibold'>Hushh Wallet App</h1>
+                        <p className='text-sm font-medium text-fontColor3'>Customer User Flow + Client Advisor User Flow</p>
+                      </div>
+                    </Link>
+                    <Link href={'/'} className="flex gap-4">
+                      <div className="">
+                        <ValetChat className='w-6 h-6' />
+                      </div>
+                      <div className="">
+                        <h1 className='font-semibold'>Valet Chat</h1>
+                        <p className='text-sm font-medium text-fontColor3'>Valet Chat: Ditch receipts, unlock <br /> insights.</p>
+                      </div>
+                    </Link>
+                    <Link href={'/'} className="flex gap-4">
+                      <div className="">
+                        <VibeSearchApi className='w-6 h-6' />
+                      </div>
+                      <div className="">
+                        <h1 className='font-semibold'>VIBE Search APIs</h1>
+                        <p className='text-sm font-medium text-fontColor3'>List products on Vibe Search with <br /> management and analytics.</p>
+                      </div>
+                    </Link>
+                    <Link href={'/'} className="flex gap-4">
+                      <div className="">
+                        <headerAssets.VibeSearchMarketplace className='w-6 h-6' />
+                      </div>
+                      <div className="">
+                        <h1 className='font-semibold'>VIBE Search Marketplace</h1>
+                        <p className='text-sm font-medium text-fontColor3'>News and updates</p>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        )}
+
+
+        <div className="">
+          {!isMobile && (
+            <div className="login">
+              <SearchBar />
+              <Button
+                border={"1px solid #606060"}
+                borderRadius={"5px"}
+                w={"8.75rem"}
+                h={"3.125rem"}
+                // color={theme.colors._white}
+                className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text"
+                lineHeight={"50px"}
+                letterSpacing={"0.5rem"}
+                _hover={{
+                  background:
+                    "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                  color: "white",
+                }}
+              >
+                LOGIN
+              </Button>
             </div>
           )}
         </div>
-
-        {!isMobile && (
-          <div className="login">
-            <SearchBar />
-            <Button
-              border={"1px solid #606060"}
-              borderRadius={"5px"}
-              w={"8.75rem"}
-              h={"3.125rem"}
-              // color={theme.colors._white}
-              className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text"
-              lineHeight={"50px"}
-              letterSpacing={"0.5rem"}
-              _hover={{
-                background:
-                  "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                color: "white",
-              }}
-            >
-              LOGIN
-            </Button>
-          </div>
-        )}
       </div>
+
       <div className="w-full justify-end flex px-6">
         {isMenuOpen && isMobile ? (
-          <div className="w-1/2 flex flex-col gap-1" ref={menuRef}>
-            <div className="text-white flex flex-col text-center">
+          <div className={`w-full flex flex-col gap-1`} ref={menuRef}>
+            <div className="text-white w-full flex items-end flex-col text-center">
               <Link
                 href="/"
-                className="py-2 w-full border border-myBorder bg-black rounded-t"
+                className="py-2 border border-myBorder bg-black rounded-t w-1/2"
               >
                 HOME
               </Link>
               <Link
                 href="https://www.linkedin.com/company/hushh-ai/about"
-                className="py-2 w-full border border-myBorder border-t-0 bg-black"
+                className="py-2 w-1/2 border border-myBorder border-t-0 bg-black"
               >
                 ABOUT US
               </Link>
               <Link
                 href="#"
-                className="py-2 w-full border border-myBorder bg-black border-t-0"
+                onClick={() => setProductsSubmenuMobile(!productsSubmenuMobile)}
+                className="py-2 w-1/2 border border-myBorder bg-black border-t-0 "
               >
-                INVESTORS
+                <div className="flex gap-2 items-center justify-center">
+                  PRODUCTS
+                  <ChevronArrowIcon className={`${productsSubmenuMobile ? '' : 'rotate-180'} group-hover:rotate-0 transition-all duration-300`} />
+                </div>
+              </Link>
+              <div className="w-full">
+                {
+                  productsSubmenuMobile &&
+                  <div className=" flex flex-col w-full items-end">
+                    {/* <p className="text-xs text-fontColor2 font-semibold">HUSHH PRODUCTS</p> */}
+
+                    <div className=" flex flex-col w-3/4 ">
+                      <Link href={'/products/hushhButton'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                        <div className="">
+                          <HushhButtonIcon size={24} />
+                        </div>
+                        <div className="">
+                          <h1 className='font-semibold'>Hushh Button</h1>
+                          {/* <p className='text-sm font-medium text-fontColor3'>Share data for personalized <br /> recommendations.</p> */}
+                        </div>
+                      </Link>
+                      <Link href={'/products/browserCompanion'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                        <div className="">
+                          <ChromeExtentionLogo className='w-6 h-6' />
+                        </div>
+                        <div className="">
+                          <h1 className='font-semibold'>Browser Companion</h1>
+                          {/* <p className='text-sm font-medium text-fontColor3'>Enhanced recommendations &<br /> impactful marketing.</p> */}
+                        </div>
+                      </Link>
+                      <Link href={'/'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                        <div className="">
+                          <ConciergeApp className='w-6 h-6' />
+                        </div>
+                        <div className="">
+                          <h1 className='font-semibold'>Hushh Concierge App</h1>
+                          {/* <p className='text-sm font-medium text-fontColor3'>Speak your wish, get luxury <br /> redefined: Hushh Concierge</p> */}
+                        </div>
+                      </Link>
+                      <Link href={'/products/vibeSearch'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                        <div className="">
+                          <VibeSearchIcon className='w-6 h-6' />
+                        </div>
+                        <div className="">
+                          <h1 className='font-semibold'>VIBE Search App</h1>
+                          {/* <p className='text-sm font-medium text-fontColor3'>Find perfect items to express your <br /> individuality in just one click.</p> */}
+                        </div>
+                      </Link>
+                      <Link href={'/'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0">
+                        <div className="">
+                          <HushhWalletIcon className='w-6 h-6' />
+                        </div>
+                        <div className="">
+                          <h1 className='font-semibold'>Hushh Wallet App</h1>
+                          {/* <p className='text-sm font-medium text-fontColor3'>Customer User Flow + Client Advisor User Flow</p> */}
+                        </div>
+                      </Link>
+                      <Link href={'/products/hushhValetChat'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                        <div className="">
+                          <ValetChat className='w-6 h-6' />
+                        </div>
+                        <div className="">
+                          <h1 className='font-semibold'>Valet Chat</h1>
+                          {/* <p className='text-sm font-medium text-fontColor3'>Valet Chat: Ditch receipts, unlock <br /> insights.</p> */}
+                        </div>
+                      </Link>
+                      <Link href={'/'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                        <div className="">
+                          <VibeSearchApi className='w-6 h-6' />
+                        </div>
+                        <div className="">
+                          <h1 className='font-semibold'>VIBE Search APIs</h1>
+                          {/* <p className='text-sm font-medium text-fontColor3'>List products on Vibe Search with <br /> management and analytics.</p> */}
+                        </div>
+                      </Link>
+                      <Link href={'/'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                        <div className="">
+                          <headerAssets.VibeSearchMarketplace className='w-6 h-6' />
+                        </div>
+                        <div className="">
+                          <h1 className='font-semibold'>VIBE Search Marketplace</h1>
+                          {/* <p className='text-sm font-medium text-fontColor3'>News and updates</p> */}
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
+                }
+              </div>
+
+
+
+
+              <Link
+                href="https://www.linkedin.com/company/hushh-ai/jobs"
+                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
+              >
+                LABS
               </Link>
               <Link
                 href="https://www.linkedin.com/company/hushh-ai/jobs"
-                className="py-2 w-full border border-myBorder bg-black border-t-0"
+                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
               >
-                WORK WITH US
+                CONTACT US
               </Link>
               <Link
                 href=""
-                className="py-2 w-full border border-myBorder border-t-0 bg-black rounded-b"
+                className="py-2 w-1/2 border border-myBorder border-t-0 bg-black rounded-b"
               >
                 LOGIN
               </Link>
@@ -123,9 +325,10 @@ const Header = () => {
           </div>
         ) : (
           <div className=""></div>
-        )}
-      </div>
-    </div>
+        )
+        }
+      </div >
+    </div >
   );
 };
 

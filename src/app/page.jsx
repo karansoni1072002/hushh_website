@@ -291,7 +291,7 @@ export default function Home() {
           </VStack>
         </Box>
 
-        <ReviewSlider/>
+        <ReviewSlider />
 
 
         {/* Product Showcase section below */}
@@ -345,7 +345,7 @@ export default function Home() {
               templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
               gap={{ md: 20, base: 5 }}
               justifyContent="center"
-              // flexWrap="wrap"
+            // flexWrap="wrap"
             >
               <ServiceCard
                 icon={<HushhWalletIcon />}
@@ -394,9 +394,9 @@ export default function Home() {
                 alignItems={"center"}
                 textAlign={'center'}
                 description="App for HNWIs  discreetly sharing user data for personalized, real-time luxury experiences"
-                // onClick={() =>
-                //   router.push("")
-                // }
+              // onClick={() =>
+              //   router.push("")
+              // }
               />
               <ServiceCard
                 icon={<ValetChat />}
@@ -417,6 +417,7 @@ export default function Home() {
                 onClick={() =>
                   router.push("/products/vibeSearch")
                 }
+
               />
             </Grid>
           </Container>
@@ -428,7 +429,7 @@ export default function Home() {
 
         <HushhCoinUiBox />
 
-        <ContactForm/>
+        <ContactForm />
         {/* <div className="pt-5">
           <HP_Scrolling />
         </div>

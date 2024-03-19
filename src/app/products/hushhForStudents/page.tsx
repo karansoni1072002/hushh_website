@@ -249,6 +249,8 @@ const hushhForStudents = () => {
             <ServiceCard
               icon={<DataIcon/>}
               title="Data Value Setting"
+              alignItems={''}
+              onClick={'#'}
               textAlign={"left"}
               description="Students have the ability to set a value for their data, establishing both transparency and control over it.​"
             />
@@ -256,10 +258,14 @@ const hushhForStudents = () => {
               icon={<DataExchangeIcon />}
               title="Secure Data Exchange​"
               textAlign={"left"}
+              alignItems={''}
+              onClick={'#'}
               description="The platform enables businesses to securely purchase data from students. This process is designed to ensure data privacy and secure transactions.​​"
             />
             <ServiceCard
               icon={<RewardIcon />}
+              alignItems={'left'}
+              onClick={'#'}
               title="Rewards and Points System​"
               textAlign={"left"}
               description="Students earn rewards and points for each successful data transaction they partake in. This system incentivizes them to participate in the data exchange."
@@ -275,7 +281,7 @@ const hushhForStudents = () => {
             </Box>
             <Box position={'relative'} mt={{md:'-17rem'}}>
                <Image src={AssestBg} alt="AssestBg" />
-               <Box position={'absolute'} boxSize={{base:'7rem'}} left={{ md:'37%', base:'37%'}} top={{ md:'20%', base:'20%'}}>
+               <Box position={'absolute'} boxSize={{base:'7rem', md:'50rem'}} left={{ md:'37%', base:'37%'}} top={{ md:'20%', base:'20%'}}>
                    <Image src={hfsMobileIcon} alt="hfsMobileIcon" />
                </Box>
             </Box>
@@ -284,6 +290,8 @@ const hushhForStudents = () => {
         <Stack
           mt={{ base: "6rem", md: "4rem" }}
           px={{ md: "9rem", base: "1rem" }}
+          display={'flex'}
+          alignItems={'center'}
         >
           <Heading
             className="gradient"
@@ -324,9 +332,9 @@ const hushhForStudents = () => {
                 fontWeight={"700"}
                 fontSize={{ md: "1.75rem",base:'1rem' }}
                 lineHeight={{ md:"38.53px"}}
-                marginBottom={{base:'0.75rem', md:'2rem'}}
+                marginBottom={{base:'0.75rem', md:'1rem'}}
               >
-                Travel
+                Students
               </Heading>
               <Text
                 fontWeight={"400"}
@@ -351,10 +359,10 @@ const hushhForStudents = () => {
                 fontWeight={"700"}
                 fontSize={{ md: "1.75rem",base:'1rem' }}
                 lineHeight={{ md:"38.53px"}}
-                marginBottom={{base:'0.75rem', md:'2rem'}}
+                marginBottom={{base:'0.75rem', md:'1rem'}}
                 color={'white'}
               >
-                Events
+                Business
               </Heading>
               <Text
                 fontWeight={"400"}
@@ -363,8 +371,7 @@ const hushhForStudents = () => {
                 marginBottom={{base:'1.25rem', md:'3rem'}}
                 color={'white'}
               >
-                VIP access to high-profile events, private viewings, red carpet
-                experiences
+                Purchase valuable student data for various purposes, benefiting from access to targeted data. Access to valuable student data for targeted initiatives. Seamless and secure data exchange process.
               </Text>
               {/* <Image src={RightArrowWhite} alt="rightArrowWhite" />
               <Image src={GoldenMedal} alt="goldenMedal" /> */}
@@ -380,9 +387,9 @@ const hushhForStudents = () => {
                 fontWeight={"700"}
                 fontSize={{ md: "1.75rem",base:'1rem' }}
                 lineHeight={{ md:"38.53px"}}
-                marginBottom={{base:'0.75rem', md:'2rem'}}
+                marginBottom={{base:'0.75rem', md:'1rem'}}
               >
-                Lifestyle
+                Developers
               </Heading>
               <Text
                 fontWeight={"400"}
@@ -390,8 +397,7 @@ const hushhForStudents = () => {
                 lineHeight={{ md:"22.41px"}}
                 marginBottom={{base:'1.25rem', md:'3rem'}}
               >
-                Personal shopping, home management, day-to-day errands,
-                specialized requests
+                Working on a cutting-edge platform that blends data exchange with user empowerment offers a unique opportunity for technical creativity and innovation.
               </Text>
               {/* <Image src={RightArrowBlack} alt="RightArrowBlack" />
               <Image src={ShoppingHand} alt="shoppingHand" /> */}

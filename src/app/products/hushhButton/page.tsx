@@ -31,7 +31,7 @@ import HushhButtonWin from '../../_components/svg/hushhButtonWin.svg';
 import { useRouter } from "next/navigation";
 import { animateScroll as scroll } from 'react-scroll';
 import HushhButtonFaq from "../../_components/features/faq/hushhButtonFaq"
-
+import ContactForm from '../../_components/features/contactForm'
 
 const hushhButton = () => {
   const isMobile = useResponsiveSizes;
@@ -58,7 +58,7 @@ const hushhButton = () => {
           w={"100%"}
           display={"flex"}
           flexDirection={"column"}
-          mt={{base:'3rem'}}
+          mt={{ base: '3rem' }}
         >
           <Heading
             fontWeight={"700"}
@@ -67,8 +67,8 @@ const hushhButton = () => {
             fontSize={{ md: "8.8rem", base: "2.5rem" }}
             pt={{ md: "10rem", base: "3rem" }}
             className="gradient"
-            px={{base:'0.5rem'}}
-            mb={{base:'0.5rem'}}
+            px={{ base: '0.5rem' }}
+            mb={{ base: '0.5rem' }}
           >
             Hushh Button
           </Heading>
@@ -85,18 +85,18 @@ const hushhButton = () => {
           <Button
             border={"1px solid #606060"}
             borderRadius={"2px"}
-            w={{ md:"16rem", base:"10rem"}}
+            w={{ md: "16rem", base: "10rem" }}
             color={extendedTheme.colors._white}
-            lineHeight={{ md:"28px", base:'14px'}}
+            lineHeight={{ md: "28px", base: '14px' }}
             background={"transparent"}
-            letterSpacing={{ md:"0.5rem", base:"0.25rem"}}
+            letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
-              onClick={() =>
-                router.push("https://sites.google.com/hush1one.com/drops/products/hushh-button")
-              }
+            onClick={() =>
+              router.push("https://sites.google.com/hush1one.com/drops/products/hushh-button")
+            }
           >
             LEARN MORE
           </Button>
@@ -129,9 +129,9 @@ const hushhButton = () => {
             display={"flex"}
             flexDirection={"column"}
             color={"white"}
-            alignItems={{base:'center'}}
-            justifyContent={{base:'center'}}
-            textAlign={{base:'center'}}
+            alignItems={{ base: 'center' }}
+            justifyContent={{ base: 'center' }}
+            textAlign={{ base: 'center' }}
           >
             <Text
               fontWeight={"800"}
@@ -370,11 +370,11 @@ const hushhButton = () => {
             <Button
               border={"1px solid #606060"}
               borderRadius={"2px"}
-              w={{ md:"16rem", base:"10rem"}}
+              w={{ md: "16rem", base: "10rem" }}
               color={extendedTheme.colors._white}
-              lineHeight={{ md:"28px", base:'14px'}}
+              lineHeight={{ md: "28px", base: '14px' }}
               background={"transparent"}
-              letterSpacing={{ md:"0.5rem", base:"0.25rem"}}
+              letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
               _hover={{
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
@@ -429,7 +429,7 @@ const hushhButton = () => {
             <Heading
               className="gradient"
               display={{ md: "flex", base: "none" }}
-              flexDirection={{ md:'column'}}
+              flexDirection={{ md: 'column' }}
             >
               <Text fontSize={{ md: "2rem", base: "1.5rem" }}>Hushh For</Text>
               <Text fontSize={{ md: "3.75rem", base: "2rem" }}>Brands</Text>
@@ -458,11 +458,11 @@ const hushhButton = () => {
             <Button
               border={"1px solid #606060"}
               borderRadius={"2px"}
-              w={{ md:"16rem", base:"10rem"}}
+              w={{ md: "16rem", base: "10rem" }}
               color={extendedTheme.colors._white}
-              lineHeight={{ md:"28px", base:'14px'}}
+              lineHeight={{ md: "28px", base: '14px' }}
               background={"transparent"}
-              letterSpacing={{ md:"0.5rem", base:"0.25rem"}}
+              letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
               _hover={{
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
@@ -577,7 +577,7 @@ const hushhButton = () => {
             pl="1rem"
             mr={'50%'}
             pos="absolute"
-            top="0" 
+            top="0"
             left="0"
             right="0"
             textAlign="left"
@@ -645,7 +645,7 @@ const hushhButton = () => {
             <Image
               src={HushhButtonWin}
               alt="HushhButtonOnlyUser"
-              style={{ height: "100%",position:'absolute', width: "50%" }}
+              style={{ height: "100%", position: 'absolute', width: "50%" }}
             />
           </VStack>
         </Stack>
@@ -667,7 +667,7 @@ const hushhButton = () => {
               color={"white"}
               textAlign={"center"}
               fontWeight={"400"}
-              lineHeight={{md:"31.5px", base:'20px'}}
+              lineHeight={{ md: "31.5px", base: '20px' }}
               fontSize={{ md: "1.125rem", base: "0.75rem" }}
             >
               With the Hushh Widget, websites and apps seamlessly change to
@@ -680,9 +680,9 @@ const hushhButton = () => {
         <HStack
           pb={{ base: "3rem", md: "6rem" }}
           px={{ md: "10rem", base: "1rem" }}
-          gap={{ md:"5rem", base:'1.25rem'}}
+          gap={{ md: "5rem", base: '1.25rem' }}
         >
-          <VStack gap={{ md:"2rem", base:'0.5rem'}} alignItems={"flex-start"} textAlign={"left"}>
+          <VStack gap={{ md: "2rem", base: '0.5rem' }} alignItems={"flex-start"} textAlign={"left"}>
             {/* GIF Pending */}
             <Heading
               fontWeight={"400"}
@@ -695,7 +695,7 @@ const hushhButton = () => {
             <Text
               lineHeight={{ md: "31.5px" }}
               color={"white"}
-              fontSize={{ md:"1.125rem", base:'0.56rem'}}
+              fontSize={{ md: "1.125rem", base: '0.56rem' }}
             >
               The widget allows users to create their cookies and control what
               information they want to share with different websites. This gives
@@ -703,7 +703,7 @@ const hushhButton = () => {
               personalized shopping experience.
             </Text>
           </VStack>
-          <VStack alignItems={"flex-start"} textAlign={"left"} gap={{ md:"2rem", base:'0.5rem'}}>
+          <VStack alignItems={"flex-start"} textAlign={"left"} gap={{ md: "2rem", base: '0.5rem' }}>
             <Heading
               fontWeight={"400"}
               fontSize={{ md: "3.75rem", base: "1.25rem" }}
@@ -715,7 +715,7 @@ const hushhButton = () => {
             <Text
               lineHeight={{ md: "31.5px" }}
               color={"white"}
-              fontSize={{ md:"1.125rem", base:'0.56rem'}}
+              fontSize={{ md: "1.125rem", base: '0.56rem' }}
             >
               The widget allows users to create their cookies and control what
               information they want to share with different websites. This gives
@@ -724,8 +724,9 @@ const hushhButton = () => {
             </Text>
           </VStack>
         </HStack>
-        <HushhButtonFaq/>
+        <HushhButtonFaq />
       </Box>
+      <ContactForm />
     </>
   );
 };

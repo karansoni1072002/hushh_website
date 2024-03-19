@@ -24,6 +24,11 @@ module.exports = {
         normText: 'rgba(101, 101, 101, 1)',
         speBG: '#5E2296',
         normBG: '#F8F0FF',
+        fontColor4: '#ABABAB',
+        lineGradient1: '#262626',
+        lineGradient2: '#ADA785',
+        lineGradient3: '#262626',
+        fontColor5: '#E5E5E5'
       },
       animation: {
         'fade-in': 'fadeIn 1s ease-in-out',

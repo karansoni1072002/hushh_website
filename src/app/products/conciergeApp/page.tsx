@@ -475,7 +475,7 @@ const conciergeApp = () => {
 
             <Box alignItems={'center'} textAlign={'left'} flexDirection={'row'} color={extendedTheme.colors._white} display="flex" gap={"1rem"}>
               <TransparentLock />
-              <VStack ml={"0.75rem"} textAlign={'left'} alignItems={'flex-start'} lineHeight={'1rem'}>
+              <VStack ml={{ md:"0.75rem"}} textAlign={'left'} alignItems={'flex-start'} lineHeight={'1rem'}>
                  <Text fontWeight={'700'}>Real-Time Matching</Text>
                  <Text fontWeight={'400'} fontSize={'0.75rem'}>Connects you with the right service providers instantly</Text>
               </VStack>

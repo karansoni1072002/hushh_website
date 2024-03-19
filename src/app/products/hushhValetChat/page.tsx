@@ -13,6 +13,7 @@ import ManageFinanceBox from '../../_components/svg/managefinanceBox.svg';
 import ValetIntegrationBox from '../../_components/svg/valetIntegrationBox.svg';
 import ValetChatFaq from '../../_components/features/faq/valetChatFaq';
 import ContactForm from '../../_components/features/contactForm'
+
 const hushhValetChat = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();

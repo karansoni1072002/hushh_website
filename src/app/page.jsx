@@ -35,12 +35,12 @@ import VibeSearchIcon from "./_components/svg/vibeSearch";
 import extendedTheme from "./theme";
 import theme from "./theme";
 import { useRouter } from "next/navigation";
+// import { useRouter } from "next/router";
 import HushhCoinUiBox from "./_components/features/hushhCoinUiBox";
 import ContactForm from "./_components/features/contactForm";
-import FooterComponent from "./_components/features/FooterComponent";
 import NotificationPopup from './_components/features/popupNotification'
 import ReviewSlider from "./_components/features/reviewSlider";
-
+import HfsLogo from "./_components/svg/hfsLogo"; 
 
 export default function Home() {
   const router = useRouter();
@@ -345,7 +345,6 @@ export default function Home() {
               templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
               gap={{ md: 20, base: 5 }}
               justifyContent="center"
-            // flexWrap="wrap"
             >
               <ServiceCard
                 icon={<HushhWalletIcon />}
@@ -394,9 +393,9 @@ export default function Home() {
                 alignItems={"center"}
                 textAlign={'center'}
                 description="App for HNWIs  discreetly sharing user data for personalized, real-time luxury experiences"
-              // onClick={() =>
-              //   router.push("")
-              // }
+                onClick={() =>
+                  router.push("/products/conciergeApp")
+                }
               />
               <ServiceCard
                 icon={<ValetChat />}
@@ -418,6 +417,16 @@ export default function Home() {
                   router.push("/products/vibeSearch")
                 }
 
+              />
+              <ServiceCard
+                icon={<HfsLogo/>}
+                title="Hushh For Students​"
+                alignItems={"center"}
+                textAlign={'center'}
+                description="Empowering, rewarding digital engagement & Revolutionizing data exchange by empowering students"
+                onClick={() =>
+                  router.push("/products/hushhForStudents")
+                }
               />
             </Grid>
           </Container>

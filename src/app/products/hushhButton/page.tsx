@@ -34,7 +34,6 @@ import HushhButtonFaq from "../../_components/features/faq/hushhButtonFaq"
 import ContactForm from '../../_components/features/contactForm'
 
 const hushhButton = () => {
-  const isMobile = useResponsiveSizes;
   const router = useRouter();
 
   const scrollTo = () => {

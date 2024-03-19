@@ -99,7 +99,7 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>Enhanced recommendations &<br /> impactful marketing.</p>
                       </div>
                     </Link>
-                    <Link href={'/'} className="flex gap-4">
+                    <Link href={'/products/conciergeApp'} className="flex gap-4">
                       <div className="">
                         <ConciergeApp className='w-6 h-6' />
                       </div>
@@ -120,7 +120,7 @@ const Header = () => {
                   </div>
 
                   <div className="flex-1 flex flex-col gap-5 w-full pr-12">
-                    <Link href={'/'} className="flex gap-4 items-start">
+                    <Link href={'#'} className="flex gap-4 items-start">
                       <div className="">
                         <HushhWalletIcon className='w-6 h-6' />
                       </div>
@@ -138,7 +138,7 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>Valet Chat: Ditch receipts, unlock <br /> insights.</p>
                       </div>
                     </Link>
-                    <Link href={'/'} className="flex gap-4">
+                    <Link href={'#'} className="flex gap-4">
                       <div className="">
                         <VibeSearchApi className='w-6 h-6' />
                       </div>
@@ -147,7 +147,7 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>List products on Vibe Search with <br /> management and analytics.</p>
                       </div>
                     </Link>
-                    <Link href={'/'} className="flex gap-4">
+                    <Link href={'#'} className="flex gap-4">
                       <div className="">
                         <headerAssets.VibeSearchMarketplace className='w-6 h-6' />
                       </div>
@@ -195,7 +195,7 @@ const Header = () => {
           <div className={`w-full flex flex-col gap-1`} ref={menuRef}>
             <div className="text-white w-full flex items-end flex-col text-center">
               <Link
-                href="/"
+                // href="/"
                 className="py-2 border border-myBorder bg-black rounded-t w-1/2"
               >
                 HOME
@@ -241,7 +241,7 @@ const Header = () => {
                           {/* <p className='text-sm font-medium text-fontColor3'>Enhanced recommendations &<br /> impactful marketing.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/'} onClick={() => setProductsSubmenuMobile(false)} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link href={'/products/conciergeApp'} onClick={() => setProductsSubmenuMobile(false)} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
                         <div className="">
                           <ConciergeApp className='w-6 h-6' />
                         </div>

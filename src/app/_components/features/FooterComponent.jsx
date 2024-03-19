@@ -16,9 +16,8 @@ const FooterComponent = () => {
                 <HushhFooterLogo />
             </div>
             <div className="desktop-view">
-                <div className="flex justify-between gap-52 items-end pb-[6.5rem] px-32">
-                    <div className="w-96 gap-4 flex flex-col justify-between">
-
+                <div className="flex justify-between gap-52 items-start pb-[6.5rem] px-32">
+                    <div className="w-96 gap-4 flex flex-col justify-normal">
                         <h1 className='font-semibold text-2xl leading-10'>We growing up your business <br />with personal AI manager.</h1>
                         <p className='text-lg'>Manish Sainani, 2024</p>
                     </div>
@@ -53,7 +52,7 @@ const FooterComponent = () => {
                         </div>
                         <div className="flex flex-col gap-4">
                             <p className='text-base font-medium opacity-80 leading-6'>Get the app</p>
-                            <div className="flex flex-col justify-between h-full">
+                            <div className="flex flex-col justify-between h-max gap-3.5">
                                 <button className='flex px-4 py-2 gap-1.5 border border-myBorder rounded-full'><AndroidIcon /> Android</button>
                                 <button className='flex px-4 py-2 gap-1.5 w-max border border-myBorder rounded-full'><IosIcon /> iOS</button>
                             </div>
@@ -67,8 +66,8 @@ const FooterComponent = () => {
                         <p>© 2023 Hush1One Inc. All rights reserved.</p>
                     </div>
                     <div className="flex gap-9 ">
-                        <Link href='#'>Terms of Service</Link>
-                        <Link href='#'>Privacy Policy</Link>
+                        <Link href='/legal/termsofuse'>Terms of Use</Link>
+                        <Link href='/legal/privacypolicy'>Privacy Policy</Link>
                         <Link href='#'>Cookies</Link>
                     </div>
                 </div>

@@ -47,12 +47,10 @@ export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    // Set a timeout to show the popup after 5 seconds
     const timeoutId = setTimeout(() => {
       setShowPopup(true);
     }, 3000);
 
-    // Clean up the timeout when the component unmounts
     return () => clearTimeout(timeoutId);
   }, []);
 
@@ -162,7 +160,7 @@ export default function Home() {
         <Box
           display="flex"
           h={"full"}
-          flexDirection={{ base: "column", md: "row" }} // For mobile, stack images vertically, for desktop, display them side by side
+          flexDirection={{ base: "column", md: "row" }}
           alignItems={{ base: "center", md: "flex-start" }}
           pt={{ md: "10rem", base: "6rem" }}
           justifyContent="space-between"
@@ -366,7 +364,7 @@ export default function Home() {
                 alignItems={"center"}
                 description="Plugin that helps you exchange data with brands​"
                 onClick={() =>
-                  router.push("https://hushhbutton.framer.ai/")
+                  router.push("/products/hushhButton")
                 }
               />
               <ServiceCard
@@ -386,7 +384,7 @@ export default function Home() {
                 textAlign={'center'}
                 description="Collects your web activity and preferences as you browse"
                 onClick={() =>
-                  router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+                  router.push("/products/browserCompanion")
                 }
               />
               {/* 2nd row */}
@@ -406,9 +404,9 @@ export default function Home() {
                 alignItems={"center"}
                 textAlign={'center'}
                 description="Ditch receipts, unlock insights: Valet Chat, your AI finance genie"
-              // onClick={() =>
-              //   router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
-              // }
+                onClick={() =>
+                  router.push("/products/hushhValetChat")
+                }
               />
               <ServiceCard
                 icon={<VibeSearchApi />}

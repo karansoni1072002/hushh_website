@@ -309,7 +309,7 @@ const vibeSearch = () => {
               className="gradient"
               fontSize={{ md: "3.75rem", base: "1.75rem" }}
               fontWeight={"400"}
-              lineHeight={{ md: "63.3px", base: "31.2px" }}
+              lineHeight={{ md: "83.3px", base: "41.2px" }}
             >
               Find Your Style with{" "}
             </Text>
@@ -317,7 +317,7 @@ const vibeSearch = () => {
               className="gradient"
               fontSize={{ md: "3.75rem", base: "1.75rem" }}
               fontWeight={"700"}
-              lineHeight={{ md: "63.3px", base: "31.2px" }}
+              lineHeight={{ md: "83.3px", base: "41.2px" }}
             >
               Your own Stylist
             </Text>
@@ -401,7 +401,7 @@ const vibeSearch = () => {
               className="gradient"
               fontSize={{ md: "3.75rem", base: "1.75rem" }}
               fontWeight={"400"}
-              lineHeight={{ md: "63.3px", base: "31.2px" }}
+              lineHeight={{ md: "83.3px", base: "41.2px" }}
             >
                Vibe Search Integration            
             </Text>
@@ -461,7 +461,7 @@ const vibeSearch = () => {
             <Text display={'flex'} color={'#ABABAB'} lineHeight={'25px'} fontSize={{md:'0.8rem', base:'0.8rem'}}>Vibe search is more than just an app its your personal stylist on tap of a button</Text>
             <Box>
                 <Image src={VibeSearchBg} alt="VibeSearchBg" />
-                
+
                 <Button  border={"1px solid #606060"}
             borderRadius={"2px"}
             w={{ md: "16rem", base: "10rem" }}

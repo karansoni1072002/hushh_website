@@ -313,7 +313,7 @@ const browserCompanion = () => {
               className="gradient"
               fontSize={{ md: "3.75rem", base: "1.75rem" }}
               fontWeight={"400"}
-              lineHeight={{ md: "63.3px", base: "31.2px" }}
+              lineHeight={{ md: "83.3px", base: "41.2px" }}
             >
               Browser Companion{" "}
             </Text>
@@ -321,7 +321,7 @@ const browserCompanion = () => {
               className="gradient"
               fontSize={{ md: "3.75rem", base: "1.75rem" }}
               fontWeight={"700"}
-              lineHeight={{ md: "63.3px", base: "31.2px" }}
+              lineHeight={{ md: "83.3px", base: "41.2px" }}
             >
               that empowers you
             </Text>
@@ -404,7 +404,7 @@ const browserCompanion = () => {
               className="gradient"
               fontSize={{ md: "3.75rem", base: "1.75rem" }}
               fontWeight={"400"}
-              lineHeight={{ md: "63.3px", base: "31.2px" }}
+              lineHeight={{ md: "83.3px", base: "41.2px" }}
             >
                Wallet Integration            
             </Text>

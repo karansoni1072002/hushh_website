@@ -258,18 +258,24 @@ const conciergeApp = () => {
           >
             <ServiceCard
               icon={<TrustedAIIcon />}
+              alignItems={''}
+              onClick={'#'}
               title="Effortless Service​"
               textAlign={"left"}
               description="Simply speak your request using the app, and Hushh translates it into action. No more searching or filling out forms.​"
             />
             <ServiceCard
               icon={<TechIntegrationIcon />}
+              alignItems={''}
+              onClick={'#'}
               title="Personalized Recommendations​​​"
               textAlign={"left"}
               description="Hushh analyzes your intent, not just your preferences, to recommend services that truly match your needs.​​"
             />
             <ServiceCard
               icon={<ControlOver />}
+              alignItems={''}
+              onClick={'#'}
               title="Real-Time Responses​"
               textAlign={"left"}
               description="Get immediate responses to your requests from top-tier service providers, competing for your attention."
@@ -277,12 +283,16 @@ const conciergeApp = () => {
             <ServiceCard
               icon={<RedifiningIcon />}
               title="Discretion and Privacy​​​"
+              onClick={'#'}
+              alignItems={''}
               textAlign={"left"}
               description="Your identity and preferences remain confidential. Requests are shared anonymously with relevant service providers.​​"
             />
             <ServiceCard
               icon={<TransparentSecureIcon />}
               title="Exclusive Opportunities​"
+              onClick={'#'}
+              alignItems={''}
               textAlign={"left"}
               description="Access exclusive deals and hidden gem recommendations you won't find anywhere else"
             />

@@ -35,12 +35,12 @@ import VibeSearchIcon from "./_components/svg/vibeSearch";
 import extendedTheme from "./theme";
 import theme from "./theme";
 import { useRouter } from "next/navigation";
+// import { useRouter } from "next/router";
 import HushhCoinUiBox from "./_components/features/hushhCoinUiBox";
 import ContactForm from "./_components/features/contactForm";
-import FooterComponent from "./_components/features/FooterComponent";
 import NotificationPopup from './_components/features/popupNotification'
 import ReviewSlider from "./_components/features/reviewSlider";
-import HfsLogo from "./_components/svg/HFSLogo.svg";
+import HfsLogo from "./_components/svg/hfsLogo"; 
 
 export default function Home() {
   const router = useRouter();
@@ -345,7 +345,6 @@ export default function Home() {
               templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
               gap={{ md: 20, base: 5 }}
               justifyContent="center"
-            // flexWrap="wrap"
             >
               <ServiceCard
                 icon={<HushhWalletIcon />}
@@ -420,7 +419,7 @@ export default function Home() {
 
               />
               <ServiceCard
-                icon={<HfsLogo />}
+                icon={<HfsLogo/>}
                 title="Hushh For Students​"
                 alignItems={"center"}
                 textAlign={'center'}

@@ -40,7 +40,7 @@ import ContactForm from "./_components/features/contactForm";
 import FooterComponent from "./_components/features/FooterComponent";
 import NotificationPopup from './_components/features/popupNotification'
 import ReviewSlider from "./_components/features/reviewSlider";
-
+import HfsLogo from "./_components/svg/HFSLogo.svg";
 
 export default function Home() {
   const router = useRouter();
@@ -416,6 +416,16 @@ export default function Home() {
                 description="List products effortlessly on Vibe Search App with seamless management and insightful analytics"
                 onClick={() =>
                   router.push("/products/vibeSearch")
+                }
+              />
+              <ServiceCard
+                icon={<HfsLogo />}
+                title="Hushh For Students​"
+                alignItems={"center"}
+                textAlign={'center'}
+                description="Empowering, rewarding digital engagement & Revolutionizing data exchange by empowering students"
+                onClick={() =>
+                  router.push("/products/hushhForStudents")
                 }
               />
             </Grid>

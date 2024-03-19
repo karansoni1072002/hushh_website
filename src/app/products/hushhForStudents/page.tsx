@@ -56,6 +56,7 @@ const hushhForStudents = () => {
           display={"flex"}
           flexDirection={"column"}
           mt={{ base: "3rem" }}
+          gap={{base:'1rem'}}
         >
           <Heading
             fontWeight={"700"}
@@ -74,6 +75,7 @@ const hushhForStudents = () => {
             fontWeight={"700"}
             fontSize={{ md: "2rem", base: "1rem" }}
             lineHeight={{ md: "57.6px", base: "28.3px" }}
+            textAlign={'center'}
           >
             Empowering and rewarding digital engagement
           </Text>
@@ -267,18 +269,20 @@ const hushhForStudents = () => {
 
         <VStack mt={{md:'5rem',base:'2rem'}}>
             <Box mx={{md:'8rem', base:'1.5rem'}} textAlign={'center'}>
-                <Heading className="gradient" lineHeight={{md:'75px', base:'40px'}} fontWeight={'700'} fontSize={{md:'3.75rem', base:'1.75rem'}}>Control your data, earn rewards – hushh for students makes your data work for you.</Heading>
+                <Heading className="gradient" lineHeight={{md:'75px', base:'30px'}} fontWeight={'700'} fontSize={{md:'3.75rem', base:'1.5rem'}}>
+                    Control your data, earn rewards – hushh for students makes your data work for you.
+                </Heading>
             </Box>
             <Box position={'relative'} mt={{md:'-17rem'}}>
                <Image src={AssestBg} alt="AssestBg" />
-               <Box position={'absolute'} left={'37%'} top={'20%'}>
+               <Box position={'absolute'} boxSize={{base:'7rem'}} left={{ md:'37%', base:'37%'}} top={{ md:'20%', base:'20%'}}>
                    <Image src={hfsMobileIcon} alt="hfsMobileIcon" />
                </Box>
             </Box>
         </VStack>
 
         <Stack
-          mt={{ base: "2rem", md: "4rem" }}
+          mt={{ base: "6rem", md: "4rem" }}
           px={{ md: "9rem", base: "1rem" }}
         >
           <Heading

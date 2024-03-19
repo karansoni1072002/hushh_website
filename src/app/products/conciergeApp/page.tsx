@@ -16,8 +16,7 @@ import extendedTheme from "../../theme";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { animateScroll as scroll } from "react-scroll";
-import VibeSearchFaq from "../../_components/features/faq/vibeSearchFaq";
-import VibeSearchBg from "../../_components/svg/vibeBg.svg";
+import ConciergeFaq from "../../_components/features/faq/conciergeFaq";
 import ContactForm from "../../_components/features/contactForm";
 import { ServiceCard } from "../../_components/primitives/serviceCard";
 import TrustedAIIcon from "../../_components/svg/trustedAI";
@@ -484,7 +483,7 @@ const conciergeApp = () => {
         </VStack>
       </Container>
 
-        <VibeSearchFaq />
+        <ConciergeFaq />
       </Box>
       <ContactForm />
     </>

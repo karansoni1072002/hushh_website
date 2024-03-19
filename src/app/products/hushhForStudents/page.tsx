@@ -235,7 +235,7 @@ const hushhForStudents = () => {
 
         <Container
           display={"flex"}
-          pt={{ md: "2rem" }}
+          pt={{ md: "2rem" , base:'1.25rem'}}
           px={{ md: "10rem", base:'1rem' }}
           justifyContent={"center"}
           minW={{ md: "100%", base: "100%" }}
@@ -243,7 +243,7 @@ const hushhForStudents = () => {
         >
           <Grid
             templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
-            gap={{ md: 10, base: 5 }}
+            gap={{ md: 10, base: 0 }}
             flexWrap="wrap"
           >
             <ServiceCard

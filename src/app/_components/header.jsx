@@ -43,7 +43,7 @@ const Header = () => {
 
   return (
     <div className="fixed top-0 z-50 w-full">
-      <div className=" bg-myBG flex items-center justify-between px-6 py-2 md:px-32 md:py-10">
+      <div className=" bg-myBG flex items-center justify-between px-6 py-2 md:px-32 md:py-5">
         <div className="">
           <HushhHeaderLogo />
         </div>

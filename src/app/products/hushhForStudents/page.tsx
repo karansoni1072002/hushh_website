@@ -13,20 +13,18 @@ import {
   GridItem,
 } from "@chakra-ui/react";
 import extendedTheme from "../../theme";
-import Image from "next/image";
+// import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { animateScroll as scroll } from "react-scroll";
 import HfsFaq from "../../_components/features/faq/hfsFaq";
 import ContactForm from "../../_components/features/contactForm";
 import { ServiceCard } from "../../_components/primitives/serviceCard";
-import TrustedAIIcon from "../../_components/svg/trustedAI";
-import ControlOver from "../../_components/svg/controlOver";
-import TechIntegrationIcon from "../../_components/svg/techIntegration";
-import RedifiningIcon from "../../_components/svg/redifiningIcon";
-import TransparentSecureIcon from "../../_components/svg/tranparentSecure";
-import TransparentLock from "../../_components/svg/transparetLock";
-import BoltIcon from "../../_components/svg/boltIcon";
-import MarketIcon from "../../_components/svg/marketIcon";
+import DataExchangeIcon from "../../_components/svg/icons/dataExchangeIcon"
+import DataIcon from "../../_components/svg/icons/dataIcon";
+import RewardIcon from "../../_components/svg/rewardIcon";
+import AssestBg from "../../_components/svg/AssetBg.svg";
+import Image from "next/image";
+import hfsMobileIcon from "../../../../public/Images/mobileIcons/hfsMobileIcon.png"
 
 const hushhForStudents = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -239,6 +237,7 @@ const hushhForStudents = () => {
           px={{ md: "10rem", base:'1rem' }}
           justifyContent={"center"}
           minW={{ md: "100%", base: "100%" }}
+          mb={{md:'5rem', base:'2rem'}}
         >
           <Grid
             templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
@@ -246,19 +245,19 @@ const hushhForStudents = () => {
             flexWrap="wrap"
           >
             <ServiceCard
-              icon={<TrustedAIIcon />}
+              icon={<DataIcon/>}
               title="Data Value Setting"
               textAlign={"left"}
               description="Students have the ability to set a value for their data, establishing both transparency and control over it.​"
             />
             <ServiceCard
-              icon={<TechIntegrationIcon />}
+              icon={<DataExchangeIcon />}
               title="Secure Data Exchange​"
               textAlign={"left"}
               description="The platform enables businesses to securely purchase data from students. This process is designed to ensure data privacy and secure transactions.​​"
             />
             <ServiceCard
-              icon={<ControlOver />}
+              icon={<RewardIcon />}
               title="Rewards and Points System​"
               textAlign={"left"}
               description="Students earn rewards and points for each successful data transaction they partake in. This system incentivizes them to participate in the data exchange."
@@ -266,8 +265,20 @@ const hushhForStudents = () => {
           </Grid>
         </Container>
 
+        <VStack mt={{md:'5rem',base:'2rem'}}>
+            <Box mx={{md:'8rem', base:'1.5rem'}} textAlign={'center'}>
+                <Heading className="gradient" lineHeight={{md:'75px', base:'40px'}} fontWeight={'700'} fontSize={{md:'3.75rem', base:'1.75rem'}}>Control your data, earn rewards – hushh for students makes your data work for you.</Heading>
+            </Box>
+            <Box position={'relative'} mt={{md:'-17rem'}}>
+               <Image src={AssestBg} alt="AssestBg" />
+               <Box position={'absolute'} left={'37%'} top={'20%'}>
+                   <Image src={hfsMobileIcon} alt="hfsMobileIcon" />
+               </Box>
+            </Box>
+        </VStack>
+
         <Stack
-          mt={{ base: "2rem", md: "9rem" }}
+          mt={{ base: "2rem", md: "4rem" }}
           px={{ md: "9rem", base: "1rem" }}
         >
           <Heading
@@ -277,6 +288,7 @@ const hushhForStudents = () => {
             fontSize={{ md: "3.75rem", base: "1.25rem" }}
             mb={{base:'2rem', md:'4rem'}}
             display={{md:'flex', base:'none'}}
+            textAlign={'center'}
           >
             Hushh caters to a wide range <br></br> of needs, including
           </Heading>
@@ -383,82 +395,7 @@ const hushhForStudents = () => {
           </Grid>
         </Stack>
 
-        <Container
-        mt={{ base: "4rem", md: "8rem" }}
-        display="flex"
-        alignItems="center"
-        justifyContent="space-between"
-        flexDirection={{ base: "column", md: "row" }}
-        minW={"100%"}
-        px={{ md: "10rem", base: "2rem" }}
-      >
-        <Box maxWidth={{ base: "100%", md: "40%" }} display={{base:"none", md:'flex'}} mb={{base:'2rem'}}>
-          {/* <Image src={ConciergeMobile} alt="ConciergeMobile" /> */}
-        </Box>
-        <VStack
-          alignItems={{ base: "center", md: "flex-start" }}
-          maxW={{ base: "100%", md: "50%" }}
-          textAlign={{ base: "center", md: "left" }}
-        >
-          <Heading
-            as={"h2"}
-            className="color-gradient"
-            fontWeight={600}
-            letterSpacing={"0.25rem"}
-            fontSize={"1rem"}
-          >
-            Concierge App
-          </Heading>{" "}
-          <Box maxWidth={{ base: "100%", md: "40%" }} display={{base:"flex", md:'none'}} mb={{base:'2rem'}}>
-          {/* <Image src={ConciergeMobile} alt="ConciergeMobile" /> */}
-        </Box>
-          <Heading
-            className="gradient"
-            fontWeight="700"
-            fontSize={{ md: "3.75rem", base: "1.25rem" }}
-          >
-            The <br></br> Hushh Difference
-          </Heading>
-          <Text
-            color={extendedTheme.colors.secondary}
-            lineHeight={{ base: "18px", md: "36px" }}
-            mt={{ base: "1rem", md: "2rem" }}
-          >
-            Receipt Radar revolutionizes the way you handle receipts. With automatic scanning, smart categorization, and customizable options, managing expenses becomes a breeze. Simplify your life and take control of your finances with Receipt Radar today!{" "}
-          </Text>
-
-          <VStack
-            align="flex-start"
-            spacing={4}
-            w="100%"
-            mt={{ base: "1rem", md: "2rem" }}
-          >
-            <Box alignItems={'center'} textAlign={'left'} flexDirection={'row'} color={extendedTheme.colors._white} display="flex" gap={"1rem"}>
-              <MarketIcon />
-              <VStack textAlign={'left'} alignItems={'flex-start'} lineHeight={'1rem'}>
-                 <Text fontWeight={'700'}>Flips the Script</Text>
-                 <Text fontWeight={'400'} fontSize={'0.75rem'}>Users seeking services become services seeking users, putting you in control.</Text>
-              </VStack>
-            </Box>
-
-            <Box  alignItems={'center'} textAlign={'left'} flexDirection={'row'} color={extendedTheme.colors._white} display="flex" gap={"1rem"}>
-              <BoltIcon />
-              <VStack textAlign={'left'} alignItems={'flex-start'} lineHeight={'1rem'}>
-                 <Text fontWeight={'700'}>Powered by AI</Text>
-                 <Text fontWeight={'400'} fontSize={'0.75rem'}> Leverages cutting-edge technology to understand your intent and deliver personalized recommendations</Text>
-              </VStack>
-            </Box>
-
-            <Box alignItems={'center'} textAlign={'left'} flexDirection={'row'} color={extendedTheme.colors._white} display="flex" gap={"1rem"}>
-              <TransparentLock />
-              <VStack ml={{ md:"0.75rem"}} textAlign={'left'} alignItems={'flex-start'} lineHeight={'1rem'}>
-                 <Text fontWeight={'700'}>Real-Time Matching</Text>
-                 <Text fontWeight={'400'} fontSize={'0.75rem'}>Connects you with the right service providers instantly</Text>
-              </VStack>
-            </Box>
-          </VStack>
-        </VStack>
-      </Container>
+     
 
         <HfsFaq />
       </Box>

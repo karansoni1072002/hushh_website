@@ -27,6 +27,9 @@ import RedifiningIcon from "../../_components/svg/redifiningIcon";
 import TransparentSecureIcon from "../../_components/svg/tranparentSecure";
 import RightArrowBlack from "../../_components/svg/icons/rightArrowBlack.svg";
 import RightArrowWhite from "../../_components/svg/icons/rightArrowWhite.svg";
+import GoldenMedal from "../../_components/svg/conciergeApp/goldernMedalIcon.svg";
+import PaperPlane from "../../_components/svg/conciergeApp/paperPlanImage.svg";
+import ShoppingHand from "../../_components/svg/conciergeApp/shoppingHandImg.svg";
 
 const conciergeApp = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -207,7 +210,7 @@ const conciergeApp = () => {
             as="h1"
             className="gradient"
             fontSize={{ md: "3.75rem", base: "1.5rem" }}
-            display="flex"
+            display={{ md:"flex", base:'none'}}
             fontWeight={400}
           >
             Here's how{" "}
@@ -215,6 +218,15 @@ const conciergeApp = () => {
               Hushh elevates
             </Text>{" "}
             your experience
+          </Heading>
+          <Heading
+            as="h1"
+            className="gradient"
+            fontSize={{ md: "3.75rem", base: "1.5rem" }}
+            display={{ md:"none", base:'flex'}}
+            fontWeight={400}
+          >
+            Here's how Hushh elevates your experience
           </Heading>
           <Text
             color={extendedTheme.colors.secondary}
@@ -232,13 +244,13 @@ const conciergeApp = () => {
         <Container
           display={"flex"}
           pt={{ md: "2rem" }}
-          px={{ md: "10rem" }}
+          px={{ md: "10rem", base:'1rem' }}
           justifyContent={"center"}
           minW={{ md: "100%", base: "100%" }}
         >
           <Grid
             templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
-            gap={{ md: 10, base: 10 }}
+            gap={{ md: 10, base: 5 }}
             flexWrap="wrap"
           >
             <ServiceCard
@@ -276,20 +288,32 @@ const conciergeApp = () => {
 
         <Stack
           mt={{ base: "2rem", md: "9rem" }}
-          px={{ md: "9rem", base: "3rem" }}
+          px={{ md: "9rem", base: "1rem" }}
         >
           <Heading
             className="gradient"
             fontWeight={"700"}
-            lineHeight={{ md: "75px", base: "38px" }}
-            fontSize={{ md: "3.75rem", base: "2rem" }}
+            lineHeight={{ md: "75px", base: "28px" }}
+            fontSize={{ md: "3.75rem", base: "1.25rem" }}
             mb={{base:'2rem', md:'4rem'}}
+            display={{md:'flex', base:'none'}}
           >
             Hushh caters to a wide range <br></br> of needs, including
           </Heading>
+          <Heading
+            className="gradient"
+            fontWeight={"700"}
+            lineHeight={{ md: "75px", base: "28px" }}
+            fontSize={{ md: "3.75rem", base: "1.25rem" }}
+            mb={{base:'2rem', md:'4rem'}}
+            display={{md:'none', base:'flex'}}
+            textAlign={'center'}
+          >
+            Hushh caters to a wide range of needs, including
+          </Heading>
           <Grid
             templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
-            gap={{ md: 10, base: 10 }}
+            gap={{ md: 10, base: 4 }}
             flexWrap="wrap"
             textAlign={"left"}
           >
@@ -303,7 +327,7 @@ const conciergeApp = () => {
               <Heading
                 fontWeight={"700"}
                 fontSize={{ md: "1.75rem",base:'1rem' }}
-                lineHeight={"38.53px"}
+                lineHeight={{ md:"38.53px"}}
                 marginBottom={{base:'0.75rem', md:'2rem'}}
               >
                 Travel
@@ -311,12 +335,15 @@ const conciergeApp = () => {
               <Text
                 fontWeight={"400"}
                 fontSize={{ md: "1rem", base: "0.5rem" }}
-                lineHeight={"22.41px"}
+                lineHeight={{ md:"22.41px"}}
                 marginBottom={{base:'1.25rem', md:'3rem'}}
               >
                 Bespoke itineraries, private jet charters, exclusive tours
               </Text>
               <Image src={RightArrowBlack} alt="RightArrowBlack" />
+              <Box>
+                     <Image src={PaperPlane} alt="PaperPlane"/>
+              </Box>
             </Box>
             <Box
               gap={"2rem"}
@@ -327,7 +354,7 @@ const conciergeApp = () => {
               <Heading
                 fontWeight={"700"}
                 fontSize={{ md: "1.75rem",base:'1rem' }}
-                lineHeight={"38.53px"}
+                lineHeight={{ md:"38.53px"}}
                 marginBottom={{base:'0.75rem', md:'2rem'}}
                 color={'white'}
               >
@@ -336,14 +363,15 @@ const conciergeApp = () => {
               <Text
                 fontWeight={"400"}
                 fontSize={{ md: "1rem", base: "0.5rem" }}
-                lineHeight={"22.41px"}
+                lineHeight={{ md:"22.41px"}}
                 marginBottom={{base:'1.25rem', md:'3rem'}}
                 color={'white'}
               >
                 VIP access to high-profile events, private viewings, red carpet
                 experiences
               </Text>
-              <Image src={RightArrowWhite} alt="RightArrowWhite" />
+              <Image src={RightArrowWhite} alt="rightArrowWhite" />
+              <Image src={GoldenMedal} alt="goldenMedal" />
             </Box>
             <Box
               gap={"2rem"}
@@ -355,7 +383,7 @@ const conciergeApp = () => {
               <Heading
                 fontWeight={"700"}
                 fontSize={{ md: "1.75rem",base:'1rem' }}
-                lineHeight={"38.53px"}
+                lineHeight={{ md:"38.53px"}}
                 marginBottom={{base:'0.75rem', md:'2rem'}}
               >
                 Lifestyle
@@ -363,13 +391,14 @@ const conciergeApp = () => {
               <Text
                 fontWeight={"400"}
                 fontSize={{ md: "1rem", base: "0.5rem" }}
-                lineHeight={"22.41px"}
+                lineHeight={{ md:"22.41px"}}
                 marginBottom={{base:'1.25rem', md:'3rem'}}
               >
                 Personal shopping, home management, day-to-day errands,
                 specialized requests
               </Text>
               <Image src={RightArrowBlack} alt="RightArrowBlack" />
+              <Image src={ShoppingHand} alt="shoppingHand" />
             </Box>
           </Grid>
         </Stack>

@@ -25,6 +25,10 @@ import RewardIcon from "../../_components/svg/rewardIcon";
 import AssestBg from "../../_components/svg/AssetBg.svg";
 import Image from "next/image";
 import hfsMobileIcon from "../../../../public/Images/mobileIcons/hfsMobileIcon.png"
+import StudentStudyImg from "../../_components/svg/studentStudyImg.svg";
+import StudentAstronautImg from "../../_components/svg/studentAstronautImg.svg";
+import CollegeStudentImg from "../../_components/svg/collegeStudentImg.svg";
+
 
 const hushhForStudents = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -151,7 +155,7 @@ const hushhForStudents = () => {
             display={{ md: "flex", base: "none" }}
             border={"1px solid #606060"}
             borderRadius={"4rem"}
-            w={"9rem"}
+            w={"13rem"}
             color={extendedTheme.colors._white}
             lineHeight={"28px"}
             background={"transparent"}
@@ -163,7 +167,7 @@ const hushhForStudents = () => {
             }}
             padding={"15px 68px 15px 68px"}
           >
-            PLAY DEMO
+            DOWNLOAD APP
           </Button>
         </HStack>
         <Box
@@ -188,7 +192,7 @@ const hushhForStudents = () => {
             }}
             padding={"15px 68px 15px 68px"}
           >
-            PLAY DEMO
+            DOWNLOAD APP
           </Button>
         </Box>
 
@@ -289,6 +293,7 @@ const hushhForStudents = () => {
 
         <Stack
           mt={{ base: "6rem", md: "4rem" }}
+          mb={{base:'2rem',md:'8rem'}}
           px={{ md: "9rem", base: "1rem" }}
           display={'flex'}
           alignItems={'center'}
@@ -344,9 +349,8 @@ const hushhForStudents = () => {
               >
                 Bespoke itineraries, private jet charters, exclusive tours
               </Text>
-              {/* <Image src={RightArrowBlack} alt="RightArrowBlack" /> */}
               <Box>
-                     {/* <Image src={PaperPlane} alt="PaperPlane"/> */}
+                     <Image src={StudentAstronautImg} alt="StudentAstronautImg"/>
               </Box>
             </Box>
             <Box
@@ -373,8 +377,7 @@ const hushhForStudents = () => {
               >
                 Purchase valuable student data for various purposes, benefiting from access to targeted data. Access to valuable student data for targeted initiatives. Seamless and secure data exchange process.
               </Text>
-              {/* <Image src={RightArrowWhite} alt="rightArrowWhite" />
-              <Image src={GoldenMedal} alt="goldenMedal" /> */}
+              <Image src={CollegeStudentImg} alt="CollegeStudentImg" />
             </Box>
             <Box
               gap={"2rem"}
@@ -399,14 +402,10 @@ const hushhForStudents = () => {
               >
                 Working on a cutting-edge platform that blends data exchange with user empowerment offers a unique opportunity for technical creativity and innovation.
               </Text>
-              {/* <Image src={RightArrowBlack} alt="RightArrowBlack" />
-              <Image src={ShoppingHand} alt="shoppingHand" /> */}
+              <Image src={StudentStudyImg} alt="StudentStudyImg" /> 
             </Box>
           </Grid>
         </Stack>
-
-     
-
         <HfsFaq />
       </Box>
       <ContactForm />

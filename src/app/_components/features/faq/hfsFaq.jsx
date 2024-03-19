@@ -34,26 +34,36 @@ const faqData = {
   ],
   " About Product": [
     {
-      question: "What services does Hushh Chrome Extension offer?",
-      answer:"Hushh Chrome Extension empowers users to take control of their digital footprint by providing tools to track, manage, and monetize their browsing activity. It allows users to track their browsing activity, choose what data to collect, track interests over time, export data, and sell data responsibly"    },
-    {
-      question: "How does Hushh Chrome Extension work?",
-      answer:"Hushh Chrome Extension works by giving users complete control over their online data. It tracks browsing activity, allows users to select the data they want to capture, tracks interests over time, and provides options to export and monetize data. Additionally, it ensures user privacy and transparency in data sharing practices."    },
-      {
-        question: "How does Hushh Chrome Extension protect user privacy?",
-        answer: "Hushh Chrome Extension protects user privacy by allowing users to track their own browsing activity without sharing data with third-party trackers. It gives users complete control over what data to collect and ensures transparency in data sharing practices."
+        "question": "What is hushh for students?",
+        "answer": "Hushh for students is a revolutionary software designed to empower students by allowing them to assign a value to their data. It facilitates a secure and seamless data exchange between students and businesses."
       },
       {
-        question: "What are the key features of Hushh Chrome Extension?",
-        answer: "The key features of Hushh Chrome Extension include tracking browsing activity, choosing what data to collect, tracking interests over time, exporting data, and selling data responsibly. It empowers users to take control of their digital footprint and make informed choices about their online behavior."
+        "question": "How does hushh for students empower students?",
+        "answer": "Hushh for students empowers students by giving them control over their data. They can set a value for their data, securely exchange it with businesses, and earn rewards for each successful transaction."
       },
       {
-        question: "How does Hushh Browser Companion help users gain insights into their online behavior?",
-        answer: "Hushh Browser Companion helps users gain insights into their online behavior by providing tools to track and analyze browsing activity. Users can see exactly what data is being collected about them, including search queries, brand interactions, interests, preferences, likes, and clicks."
+        "question": "What problem does hushh for students solve?",
+        "answer": "Hushh for students addresses the lack of awareness among students regarding the value of their data. It also helps students capitalize on their interactions with businesses and receive benefits in return."
       },
       {
-        question: "What sets Hushh Chrome Extension apart from other tracking tools?",
-        answer: "Hushh Chrome Extension stands out from other tracking tools by prioritizing user privacy and data control. Unlike third-party trackers that exploit user data for targeted advertising, Hushh gives users complete control over their data and enables them to track their own browsing activity for their own benefit."
+        "question": "What are the key features of hushh for students?",
+        "answer": "The key features include data value setting, secure data exchange, and a rewards and points system. These features empower students to control their data, facilitate secure transactions, and earn rewards."
+      },
+      {
+        "question": "How does hushh for students benefit students?",
+        "answer": "Hushh for students benefits students by empowering them through control over their data and providing opportunities to earn rewards. It also fosters a mutually beneficial relationship between students and businesses."
+      },
+      {
+        "question": "How does hushh for students benefit businesses?",
+        "answer": "Hushh for students benefits businesses by providing access to valuable student data for targeted initiatives. It also ensures a seamless and secure data exchange process, fostering trust and transparency."
+      },
+      {
+        "question": "What sets hushh for students apart from other platforms?",
+        "answer": "Hushh for students stands out by prioritizing user privacy, data control, and transparency. Unlike other platforms, it empowers students to realize the value of their data and rewards them for their participation."
+      },
+      {
+        "question": "What are the success metrics for hushh for students?",
+        "answer": "Key metrics include the number of successful data transactions per month, increase in student engagement, reduction in friction points during transactions, and percentage increase in user downloads."
       }
 
   ],

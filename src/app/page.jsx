@@ -418,6 +418,7 @@ export default function Home() {
                   router.push("/products/vibeSearch")
                 }
               />
+              
             </Grid>
           </Container>
         </HStack>

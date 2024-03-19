@@ -28,7 +28,9 @@ module.exports = {
         gradientColor1: '#E54D60',
         gradientColor2: '#A342FF',
         fontColor2: '#97A3B7',
-        fontColor3: '#677489'
+        fontColor3: '#677489',
+        gradientColor3: '#7A7A7E',
+        fontColor4: '#ABABAB'
       },
       animation: {
         'fade-in': 'fadeIn 1s ease-in-out',

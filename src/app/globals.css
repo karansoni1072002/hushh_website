@@ -9,7 +9,7 @@ body{
 /* Header CSS */
 .login {
   display: flex;
-  gap: 5rem;
+  gap: 2rem;
 }
 
 .search-icon {

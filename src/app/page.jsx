@@ -291,7 +291,7 @@ export default function Home() {
           </VStack>
         </Box>
 
-        <ReviewSlider/>
+        <ReviewSlider />
 
 
         {/* Product Showcase section below */}
@@ -345,7 +345,7 @@ export default function Home() {
               templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
               gap={{ md: 20, base: 5 }}
               justifyContent="center"
-              // flexWrap="wrap"
+            // flexWrap="wrap"
             >
               <ServiceCard
                 icon={<HushhWalletIcon />}
@@ -417,6 +417,7 @@ export default function Home() {
                 onClick={() =>
                   router.push("/products/vibeSearch")
                 }
+
               />
               <ServiceCard
                 icon={<HfsLogo />}
@@ -439,77 +440,7 @@ export default function Home() {
         <HushhCoinUiBox />
 
         <ContactForm/>
-        {/* <div className="pt-5">
-          <HP_Scrolling />
-        </div>
-        <hr className=" h-0.5 bg-gradient-to-r from-myBG via-myBorder to-myBG" />
 
-        <div className="flex flex-col justify-center w-full pb-32">
-          <div className=" space-y-5">
-            <h1 className="text-center font-bold text-5xl text-headText pt-20">
-              Consent In Data-Sharing Is Crucial
-            </h1>
-            <p className="text-2xl font-normal text-center text-normText">
-              and
-            </p>
-            <p className="text-myBorder text-center font-bold text-5xl">
-              Hushh Does It Right.
-            </p>
-          </div>
-          <div className="flex gap-16 pt-20">
-            <div className="flex-1 bg-white shadow-lg rounded-xl px-4 py-6">
-              <div className="flex items-center gap-6 border-b border-myBorder border-opacity-30 pb-3">
-                <div className="w-1/3 h-28">
-                  <Lottie options={defaultOptionsZeroParty} />
-                </div>
-                <h1 className="text-3xl font-semibold">
-                  Zero-Party <br /> Data
-                </h1>
-              </div>
-              <div className="pt-4">
-                <p className="text-center text-lg text-normText">
-                  With relevant information about your clients based on their
-                  activity across various brands, understand your client like
-                  never before.
-                </p>
-              </div>
-            </div>
-            <div className="flex-1 bg-white shadow-lg rounded-xl px-4 py-6">
-              <div className="flex items-center gap-4 border-b border-myBorder border-opacity-30 pb-3">
-                <div className="w-1/3 h-28">
-                  <Lottie options={defaultOptionsDataSecurity} />
-                </div>
-                <h1 className="text-3xl font-semibold">
-                  Ethical Data <br /> Practices
-                </h1>
-              </div>
-              <div className="pt-4">
-                <p className="text-center text-lg text-normText">
-                  Our platform prioritizes data security and powers users with
-                  easy data sharing and control over its usage creating ethical
-                  data handling culture and trust.
-                </p>
-              </div>
-            </div>
-            <div className="flex-1 bg-white shadow-lg rounded-xl px-4 py-6">
-              <div className="flex items-center gap-4 border-b border-myBorder border-opacity-30 pb-3">
-                <div className="w-1/3 h-28">
-                  <Lottie options={defaultOptionsDataConsent} />
-                </div>
-                <h1 className="text-3xl font-semibold">
-                  Powered By <br /> Consent
-                </h1>
-              </div>
-              <div className="pt-4">
-                <p className="text-center text-lg text-normText">
-                  We empower users with data control enabling businesses to
-                  provide exceptional experiences through user consent.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr className=" h-0.5 bg-gradient-to-r from-myBG via-myBorder to-myBG" /> */}
       </div>
     </main>
   );

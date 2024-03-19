@@ -58,8 +58,8 @@ const Header = () => {
             </Container>
           </div>
         ) : (
-          <div className="w-full">
-            <div className="text-white flex w-full justify-between gap-20 px-7">
+          <div className="w-max">
+            <div className="text-white flex justify-between gap-20 px-7">
               <Link href="/">HOME</Link>
               <Link href="/about">
                 ABOUT US

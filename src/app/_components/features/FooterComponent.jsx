@@ -123,8 +123,8 @@ const FooterComponent = () => {
 
                 <div className="flex flex-col w-full justify-between leading-5 py-7 text-center gap-8 bg-gradient-to-r from-gradientColor2 to-gradientColor1">
                     <div className="flex gap-4 flex-col w-full">
-                        <Link href='#'>Terms of Service</Link>
-                        <Link href='#'>Privacy Policy</Link>
+                        <Link href='/legal/termsofuse'>Terms of Service</Link>
+                        <Link href='/legal/privacypolicy'>Privacy Policy</Link>
                         <Link href='#'>Cookies</Link>
                     </div>
                     <div className=" w-full">

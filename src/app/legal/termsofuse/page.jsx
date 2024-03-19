@@ -7,7 +7,7 @@ const TermsOfUse = () => {
     const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
     return (
         <>
-            <div className='pt-[90px] px-32 text-white'>
+            <div className='pt-12 px-6 md:pt-[90px] md:px-32 text-white'>
                 <div className=" flex flex-col items-center">
                     <Heading
                         fontWeight={"700"}

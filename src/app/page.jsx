@@ -394,9 +394,9 @@ export default function Home() {
                 alignItems={"center"}
                 textAlign={'center'}
                 description="App for HNWIs  discreetly sharing user data for personalized, real-time luxury experiences"
-                // onClick={() =>
-                //   router.push("")
-                // }
+                onClick={() =>
+                  router.push("/products/conciergeApp")
+                }
               />
               <ServiceCard
                 icon={<ValetChat />}

@@ -431,7 +431,7 @@ const conciergeApp = () => {
             letterSpacing={"0.25rem"}
             fontSize={"1rem"}
           >
-            INTRODUCING RECEIPT RADAR
+            Concierge App
           </Heading>{" "}
           <Box maxWidth={{ base: "100%", md: "40%" }} display={{base:"flex", md:'none'}} mb={{base:'2rem'}}>
           <Image src={ConciergeMobile} alt="ConciergeMobile" />
@@ -441,17 +441,14 @@ const conciergeApp = () => {
             fontWeight="700"
             fontSize={{ md: "3.75rem", base: "1.25rem" }}
           >
-            Effortless Receipt Management
+            The <br></br> Hushh Difference
           </Heading>
           <Text
             color={extendedTheme.colors.secondary}
             lineHeight={{ base: "18px", md: "36px" }}
             mt={{ base: "1rem", md: "2rem" }}
           >
-            Receipt Radar revolutionizes the way you handle receipts. With
-            automatic scanning, smart categorization, and customizable options,
-            managing expenses becomes a breeze. Simplify your life and take
-            control of your finances with Receipt Radar today!{" "}
+            Receipt Radar revolutionizes the way you handle receipts. With automatic scanning, smart categorization, and customizable options, managing expenses becomes a breeze. Simplify your life and take control of your finances with Receipt Radar today!{" "}
           </Text>
 
           <VStack
@@ -460,31 +457,28 @@ const conciergeApp = () => {
             w="100%"
             mt={{ base: "1rem", md: "2rem" }}
           >
-            <Box display="flex" gap={"1rem"} alignItems="center">
+            <Box alignItems={'center'} textAlign={'left'} flexDirection={'row'} color={extendedTheme.colors._white} display="flex" gap={"1rem"}>
               <MarketIcon />
-              <Text color={extendedTheme.colors._white}>
-                Lowest fees in market
-              </Text>
+              <VStack textAlign={'left'} alignItems={'flex-start'} lineHeight={'1rem'}>
+                 <Text fontWeight={'700'}>Flips the Script</Text>
+                 <Text fontWeight={'400'} fontSize={'0.75rem'}>Users seeking services become services seeking users, putting you in control.</Text>
+              </VStack>
             </Box>
-            <Box
-              display="flex"
-              gap={"1rem"}
-              ml={{ md: "-0.5rem", base: "-0.5rem" }}
-              alignItems="center"
-            >
+
+            <Box  alignItems={'center'} textAlign={'left'} flexDirection={'row'} color={extendedTheme.colors._white} display="flex" gap={"1rem"}>
               <BoltIcon />
-              <Text
-                ml={{ md: "-0.3rem", base: "-0.3rem" }}
-                color={extendedTheme.colors._white}
-              >
-                Fast & secure transactions
-              </Text>
+              <VStack textAlign={'left'} alignItems={'flex-start'} lineHeight={'1rem'}>
+                 <Text fontWeight={'700'}>Powered by AI</Text>
+                 <Text fontWeight={'400'} fontSize={'0.75rem'}> Leverages cutting-edge technology to understand your intent and deliver personalized recommendations</Text>
+              </VStack>
             </Box>
-            <Box display="flex" gap={"1rem"} alignItems="center">
+
+            <Box alignItems={'center'} textAlign={'left'} flexDirection={'row'} color={extendedTheme.colors._white} display="flex" gap={"1rem"}>
               <TransparentLock />
-              <Text ml={{ md: "0.5rem" }} color={extendedTheme.colors._white}>
-                256-bit secure encryption
-              </Text>
+              <VStack ml={"0.75rem"} textAlign={'left'} alignItems={'flex-start'} lineHeight={'1rem'}>
+                 <Text fontWeight={'700'}>Real-Time Matching</Text>
+                 <Text fontWeight={'400'} fontSize={'0.75rem'}>Connects you with the right service providers instantly</Text>
+              </VStack>
             </Box>
           </VStack>
         </VStack>

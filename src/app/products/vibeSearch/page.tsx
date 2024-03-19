@@ -14,6 +14,8 @@ import FindYourStyleBox from '../../_components/svg/findYourStyleBox.svg';
 import VibeSearchIntegrationBox from '../../_components/svg/vibeIntegrationBox.svg';
 import VibeSearchBg from '../../_components/svg/vibeBg.svg';
 import ContactForm from '../../_components/features/contactForm'
+
+
 const vibeSearch = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();

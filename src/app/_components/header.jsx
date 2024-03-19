@@ -60,7 +60,7 @@ const Header = () => {
         ) : (
           <div className="w-max">
             <div className="text-white flex justify-between gap-20 px-7">
-              <Link href="/">HOME</Link>
+              <Link href="#">HOME</Link>
               <Link href="/about">
                 ABOUT US
               </Link>
@@ -81,7 +81,7 @@ const Header = () => {
                 <p className="text-xs text-fontColor2 font-semibold">HUSHH PRODUCTS</p>
                 <div className="flex gap-10" >
                   <div className="flex-1 flex flex-col gap-5">
-                    <Link href={'/'} className="flex gap-4 items-start">
+                    <Link href={'/products/hushhButton'} className="flex gap-4 items-start">
                       <div className="">
                         <HushhButtonIcon size={24} />
                       </div>
@@ -90,16 +90,16 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>Share data for personalized <br /> recommendations.</p>
                       </div>
                     </Link>
-                    <Link href={'/'} className="flex gap-4">
+                    <Link href={'/products/browserCompanion'} className="flex gap-4">
                       <div className="">
                         <ChromeExtentionLogo className='w-6 h-6' />
                       </div>
                       <div className="">
-                        <h1 className='font-semibold'>Hushh Chrome Extension</h1>
+                        <h1 className='font-semibold'>Hushh Browser Companion</h1>
                         <p className='text-sm font-medium text-fontColor3'>Enhanced recommendations &<br /> impactful marketing.</p>
                       </div>
                     </Link>
-                    <Link href={'/'} className="flex gap-4">
+                    <Link href={'/products/conciergeApp'} className="flex gap-4">
                       <div className="">
                         <ConciergeApp className='w-6 h-6' />
                       </div>
@@ -108,7 +108,7 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>Speak your wish, get luxury <br /> redefined: Hushh Concierge</p>
                       </div>
                     </Link>
-                    <Link href={'/'} className="flex gap-4">
+                    <Link href={'/products/vibeSearch'} className="flex gap-4">
                       <div className="">
                         <VibeSearchIcon className='w-6 h-6' />
                       </div>
@@ -120,7 +120,7 @@ const Header = () => {
                   </div>
 
                   <div className="flex-1 flex flex-col gap-5 w-full pr-12">
-                    <Link href={'/'} className="flex gap-4 items-start">
+                    <Link href={'#'} className="flex gap-4 items-start">
                       <div className="">
                         <HushhWalletIcon className='w-6 h-6' />
                       </div>
@@ -129,7 +129,7 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>Customer User Flow + Client Advisor User Flow</p>
                       </div>
                     </Link>
-                    <Link href={'/'} className="flex gap-4">
+                    <Link href={'/products/hushhValetChat'} className="flex gap-4">
                       <div className="">
                         <ValetChat className='w-6 h-6' />
                       </div>
@@ -138,7 +138,7 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>Valet Chat: Ditch receipts, unlock <br /> insights.</p>
                       </div>
                     </Link>
-                    <Link href={'/'} className="flex gap-4">
+                    <Link href={'#'} className="flex gap-4">
                       <div className="">
                         <VibeSearchApi className='w-6 h-6' />
                       </div>
@@ -147,7 +147,7 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>List products on Vibe Search with <br /> management and analytics.</p>
                       </div>
                     </Link>
-                    <Link href={'/'} className="flex gap-4">
+                    <Link href={'#'} className="flex gap-4">
                       <div className="">
                         <headerAssets.VibeSearchMarketplace className='w-6 h-6' />
                       </div>
@@ -195,7 +195,7 @@ const Header = () => {
           <div className={`w-full flex flex-col gap-1`} ref={menuRef}>
             <div className="text-white w-full flex items-end flex-col text-center">
               <Link
-                href="/"
+                // href="/"
                 className="py-2 border border-myBorder bg-black rounded-t w-1/2"
               >
                 HOME
@@ -241,7 +241,7 @@ const Header = () => {
                           {/* <p className='text-sm font-medium text-fontColor3'>Enhanced recommendations &<br /> impactful marketing.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link href={'/products/conciergeApp'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
                         <div className="">
                           <ConciergeApp className='w-6 h-6' />
                         </div>
@@ -259,7 +259,7 @@ const Header = () => {
                           {/* <p className='text-sm font-medium text-fontColor3'>Find perfect items to express your <br /> individuality in just one click.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0">
+                      <Link href={'#'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0">
                         <div className="">
                           <HushhWalletIcon className='w-6 h-6' />
                         </div>
@@ -277,7 +277,7 @@ const Header = () => {
                           {/* <p className='text-sm font-medium text-fontColor3'>Valet Chat: Ditch receipts, unlock <br /> insights.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link href={'#'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
                         <div className="">
                           <VibeSearchApi className='w-6 h-6' />
                         </div>
@@ -286,7 +286,7 @@ const Header = () => {
                           {/* <p className='text-sm font-medium text-fontColor3'>List products on Vibe Search with <br /> management and analytics.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link href={'#'} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
                         <div className="">
                           <headerAssets.VibeSearchMarketplace className='w-6 h-6' />
                         </div>

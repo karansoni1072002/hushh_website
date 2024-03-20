@@ -13,6 +13,7 @@ import ManageFinanceBox from '../../_components/svg/managefinanceBox.svg';
 import ValetIntegrationBox from '../../_components/svg/valetIntegrationBox.svg';
 import ValetChatFaq from '../../_components/features/faq/valetChatFaq';
 import ContactForm from '../../_components/features/contactForm'
+import BgAnimation from "../../../../public/Gif/bgAnimation.gif";
 
 const hushhValetChat = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -454,9 +455,14 @@ const hushhValetChat = () => {
 
         </HStack>
 
-        <Stack margin={{ md: "10rem", base: "3.5rem" }}>
+        <Stack margin={{ md: "10rem", base: "3.5rem" }} position={'relative'}>
+        <Box display={{base:'none',md:'block'}}>
+          <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'40rem'}}/>
+        </Box> 
+        <Box display={{base:'block',md:'none'}}>
+        <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'13rem'}}/>
+        </Box>
           <VStack px={{ md: "10rem", base: "0rem" }}>
-            {/* GIF Pending */}
             <Heading
               textAlign={"center"}
               className="gradient"

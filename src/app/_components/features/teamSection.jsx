@@ -1,23 +1,17 @@
 import {
-  Container,
   Heading,
   VStack,
   Text,
   Box,
   Grid,
-  GridItem,
 } from "@chakra-ui/react";
 import React from "react";
-import extendedTheme from "../../theme";
 import linkedln from "../svg/icons/linkedIn.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { useResponsiveSizes } from "../../context/responsive";
 import { teamImages } from "../svg/aboutImages/TeamImages/teamImages";
 
 const TeamSection = () => {
-  const isMobile = useResponsiveSizes;
-
   return (
     <>
       <Box w={"100%"} h={"100%"}>

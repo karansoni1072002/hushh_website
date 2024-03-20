@@ -1,7 +1,6 @@
-import { Box, Container, Heading, Stack, Text, VStack } from '@chakra-ui/react'
+import { Box, Heading, Text, VStack } from '@chakra-ui/react'
 import extendedTheme from '../theme'
 import React from 'react'
-import GroupPhoto from '../_components/svg/aboutImages/groupPhoto'
 import TeamSection from '../_components/features/teamSection'
 import AboutGroupPhoto from '../_components/svg/aboutImages/AboutGroupPhoto.svg'
 import AboutOfficePhoto from '../_components/svg/aboutImages/AboutOfficePhoto.svg'
@@ -13,11 +12,6 @@ import AboutVision from '../_components/svg/aboutImages/AboutVision.svg'
 export default function About() {
 
   const gradient = 'linear(63.68deg, #ADA785, #D6D3C2)';
-
-
-
-
-
 
   return (
     <Box w={'100%'} h={'100%'} pt={'10.5rem'} px={'6.25rem'} background={'black'} fontFamily={'Figtree'} >

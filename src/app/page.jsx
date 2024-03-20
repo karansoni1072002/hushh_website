@@ -25,8 +25,8 @@ import KeyIcon from "./_components/svg/keyIcon";
 import LockIcon from "./_components/svg/LockIcon";
 import LouisVuitton from "../../public/Images/LouisVuitton.png";
 import NextImage from "next/image";
+import { useState, useEffect } from "react";
 import React from "react";
-import SearchBar from "./_components/features/searchBar";
 import SephoraCard from "../../public/Images/Sephora.png";
 import { ServiceCard } from "./_components/primitives/serviceCard";
 import ShieldIcon from "./_components/svg/ShieldIcon";
@@ -35,16 +35,29 @@ import VibeSearchIcon from "./_components/svg/vibeSearch";
 import extendedTheme from "./theme";
 import theme from "./theme";
 import { useRouter } from "next/navigation";
+// import { useRouter } from "next/router";
 import HushhCoinUiBox from "./_components/features/hushhCoinUiBox";
 import ContactForm from "./_components/features/contactForm";
+import NotificationPopup from './_components/features/popupNotification'
 import ReviewSlider from "./_components/features/reviewSlider";
+import HfsLogo from "./_components/svg/hfsLogo"; 
 
 export default function Home() {
   const router = useRouter();
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowPopup(true);
+    }, 3000);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   return (
     <main className="bg-myBG  font-Figtree">
-      <div className="pb-32">
+      <div className="">
+        {showPopup && <NotificationPopup message="Welcome! How can I help you today?" />}
         <Box pt={20} display={"flex"} px={{ base: "0.5rem", md: "32px" }}>
           <VStack
             align={"flex-start"}
@@ -86,9 +99,9 @@ export default function Home() {
             </HStack>
 
             <Text color={"#656565"} fontSize={"18px"}>
-            We're the Data API Business that helps you collect, manage, and monetize your data            
+              We're the Data API Business that helps you collect, manage, and monetize your data
             </Text>
-            
+
             <Button
               border={"3px solid #606060"}
               borderRadius={"2px"}
@@ -111,7 +124,7 @@ export default function Home() {
         </Box>
 
         <HStack
-          pt={{ md: "8rem", base:"6rem"}}
+          pt={{ md: "8rem", base: "6rem" }}
           justify={"center"}
           display={"flex"}
           flexDirection={"column"}
@@ -127,9 +140,9 @@ export default function Home() {
           </Heading>
           <Text
             align={"center"}
-            lineHeight={{ md: "4rem", base:'2rem' }}
-            pl={{ md: "16rem", base:'2rem' }}
-            pr={{ md: "16rem", base:'2rem' }}
+            lineHeight={{ md: "4rem", base: '2rem' }}
+            pl={{ md: "16rem", base: '2rem' }}
+            pr={{ md: "16rem", base: '2rem' }}
             color={theme.colors.secondary}
             fontWeight={"300"}
             fontSize={{ md: "3.75rem", base: "1rem" }}
@@ -147,9 +160,9 @@ export default function Home() {
         <Box
           display="flex"
           h={"full"}
-          flexDirection={{ base: "column", md: "row" }} // For mobile, stack images vertically, for desktop, display them side by side
+          flexDirection={{ base: "column", md: "row" }}
           alignItems={{ base: "center", md: "flex-start" }}
-          pt={{ md:"10rem", base:"6rem"}}
+          pt={{ md: "10rem", base: "6rem" }}
           justifyContent="space-between"
           gap="5rem"
         >
@@ -194,7 +207,7 @@ export default function Home() {
             />
           </Box>
           {/* Right side box */}
-          <VStack alignItems={{md:"left", base:""}}  textAlign={{ md:"left",base:"center"}} flex="1">
+          <VStack alignItems={{ md: "left", base: "" }} textAlign={{ md: "left", base: "center" }} flex="1">
             <Text
               className="color-gradient"
               fontWeight={600}
@@ -209,54 +222,54 @@ export default function Home() {
                 className="gradient"
                 lineHeight={"63px"}
                 fontWeight={"400"}
-                alignItems={{md:"left", base:"center"}} textAlign={{ md:"left",base:"center"}} 
-                fontSize={{ md:"3.75rem", base:"2.5rem"}}
+                alignItems={{ md: "left", base: "center" }} textAlign={{ md: "left", base: "center" }}
+                fontSize={{ md: "3.75rem", base: "2.5rem" }}
               >
                 Why Us?
               </Text>
             </Heading>
-            <Text px={{base:'1rem', md:'0'}} alignItems={{base:"center"}} pt={{ md:"1rem"}}  fontWeight={'500'} color={extendedTheme.colors.secondary}>
+            <Text px={{ base: '1rem', md: '0' }} alignItems={{ base: "center" }} pt={{ md: "1rem" }} fontWeight={'500'} color={extendedTheme.colors.secondary}>
               Empower individuals with data control. Today, we're a cutting-edge
               platform fostering trust, transparency, and personalized
               experiences.
             </Text>
 
-            <Box pt={{ md:'40px', base:'20px'}} width={'100%'} px={{base:'1.25rem'}} justifyContent={{ base: 'space-between'}} display={"flex"} gap={{ md:"4rem"}}>
-              <VStack maxW={{ md: '290px'}} textAlign={'left'} alignItems={'left'}>
-                <HStack gap={{ md:"2rem"}}>
+            <Box pt={{ md: '40px', base: '20px' }} width={'100%'} px={{ base: '1.25rem' }} justifyContent={{ base: 'space-between' }} display={"flex"} gap={{ md: "4rem" }}>
+              <VStack maxW={{ md: '290px' }} textAlign={'left'} alignItems={'left'}>
+                <HStack gap={{ md: "2rem" }}>
                   <ShieldIcon />
                   <Text
                     fontWeight={"500"}
                     fontSize={"1rem"}
-                    ml={{base:'0.5rem'}}
+                    ml={{ base: '0.5rem' }}
                     // lineHeight={{base:'18px'}}
                     color={extendedTheme.colors.secondary}
                   >
                     Data <br></br> Autonomy
                   </Text>
                 </HStack>
-                <Divider mt={'1rem'} className="divider" width={{ md:'12rem', base:'8rem'}}/>
-                <Text fontWeight={'500'} fontSize={{base:'0.75rem'}} lineHeight={{ md:'30px', base:'18px'}} mt={{ md:'1.25rem', base:"0.75rem"}} color={extendedTheme.colors.secondary}>
-                Empower your customers with full control over their personal data
+                <Divider mt={'1rem'} className="divider" width={{ md: '12rem', base: '8rem' }} />
+                <Text fontWeight={'500'} fontSize={{ base: '0.75rem' }} lineHeight={{ md: '30px', base: '18px' }} mt={{ md: '1.25rem', base: "0.75rem" }} color={extendedTheme.colors.secondary}>
+                  Empower your customers with full control over their personal data
                 </Text>
               </VStack>
 
-              <VStack maxW={{md:'290px'}} mt={'-0.68rem'} textAlign={'left'} alignItems={'left'}>
-              <HStack gap={{ md:"2rem"}}>
-                <KeyIcon />
-                <Text
-                  fontWeight={"500"}
-                  fontSize={"1rem"}
-                  ml={{base:'0.5rem'}}
-                  color={extendedTheme.colors.secondary}
-                >
-                  Data <br></br> Equity
+              <VStack maxW={{ md: '290px' }} mt={'-0.68rem'} textAlign={'left'} alignItems={'left'}>
+                <HStack gap={{ md: "2rem" }}>
+                  <KeyIcon />
+                  <Text
+                    fontWeight={"500"}
+                    fontSize={"1rem"}
+                    ml={{ base: '0.5rem' }}
+                    color={extendedTheme.colors.secondary}
+                  >
+                    Data <br></br> Equity
+                  </Text>
+                </HStack>
+                <Divider mt={'1rem'} className="divider" width={{ md: '12rem', base: '8rem' }} />
+                <Text fontWeight={'500'} lineHeight={{ md: '30px', base: '18px' }} fontSize={{ base: '0.75rem' }} mt={{ md: '1.25rem', base: "0.75rem" }} color={extendedTheme.colors.secondary}>
+                  Creating a fair and equitable environment for data sharing.
                 </Text>
-              </HStack>
-              <Divider mt={'1rem'} className="divider" width={{ md:'12rem', base:'8rem'}}/>
-              <Text fontWeight={'500'} lineHeight={{ md:'30px', base:'18px'}} fontSize={{base:'0.75rem'}} mt={{ md:'1.25rem', base:"0.75rem"}} color={extendedTheme.colors.secondary}>
-              Creating a fair and equitable environment for data sharing.​
-              </Text>
               </VStack>
             </Box>
             <VStack px={'1.25rem'} alignContent={'left'} mt={'1.5rem'} textAlign={'left'} alignItems={'left'}>
@@ -270,20 +283,20 @@ export default function Home() {
                   Consent-Driven <br></br> Excellence
                 </Text>
               </HStack>
-              <Divider mt={'1rem'} className="divider" width={{ md:'22rem', base:"14rem"}}/>
-              <Text fontWeight={'500'} lineHeight={{ md:'30px', base:'18px'}} mt={{ md:'1.25rem', base:"0.75rem"}} fontSize={{base:'0.75rem'}} color={extendedTheme.colors.secondary}>
-              Creating a fair and equitable environment for data sharing.​
+              <Divider mt={'1rem'} className="divider" width={{ md: '22rem', base: "14rem" }} />
+              <Text fontWeight={'500'} lineHeight={{ md: '30px', base: '18px' }} mt={{ md: '1.25rem', base: "0.75rem" }} fontSize={{ base: '0.75rem' }} color={extendedTheme.colors.secondary}>
+                Creating a fair and equitable environment for data sharing.
               </Text>
-              </VStack>
+            </VStack>
           </VStack>
         </Box>
 
-        <ReviewSlider/>
+        <ReviewSlider />
 
 
         {/* Product Showcase section below */}
         <HStack
-          pt={{ md: "8rem", base:"5rem"}}
+          pt={{ md: "8rem", base: "5rem" }}
           justify={"center"}
           display={"flex"}
           flexDirection={"column"}
@@ -312,9 +325,9 @@ export default function Home() {
             className="description"
             textAlign={"center"}
             w={'full'}
-            px={{ md: "24rem", base:'2rem' }}
+            px={{ md: "24rem", base: '2rem' }}
             color={theme.colors.secondary}
-            fontSize={{base:"0.75rem", md:'1rem'}}
+            fontSize={{ base: "0.75rem", md: '1rem' }}
           >
             We have seamless data capturing capabilities, robust security with
             trust measures in place and in-depth insights and transparency
@@ -322,8 +335,8 @@ export default function Home() {
           </Text>
           <Container
             display={"flex"}
-            pt={{ md: "2rem", base:"1rem" }}
-            px={{ md: "10rem", base:"0.5rem" }}
+            pt={{ md: "2rem", base: "1rem" }}
+            px={{ md: "10rem", base: "0.5rem" }}
             justifyContent={"center"}
             textAlign={"center"}
             minW={{ md: "100%", base: "100%" }}
@@ -332,7 +345,6 @@ export default function Home() {
               templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
               gap={{ md: 20, base: 5 }}
               justifyContent="center"
-              // flexWrap="wrap"
             >
               <ServiceCard
                 icon={<HushhWalletIcon />}
@@ -351,7 +363,7 @@ export default function Home() {
                 alignItems={"center"}
                 description="Plugin that helps you exchange data with brands​"
                 onClick={() =>
-                  router.push("https://hushhbutton.framer.ai/")
+                  router.push("/products/hushhButton")
                 }
               />
               <ServiceCard
@@ -361,7 +373,7 @@ export default function Home() {
                 alignItems={"center"}
                 description="Personalized search engine that lets you search across brands"
                 onClick={() =>
-                  router.push("https://hushhvibesearch.framer.ai/")
+                  router.push("/products/vibeSearch")
                 }
               />
               <ServiceCard
@@ -371,7 +383,7 @@ export default function Home() {
                 textAlign={'center'}
                 description="Collects your web activity and preferences as you browse"
                 onClick={() =>
-                  router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+                  router.push("/products/browserCompanion")
                 }
               />
               {/* 2nd row */}
@@ -381,9 +393,9 @@ export default function Home() {
                 alignItems={"center"}
                 textAlign={'center'}
                 description="App for HNWIs  discreetly sharing user data for personalized, real-time luxury experiences"
-                // onClick={() =>
-                //   router.push("")
-                // }
+                onClick={() =>
+                  router.push("/products/conciergeApp")
+                }
               />
               <ServiceCard
                 icon={<ValetChat />}
@@ -391,9 +403,9 @@ export default function Home() {
                 alignItems={"center"}
                 textAlign={'center'}
                 description="Ditch receipts, unlock insights: Valet Chat, your AI finance genie"
-                // onClick={() =>
-                //   router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
-                // }
+                onClick={() =>
+                  router.push("/products/hushhValetChat")
+                }
               />
               <ServiceCard
                 icon={<VibeSearchApi />}
@@ -401,9 +413,20 @@ export default function Home() {
                 alignItems={"center"}
                 textAlign={'center'}
                 description="List products effortlessly on Vibe Search App with seamless management and insightful analytics"
-                // onClick={() =>
-                //   router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
-                // }
+                onClick={() =>
+                  router.push("/products/vibeSearch")
+                }
+
+              />
+              <ServiceCard
+                icon={<HfsLogo/>}
+                title="Hushh For Students​"
+                alignItems={"center"}
+                textAlign={'center'}
+                description="Empowering, rewarding digital engagement & Revolutionizing data exchange by empowering students"
+                onClick={() =>
+                  router.push("/products/hushhForStudents")
+                }
               />
             </Grid>
           </Container>
@@ -411,82 +434,12 @@ export default function Home() {
 
         <TechnologySection />
 
-        <BrandWalletSection/>
+        <BrandWalletSection />
 
-        <HushhCoinUiBox/>
+        <HushhCoinUiBox />
 
         <ContactForm/>
-        {/* <div className="pt-5">
-          <HP_Scrolling />
-        </div>
-        <hr className=" h-0.5 bg-gradient-to-r from-myBG via-myBorder to-myBG" />
 
-        <div className="flex flex-col justify-center w-full pb-32">
-          <div className=" space-y-5">
-            <h1 className="text-center font-bold text-5xl text-headText pt-20">
-              Consent In Data-Sharing Is Crucial
-            </h1>
-            <p className="text-2xl font-normal text-center text-normText">
-              and
-            </p>
-            <p className="text-myBorder text-center font-bold text-5xl">
-              Hushh Does It Right.
-            </p>
-          </div>
-          <div className="flex gap-16 pt-20">
-            <div className="flex-1 bg-white shadow-lg rounded-xl px-4 py-6">
-              <div className="flex items-center gap-6 border-b border-myBorder border-opacity-30 pb-3">
-                <div className="w-1/3 h-28">
-                  <Lottie options={defaultOptionsZeroParty} />
-                </div>
-                <h1 className="text-3xl font-semibold">
-                  Zero-Party <br /> Data
-                </h1>
-              </div>
-              <div className="pt-4">
-                <p className="text-center text-lg text-normText">
-                  With relevant information about your clients based on their
-                  activity across various brands, understand your client like
-                  never before.
-                </p>
-              </div>
-            </div>
-            <div className="flex-1 bg-white shadow-lg rounded-xl px-4 py-6">
-              <div className="flex items-center gap-4 border-b border-myBorder border-opacity-30 pb-3">
-                <div className="w-1/3 h-28">
-                  <Lottie options={defaultOptionsDataSecurity} />
-                </div>
-                <h1 className="text-3xl font-semibold">
-                  Ethical Data <br /> Practices
-                </h1>
-              </div>
-              <div className="pt-4">
-                <p className="text-center text-lg text-normText">
-                  Our platform prioritizes data security and powers users with
-                  easy data sharing and control over its usage creating ethical
-                  data handling culture and trust.
-                </p>
-              </div>
-            </div>
-            <div className="flex-1 bg-white shadow-lg rounded-xl px-4 py-6">
-              <div className="flex items-center gap-4 border-b border-myBorder border-opacity-30 pb-3">
-                <div className="w-1/3 h-28">
-                  <Lottie options={defaultOptionsDataConsent} />
-                </div>
-                <h1 className="text-3xl font-semibold">
-                  Powered By <br /> Consent
-                </h1>
-              </div>
-              <div className="pt-4">
-                <p className="text-center text-lg text-normText">
-                  We empower users with data control enabling businesses to
-                  provide exceptional experiences through user consent.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr className=" h-0.5 bg-gradient-to-r from-myBG via-myBorder to-myBG" /> */}
       </div>
     </main>
   );

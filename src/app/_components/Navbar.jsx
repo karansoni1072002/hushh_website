@@ -29,7 +29,7 @@ export const Navbar = () => {
             <div className={` bg-myBG w-screen transition ease-in duration-100 ${isScrolled ? 'scrolled' : ''}`}>
                 <div className='flex items-center justify-between py-6 ml-32 mr-32 text-white text-[1vw]'>
                     <div className="NavImage">
-                        <Link href={'/'}>
+                        <Link href={'#'}>
                             <Image
                                 src={images.Logo}
                                 height={30}
@@ -84,19 +84,19 @@ export const Navbar = () => {
                 overviewSubmenu ?
                     <div className=" bg-normBG mx-96 mt-2 flex px-10 py-10 border gap-10 rounded-lg shadow-lg" onMouseEnter={() => setOverviewSubmenu(true)} onMouseLeave={() => setOverviewSubmenu(false)}>
                         <div className="flex-1 flex flex-col gap-5">
-                            <Link href={'/'}>
+                            <Link href={'/about'}>
                                 <div className=" hover:bg-myBG px-5 py-3 rounded-lg hover:shadow-md">
                                     <h1 className='font-semibold'>About HUSHH</h1>
                                     <p className='text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                 </div>
                             </Link>
-                            <Link href={'/'}>
+                            <Link href={'#'}>
                                 <div className=" hover:bg-myBG px-5 py-3 rounded-lg hover:shadow-md">
                                     <h1 className='font-semibold'>Our Mission</h1>
                                     <p className='text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                 </div>
                             </Link>
-                            <Link href={'/'}>
+                            <Link href={'#'}>
                                 <div className=" hover:bg-myBG px-5 py-3 rounded-lg hover:shadow-md">
                                     <h1 className='font-semibold'>Our Vision</h1>
                                     <p className='text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -104,19 +104,19 @@ export const Navbar = () => {
                             </Link>
                         </div>
                         <div className={`flex-1 flex flex-col gap-5`}>
-                            <Link href={'/'}>
+                            <Link href={'#'}>
                                 <div className=" hover:bg-myBG px-5 py-3 rounded-lg hover:shadow-md">
                                     <h1 className='font-semibold'>Our Impact</h1>
                                     <p className='text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                 </div>
                             </Link>
-                            <Link href={'/'}>
+                            <Link href={'#'}>
                                 <div className=" hover:bg-myBG px-5 py-3 rounded-lg hover:shadow-md">
                                     <h1 className='font-semibold'>Meet HUSHHers</h1>
                                     <p className='text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                 </div>
                             </Link>
-                            <Link href={'/'}>
+                            <Link href={'#'}>
                                 <div className=" hover:bg-myBG px-5 py-3 rounded-lg hover:shadow-md">
                                     <h1 className='font-semibold'>Support</h1>
                                     <p className='text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -131,7 +131,7 @@ export const Navbar = () => {
                 productsSubmenu ?
                     <div className=" bg-normBG mx-96 mt-2 flex px-10 py-8 border gap-5 rounded-lg shadow-lg" onMouseEnter={() => setProductsSubmenu(true)} onMouseLeave={() => setProductsSubmenu(false)}>
                         <div className="flex-1 flex flex-col gap-5">
-                            <Link href={'/'}>
+                            <Link href={'#'}>
                                 <div className=" hover:bg-myBG px-5 py-3 rounded-lg hover:shadow-md">
                                     <h1 className='font-semibold'>Custom Experience</h1>
                                     <p className='text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -139,7 +139,7 @@ export const Navbar = () => {
                             </Link>
                         </div>
                         <div className={`flex-1 flex flex-col gap-5`}>
-                            <Link href={'/'}>
+                            <Link href={'#'}>
                                 <div className=" hover:bg-myBG px-5 py-3 rounded-lg hover:shadow-md">
                                     <h1 className='font-semibold'>Developer Insights</h1>
                                     <p className='text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -147,7 +147,7 @@ export const Navbar = () => {
                             </Link>
                         </div>
                         <div className={`flex-1 flex flex-col gap-5`}>
-                            <Link href={'/'}>
+                            <Link href={'#'}>
                                 <div className=" hover:bg-myBG px-5 py-3 rounded-lg hover:shadow-md">
                                     <h1 className='font-semibold'>Agent Stories</h1>
                                     <p className='text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>

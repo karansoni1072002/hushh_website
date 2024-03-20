@@ -46,6 +46,8 @@ import AppleIcon from "../../_components/svg/icons/appleIcon";
 import PlayStoreIcon from "../../_components/svg/icons/playStoreIcon"; 
 import BrandWalletMobile from "../../../../public/Images/BrandWalletMobile.png";
 import WalletFaq from "../../_components/features/faq/walletAppFaq";
+import FooterComponent from "../../_components/features/FooterComponent";
+import ContactForm from "../../_components/features/contactForm";
 
 const BrandContainer = styled.div`
   display: flex;
@@ -383,8 +385,7 @@ const hushhWalletApp = () => {
 
     
     <WalletFaq/>
-
-      
+    <ContactForm/>      
     </>
   );
 };

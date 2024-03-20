@@ -42,6 +42,8 @@ import TrustedAIIcon from "../../_components/svg/trustedAI";
 import TechIntegrationIcon from "../../_components/svg/techIntegration";
 import ControlOver from "../../_components/svg/controlOver";
 import RedifiningIcon from "../../_components/svg/redifiningIcon";
+import AppleIcon from "../../_components/svg/icons/appleIcon";
+import PlayStoreIcon from "../../_components/svg/icons/playStoreIcon"; 
 
 const BrandContainer = styled.div`
   display: flex;
@@ -295,19 +297,22 @@ const hushhWalletApp = () => {
             <Image src={HushhWalletBg} alt="HushhWalletBg" />
           </Box>
     </Stack>
-    <VStack gap={{md:'1.25rem', base:'0.75rem'}} mt={{md:'-18rem', base:'1.5ren'}} textAlign={'left'} px={{md:'5rem', base:'1.25rem'}}>
-        <Heading mr={{md:'40%'}} fontWeight={'400'} className="gradient" fontSize={{md:'3.75rem', base:'1.75rem'}} lineHeight={{md:'63.3px', base:'43px'}}>Personalized Experiences, Rewarded Interactions</Heading>
-        <Text mr={{md:'40%'}} color={'#ABABAB'} fontWeight={'500'} lineHeight={{md:'36px', base:'24px'}} fontSize={{ md:'1rem', base:'0.75rem'}}>Gone are the days of irrelevant ads and generic recommendations. Hushh allows you to create data cards containing specific information you're comfortable sharing. Now, you can</Text>
+    <VStack mb={'5rem'}  gap={{md:'1.25rem', base:'0.75rem'}} mt={{md:'-18rem', base:'1.5ren'}} textAlign={'left'}>
+        <Heading px={{md:'5rem', base:'1.25rem'}} mr={{md:'40%'}} fontWeight={'400'} className="gradient" fontSize={{md:'3.75rem', base:'1.75rem'}} lineHeight={{md:'63.3px', base:'43px'}}>Personalized Experiences, Rewarded Interactions</Heading>
+        <Text px={{md:'5rem', base:'1.25rem'}} mr={{md:'40%'}} color={'#ABABAB'} fontWeight={'500'} lineHeight={{md:'36px', base:'24px'}} fontSize={{ md:'1rem', base:'0.75rem'}}>Gone are the days of irrelevant ads and generic recommendations. Hushh allows you to create data cards containing specific information you're comfortable sharing. Now, you can</Text>
         <Container
           display={"flex"}
           pt={{ md: "2rem" }}
           justifyContent={"center"}
+          flexDir={{ base: "column", md: "row" }} // Stack the elements vertically on base, and horizontally on md
           minW={{ md: "100%", base: "100%" }}
+          position={'relative'}
         >
           <Grid
             templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
             gap={{ md: 10, base: 5 }}
             flexWrap="wrap"
+            px={{md:'5rem', base:'1.25rem'}}
           >
             <ServiceCard
               icon={<TrustedAIIcon />}
@@ -341,9 +346,34 @@ const hushhWalletApp = () => {
               textAlign={"left"}
               description="Your identity and preferences remain confidential. Requests are shared anonymously with relevant service providers.​​"
             />
+             
           </Grid>
-
+          <Box
+               className="gradient-bg"
+               width={'65%'}
+               borderLeftRadius={'50px'}
+               position={'absolute'}
+               p={{md:'2rem', base:'0.75rem'}}
+               bottom={0}
+               top={'60%'}
+               h={'70%'}
+               right={0}
+               >                 
+                 <Heading mb={{md:'1rem', base:'0.5rem'}} color={'#0D0D25'} fontSize={{md:'3.75rem', base:'2.25rem'}} lineHeight={{md:'70px', base:'2.9rem'}} fontWeight={'400'} mr={'40%'}>Enter a world made for you</Heading>
+                 <Text mb={{md:'2rem', base:'1rem'}} color={'#0D0D25'} fontSize={{md:'1.25rem', base:'0.75rem'}} lineHeight={'24.6px'}  mr={'50%'}>Download Hushh Wallet today and unlock the power of your personal data.</Text>
+                <HStack gap={{ md:'2rem', base:'1rem'}}>
+                <Button px={{ md:'32px', base:'20px'}} py={{ md:'27px', base:'16px'}}  w={{md:'12rem'}} bg={'#000000'} color={'white'} leftIcon={<AppleIcon/>} border={'1px solid #FFFFFF'} borderRadius={'80px'}>
+                     APP STORE
+                 </Button>
+                 <Button px={{ md:'32px', base:'20px'}} py={{ md:'27px', base:'16px'}} w={{md:'12rem'}} bg={'#000000'} color={'white'}  leftIcon={<PlayStoreIcon/>} border={'1px solid #FFFFFF'} borderRadius={'80px'}>
+                     PLAY STORE
+                 </Button>
+                </HStack> 
+                 
+            </Box>
+        
         </Container>
+        
     </VStack>
       
     </>

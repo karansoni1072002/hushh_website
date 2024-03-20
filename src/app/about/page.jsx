@@ -46,9 +46,9 @@ export default function About() {
                     fontSize={'6xl'}
                     width={'11.25rem'}
                   >
-                    5.9M+
+                    86k+
                   </Text>
-                  <p className='text-fontColor4'>Daily<br />Transaction</p>
+                  <p className='text-fontColor4'>Followers</p>
                 </div>
                 <hr className='h-[1px] bg-gradient-to-r from-lineGradient1 via-lineGradient2 to-lineGradient3' />
               </div>
@@ -60,9 +60,9 @@ export default function About() {
                     fontSize={'6xl'}
                     width={'11.25rem'}
                   >
-                    8.9M+
+                    8+
                   </Text>
-                  <p className='text-fontColor4'>App<br />Downloads</p>
+                  <p className='text-fontColor4'>Products</p>
                 </div>
                 <hr className='h-[1px] bg-gradient-to-r from-lineGradient1 to-opacity-0 via-lineGradient2 to-opacity-87 via-opacity-100 to-lineGradient3' />
               </div>

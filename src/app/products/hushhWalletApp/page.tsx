@@ -132,6 +132,7 @@ const hushhWalletApp = () => {
               bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
             onClick={scrollTo}
+            zIndex={'6'}
           >
             Explore
           </Button>

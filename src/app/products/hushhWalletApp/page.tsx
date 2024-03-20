@@ -203,8 +203,8 @@ const hushhWalletApp = () => {
         <Text px={{md:'10rem', base:'1rem'}} color={'#ABABAB'} textAlign={{ md:'center', base:'center'}} fontWeight={'500'} fontSize={'1rem'} lineHeight={{ md:'2rem', base:'1.15rem'}}>Imagine a world where your data works for you, not against you. A world where your online and offline interactions paint a detailed picture of your unique self, accessible only by you and those you choose to trust. This is the reality unlocked by Hushh Wallet, the app that puts you in control of your digital identity and empowers you to reap the rewards it holds.</Text>
       </Box>
 
-    <HStack bg={'#151515'} w={'100%'} mt={{md:'12rem',base:'2.5rem'}} gap={{md:'1rem', base:'0.75rem'}}  px={{md:'10rem', base:'1.25rem'}} >
-    <VStack my={{ md:'5rem', base:'2.5rem'}} flex={3}   gap={'2rem'} textAlign={'left'} alignItems={'flex-start'}>
+    <HStack bg={'#151515'} w={'100%'} mt={{md:'12rem',base:'2.5rem'}} gap={{md:'1rem', base:'0.75rem'}}  pl={{md:'10rem', base:'1.25rem'}} pr={{md:'3rem', base:'1.25rem'}} >
+    <VStack my={{ md:'5rem', base:'2.5rem'}} flex={3} gap={'2rem'} textAlign={'left'} alignItems={'flex-start'}>
         <Heading
          className="color-gradient"
          fontWeight={"600"}
@@ -303,8 +303,8 @@ const hushhWalletApp = () => {
             </Box>
           </Grid>
         <Text color={'#ABABAB'} fontWeight={'400'} lineHeight={{md:'32.4px', base:'24px'}} fontSize={{md:'1.125rem', base:'0.8rem'}}>With Hushh, you become the curator of your own identity. You choose what information to include, building a comprehensive profile that reflects your true self.</Text>
-      </VStack>
-      <Box flex={1} display={{base:'none', md:'block'}}>
+    </VStack>
+      <Box flex={1} display={{base:'none', md:'flex'}} alignSelf={'flex-start'} justifyItems={'flex-start'} justifySelf={'flex-start'} alignItems={'flex-start'} alignContent={'flex-start'} justifyContent={'flex-start'}>
         <Image src={HushhEmojiColoured} alt="HushhEmojiColoured" />
       </Box>
     </HStack>

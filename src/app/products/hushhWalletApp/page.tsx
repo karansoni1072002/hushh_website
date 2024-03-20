@@ -165,6 +165,20 @@ const hushhWalletApp = () => {
         </HStack> 
         <Text px={{md:'10rem', base:'1.25rem'}} color={'#ABABAB'} textAlign={'center'} fontWeight={'500'} fontSize={'1rem'} lineHeight={{ md:'2rem', base:'1rem'}}>Imagine a world where your data works for you, not against you. A world where your online and offline interactions paint a detailed picture of your unique self, accessible only by you and those you choose to trust. This is the reality unlocked by Hushh Wallet, the app that puts you in control of your digital identity and empowers you to reap the rewards it holds.</Text>
       </Box>
+
+      <VStack mt={{md:'12rem',base:'2.5rem'}} px={{md:'10rem', base:'1.25rem'}} gap={'1rem'} textAlign={'left'} alignItems={'flex-start'}>
+        <Heading
+         className="color-gradient"
+         fontWeight={"600"}
+         fontSize={{ md: "1rem", base: "0.75rem" }}
+         lineHeight={"23.8px"}
+         letterSpacing={"0.255rem"}
+         >
+            GLOBAL SCALE
+        </Heading>
+        <Text color={'white'} fontWeight={'700'} fontSize={{md:'2.5rem', base:'1.25rem'}} lineHeight={{ md:'56px',base:'30px'}}>Scattered Data, Unified Identity</Text>
+        <Text color={'#ABABAB'} fontSize={{md:'1.125rem', base:'0.8rem'}}>Every brand you interact with, every click you make, every purchase you complete leaves a digital footprint. Your personality, preferences, buying power, and interests are scattered across phones, platforms, and brands, often inaccessible and invisible to you. Hushh Wallet bridges this gap. It aggregates your data from various sources, including</Text>
+      </VStack>
     </>
   );
 };

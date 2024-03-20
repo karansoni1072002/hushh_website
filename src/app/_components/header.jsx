@@ -120,7 +120,7 @@ const Header = () => {
                   </div>
 
                   <div className="flex-1 flex flex-col gap-5 w-full pr-12">
-                    <Link href={'#'} className="flex gap-4 items-start">
+                    <Link href={'/products/hushhWalletApp'} className="flex gap-4 items-start">
                       <div className="">
                         <HushhWalletIcon className='w-6 h-6' />
                       </div>
@@ -259,7 +259,7 @@ const Header = () => {
                           {/* <p className='text-sm font-medium text-fontColor3'>Find perfect items to express your <br /> individuality in just one click.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/'} onClick={() => setProductsSubmenuMobile(false)} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0">
+                      <Link href={'/products/hushhWalletApp'} onClick={() => setProductsSubmenuMobile(false)} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0">
                         <div className="">
                           <HushhWalletIcon className='w-6 h-6' />
                         </div>

@@ -160,7 +160,7 @@ const hushhForStudents = () => {
             lineHeight={"28px"}
             background={"transparent"}
             letterSpacing={"0.2rem"}
-            onClick={scrollTo}
+            onClick={() => router.push('https://shorturl.at/ceFOR')}
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
@@ -180,7 +180,7 @@ const hushhForStudents = () => {
             display={"flex"}
             border={"1px solid #606060"}
             borderRadius={"4rem"}
-            onClick={scrollInMobile}
+            onClick={() => router.push('https://shorturl.at/ceFOR')}
             w={"12rem"}
             color={extendedTheme.colors._white}
             lineHeight={"32.4px"}

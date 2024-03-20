@@ -23,6 +23,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsSubmenu, setProductsSubmenu] = useState(false)
   const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false)
+
   const handleMenuIconToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -46,7 +47,7 @@ const Header = () => {
     setIsMenuOpen(false)
   }
   return (
-    <div className="fixed top-0 z-50 w-full">
+    <div className={`w-full`}>
       <div className=" bg-myBG flex items-center justify-between w-full px-6 py-2 md:px-32 md:py-5">
         <div className="">
           <Link href='/'>

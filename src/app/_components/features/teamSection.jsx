@@ -9,7 +9,7 @@ import React from "react";
 import linkedln from "../svg/icons/linkedIn.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { teamImages } from "../svg/aboutImages/TeamImages/teamImages";
+import { teamImages } from "./teamImages";
 
 const TeamSection = () => {
   return (

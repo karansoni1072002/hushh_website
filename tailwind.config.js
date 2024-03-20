@@ -27,7 +27,7 @@ module.exports = {
         lineGradient1: '#262626',
         lineGradient2: '#ADA785',
         lineGradient3: '#262626',
-        fontColor5: '#E5E5E5'
+        fontColor5: '#E5E5E5',
         footerBG: '#363636',
         gradientColor1: '#E54D60',
         gradientColor2: '#A342FF',

@@ -2,6 +2,7 @@
 import {
   Box,
   Button,
+  Container,
   Divider,
   Grid,
   HStack,
@@ -36,6 +37,11 @@ import HushhLogoS from "../../_components/svg/hushhLogoS.svg";
 import HushhWalletBg from "../../_components/svg/hushhwalletBG.svg";
 import HushhEmojiColoured from "../../_components/svg/hushhEmojiColoured.svg";
 import { useRouter } from "next/navigation";
+import { ServiceCard } from "../../_components/primitives/serviceCard";
+import TrustedAIIcon from "../../_components/svg/trustedAI";
+import TechIntegrationIcon from "../../_components/svg/techIntegration";
+import ControlOver from "../../_components/svg/controlOver";
+import RedifiningIcon from "../../_components/svg/redifiningIcon";
 
 const BrandContainer = styled.div`
   display: flex;
@@ -287,25 +293,58 @@ const hushhWalletApp = () => {
           <Text display={'flex'} color={'#ABABAB'} lineHeight={'25px'} fontSize={{ md: '0.8rem', base: '0.8rem' }}>Hushh Wallet is more than just an app it's a paradigm shift. It empowers you too</Text>
           <Box>
             <Image src={HushhWalletBg} alt="HushhWalletBg" />
-            <Button border={"1px solid #606060"}
-              borderRadius={"2px"}
-              w={{ md: "16rem", base: "10rem" }}
-              color={extendedTheme.colors._white}
-              lineHeight={{ md: "28px", base: "14px" }}
-              background={"transparent"}
-              letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
-              _hover={{
-                background:
-                  "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-              }}
-              onClick={() =>
-                router.push("https://testflight.apple.com/join/CDYPEfJ5")
-              }
-            >
-              Download App
-            </Button>
           </Box>
-        </Stack>
+    </Stack>
+    <VStack gap={{md:'1.25rem', base:'0.75rem'}} mt={{md:'-18rem', base:'1.5ren'}} textAlign={'left'} px={{md:'5rem', base:'1.25rem'}}>
+        <Heading mr={{md:'40%'}} fontWeight={'400'} className="gradient" fontSize={{md:'3.75rem', base:'1.75rem'}} lineHeight={{md:'63.3px', base:'43px'}}>Personalized Experiences, Rewarded Interactions</Heading>
+        <Text mr={{md:'40%'}} color={'#ABABAB'} fontWeight={'500'} lineHeight={{md:'36px', base:'24px'}} fontSize={{ md:'1rem', base:'0.75rem'}}>Gone are the days of irrelevant ads and generic recommendations. Hushh allows you to create data cards containing specific information you're comfortable sharing. Now, you can</Text>
+        <Container
+          display={"flex"}
+          pt={{ md: "2rem" }}
+          justifyContent={"center"}
+          minW={{ md: "100%", base: "100%" }}
+        >
+          <Grid
+            templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
+            gap={{ md: 10, base: 5 }}
+            flexWrap="wrap"
+          >
+            <ServiceCard
+              icon={<TrustedAIIcon />}
+              alignItems={''}
+              onClick={'#'}
+              title="Effortless Service​"
+              textAlign={"left"}
+              description="Simply speak your request using the app, and Hushh translates it into action. No more searching or filling out forms.​"
+            />
+            <ServiceCard
+              icon={<TechIntegrationIcon />}
+              alignItems={''}
+              onClick={'#'}
+              title="Personalized Recommendations​​​"
+              textAlign={"left"}
+              description="Hushh analyzes your intent, not just your preferences, to recommend services that truly match your needs.​​"
+            />
+            <ServiceCard
+              icon={<ControlOver />}
+              alignItems={''}
+              onClick={'#'}
+              title="Real-Time Responses​"
+              textAlign={"left"}
+              description="Get immediate responses to your requests from top-tier service providers, competing for your attention."
+            />
+            <ServiceCard
+              icon={<RedifiningIcon />}
+              title="Discretion and Privacy​​​"
+              onClick={'#'}
+              alignItems={''}
+              textAlign={"left"}
+              description="Your identity and preferences remain confidential. Requests are shared anonymously with relevant service providers.​​"
+            />
+          </Grid>
+
+        </Container>
+    </VStack>
       
     </>
   );

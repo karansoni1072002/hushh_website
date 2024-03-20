@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   font-family: 'Figtree' !important;
 }
 
@@ -44,7 +44,7 @@ body{
 }
 
 .hushh-gradient {
-  background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%); 
+  background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
   -webkit-background-clip: text;
   color: transparent;
   border-color: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
@@ -285,10 +285,11 @@ body {
 
 /* Hushh Button CSS  */
 
-@media screen and (max-width: 1024px) {  
+@media screen and (max-width: 1024px) {
   .frameCard1 {
     display: none;
   }
+
   .hushhbuttonFrame2 {
     display: none;
   }

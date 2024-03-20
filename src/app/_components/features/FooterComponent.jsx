@@ -13,11 +13,11 @@ const FooterComponent = () => {
 
     const scrollTo = () => {
         scroll.scrollTo(4250);
-      };
-    
-      const scrollInMobile = () => {
+    };
+
+    const scrollInMobile = () => {
         scroll.scrollTo(3350);
-      };
+    };
 
     return (
         <div className=' bg-footerBG text-white pt-[375px]'>
@@ -77,8 +77,8 @@ const FooterComponent = () => {
                         <p>© 2024 Hush1One Inc. All rights reserved.</p>
                     </div>
                     <div className="flex gap-9 ">
-                        <Link href='#'>Terms of Service</Link>
-                        <Link href='#'>Privacy Policy</Link>
+                        <Link href='/legal/termsofuse'>Terms of Service</Link>
+                        <Link href='/legal/privacypolicy'>Privacy Policy</Link>
                         {/* <Link href='#'>Cookies</Link> */}
                     </div>
                 </div>
@@ -97,16 +97,16 @@ const FooterComponent = () => {
                     <div className="flex flex-col text-left px-5 gap-5 justify-between w-full flex-1">
                         <div className="flex">
                             <div className="flex flex-1 flex-col gap-3">
-                            <p className='text-sm font-medium opacity-80 leading-6'>Our Products</p>
-                            <div className="flex flex-col text-base gap-2 leading-5">
-                                <Link href='/products/hushhButton'>Hushh Button</Link>
-                                <Link href='/products/hushhWalletApp'>Hushh Wallet App</Link>
-                                <Link href='/products/vibeSearch'>Vibe Search</Link>
-                                <Link href='/products/browserCompanion'>Browser Companion</Link>
-                                <Link href='/products/conciergeApp'>Concierge App​</Link>
-                                <Link href='/products/hushhValetChat'>Valet Chat</Link>
-                                <Link href='/products/hushhForStudents'>HFS App</Link>
-                            </div>
+                                <p className='text-sm font-medium opacity-80 leading-6'>Our Products</p>
+                                <div className="flex flex-col text-base gap-2 leading-5">
+                                    <Link href='/products/hushhButton'>Hushh Button</Link>
+                                    <Link href='/products/hushhWalletApp'>Hushh Wallet App</Link>
+                                    <Link href='/products/vibeSearch'>Vibe Search</Link>
+                                    <Link href='/products/browserCompanion'>Browser Companion</Link>
+                                    <Link href='/products/conciergeApp'>Concierge App​</Link>
+                                    <Link href='/products/hushhValetChat'>Valet Chat</Link>
+                                    <Link href='/products/hushhForStudents'>HFS App</Link>
+                                </div>
                             </div>
                             <div className="flex flex-1 flex-col gap-3">
                                 <p className='text-sm font-medium opacity-80 leading-6'>Company</p>
@@ -137,8 +137,8 @@ const FooterComponent = () => {
 
                 <div className="flex flex-col w-full justify-between leading-5 py-7 text-center gap-8 bg-gradient-to-r from-gradientColor2 to-gradientColor1">
                     <div className="flex gap-4 flex-col w-full">
-                        <Link href='#'>Terms of Service</Link>
-                        <Link href='#'>Privacy Policy</Link>
+                        <Link href='/legal/termsofuse'>Terms of Service</Link>
+                        <Link href='/legal/privacypolicy'>Privacy Policy</Link>
                         {/* <Link href='#'>Cookies</Link> */}
                     </div>
                     <div className=" w-full">

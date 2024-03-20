@@ -41,7 +41,10 @@ const Header = () => {
       document.removeEventListener("mousedown", handler);
     };
   });
-
+  const handleSubmenuClick = () => {
+    setProductsSubmenuMobile(false)
+    setIsMenuOpen(false)
+  }
   return (
     <div className="fixed top-0 z-50 w-full">
       <div className=" bg-myBG flex items-center justify-between w-full px-6 py-2 md:px-32 md:py-5">
@@ -49,7 +52,7 @@ const Header = () => {
           <HushhHeaderLogo />
         </div>
         {isMobile ? (
-          <div className="w-full flex justify-end">
+          <div className="w-full flex py-2 justify-end">
             <Container display={'flex'} gap={'1rem'}>
               <SearchBar />
               <div className=" text-white" onClick={handleMenuIconToggle}>
@@ -77,11 +80,14 @@ const Header = () => {
             </div>
             {
               productsSubmenu &&
-              <div className="bg-white flex flex-col gap-4 absolute pl-12 pr-7 mt-4 pt-5 pb-7 rounded-2xl shadow-lg shadow-[#A7AEBA1F]" onMouseEnter={() => setProductsSubmenu(true)} onMouseLeave={() => setProductsSubmenu(false)}>
+              <div className="bg-white flex flex-col gap-4 absolute pl-8 pr-8 mt-4 pt-5 pb-7 rounded-2xl shadow-lg shadow-[#A7AEBA1F]" onMouseEnter={() => setProductsSubmenu(true)} onMouseLeave={() => setProductsSubmenu(false)}>
                 <p className="text-xs text-fontColor2 font-semibold">HUSHH PRODUCTS</p>
-                <div className="flex gap-10" >
-                  <div className="flex-1 flex flex-col gap-5">
-                    <Link href={'/products/hushhButton'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 items-start">
+                <div className="flex gap-2" >
+                  <div className="flex-1 flex flex-col gap-2">
+                    <Link
+                      href={'/products/hushhButton'}
+                      onClick={() => setProductsSubmenu(false)}
+                      className="flex gap-4 items-start hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
                       <div className="">
                         <HushhButtonIcon size={24} />
                       </div>
@@ -90,7 +96,7 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>Share data for personalized <br /> recommendations.</p>
                       </div>
                     </Link>
-                    <Link href={'/products/browserCompanion'} onClick={() => setProductsSubmenu(false)} className="flex gap-4">
+                    <Link href={'/products/browserCompanion'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
                       <div className="">
                         <ChromeExtentionLogo className='w-6 h-6' />
                       </div>
@@ -99,7 +105,7 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>Enhanced recommendations &<br /> impactful marketing.</p>
                       </div>
                     </Link>
-                    <Link href={'/products/conciergeApp'} className="flex gap-4">
+                    <Link href={'/products/conciergeApp'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
                       <div className="">
                         <ConciergeApp className='w-6 h-6' />
                       </div>
@@ -108,7 +114,7 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>Speak your wish, get luxury <br /> redefined: Hushh Concierge</p>
                       </div>
                     </Link>
-                    <Link href={'/vibeSearch'} className="flex gap-4" onClick={() => setProductsSubmenu(false)}>
+                    <Link href={'/products/vibeSearch'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
                       <div className="">
                         <VibeSearchIcon className='w-6 h-6' />
                       </div>
@@ -119,8 +125,8 @@ const Header = () => {
                     </Link>
                   </div>
 
-                  <div className="flex-1 flex flex-col gap-5 w-full pr-12">
-                    <Link href={'/products/hushhWalletApp'} className="flex gap-4 items-start">
+                  <div className="flex-1 flex flex-col gap-2 w-full">
+                    <Link href={'/products/hushhWalletApp'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 items-start hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
                       <div className="">
                         <HushhWalletIcon className='w-6 h-6' />
                       </div>
@@ -129,7 +135,7 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>Customer User Flow + Client Advisor User Flow</p>
                       </div>
                     </Link>
-                    <Link href={'/products/hushhValetChat'} className="flex gap-4" onClick={() => setProductsSubmenu(false)}>
+                    <Link href={'/products/hushhValetChat'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
                       <div className="">
                         <ValetChat className='w-6 h-6' />
                       </div>
@@ -138,7 +144,7 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>Valet Chat: Ditch receipts, unlock <br /> insights.</p>
                       </div>
                     </Link>
-                    <Link href={'#'} className="flex gap-4">
+                    <Link href={'#'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
                       <div className="">
                         <VibeSearchApi className='w-6 h-6' />
                       </div>
@@ -147,7 +153,7 @@ const Header = () => {
                         <p className='text-sm font-medium text-fontColor3'>List products on Vibe Search with <br /> management and analytics.</p>
                       </div>
                     </Link>
-                    <Link href={'#'} className="flex gap-4">
+                    <Link href={'#'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 group hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
                       <div className="">
                         <headerAssets.VibeSearchMarketplace className='w-6 h-6' />
                       </div>
@@ -195,14 +201,16 @@ const Header = () => {
           <div className={`w-full flex flex-col gap-1`} ref={menuRef}>
             <div className="text-white w-full flex items-end flex-col text-center">
               <Link
-                // href="/"
+                href="/"
                 className="py-2 border border-myBorder bg-black rounded-t w-1/2"
+                onClick={() => setIsMenuOpen(false)}
               >
                 HOME
               </Link>
               <Link
-                href="https://www.linkedin.com/company/hushh-ai/about"
+                href="/about"
                 className="py-2 w-1/2 border border-myBorder border-t-0 bg-black"
+                onClick={() => setIsMenuOpen(false)}
               >
                 ABOUT US
               </Link>
@@ -223,7 +231,7 @@ const Header = () => {
                     {/* <p className="text-xs text-fontColor2 font-semibold">HUSHH PRODUCTS</p> */}
 
                     <div className=" flex flex-col w-3/4 ">
-                      <Link href={'/products/hushhButton'} onClick={() => setProductsSubmenuMobile(false)} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link href={'/products/hushhButton'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
                         <div className="">
                           <HushhButtonIcon size={24} />
                         </div>
@@ -232,7 +240,7 @@ const Header = () => {
                           {/* <p className='text-sm font-medium text-fontColor3'>Share data for personalized <br /> recommendations.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/products/browserCompanion'} onClick={() => setProductsSubmenuMobile(false)} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link href={'/products/browserCompanion'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
                         <div className="">
                           <ChromeExtentionLogo className='w-6 h-6' />
                         </div>
@@ -241,7 +249,7 @@ const Header = () => {
                           {/* <p className='text-sm font-medium text-fontColor3'>Enhanced recommendations &<br /> impactful marketing.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/products/conciergeApp'} onClick={() => setProductsSubmenuMobile(false)} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link href={'/products/conciergeApp'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
                         <div className="">
                           <ConciergeApp className='w-6 h-6' />
                         </div>
@@ -250,7 +258,7 @@ const Header = () => {
                           {/* <p className='text-sm font-medium text-fontColor3'>Speak your wish, get luxury <br /> redefined: Hushh Concierge</p> */}
                         </div>
                       </Link>
-                      <Link href={'/products/vibeSearch'} onClick={() => setProductsSubmenuMobile(false)} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link href={'/products/vibeSearch'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
                         <div className="">
                           <VibeSearchIcon className='w-6 h-6' />
                         </div>
@@ -259,7 +267,7 @@ const Header = () => {
                           {/* <p className='text-sm font-medium text-fontColor3'>Find perfect items to express your <br /> individuality in just one click.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/products/hushhWalletApp'} onClick={() => setProductsSubmenuMobile(false)} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0">
+                      <Link href={'/products/hushhWalletApp'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0">
                         <div className="">
                           <HushhWalletIcon className='w-6 h-6' />
                         </div>
@@ -268,7 +276,7 @@ const Header = () => {
                           {/* <p className='text-sm font-medium text-fontColor3'>Customer User Flow + Client Advisor User Flow</p> */}
                         </div>
                       </Link>
-                      <Link href={'/products/hushhValetChat'} onClick={() => setProductsSubmenuMobile(false)} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link href={'/products/hushhValetChat'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
                         <div className="">
                           <ValetChat className='w-6 h-6' />
                         </div>
@@ -277,7 +285,7 @@ const Header = () => {
                           {/* <p className='text-sm font-medium text-fontColor3'>Valet Chat: Ditch receipts, unlock <br /> insights.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/'} onClick={() => setProductsSubmenuMobile(false)} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link href={'/'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
                         <div className="">
                           <VibeSearchApi className='w-6 h-6' />
                         </div>
@@ -286,7 +294,7 @@ const Header = () => {
                           {/* <p className='text-sm font-medium text-fontColor3'>List products on Vibe Search with <br /> management and analytics.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/'} onClick={() => setProductsSubmenuMobile(false)} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link href={'/'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
                         <div className="">
                           <headerAssets.VibeSearchMarketplace className='w-6 h-6' />
                         </div>
@@ -304,20 +312,23 @@ const Header = () => {
 
 
               <Link
-                href="https://www.linkedin.com/company/hushh-ai/jobs"
+                href="https://sites.google.com/hush1one.com/drops/home"
                 className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
+                onClick={() => setIsMenuOpen(false)}
               >
                 LABS
               </Link>
               <Link
                 href="https://www.linkedin.com/company/hushh-ai/jobs"
                 className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
+                onClick={() => setIsMenuOpen(false)}
               >
                 CONTACT US
               </Link>
               <Link
-                href=""
+                href="/"
                 className="py-2 w-1/2 border border-myBorder border-t-0 bg-black rounded-b"
+                onClick={() => setIsMenuOpen(false)}
               >
                 LOGIN
               </Link>

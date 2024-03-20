@@ -69,7 +69,7 @@ const Header = () => {
               </Link>
               <Link href="#" className="flex items-center gap-2 group" onMouseEnter={() => setProductsSubmenu(true)}>
                 PRODUCTS
-                <ChevronArrowIcon className='group-hover:rotate-180 transition-all duration-300' />
+                <ChevronArrowIcon className='group-hover:rotate-0 rotate-180 transition-all duration-300' />
               </Link>
               <Link href="https://sites.google.com/hush1one.com/drops/home">
                 LABS

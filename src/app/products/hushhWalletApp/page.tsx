@@ -185,10 +185,10 @@ const hushhWalletApp = () => {
       <Box mt={{ md:'6rem', base:'3rem'}} display={{base:'none', md:'block'}} flexDirection={'column'}  position={'relative'}>
         <Image src={BoxBgWallet} alt="BoxBgWallet" style={{position:'absolute'}}/>
        <HStack position={'relative'} justifyContent={'center'} flexDirection={{md:'row', base:'column'}} alignContent={'center'} fontWeight={'400'} lineHeight={{ md:'91.78px', base:'50px'}} fontSize={{md:'5.4rem',base:'2.7rem'}}>
-           <Heading zIndex={10} className="gradient" textAlign={{base:'center'}}>YOUR PERSONAL DATA,</Heading>
+           <Heading fontWeight={'400'} fontSize={'5.43rem'} fontFamily={'Bebas Neue'} zIndex={10} className="gradient" textAlign={{base:'center'}}>YOUR PERSONAL DATA,</Heading>
            <Image src={HushhLogoS} alt="HushhLogoS" style={{zIndex:'3'}}/>
-           <Image src={WhiteShadow} alt="WhiteShadow" style={{position:'absolute', zIndex:'-100'}}/>
-           <Heading  zIndex={10} className="gradient" textAlign={{base:'center'}}>YOUR OWN BUSINESS</Heading>
+           <Image src={WhiteShadow} alt="whiteShadow" style={{position:'absolute', zIndex:'-100'}}/>
+           <Heading fontWeight={'400'} fontSize={'5.43rem'} fontFamily={"Bebas Neue"} zIndex={10} className="gradient" textAlign={{base:'center'}}>YOUR OWN BUSINESS</Heading>
         </HStack> 
         <Text px={{md:'10rem', base:'1rem'}} color={'#ABABAB'} textAlign={{ md:'center', base:'center'}} fontWeight={'500'} fontSize={'1rem'} lineHeight={{ md:'2rem', base:'1.15rem'}}>Imagine a world where your data works for you, not against you. A world where your online and offline interactions paint a detailed picture of your unique self, accessible only by you and those you choose to trust. This is the reality unlocked by Hushh Wallet, the app that puts you in control of your digital identity and empowers you to reap the rewards it holds.</Text>
       </Box>
@@ -196,10 +196,10 @@ const hushhWalletApp = () => {
       <Box mt={{ md:'6rem', base:'3rem'}} display={{md:'none', base:'flex'}} flexDirection={'column'} position={'relative'}>
         <Image src={BoxBgWallet} alt="BoxBgWallet" style={{position:'absolute'}}/>
        <HStack justifyContent={'center'} flexDirection={{md:'row', base:'column'}} alignContent={'center'} fontWeight={'400'} lineHeight={{ md:'91.78px', base:'50px'}} fontSize={{md:'5.4rem',base:'2.7rem'}}>
-           <Heading className="gradient" textAlign={{base:'center'}}>YOUR PERSONAL DATA,</Heading>
+           <Heading fontWeight={'400'} fontSize={'2.75rem'} fontFamily={'Bebas Neue'} className="gradient" textAlign={{base:'center'}}>YOUR PERSONAL DATA,</Heading>
            <Image src={HushhLogoS} style={{height:'9rem'}} alt="HushhLogoS"/>
-           <Image src={WhiteShadow} alt="WhiteShadow" style={{position:'absolute', zIndex:'-100', height:'25rem'}}/>
-           <Heading className="gradient" textAlign={{base:'center'}} px={'1rem'}>YOUR OWN BUSINESS</Heading>
+           <Image src={WhiteShadow} alt="whiteShadow" style={{position:'absolute', zIndex:'-100', height:'25rem'}}/>
+           <Heading fontWeight={'400'} fontSize={'2.75rem'} fontFamily={'Bebas Neue'} className="gradient" textAlign={{base:'center'}} px={'1rem'}>YOUR OWN BUSINESS</Heading>
         </HStack> 
         <Text px={{md:'10rem', base:'1rem'}} color={'#ABABAB'} textAlign={{ md:'center', base:'center'}} fontWeight={'500'} fontSize={'1rem'} lineHeight={{ md:'2rem', base:'1.15rem'}}>Imagine a world where your data works for you, not against you. A world where your online and offline interactions paint a detailed picture of your unique self, accessible only by you and those you choose to trust. This is the reality unlocked by Hushh Wallet, the app that puts you in control of your digital identity and empowers you to reap the rewards it holds.</Text>
       </Box>

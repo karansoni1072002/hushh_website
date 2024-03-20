@@ -16,6 +16,9 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import FooterComponent from "./FooterComponent";
+import CircelFormShadow from "../../_components/svg/circleFormShadow.svg";
+import Image from "next/image";
+import BigCircleFormShadow from "../../_components/svg/BigCircleFormShadow.svg";
 
 export default function ContactForm() {
   const {
@@ -44,6 +47,9 @@ export default function ContactForm() {
               className="new-gradient-bg"
               borderRadius={"0.5rem"}
               flexDirection={"column"}
+              display={'flex'}
+              flex={1}
+              position={'relative'}
             >
               <HStack
                 textAlign={"left"}
@@ -67,6 +73,7 @@ export default function ContactForm() {
             alignItems={"left"}
             flexDirection={"column"}
             color={"#FFFFFF"}
+            
           >
             <Text>info@hush1one.com</Text>
             <Text>+1(877)487-4494</Text>
@@ -75,11 +82,14 @@ export default function ContactForm() {
             1021 5th St W <br></br>
             Kirkland, WA 98033
             </Text>
+
           </HStack>
+          <Image src={CircelFormShadow} alt="CircelFormShadow" style={{position:'absolute',zIndex:'7', top:'430px',right:'80px',bottom:'0'}}/>
+            <Image src={BigCircleFormShadow} alt="BigCircleFormShadow" style={{position:'absolute',zIndex:'7', right:'0',bottom:'0'}}/>
         </Box>
 
             {/* Contact Form */}
-            <Box p={{ md: "4rem", base: '1rem' }} display={"flex"}>
+            <Box p={{ md: "4rem", base: '1rem' }} flex={1.75} display={"flex"}>
               <form onSubmit={handleSubmit(onSubmit)} style={{ color: "white" }}>
                 <HStack display={{ base: 'block', md: 'flex' }} flexDirection={{ base: 'column', md: 'row' }} gap={{ md: "2rem", base: '1rem' }} mb={{ md: "2rem", base: '1rem' }}>
                   <Stack gap={{ md: "1rem", base: '0.5rem' }} mb={{ base: '1rem' }}>

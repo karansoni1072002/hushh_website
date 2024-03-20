@@ -96,8 +96,9 @@ const hushhWalletApp = () => {
           mt={{ base: "3rem" }}
           gap={{ base: "1rem", md: "2rem" }}
           px={{ md: "15rem", base: "1.5rem" }}
-          position={"relative"}
+          position={{ md:"relative"}}
         >
+
           <Heading
             fontWeight={"400"}
             lineHeight={{ md: "87.46px", base: "43px" }}
@@ -133,15 +134,19 @@ const hushhWalletApp = () => {
           >
             Explore
           </Button>
-          <Box zIndex={'3'} position={"absolute"} mt={{ md: "5rem", base: "2rem" }}>
+          <Box zIndex={'3'} position={"absolute"} mt={{ md: "5rem", base: "17rem" }}>
             <Image src={BoxBgWallet} alt="BoxBgWallet"/>
           </Box>
-          <Box zIndex={'5'} position={"absolute"} mt={{ md: "5rem", base: "2rem" }}>
+          <Box zIndex={'5'} position={"absolute"} display={{md:'block', base:'none'}} mt={{ md: "5rem", base: "17rem" }}>
              <Image src={LouiWalletBg} alt="LouiWalletBg" />
           </Box>
         </Box>
+
+        <Box zIndex={'5'} display={{md:'none', base:'block'}} mb={'-12rem'}>
+             <Image src={LouiWalletBg} alt="LouiWalletBg" />
+          </Box>
       </Box>
-      <VStack mt={{ md: "34rem", base: "3rem" }}>
+      <VStack mt={{ md: "34rem", base: "10rem" }}>
         <Heading
           className="color-gradient"
           fontWeight={"600"}
@@ -176,14 +181,26 @@ const hushhWalletApp = () => {
         </Marquee>
         <Divider border={'2px solid'} className="walletDivider" w={"90%"} h={"1px"} />
       </VStack>
-      <Box mt={{ md:'6rem', base:'3rem'}} position={'relative'}>
+      <Box mt={{ md:'6rem', base:'3rem'}} display={{base:'none', md:'block'}} flexDirection={'column'}  position={'relative'}>
         <Image src={BoxBgWallet} alt="BoxBgWallet" style={{position:'absolute'}}/>
        <HStack justifyContent={'center'} flexDirection={{md:'row', base:'column'}} alignContent={'center'} fontWeight={'400'} lineHeight={{ md:'91.78px', base:'50px'}} fontSize={{md:'5.4rem',base:'2.7rem'}}>
-           <Heading className="gradient">YOUR PERSONAL DATA,</Heading>
+           <Heading className="gradient" textAlign={{base:'center'}}>YOUR PERSONAL DATA,</Heading>
            <Image src={HushhLogoS} alt="HushhLogoS"/>
-           <Heading className="gradient">YOUR OWN BUSINESS</Heading>
+           {/* <Image src={HushhLogoS} style={{height:'9rem'}} alt="HushhLogoS"/> */}
+
+           <Heading className="gradient" textAlign={{base:'center'}}>YOUR OWN BUSINESS</Heading>
         </HStack> 
-        <Text px={{md:'10rem', base:'1.25rem'}} color={'#ABABAB'} textAlign={'center'} fontWeight={'500'} fontSize={'1rem'} lineHeight={{ md:'2rem', base:'1rem'}}>Imagine a world where your data works for you, not against you. A world where your online and offline interactions paint a detailed picture of your unique self, accessible only by you and those you choose to trust. This is the reality unlocked by Hushh Wallet, the app that puts you in control of your digital identity and empowers you to reap the rewards it holds.</Text>
+        <Text px={{md:'10rem', base:'1rem'}} color={'#ABABAB'} textAlign={{ md:'center', base:'center'}} fontWeight={'500'} fontSize={'1rem'} lineHeight={{ md:'2rem', base:'1.15rem'}}>Imagine a world where your data works for you, not against you. A world where your online and offline interactions paint a detailed picture of your unique self, accessible only by you and those you choose to trust. This is the reality unlocked by Hushh Wallet, the app that puts you in control of your digital identity and empowers you to reap the rewards it holds.</Text>
+      </Box>
+
+      <Box mt={{ md:'6rem', base:'3rem'}} display={{md:'none', base:'flex'}} flexDirection={'column'} position={'relative'}>
+        <Image src={BoxBgWallet} alt="BoxBgWallet" style={{position:'absolute'}}/>
+       <HStack justifyContent={'center'} flexDirection={{md:'row', base:'column'}} alignContent={'center'} fontWeight={'400'} lineHeight={{ md:'91.78px', base:'50px'}} fontSize={{md:'5.4rem',base:'2.7rem'}}>
+           <Heading className="gradient" textAlign={{base:'center'}}>YOUR PERSONAL DATA,</Heading>
+           <Image src={HushhLogoS} style={{height:'9rem'}} alt="HushhLogoS"/>
+           <Heading className="gradient" textAlign={{base:'center'}} px={'1rem'}>YOUR OWN BUSINESS</Heading>
+        </HStack> 
+        <Text px={{md:'10rem', base:'1rem'}} color={'#ABABAB'} textAlign={{ md:'center', base:'center'}} fontWeight={'500'} fontSize={'1rem'} lineHeight={{ md:'2rem', base:'1.15rem'}}>Imagine a world where your data works for you, not against you. A world where your online and offline interactions paint a detailed picture of your unique self, accessible only by you and those you choose to trust. This is the reality unlocked by Hushh Wallet, the app that puts you in control of your digital identity and empowers you to reap the rewards it holds.</Text>
       </Box>
 
     <HStack bg={'#151515'} w={'100%'} mt={{md:'12rem',base:'2.5rem'}} gap={{md:'1rem', base:'0.75rem'}}  px={{md:'10rem', base:'1.25rem'}} >
@@ -302,7 +319,7 @@ const hushhWalletApp = () => {
           </Box>
     </Stack>
 
-    <VStack mb={{ md:'15rem', base:'5rem'}}  gap={{md:'1.25rem', base:'0.75rem'}} mt={{md:'-18rem', base:'1.5ren'}} textAlign={'left'}>
+    <VStack mb={{ md:'15rem', base:'5rem'}}  gap={{md:'1.25rem', base:'0.75rem'}} mt={{md:'-18rem', base:'1.5ren'}} textAlign={{ md:'left', base:'center'}}>
         <Heading px={{md:'5rem', base:'1rem'}} mr={{md:'40%', base:0}} fontWeight={'400'} className="gradient" fontSize={{md:'3.75rem', base:'1.75rem'}} lineHeight={{md:'63.3px', base:'43px'}}>Personalized Experiences, Rewarded Interactions</Heading>
         <Text px={{md:'5rem', base:'1.25rem'}} mr={{md:'40%', base:0}} color={'#ABABAB'} fontWeight={'500'} lineHeight={{md:'36px', base:'24px'}} fontSize={{ md:'1rem', base:'0.75rem'}}>Gone are the days of irrelevant ads and generic recommendations. Hushh allows you to create data cards containing specific information you're comfortable sharing. Now, you can</Text>
         <Box
@@ -353,7 +370,6 @@ const hushhWalletApp = () => {
             />
              
           </Grid>
-          {/* Responsive needed here */}
           <Box
                className="gradient-bg"
                width={'65%'}
@@ -398,10 +414,10 @@ const hushhWalletApp = () => {
                  <Heading mb={{base:'0.5rem'}} color={'#0D0D25'} fontSize={{base:'1.25rem'}} lineHeight={{base:'35px'}} fontWeight={'400'}>Enter a world made for you</Heading>
                  <Text mb={{md:'2rem', base:'1rem'}} color={'#0D0D25'} fontSize={{md:'1.25rem', base:'0.75rem'}} lineHeight={'24.6px'}>Download Hushh Wallet today and unlock the power of your personal data.</Text>
                 <HStack gap={{ md:'2rem', base:'1rem'}}>
-                <Button w={{md:'12rem'}} bg={'#000000'} color={'white'} leftIcon={<AppleIcon/>} border={'1px solid #FFFFFF'} borderRadius={'80px'}>
+                <Button ml={'0.5rem'} fontSize={'0.75rem'} w={'12rem'} bg={'#000000'} color={'white'} leftIcon={<AppleIcon/>} border={'1px solid #FFFFFF'} borderRadius={'80px'}>
                      APP STORE
                  </Button>
-                 <Button  w={'12rem'} bg={'#000000'} color={'white'}  leftIcon={<PlayStoreIcon/>} border={'1px solid #FFFFFF'} borderRadius={'80px'}>
+                 <Button ml={'0.5rem'} fontSize={'0.75rem'} w={'12rem'} bg={'#000000'} color={'white'}  leftIcon={<PlayStoreIcon/>} border={'1px solid #FFFFFF'} borderRadius={'80px'}>
                      PLAY STORE
                  </Button>
                 </HStack> 

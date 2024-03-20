@@ -28,6 +28,9 @@ import { animateScroll as scroll } from 'react-scroll';
 import HushhButtonFaq from "../../_components/features/faq/hushhButtonFaq"
 import ContactForm from '../../_components/features/contactForm'
 import BgAnimation from "../../../../public/Gif/bgAnimation.gif";
+import DataRetrievalMade from "../../../../public/Gif/dataRetrievalMade.gif";
+import Slogo from "../../../../public/Gif/slogo.gif";
+
 
 const hushhButton = () => {
   const router = useRouter();
@@ -645,8 +648,14 @@ const hushhButton = () => {
           </VStack>
         </Stack>
 
-        <Stack mx={{ md: "10rem", base: "3.5rem" }} mt={{base:'3.5rem', md:'10rem'}} mb={{base:'3.5rem',md:'20rem'}} position={'relative'}>
+        <Stack mx={{ md: "10rem", base: "3.5rem" }} mt={{base:'3.5rem', md:'10rem'}} mb={{base:'2.5rem',md:'15rem'}} position={'relative'}>
+        <Box display={{base:'none',md:'block'}}>
         <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'40rem'}}/>
+        </Box> 
+        <Box display={{base:'block',md:'none'}}>
+        <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'13rem'}}/>
+        </Box>  
+
           <VStack px={{ md: "10rem", base: "0rem" }} >
             <Heading
               textAlign={"center"}
@@ -676,9 +685,16 @@ const hushhButton = () => {
           pb={{ base: "3rem", md: "6rem" }}
           px={{ md: "10rem", base: "1rem" }}
           gap={{ md: "5rem", base: '1.25rem' }}
+          mt={{md:'5rem', base:'2rem'}}
         >
           <VStack gap={{ md: "2rem", base: '0.5rem' }} alignItems={"flex-start"} textAlign={"left"}>
-            {/* <Image src={} /> */}
+          <Box display={{md:'block', base:'none'}}>
+            <Image src={Slogo} alt="sLogo" style={{width:'120px', height:'160px'}} />
+          </Box>  
+          <Box display={{md:'none', base:'block'}}>
+            <Image src={Slogo} alt="sLogo" style={{width:'90px', height:'110px'}} />
+          </Box> 
+
             <Heading
               fontWeight={"400"}
               fontSize={{ md: "3.75rem", base: "1.25rem" }}
@@ -699,6 +715,12 @@ const hushhButton = () => {
             </Text>
           </VStack>
           <VStack alignItems={"flex-start"} textAlign={"left"} gap={{ md: "2rem", base: '0.5rem' }}>
+         <Box display={{md:'block', base:'none'}}>
+             <Image src={DataRetrievalMade} alt="DataRetrievalMade" style={{width:'120px', height:'160px'}} />
+          </Box>  
+          <Box display={{md:'none', base:'block'}}>
+             <Image src={DataRetrievalMade} alt="DataRetrievalMade" style={{width:'90px', height:'110px'}} />
+          </Box> 
             <Heading
               fontWeight={"400"}
               fontSize={{ md: "3.75rem", base: "1.25rem" }}

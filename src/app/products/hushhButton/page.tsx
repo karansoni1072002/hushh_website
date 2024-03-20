@@ -22,16 +22,12 @@ import { useResponsiveSizes } from "../../context/responsive";
 import HushhEmoji from "../../_components/svg/card/hushhCircleEmoji.svg";
 import HushhBrandCard from "../../_components/svg/card/hushhBrandCard.svg";
 import HushhButtonBg from "../../_components/svg/hushhButtonBg.svg";
-import HushhButtonUser from "../../_components/svg/hushhButtonUser.svg";
-import HushhButtonCard3 from "../../_components/svg/hushhButtonCard3.svg";
-import HushhLogoIcon from "../../_components/svg/icons/hushhLogoIcon.svg";
-import StatisticCard from "../../_components/svg/card/statisticCard.svg";
-import HushhButtonOnlyUser from "../../_components/svg/hushhButtonOnlyUser.svg";
 import HushhButtonWin from '../../_components/svg/hushhButtonWin.svg';
 import { useRouter } from "next/navigation";
 import { animateScroll as scroll } from 'react-scroll';
 import HushhButtonFaq from "../../_components/features/faq/hushhButtonFaq"
 import ContactForm from '../../_components/features/contactForm'
+import BgAnimation from "../../../../public/Gif/bgAnimation.gif";
 
 const hushhButton = () => {
   const router = useRouter();
@@ -649,9 +645,9 @@ const hushhButton = () => {
           </VStack>
         </Stack>
 
-        <Stack margin={{ md: "10rem", base: "3.5rem" }}>
-          <VStack px={{ md: "10rem", base: "0rem" }}>
-            {/* GIF Pending */}
+        <Stack mx={{ md: "10rem", base: "3.5rem" }} mt={{base:'3.5rem', md:'10rem'}} mb={{base:'3.5rem',md:'20rem'}} position={'relative'}>
+        <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'40rem'}}/>
+          <VStack px={{ md: "10rem", base: "0rem" }} >
             <Heading
               textAlign={"center"}
               className="gradient"
@@ -682,7 +678,7 @@ const hushhButton = () => {
           gap={{ md: "5rem", base: '1.25rem' }}
         >
           <VStack gap={{ md: "2rem", base: '0.5rem' }} alignItems={"flex-start"} textAlign={"left"}>
-            {/* GIF Pending */}
+            {/* <Image src={} /> */}
             <Heading
               fontWeight={"400"}
               fontSize={{ md: "3.75rem", base: "1.25rem" }}

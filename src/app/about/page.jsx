@@ -103,14 +103,14 @@ export default function About() {
           </div>
         </div>
         <div className="md:flex-row flex flex-col gap-12 pt-12 md:pt-0 md:gap-36 md:-translate-y-40">
-          <div className="w-[25rem] flex flex-col gap-5 ">
+          <div className="md:w-[25rem] flex flex-col gap-5 ">
             <p className=' text-fontColor5 font-bold text-[22px]'>History</p>
             <p className=' text-fontColor4 font-medium leading-9'>
               Hushh arose from a deep understanding of the modern digital landscape.  In a world where our data is constantly collected, analyzed, and often used without our full knowledge or consent, we recognized the urgent need for change. <br />
               Our journey began with a simple question: What if individuals weren't just data points, but active owners of their digital selves?  This question sparked a movement. We set out to develop the technology and tools to make this vision a reality. <br />
               Hushh is not just about software; it's about a shift in power dynamics. We're dedicated to a future where everyone has the tools to reclaim their data, using it for their own empowerment and benefit. Our history is still being written, and we invite you to be part of the next chapter.</p>
           </div>
-          <div className="w-[25rem] flex flex-col gap-5 ">
+          <div className="md:w-[25rem] flex flex-col gap-5 ">
             <p className=' text-fontColor5 font-bold text-[22px]'>Growing team</p>
             <p className=' text-fontColor4 font-medium leading-9'>
               Hushh isn't just about technology; it's about the passionate people behind it. Our team is a dynamic mix of privacy champions, skilled engineers, creative designers, and visionary thinkers. We're united by a shared belief in the power of individual data control and a relentless drive to innovate. We're constantly seeking out bright minds and diverse perspectives to join our mission. If you're passionate about data privacy and empowerment, cutting-edge technology, disrupting established industries, and making a real-world impact, then Hushh might be the perfect place for you. Explore our current openings [Link to careers page if applicable] and become part of the team that's changing the data landscape, one user at a time.
@@ -147,7 +147,7 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-12 md:gap-36 mt-20 md:mt-40 mb-24 md:mb-36">
             <div className="flex flex-col gap-10">
               <Image src={AboutMission} />
-              <div className="w-[25rem] text-left">
+              <div className="md:w-[25rem] text-left">
                 <p className=' text-fontColor5 font-bold text-[22px]'>Our Mission</p>
                 <p className=' text-fontColor4 font-medium leading-9'>
                   Hushh's mission is to empower individuals to reclaim, understand, and harness the full potential of their personal data within a secure and privacy-centric ecosystem. We provide tools that centralize data, offer insights into its use, and create avenues for individuals to benefit from their own information while maintaining complete control over their privacy.  Hushh aims to shift the balance of power, transforming data from a corporate tool into a catalyst for individual empowerment.

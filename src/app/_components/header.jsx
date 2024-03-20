@@ -50,7 +50,9 @@ const Header = () => {
     <div className={`w-full`}>
       <div className=" bg-myBG flex items-center justify-between w-full px-6 py-2 md:px-32 md:py-5">
         <div className="">
-          <HushhHeaderLogo />
+          <Link href='/'>
+            <HushhHeaderLogo />
+          </Link>
         </div>
         {isMobile ? (
           <div className="w-full flex py-2 justify-end">

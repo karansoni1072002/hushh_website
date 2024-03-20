@@ -14,6 +14,8 @@ import { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation";
 import { animateScroll as scroll } from 'react-scroll';
 import ContactForm from '../../_components/features/contactForm'
+import BgAnimation from "../../../../public/Gif/bgAnimation.gif";
+import BrowserGif from "../../../../public/Gif/browserGifBg.gif"
 
 const browserCompanion = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -37,7 +39,14 @@ const browserCompanion = () => {
         minW={"100%"}
         display={"flex"}
         flexDirection={"column"}
+        pos={'relative'}
       >
+      <Box display={{base:'none',md:'block'}}>
+        <Image src={BrowserGif} alt="BrowserGif" style={{position:'absolute', top:'0px',zIndex:'-10',width:'100%',height:'40rem'}}/>
+      </Box> 
+      <Box display={{base:'block',md:'none'}}>
+        <Image src={BrowserGif} alt="BrowserGif" style={{position:'absolute', top:'55px',zIndex:'-10',width:'100%',height:'16rem'}}/>
+      </Box>
         <Box
           alignItems={"center"}
           w={"100%"}
@@ -45,6 +54,8 @@ const browserCompanion = () => {
           flexDirection={"column"}
           mt={{ base: "3rem" }}
         >
+         
+
           <Heading
             fontWeight={"700"}
             lineHeight={{ md: "255.6px", base: "60px" }}
@@ -457,9 +468,15 @@ const browserCompanion = () => {
 
         </HStack>
 
-        <Stack margin={{ md: "10rem", base: "3.5rem" }}>
-          <VStack px={{ md: "10rem", base: "0rem" }}>
-            {/* GIF Pending */}
+        <Stack margin={{ md: "10rem", base: "3.5rem" }} position={'relative'}>
+        <Box display={{base:'none',md:'block'}}>
+          <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'40rem'}}/>
+        </Box> 
+        <Box display={{base:'block',md:'none'}}>
+        <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'13rem'}}/>
+        </Box>
+          <VStack px={{ md: "10rem", base: "0rem" }} >
+           
             <Heading
               textAlign={"center"}
               className="gradient"

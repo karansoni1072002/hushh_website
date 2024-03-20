@@ -44,6 +44,8 @@ import ControlOver from "../../_components/svg/controlOver";
 import RedifiningIcon from "../../_components/svg/redifiningIcon";
 import AppleIcon from "../../_components/svg/icons/appleIcon";
 import PlayStoreIcon from "../../_components/svg/icons/playStoreIcon"; 
+import BrandWalletMobile from "../../../../public/Images/BrandWalletMobile.png";
+import WalletFaq from "../../_components/features/faq/walletAppFaq";
 
 const BrandContainer = styled.div`
   display: flex;
@@ -297,7 +299,7 @@ const hushhWalletApp = () => {
             <Image src={HushhWalletBg} alt="HushhWalletBg" />
           </Box>
     </Stack>
-    <VStack mb={'5rem'}  gap={{md:'1.25rem', base:'0.75rem'}} mt={{md:'-18rem', base:'1.5ren'}} textAlign={'left'}>
+    <VStack mb={{ md:'15rem', base:'5rem'}}  gap={{md:'1.25rem', base:'0.75rem'}} mt={{md:'-18rem', base:'1.5ren'}} textAlign={'left'}>
         <Heading px={{md:'5rem', base:'1.25rem'}} mr={{md:'40%'}} fontWeight={'400'} className="gradient" fontSize={{md:'3.75rem', base:'1.75rem'}} lineHeight={{md:'63.3px', base:'43px'}}>Personalized Experiences, Rewarded Interactions</Heading>
         <Text px={{md:'5rem', base:'1.25rem'}} mr={{md:'40%'}} color={'#ABABAB'} fontWeight={'500'} lineHeight={{md:'36px', base:'24px'}} fontSize={{ md:'1rem', base:'0.75rem'}}>Gone are the days of irrelevant ads and generic recommendations. Hushh allows you to create data cards containing specific information you're comfortable sharing. Now, you can</Text>
         <Container
@@ -369,12 +371,19 @@ const hushhWalletApp = () => {
                      PLAY STORE
                  </Button>
                 </HStack> 
+                <Box pos={'absolute'} right={'7%'} top={-5} boxSize={'30%'}>
+                     <Image src={BrandWalletMobile}  alt="BrandWalletMobile" />
+                </Box>
                  
             </Box>
         
         </Container>
         
     </VStack>
+
+    
+    <WalletFaq/>
+
       
     </>
   );

@@ -14,7 +14,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useResponsiveSizes } from "../../context/responsive";
 import { teamImages } from "../svg/aboutImages/TeamImages/teamImages";
-import ContactForm from './contactForm'
 
 const TeamSection = () => {
   const isMobile = useResponsiveSizes;

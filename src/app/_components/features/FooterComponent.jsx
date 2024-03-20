@@ -74,12 +74,11 @@ const FooterComponent = () => {
 
                 <div className="flex justify-between leading-5 py-7 px-32 bg-gradient-to-r from-gradientColor2 to-gradientColor1">
                     <div className="">
-                        <p>© 2024 Hush1One Inc. All rights reserved.</p>
+                        <p>© 2024 HushOne Inc. All rights reserved.</p>
                     </div>
                     <div className="flex gap-9 ">
                         <Link href='#'>Terms of Service</Link>
                         <Link href='#'>Privacy Policy</Link>
-                        {/* <Link href='#'>Cookies</Link> */}
                     </div>
                 </div>
             </div>

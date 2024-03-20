@@ -13,7 +13,6 @@ import extendedTheme from "../../theme";
 import { animateScroll as scroll } from "react-scroll";
 import Image from "next/image";
 import LouiWalletBg from "../../_components/svg/louiVuittonWallet.svg";
-import { BrandSlider } from "../../_components/features/brandSlider";
 import styled from "styled-components";
 import Marquee from "react-fast-marquee";
 import Gucci from "../../_components/svg/images/Gucci";
@@ -135,24 +134,24 @@ const hushhWalletApp = () => {
         </Heading>
         <Divider border={'2px solid'} className="walletDivider"  h={'1px'}  w={"90%"}/>
         <Marquee
-          pauseOnHover="true"
+          pauseOnHover
           style={{ position: "relative", overflow: "hidden" }}
         >
           <BrandContainer>
-            <Accor key={1} width={50} height={50} />
-            <Aws key={2} width={50} height={50} />
-            <Brand1 key={3} width={50} height={50} />
-            <Brand2 key={4} width={50} height={50} />
-            <Chalhoub key={5} width={50} height={50} />
-            <Citadium key={6} width={50} height={50} />
-            <Costco key={7} width={50} height={50} />
-            <Fourseasons key={8} width={50} height={50} />
-            <Google key={9} width={50} height={50} />
-            <Gucci key={10} width={50} height={50} />
-            <Laredoute key={11} width={50} height={50} />
-            <Lvtetia key={12} width={50} height={50} />
-            <Microsoft key={13} width={50} height={50} />
-            <Nordstrom key={14} width={50} height={50} />
+            <Accor key={1} />
+            <Aws key={2}/>
+            <Brand1 key={3}/>
+            <Brand2 key={4} />
+            <Chalhoub key={5} />
+            <Citadium key={6} />
+            <Costco key={7}  />
+            <Fourseasons key={8}/>
+            <Google key={9} />
+            <Gucci key={10} />
+            <Laredoute key={11} />
+            <Lvtetia key={12} />
+            <Microsoft key={13} />
+            <Nordstrom key={14} />
           </BrandContainer>
         </Marquee>
         <Divider border={'2px solid'} className="walletDivider" w={"90%"} h={"1px"} />

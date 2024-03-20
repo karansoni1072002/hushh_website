@@ -353,7 +353,7 @@ export default function Home() {
                 textAlign={'center'}
                 description="Helps you collect and share data with trusted brands​"
                 onClick={() =>
-                  router.push("https://hushhwallet.framer.ai/")
+                  router.push("/products/hushhWalletApp")
                 }
               />
               <ServiceCard

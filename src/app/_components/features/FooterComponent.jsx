@@ -37,7 +37,7 @@ const FooterComponent = () => {
                             <p className='text-base font-medium opacity-80 leading-6'>Our Products</p>
                             <div className="flex flex-col text-lg gap-5 leading-5">
                                 <Link href='/products/hushhButton'>Hushh Button</Link>
-                                <Link href='/products/walletApp'>Hushh Wallet App</Link>
+                                <Link href='/products/hushhWalletApp'>Hushh Wallet App</Link>
                                 <Link href='/products/vibeSearch'>Vibe Search</Link>
                                 <Link href='/products/browserCompanion'>Browser Companion</Link>
                                 <Link href='/products/conciergeApp'>Concierge App​</Link>
@@ -100,7 +100,7 @@ const FooterComponent = () => {
                             <p className='text-sm font-medium opacity-80 leading-6'>Our Products</p>
                             <div className="flex flex-col text-base gap-2 leading-5">
                                 <Link href='/products/hushhButton'>Hushh Button</Link>
-                                <Link href='/products/walletApp'>Hushh Wallet App</Link>
+                                <Link href='/products/hushhWalletApp'>Hushh Wallet App</Link>
                                 <Link href='/products/vibeSearch'>Vibe Search</Link>
                                 <Link href='/products/browserCompanion'>Browser Companion</Link>
                                 <Link href='/products/conciergeApp'>Concierge App​</Link>

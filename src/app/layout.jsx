@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       <script src="https://mediafiles.botpress.cloud/fbf5d1e1-066c-4f35-a420-7128eae2130c/webchat/config.js" defer></script>
 
         <ResponsiveSizeProvider>
-          <header className='h-full w-full absolute z-50'>
+          <header className='h-[90px] w-full absolute z-50'>
             <HeaderComponent />
           </header>
           <div className="">

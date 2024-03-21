@@ -2,6 +2,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import HushhHeaderLogo from "./svg/hushhHeaderLogo";
 import Link from "next/link";
+import {Link as ScrollLink} from 'react-scroll'
+
 import { Button, Container } from "@chakra-ui/react";
 import theme from "../theme";
 import { useResponsiveSizes } from "../context/responsive";
@@ -93,9 +95,9 @@ const Header = () => {
               <Link href="https://sites.google.com/hush1one.com/drops/home">
                 LABS
               </Link>
-              <div to="contact-form" smooth onClick={scrollToContactForm} style={{cursor:'pointer'}}>
+              <ScrollLink to="contact-form" smooth={true} spy={true} duration={7000} onClick={scrollToContactForm} style={{cursor:'pointer'}}>
                 CONTACT US
-              </div>
+              </ScrollLink>
             </div>
             {
               productsSubmenu &&
@@ -337,11 +339,11 @@ const Header = () => {
               >
                 LABS
               </Link>
-              <div  to="contact-form" smooth onClick={() => { setIsMenuOpen(false); scrollToContactForm(); }}
-                               className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
+              <ScrollLink to="contact-form" spy={true} smooth={true} duration={7000} onClick={() => { setIsMenuOpen(false); scrollToContactForm(); }}
+                    className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
               >
                 CONTACT US
-              </div>
+              </ScrollLink>
               <Link
                 href="/"
                 className="py-2 w-1/2 border border-myBorder border-t-0 bg-black rounded-b"

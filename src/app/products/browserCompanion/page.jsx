@@ -42,10 +42,10 @@ const browserCompanion = () => {
         pos={'relative'}
       >
         <Box display={{ base: 'none', md: 'block' }}>
-          <Image src={BrowserGif} alt="BrowserGif" style={{ position: 'absolute', top: '0px', zIndex: '-10', width: '100%', height: '40rem' }} />
+          <Image src={BrowserGif} alt="BrowserGif" style={{ position: 'absolute', top: '0px', zIndex: '-10', width: '100%', height: '40rem', filter: 'grayscale(100%)'}} />
         </Box>
         <Box display={{ base: 'block', md: 'none' }}>
-          <Image src={BrowserGif} alt="BrowserGif" style={{ position: 'absolute', top: '55px', zIndex: '-10', width: '100%', height: '16rem' }} />
+          <Image src={BrowserGif} alt="BrowserGif" style={{ position: 'absolute', top: '55px', zIndex: '-10', width: '100%', height: '16rem',filter: 'grayscale(100%)' }} />
         </Box>
         <Box
           alignItems={"center"}

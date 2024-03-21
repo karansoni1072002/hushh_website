@@ -41,12 +41,12 @@ const browserCompanion = () => {
         flexDirection={"column"}
         pos={'relative'}
       >
-      <Box display={{base:'none',md:'block'}}>
-        <Image src={BrowserGif} alt="BrowserGif" style={{position:'absolute', top:'0px',zIndex:'-10',width:'100%',height:'40rem'}}/>
-      </Box> 
-      <Box display={{base:'block',md:'none'}}>
-        <Image src={BrowserGif} alt="BrowserGif" style={{position:'absolute', top:'55px',zIndex:'-10',width:'100%',height:'16rem'}}/>
-      </Box>
+        <Box display={{ base: 'none', md: 'block' }}>
+          <Image src={BrowserGif} alt="BrowserGif" style={{ position: 'absolute', top: '0px', zIndex: '-10', width: '100%', height: '40rem' }} />
+        </Box>
+        <Box display={{ base: 'block', md: 'none' }}>
+          <Image src={BrowserGif} alt="BrowserGif" style={{ position: 'absolute', top: '55px', zIndex: '-10', width: '100%', height: '16rem' }} />
+        </Box>
         <Box
           alignItems={"center"}
           w={"100%"}
@@ -54,7 +54,7 @@ const browserCompanion = () => {
           flexDirection={"column"}
           mt={{ base: "3rem" }}
         >
-         
+
 
           <Heading
             fontWeight={"700"}
@@ -80,7 +80,8 @@ const browserCompanion = () => {
           <Button
             border={"1px solid #606060"}
             borderRadius={"2px"}
-            w={{ md: "16rem", base: "10rem" }}
+            w={{ md: "16.25rem", base: "10rem" }}
+            h={{ md: "3.75rem", base: "2.5rem" }}
             color={extendedTheme.colors._white}
             lineHeight={{ md: "28px", base: "14px" }}
             background={"transparent"}
@@ -139,7 +140,7 @@ const browserCompanion = () => {
             </Text>
           </Box>
           <Button
-            ml={{ md: "55rem" }}
+            ml={{ md: "62.375rem" }}
             display={{ md: "flex", base: "none" }}
             border={"1px solid #606060"}
             borderRadius={"4rem"}
@@ -409,12 +410,12 @@ const browserCompanion = () => {
               fontWeight={"600"}
               fontSize={"1rem"}
             >
-              Convenient
+              CONVENIENT
             </Text>
             <Text
               className="gradient"
               fontSize={{ md: "3.75rem", base: "1.75rem" }}
-              fontWeight={"400"}
+              fontWeight={"700"}
               lineHeight={{ md: "83.3px", base: "41.2px" }}
             >
               Wallet Integration
@@ -449,7 +450,8 @@ const browserCompanion = () => {
             <Button
               border={"3px solid #606060"}
               borderRadius={"2px"}
-              w={"16rem"}
+              w={"16.25rem"}
+              h={"3.125rem"}
               color={extendedTheme.colors._white}
               lineHeight={"28px"}
               background={"transparent"}
@@ -469,14 +471,14 @@ const browserCompanion = () => {
         </HStack>
 
         <Stack margin={{ md: "10rem", base: "3.5rem" }} position={'relative'}>
-        <Box display={{base:'none',md:'block'}}>
-          <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'40rem'}}/>
-        </Box> 
-        <Box display={{base:'block',md:'none'}}>
-        <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'13rem'}}/>
-        </Box>
+          <Box display={{ base: 'none', md: 'block' }}>
+            <Image src={BgAnimation} alt="BgAnimation" style={{ position: 'absolute', top: '-15px', zIndex: '-10', width: '100%', height: '40rem' }} />
+          </Box>
+          <Box display={{ base: 'block', md: 'none' }}>
+            <Image src={BgAnimation} alt="BgAnimation" style={{ position: 'absolute', top: '-15px', zIndex: '-10', width: '100%', height: '13rem' }} />
+          </Box>
           <VStack px={{ md: "10rem", base: "0rem" }} >
-           
+
             <Heading
               textAlign={"center"}
               className="gradient"

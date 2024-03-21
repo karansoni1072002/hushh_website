@@ -314,7 +314,7 @@ export default function Home() {
           >
             PRODUCT SHOWCASE
           </Heading>
-          <Text
+          <Box
             align={"center"}
             lineHeight={{ md: "63.3px" }}
             pl={{ md: "16rem" }}
@@ -325,8 +325,8 @@ export default function Home() {
             flexDirection={'row'}
             fontSize={{ md: "3.75rem", base: "1.5rem" }}
           >
-            Technology For {" "} <span style={{fontWeight:'700',display:'flex', marginLeft:'1rem'}}> Everyone!</span> 
-          </Text>
+            Technology For <Text fontWeight ='700' display='flex'  marginLeft={{ md:'1rem'}}> Everyone!</Text> 
+          </Box>
           <Text
             className="description"
             textAlign={"center"}

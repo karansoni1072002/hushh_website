@@ -154,15 +154,18 @@ const BrandWalletSection = () => {
           className="gradient-bg"
           // display={{base:'none', md:'flex'}}
         >
-          <VStack align={"left"} px={"2rem"} pt={"2rem"} gap={"1.6rem"}>
+          <VStack align={"left"} px={"2rem"} pt={"2rem"} gap={"1.6rem"} position={'relative'}>
             <Heading fontSize={"20px"} color={extendedTheme.colors._white}>
               iOS & ANDROID APP
             </Heading>
             <Text color={extendedTheme.colors._white}>
             Experience the convenience of managing your digital life with Hushh, available on both iOS and Android.
             </Text>
-            <Box align={"center"} mt={"1.40rem"}>
-              <NextImage src={BrandWalletMobile} />
+            <Box display={{md:'block', base:'none'}} align={"center"} mt={"1.40rem"}>
+              <NextImage src={BrandWalletMobile} style={{position:'absolute', top:'110.7%'}} />
+            </Box>
+            <Box align={"center"} display={{md:'none', base:'block'}} mt={"1.40rem"}>
+               <NextImage src={BrandWalletMobile} />
             </Box>
           </VStack>
         </Box>

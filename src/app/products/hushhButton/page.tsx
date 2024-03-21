@@ -83,7 +83,8 @@ const hushhButton = () => {
           <Button
             border={"1px solid #606060"}
             borderRadius={"2px"}
-            w={{ md: "16rem", base: "10rem" }}
+            w={{ md: "16.25rem", base: "10rem" }}
+            h={{ md: "3.75rem", base: "2.5rem" }}
             color={extendedTheme.colors._white}
             lineHeight={{ md: "28px", base: '14px' }}
             background={"transparent"}
@@ -368,7 +369,8 @@ const hushhButton = () => {
             <Button
               border={"1px solid #606060"}
               borderRadius={"2px"}
-              w={{ md: "16rem", base: "10rem" }}
+              w={{ md: "16.25rem", base: "10rem" }}
+              h={{ md: "3.75rem", base: "2.5rem" }}
               color={extendedTheme.colors._white}
               lineHeight={{ md: "28px", base: '14px' }}
               background={"transparent"}
@@ -456,7 +458,8 @@ const hushhButton = () => {
             <Button
               border={"1px solid #606060"}
               borderRadius={"2px"}
-              w={{ md: "16rem", base: "10rem" }}
+              w={{ md: "16.25rem", base: "10rem" }}
+              h={{ md: "3.75rem", base: "2.5rem" }}
               color={extendedTheme.colors._white}
               lineHeight={{ md: "28px", base: '14px' }}
               background={"transparent"}
@@ -648,13 +651,13 @@ const hushhButton = () => {
           </VStack>
         </Stack>
 
-        <Stack mx={{ md: "10rem", base: "3.5rem" }} mt={{base:'3.5rem', md:'10rem'}} mb={{base:'2.5rem',md:'15rem'}} position={'relative'}>
-        <Box display={{base:'none',md:'block'}}>
-        <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'40rem'}}/>
-        </Box> 
-        <Box display={{base:'block',md:'none'}}>
-        <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'13rem'}}/>
-        </Box>  
+        <Stack mx={{ md: "10rem", base: "3.5rem" }} mt={{ base: '3.5rem', md: '10rem' }} mb={{ base: '2.5rem', md: '15rem' }} position={'relative'}>
+          <Box display={{ base: 'none', md: 'block' }}>
+            <Image src={BgAnimation} alt="BgAnimation" style={{ position: 'absolute', top: '-15px', zIndex: '-10', width: '100%', height: '40rem' }} />
+          </Box>
+          <Box display={{ base: 'block', md: 'none' }}>
+            <Image src={BgAnimation} alt="BgAnimation" style={{ position: 'absolute', top: '-15px', zIndex: '-10', width: '100%', height: '13rem' }} />
+          </Box>
 
           <VStack px={{ md: "10rem", base: "0rem" }} >
             <Heading
@@ -685,15 +688,15 @@ const hushhButton = () => {
           pb={{ base: "3rem", md: "6rem" }}
           px={{ md: "10rem", base: "1rem" }}
           gap={{ md: "5rem", base: '1.25rem' }}
-          mt={{md:'5rem', base:'2rem'}}
+          mt={{ md: '5rem', base: '2rem' }}
         >
           <VStack gap={{ md: "2rem", base: '0.5rem' }} alignItems={"flex-start"} textAlign={"left"}>
-          <Box display={{md:'block', base:'none'}}>
-            <Image src={Slogo} alt="sLogo" style={{width:'120px', height:'160px'}} />
-          </Box>  
-          <Box display={{md:'none', base:'block'}}>
-            <Image src={Slogo} alt="sLogo" style={{width:'90px', height:'110px'}} />
-          </Box> 
+            <Box display={{ md: 'block', base: 'none' }}>
+              <Image src={Slogo} alt="sLogo" style={{ width: '120px', height: '160px' }} />
+            </Box>
+            <Box display={{ md: 'none', base: 'block' }}>
+              <Image src={Slogo} alt="sLogo" style={{ width: '90px', height: '110px' }} />
+            </Box>
 
             <Heading
               fontWeight={"400"}
@@ -715,12 +718,12 @@ const hushhButton = () => {
             </Text>
           </VStack>
           <VStack alignItems={"flex-start"} textAlign={"left"} gap={{ md: "2rem", base: '0.5rem' }}>
-         <Box display={{md:'block', base:'none'}}>
-             <Image src={DataRetrievalMade} alt="DataRetrievalMade" style={{width:'120px', height:'160px'}} />
-          </Box>  
-          <Box display={{md:'none', base:'block'}}>
-             <Image src={DataRetrievalMade} alt="DataRetrievalMade" style={{width:'90px', height:'110px'}} />
-          </Box> 
+            <Box display={{ md: 'block', base: 'none' }}>
+              <Image src={DataRetrievalMade} alt="DataRetrievalMade" style={{ width: '120px', height: '160px' }} />
+            </Box>
+            <Box display={{ md: 'none', base: 'block' }}>
+              <Image src={DataRetrievalMade} alt="DataRetrievalMade" style={{ width: '90px', height: '110px' }} />
+            </Box>
             <Heading
               fontWeight={"400"}
               fontSize={{ md: "3.75rem", base: "1.25rem" }}

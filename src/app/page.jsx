@@ -135,20 +135,21 @@ export default function Home() {
             fontWeight={600}
             letterSpacing={"0.25rem"}
             fontSize={"1rem"}
+            mb={{md:'1.25rem'}}
           >
             BRANDS WE WORK WITH
           </Heading>
           <Text
             align={"center"}
-            lineHeight={{ md: "4rem", base: '2rem' }}
-            pl={{ md: "16rem", base: '2rem' }}
-            pr={{ md: "16rem", base: '2rem' }}
+            lineHeight={{ md: "63.3px", base: '2rem' }}
+            pl={{ md: "12rem", base: '2rem' }}
+            pr={{ md: "12rem", base: '2rem' }}
             color={theme.colors.secondary}
             fontWeight={"300"}
             fontSize={{ md: "3.75rem", base: "1rem" }}
           >
             Discover the brands that {"  "}
-            <span className="trust-text bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+            <span style={{lineHeight:'63.3px'}} className="trust-text bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
               trust us
             </span>{" "}
             to unlock the potential of their customer data
@@ -164,10 +165,12 @@ export default function Home() {
           alignItems={{ base: "center", md: "flex-start" }}
           pt={{ md: "10rem", base: "6rem" }}
           justifyContent="space-between"
-          gap="5rem"
+          gap="8rem"
+          px={{md:'3rem'}}
+          
         >
           {/* Left side box */}
-          <Box flex="1" bg={extendedTheme.colors._black} display={{ base: "none", md: "block" }}>
+          <Box position={'relative'} flex="1" bg={extendedTheme.colors._black} display={{ base: "none", md: "block" }}>
             <NextImage
               src={LouisVuitton}
               alt="Louis Vuitton"
@@ -195,8 +198,8 @@ export default function Home() {
             <NextImage
               style={{
                 position: "absolute",
-                top: "1590.75px",
-                left: "40px",
+                top: "200.67px",
+                left: "100px",
                 zIndex: "1",
                 rotate: "10.02",
               }}
@@ -207,7 +210,7 @@ export default function Home() {
             />
           </Box>
           {/* Right side box */}
-          <VStack alignItems={{ md: "left", base: "" }} textAlign={{ md: "left", base: "center" }} flex="1">
+          <VStack alignItems={{ md: "left", base: "" }} mr={{md:'2rem'}} textAlign={{ md: "left", base: "center" }} flex="1">
             <Text
               className="color-gradient"
               fontWeight={600}
@@ -234,7 +237,7 @@ export default function Home() {
               experiences.
             </Text>
 
-            <Box pt={{ md: '40px', base: '20px' }} width={'100%'} px={{ base: '1.25rem' }} justifyContent={{ base: 'space-between' }} display={"flex"} gap={{ md: "4rem" }}>
+            <Box pt={{ md: '40px', base: '20px' }} width={'100%'} pr={{ base: '1.25rem' }} justifyContent={{ base: 'space-between' }} display={"flex"} gap={{ md: "4rem" }}>
               <VStack maxW={{ md: '290px' }} textAlign={'left'} alignItems={'left'}>
                 <HStack gap={{ md: "2rem" }}>
                   <ShieldIcon />
@@ -272,7 +275,7 @@ export default function Home() {
                 </Text>
               </VStack>
             </Box>
-            <VStack px={'1.25rem'} alignContent={'left'} mt={'1.5rem'} textAlign={'left'} alignItems={'left'}>
+            <VStack pr={'1.25rem'} alignContent={'left'} mt={'1.5rem'} textAlign={'left'} alignItems={'left'}>
               <HStack gap={"1rem"}>
                 <LockIcon />
                 <Text

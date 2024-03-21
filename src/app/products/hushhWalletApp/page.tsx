@@ -670,7 +670,7 @@ const hushhWalletApp = () => {
                 PLAY STORE
               </Button>
             </HStack>
-            <Box pos={"absolute"} right={"7%"} top={-5} boxSize={"30%"}>
+            <Box pos={"absolute"} right={"7%"} bottom={0} >
               <Image src={BrandWalletMobile} alt="BrandWalletMobile" />
             </Box>
           </Box>
@@ -683,14 +683,15 @@ const hushhWalletApp = () => {
         display={{ md: "none", base: "flex" }}
         flexDirection={"column"}
         position={"relative"}
-        p={"0.75rem"}
+        px={"0.75rem"}
+        pt={'0.75rem'}
       >
         <Heading
           mb={{ base: "0.5rem" }}
           color={"#0D0D25"}
           fontSize={{ base: "1.25rem" }}
           lineHeight={{ base: "35px" }}
-          fontWeight={"400"}
+          fontWeight={"500"}
         >
           Enter a world made for you
         </Heading>
@@ -743,7 +744,7 @@ const hushhWalletApp = () => {
         >
           <Image
             src={BrandWalletMobile}
-            style={{ position: "relative", height: "30%", width: "40%" }}
+            style={{ position: "relative", height: "30%",bottom:'0', width: "40%" }}
             alt="BrandWalletMobile"
           />
         </Box>

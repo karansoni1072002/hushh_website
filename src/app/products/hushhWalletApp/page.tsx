@@ -307,7 +307,7 @@ const hushhWalletApp = () => {
         <Text color={'#ABABAB'} fontWeight={'400'} lineHeight={{md:'32.4px', base:'24px'}} fontSize={{md:'1.125rem', base:'0.8rem'}}>With Hushh, you become the curator of your own identity. You choose what information to include, building a comprehensive profile that reflects your true self.</Text>
     </VStack>
       <Box flex={1} display={{base:'none', md:'flex'}} alignSelf={'flex-start'} justifyItems={'flex-start'} justifySelf={'flex-start'} alignItems={'flex-start'} alignContent={'flex-start'} justifyContent={'flex-start'}>
-        <Image src={HushhEmojiColoured} alt="HushhEmojiColoured" />
+        <Image src={HushhEmojiColoured} alt="HushhEmojiColoured" style={{filter: 'grayscale(100%)'}} />
       </Box>
     </HStack>
 

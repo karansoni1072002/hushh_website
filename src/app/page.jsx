@@ -310,19 +310,22 @@ export default function Home() {
             fontWeight={600}
             letterSpacing={"0.25rem"}
             fontSize={"1rem"}
+            lineHeight={'1rem'}
           >
             PRODUCT SHOWCASE
           </Heading>
           <Text
             align={"center"}
-            lineHeight={{ md: "6rem" }}
+            lineHeight={{ md: "63.3px" }}
             pl={{ md: "16rem" }}
             pr={{ md: "16rem" }}
             className="gradient"
             fontWeight={"300"}
+            display={"flex"}
+            flexDirection={'row'}
             fontSize={{ md: "3.75rem", base: "1.5rem" }}
           >
-            Technology For Everyone!
+            Technology For {" "} <span style={{fontWeight:'700',display:'flex', marginLeft:'1rem'}}> Everyone!</span> 
           </Text>
           <Text
             className="description"

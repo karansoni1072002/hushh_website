@@ -53,15 +53,12 @@ import WhiteShadow from "../../_components/svg/whiteShadow.svg";
 const BrandContainer = styled.div`
   display: flex;
   gap: 8rem; /* Adjust the gap as needed */
-  padding: 20px; /* Adjust the padding as needed */
-  margin-top: 1rem;
-
+  padding: 10px; /* Adjust the padding as needed */
 
 
   @media screen and (max-width: 768px) {
     gap: 4rem;
     padding: 5px;
-    margin-top: 1rem;
   }
 `;
 

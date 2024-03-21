@@ -30,9 +30,10 @@ export default function ContactForm() {
 
   return (
     <>
-      <div className="relative">
+      <div className="relative"  id="contact-form">
         <div className="relative z-10">
           <Container
+            id="contact-form"
             maxW={{ md: "74rem" }}
             height={{ md: "667px" }}
             p={"1rem"}
@@ -89,7 +90,7 @@ export default function ContactForm() {
         </Box>
 
             {/* Contact Form */}
-            <Box p={{ md: "4rem", base: '1rem' }} flex={1.75} display={"flex"}>
+            <Box  p={{ md: "4rem", base: '1rem' }} flex={1.75} display={"flex"}>
               <form onSubmit={handleSubmit(onSubmit)} style={{ color: "white" }}>
                 <HStack display={{ base: 'block', md: 'flex' }} flexDirection={{ base: 'column', md: 'row' }} gap={{ md: "2rem", base: '1rem' }} mb={{ md: "2rem", base: '1rem' }}>
                   <Stack gap={{ md: "1rem", base: '0.5rem' }} mb={{ base: '1rem' }}>

@@ -35,6 +35,7 @@ const TeamSection = () => {
                 fontWeight={"400"}
                 fontSize={{ base: "2.5rem", md: "3.75rem" }}
                 lineHeight={"63.3px"}
+                textAlign={{base:'center'}}
               >
                 Our Team Leader
               </Heading>

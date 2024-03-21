@@ -17,12 +17,28 @@ import ConciergeApp from "./svg/conciergeApp";
 import ValetChat from "./svg/valetChat";
 import VibeSearchApi from "./svg/vibeSearchApi";
 import { headerAssets } from './svg/icons/HeaderIcons/headerAssets'
+import { animateScroll as scroll } from "react-scroll";
 
 const Header = () => {
   const { isMobile } = useResponsiveSizes();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsSubmenu, setProductsSubmenu] = useState(false)
   const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false)
+
+  const scrollToContactForm = () => {
+    window.scrollTo({
+      top: document.getElementById('contact-form').offsetTop,
+      behavior: 'smooth',
+    });
+  };
+
+  const scrollTo = () => {
+    scroll.scrollTo(7500);
+  };
+
+  const scrollInMobile = () => {
+    scroll.scrollTo(3350);
+  };
 
   const handleMenuIconToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -77,9 +93,9 @@ const Header = () => {
               <Link href="https://sites.google.com/hush1one.com/drops/home">
                 LABS
               </Link>
-              <Link href="/contact">
+              <div to="contact-form" smooth onClick={scrollToContactForm} style={{cursor:'pointer'}}>
                 CONTACT US
-              </Link>
+              </div>
             </div>
             {
               productsSubmenu &&
@@ -321,13 +337,11 @@ const Header = () => {
               >
                 LABS
               </Link>
-              <Link
-                href="https://www.linkedin.com/company/hushh-ai/jobs"
-                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
-                onClick={() => setIsMenuOpen(false)}
+              <div  to="contact-form" smooth onClick={() => { setIsMenuOpen(false); scrollToContactForm(); }}
+                               className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
               >
                 CONTACT US
-              </Link>
+              </div>
               <Link
                 href="/"
                 className="py-2 w-1/2 border border-myBorder border-t-0 bg-black rounded-b"

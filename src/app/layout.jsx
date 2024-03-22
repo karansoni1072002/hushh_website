@@ -18,10 +18,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body style={{backgroundColor:'black'}} className={`${mulish.variable} font-sans`} >
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>    
+<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>    
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"/>
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
       <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"/>
       <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
       <script src="https://mediafiles.botpress.cloud/fbf5d1e1-066c-4f35-a420-7128eae2130c/webchat/config.js" defer></script>

@@ -84,18 +84,18 @@ const Header = () => {
         ) : (
           <div className="w-max">
             <div className="text-white flex justify-between gap-20 px-7 ">
-              <Link href="/" style={{zIndex:'1000'}}>HOME</Link>
-              <Link href="/about" style={{zIndex:'1000'}}>
+              <Link href="/" style={{zIndex:'1000'}} onMouseEnter={() => setProductsSubmenu(false)}>HOME</Link>
+              <Link href="/about" style={{zIndex:'1000'}} onMouseEnter={() => setProductsSubmenu(false)}>
                 ABOUT US
               </Link>
               <Link href="#" className="flex items-center gap-2 group" onMouseEnter={() => setProductsSubmenu(true)}>
                 PRODUCTS
                 <ChevronArrowIcon className='group-hover:rotate-0 rotate-180 transition-all duration-300' />
               </Link>
-              <Link href="https://hushh-labs.github.io/hushh-labs-blog/">
+              <Link href="https://hushh-labs.github.io/hushh-labs-blog/" onMouseEnter={() => setProductsSubmenu(false)}>
                 LABS
               </Link>
-              <ScrollLink to="contact-form" smooth={true} spy={true} duration={7000} onClick={scrollToContactForm} style={{cursor:'pointer'}}>
+              <ScrollLink to="contact-form" smooth={true} spy={true} duration={7000} onMouseEnter={() => setProductsSubmenu(false)} onClick={scrollToContactForm} style={{cursor:'pointer'}}>
                 CONTACT US
               </ScrollLink>
             </div>

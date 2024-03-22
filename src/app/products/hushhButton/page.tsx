@@ -77,8 +77,7 @@ const hushhButton = () => {
             color={"#656565"}
           >
             Imagine a world where shopping feels effortless and tailored just
-            for you. Hushh Button, a powerful plugin, bridges the gap between
-            your identity and your favorite brands.
+            for you. Hushh Button, a powerful plugin, bridges the gap between your preferences/choices/needs/likes and your favourite brands.
           </Text>
           <Button
             border={"1px solid #606060"}
@@ -324,7 +323,7 @@ const hushhButton = () => {
           >
             <Box display={{ base: "flex", md: "none" }} gap={"1rem"}>
               <Heading className="gradient">
-                <Text fontSize={{ md: "2rem", base: "1.5rem" }}>Hushh For</Text>
+                <Text fontSize={{ md: "2rem", base: "1.5rem" }}>Hushh Button For</Text>
                 <Text fontSize={{ md: "3.75rem", base: "2rem" }}>
                   Customers
                 </Text>
@@ -341,7 +340,7 @@ const hushhButton = () => {
               display={{ md: "flex", base: "none" }}
               flexDirection={"column"}
             >
-              <Text fontSize={{ md: "2rem", base: "1.5rem" }}>Hushh For</Text>
+              <Text fontSize={{ md: "2rem", base: "1.5rem" }}>Hushh Button For</Text>
               <Text fontSize={{ md: "3.75rem", base: "2rem" }}>Customers</Text>
             </Heading>
 
@@ -421,7 +420,7 @@ const hushhButton = () => {
                 alt="hushhButtonCircle"
               />
               <Heading className="gradient">
-                <Text fontSize={{ md: "2rem", base: "1.5rem" }}>Hushh For</Text>
+                <Text fontSize={{ md: "2rem", base: "1.5rem" }}>Hushh Button For</Text>
                 <Text fontSize={{ md: "3.75rem", base: "2rem" }}>Brands</Text>
               </Heading>
             </HStack>
@@ -431,7 +430,7 @@ const hushhButton = () => {
               display={{ md: "flex", base: "none" }}
               flexDirection={{ md: 'column' }}
             >
-              <Text fontSize={{ md: "2rem", base: "1.5rem" }}>Hushh For</Text>
+              <Text fontSize={{ md: "2rem", base: "1.5rem" }}>Hushh Button For</Text>
               <Text fontSize={{ md: "3.75rem", base: "2rem" }}>Brands</Text>
             </Heading>
             <UnorderedList

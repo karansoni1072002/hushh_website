@@ -63,31 +63,30 @@ const HushhCoinUiBox = () => {
             w="100%"
             mt={{ base: "1rem", md: "2rem" }}
           >
-            <Box display="flex" gap={"1rem"} alignItems="center">
-              <MarketIcon />
-              <Text color={extendedTheme.colors._white}>
-                Lowest fees in market
-              </Text>
+            <Box alignItems={'center'} textAlign={'left'} flexDirection={'row'} color={extendedTheme.colors._white} display="flex" gap={"1rem"}>
+              <Box><MarketIcon /></Box>
+              <VStack textAlign={'left'} alignItems={'flex-start'} lineHeight={'1rem'}>
+                 <Text fontWeight={'700'}>Automatic Scanning</Text>
+                 <Text fontWeight={'400'} fontSize={'0.75rem'}>Scan your email inbox for receipts and invoices automatically, saving time.</Text>
+              </VStack> 
             </Box>
-            <Box
-              display="flex"
-              gap={"1rem"}
-              ml={{ md: "-0.5rem", base: "-0.5rem" }}
-              alignItems="center"
-            >
-              <BoltIcon />
-              <Text
-                ml={{ md: "-0.3rem", base: "-0.3rem" }}
-                color={extendedTheme.colors._white}
-              >
-                Fast & secure transactions
-              </Text>
+
+            <Box ml={{base:'-0.5rem', md:'0'}} alignItems={'center'} textAlign={'left'} flexDirection={'row'} color={extendedTheme.colors._white} display="flex" gap={{ md:"1.55rem", base:'0.55rem'}}>
+              <Box ml={'-0.5rem'} display={{md:'block', base:'none'}}><BoltIcon /></Box>
+              <Box  display={{md:'none', base:'block'}}><BoltIcon /></Box>
+              <VStack textAlign={'left'} ml={{md:'-1rem'}} alignItems={'flex-start'} lineHeight={'1rem'}>
+                 <Text fontWeight={'700'}>Smart Categorization</Text>
+                 <Text fontWeight={'400'} fontSize={'0.75rem'}>Organize receipts into specific digital wallet cards based on rules or preferences.</Text>
+              </VStack>
             </Box>
-            <Box display="flex" gap={"1rem"} alignItems="center">
-              <TransparentLock />
-              <Text ml={{ md: "0.5rem" }} color={extendedTheme.colors._white}>
-                256-bit secure encryption
-              </Text>
+
+            <Box alignItems={'center'} textAlign={'left'} flexDirection={'row'} color={extendedTheme.colors._white} display="flex" gap={"1.25rem"}>
+             <Box display={{md:'block',base:'none'}}> <TransparentLock /></Box>
+             <Box display={{md:'none',base:'block'}}> <TransparentLock /></Box>
+              <VStack textAlign={'left'} alignItems={'flex-start'} lineHeight={'1rem'}>
+                 <Text fontWeight={'700'}>Customization Options</Text>
+                 <Text fontWeight={'400'} fontSize={'0.75rem'}>Tailor the app to fit your needs and preferences seamlessly</Text>
+              </VStack>
             </Box>
           </VStack>
         </VStack>

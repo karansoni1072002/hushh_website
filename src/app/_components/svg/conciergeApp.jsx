@@ -28,8 +28,8 @@ const ConciergeApp = (props) => (
         y2="37.6651"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#E54D60" />
-        <stop offset="1" stop-color="#A342FF" />
+        <stop stopColor="#E54D60" />
+        <stop offset="1" stopColor="#A342FF" />
       </linearGradient>
       <clipPath id="clip0_1627_694">
         <rect

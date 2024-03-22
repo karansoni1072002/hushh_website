@@ -10,8 +10,8 @@ const VibeSearchApi = (props) => (
         </g>
         <defs>
             <linearGradient id="paint0_linear_1627_716" x1="75.4738" y1="31.619" x2="1.98753" y2="37.6651" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#E54D60" />
-                <stop offset="1" stop-color="#A342FF" />
+                <stop stopColor="#E54D60" />
+                <stop offset="1" stopColor="#A342FF" />
             </linearGradient>
             <clipPath id="clip0_1627_716">
                 <rect width="46" height="46" fill="white" transform="translate(17.5 16.9043)" />

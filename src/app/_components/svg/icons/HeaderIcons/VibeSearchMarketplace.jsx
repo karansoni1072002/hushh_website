@@ -10,8 +10,8 @@ export function VibeSearchMarketplace(props) {
             </g>
             <defs>
                 <linearGradient id="paint0_linear_1839_1013" x1="22.4921" y1="10.0003" x2="0.44626" y2="11.8141" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#E54D60" />
-                    <stop offset="1" stop-color="#A342FF" />
+                    <stop stopColor="#E54D60" />
+                    <stop offset="1" stopColor="#A342FF" />
                 </linearGradient>
                 <clipPath id="clip0_1839_1013">
                     <rect width="18" height="18" fill="white" transform="translate(3.32056 3.51459)" />

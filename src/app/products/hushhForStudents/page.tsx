@@ -144,10 +144,10 @@ const hushhForStudents = () => {
               fontWeight={"800"}
               fontSize={{ md: "2.8rem", base: "1.25rem" }}
             >
-              1.2b
+              86k
             </Text>
             <Text fontSize={{ md: "1rem", base: "0.75rem" }} fontWeight={"500"}>
-              Users
+              Followers
             </Text>
           </Box>
           <Button

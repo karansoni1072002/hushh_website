@@ -41,6 +41,8 @@ import ContactForm from "./_components/features/contactForm";
 import NotificationPopup from './_components/features/popupNotification'
 import ReviewSlider from "./_components/features/reviewSlider";
 import HfsLogo from "./_components/svg/hfsLogo"; 
+import HomeBg from "./_components/svg/homeBG.svg";
+import Image from "next/image";
 
 export default function Home() {
   const router = useRouter();
@@ -55,8 +57,15 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="bg-myBG  font-Figtree">
-      <div className="">
+    <div className="relative">
+      <Image
+        src={HomeBg}
+        alt="HomeBg"
+        objectFit="cover"
+        className="z-0 w-full"
+      />
+    <main className="bg-myBG  font-Figtree z-10">
+    <div className="absolute top-0 w-full z-10">
         {showPopup && <NotificationPopup message="Welcome! How can I help you today?" />}
         <Box pt={20} display={"flex"} px={{ base: "0.5rem", md: "32px" }}>
           <VStack
@@ -448,5 +457,6 @@ export default function Home() {
 
       </div>
     </main>
+    </div>
   );
 }

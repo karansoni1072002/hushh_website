@@ -65,8 +65,8 @@ const Header = () => {
     setIsMenuOpen(false)
   }
   return (
-    <div className={`w-full`}>
-      <div className=" bg-myBG flex items-center justify-between w-full px-6 py-2 md:px-32 md:py-5">
+    <div className={`w-full z-1000`}>
+      <div className=" flex items-center justify-between w-full px-6 py-2 z-1000 md:px-32 md:py-5">
         <div className="">
           <Link href='/'>
             <HushhHeaderLogo />
@@ -83,16 +83,16 @@ const Header = () => {
           </div>
         ) : (
           <div className="w-max">
-            <div className="text-white flex justify-between gap-20 px-7">
-              <Link href="/">HOME</Link>
-              <Link href="/about">
+            <div className="text-white flex justify-between gap-20 px-7 ">
+              <Link href="/" style={{zIndex:'1000'}}>HOME</Link>
+              <Link href="/about" style={{zIndex:'1000'}}>
                 ABOUT US
               </Link>
               <Link href="#" className="flex items-center gap-2 group" onMouseEnter={() => setProductsSubmenu(true)}>
                 PRODUCTS
                 <ChevronArrowIcon className='group-hover:rotate-0 rotate-180 transition-all duration-300' />
               </Link>
-              <Link href="https://sites.google.com/hush1one.com/drops/home">
+              <Link href="https://hushh-labs.github.io/hushh-labs-blog/">
                 LABS
               </Link>
               <ScrollLink to="contact-form" smooth={true} spy={true} duration={7000} onClick={scrollToContactForm} style={{cursor:'pointer'}}>
@@ -101,7 +101,7 @@ const Header = () => {
             </div>
             {
               productsSubmenu &&
-              <div className="bg-white flex flex-col gap-4 absolute pl-8 pr-8 mt-4 pt-5 pb-7 rounded-2xl shadow-lg shadow-[#A7AEBA1F]" onMouseEnter={() => setProductsSubmenu(true)} onMouseLeave={() => setProductsSubmenu(false)}>
+              <div className="bg-white z-100 flex flex-col gap-4 absolute pl-8 pr-8 mt-4 pt-5 pb-7 rounded-2xl shadow-lg shadow-[#A7AEBA1F]" onMouseEnter={() => setProductsSubmenu(true)} onMouseLeave={() => setProductsSubmenu(false)}>
                 <p className="text-xs text-fontColor2 font-semibold">HUSHH PRODUCTS</p>
                 <div className="flex gap-2" >
                   <div className="flex-1 flex flex-col gap-2">
@@ -191,7 +191,7 @@ const Header = () => {
         )}
 
 
-        <div className="">
+        <div className="z-100">
           {!isMobile && (
             <div className="login">
               <SearchBar />
@@ -217,7 +217,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="w-full justify-end flex px-6">
+      <div className="w-full justify-end flex px-6 z-1000">
         {isMenuOpen && isMobile ? (
           <div className={`w-full flex flex-col gap-1`} ref={menuRef}>
             <div className="text-white w-full flex items-end flex-col text-center">
@@ -333,7 +333,7 @@ const Header = () => {
 
 
               <Link
-                href="https://sites.google.com/hush1one.com/drops/home"
+                href="https://hushh-labs.github.io/hushh-labs-blog/"
                 className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
                 onClick={() => setIsMenuOpen(false)}
               >

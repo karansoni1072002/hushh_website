@@ -9723,7 +9723,7 @@
       }
 
       .cls-2427, .cls-3329, .cls-3332, .cls-3427 {
-        strokeLinejoin: round;
+        stroke-linejoin: round;
       }
 
       .cls-2427, .cls-3424, .cls-3427 {

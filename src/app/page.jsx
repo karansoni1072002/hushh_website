@@ -53,7 +53,7 @@ export default function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 1000); 
+    }, 500); // 4 seconds
 
     return () => clearTimeout(timeout);
   }, []);

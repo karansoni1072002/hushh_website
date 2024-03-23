@@ -30,10 +30,10 @@ const ChromeExtentionLogo = (props) => (
         y2="80.5098"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#D20AEF" />
-        <stop offset="0.37" stopColor="#890FD1" />
-        <stop offset="0.8" stopColor="#3715B0" />
-        <stop offset="1" stopColor="#1717A3" />
+        <stop stop-color="#D20AEF" />
+        <stop offset="0.37" stop-color="#890FD1" />
+        <stop offset="0.8" stop-color="#3715B0" />
+        <stop offset="1" stop-color="#1717A3" />
       </linearGradient>
       <clipPath id="clip0_1212_939">
         <rect

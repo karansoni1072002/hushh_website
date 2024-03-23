@@ -11,8 +11,8 @@ const HfsLogo = () => (
 <path d="M61.6125 50.8987V38.5325L58.6859 40.2322V50.8971C57.9985 51.3651 57.5468 52.1532 57.5468 53.047C57.5468 54.4835 58.7119 55.6486 60.1484 55.6486C61.5849 55.6486 62.75 54.4851 62.75 53.0486C62.75 52.1548 62.2983 51.3683 61.6125 50.8987Z" fill="white"/>
 <defs>
 <linearGradient id="paint0_linear_2168_437" x1="74.9738" y1="31.619" x2="1.48753" y2="37.6651" gradientUnits="userSpaceOnUse">
-<stop stopColor="#E54D60"/>
-<stop offset="1" stopColor="#A342FF"/>
+<stop stop-color="#E54D60"/>
+<stop offset="1" stop-color="#A342FF"/>
 </linearGradient>
 </defs>
 </svg>

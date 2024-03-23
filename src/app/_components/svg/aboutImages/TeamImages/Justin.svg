@@ -24,12 +24,12 @@
 <use xlink:href="#image0_2114_1176" transform="matrix(0.0008125 0 0 0.000625 0.0125 0)"/>
 </pattern>
 <linearGradient id="paint0_linear_2114_1176" x1="248.5" y1="0" x2="108.753" y2="326.565" gradientUnits="userSpaceOnUse">
-<stop stopColor="#D6D3C2" stop-opacity="0.2"/>
-<stop offset="1" stopColor="#5C5C5C" stop-opacity="0.14"/>
+<stop stop-color="#D6D3C2" stop-opacity="0.2"/>
+<stop offset="1" stop-color="#5C5C5C" stop-opacity="0.14"/>
 </linearGradient>
 <linearGradient id="paint1_linear_2114_1176" x1="248.5" y1="0" x2="108.753" y2="326.565" gradientUnits="userSpaceOnUse">
-<stop stopColor="#999999"/>
-<stop offset="1" stopColor="#141414"/>
+<stop stop-color="#999999"/>
+<stop offset="1" stop-color="#141414"/>
 </linearGradient>
 <clipPath id="clip0_2114_1176">
 <rect x="0.5" width="248" height="280.24" rx="2" fill="white"/>

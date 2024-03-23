@@ -13784,8 +13784,8 @@
       <rect class="cls-2426" x="438.05" y="1312.95" width="603.8" height="359.36"/>
     </clipPath>
     <linearGradient id="linear-gradient" x1="441.62" y1="-5327.27" x2="446.05" y2="-5334.13" gradientTransform="translate(0 -4011.99) scale(1 -1)" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stopColor="#dadada"/>
-      <stop offset="1" stopColor="#363636"/>
+      <stop offset="0" stop-color="#dadada"/>
+      <stop offset="1" stop-color="#363636"/>
     </linearGradient>
     <linearGradient id="linear-gradient-2" x1="449.92" y1="-5328.29" x2="454.34" y2="-5335.15" xlink:href="#linear-gradient"/>
     <linearGradient id="linear-gradient-3" x1="458.21" y1="-5329.3" x2="462.64" y2="-5336.15" xlink:href="#linear-gradient"/>
@@ -17206,14 +17206,14 @@
     <linearGradient id="linear-gradient-3415" x1="1060.99" y1="-5674.91" x2="1056.77" y2="-5681.89" gradientTransform="translate(0 -4011.99) scale(1 -1)" xlink:href="#linear-gradient"/>
     <linearGradient id="linear-gradient-3416" x1="1052.73" y1="-5676.16" x2="1048.5" y2="-5683.14" gradientTransform="translate(0 -4011.99) scale(1 -1)" xlink:href="#linear-gradient"/>
     <radialGradient id="radial-gradient" cx="-1295.32" cy="-1465.14" fx="-1295.32" fy="-1465.14" r="1" gradientTransform="translate(876454.6 -135756.34) rotate(-57.53) scale(451.99 454.26)" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stopColor="#000"/>
-      <stop offset="1" stopColor="#000" stop-opacity=".27"/>
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".27"/>
     </radialGradient>
     <linearGradient id="linear-gradient-3417" x1="-2104.86" y1="404.5" x2="-1778.09" y2="319.47" gradientTransform="translate(2703.27 311.94)" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stopColor="#fff"/>
-      <stop offset=".33" stopColor="#fff" stop-opacity=".26"/>
-      <stop offset=".7" stopColor="#fff" stop-opacity=".74"/>
-      <stop offset="1" stopColor="#fff" stop-opacity=".07"/>
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".33" stop-color="#fff" stop-opacity=".26"/>
+      <stop offset=".7" stop-color="#fff" stop-opacity=".74"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".07"/>
     </linearGradient>
     <radialGradient id="radial-gradient-2" cx="-1296.28" cy="-1464.96" fx="-1296.28" fy="-1464.96" r="1" gradientTransform="translate(726441.75 -112131.08) rotate(-57.53) scale(374.2 376.08)" xlink:href="#radial-gradient"/>
     <linearGradient id="linear-gradient-3418" x1="-2100.97" y1="421.22" x2="-1830.44" y2="350.82" gradientTransform="translate(3291.27 771.65)" xlink:href="#linear-gradient-3417"/>

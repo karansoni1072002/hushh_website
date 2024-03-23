@@ -12,6 +12,9 @@ export default function Loading() {
     >
       <Spinner size="xl" color="white" />
       <Text mt="4" fontWeight={'500'} className='color-gradient' fontSize={{md:'7rem', base:'3rem'}}>Hushhing....</Text>
+      {/* <Text  fontSize={{md:'3rem', base:'1.5rem'}} fontWeight="bold">
+        Loading...
+      </Text> */}
     </Flex>
   );
 }

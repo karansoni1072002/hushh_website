@@ -33,13 +33,10 @@ import TransparentLock from "../../_components/svg/transparetLock";
 import BoltIcon from "../../_components/svg/boltIcon";
 import MarketIcon from "../../_components/svg/marketIcon";
 import ConciergeMobile from "../../_components/svg/icons/conciergeMobileIcon.svg";
-import Loading from "../../_components/features/loading";
-import { useState, useEffect } from "react";
 
 const conciergeApp = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
-  const [loading, setLoading] = useState(true);
 
   const scrollTo = () => {
     scroll.scrollTo(850);
@@ -53,19 +50,8 @@ const conciergeApp = () => {
     scroll.scrollTo(1500);
   };
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 500);
-
-    return () => clearTimeout(timeout);
-  }, []);
-
   return (
     <>
-    {loading ? (
-      <Loading />
-    ) : (
       <Box
         maxW={"100%"}
         minW={"100%"}
@@ -509,7 +495,6 @@ const conciergeApp = () => {
 
         <ConciergeFaq />
       </Box>
-    )}
       <ContactForm />
     </>
   );

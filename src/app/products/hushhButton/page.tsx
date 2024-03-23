@@ -13,7 +13,6 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import extendedTheme from "../../theme";
-import { useState, useEffect } from "react";
 import FramCard1 from "../../_components/svg/card/frameCardHushhButton.svg";
 import FrameCard2 from "../../_components/svg/card/buttonvoucherCard.svg";
 import Image from "next/image";
@@ -31,19 +30,10 @@ import ContactForm from '../../_components/features/contactForm'
 import BgAnimation from "../../../../public/Gif/bgAnimation.gif";
 import DataRetrievalMade from "../../../../public/Gif/dataRetrievalMade.gif";
 import Slogo from "../../../../public/Gif/slogo.gif";
-import Loading from "../../_components/features/loading";
+
 
 const hushhButton = () => {
   const router = useRouter();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 500);
-
-    return () => clearTimeout(timeout);
-  }, []);
 
   const scrollTo = () => {
     scroll.scrollTo(850); // Scrolling to 100px from the top of the page.
@@ -55,9 +45,6 @@ const hushhButton = () => {
 
   return (
     <>
-    {loading ? (
-      <Loading />
-    ) : (
       <Box
         maxW={"100%"}
         minW={"100%"}
@@ -758,7 +745,6 @@ const hushhButton = () => {
         </HStack>
         <HushhButtonFaq />
       </Box>
-    )}  
       <ContactForm />
     </>
   );

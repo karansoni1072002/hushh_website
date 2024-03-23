@@ -13335,25 +13335,25 @@
       }
 
       .cls-3328, .cls-3329, .cls-3331, .cls-3332 {
-        strokeWidth: 1.67px;
+        stroke-width: 1.67px;
       }
 
       .cls-3328, .cls-3330, .cls-3332, .cls-3424, .cls-3427 {
-        strokeLinecap: round;
+        stroke-linecap: round;
       }
 
       .cls-3438 {
-        clipPath: url(#clippath-1);
+        clip-path: url(#clippath-1);
       }
 
       .cls-3439 {
-        clipPath: url(#clippath-2);
+        clip-path: url(#clippath-2);
       }
 
       .cls-3330 {
         stroke: #585858;
         stroke-miterlimit: 10;
-        strokeWidth: 1.75px;
+        stroke-width: 1.75px;
       }
 
       .cls-3431 {
@@ -13761,7 +13761,7 @@
       }
 
       .cls-3425, .cls-3426, .cls-3428 {
-        strokeOpacity: .3;
+        stroke-opacity: .3;
       }
 
       .cls-3426 {

@@ -61,7 +61,6 @@ export default function Home() {
       <Image
         src={HomeBg}
         alt="HomeBg"
-        objectFit="cover"
         className="z-0 w-full"
       />
     <main className="bg-myBG  font-Figtree z-10">

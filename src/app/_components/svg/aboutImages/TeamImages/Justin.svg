@@ -10,7 +10,7 @@
 <rect x="1.31" y="0.81" width="246.38" height="278.62" rx="1.19" stroke="url(#paint1_linear_2114_1176)" strokeWidth="1.62"/>
 </g>
 <defs>
-<filter id="filter0_i_2114_1176" x="-2.12" y="-1.618" width="250.62" height="281.858" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_i_2114_1176" x="-2.12" y="-1.618" width="250.62" height="281.858" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>

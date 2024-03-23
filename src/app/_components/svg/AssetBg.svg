@@ -43,7 +43,7 @@
       }
 
       .cls-3429 {
-        clip-path: url(#clippath);
+        clipPath: url(#clippath);
       }
 
       .cls-9 {

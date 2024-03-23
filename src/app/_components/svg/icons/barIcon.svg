@@ -6,7 +6,7 @@
 <path d="M83.5163 21.8971C85.7418 21.3008 88.063 21.1487 90.3473 21.4494C92.6316 21.7501 94.8343 22.4978 96.8296 23.6499C98.825 24.8019 100.574 26.3356 101.976 28.1635C103.379 29.9914 104.408 32.0777 105.004 34.3032L88.0572 38.8441L83.5163 21.8971Z" fill="#FF7482"/>
 <defs>
 <filter id="filter0_d_1851_3816" x="0.150505" y="0.817177" width="171.858" height="171.858" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feMorphology radius="22.2222" operator="erode" in="SourceAlpha" result="effect1_dropShadow_1851_3816"/>
 <feOffset dy="44.4444"/>

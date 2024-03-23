@@ -13,12 +13,12 @@
 <path d="M55.386 51.3334L57.7651 53.6667L62.1834 49.3334" stroke="#3C50E0" strokeWidth="0.666667" strokeLinecap="round" strokeLinejoin="round"/>
 <defs>
 <filter id="filter0_f_1851_4234" x="0.333332" y="8.01086e-05" width="277.281" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feGaussianBlur stdDeviation="16.3333" result="effect1_foregroundBlur_1851_4234"/>
 </filter>
 <filter id="filter1_d_1851_4234" x="29.6667" y="28" width="242.667" height="200.667" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="12" dy="18"/>
 <feGaussianBlur stdDeviation="7.66667"/>

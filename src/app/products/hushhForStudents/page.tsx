@@ -28,7 +28,6 @@ import hfsMobileIcon from "../../../../public/Images/mobileIcons/hfsMobileIcon.p
 import StudentStudyImg from "../../_components/svg/studentStudyImg.svg";
 import StudentAstronautImg from "../../_components/svg/studentAstronautImg.svg";
 import CollegeStudentImg from "../../_components/svg/collegeStudentImg.svg";
-import Loading from "../../_components/features/loading";
 import { useState, useEffect } from "react";
 
 const hushhForStudents = () => {
@@ -58,9 +57,7 @@ const hushhForStudents = () => {
 
   return (
     <>
-    {loading ? (
-      <Loading />
-    ) : (
+
       <Box
         maxW={"100%"}
         minW={"100%"}
@@ -421,7 +418,6 @@ const hushhForStudents = () => {
         </Stack>
         <HfsFaq />
       </Box>
-    )}  
       <ContactForm />
     </>
   );

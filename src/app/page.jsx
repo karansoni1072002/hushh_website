@@ -43,10 +43,20 @@ import ReviewSlider from "./_components/features/reviewSlider";
 import HfsLogo from "./_components/svg/hfsLogo"; 
 import HomeBg from "./_components/svg/homeBG.svg";
 import Image from "next/image";
+import Loading from "./_components/features/loading";
 
 export default function Home() {
   const router = useRouter();
   const [showPopup, setShowPopup] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 500); 
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -57,6 +67,10 @@ export default function Home() {
   }, []);
 
   return (
+    <>
+    {loading ? (
+      <Loading />
+    ) : (
     <div className="relative">
       <Image
         src={HomeBg}
@@ -458,5 +472,7 @@ export default function Home() {
       </div>
     </main>
     </div>
+    )}
+    </>
   );
 }

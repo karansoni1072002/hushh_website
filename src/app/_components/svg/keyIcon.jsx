@@ -8,7 +8,7 @@ const KeyIcon = () => (
 </g>
 </g>
 <defs>
-<filter id="filter0_i_1212_1080" x="6.11865" y="5.72656" width="53.3334" height="53.3333" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<filter id="filter0_i_1212_1080" x="6.11865" y="5.72656" width="53.3334" height="53.3333" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>

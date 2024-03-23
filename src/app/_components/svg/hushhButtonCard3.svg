@@ -10,7 +10,7 @@
 <path d="M77.8384 77L81.3384 80.5L87.8384 74" stroke="#3C50E0" strokeLinecap="round" strokeLinejoin="round"/>
 <defs>
 <filter id="filter0_f_1851_4675" x="0.838379" y="0" width="324" height="168" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood floodOpacity="0" result="BackgroundImageFix"/>
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feGaussianBlur stdDeviation="24.5" result="effect1_foregroundBlur_1851_4675"/>
 </filter>

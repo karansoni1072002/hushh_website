@@ -77,7 +77,7 @@ export default function ContactForm() {
             
           >
             <Text>info@hush1one.com</Text>
-            <Text>+1(877)487-4494</Text>
+            <a href="tel:+14252969050"><Text>+14252969050</Text></a>
             <Text>
             Hushh.ai <br></br>
             1021 5th St W <br></br>

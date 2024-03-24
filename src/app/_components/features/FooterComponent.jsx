@@ -30,6 +30,7 @@ const FooterComponent = () => {
                     <div className="w-96 gap-4 flex flex-col justify-normal">
                         <h1 className='font-semibold text-2xl leading-10'>We growing up your business <br />with personal AI manager.</h1>
                         <p className='text-lg'>Manish Sainani, 2024</p>
+                        <p>Call {' '} <a href="tel:+14252969050">+14252969050</a></p>
                     </div>
 
                     <div className="flex justify-between w-full flex-1">

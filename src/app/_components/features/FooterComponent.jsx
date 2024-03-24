@@ -94,6 +94,7 @@ const FooterComponent = () => {
                         <HushhMobileFooterLogo />
                         <h1 className='font-semibold text-xl leading-10'>We help you in growing your business<br />with personal AI manager.</h1>
                         <p className='text-base'>Manish Sainani, 2024</p>
+                        <p>Call {' '} <a href="tel:+14252969050">+14252969050</a></p>
                     </div>
 
                     <div className="flex flex-col text-left px-5 gap-5 justify-between w-full flex-1">

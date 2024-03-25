@@ -15,6 +15,7 @@ import ValetChatFaq from '../../_components/features/faq/valetChatFaq';
 import ContactForm from '../../_components/features/contactForm'
 import BgAnimation from "../../../../public/Gif/bgAnimation.gif";
 import { useState, useEffect } from "react";
+import Loading from "../../_components/features/loading";
 
 const hushhValetChat = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";

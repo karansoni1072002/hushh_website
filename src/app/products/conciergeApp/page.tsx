@@ -31,13 +31,23 @@ import PaperPlane from "../../_components/svg/conciergeApp/paperPlanImage.svg";
 import ShoppingHand from "../../_components/svg/conciergeApp/shoppingHandImg.svg";
 import TransparentLock from "../../_components/svg/transparetLock";
 import BoltIcon from "../../_components/svg/boltIcon";
+import { useState, useEffect } from "react";
 import MarketIcon from "../../_components/svg/marketIcon";
 import ConciergeMobile from "../../_components/svg/icons/conciergeMobileIcon.svg";
+import Loading from "../../_components/features/loading";
 
 const conciergeApp = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 200); 
+
+    return () => clearTimeout(timeout);
+  }, []);
   const scrollTo = () => {
     scroll.scrollTo(850);
   };
@@ -52,6 +62,9 @@ const conciergeApp = () => {
 
   return (
     <>
+    {loading ? (
+      <Loading />
+    ) : (
       <Box
         maxW={"100%"}
         minW={"100%"}
@@ -495,6 +508,7 @@ const conciergeApp = () => {
 
         <ConciergeFaq />
       </Box>
+    )}
       <ContactForm />
     </>
   );

@@ -14,10 +14,20 @@ import ValetIntegrationBox from '../../_components/svg/valetIntegrationBox.svg';
 import ValetChatFaq from '../../_components/features/faq/valetChatFaq';
 import ContactForm from '../../_components/features/contactForm'
 import BgAnimation from "../../../../public/Gif/bgAnimation.gif";
+import { useState, useEffect } from "react";
 
 const hushhValetChat = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 200); 
+
+    return () => clearTimeout(timeout);
+  }, []);
 
 
   const scrollTo = () => {
@@ -36,6 +46,9 @@ const hushhValetChat = () => {
 
   return (
     <>
+    {loading ? (
+      <Loading />
+    ) : (
       <Box
         maxW={"100%"}
         minW={"100%"}
@@ -486,6 +499,7 @@ const hushhValetChat = () => {
         </Stack>
         <ValetChatFaq />
       </Box>
+    )}
       <ContactForm />
     </>
   );

@@ -16,11 +16,20 @@ import { animateScroll as scroll } from 'react-scroll';
 import ContactForm from '../../_components/features/contactForm'
 import BgAnimation from "../../../../public/Gif/bgAnimation.gif";
 import BrowserGif from "../../../../public/Gif/browserGifBg.gif"
+import Loading from "../../_components/features/loading"
 
 const browserCompanion = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 200); 
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   const scrollTo = () => {
     scroll.scrollTo(850); // Scrolling to 100px from the top of the page.
@@ -34,6 +43,9 @@ const browserCompanion = () => {
 
   return (
     <>
+    {loading ? (
+      <Loading />
+    ) : (
       <Box
         maxW={"100%"}
         minW={"100%"}
@@ -502,6 +514,7 @@ const browserCompanion = () => {
         </Stack>
         <BrowserFaq />
       </Box>
+    )}
       <ContactForm />
     </>
   );

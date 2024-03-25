@@ -48,6 +48,7 @@ const conciergeApp = () => {
 
     return () => clearTimeout(timeout);
   }, []);
+  
   const scrollTo = () => {
     scroll.scrollTo(850);
   };

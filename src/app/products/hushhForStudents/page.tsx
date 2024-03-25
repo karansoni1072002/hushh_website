@@ -29,6 +29,7 @@ import StudentStudyImg from "../../_components/svg/studentStudyImg.svg";
 import StudentAstronautImg from "../../_components/svg/studentAstronautImg.svg";
 import CollegeStudentImg from "../../_components/svg/collegeStudentImg.svg";
 import { useState, useEffect } from "react";
+import Loading from "../../_components/features/loading";
 
 const hushhForStudents = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -38,7 +39,7 @@ const hushhForStudents = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 200); 
 
     return () => clearTimeout(timeout);
   }, []);
@@ -57,7 +58,9 @@ const hushhForStudents = () => {
 
   return (
     <>
-
+    {loading ? (
+      <Loading />
+    ) : (
       <Box
         maxW={"100%"}
         minW={"100%"}
@@ -418,6 +421,7 @@ const hushhForStudents = () => {
         </Stack>
         <HfsFaq />
       </Box>
+    )}
       <ContactForm />
     </>
   );

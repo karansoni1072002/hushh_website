@@ -1,5 +1,5 @@
 'use client';
-import React from "react";
+import React, { useRef, useState } from 'react';
 import { useForm } from "react-hook-form";
 import {
   Box,
@@ -19,6 +19,10 @@ import FooterComponent from "./FooterComponent";
 import CircelFormShadow from "../../_components/svg/circleFormShadow.svg";
 import Image from "next/image";
 import BigCircleFormShadow from "../../_components/svg/BigCircleFormShadow.svg";
+import emailjs from '@emailjs/browser';
+import { useToast } from '@chakra-ui/react'
+
+emailjs.init('_TMzDc8Bfy6riSfzq');
 
 export default function ContactForm() {
   const {
@@ -26,7 +30,61 @@ export default function ContactForm() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  // const form = useRef();
+
+  const [ firstName , setFirstName ] = useState('');
+  const [ lastName , setLastName ] = useState('');
+  const [ email , setEmail ] = useState('');
+  const [ number , setNumber ] = useState('');
+  const [ subject , setSubject ] = useState('');
+  const [ message , setMessage ] = useState('');
+
+  const toast = useToast()
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    const serviceId = 'service_kwvlp08';
+    const templateId = 'template_nc0x47v';
+    const user_Id = '9KjZ-7TNPYvuqx3as';
+  
+    const templateParams = {
+      from_name: firstName,
+      from_lname: lastName,
+      from_email: email,
+      to_name:'Manish Sainani',
+      message: message,
+      subject:subject,
+      number:number,
+    }
+    try {
+      const response = await emailjs.send(
+        serviceId, 
+        templateId, 
+        templateParams,
+        user_Id
+      );
+
+      toast({
+        title: 'Form Submitted.',
+        description: "Thank you for reaching out to us",
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      })
+
+      setFirstName('');
+      setLastName('');
+      setEmail('');
+      setNumber('');
+      setMessage('');
+      setSubject('');
+    } catch (error) {
+      console.error('Sending mail FAILED...', error.text);
+    }
+  };
+
 
   return (
     <>
@@ -91,33 +149,33 @@ export default function ContactForm() {
 
             {/* Contact Form */}
             <Box  p={{ md: "4rem", base: '1rem' }} flex={1.75} display={"flex"}>
-              <form onSubmit={handleSubmit(onSubmit)} style={{ color: "white" }}>
+              <form id="form" /*onSubmit={sendEmail} */ style={{ color: "white" }}>
                 <HStack display={{ base: 'block', md: 'flex' }} flexDirection={{ base: 'column', md: 'row' }} gap={{ md: "2rem", base: '1rem' }} mb={{ md: "2rem", base: '1rem' }}>
                   <Stack gap={{ md: "1rem", base: '0.5rem' }} mb={{ base: '1rem' }}>
                     <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>First Name</Text>
                     <Input
+                      variant="unstyled"
                       size={'sm'}
                       w={'12rem'}
-                      variant="unstyled"
                       borderBottom="1px solid white"
-                      type="text"
-                      // value={"fname"}
-                      placeholder="Harry"
-                      {...register("First name", { required: true, maxLength: 80 })}
+                      {...register("firstName", { required: true, maxLength: 100 })}
+                      placeholder="First Name"
+                      value={firstName} 
+                      onChange={(e) => setFirstName(e.target.value)} // Update state on change
                     />
                   </Stack>
 
                   <Stack gap={{ md: "1rem", base: '0.5rem' }} mb={{ base: '1rem' }}>
                     <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Last Name</Text>
                     <Input
+                      variant="unstyled"
                       size={'sm'}
                       w={'12rem'}
-                      variant="unstyled"
                       borderBottom="1px solid white"
-                      type="text"
-                      // value={"lname"}
-                      placeholder="Roger"
-                      {...register("Last name", { required: true, maxLength: 100 })}
+                      {...register("lastName", { required: true, maxLength: 100 })}
+                      placeholder="Last Name"
+                      value={lastName} 
+                      onChange={(e) => setLastName(e.target.value)} // Update state on change
                     />
                   </Stack>
                 </HStack>
@@ -126,33 +184,35 @@ export default function ContactForm() {
                   <Stack gap={{ md: "1rem", base: '0.5rem' }} mb={{ base: '1rem' }}>
                     <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Email</Text>
                     <Input
+                      variant="unstyled"
                       size={'sm'}
                       w={'12rem'}
-                      variant="unstyled"
                       borderBottom="1px solid white"
-                      // value={"email"}
-                      placeholder="harry@gmail.com"
-                      {...register("Email", {
+                      {...register("email", {
                         required: true,
                         pattern: /^\S+@\S+$/i,
-                      })}
+                      })}                      
+                      placeholder="@email"
+                      value={email} 
+                      onChange={(e) => setEmail(e.target.value)} // Update state on change
                     />
                   </Stack>
                   <Stack gap={{ md: "1rem", base: '0.5rem' }} mb={{ base: '1rem' }}>
                     <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Phone Number</Text>
                     <Input
-                      type="tel"
-                      size={'sm'}
-                      w={'12rem'}
-                      variant="unstyled"
-                      borderBottom="1px solid white"
-                      // value={"number"}
-                      placeholder="Mobile number"
-                      {...register("Mobile number", {
+                     variant="unstyled"
+                     size={'sm'}
+                     w={'12rem'}
+                     borderBottom="1px solid white"
+                      {...register("number", {
                         required: true,
                         minLength: 6,
                         maxLength: 12,
                       })}
+                      placeholder="number"
+                      value={number} 
+                      onChange={(e) => setNumber(e.target.value)}
+
                     />
                   </Stack>
                 </HStack>
@@ -168,35 +228,38 @@ export default function ContactForm() {
                   <RadioGroup defaultValue="ProductInquiry">
                     <HStack display={{ md: 'flex', base: 'flex' }} flexDirection={{ base: 'column', md: 'row' }} spacing={{ md: "2rem", base: '1rem' }} align={"stretch"}>
                       <Radio
-                        {...register("Select Subject", { required: true })}
+                        {...register("subject", { required: true })}
                         colorScheme="white"
-                        value="productInquiry"
-                        name="selectSubject"
+                        name="subject"
+                        onChange={(e) => setSubject('Explore Hushh Products')}
                       >
                         <Text fontSize={'0.75rem'}>Explore Hushh Products</Text>
                       </Radio>
                       <Radio
-                        {...register("Select Subject", { required: true })}
+                        {...register("subject", { required: true })}
                         colorScheme="white"
-                        value="clientInquiry"
-                        name="selectSubject"
+                        name="subject"
                         className="radio-option"
+                        // value='subject2'
+                        onChange={(e) => setSubject('Enhance my client')}
                       >
                         <Text fontSize={'0.75rem'}>Enhance my client</Text>
                       </Radio>
                       <Radio
-                        {...register("Select Subject", { required: true })}
+                        {...register("subject", { required: true })}
                         colorScheme="white"
-                        value="partnerInquiry"
-                        name="selectSubject"
+                        name="subject"
+                        // value='subject3'
+                        onChange={(e) => setSubject('Partner with Hushh')}
                       >
                         <Text fontSize={'0.75rem'}>Partner with Hushh</Text>
                       </Radio>
                       <Radio
-                        {...register("Select Subject", { required: true })}
+                        {...register("subject", { required: true })}
                         colorScheme="white"
-                        value="Support"
-                        name="selectSubject"
+                        // value={subject}
+                        onChange={(e) => setSubject('Get Support')}
+                        name="subject"
                         className="radio-option"
                       >
                         <Text fontSize={'0.75rem'}>Get Support</Text>
@@ -210,11 +273,14 @@ export default function ContactForm() {
                     h={"6.25rem"}
                     w={{ base: '15.625rem', md: '100%' }}
                     placeholder="Type your message here"
-                    {...register("Message", { required: true })}
+                    {...register("message", { required: true })}
+                    value={message} 
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                 </HStack>
                 <HStack justifyContent="flex-end" w={"100%"}>
                   <Button
+                    type="submit"
                     bg={"transparent"}
                     px={"2rem"}
                     py={"1.25rem"}
@@ -224,6 +290,7 @@ export default function ContactForm() {
                       background:
                         "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                     }}
+                    onClick={(e) => {sendEmail(e)}}
                   >
                     <Text
                       color={"white"}

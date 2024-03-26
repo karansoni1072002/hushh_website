@@ -31,13 +31,29 @@ import PaperPlane from "../../_components/svg/conciergeApp/paperPlanImage.svg";
 import ShoppingHand from "../../_components/svg/conciergeApp/shoppingHandImg.svg";
 import TransparentLock from "../../_components/svg/transparetLock";
 import BoltIcon from "../../_components/svg/boltIcon";
+import { useState, useEffect } from "react";
 import MarketIcon from "../../_components/svg/marketIcon";
 import ConciergeMobile from "../../_components/svg/icons/conciergeMobileIcon.svg";
+import Loading from "../../_components/features/loading";
+
+const handlePlayDemo = () => {
+  // Open the URL in a new tab
+  window.open('https://www.youtube.com/watch?v=J0Q_n6CWfO8', '_blank');
+};
 
 const conciergeApp = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 200); 
+
+    return () => clearTimeout(timeout);
+  }, []);
+  
   const scrollTo = () => {
     scroll.scrollTo(850);
   };
@@ -52,6 +68,9 @@ const conciergeApp = () => {
 
   return (
     <>
+    {loading ? (
+      <Loading />
+    ) : (
       <Box
         maxW={"100%"}
         minW={"100%"}
@@ -149,10 +168,10 @@ const conciergeApp = () => {
               fontWeight={"800"}
               fontSize={{ md: "2.8rem", base: "1.25rem" }}
             >
-              1.2b
+              86k
             </Text>
             <Text fontSize={{ md: "1rem", base: "0.75rem" }} fontWeight={"500"}>
-              Users
+              Followers
             </Text>
           </Box>
           <Button
@@ -165,12 +184,12 @@ const conciergeApp = () => {
             lineHeight={"28px"}
             background={"transparent"}
             letterSpacing={"0.2rem"}
-            onClick={scrollTo}
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
             padding={"15px 68px 15px 68px"}
+            onClick={handlePlayDemo}
           >
             PLAY DEMO
           </Button>
@@ -185,7 +204,6 @@ const conciergeApp = () => {
             display={"flex"}
             border={"1px solid #606060"}
             borderRadius={"4rem"}
-            onClick={scrollInMobile}
             w={"12rem"}
             color={extendedTheme.colors._white}
             lineHeight={"32.4px"}
@@ -196,6 +214,7 @@ const conciergeApp = () => {
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
             padding={"15px 68px 15px 68px"}
+            onClick={handlePlayDemo}
           >
             PLAY DEMO
           </Button>
@@ -495,6 +514,7 @@ const conciergeApp = () => {
 
         <ConciergeFaq />
       </Box>
+    )}
       <ContactForm />
     </>
   );

@@ -41,3 +41,19 @@ export const teamImages = {
     ApoorvBedmutha,
     KarthickMuthu
 }
+
+
+export const advisorsInfo = {
+    General: [
+        {
+            name:'Sudhir Hasbe',
+            currentRole:'Chief Product Officer at Neo4j',
+            pastRole:{
+                role1:'Sr. Director of Product Management @Google',
+            },
+            image:'',
+            fromWhere:'',
+            about:''
+        }
+    ]
+}

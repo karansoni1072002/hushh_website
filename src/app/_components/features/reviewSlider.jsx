@@ -17,6 +17,7 @@ import customer3 from "../../../../public/Images/customers/customer3.png";
 import customer4 from "../../../../public/Images/customers/customer4.png";
 import customer5 from "../../../../public/Images/customers/customer5.png";
 import customer6 from "../../../../public/Images/customers/customer6.png";
+import { useMediaQuery } from "@chakra-ui/react";
 
 // SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -66,11 +67,19 @@ const ReviewSlider = () => {
         "With Hushh Chrome Extension, I finally feel in control of my online data. I can choose what information to keep private and customize and what to share, giving me peace of mind while browsing.",
     },
   ];
+  const initialActiveIndex = 1;
   const [hoveredIndex, setHoveredIndex] = useState(-1);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(initialActiveIndex);
+  const [isDesktop] = useMediaQuery("(min-width: 1024px)");
+
   const maxContentLength = 200;
   useEffect(() => {
     setIsLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    setActiveIndex(initialActiveIndex);
   }, []);
 
   return (
@@ -100,12 +109,15 @@ const ReviewSlider = () => {
             spaceBetween: 40,
           },
         }}
+        initialSlide={initialActiveIndex}
         modules={[Pagination, Navigation]}
         navigation
         pagination={{
           clickable: true,
           loop: true,
         }}
+        slidesOffsetBefore={isDesktop ? -230:  0 }
+        centeredSlides={isDesktop}
         style={{ visibility: isLoaded ? "visible" : "hidden" }}
       >
         {customerReviews.map((customer, index) => (

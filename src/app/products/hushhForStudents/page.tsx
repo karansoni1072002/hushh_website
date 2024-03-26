@@ -28,11 +28,21 @@ import hfsMobileIcon from "../../../../public/Images/mobileIcons/hfsMobileIcon.p
 import StudentStudyImg from "../../_components/svg/studentStudyImg.svg";
 import StudentAstronautImg from "../../_components/svg/studentAstronautImg.svg";
 import CollegeStudentImg from "../../_components/svg/collegeStudentImg.svg";
-
+import { useState, useEffect } from "react";
+import Loading from "../../_components/features/loading";
 
 const hushhForStudents = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 200); 
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   const scrollTo = () => {
     scroll.scrollTo(850);
@@ -48,6 +58,9 @@ const hushhForStudents = () => {
 
   return (
     <>
+    {loading ? (
+      <Loading />
+    ) : (
       <Box
         maxW={"100%"}
         minW={"100%"}
@@ -144,10 +157,10 @@ const hushhForStudents = () => {
               fontWeight={"800"}
               fontSize={{ md: "2.8rem", base: "1.25rem" }}
             >
-              1.2b
+              86k
             </Text>
             <Text fontSize={{ md: "1rem", base: "0.75rem" }} fontWeight={"500"}>
-              Users
+              Followers
             </Text>
           </Box>
           <Button
@@ -408,6 +421,7 @@ const hushhForStudents = () => {
         </Stack>
         <HfsFaq />
       </Box>
+    )}
       <ContactForm />
     </>
   );

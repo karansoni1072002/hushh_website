@@ -14,10 +14,22 @@ import ValetIntegrationBox from '../../_components/svg/valetIntegrationBox.svg';
 import ValetChatFaq from '../../_components/features/faq/valetChatFaq';
 import ContactForm from '../../_components/features/contactForm'
 import BgAnimation from "../../../../public/Gif/bgAnimation.gif";
+import { useState, useEffect } from "react";
+import Loading from "../../_components/features/loading";
+import ValetChatGif from "../../../../public/Gif/valeTChatBg.gif";
 
 const hushhValetChat = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 200); 
+
+    return () => clearTimeout(timeout);
+  }, []);
 
 
   const scrollTo = () => {
@@ -32,16 +44,26 @@ const hushhValetChat = () => {
     scroll.scrollTo(1500);
   }
 
-
+ 
 
   return (
     <>
+    {loading ? (
+      <Loading />
+    ) : (
       <Box
         maxW={"100%"}
         minW={"100%"}
         display={"flex"}
         flexDirection={"column"}
+        position={'relative'}
       >
+        <Box display={{ base: 'none', md: 'block' }}>
+          <Image src={ValetChatGif} alt="ValetChatGif" style={{ position: 'absolute',transform: 'rotate(-95deg)', opacity: '0.5',top: '0px',left:'30%', zIndex: '-10', filter: 'grayscale(100%)'}} />
+        </Box>
+        <Box display={{ base: 'block', md: 'none' }}>
+          <Image src={ValetChatGif} alt="ValetChatGif" style={{ position: 'absolute',transform: 'rotate(-95deg)',opacity: '0.5', top:'0px',left:'30%', zIndex: '-10', width: '10rem', height: '16rem',filter: 'grayscale(100%)' }} />
+        </Box>
         <Box
           alignItems={"center"}
           w={"100%"}
@@ -122,10 +144,10 @@ const hushhValetChat = () => {
               fontWeight={"800"}
               fontSize={{ md: "2.8rem", base: "1.25rem" }}
             >
-              1.2b
+              86k
             </Text>
             <Text fontSize={{ md: "1rem", base: "0.75rem" }} fontWeight={"500"}>
-              Users
+              Followers
             </Text>
           </Box>
           <Button
@@ -486,6 +508,7 @@ const hushhValetChat = () => {
         </Stack>
         <ValetChatFaq />
       </Box>
+    )}
       <ContactForm />
     </>
   );

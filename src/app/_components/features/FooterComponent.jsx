@@ -65,8 +65,8 @@ const FooterComponent = () => {
                         <div className="flex flex-col gap-4">
                             <p className='text-base font-medium opacity-80 leading-6'>Get the app</p>
                             <div className="flex flex-col justify-between h-max gap-3.5">
-                                <button className='flex px-4 py-2 gap-1.5 border border-myBorder rounded-full'><AndroidIcon /> Android</button>
-                                <button className='flex px-4 py-2 gap-1.5 w-max border border-myBorder rounded-full'><IosIcon /> iOS</button>
+                                <button className='flex px-4 hover:border-none py-2 gap-1.5 border border-myBorder rounded-full'><AndroidIcon /> Android</button>
+                                <button className='flex px-4 hover:border-none py-2 gap-1.5 w-max border border-myBorder rounded-full'><IosIcon /> iOS</button>
                             </div>
                         </div>
                     </div>
@@ -130,8 +130,8 @@ const FooterComponent = () => {
                         <div className="flex flex-col gap-4 text-center mt-5">
                             <p className='text-base font-medium opacity-80 leading-6'>Get the app</p>
                             <div className="flex items-center justify-center gap-5 h-full">
-                                <button className='flex flex-1 justify-center px-4 py-2 gap-1.5 border border-myBorder rounded-full'><AndroidIcon /> Android</button>
-                                <button className='flex flex-1 justify-center px-4 py-2 gap-1.5 w-max border border-myBorder rounded-full'><IosIcon /> iOS</button>
+                                <button className='flex flex-1 hover:border-none justify-center px-4 py-2 gap-1.5 border border-myBorder rounded-full'><AndroidIcon /> Android</button>
+                                <button className='flex flex-1 hover:border-none justify-center px-4 py-2 gap-1.5 w-max border border-myBorder rounded-full'><IosIcon /> iOS</button>
                             </div>
                         </div>
                     </div>

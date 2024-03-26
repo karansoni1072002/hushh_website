@@ -126,6 +126,7 @@ const conciergeApp = () => {
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border:'none'
             }}
             onClick={learnMoreScroll}
           >
@@ -187,6 +188,7 @@ const conciergeApp = () => {
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border:'none'
             }}
             padding={"15px 68px 15px 68px"}
             onClick={handlePlayDemo}
@@ -212,6 +214,7 @@ const conciergeApp = () => {
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border:'none'
             }}
             padding={"15px 68px 15px 68px"}
             onClick={handlePlayDemo}

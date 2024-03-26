@@ -122,6 +122,7 @@ const hushhWalletApp = () => {
             w={"fit-content"}
             p={"1rem 2rem"}
             _hover={{
+              border:'none',
               color: "white",
               bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
@@ -649,6 +650,7 @@ const hushhWalletApp = () => {
                 border={"1px solid #FFFFFF"}
                 borderRadius={"80px"}
                 _hover={{
+                    border:'none',
                     background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
                 }}
               >
@@ -664,6 +666,7 @@ const hushhWalletApp = () => {
                 border={"1px solid #FFFFFF"}
                 borderRadius={"80px"}
                 _hover={{
+                    border:'none',
                     background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
                 }}
               >
@@ -715,7 +718,8 @@ const hushhWalletApp = () => {
             border={"1px solid #FFFFFF"}
             borderRadius={"80px"}
             _hover={{
-                background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
+                background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)',
+                border:'none',
             }}
           >
             APP STORE
@@ -730,7 +734,8 @@ const hushhWalletApp = () => {
             border={"1px solid #FFFFFF"}
             borderRadius={"80px"}
             _hover={{
-                background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
+                background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)',
+                border:'none',
             }}
           >
             PLAY STORE

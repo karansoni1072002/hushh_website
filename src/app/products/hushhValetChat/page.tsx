@@ -102,6 +102,7 @@ const hushhValetChat = () => {
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border:'none'
             }}
             onClick={learnMoreScroll}
           >
@@ -162,6 +163,7 @@ const hushhValetChat = () => {
             letterSpacing={"0.2rem"}
             onClick={scrollTo}
             _hover={{
+              border:'none',
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
@@ -187,6 +189,7 @@ const hushhValetChat = () => {
             background={"transparent"}
             letterSpacing={"0.29rem"}
             _hover={{
+              border:'none',
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
@@ -384,6 +387,7 @@ const hushhValetChat = () => {
               w={'fit-content'}
               p={'1rem 2rem'}
               _hover={{
+                border:'none',
                 color: 'white',
                 bg: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
               }}
@@ -464,6 +468,7 @@ const hushhValetChat = () => {
               background={"transparent"}
               letterSpacing={"0.4rem"}
               _hover={{
+                border:'none',
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               }}

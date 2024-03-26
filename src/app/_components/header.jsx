@@ -208,6 +208,7 @@ const Header = () => {
                   background:
                     "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                   color: "white",
+                  border: 'none'
                 }}
               >
                 LOGIN

@@ -102,6 +102,7 @@ const browserCompanion = () => {
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border:'none'
             }}
             onClick={() =>
               router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
@@ -166,6 +167,7 @@ const browserCompanion = () => {
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border:'none'
             }}
             padding={"15px 68px 15px 68px"}
           >
@@ -191,6 +193,7 @@ const browserCompanion = () => {
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border:'none'
             }}
             padding={"15px 68px 15px 68px"}
           >
@@ -390,7 +393,8 @@ const browserCompanion = () => {
               p={'1rem 2rem'}
               _hover={{
                 color: 'white',
-                bg: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
+                bg: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)',
+                border:'none'
               }}
               onClick={() =>
                 router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
@@ -473,6 +477,7 @@ const browserCompanion = () => {
               _hover={{
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                border:'none'
               }}
               onClick={() =>
                 router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")

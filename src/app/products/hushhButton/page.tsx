@@ -104,6 +104,7 @@ const hushhButton = () => {
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border:'none'
             }}
             onClick={() =>
               router.push("https://sites.google.com/hush1one.com/drops/products/hushh-button")
@@ -168,6 +169,7 @@ const hushhButton = () => {
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border:'none'
             }}
             padding={"15px 68px 15px 68px"}
           >
@@ -193,6 +195,7 @@ const hushhButton = () => {
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border:'none'
             }}
             padding={"15px 68px 15px 68px"}
           >
@@ -390,6 +393,7 @@ const hushhButton = () => {
               _hover={{
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                border:'none'
               }}
               onClick={() =>
                 router.push("https://sites.google.com/hush1one.com/drops/products/hushh-button")
@@ -479,6 +483,7 @@ const hushhButton = () => {
               _hover={{
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                border:'none'
               }}
               onClick={() =>
                 router.push("https://sites.google.com/hush1one.com/drops/products/hushh-button")
@@ -548,6 +553,7 @@ const hushhButton = () => {
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 color: "white",
+                border:'none'
               }}
               onClick={() =>
                 router.push("https://sites.google.com/hush1one.com/drops/products/hushh-button")
@@ -639,6 +645,7 @@ const hushhButton = () => {
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 color: "white",
+                border:'none'
               }}
               onClick={() =>
                 router.push("https://sites.google.com/hush1one.com/drops/products/hushh-button")

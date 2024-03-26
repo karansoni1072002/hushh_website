@@ -289,6 +289,7 @@ export default function ContactForm() {
                     _hover={{
                       background:
                         "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                      border:'none'
                     }}
                     onClick={(e) => {sendEmail(e)}}
                   >

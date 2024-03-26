@@ -36,6 +36,11 @@ import MarketIcon from "../../_components/svg/marketIcon";
 import ConciergeMobile from "../../_components/svg/icons/conciergeMobileIcon.svg";
 import Loading from "../../_components/features/loading";
 
+const handlePlayDemo = () => {
+  // Open the URL in a new tab
+  window.open('https://www.youtube.com/watch?v=J0Q_n6CWfO8', '_blank');
+};
+
 const conciergeApp = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
@@ -179,12 +184,12 @@ const conciergeApp = () => {
             lineHeight={"28px"}
             background={"transparent"}
             letterSpacing={"0.2rem"}
-            onClick={scrollTo}
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
             padding={"15px 68px 15px 68px"}
+            onClick={handlePlayDemo}
           >
             PLAY DEMO
           </Button>
@@ -199,7 +204,6 @@ const conciergeApp = () => {
             display={"flex"}
             border={"1px solid #606060"}
             borderRadius={"4rem"}
-            onClick={scrollInMobile}
             w={"12rem"}
             color={extendedTheme.colors._white}
             lineHeight={"32.4px"}
@@ -210,6 +214,7 @@ const conciergeApp = () => {
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
             padding={"15px 68px 15px 68px"}
+            onClick={handlePlayDemo}
           >
             PLAY DEMO
           </Button>

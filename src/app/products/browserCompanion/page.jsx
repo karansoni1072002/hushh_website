@@ -17,6 +17,7 @@ import ContactForm from '../../_components/features/contactForm'
 import BgAnimation from "../../../../public/Gif/bgAnimation.gif";
 import BrowserGif from "../../../../public/Gif/browserGifBg.gif"
 import Loading from "../../_components/features/loading"
+import TypingGIF from "../../../../public/Gif/typing.gif";
 
 const browserCompanion = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -408,10 +409,11 @@ const browserCompanion = () => {
           display={'flex'}
           flexDirection={{ md: 'row', base: 'column' }}
         >
-          <Box display={'flex'} flexDirection={'column'} flex={1} gap={{ md: '2rem', base: '1rem' }}>
-            <Image src={HushhWalletBox} alt="HushhWalletBox" />
-            {/* <Text fontSize={{ md:'1rem', base:'0.75rem'}} color={'#ABABAB'} lineHeight={{md:'36px', base:'18px'}}>See exactly what data is being collected about you, including search queries, brand interactions, interests, preferences, likes, and clicks. Gain insights into your online behavior and understand what shapes your digital footprint</Text> */}
-
+          <Box display={{ md:'flex', base:'none'}} flexDirection={'column'} flex={1} gap={{ md: '2rem', base: '1rem' }}>
+            <Image src={TypingGIF} alt="TypingGIF" style={{height:'607px', width:'540px'}} />
+          </Box>
+          <Box display={{ base:'flex', md:'none'}} flexDirection={'column'} flex={1} mb={'2rem'} gap={{ md: '2rem', base: '1rem' }}>
+            <Image src={TypingGIF} alt="TypingGIF" style={{height:'207px', width:'270px'}} />
           </Box>
 
           <Box display={"flex"} flexDirection={"column"} gap={'2rem'} flex={1}>

@@ -62,9 +62,7 @@ export default function ContactForm() {
         templateParams,
         user_Id
       );
-      console.log('Email Sent sucessfully', response);
-      console.log('email:',email);
-      // Clear form fields after successful submission
+
       setFirstName('');
       setLastName('');
       setEmail('');
@@ -72,14 +70,7 @@ export default function ContactForm() {
       setMessage('');
       setSubject('');
     } catch (error) {
-      console.log('email:',email);
-      console.log('name', firstName);
-      console.log('lastName', lastName);
-      console.log('number',number)
-      console.log('subject:', subject)
-      console.log('message',message);
       console.error('Sending mail FAILED...', error.text);
-      // Implement error handling here, e.g., display an error message to the user
     }
   };
 

@@ -20,6 +20,7 @@ import CircelFormShadow from "../../_components/svg/circleFormShadow.svg";
 import Image from "next/image";
 import BigCircleFormShadow from "../../_components/svg/BigCircleFormShadow.svg";
 import emailjs from '@emailjs/browser';
+import { useToast } from '@chakra-ui/react'
 
 emailjs.init('_TMzDc8Bfy6riSfzq');
 
@@ -38,6 +39,8 @@ export default function ContactForm() {
   const [ number , setNumber ] = useState('');
   const [ subject , setSubject ] = useState('');
   const [ message , setMessage ] = useState('');
+
+  const toast = useToast()
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -62,6 +65,14 @@ export default function ContactForm() {
         templateParams,
         user_Id
       );
+
+      toast({
+        title: 'Form Submitted.',
+        description: "Thank you for reaching out to us",
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      })
 
       setFirstName('');
       setLastName('');

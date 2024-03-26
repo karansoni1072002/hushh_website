@@ -59,10 +59,10 @@ const hushhValetChat = () => {
         position={'relative'}
       >
         <Box display={{ base: 'none', md: 'block' }}>
-          <Image src={ValetChatGif} alt="ValetChatGif" style={{ position: 'absolute',transform: 'rotate(-95deg)', top: '0px',left:'30%', zIndex: '-10', filter: 'grayscale(100%)'}} />
+          <Image src={ValetChatGif} alt="ValetChatGif" style={{ position: 'absolute',transform: 'rotate(-95deg)', opacity: '0.5',top: '0px',left:'30%', zIndex: '-10', filter: 'grayscale(100%)'}} />
         </Box>
         <Box display={{ base: 'block', md: 'none' }}>
-          <Image src={ValetChatGif} alt="ValetChatGif" style={{ position: 'absolute',transform: 'rotate(-95deg)', top:'0px',left:'30%', zIndex: '-10', width: '10rem', height: '16rem',filter: 'grayscale(100%)' }} />
+          <Image src={ValetChatGif} alt="ValetChatGif" style={{ position: 'absolute',transform: 'rotate(-95deg)',opacity: '0.5', top:'0px',left:'30%', zIndex: '-10', width: '10rem', height: '16rem',filter: 'grayscale(100%)' }} />
         </Box>
         <Box
           alignItems={"center"}

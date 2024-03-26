@@ -56,12 +56,12 @@ export default function ContactForm() {
       number:number,
     }
     try {
-      // const response = await emailjs.send(
-      //   serviceId, 
-      //   templateId, 
-      //   templateParams,
-      //   user_Id
-      // );
+      const response = await emailjs.send(
+        serviceId, 
+        templateId, 
+        templateParams,
+        user_Id
+      );
       console.log('Email Sent sucessfully', response);
       console.log('email:',email);
       // Clear form fields after successful submission
@@ -229,7 +229,7 @@ export default function ContactForm() {
                         {...register("subject", { required: true })}
                         colorScheme="white"
                         name="subject"
-                        onChange={(e) => setSubject(e.target.value)}
+                        onChange={(e) => setSubject('Explore Hushh Products')}
                       >
                         <Text fontSize={'0.75rem'}>Explore Hushh Products</Text>
                       </Radio>
@@ -248,7 +248,7 @@ export default function ContactForm() {
                         colorScheme="white"
                         name="subject"
                         // value='subject3'
-                        onChange={(e) => setSubject(e.target.value)}
+                        onChange={(e) => setSubject('Partner with Hushh')}
                       >
                         <Text fontSize={'0.75rem'}>Partner with Hushh</Text>
                       </Radio>
@@ -256,7 +256,7 @@ export default function ContactForm() {
                         {...register("subject", { required: true })}
                         colorScheme="white"
                         // value={subject}
-                        onChange={(e) => setSubject(e.target.value)}
+                        onChange={(e) => setSubject('Get Support')}
                         name="subject"
                         className="radio-option"
                       >
@@ -269,12 +269,11 @@ export default function ContactForm() {
                   <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Message</Text>
                   <Textarea
                     h={"6.25rem"}
-                    name="message"
-                    id='message'
-                    onChange={(e) => setMessage(e.target.value)}
                     w={{ base: '15.625rem', md: '100%' }}
                     placeholder="Type your message here"
                     {...register("message", { required: true })}
+                    value={message} 
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                 </HStack>
                 <HStack justifyContent="flex-end" w={"100%"}>

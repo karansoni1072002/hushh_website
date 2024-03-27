@@ -22,14 +22,16 @@ import { advisorsData } from "../advisorsBioData/advisorsData";
 
 const TeamSection = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedAdvisor, setSelectedAdvisor] = useState({});
+  const [selectedAdvisor, setSelectedAdvisor] = useState(null
+    );
 
-  const openModal = (advisorsData,index) => {
-    setSelectedAdvisor(advisorsData[index]);
+  const openModal = (advisor) => {
+    setSelectedAdvisor(advisor);
     setIsOpen(true);
   };
 
   const closeModal = () => {
+    setSelectedAdvisor(null);
     setIsOpen(false);
   };
 
@@ -823,541 +825,69 @@ const TeamSection = () => {
             </div>
           </VStack>
         </div>
-        {/* <div className="mt-12 md:mt-0">
+        <div className="mt-12 md:mt-0">
           <Grid
             templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
           >
-            <VStack
-              mb={{ md: "3rem", base: "1.5rem" }}
-              onMouseEnter={() => openModal(advisorsData,'1')}
-              onMouseLeave={closeModal}
-            >
-              <Image
-                alt="vivek"
-                src={teamImages.ApoorvBedmutha}
-                width={260}
-                height={276}
-              />
-              <div className=" -translate-y-16 flex flex-col items-center text-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Suresh Attuluri
-                  </Text>
-                  <Text color={"#ABABAB"}>
-                    Technology Advisor - Engineering
-                  </Text>
+            {advisorsData.map((advisor, index) => (
+              <VStack key={index} mb={{ md: "3rem", base: "1.5rem" }}>
+                <Image
+                  onClick={() => openModal(advisor)}
+                  // onMouseLeave={closeModal}
+                  alt={advisor.name}
+                  src={advisor.avatar}
+                  width={260}
+                  height={276}
+                />
+                <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
+                  <div className="flex flex-col gap-4">
+                    <Text
+                      color={"#E5E5E5"}
+                      fontWeight={"700"}
+                      fontSize={"1.3rem"}
+                    >
+                      {advisor.name}
+                    </Text>
+                    <Text color={"#ABABAB"}>{advisor.position}</Text>
+                  </div>
+                  <div>
+                    <Link href={advisor.linkedin}>
+                      <Image
+                        alt="sureshLinkedIn"
+                        src={linkedln}
+                        width={{ base: 12, md: 24 }}
+                        height={24}
+                      />
+                    </Link>
+                  </div>
                 </div>
-                <div className="">
-                  <Link href="https://www.linkedin.com/in/sureshattuluri/">
-                    <Image
-                      alt="sureshLinkedIn"
-                      src={linkedln}
-                      width={{ base: 12, md: 24 }}
-                      height={24}
-                    />
-                  </Link>
-                </div>
-              </div>
-            </VStack>
-
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.SubashManoharan}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Mark McLaughlin
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    Advisor to the CEO, Chairman Of The Board at Qualcomm
-                  </Text>
-                </div>
-                <Link href={"https://www.linkedin.com/in/markmclaughlin4/"}>
-                  <Image
-                    alt="markLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
-
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.RohanSidankar}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Mark Groves
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    Technology Advisor - Products
-                  </Text>
-                </div>
-                <Link href={"https://www.linkedin.com/in/mark-groves/"}>
-                  <Image
-                    alt="markGroLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
-
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.SatyamArora}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Dan Sareen
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    GTM Advisor - Ecosytems and Partnerships
-                  </Text>
-                </div>
-                <Link
-                  href={"https://www.linkedin.com/in/dan-sareen-95259a274/"}
-                >
-                  <Image
-                    alt="danLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
-
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.OmkarKailasMalpure}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Andrew Stein
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    Technology Advisor - Products
-                  </Text>
-                </div>
-                <Link href={"https://www.linkedin.com/in/ahstein/"}>
-                  <Image
-                    alt="andrewLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
-
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.KavyaChauhan}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Shirley Pellicer
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    GTM Business Developer - Luxury Markets
-                  </Text>
-                </div>
-                <Link href={"https://www.linkedin.com/in/shirleypellicer/"}>
-                  <Image
-                    alt="shirleyLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
-
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.DeveshParagiri}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Stéphane Spinella
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    GTM Advisor - EMEA Sales and Business Development
-                  </Text>
-                </div>
-                <Link href={"https://www.linkedin.com/in/stephanespinella/"}>
-                  <Image
-                    alt="stephaneLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
-
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.AnkitKumarSingh}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Amit Fulay
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    Technology Advisor - Products
-                  </Text>
-                </div>
-                <Link href={"https://www.linkedin.com/in/afulay/"}>
-                  <Image
-                    alt="amitLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
-
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.YashMakan}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Rish Tandon
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    Technology Advisor - Products
-                  </Text>
-                </div>
-                <Link href={"https://www.linkedin.com/in/rishtandon/"}>
-                  <Image
-                    alt="rishLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
-
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.AnuragGhose}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Valliappa Lakshmanan
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    Technology Advisor - AI/ML, Data and Analytics
-                  </Text>
-                </div>
-                <Link href={"https://www.linkedin.com/in/valliappalakshmanan/"}>
-                  <Image
-                    alt="ankitLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
-
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.AkashKatla}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Sid Gavandi
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    User Experience Advisor - Products
-                  </Text>
-                </div>
-                <Link href={"https://www.linkedin.com/in/sid-gavandi/"}>
-                  <Image
-                    alt="sidLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
-
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.KaranSoni}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Sudhir Hasbe
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    Technology Advisor - Products
-                  </Text>
-                </div>
-                <Link href={"https://www.linkedin.com/in/shasbe/"}>
-                  <Image
-                    alt="sudhirLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
-
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.NeeleshMeena}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Samant Nagpal
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    Business Advisor - Corporate Risk
-                  </Text>
-                </div>
-                <Link
-                  href={"https://www.linkedin.com/in/samant-nagpal-3240683/"}
-                >
-                  <Image
-                    alt="samantLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
-
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.ApoorvBedmutha}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Daniel Cleveland
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    Business Advisor - Finance
-                  </Text>
-                </div>
-                <Link href={"https://www.linkedin.com/in/danielcleveland/"}>
-                  <Image
-                    alt="danielLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image
-                alt="vivek"
-                src={teamImages.KarthickMuthu}
-                width={260}
-                height={276}
-              />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text
-                    color={"#E5E5E5"}
-                    lineHeight={"26.4px"}
-                    fontWeight={"700"}
-                    fontSize={"1.3rem"}
-                  >
-                    Nilanshu Raja
-                  </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    Business Advisor - Finance
-                  </Text>
-                </div>
-                <Link href={"https://www.linkedin.com/in/nilanshu/"}>
-                  <Image
-                    alt="nilanshuLinkedIn"
-                    src={linkedln}
-                    width={{ base: 12, md: 24 }}
-                    height={24}
-                  />
-                </Link>
-              </div>
-            </VStack>
+              </VStack>
+            ))}
           </Grid>
-        </div> */}
-         <div className="mt-12 md:mt-0">
-        <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}>
-          {advisorsData.map((advisor, index) => (
-            <VStack key={index} mb={{ md: "3rem", base: "1.5rem" }}>
-              <Image alt={advisor.name} src={advisor.avatar} width={260} height={276} />
-              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                <div className="flex flex-col gap-4">
-                  <Text color={"#E5E5E5"} fontWeight={"700"} fontSize={"1.3rem"}>
-                    {advisor.name}
-                  </Text>
-                  <Text color={"#ABABAB"}>{advisor.position}</Text>
-                </div>
-                <div>
-                  <Link href={advisor.linkedin}>
-                  <Image
-                      alt="sureshLinkedIn"
-                      src={linkedln}
-                      width={{ base: 12, md: 24 }}
-                      height={24}
-                    />
-                  </Link>
-                </div>
-              </div>
-            </VStack>
-          ))}
-        </Grid>
-      </div>
+        </div>
       </Box>
 
       <Modal isOpen={isOpen} onClose={closeModal}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>{selectedAdvisor.name}</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Image alt={selectedAdvisor.index} src={selectedAdvisor.imageSrc} />
-            <Text>{selectedAdvisor.position}</Text>
-            <Text>{selectedAdvisor.currentWork}</Text>
-            <Text>{selectedAdvisor.currentLocation}</Text>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+  <ModalOverlay />
+  <ModalContent w={{md:'30rem', base:'20rem'}} borderRadius={'2rem'} p={'1rem'}>
+    {selectedAdvisor && (
+      <>
+        {/* <ModalHeader>{selectedAdvisor.name}</ModalHeader> */}
+        <ModalCloseButton />
+        <ModalBody>
+          <Image src={selectedAdvisor.imageSrc} alt={selectedAdvisor.name} style={{width:'200px' ,height:'200px'}} />
+          <Heading my={{md:'0.75rem'}} fontSize={'2rem'}>{selectedAdvisor.name}</Heading>
+          <Text mb={{md:'0.75rem'}} fontSize={'1rem'}><b>Role at Hushh🤫: </b>{selectedAdvisor.position}</Text>
+          <Text mb={{md:'0.75rem'}} fontSize={'1rem'}><b>Currently working at: </b>{selectedAdvisor.currentWork}</Text>
+          <Text fontSize={'1rem'}><b>Locality: </b>
+          {selectedAdvisor.currentLocation}
+          </Text>
+        </ModalBody>
+      </>
+    )}
+  </ModalContent>
+</Modal>
+
     </>
   );
 };

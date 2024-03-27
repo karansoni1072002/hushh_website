@@ -10,7 +10,6 @@ export const advisorsData = [
       currentWork:'Vice President of Software Engineering @ Wheels Up',
       currentLocation:'Sammamish, Washington, United States',
       avatar:teamImages.AkashKatla,
-      linkedin:'https://www.linkedin.com/in/sureshattuluri/'
     },
     {
       name: "Mark McLaughlin",
@@ -20,7 +19,6 @@ export const advisorsData = [
       currentWork:'Chairman Of The Board @ Qualcomm',
       currentLocation:'Santa Clara, California, United States',
       avatar:teamImages.AnkitKumarSingh,
-      linkedin:'https://www.linkedin.com/in/markmclaughlin4/'
     },
     {
       name: "Mark Groves",
@@ -30,7 +28,6 @@ export const advisorsData = [
       currentWork:'Retired | DocuSign',
       currentLocation:'Pagosa Springs, Colorado, United States',
       avatar:teamImages.AnuragGhose,
-      linkedin:'https://www.linkedin.com/in/mark-groves/'
     },
     {
       name: "Dan Sareen",
@@ -40,7 +37,6 @@ export const advisorsData = [
       currentWork:'Market Development Director @ Accenture',
       currentLocation:'Greater Houston, Texas, United States',
       avatar:teamImages.ApoorvBedmutha,
-      linkedin:'https://www.linkedin.com/in/dan-sareen-95259a274/'
     },
     {
       name: "Andrew Stein",
@@ -50,7 +46,6 @@ export const advisorsData = [
       currentLocation:'Greater Seattle Area',
       imageSrc: advisoryImages.andrew,
       avatar:teamImages.DeveshParagiri,
-      linkedin:'https://www.linkedin.com/in/ahstein/'
     },
     {
       name: "Shirley Pellicer",
@@ -60,7 +55,6 @@ export const advisorsData = [
       currentLocation:'Greater Paris Metropolitan Region',
       currentWork:'Luxury: Tech & Media',
       avatar:teamImages.KavyaChauhan,
-      linkedin:'https://www.linkedin.com/in/shirleypellicer/'
     },
     {
       name: "Stéphane Spinella",
@@ -70,7 +64,6 @@ export const advisorsData = [
       currentWork:'Senior Director,Enterprise Sales @ Brickster | ex-Google',
       currentLocation:'Paris, Île-de-France, France',
       avatar:teamImages.KaranSoni,
-      linkedin:'https://www.linkedin.com/in/stephanespinella/'
     },
     {
       name: "Amit Fulay",
@@ -80,7 +73,6 @@ export const advisorsData = [
       currentWork:'Vice President of Product @ Microsoft',
       currentLocation:'Greater Seattle Area',
       avatar:teamImages.KarthickMuthu,
-      linkedin:'https://www.linkedin.com/in/afulay/'
     },
     {
       name: "Rish Tandon",
@@ -90,7 +82,6 @@ export const advisorsData = [
       currentWork:'Vice President @ Meta',
       currentLocation:'Greater Seattle Area',
       avatar:teamImages.NeeleshMeena,
-      linkedin:'https://www.linkedin.com/in/rishtandon/'
     },
     {
       name: "Valliappa Lakshmanan",
@@ -100,7 +91,6 @@ export const advisorsData = [
       currentLocation:'Bellevue, Washington, United States',
       currentWork:'Operating Executive - Data Science @ Silver Lake',
       avatar:teamImages.OmkarKailasMalpure,
-      linkedin:'https://www.linkedin.com/in/valliappalakshmanan/',
     },
     {
       name: "Sid Gavandi",
@@ -110,7 +100,6 @@ export const advisorsData = [
       currentLocation:'Bellevue, Washington, United States',
       currentWork:'Principal- Experience Strategy + Design at Slalom',
       avatar:teamImages.RohanSidankar,
-      linkedin:'https://www.linkedin.com/in/sid-gavandi/'
     },
     {
       name: "Sudhir Hasbe",
@@ -120,7 +109,6 @@ export const advisorsData = [
       currentLocation:'Mercer Island, Washington, United States',
       imageSrc: advisoryImages.sudhir,
       avatar:teamImages.SatyamArora,
-      linkedin:'https://www.linkedin.com/in/shasbe/'
     },
     {
       name: "Samant Nagpal",
@@ -130,7 +118,6 @@ export const advisorsData = [
       currentWork:'Chief Risk Officer @ Square',
       currentLocation:'Kirkland, Washington, United States',
       avatar:teamImages.SubashManoharan,
-      linkedin:'https://www.linkedin.com/in/samant-nagpal-3240683/'
     },
     {
       name: "Daniel Cleveland",
@@ -140,7 +127,6 @@ export const advisorsData = [
       currentWork:'Group Finance Manager @ Microsoft | ex-Google',
       currentLocation:'Washington DC-Baltimore Area',
       avatar:teamImages.YashMakan,
-      linkedin:'https://www.linkedin.com/in/danielcleveland/'
     },
     {
       name: "Nilanshu Raja",
@@ -150,7 +136,6 @@ export const advisorsData = [
       currentWork:'Chief Financial Officer @ Super (hellosuper.com)',
       currentLocation:'San Francisco Bay Area',
       avatar:teamImages.AkashKatla,
-      linkedin:'https://www.linkedin.com/in/nilanshu/'
     },
   ];
   

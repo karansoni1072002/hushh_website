@@ -1,17 +1,38 @@
+"use client";
 import {
   Heading,
   VStack,
   Text,
   Box,
   Grid,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
 } from "@chakra-ui/react";
 import React from "react";
 import linkedln from "../svg/icons/linkedIn.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { teamImages } from "./teamImages";
+import { useState } from "react";
+import { advisorsData } from "../advisorsBioData/advisorsData";
 
 const TeamSection = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedAdvisor, setSelectedAdvisor] = useState({});
+
+  const openModal = (advisorsData,index) => {
+    setSelectedAdvisor(advisorsData[index]);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <Box w={"100%"} h={"100%"}>
@@ -35,18 +56,31 @@ const TeamSection = () => {
                 fontWeight={"400"}
                 fontSize={{ base: "2.5rem", md: "3.75rem" }}
                 lineHeight={"63.3px"}
-                textAlign={{base:'center'}}
+                textAlign={{ base: "center" }}
               >
                 Our Team Leader
               </Heading>
             </div>
             <div className="font-medium text-fontColor4 leading-9 md:w-[30rem] text-center">
-              <p>Leadership isn't a title, it's an action. Thank you for leading by example.</p>
+              <p>
+                Leadership isn't a title, it's an action. Thank you for leading
+                by example.
+              </p>
             </div>
-            <Grid mt={'4rem'} mx={{ base: '1rem' }} gap={{ md: '10rem', base: '3rem' }} templateColumns={{ base: 'repeat(1, 1fr)', md: "repeat(2, 1fr)" }}>
+            <Grid
+              mt={"4rem"}
+              mx={{ base: "1rem" }}
+              gap={{ md: "10rem", base: "3rem" }}
+              templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
+            >
               <VStack mb={"1rem"}>
                 <div className="flex flex-col gap-8 text-center items-center">
-                  <Image alt="manish" src={teamImages.Manish} width={260} height={276} />
+                  <Image
+                    alt="manish"
+                    src={teamImages.Manish}
+                    width={260}
+                    height={276}
+                  />
                   <div className="flex flex-col gap-4">
                     <Text
                       color={"#E5E5E5"}
@@ -69,7 +103,12 @@ const TeamSection = () => {
               </VStack>
               <VStack>
                 <div className="flex flex-col gap-8 text-center items-center">
-                  <Image alt="justin" src={teamImages.Justin} width={260} height={276} />
+                  <Image
+                    alt="justin"
+                    src={teamImages.Justin}
+                    width={260}
+                    height={276}
+                  />
                   <div className="flex flex-col gap-4">
                     <Text
                       color={"#E5E5E5"}
@@ -78,7 +117,9 @@ const TeamSection = () => {
                     >
                       Justin Donaldson
                     </Text>
-                    <Text color={"#ABABAB"}>Co-founder and Chief Data Scientist</Text>
+                    <Text color={"#ABABAB"}>
+                      Co-founder and Chief Data Scientist
+                    </Text>
                   </div>
                   <Link href="https://www.linkedin.com/in/jjustindonaldson/">
                     <Image
@@ -96,7 +137,7 @@ const TeamSection = () => {
 
         {/* Team section */}
         <div className="mt-24 md:mt-0">
-          <VStack mt={{ base: '2rem', md: '8rem' }}>
+          <VStack mt={{ base: "2rem", md: "8rem" }}>
             <div className="pb-2.5">
               <Heading
                 as={"h2"}
@@ -119,15 +160,24 @@ const TeamSection = () => {
               </Heading>
             </div>
             <div className="font-medium text-fontColor4 leading-9 md:w-[30rem] text-center">
-              <p>The Hushh team: Disrupting the status quo, one line of code at a time</p>
+              <p>
+                The Hushh team: Disrupting the status quo, one line of code at a
+                time
+              </p>
             </div>
           </VStack>
         </div>
         <div className="mt-12 md:mt-0">
-          <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: "repeat(4, 1fr)" }}>
+          <Grid
+            templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
+          >
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              <Image alt="vivek" src={teamImages.VivekSwaminathan} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.VivekSwaminathan}
+                width={260}
+                height={276}
+              />
               <div className=" -translate-y-16 flex flex-col items-center text-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -153,8 +203,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              <Image alt="vivek" src={teamImages.SubashManoharan} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.SubashManoharan}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -165,7 +219,9 @@ const TeamSection = () => {
                   >
                     Subash Manoharan
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>TT Software Engineer - Front End</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    TT Software Engineer - Front End
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/subash-manoharan/"}>
                   <Image
@@ -179,8 +235,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              <Image alt="vivek" src={teamImages.KeerthiSreeMarrapu} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.KeerthiSreeMarrapu}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -191,7 +251,9 @@ const TeamSection = () => {
                   >
                     Keerthi Sree Marrapu
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Product Manager - AI/ML</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Product Manager - AI/ML
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/mksree/"}>
                   <Image
@@ -205,8 +267,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              <Image alt="vivek" src={teamImages.RohanSidankar} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.RohanSidankar}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -217,7 +283,9 @@ const TeamSection = () => {
                   >
                     Rohan Sidankar
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Software Engineer</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Software Engineer
+                  </Text>
                 </div>
                 <Link
                   href={"https://www.linkedin.com/in/rohan-sidankar-017205207/"}
@@ -233,8 +301,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              <Image alt="vivek" src={teamImages.SatyamArora} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.SatyamArora}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -245,7 +317,9 @@ const TeamSection = () => {
                   >
                     Satyam Arora
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Software Engineer - Full Stack</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Software Engineer - Full Stack
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/satyam-arora01/"}>
                   <Image
@@ -285,8 +359,12 @@ const TeamSection = () => {
           </VStack> */}
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              <Image alt="vivek" src={teamImages.OmkarKailasMalpure} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.OmkarKailasMalpure}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -297,7 +375,9 @@ const TeamSection = () => {
                   >
                     Omkar Kailas Malpure
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Software Engineer - AI/ML</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Software Engineer - AI/ML
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/omkar-malpure/"}>
                   <Image
@@ -311,8 +391,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              <Image alt="vivek" src={teamImages.VasundhharaKatoch} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.VasundhharaKatoch}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -323,10 +407,14 @@ const TeamSection = () => {
                   >
                     Vasundhhara Katoch
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Software Engineer - AI/ML + Product Evangelist</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Software Engineer - AI/ML + Product Evangelist
+                  </Text>
                 </div>
                 <Link
-                  href={"https://www.linkedin.com/in/vasundhhara-katoch-a72299169/"}
+                  href={
+                    "https://www.linkedin.com/in/vasundhhara-katoch-a72299169/"
+                  }
                 >
                   <Image
                     alt="vasundharaLinkedIn"
@@ -339,8 +427,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              <Image alt="vivek" src={teamImages.DeveshParagiri} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.DeveshParagiri}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -351,7 +443,9 @@ const TeamSection = () => {
                   >
                     Devesh Paragiri
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Software Engineer - API + Product Evangelist</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Software Engineer - API + Product Evangelist
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/devesh-paragiri/"}>
                   <Image
@@ -365,8 +459,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              <Image alt="vivek" src={teamImages.SusannaLiu} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.SusannaLiu}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -377,7 +475,9 @@ const TeamSection = () => {
                   >
                     Susanna Liu
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>UX Designer</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    UX Designer
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/susanna-liu/"}>
                   <Image
@@ -391,8 +491,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              <Image alt="vivek" src={teamImages.AnkitKumarSingh} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.AnkitKumarSingh}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -403,9 +507,15 @@ const TeamSection = () => {
                   >
                     Ankit Kumar Singh
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Customer Engineer - Full Stack</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Customer Engineer - Full Stack
+                  </Text>
                 </div>
-                <Link href={"https://www.linkedin.com/in/ankit-kumar-singh-69305a22a/"}>
+                <Link
+                  href={
+                    "https://www.linkedin.com/in/ankit-kumar-singh-69305a22a/"
+                  }
+                >
                   <Image
                     alt="ankitLinkedIn"
                     src={linkedln}
@@ -417,8 +527,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              <Image alt="vivek" src={teamImages.KavyaChauhan} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.KavyaChauhan}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -429,9 +543,13 @@ const TeamSection = () => {
                   >
                     Kavya Chauhan
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Customer Engineer - Full Stack</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Customer Engineer - Full Stack
+                  </Text>
                 </div>
-                <Link href={"https://www.linkedin.com/in/kavya-chauhan-6290bb239/"}>
+                <Link
+                  href={"https://www.linkedin.com/in/kavya-chauhan-6290bb239/"}
+                >
                   <Image
                     alt="kavyaLinkedIn"
                     src={linkedln}
@@ -443,8 +561,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              <Image alt="vivek" src={teamImages.YashMakan} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.YashMakan}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -455,7 +577,9 @@ const TeamSection = () => {
                   >
                     Yash Makan
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Software Engineer - Full Stack</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Software Engineer - Full Stack
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/yashmakan/"}>
                   <Image
@@ -469,8 +593,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              <Image alt="vivek" src={teamImages.AnuragGhose} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.AnuragGhose}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -481,9 +609,13 @@ const TeamSection = () => {
                   >
                     Anurag Ghose
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>UX/UI Designer</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    UX/UI Designer
+                  </Text>
                 </div>
-                <Link href={"https://www.linkedin.com/in/anurag-ghose-851666203/"}>
+                <Link
+                  href={"https://www.linkedin.com/in/anurag-ghose-851666203/"}
+                >
                   <Image
                     alt="anuragLinkedIn"
                     src={linkedln}
@@ -494,8 +626,12 @@ const TeamSection = () => {
               </div>
             </VStack>
             <VStack>
-
-              <Image alt="vivek" src={teamImages.AkashKatla} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.AkashKatla}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -506,7 +642,9 @@ const TeamSection = () => {
                   >
                     Akash Katla
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Software Engineer - API</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Software Engineer - API
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/akashkatla"}>
                   <Image
@@ -519,8 +657,12 @@ const TeamSection = () => {
               </div>
             </VStack>
             <VStack>
-
-              <Image alt="vivek" src={teamImages.KaranSoni} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.KaranSoni}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -531,7 +673,9 @@ const TeamSection = () => {
                   >
                     Karan Soni
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Software Engineer - Full Stack</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Software Engineer - Full Stack
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/karansoni1072002/"}>
                   <Image
@@ -544,8 +688,12 @@ const TeamSection = () => {
               </div>
             </VStack>
             <VStack>
-
-              <Image alt="vivek" src={teamImages.NeeleshMeena} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.NeeleshMeena}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -556,9 +704,13 @@ const TeamSection = () => {
                   >
                     Neelesh Meena
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Software Engineer - Full Stack</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Software Engineer - Full Stack
+                  </Text>
                 </div>
-                <Link href={"https://www.linkedin.com/in/neelesh-meena-73b07b1a0/"}>
+                <Link
+                  href={"https://www.linkedin.com/in/neelesh-meena-73b07b1a0/"}
+                >
                   <Image
                     alt="neeleshLinkedIn"
                     src={linkedln}
@@ -573,7 +725,12 @@ const TeamSection = () => {
         <div className="md:flex justify-center">
           <div className="px-9">
             <VStack>
-              <Image alt="vivek" src={teamImages.ApoorvBedmutha} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.ApoorvBedmutha}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -584,7 +741,9 @@ const TeamSection = () => {
                   >
                     Apoorv Bedmutha
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Software Engineer - Full Stack</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Software Engineer - Full Stack
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/apoorvbedmutha/"}>
                   <Image
@@ -599,7 +758,12 @@ const TeamSection = () => {
           </div>
           <div className="px-9">
             <VStack>
-              <Image alt="vivek" src={teamImages.KarthickMuthu} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.KarthickMuthu}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -610,7 +774,9 @@ const TeamSection = () => {
                   >
                     Karthick Muthu
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>TT UX Designer</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    TT UX Designer
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/karthick09/"}>
                   <Image
@@ -627,7 +793,7 @@ const TeamSection = () => {
 
         {/* Our Advisors Section */}
         <div className="mt-24 md:mt-0">
-          <VStack mt={{ base: '2rem', md: '8rem' }}>
+          <VStack mt={{ base: "2rem", md: "8rem" }}>
             <div className="pb-2.5">
               <Heading
                 as={"h2"}
@@ -650,15 +816,28 @@ const TeamSection = () => {
               </Heading>
             </div>
             <div className="font-medium text-fontColor4 leading-9 md:w-[30rem] text-center">
-              <p>Hushh Adivsors : Leading with expertise, shaping tomorrow's decisions today</p>
+              <p>
+                Hushh Adivsors : Leading with expertise, shaping tomorrow's
+                decisions today
+              </p>
             </div>
           </VStack>
         </div>
-        <div className="mt-12 md:mt-0">
-          <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: "repeat(4, 1fr)" }}>
-            <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.ApoorvBedmutha} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.suresh} width={260} height={276} /> */}
+        {/* <div className="mt-12 md:mt-0">
+          <Grid
+            templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
+          >
+            <VStack
+              mb={{ md: "3rem", base: "1.5rem" }}
+              onMouseEnter={() => openModal(advisorsData,'1')}
+              onMouseLeave={closeModal}
+            >
+              <Image
+                alt="vivek"
+                src={teamImages.ApoorvBedmutha}
+                width={260}
+                height={276}
+              />
               <div className=" -translate-y-16 flex flex-col items-center text-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -668,7 +847,9 @@ const TeamSection = () => {
                   >
                     Suresh Attuluri
                   </Text>
-                  <Text color={"#ABABAB"}>Technology Advisor - Engineering</Text>
+                  <Text color={"#ABABAB"}>
+                    Technology Advisor - Engineering
+                  </Text>
                 </div>
                 <div className="">
                   <Link href="https://www.linkedin.com/in/sureshattuluri/">
@@ -684,8 +865,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.SubashManoharan} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.Markmc} width={260} height={276} /> */}
+              <Image
+                alt="vivek"
+                src={teamImages.SubashManoharan}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -696,7 +881,9 @@ const TeamSection = () => {
                   >
                     Mark McLaughlin
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Advisor to the CEO, Chairman Of The Board at Qualcomm</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Advisor to the CEO, Chairman Of The Board at Qualcomm
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/markmclaughlin4/"}>
                   <Image
@@ -710,8 +897,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.RohanSidankar} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.Markgro} width={260} height={276} /> */}
+              <Image
+                alt="vivek"
+                src={teamImages.RohanSidankar}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -722,7 +913,9 @@ const TeamSection = () => {
                   >
                     Mark Groves
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Technology Advisor - Products</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Technology Advisor - Products
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/mark-groves/"}>
                   <Image
@@ -736,8 +929,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.SatyamArora} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.Dan} width={260} height={276} /> */}
+              <Image
+                alt="vivek"
+                src={teamImages.SatyamArora}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -748,7 +945,9 @@ const TeamSection = () => {
                   >
                     Dan Sareen
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>GTM Advisor - Ecosytems and Partnerships</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    GTM Advisor - Ecosytems and Partnerships
+                  </Text>
                 </div>
                 <Link
                   href={"https://www.linkedin.com/in/dan-sareen-95259a274/"}
@@ -764,8 +963,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.OmkarKailasMalpure} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.Andrew} width={260} height={276} /> */}
+              <Image
+                alt="vivek"
+                src={teamImages.OmkarKailasMalpure}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -776,7 +979,9 @@ const TeamSection = () => {
                   >
                     Andrew Stein
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Technology Advisor - Products</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Technology Advisor - Products
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/ahstein/"}>
                   <Image
@@ -790,8 +995,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.KavyaChauhan} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.Shirley} width={260} height={276} /> */}
+              <Image
+                alt="vivek"
+                src={teamImages.KavyaChauhan}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -802,7 +1011,9 @@ const TeamSection = () => {
                   >
                     Shirley Pellicer
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>GTM Business Developer - Luxury Markets</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    GTM Business Developer - Luxury Markets
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/shirleypellicer/"}>
                   <Image
@@ -816,8 +1027,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.DeveshParagiri} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.Stephane} width={260} height={276} /> */}
+              <Image
+                alt="vivek"
+                src={teamImages.DeveshParagiri}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -828,11 +1043,11 @@ const TeamSection = () => {
                   >
                     Stéphane Spinella
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>GTM Advisor - EMEA Sales and Business Development</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    GTM Advisor - EMEA Sales and Business Development
+                  </Text>
                 </div>
-                <Link
-                  href={"https://www.linkedin.com/in/stephanespinella/"}
-                >
+                <Link href={"https://www.linkedin.com/in/stephanespinella/"}>
                   <Image
                     alt="stephaneLinkedIn"
                     src={linkedln}
@@ -844,8 +1059,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.AnkitKumarSingh} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.Amit} width={260} height={276} /> */}
+              <Image
+                alt="vivek"
+                src={teamImages.AnkitKumarSingh}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -856,7 +1075,9 @@ const TeamSection = () => {
                   >
                     Amit Fulay
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Technology Advisor - Products</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Technology Advisor - Products
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/afulay/"}>
                   <Image
@@ -870,8 +1091,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.YashMakan} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.Rish} width={260} height={276} /> */}
+              <Image
+                alt="vivek"
+                src={teamImages.YashMakan}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -882,7 +1107,9 @@ const TeamSection = () => {
                   >
                     Rish Tandon
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Technology Advisor - Products</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Technology Advisor - Products
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/rishtandon/"}>
                   <Image
@@ -896,8 +1123,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.AnuragGhose} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.Valliappa} width={260} height={276} /> */}
+              <Image
+                alt="vivek"
+                src={teamImages.AnuragGhose}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -906,9 +1137,11 @@ const TeamSection = () => {
                     fontWeight={"700"}
                     fontSize={"1.3rem"}
                   >
-                    Valliappa Lakshmanan 
+                    Valliappa Lakshmanan
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Technology Advisor - AI/ML, Data and Analytics</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Technology Advisor - AI/ML, Data and Analytics
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/valliappalakshmanan/"}>
                   <Image
@@ -922,8 +1155,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.AkashKatla} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.Sid} width={260} height={276} /> */}
+              <Image
+                alt="vivek"
+                src={teamImages.AkashKatla}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -932,9 +1169,11 @@ const TeamSection = () => {
                     fontWeight={"700"}
                     fontSize={"1.3rem"}
                   >
-                    Sid Gavandi 
+                    Sid Gavandi
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>User Experience Advisor - Products</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    User Experience Advisor - Products
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/sid-gavandi/"}>
                   <Image
@@ -948,8 +1187,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.KaranSoni} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.Sudhir} width={260} height={276} /> */}
+              <Image
+                alt="vivek"
+                src={teamImages.KaranSoni}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -960,7 +1203,9 @@ const TeamSection = () => {
                   >
                     Sudhir Hasbe
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Technology Advisor - Products</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Technology Advisor - Products
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/shasbe/"}>
                   <Image
@@ -974,8 +1219,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.NeeleshMeena} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.Samant} width={260} height={276} /> */}
+              <Image
+                alt="vivek"
+                src={teamImages.NeeleshMeena}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -986,9 +1235,13 @@ const TeamSection = () => {
                   >
                     Samant Nagpal
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Business Advisor - Corporate Risk</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Business Advisor - Corporate Risk
+                  </Text>
                 </div>
-                <Link href={"https://www.linkedin.com/in/samant-nagpal-3240683/"}>
+                <Link
+                  href={"https://www.linkedin.com/in/samant-nagpal-3240683/"}
+                >
                   <Image
                     alt="samantLinkedIn"
                     src={linkedln}
@@ -1000,8 +1253,12 @@ const TeamSection = () => {
             </VStack>
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            <Image alt="vivek" src={teamImages.ApoorvBedmutha} width={260} height={276} />
-              {/* <Image alt="vivek" src={teamImages.Daniel} width={260} height={276} /> */}
+              <Image
+                alt="vivek"
+                src={teamImages.ApoorvBedmutha}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -1012,7 +1269,9 @@ const TeamSection = () => {
                   >
                     Daniel Cleveland
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Business Advisor - Finance</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Business Advisor - Finance
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/danielcleveland/"}>
                   <Image
@@ -1025,9 +1284,12 @@ const TeamSection = () => {
               </div>
             </VStack>
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-
-              {/* <Image alt="vivek" src={teamImages.Nilanshu} width={260} height={276} /> */}
-              <Image alt="vivek" src={teamImages.KarthickMuthu} width={260} height={276} />
+              <Image
+                alt="vivek"
+                src={teamImages.KarthickMuthu}
+                width={260}
+                height={276}
+              />
               <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
                 <div className="flex flex-col gap-4">
                   <Text
@@ -1038,7 +1300,9 @@ const TeamSection = () => {
                   >
                     Nilanshu Raja
                   </Text>
-                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>Business Advisor  - Finance</Text>
+                  <Text lineHeight={"18.75px"} color={"#ABABAB"}>
+                    Business Advisor - Finance
+                  </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/nilanshu/"}>
                   <Image
@@ -1050,11 +1314,50 @@ const TeamSection = () => {
                 </Link>
               </div>
             </VStack>
-
           </Grid>
-        </div>
-
+        </div> */}
+         <div className="mt-12 md:mt-0">
+        <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}>
+          {advisorsData.map((advisor, index) => (
+            <VStack key={index} mb={{ md: "3rem", base: "1.5rem" }}>
+              <Image alt={advisor.name} src={advisor.avatar} width={260} height={276} />
+              <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
+                <div className="flex flex-col gap-4">
+                  <Text color={"#E5E5E5"} fontWeight={"700"} fontSize={"1.3rem"}>
+                    {advisor.name}
+                  </Text>
+                  <Text color={"#ABABAB"}>{advisor.position}</Text>
+                </div>
+                <div>
+                  <Link href={advisor.linkedin}>
+                  <Image
+                      alt="sureshLinkedIn"
+                      src={linkedln}
+                      width={{ base: 12, md: 24 }}
+                      height={24}
+                    />
+                  </Link>
+                </div>
+              </div>
+            </VStack>
+          ))}
+        </Grid>
+      </div>
       </Box>
+
+      <Modal isOpen={isOpen} onClose={closeModal}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>{selectedAdvisor.name}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Image alt={selectedAdvisor.index} src={selectedAdvisor.imageSrc} />
+            <Text>{selectedAdvisor.position}</Text>
+            <Text>{selectedAdvisor.currentWork}</Text>
+            <Text>{selectedAdvisor.currentLocation}</Text>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </>
   );
 };

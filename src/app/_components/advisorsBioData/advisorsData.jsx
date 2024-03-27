@@ -1,4 +1,5 @@
 import { advisoryImages } from "../features/teamImages";
+import { teamImages } from "../features/teamImages";
 
 export const advisorsData = [
     {
@@ -8,6 +9,8 @@ export const advisorsData = [
       imageSrc: advisoryImages.suresh,
       currentWork:'Vice President of Software Engineering @ Wheels Up',
       currentLocation:'Sammamish, Washington, United States',
+      avatar:teamImages.AkashKatla,
+      linkedin:'https://www.linkedin.com/in/sureshattuluri/'
     },
     {
       name: "Mark McLaughlin",
@@ -16,6 +19,8 @@ export const advisorsData = [
       imageSrc: advisoryImages.markMc,
       currentWork:'Chairman Of The Board @ Qualcomm',
       currentLocation:'Santa Clara, California, United States',
+      avatar:teamImages.AnkitKumarSingh,
+      linkedin:'https://www.linkedin.com/in/markmclaughlin4/'
     },
     {
       name: "Mark Groves",
@@ -24,6 +29,8 @@ export const advisorsData = [
       imageSrc: advisoryImages.markGroves,
       currentWork:'Retired | DocuSign',
       currentLocation:'Pagosa Springs, Colorado, United States',
+      avatar:teamImages.AnuragGhose,
+      linkedin:'https://www.linkedin.com/in/mark-groves/'
     },
     {
       name: "Dan Sareen",
@@ -31,7 +38,9 @@ export const advisorsData = [
       linkedin: "https://www.linkedin.com/in/dan-sareen-95259a274/",
       imageSrc: advisoryImages.danSareen,
       currentWork:'Market Development Director @ Accenture',
-      currentLocation:'Greater Houston, Texas, United States'
+      currentLocation:'Greater Houston, Texas, United States',
+      avatar:teamImages.ApoorvBedmutha,
+      linkedin:'https://www.linkedin.com/in/dan-sareen-95259a274/'
     },
     {
       name: "Andrew Stein",
@@ -40,6 +49,8 @@ export const advisorsData = [
       currentWork:'Group Product Manager at Cross Google Engineering & Core',
       currentLocation:'Greater Seattle Area',
       imageSrc: advisoryImages.andrew,
+      avatar:teamImages.DeveshParagiri,
+      linkedin:'https://www.linkedin.com/in/ahstein/'
     },
     {
       name: "Shirley Pellicer",
@@ -48,6 +59,8 @@ export const advisorsData = [
       imageSrc: advisoryImages.shirley,
       currentLocation:'Greater Paris Metropolitan Region',
       currentWork:'Luxury: Tech & Media',
+      avatar:teamImages.KavyaChauhan,
+      linkedin:'https://www.linkedin.com/in/shirleypellicer/'
     },
     {
       name: "Stéphane Spinella",
@@ -56,6 +69,8 @@ export const advisorsData = [
       imageSrc: advisoryImages.stephane,
       currentWork:'Senior Director,Enterprise Sales @ Brickster | ex-Google',
       currentLocation:'Paris, Île-de-France, France',
+      avatar:teamImages.KaranSoni,
+      linkedin:'https://www.linkedin.com/in/stephanespinella/'
     },
     {
       name: "Amit Fulay",
@@ -63,7 +78,9 @@ export const advisorsData = [
       linkedin: "https://www.linkedin.com/in/afulay/",
       imageSrc: advisoryImages.amitFulay,
       currentWork:'Vice President of Product @ Microsoft',
-      currentLocation:'Greater Seattle Area'
+      currentLocation:'Greater Seattle Area',
+      avatar:teamImages.KarthickMuthu,
+      linkedin:'https://www.linkedin.com/in/afulay/'
     },
     {
       name: "Rish Tandon",
@@ -71,7 +88,9 @@ export const advisorsData = [
       linkedin: "https://www.linkedin.com/in/rishtandon/",
       imageSrc: advisoryImages.rishi,
       currentWork:'Vice President @ Meta',
-      currentLocation:'Greater Seattle Area'
+      currentLocation:'Greater Seattle Area',
+      avatar:teamImages.NeeleshMeena,
+      linkedin:'https://www.linkedin.com/in/rishtandon/'
     },
     {
       name: "Valliappa Lakshmanan",
@@ -79,7 +98,9 @@ export const advisorsData = [
       linkedin: "https://www.linkedin.com/in/valliappalakshmanan/",
       imageSrc: advisoryImages.valliappa,
       currentLocation:'Bellevue, Washington, United States',
-      currentWork:'Operating Executive - Data Science @ Silver Lake'
+      currentWork:'Operating Executive - Data Science @ Silver Lake',
+      avatar:teamImages.OmkarKailasMalpure,
+      linkedin:'https://www.linkedin.com/in/valliappalakshmanan/',
     },
     {
       name: "Sid Gavandi",
@@ -88,6 +109,8 @@ export const advisorsData = [
       imageSrc: advisoryImages.sid,
       currentLocation:'Bellevue, Washington, United States',
       currentWork:'Principal- Experience Strategy + Design at Slalom',
+      avatar:teamImages.RohanSidankar,
+      linkedin:'https://www.linkedin.com/in/sid-gavandi/'
     },
     {
       name: "Sudhir Hasbe",
@@ -96,6 +119,8 @@ export const advisorsData = [
       currentWork:'Chief Product Officer @ Neo4j, ex-Sr. Director of Product Management @ Google',
       currentLocation:'Mercer Island, Washington, United States',
       imageSrc: advisoryImages.sudhir,
+      avatar:teamImages.SatyamArora,
+      linkedin:'https://www.linkedin.com/in/shasbe/'
     },
     {
       name: "Samant Nagpal",
@@ -104,6 +129,8 @@ export const advisorsData = [
       imageSrc: advisoryImages.samant,
       currentWork:'Chief Risk Officer @ Square',
       currentLocation:'Kirkland, Washington, United States',
+      avatar:teamImages.SubashManoharan,
+      linkedin:'https://www.linkedin.com/in/samant-nagpal-3240683/'
     },
     {
       name: "Daniel Cleveland",
@@ -111,7 +138,9 @@ export const advisorsData = [
       linkedin: "https://www.linkedin.com/in/danielcleveland/",
       imageSrc: advisoryImages.daniel,
       currentWork:'Group Finance Manager @ Microsoft | ex-Google',
-      currentLocation:'Washington DC-Baltimore Area'
+      currentLocation:'Washington DC-Baltimore Area',
+      avatar:teamImages.YashMakan,
+      linkedin:'https://www.linkedin.com/in/danielcleveland/'
     },
     {
       name: "Nilanshu Raja",
@@ -119,7 +148,9 @@ export const advisorsData = [
       linkedin: "https://www.linkedin.com/in/nilanshu/",
       imageSrc: advisoryImages.nilanshu,
       currentWork:'Chief Financial Officer @ Super (hellosuper.com)',
-      currentLocation:'San Francisco Bay Area'
+      currentLocation:'San Francisco Bay Area',
+      avatar:teamImages.AkashKatla,
+      linkedin:'https://www.linkedin.com/in/nilanshu/'
     },
   ];
   

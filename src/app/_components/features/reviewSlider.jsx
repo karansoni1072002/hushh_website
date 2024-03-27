@@ -40,7 +40,7 @@ const ReviewSlider = () => {
       name: "Ethan Thompson",
       imageUrl: customer3,
       review:
-        "Hushh Chrome Extension is a must-have for anyone concerned about their online privacy. It gives me full control over my digital identity & allows me to choose what information I want to share.",
+        "Hushh Browser Companion is a must-have for anyone concerned about their online privacy. It gives me full control over my digital identity & allows me to choose what information I want to share.",
     },
     {
       name: "Michael Brown",
@@ -64,7 +64,7 @@ const ReviewSlider = () => {
       name: "Ava Anderson",
       imageUrl: user1,
       review:
-        "With Hushh Chrome Extension, I finally feel in control of my online data. I can choose what information to keep private and customize and what to share, giving me peace of mind while browsing.",
+        "With Hushh Browser Companion, I finally feel in control of my online data. I can choose what information to keep private and customize and what to share, giving me peace of mind while browsing.",
     },
   ];
   const initialActiveIndex = 1;

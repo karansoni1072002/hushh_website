@@ -78,11 +78,11 @@ const faqData = {
   Services: [
     {
         question: "What are the primary services offered by Hushh?",
-        answer: "Hushh offers a range of services including Hushh Chrome Extension for tracking and managing online activity, Hushh Wallet App for controlling personal data and monetization, Hushh Button for seamless personalization, Hushh Developer APIs for secure data integration, Valet Chat for financial management, Hushh Concierge App for luxury experiences, and Hushh Jobs for recruitment innovation."
+        answer: "Hushh offers a range of services including Hushh Browser Companion for tracking and managing online activity, Hushh Wallet App for controlling personal data and monetization, Hushh Button for seamless personalization, Hushh Developer APIs for secure data integration, Valet Chat for financial management, Hushh Concierge App for luxury experiences, and Hushh Jobs for recruitment innovation."
       },
       {
-        question: "How does Hushh Chrome Extension protect user privacy?",
-        answer: "Hushh Chrome Extension protects user privacy by allowing users to track their own browsing activity without sharing data with third-party trackers. It gives users complete control over what data to collect and ensures transparency in data sharing practices."
+        question: "How does Hushh Browser Companion protect user privacy?",
+        answer: "Hushh Browser Companion protects user privacy by allowing users to track their own browsing activity without sharing data with third-party trackers. It gives users complete control over what data to collect and ensures transparency in data sharing practices."
       },
       {
         question: "What is the purpose of Hushh Wallet App?",

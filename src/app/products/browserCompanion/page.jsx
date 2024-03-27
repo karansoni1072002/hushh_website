@@ -55,7 +55,7 @@ const browserCompanion = () => {
         pos={'relative'}
       >
         <Box display={{ base: 'none', md: 'block' }}>
-          <Image src={BrowserGif} alt="BrowserGif" style={{ position: 'absolute', top: '0px', zIndex: '-10', width: '100%', height: '40rem', filter: 'grayscale(100%)'}} />
+          <Image src={BrowserGif} alt="BrowserGif" style={{ position: 'absolute', top: '0px', zIndex: '-10', width: '100%', opacity:'0.7',height: '40rem', filter: 'grayscale(100%)'}} />
         </Box>
         <Box display={{ base: 'block', md: 'none' }}>
           <Image src={BrowserGif} alt="BrowserGif" style={{ position: 'absolute', top: '55px', zIndex: '-10', width: '100%', height: '16rem',filter: 'grayscale(100%)' }} />
@@ -85,10 +85,9 @@ const browserCompanion = () => {
             px={{ md: "17.8rem" }}
             mb={{ base: "1rem", md: "4rem" }}
             textAlign={"center"}
-            color={"#656565"}
+            color={"#ABABAB"}
           >
-            The Hushh Web Browser Extension takes personalized online
-            experiences to the next level. Here's what it offers
+            Tired of being tracked online? Every click, scroll, and search query leaves a trail of your identity, exploited by third-party organizations for targeted advertising. With Hushh, the power is back in your hands
           </Text>
           <Button
             border={"1px solid #606060"}
@@ -217,7 +216,7 @@ const browserCompanion = () => {
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
           >
-            Introducing Hushh, the Browser Companion That Empowers You
+            Introducing Hushh Browser Companion, a product that helps you keep track of your digital footprint
           </Heading>
           <Text
             mt={"1rem"}
@@ -380,8 +379,8 @@ const browserCompanion = () => {
             <Box fontSize={{ md: '1.25rem', base: '0.75rem' }} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'30.04px'} color={'#ABACB0'} gap={{ md: '1rem', base: '0rem' }}>
               <Text>Choose what data to collect</Text>
               <Text>Track your interests over time</Text>
-              <Text>Export your data</Text>
-              <Text>Sell your data responsibly</Text>
+              <Text>Export the collected data to your hushh wallet</Text>
+              <Text>Sell your data responsibly and get tailored services</Text>
             </Box>
           </Box>
           <Box display={'flex'} flexDirection={'column'} flex={1} gap={'1rem'}>
@@ -463,7 +462,7 @@ const browserCompanion = () => {
               Streamlined Integration via Browser Companion
             </Box>
             <Box fontSize={'1rem'} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'36px'} color={'#ABABAB'} gap={'1rem'}>
-              <Text>Hushh Web Browser Extension also enables users to share their user activity in their Hushh Wallet. This makes it easy to organize and access important information, such as receipts, warranty details, and more, all in one secure place.</Text>
+              <Text>Hushh Web Browser Companion also enables users to share their user activity in their Hushh Wallet. This makes it easy to organize and access important information, such as receipts, warranty details, and more, all in one secure place.</Text>
             </Box>
             <Button
               border={"3px solid #606060"}
@@ -515,7 +514,7 @@ const browserCompanion = () => {
               lineHeight={{ md: "31.5px", base: '20px' }}
               fontSize={{ md: "1.125rem", base: "0.75rem" }}
             >
-              The extension utilizes advanced algorithms and AI technology to analyze the captured data and generate brilliant insights. Users receive personalized recommendations, discover new products and brands aligned with their interests, and stay up-to-date with the latest trends.
+              The extension utilizes advanced algorithms and AI technology to analyze the captured data and generate brilliant insights. Users receive personalized recommendations, discover new products and brands, aligned with their interests, and stay up-to-date with the latest trends.
             </Text>
           </VStack>
         </Stack>

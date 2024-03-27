@@ -35,28 +35,28 @@ const faqData = {
     ],
     " About Product": [
         {
-            question: "What services does Hushh Chrome Extension offer?",
-            answer: "Hushh Chrome Extension empowers users to take control of their digital footprint by providing tools to track, manage, and monetize their browsing activity. It allows users to track their browsing activity, choose what data to collect, track interests over time, export data, and sell data responsibly"
+            question: "What services does Hushh Browser Companion offer?",
+            answer: "Hushh Browser Companion empowers users to take control of their digital footprint by providing tools to track, manage, and monetize their browsing activity. It allows users to track their browsing activity, choose what data to collect, track interests over time, export data, and sell data responsibly"
         },
         {
-            question: "How does Hushh Chrome Extension work?",
-            answer: "Hushh Chrome Extension works by giving users complete control over their online data. It tracks browsing activity, allows users to select the data they want to capture, tracks interests over time, and provides options to export and monetize data. Additionally, it ensures user privacy and transparency in data sharing practices."
+            question: "How does Hushh Browser Companion work?",
+            answer: "Hushh Browser Companion works by giving users complete control over their online data. It tracks browsing activity, allows users to select the data they want to capture, tracks interests over time, and provides options to export and monetize data. Additionally, it ensures user privacy and transparency in data sharing practices."
         },
         {
-            question: "How does Hushh Chrome Extension protect user privacy?",
-            answer: "Hushh Chrome Extension protects user privacy by allowing users to track their own browsing activity without sharing data with third-party trackers. It gives users complete control over what data to collect and ensures transparency in data sharing practices."
+            question: "How does Hushh Browser Companion protect user privacy?",
+            answer: "Hushh Browser Companion protects user privacy by allowing users to track their own browsing activity without sharing data with third-party trackers. It gives users complete control over what data to collect and ensures transparency in data sharing practices."
         },
         {
-            question: "What are the key features of Hushh Chrome Extension?",
-            answer: "The key features of Hushh Chrome Extension include tracking browsing activity, choosing what data to collect, tracking interests over time, exporting data, and selling data responsibly. It empowers users to take control of their digital footprint and make informed choices about their online behavior."
+            question: "What are the key features of Hushh Browser Companion?",
+            answer: "The key features of Hushh Browser Companion include tracking browsing activity, choosing what data to collect, tracking interests over time, exporting data, and selling data responsibly. It empowers users to take control of their digital footprint and make informed choices about their online behavior."
         },
         {
             question: "How does Hushh Browser Companion help users gain insights into their online behavior?",
             answer: "Hushh Browser Companion helps users gain insights into their online behavior by providing tools to track and analyze browsing activity. Users can see exactly what data is being collected about them, including search queries, brand interactions, interests, preferences, likes, and clicks."
         },
         {
-            question: "What sets Hushh Chrome Extension apart from other tracking tools?",
-            answer: "Hushh Chrome Extension stands out from other tracking tools by prioritizing user privacy and data control. Unlike third-party trackers that exploit user data for targeted advertising, Hushh gives users complete control over their data and enables them to track their own browsing activity for their own benefit."
+            question: "What sets Hushh Browser Companion apart from other tracking tools?",
+            answer: "Hushh Browser Companion stands out from other tracking tools by prioritizing user privacy and data control. Unlike third-party trackers that exploit user data for targeted advertising, Hushh gives users complete control over their data and enables them to track their own browsing activity for their own benefit."
         }
 
     ],
@@ -81,11 +81,11 @@ const faqData = {
     Services: [
         {
             question: "What are the primary services offered by Hushh?",
-            answer: "Hushh offers a range of services including Hushh Chrome Extension for tracking and managing online activity, Hushh Wallet App for controlling personal data and monetization, Hushh Button for seamless personalization, Hushh Developer APIs for secure data integration, Valet Chat for financial management, Hushh Concierge App for luxury experiences, and Hushh Jobs for recruitment innovation."
+            answer: "Hushh offers a range of services including Hushh Browser Companion for tracking and managing online activity, Hushh Wallet App for controlling personal data and monetization, Hushh Button for seamless personalization, Hushh Developer APIs for secure data integration, Valet Chat for financial management, Hushh Concierge App for luxury experiences, and Hushh Jobs for recruitment innovation."
         },
         {
-            question: "How does Hushh Chrome Extension protect user privacy?",
-            answer: "Hushh Chrome Extension protects user privacy by allowing users to track their own browsing activity without sharing data with third-party trackers. It gives users complete control over what data to collect and ensures transparency in data sharing practices."
+            question: "How does Hushh Browser Companion protect user privacy?",
+            answer: "Hushh Browser Companion protects user privacy by allowing users to track their own browsing activity without sharing data with third-party trackers. It gives users complete control over what data to collect and ensures transparency in data sharing practices."
         },
         {
             question: "What is the purpose of Hushh Wallet App?",

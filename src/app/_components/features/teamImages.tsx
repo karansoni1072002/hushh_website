@@ -42,6 +42,10 @@ export const teamImages = {
     KarthickMuthu
 }
 
+export const advisoryImages = {
+    
+}
+
 
 export const advisorsInfo = {
     General: [

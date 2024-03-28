@@ -842,7 +842,7 @@ const TeamSection = () => {
                       />
                       )}
                       {isTabletOrMobile && (
-                        <Image
+                      <Image
                         alt="sureshLinkedIn"
                         src={linkedln}
                         width={12}

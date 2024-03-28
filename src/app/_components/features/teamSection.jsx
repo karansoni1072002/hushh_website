@@ -11,6 +11,7 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
+  Button,
 } from "@chakra-ui/react";
 import React from "react";
 import linkedln from "../svg/icons/linkedIn.svg";
@@ -826,7 +827,7 @@ const TeamSection = () => {
                     </Text>
                     <Text color={"#ABABAB"}>{advisor.position}</Text>
                   </div>
-                  <div>
+                  <Box display='flex' flexDirection='row' gap='1rem' alignItems={'center'}>
                     <Link href={advisor.linkedin}>
                       <Image
                         alt="sureshLinkedIn"
@@ -835,7 +836,10 @@ const TeamSection = () => {
                         height={24}
                       />
                     </Link>
-                  </div>
+                    <Button h={{ md:'1.75rem', base:'1rem'}} fontSize={'0.75rem'} onClick={() => openModal(advisor)}>
+                      Know More
+                    </Button>
+                  </Box>
                 </div>
               </VStack>
             ))}
@@ -888,16 +892,20 @@ const TeamSection = () => {
                     />
                   </Link>
                 </Heading>
+                <Box display={'flex'} gap={'0.5rem'}>
+
                 <Text mb={{ md: "0.75rem" }} fontSize={"1rem"}>
                   🤫 {" "}
                   <b>Role at Hushh: </b>
+                  </Text>
+
                   {selectedAdvisor.position}
-                </Text>
+                  </Box>
                 <Box display={'flex'} gap={'0.5rem'}>
                 <Image
                     src={jobIcon}
                     alt="jobIcon"
-                    style={{ width: "25px", height: "25px" }}
+                    style={{ alignSelf:'flex-start', alignItems:'flex-start'}}
                   />
                 <Text
                   mb={{ md: "0.75rem" }}

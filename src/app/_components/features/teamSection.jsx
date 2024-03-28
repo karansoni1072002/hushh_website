@@ -23,10 +23,14 @@ import { useState } from "react";
 import { advisorsData } from "../advisorsBioData/advisorsData";
 import locationIcon from "../svg/icons/locationIcon.svg";
 import jobIcon from "../svg/icons/jobIcon.svg";
+import { useMediaQuery } from 'react-responsive'
 
 const TeamSection = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedAdvisor, setSelectedAdvisor] = useState(null);
+
+  const isTabletOrMobile = useMediaQuery({ maxWidth: 769 })
+
 
   const openModal = (advisor) => {
     setSelectedAdvisor(advisor);
@@ -804,39 +808,49 @@ const TeamSection = () => {
         </div>
         <div className="mt-12 md:mt-0">
           <Grid
-            templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
+            templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
           >
             {advisorsData.map((advisor, index) => (
               <VStack key={index} mb={{ md: "3rem", base: "1.5rem" }}>
                 <Image
                   onClick={() => openModal(advisor)}
-                  // onMouseOver={() => openModal(advisor)}
                   alt={advisor.name}
                   src={advisor.avatar}
                   width={260}
                   height={276}
                 />
-                <div className="-translate-y-16 flex flex-col text-center items-center gap-8">
-                  <div className="flex flex-col gap-4">
+                <div className="-translate-y-16 flex flex-col text-center items-center gap-3 md:gap-8">
+                  <div className="flex flex-col md:gap-4">
                     <Text
                       color={"#E5E5E5"}
                       fontWeight={"700"}
-                      fontSize={"1.3rem"}
+                      fontSize={{ md:"1.3rem", base:'1rem'}}
+                      mt={{base:'1rem'}}
                     >
                       {advisor.name}
                     </Text>
-                    <Text color={"#ABABAB"}>{advisor.position}</Text>
+                    <Text color={"#ABABAB"} fontSize={{base:'0.75rem', md:'1rem'}}>{advisor.position}</Text>
                   </div>
-                  <Box display='flex' flexDirection='row' gap='1rem' alignItems={'center'}>
+                  <Box mt={{md:'0', base:'1rem'}} display='flex' flexDirection='row' gap='1rem' alignItems={'center'}>
                     <Link href={advisor.linkedin}>
-                      <Image
+                      {!isTabletOrMobile && (
+                       <Image
                         alt="sureshLinkedIn"
                         src={linkedln}
                         width={{ base: 12, md: 24 }}
                         height={24}
                       />
+                      )}
+                      {isTabletOrMobile && (
+                        <Image
+                        alt="sureshLinkedIn"
+                        src={linkedln}
+                        width={12}
+                        height={12}
+                      />
+                      )}
                     </Link>
-                    <Button h={{ md:'1.75rem', base:'1rem'}} fontSize={'0.75rem'} onClick={() => openModal(advisor)}>
+                    <Button h={{ md:'1.75rem', base:'1rem'}}  fontSize={{ md:'0.75rem', base:'0.5rem'}} onClick={() => openModal(advisor)}>
                       Know More
                     </Button>
                   </Box>
@@ -850,9 +864,9 @@ const TeamSection = () => {
       <Modal isOpen={isOpen} onClose={closeModal}>
         <ModalOverlay />
         <ModalContent
-          minW={{ md: "30rem", base: "20rem" }}
+          minW={{ md: "30rem", base: "10rem" }}
           borderRadius={"2rem"}
-          p={"1rem"}
+          p={{ md:"1rem",base:'0'}}
         >
           {selectedAdvisor && (
             <>
@@ -863,7 +877,7 @@ const TeamSection = () => {
                   justifyContent={"center"}
                   alignItems={"center"}
                 >
-                  <Image
+                  {!isTabletOrMobile && (<Image
                     alignContent={"center"}
                     src={selectedAdvisor.imageSrc}
                     alt={selectedAdvisor.name}
@@ -874,43 +888,64 @@ const TeamSection = () => {
                       height: "200px",
                     }}
                   />
+                  )}
+                  {isTabletOrMobile && (<Image
+                    alignContent={"center"}
+                    src={selectedAdvisor.imageSrc}
+                    alt={selectedAdvisor.name}
+                    style={{
+                      width: "100px",
+                      display: "flex",
+                      alignContent: "center",
+                      height: "100px",
+                    }}
+                  />
+                  )}
                 </Box>
                 <Heading
                   display={"flex"}
                   gap={"1rem"}
-                  my={{ md: "0.75rem" }}
-                  fontSize={"2rem"}
+                  my={{ md: "0.75rem",base:'0.5rem' }}
+                  fontSize={{ md:"2rem", base:'1rem'}}
                 >
                   {selectedAdvisor.name}
                   <Link href={selectedAdvisor.linkedin} target="_blank">
+                    {!isTabletOrMobile && (
                     <Image
-                      alt="sureshLinkedIn"
+                      alt="linkedin"
                       src={LinkedinIcon}
                       width={{ base: 12, md: 24 }}
                       height={24}
                       style={{ marginTop: "0.5rem" }}
                     />
+                    )}
+                    {isTabletOrMobile && (
+                    <Image
+                      alt="linkedin"
+                      src={LinkedinIcon}
+                      width={15}
+                      height={15}
+                      style={{ marginTop: "0.2rem" }}
+                    />
+                    )}
                   </Link>
                 </Heading>
-                <Box display={'flex'} gap={'0.5rem'}>
-
-                <Text mb={{ md: "0.75rem" }} fontSize={"1rem"}>
+                <Box display={'flex'} gap={'0.5rem'} fontSize={{ md:"1rem", base:'0.75rem'}}>
+                <Text mb={{ md: "0.75rem", base:'0.5rem' }}  fontSize={{ md:"1rem", base:'0.75rem'}}>
                   🤫 {" "}
                   <b>Role at Hushh: </b>
                   </Text>
-
                   {selectedAdvisor.position}
-                  </Box>
-                <Box display={'flex'} gap={'0.5rem'}>
+                </Box>
+                <Box display={'flex'} gap={'0.5rem'} fontSize={{ md:"1rem", base:'0.75rem'}}>
                 <Image
                     src={jobIcon}
                     alt="jobIcon"
                     style={{ alignSelf:'flex-start', alignItems:'flex-start'}}
                   />
                 <Text
-                  mb={{ md: "0.75rem" }}
+                  mb={{ md: "0.75rem", base:'0.5rem' }}
                   gap={"0.5rem"}
-                  fontSize={"1rem"}
                   display={'flex'}
                   flexDirection={'row'}
                 > 
@@ -918,7 +953,7 @@ const TeamSection = () => {
                   </Text>
                   {selectedAdvisor.currentWork}
                 </Box>
-                <Text gap={"0.5rem"} fontSize={"1rem"} display={"flex"}>
+                <Text gap={"0.5rem"} fontSize={{ md:"1rem", base:'0.75rem'}} display={"flex"}>
                   <Image src={locationIcon} alt="locationIcon" boxSize={6} style={{display:'flex', alignSelf:'flex-start', marginRight:'0.25rem'}}/>
 
                   <b>Locality: </b>

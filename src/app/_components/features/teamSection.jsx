@@ -15,10 +15,12 @@ import {
 import React from "react";
 import linkedln from "../svg/icons/linkedIn.svg";
 import Image from "next/image";
+import LinkedinIcon from "../svg/icons/linkedinIcon.svg"
 import Link from "next/link";
 import { teamImages } from "./teamImages";
 import { useState } from "react";
 import { advisorsData } from "../advisorsBioData/advisorsData";
+import locationIcon from "../svg/icons/locationIcon.svg"
 
 const TeamSection = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -833,7 +835,7 @@ const TeamSection = () => {
               <VStack key={index} mb={{ md: "3rem", base: "1.5rem" }}>
                 <Image
                   onClick={() => openModal(advisor)}
-                  // onMouseLeave={closeModal}
+                  // onMouseOver={() => openModal(advisor)}
                   alt={advisor.name}
                   src={advisor.avatar}
                   width={260}
@@ -874,14 +876,30 @@ const TeamSection = () => {
       <>
         {/* <ModalHeader>{selectedAdvisor.name}</ModalHeader> */}
         <ModalCloseButton />
-        <ModalBody>
-          <Image src={selectedAdvisor.imageSrc} alt={selectedAdvisor.name} style={{width:'200px' ,height:'200px'}} />
-          <Heading my={{md:'0.75rem'}} fontSize={'2rem'}>{selectedAdvisor.name}</Heading>
+        <ModalBody background={'transparent'}>
+          <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
+             <Image alignContent={'center'} src={selectedAdvisor.imageSrc} alt={selectedAdvisor.name} style={{width:'200px',display:'flex',alignContent:'center' ,height:'200px'}} />
+          </Box>
+          <Heading display={'flex'} gap={'1rem'} my={{md:'0.75rem'}} fontSize={'2rem'}>{selectedAdvisor.name}
+          <Link href={selectedAdvisor.linkedin} target="_blank">
+                      <Image
+                        alt="sureshLinkedIn"
+                        src={LinkedinIcon}
+                        width={{ base: 12, md: 24 }}
+                        height={24}
+                        style={{marginTop:'0.5rem'}}
+                      />
+          </Link>
+          </Heading>
           <Text mb={{md:'0.75rem'}} fontSize={'1rem'}><b>Role at Hushh🤫: </b>{selectedAdvisor.position}</Text>
           <Text mb={{md:'0.75rem'}} fontSize={'1rem'}><b>Currently working at: </b>{selectedAdvisor.currentWork}</Text>
-          <Text fontSize={'1rem'}><b>Locality: </b>
+          <Text gap={'0.5rem'} fontSize={'1rem'} display={'flex'}>
+          <Image src={locationIcon} alt="locationIcon" boxSize={6} />
+
+            <b>Locality: </b>   
           {selectedAdvisor.currentLocation}
           </Text>
+          
         </ModalBody>
       </>
     )}

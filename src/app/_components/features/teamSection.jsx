@@ -15,17 +15,17 @@ import {
 import React from "react";
 import linkedln from "../svg/icons/linkedIn.svg";
 import Image from "next/image";
-import LinkedinIcon from "../svg/icons/linkedinIcon.svg"
+import LinkedinIcon from "../svg/icons/linkedinIcon.svg";
 import Link from "next/link";
 import { teamImages } from "./teamImages";
 import { useState } from "react";
 import { advisorsData } from "../advisorsBioData/advisorsData";
-import locationIcon from "../svg/icons/locationIcon.svg"
+import locationIcon from "../svg/icons/locationIcon.svg";
+import jobIcon from "../svg/icons/jobIcon.svg";
 
 const TeamSection = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedAdvisor, setSelectedAdvisor] = useState(null
-    );
+  const [selectedAdvisor, setSelectedAdvisor] = useState(null);
 
   const openModal = (advisor) => {
     setSelectedAdvisor(advisor);
@@ -335,32 +335,6 @@ const TeamSection = () => {
                 </Link>
               </div>
             </VStack>
-
-            {/* <VStack mb={{ md: "3rem", base: "1.5rem" }}>
-            
-          <Image alt="vivek" src={vivek} width={260} height={276} />
-          <div className="-translate-y-16 flex flex-c text-centerol items-center gap-8">
-          <div className="flex flex-col gap-4">  
-          <Text
-              color={"#E5E5E5"}
-              lineHeight={"26.4px"}
-              fontWeight={"700"}
-              fontSize={"1.3rem"}
-            >
-              Satyam Arora
-            </Text>
-            <Text lineHeight={"18.75px"} color={"#ABABAB"}>Software Engineer</Text>
-          </div>
-            <Link href={"https://www.linkedin.com/in/satyam-arora01/"}>
-              <Image
-                alt="satyamLinkedIn"
-                src={linkedln}
-                width={{ base: 12, md: 24 }}
-                height={24}
-              />
-            </Link>
-            </div>
-          </VStack> */}
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
               <Image
@@ -870,42 +844,83 @@ const TeamSection = () => {
       </Box>
 
       <Modal isOpen={isOpen} onClose={closeModal}>
-  <ModalOverlay />
-  <ModalContent w={{md:'30rem', base:'20rem'}} borderRadius={'2rem'} p={'1rem'}>
-    {selectedAdvisor && (
-      <>
-        {/* <ModalHeader>{selectedAdvisor.name}</ModalHeader> */}
-        <ModalCloseButton />
-        <ModalBody background={'transparent'}>
-          <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
-             <Image alignContent={'center'} src={selectedAdvisor.imageSrc} alt={selectedAdvisor.name} style={{width:'200px',display:'flex',alignContent:'center' ,height:'200px'}} />
-          </Box>
-          <Heading display={'flex'} gap={'1rem'} my={{md:'0.75rem'}} fontSize={'2rem'}>{selectedAdvisor.name}
-          <Link href={selectedAdvisor.linkedin} target="_blank">
-                      <Image
-                        alt="sureshLinkedIn"
-                        src={LinkedinIcon}
-                        width={{ base: 12, md: 24 }}
-                        height={24}
-                        style={{marginTop:'0.5rem'}}
-                      />
-          </Link>
-          </Heading>
-          <Text mb={{md:'0.75rem'}} fontSize={'1rem'}><b>Role at Hushh🤫: </b>{selectedAdvisor.position}</Text>
-          <Text mb={{md:'0.75rem'}} fontSize={'1rem'}><b>Currently working at: </b>{selectedAdvisor.currentWork}</Text>
-          <Text gap={'0.5rem'} fontSize={'1rem'} display={'flex'}>
-          <Image src={locationIcon} alt="locationIcon" boxSize={6} />
+        <ModalOverlay />
+        <ModalContent
+          minW={{ md: "30rem", base: "20rem" }}
+          borderRadius={"2rem"}
+          p={"1rem"}
+        >
+          {selectedAdvisor && (
+            <>
+              <ModalCloseButton />
+              <ModalBody background={"transparent"}>
+                <Box
+                  display={"flex"}
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                >
+                  <Image
+                    alignContent={"center"}
+                    src={selectedAdvisor.imageSrc}
+                    alt={selectedAdvisor.name}
+                    style={{
+                      width: "200px",
+                      display: "flex",
+                      alignContent: "center",
+                      height: "200px",
+                    }}
+                  />
+                </Box>
+                <Heading
+                  display={"flex"}
+                  gap={"1rem"}
+                  my={{ md: "0.75rem" }}
+                  fontSize={"2rem"}
+                >
+                  {selectedAdvisor.name}
+                  <Link href={selectedAdvisor.linkedin} target="_blank">
+                    <Image
+                      alt="sureshLinkedIn"
+                      src={LinkedinIcon}
+                      width={{ base: 12, md: 24 }}
+                      height={24}
+                      style={{ marginTop: "0.5rem" }}
+                    />
+                  </Link>
+                </Heading>
+                <Text mb={{ md: "0.75rem" }} fontSize={"1rem"}>
+                  🤫 {" "}
+                  <b>Role at Hushh: </b>
+                  {selectedAdvisor.position}
+                </Text>
+                <Box display={'flex'} gap={'0.5rem'}>
+                <Image
+                    src={jobIcon}
+                    alt="jobIcon"
+                    style={{ width: "25px", height: "25px" }}
+                  />
+                <Text
+                  mb={{ md: "0.75rem" }}
+                  gap={"0.5rem"}
+                  fontSize={"1rem"}
+                  display={'flex'}
+                  flexDirection={'row'}
+                > 
+                  <b>Working:</b>
+                  </Text>
+                  {selectedAdvisor.currentWork}
+                </Box>
+                <Text gap={"0.5rem"} fontSize={"1rem"} display={"flex"}>
+                  <Image src={locationIcon} alt="locationIcon" boxSize={6} style={{display:'flex', alignSelf:'flex-start', marginRight:'0.25rem'}}/>
 
-            <b>Locality: </b>   
-          {selectedAdvisor.currentLocation}
-          </Text>
-          
-        </ModalBody>
-      </>
-    )}
-  </ModalContent>
-</Modal>
-
+                  <b>Locality: </b>
+                  {selectedAdvisor.currentLocation}
+                </Text>
+              </ModalBody>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     </>
   );
 };

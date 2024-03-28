@@ -1,112 +1,109 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Flex, IconButton, Input } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
-import { useResponsiveSizes } from "../../context/responsive";
+import React, { useState, useEffect, useRef } from 'react';
+import { Box, Flex, IconButton, Input, VStack } from '@chakra-ui/react';
+import { SearchIcon } from '@chakra-ui/icons';
+import { useResponsiveSizes } from '../../context/responsive';
+import contentMap from '../productData/contentMap';
+import { useRouter } from 'next/navigation';
 
 const SearchBar = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [isClicked, setIsClicked] = useState(false);
-  const inputRef = useRef(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showRecommendations, setShowRecommendations] = useState(false);
+  const [recommendations, setRecommendations] = useState([]);
+  const router = useRouter();
   const isMobile = useResponsiveSizes();
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (inputRef.current && !inputRef.current.contains(event.target)) {
-        setSearchQuery("");
-        setIsClicked(false);
-        removeSearchEffect();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  const removeSearchEffect = () => {
-    const elements = document.querySelectorAll(
-      'h1, h2, h3, h4, h5, h6, p, span, div, input, button, textarea, a, [role="button"], [role="link"], [role="heading"], [role="textbox"], [role="textbox"], [role="textbox"], [role="presentation"], [role="textbox"], [role="textbox"], [role="list"], [role="listitem"], [role="option"], [role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"], [aria-label]'
-    );
-    elements.forEach((element) => {
-      element.style.color = "";
-    });
-  };
-
-  const handleSearch = () => {
-    const searchQueryTrimmed = searchQuery.trim().toLowerCase();
-
-    if (searchQueryTrimmed === "") {
-      removeSearchEffect();
+  const updateRecommendations = (query) => {
+    if (!query) {
+      setRecommendations([]);
+      setShowRecommendations(false);
       return;
     }
 
-    const searchWords = searchQueryTrimmed.split(" ");
-    const elements = document.querySelectorAll(
-      'h1, h2, h3, h4, h5, h6, p, span, div, input, button, textarea, a, [role="button"], [role="link"], [role="heading"], [role="textbox"], [role="textbox"], [role="textbox"], [role="presentation"], [role="textbox"], [role="textbox"], [role="list"], [role="listitem"], [role="option"], [role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"], [aria-label]'
+    const matched = contentMap.filter(
+      (item) =>
+        item.keywords.some((keyword) =>
+          keyword.toLowerCase().includes(query.toLowerCase())
+        ) ||
+        item.content.toLowerCase().includes(query.toLowerCase())
     );
 
-    let found = false;
-    elements.forEach((element) => {
-      const elementText = element.innerText.toLowerCase();
-      if (searchWords.every((word) => elementText.includes(word))) {
-        found = true;
-        const yOffset = -220;
-        const y =
-          element.getBoundingClientRect().top +
-          window.pageYOffset +
-          yOffset;
-        window.scrollTo({ top: y, behavior: "smooth" });
-        element.style.color = "yellow";
-        return;
-      }
-      element.style.color = "";
-    });
+    setRecommendations(matched);
+    setShowRecommendations(true);
+  };
 
-    if (!found) {
-      alert(`"${searchQuery}" not found on this page.`);
-    }
+  useEffect(() => {
+    updateRecommendations(searchQuery);
+  }, [searchQuery]);
+
+  const handleChange = (event) => {
+    setSearchQuery(event.target.value);
   };
 
   return (
-    <Flex alignItems="center">
-    {!isClicked ? (
-      <IconButton
-        icon={<SearchIcon color={'#606060'} boxSize={ isMobile ? 20 : 32 } />}
-        aria-label="Search"
-        className="search-icon"
-        onClick={() => setIsClicked(true)}
-        // size={{ md:'md', base: 'lg'}}        
-        colorScheme="#606060"
-      />
-    ) : (
-      <Input
-        ref={inputRef}
-        placeholder="Search..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        variant="filled"
-        borderRadius="none"
-        width={"100%"}
-        size="md"
-        bg="black"
-        _hover={{
-          background: "none",
-        }}
-        border={"3px solid #606060"}
-        _focus={{ color: "#FFFFFF", border: "1px solid #FFFFFF" }}
-        _placeholder={{ color: "gray.400" }}
-        px="4"
-        py="2"
-        onKeyPress={(e) => {
-          if (e.key === "Enter") {
-            handleSearch();
-          }
-        }}
-      />
-    )}
-  </Flex>
+    <VStack width="100%" spacing={4}>
+      <Flex width="100%" position="relative">
+        <Input
+          placeholder="Search..."
+          value={searchQuery}
+          onChange={handleChange}
+          variant="filled"
+          borderRadius="md"
+          size="md"
+          bg="white"
+          _hover={{
+            bg: 'white',
+          }}
+          _focus={{
+            outline: 'none',
+            boxShadow: '0 0 0 2px teal',
+          }}
+          _placeholder={{ color: 'gray.500' }}
+        />
+        <IconButton
+          icon={<SearchIcon />}
+          aria-label="Search"
+          onClick={() => updateRecommendations(searchQuery)}
+          variant="outline"
+          position="absolute"
+          right="0"
+          top="0"
+          bottom="0"
+          m={2}
+          colorScheme="teal"
+        />
+      </Flex>
+      {showRecommendations && (
+        <VStack
+          align="stretch"
+          position="absolute"
+          zIndex="10"
+          width={{ base: '90%', md: 'auto' }}
+          bg="white"
+          borderRadius="md"
+          shadow="md"
+          maxH="300px"
+          overflowY="auto"
+          p={2}
+          mt={10}
+        >
+          {recommendations.map((rec, index) => (
+            <Box
+              key={index}
+              onClick={() => {
+                router.push(rec.url);
+                setShowRecommendations(false);
+              }}
+              _hover={{ bg: 'gray.100', cursor: 'pointer' }}
+              p={3}
+              borderBottom="1px solid"
+              borderColor="gray.200"
+            >
+              {rec.showRecommentationContentHeading}
+            </Box>
+          ))}
+        </VStack>
+      )}
+    </VStack>
   );
 };
 

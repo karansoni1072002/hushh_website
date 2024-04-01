@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, Flex, IconButton, Input, VStack } from '@chakra-ui/react';
+import { Box, Flex, IconButton, Input, Text, VStack } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { useResponsiveSizes } from '../../context/responsive';
 import contentMap from '../productData/contentMap';
@@ -77,14 +77,14 @@ const SearchBar = () => {
           align="stretch"
           position="absolute"
           zIndex="10"
-          width={{ base: '90%', md: 'auto' }}
+          borderRadius={'16px'}
+          
           bg="white"
-          borderRadius="md"
           shadow="md"
           maxH="300px"
           overflowY="auto"
           p={2}
-          mt={10}
+          mt={'3rem'}
         >
           {recommendations.map((rec, index) => (
             <Box
@@ -95,10 +95,12 @@ const SearchBar = () => {
               }}
               _hover={{ bg: 'gray.100', cursor: 'pointer' }}
               p={3}
+              minW={{ base: '90%', md: '20rem' }}
               borderBottom="1px solid"
               borderColor="gray.200"
             >
-              {rec.showRecommentationContentHeading}
+             <Text>{rec.showRecommentationContentHeading}</Text> 
+             <Text>{rec.showRecommentationContentDescription}</Text>
             </Box>
           ))}
         </VStack>

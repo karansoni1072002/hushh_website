@@ -429,8 +429,7 @@ const conciergeApp = () => {
                 lineHeight={{ md:"22.41px"}}
                 marginBottom={{base:'1.25rem', md:'3rem'}}
               >
-                Personal shopping, home management, day-to-day errands,
-                specialized requests
+                Personal shopping, home management, day-to-day errands, specialized requests
               </Text>
               <Image src={RightArrowBlack} alt="RightArrowBlack" />
               <Image src={ShoppingHand} alt="shoppingHand" />

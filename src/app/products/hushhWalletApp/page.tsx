@@ -87,6 +87,7 @@ const hushhWalletApp = () => {
         <Box
           alignItems={"center"}
           w={"100%"}
+          id={'1'}
           display={"flex"}
           flexDirection={"column"}
           mt={{ base: "3rem" }}

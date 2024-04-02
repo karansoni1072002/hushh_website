@@ -113,7 +113,7 @@ const conciergeApp = () => {
             Hushh is a revolutionary concierge app that transforms luxury
             experiences through the power of voice, AI, and real-time data.
             Unlike traditional concierge services, Hushh prioritizes your needs,
-            not just your preferences
+            not just your preferences with Gen AI
           </Text>
           <Button
             border={"1px solid #606060"}

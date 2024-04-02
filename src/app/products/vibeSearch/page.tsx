@@ -510,7 +510,7 @@ const vibeSearch = () => {
               lineHeight={{ md: "31.5px", base: '20px' }}
               fontSize={{ md: "1.125rem", base: "0.75rem" }}
             >
-              The Vibe search utilizes advanced algorithms and AI technology to analyze the captured data Fid the best fit and style for you. Users receive personalized recommendations, discover new products and brands aligned with their interests, and stay up-to-date with the latest trends.            </Text>
+              The Vibe search utilizes advanced algorithms and AI technology to analyze the captured data Fid the best fit and style for you. Users receive personalized recommendations, discover new products and brands aligned with their interests, and stay up-to-date with the latest trends with Gen AI.            </Text>
           </VStack>
         </Stack>
         <VibeSearchFaq />

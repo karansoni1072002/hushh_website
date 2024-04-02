@@ -1,7 +1,16 @@
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Heading, Text, Link, SimpleGrid, VStack } from '@chakra-ui/react';
 
 export default function PricingPlans() {
+    const [tabIndex, setTabIndex] = useState(0);
+    const [activeAccordionIndex, setActiveAccordionIndex] = useState(-1);
+
+    const handleTabsChange = (index) => {
+        setTabIndex(index);
+        setActiveAccordionIndex(index);
+    };
+
   return (
     <Box ml={{ base: "1rem", md: "5.5rem" }} p={{ base: 4, md: 8 }}>
       <VStack  spacing={2} mt={'5rem'} mr={'50%'}>
@@ -13,13 +22,12 @@ export default function PricingPlans() {
         </Heading>
       </VStack>
 
-      <Tabs mt={8}>
-        <TabList>
-          <Tab>Basic</Tab>
-          <Tab>Standard</Tab>
-          <Tab>Pro</Tab>
-          <Tab>Business</Tab>
-          <Tab>Enterprise</Tab>
+      <Tabs onChange={handleTabsChange} position="relative" variant="unstyled" mt={8} display={'flex'} flexDirection={'column'} alignItems={'center'}>
+        <TabList p={'0.5rem'}  borderRadius={'8px'} border={'1px solid #222222'} minH={'4.125rem'} w={'55%'} justifyContent={'space-between'}>
+          <Tab _selected={{ color: 'white', bg: '#363636', borderRadius:'4px' }} color={'#898989'} lineHeight={'22px'} fontWeight={'600'} fontSize={'15px'}>Everyday Consumers</Tab>
+          <Tab _selected={{ color: 'white', bg: '#363636', borderRadius:'4px' }} color={'#898989'} lineHeight={'22px'} fontWeight={'600'} fontSize={'15px'}>Developers & Engineers</Tab>
+          <Tab _selected={{ color: 'white', bg: '#363636', borderRadius:'4px' }} color={'#898989'} lineHeight={'22px'} fontWeight={'600'} fontSize={'15px'}>Sales Agents</Tab>
+          <Tab _selected={{ color: 'white', bg: '#363636', borderRadius:'4px' }} color={'#898989'} lineHeight={'22px'} fontWeight={'600'} fontSize={'15px'}>Creators & Aspiring Influence</Tab>
         </TabList>
 
         <TabPanels>

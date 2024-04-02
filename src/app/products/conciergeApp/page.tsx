@@ -113,7 +113,7 @@ const conciergeApp = () => {
             Hushh is a revolutionary concierge app that transforms luxury
             experiences through the power of voice, AI, and real-time data.
             Unlike traditional concierge services, Hushh prioritizes your needs,
-            not just your preferences
+            not just your preferences with Gen AI
           </Text>
           <Button
             border={"1px solid #606060"}
@@ -429,8 +429,7 @@ const conciergeApp = () => {
                 lineHeight={{ md:"22.41px"}}
                 marginBottom={{base:'1.25rem', md:'3rem'}}
               >
-                Personal shopping, home management, day-to-day errands,
-                specialized requests
+                Personal shopping, home management, day-to-day errands, specialized requests
               </Text>
               <Image src={RightArrowBlack} alt="RightArrowBlack" />
               <Image src={ShoppingHand} alt="shoppingHand" />

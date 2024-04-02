@@ -216,7 +216,7 @@ const browserCompanion = () => {
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
           >
-            Introducing Hushh Browser Companion, a product that helps you keep track of your digital footprint
+            Introducing Hushh Browser Companion, a product that helps you keep track of your digital footprint with Gen AI
           </Heading>
           <Text
             mt={"1rem"}
@@ -514,7 +514,7 @@ const browserCompanion = () => {
               lineHeight={{ md: "31.5px", base: '20px' }}
               fontSize={{ md: "1.125rem", base: "0.75rem" }}
             >
-              The extension utilizes advanced algorithms and AI technology to analyze the captured data and generate brilliant insights. Users receive personalized recommendations, discover new products and brands, aligned with their interests, and stay up-to-date with the latest trends.
+              The extension utilizes advanced algorithms and AI technology to analyze the captured data and generate brilliant insights. Users receive personalized recommendations, discover new products and brands, aligned with their interests, and stay up-to-date with the latest trends with Gen AI.
             </Text>
           </VStack>
         </Stack>

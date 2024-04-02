@@ -215,7 +215,7 @@ const hushhValetChat = () => {
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
           >
-            Manage all your receipts at one place and get insights on your finance
+            Manage all your receipts at one place and get insights on your finance with Gen AI
           </Heading>
           <Text
             mt={"1rem"}

@@ -39,7 +39,7 @@ const BrandWalletSection = () => {
         lineHeight={{ md: "36px", base: "22px" }}
         mb={"1rem"}
       >
-        Take control of your digital identity with our innovative "Build Your Own Brand Wallet" feature.
+        Take control of your digital identity with our innovative "Build Your Own Brand Wallet" gen AI feature.
       </Text>
       <Grid
         templateColumns={{ md: "1fr 2fr 1fr", base: "repeat(1, 1fr)" }}

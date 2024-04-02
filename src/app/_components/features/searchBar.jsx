@@ -84,6 +84,7 @@ const SearchBar = () => {
           maxH="300px"
           overflowY="auto"
           p={2}
+          maxW={'25rem'}
           mt={'3rem'}
         >
           {recommendations.map((rec, index) => (

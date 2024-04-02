@@ -98,9 +98,14 @@ const SearchBar = () => {
               minW={{ base: '90%', md: '20rem' }}
               borderBottom="1px solid"
               borderColor="gray.200"
+              display={'flex'}
+              gap={'1rem'}
             >
+             <Box>{rec.icon}</Box>
+             <Box display={'flex'} flexDirection={'column'}>
              <Text>{rec.showRecommentationContentHeading}</Text> 
              <Text>{rec.showRecommentationContentDescription}</Text>
+             </Box>
             </Box>
           ))}
         </VStack>

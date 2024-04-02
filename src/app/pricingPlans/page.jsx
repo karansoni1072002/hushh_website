@@ -1,121 +1,48 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import { Link } from "@chakra-ui/react";
+import React from 'react';
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Heading, Text, Link, SimpleGrid, VStack } from '@chakra-ui/react';
 
 export default function PricingPlans() {
   return (
-    <div className="grid max-w-3xl w-full mx-auto items-start gap-8 px-4">
-      <div className="flex flex-col gap-2">
-        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Pricing</h1>
-        <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-          Start with a 30-day free trial, no credit card required. Choose the plan that's right for your team.
-        </p>
-      </div>
-      <div className="grid gap-8">
-        <Tabs>
-          <TabList className="flex flex-wrap gap-4 sm:flex-nowrap">
-            <Tab>Basic</Tab>
-            <Tab>Standard</Tab>
-            <Tab>Pro</Tab>
-            <Tab>Business</Tab>
-            <Tab>Enterprise</Tab>
-          </TabList>
-          <TabPanels>
-            <TabPanel>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="flex flex-col gap-1">
-                  <h2 className="font-bold">Starter</h2>
-                  <p className="text-sm leading-none text-gray-500 dark:text-gray-400">
-                    Perfect for small teams just getting started
-                  </p>
-                </div>
-                <div className="flex flex-col gap-1 justify-end">
-                  <h2 className="font-bold">$0</h2>
-                  <Link
-                    className="underline underline-offset-2 underline-thickness-1.5 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                    to="#"
-                  >
+    <Box ml={{ base: "1rem", md: "5.5rem" }} p={{ base: 4, md: 8 }}>
+      <VStack  spacing={2} mt={'5rem'} mr={'50%'}>
+        <Heading lineHeight={'32px'} display={'flex'} alignSelf={'flex-start'} textAlign={'left'} as={'h2'} color={'#FFFFFF'} fontSize={{ base: '0.75rem', md: '1.25rem' }} letterSpacing={'0.04rem'} fontWeight="500">
+          Pricing
+        </Heading>
+        <Heading as={'h1'} lineHeight={{md:'90.28px', base:'50px'}} className='gradient' fontSize={{ base: '2.5rem', md: '4.625rem' }} fontWeight="700">
+          Find the right plan for your needs
+        </Heading>
+      </VStack>
+
+      <Tabs mt={8}>
+        <TabList>
+          <Tab>Basic</Tab>
+          <Tab>Standard</Tab>
+          <Tab>Pro</Tab>
+          <Tab>Business</Tab>
+          <Tab>Enterprise</Tab>
+        </TabList>
+
+        <TabPanels>
+          {['Starter', 'Team', 'Pro', 'Business', 'Enterprise'].map((plan, index) => (
+            <TabPanel key={index}>
+              <SimpleGrid columns={{ base: 1, md: 2 }} gap={4}>
+                <Box>
+                  <Heading as="h2" fontWeight="bold">{plan}</Heading>
+                  <Text fontSize="sm" color="gray.500">
+                    {plan === 'Enterprise' ? 'Contact us for a custom quote' : 'Perfect for small teams just getting started'}
+                  </Text>
+                </Box>
+                <VStack align="flex-end" justify="end">
+                  <Heading as="h2" fontWeight="bold">{index === 0 ? '$0' : `$${15 * index}`}</Heading>
+                  <Link color="gray.500" href="#" _hover={{ color: 'gray.900', textDecoration: 'underline' }}>
                     View features
                   </Link>
-                </div>
-              </div>
+                </VStack>
+              </SimpleGrid>
             </TabPanel>
-            <TabPanel>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="flex flex-col gap-1">
-                  <h2 className="font-bold">Team</h2>
-                  <p className="text-sm leading-none text-gray-500 dark:text-gray-400">
-                    Collaboration for the modern team
-                  </p>
-                </div>
-                <div className="flex flex-col gap-1 justify-end">
-                  <h2 className="font-bold">$15</h2>
-                  <Link
-                    className="underline underline-offset-2 underline-thickness-1.5 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                    to="#"
-                  >
-                    View features
-                  </Link>
-                </div>
-              </div>
-            </TabPanel>
-            <TabPanel>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="flex flex-col gap-1">
-                  <h2 className="font-bold">Pro</h2>
-                  <p className="text-sm leading-none text-gray-500 dark:text-gray-400">
-                    Advanced features for power users
-                  </p>
-                </div>
-                <div className="flex flex-col gap-1 justify-end">
-                  <h2 className="font-bold">$25</h2>
-                  <Link
-                    className="underline underline-offset-2 underline-thickness-1.5 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                    to="#"
-                  >
-                    View features
-                  </Link>
-                </div>
-              </div>
-            </TabPanel>
-            <TabPanel>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="flex flex-col gap-1">
-                  <h2 className="font-bold">Business</h2>
-                  <p className="text-sm leading-none text-gray-500 dark:text-gray-400">
-                    Advanced features for power users
-                  </p>
-                </div>
-                <div className="flex flex-col gap-1 justify-end">
-                  <h2 className="font-bold">$25</h2>
-                  <Link
-                    className="underline underline-offset-2 underline-thickness-1.5 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                    to="#"
-                  >
-                    View features
-                  </Link>
-                </div>
-              </div>
-            </TabPanel>
-            <TabPanel>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="flex flex-col gap-1">
-                  <h2 className="font-bold">Enterprise</h2>
-                  <p className="text-sm leading-none text-gray-500 dark:text-gray-400">Contact us for a custom quote</p>
-                </div>
-                <div className="flex flex-col gap-1 justify-end">
-                  <h2 className="font-bold">Contact us</h2>
-                  <Link
-                    className="underline underline-offset-2 underline-thickness-1.5 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                    to="#"
-                  >
-                    View features
-                  </Link>
-                </div>
-              </div>
-            </TabPanel>
-          </TabPanels>
-        </Tabs>
-      </div>
-    </div>
-  )
+          ))}
+        </TabPanels>
+      </Tabs>
+    </Box>
+  );
 }

@@ -53,7 +53,6 @@ const planData = [
         description:
           " Free access to a supportive community and marketplace to monetize or discover innovative solutions",
         price: "Free",
-        perMonth: "",
       },
     ],
   },
@@ -180,7 +179,7 @@ export default function PricingPlans() {
                       </Text>
                     </Box>
                     <Heading as="h1" fontWeight="600" fontSize={{ base:'2.125rem', md:'4.125rem'}} lineHeight={{ md:'79.2px', base:'50px'}}>
-                        {plan.price}
+                        {plan.price} {plan.perMonth && (<span style={{color:"white",marginLeft:'-0.75rem', fontWeight:'600', fontSize:'1.25rem'}}>{plan.perMonth}</span>)}
                     </Heading>
                     <Text lineHeight={'22px'} fontWeight={'500'} fontSize="1.125rem">
                       {plan.heading}

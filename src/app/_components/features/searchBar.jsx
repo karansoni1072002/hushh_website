@@ -11,6 +11,9 @@ const SearchBar = () => {
   const [recommendations, setRecommendations] = useState([]);
   const router = useRouter();
   const isMobile = useResponsiveSizes();
+  const [isClicked, setIsClicked] = useState(false);
+  const inputRef = useRef(null);
+  const recommendationsRef = useRef(null);
 
   const updateRecommendations = (query) => {
     if (!query) {
@@ -39,38 +42,85 @@ const SearchBar = () => {
     setSearchQuery(event.target.value);
   };
 
+  const highlightMatchedText = (text, query) => {
+    const index = text.toLowerCase().indexOf(query.toLowerCase());
+    if (index !== -1) {
+      const startIndex = Math.max(0, index - 25);
+      const endIndex = Math.min(text.length, index + query.length + 25);
+      const highlightedText = text.substring(startIndex, endIndex);
+      const formattedText = (
+        <Text as="span" key={index}>
+          ...{highlightedText.substring(0, index - startIndex)}
+          <Text as="span" fontWeight="bold">
+            {highlightedText.substring(index - startIndex, index - startIndex + query.length)}
+          </Text>
+          {highlightedText.substring(index - startIndex + query.length)}
+         ...
+        </Text>
+      );
+      return formattedText;
+    }
+    return <Text>{text}</Text>;
+};
+
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        inputRef.current &&
+        !inputRef.current.contains(event.target) &&
+        recommendationsRef.current &&
+        !recommendationsRef.current.contains(event.target)
+      ) {
+        setIsClicked(false);
+        setShowRecommendations(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <VStack width="100%" spacing={4}>
-      <Flex width="100%" position="relative">
-        <Input
-          placeholder="Search..."
-          value={searchQuery}
-          onChange={handleChange}
-          variant="filled"
-          borderRadius="md"
-          size="md"
-          bg="white"
-          _hover={{
-            bg: 'white',
-          }}
-          _focus={{
-            outline: 'none',
-            boxShadow: '0 0 0 2px teal',
-          }}
-          _placeholder={{ color: 'gray.500' }}
-        />
-        <IconButton
-          icon={<SearchIcon />}
-          aria-label="Search"
-          onClick={() => updateRecommendations(searchQuery)}
-          variant="outline"
-          position="absolute"
-          right="0"
-          top="0"
-          bottom="0"
-          m={2}
-          colorScheme="teal"
-        />
+      <Flex width="100%" position="relative" mt={'0.75rem'}>
+      {!isClicked ? (
+      <IconButton
+        icon={<SearchIcon color={'#606060'} boxSize={ isMobile ? 20 : 32 } />}
+        aria-label="Search"
+        className="search-icon"
+        onClick={() => setIsClicked(true)}
+        colorScheme="#606060"
+      />
+    ) : (
+      <Input
+        ref={inputRef}
+        placeholder="Search..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        variant="filled"
+        borderRadius="none"
+        width={"100%"}
+        size="md"
+        bg="black"
+        _hover={{
+          background: "none",
+        }}
+        border={"3px solid #606060"}
+        _focus={{ color: "#FFFFFF", border: "1px solid #FFFFFF" }}
+        _placeholder={{ color: "gray.400" }}
+        px="4"
+        py="2"
+        onKeyPress={(e) => {
+          if (e.key === "Enter") {
+            handleSearch();
+          }
+        }}
+      />
+    )}
       </Flex>
       {showRecommendations && (
         <VStack
@@ -78,7 +128,7 @@ const SearchBar = () => {
           position="absolute"
           zIndex="10"
           borderRadius={'16px'}
-          
+          ref={recommendationsRef}
           bg="white"
           shadow="md"
           maxH="300px"
@@ -104,8 +154,15 @@ const SearchBar = () => {
             >
              <Box>{rec.icon}</Box>
              <Box display={'flex'} flexDirection={'column'}>
-             <Text>{rec.showRecommentationContentHeading}</Text> 
-             <Text>{rec.showRecommentationContentDescription}</Text>
+             <Text fontSize={'1rem'} fontWeight={'500'}>
+                {highlightMatchedText(rec.showRecommentationContentHeading, searchQuery)}
+              </Text>
+              <Text fontSize={'0.75rem'} fontWeight={'300'}>
+                {highlightMatchedText(rec.showRecommentationContentDescription, searchQuery)}
+              </Text>
+              <Text fontSize={'0.75rem'} fontWeight={'300'}>
+                {highlightMatchedText(rec.content, searchQuery)}
+              </Text>
              </Box>
             </Box>
           ))}

@@ -20,14 +20,14 @@ const planData = [
     category: "Everyday Consumers",
     plans: [
       {
-        name: "Developer & Engineers",
+        name: "DEVELOPERS & ENGINEERS",
         heading: "Hush Vault: Free for basic use",
         description: "A secure place for all your personal and business data",
         price: "$5",
         perMonth: "/mo",
       },
       {
-        name: "Everyday Consumers",
+        name: "EVERYDAY CONSUMERS",
         heading: "Hush AI Assistant",
         description:
           "Your personal navigator in the digital world, making data decisions simple and personalized",
@@ -40,7 +40,7 @@ const planData = [
     category: "Developers & Engineers",
     plans: [
       {
-        name: "Developer & Engineers",
+        name: "DEVELOPERS & ENGINEERS",
         heading: "Hush SDK & API Access",
         description:
           "Fuelling the next wave of AI and data-driven applications with robust, easy-to-integrate tools",
@@ -48,7 +48,7 @@ const planData = [
         perMonth: "/mo",
       },
       {
-        name: "Developer & Engineers",
+        name: "DEVELOPERS & ENGINEERS",
         heading: "Developer Support & Marketplace",
         description:
           " Free access to a supportive community and marketplace to monetize or discover innovative solutions",
@@ -61,7 +61,7 @@ const planData = [
     category: "Sales Agents",
     plans: [
       {
-        name: "Sales Agents",
+        name: "SALES AGENTS",
         heading: "Data Insights Dashboard",
         description:
           "Providing actionable insights to refine sales strategies and hit targets",
@@ -69,7 +69,7 @@ const planData = [
         perMonth: "/mo",
       },
       {
-        name: "Sales Agents",
+        name: "SALES AGENTS",
         heading: "Prospect Identification Tool",
         description:
           "Leveraging AI to uncover high-potential leads and opportunities",
@@ -82,7 +82,7 @@ const planData = [
     category: "Creators & Aspiring Influence",
     plans: [
       {
-        name: "Creators & Aspiring Influence",
+        name: "CREATORS & ASPIRING INFLUENCE",
         heading: "Content Monetization Platform",
         description:
           "Revenue generated, empowering creators to earn from their unique content and insights",
@@ -90,7 +90,7 @@ const planData = [
         perMonth: "/comm",
       },
       {
-        name: "Creators & Aspiring Influence",
+        name: "CREATORS & ASPIRING INFLUENCE",
         heading: "Personal Brand Data Insights",
         description:
           "Offering deep analytics on audience engagement and preferences to tailor content effectively",
@@ -151,7 +151,7 @@ export default function PricingPlans() {
           borderRadius={"8px"}
           border={"1px solid #222222"}
           minH={"4.125rem"}
-          w={"55%"}
+          w={"52%"}
           justifyContent={"space-between"}
         >
           {planData.map((category, index) => (
@@ -171,11 +171,13 @@ export default function PricingPlans() {
         <TabPanels mt={'2rem'}>
           {planData.map((category, index) => (
             <TabPanel key={index}>
-              <SimpleGrid  mx={'4rem'} columns={{ base: 1, md: 2 }} gap={'15rem'}>
+              <SimpleGrid  mx={'10rem'} columns={{ base: 1, md: 2 }} gap={'8rem'}>
                 {category.plans.map((plan, idx) => (
                   <Box flex={1} display={'flex'} textAlign={'center'} alignItems={'center'} flexDirection={'column'} gap={{ md:'1.75rem', base:'1rem'}} bg={'#131414'} borderRadius={'2rem'} p={'1.5rem'} key={idx} color={'white'}>
                     <Box bg={'#146EF5'} w={'max-content'} borderRadius={'4px'} >
-                      <Text px={'1rem'} py={'0.5rem'} fontWeight="600" lineHeight={'20px'} fontSize={{ md:'0.875rem', base:'0.5rem'}}>{plan.name}</Text>
+                      <Text px={'1rem'} py={'0.5rem'} fontWeight="600" lineHeight={'20px'} fontSize={{ md:'0.875rem', base:'0.5rem'}}>
+                        {plan.name}
+                      </Text>
                     </Box>
                     <Heading as="h1" fontWeight="600" fontSize={{ base:'2.125rem', md:'4.125rem'}} lineHeight={{ md:'79.2px', base:'50px'}}>
                         {plan.price}
@@ -183,7 +185,7 @@ export default function PricingPlans() {
                     <Text lineHeight={'22px'} fontWeight={'500'} fontSize="1.125rem">
                       {plan.heading}
                     </Text>
-                    <Text lineHeight={'28px'} fontWeight={'400'} fontSize="1rem">
+                    <Text h={'3rem'} lineHeight={'28px'} fontWeight={'400'} fontSize="1rem">
                       {plan.description}
                     </Text>
                     <Button w={'100%'} bg={'#146EF5'} color={'white'} borderRadius={'4px'}>

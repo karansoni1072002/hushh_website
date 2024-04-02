@@ -133,7 +133,7 @@ const SearchBar = () => {
           shadow="md"
           maxH="300px"
           overflowY="auto"
-          p={2}
+          p={15}
           maxW={'25rem'}
           mt={'3rem'}
         >
@@ -154,13 +154,13 @@ const SearchBar = () => {
             >
              <Box>{rec.icon}</Box>
              <Box display={'flex'} flexDirection={'column'}>
-             <Text fontSize={'1rem'} fontWeight={'500'}>
+             <Text color={'#111B29'} fontSize={'1rem'} fontWeight={'600'}>
                 {highlightMatchedText(rec.showRecommentationContentHeading, searchQuery)}
               </Text>
-              <Text fontSize={'0.75rem'} fontWeight={'300'}>
+              <Text fontSize={'0.8rem'} fontWeight={'300'}>
                 {highlightMatchedText(rec.showRecommentationContentDescription, searchQuery)}
               </Text>
-              <Text fontSize={'0.75rem'} fontWeight={'300'}>
+              <Text fontSize={'0.7rem'} fontWeight={'300'}>
                 {highlightMatchedText(rec.content, searchQuery)}
               </Text>
              </Box>

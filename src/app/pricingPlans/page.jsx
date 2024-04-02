@@ -111,8 +111,8 @@ export default function PricingPlans() {
   };
 
   return (
-    <Box ml={{ base: "1rem", md: "5.5rem" }} p={{ base: 4, md: 8 }}>
-      <VStack spacing={2} mt={"5rem"} mr={"50%"}>
+    <Box  p={{ base: 4, md: 8 }}>
+      <VStack ml={{ base: "1rem", md: "5.5rem" }} spacing={2} mt={"5rem"} mr={"50%"}>
         <Heading
           lineHeight={"32px"}
           display={"flex"}
@@ -171,19 +171,19 @@ export default function PricingPlans() {
         <TabPanels mt={'2rem'}>
           {planData.map((category, index) => (
             <TabPanel key={index}>
-              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+              <SimpleGrid  mx={'4rem'} columns={{ base: 1, md: 2 }} gap={'15rem'}>
                 {category.plans.map((plan, idx) => (
-                  <Box display={'flex'} textAlign={'center'} alignItems={'center'} flexDirection={'column'} gap={{ md:'1.75rem', base:'1rem'}} bg={'#131414'} borderRadius={'2rem'} p={'1.5rem'} key={idx} color={'white'}>
+                  <Box flex={1} display={'flex'} textAlign={'center'} alignItems={'center'} flexDirection={'column'} gap={{ md:'1.75rem', base:'1rem'}} bg={'#131414'} borderRadius={'2rem'} p={'1.5rem'} key={idx} color={'white'}>
                     <Box bg={'#146EF5'} w={'max-content'} borderRadius={'4px'} >
                       <Text px={'1rem'} py={'0.5rem'} fontWeight="600" lineHeight={'20px'} fontSize={{ md:'0.875rem', base:'0.5rem'}}>{plan.name}</Text>
                     </Box>
                     <Heading as="h1" fontWeight="600" fontSize={{ base:'2.125rem', md:'4.125rem'}} lineHeight={{ md:'79.2px', base:'50px'}}>
                         {plan.price}
                     </Heading>
-                    <Text fontSize="sm">
+                    <Text lineHeight={'22px'} fontWeight={'500'} fontSize="1.125rem">
                       {plan.heading}
                     </Text>
-                    <Text lineHeight={'22px'} fontWeight={'500'} fontSize="1.125rem">
+                    <Text lineHeight={'28px'} fontWeight={'400'} fontSize="1rem">
                       {plan.description}
                     </Text>
                     <Button w={'100%'} bg={'#146EF5'} color={'white'} borderRadius={'4px'}>

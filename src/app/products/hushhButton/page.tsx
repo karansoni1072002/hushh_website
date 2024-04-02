@@ -90,7 +90,7 @@ const hushhButton = () => {
             color={"#656565"}
           >
             Imagine a world where shopping feels effortless and tailored just
-            for you. Hushh Button, a powerful plugin, bridges the gap between your preferences/choices/needs/likes and your favourite brands.
+            for you. Hushh Button, a powerful plugin, bridges the gap between your preferences/choices/needs/likes and your favourite brands with GenAI.
           </Text>
           <Button
             border={"1px solid #606060"}
@@ -229,7 +229,7 @@ const hushhButton = () => {
             Hushh is your one-stop solution for seamless data sharing between
             you and your favorite websites. With Hushh, you can effortlessly
             share your personal data with brands to enhance your browsing
-            experience and receive tailored recommendations.
+            experience and receive tailored recommendations with Gen AI.
           </Text>
           <Box
             mt={"1.5rem"}

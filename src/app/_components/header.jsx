@@ -198,7 +198,7 @@ const Header = () => {
               <Button
                 border={"1px solid #606060"}
                 borderRadius={"5px"}
-                w={"8.75rem"}
+                w={"10.75rem"}
                 h={"3.125rem"}
                 // color={theme.colors._white}
                 className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text"

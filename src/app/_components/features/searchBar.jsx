@@ -4,6 +4,7 @@ import { SearchIcon } from '@chakra-ui/icons';
 import { useResponsiveSizes } from '../../context/responsive';
 import contentMap from '../productData/contentMap';
 import { useRouter } from 'next/navigation';
+import { useMediaQuery } from 'react-responsive';
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -11,6 +12,7 @@ const SearchBar = () => {
   const [recommendations, setRecommendations] = useState([]);
   const router = useRouter();
   const isMobile = useResponsiveSizes();
+  const isDesktop = useMediaQuery({ query: '(min-width: 1824px)' })
   const [isClicked, setIsClicked] = useState(false);
   const inputRef = useRef(null);
   const recommendationsRef = useRef(null);
@@ -45,8 +47,8 @@ const SearchBar = () => {
   const highlightMatchedText = (text, query) => {
     const index = text.toLowerCase().indexOf(query.toLowerCase());
     if (index !== -1) {
-      const startIndex = Math.max(0, index - 25);
-      const endIndex = Math.min(text.length, index + query.length + 25);
+      const startIndex = Math.max(0, isDesktop ?  index - 10 : index - 25);
+      const endIndex = Math.min(text.length, isDesktop ?  index + query.length + 15 : index + query.length + 20 );
       const highlightedText = text.substring(startIndex, endIndex);
       const formattedText = (
         <Text as="span" key={index}>
@@ -85,7 +87,7 @@ const SearchBar = () => {
   }, []);
 
   return (
-    <VStack width="100%" spacing={4}>
+    <VStack width="70%" spacing={4}>
       <Flex width="100%" position="relative" mt={'0.75rem'}>
       {!isClicked ? (
       <IconButton
@@ -137,7 +139,21 @@ const SearchBar = () => {
           maxW={'25rem'}
           mt={'3rem'}
         >
-          {recommendations.map((rec, index) => (
+          {recommendations.length === 0 ? (
+            <Box
+              p={3}
+              minW={{ base: '90%', md: '20rem' }}
+              borderBottom="1px solid"
+              borderColor="gray.200"
+              display={'flex'}
+              gap={'1rem'}
+            >
+              <Text color={'#111B29'} fontSize={'1rem'} fontWeight={'600'}>
+                No results found
+              </Text>
+            </Box>
+          ) : (
+          recommendations.map((rec, index) => (
             <Box
               key={index}
               onClick={() => {
@@ -165,7 +181,8 @@ const SearchBar = () => {
               </Text>
              </Box>
             </Box>
-          ))}
+          ))
+          )}
         </VStack>
       )}
     </VStack>

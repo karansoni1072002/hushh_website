@@ -12,6 +12,7 @@ import {
   Link,
   SimpleGrid,
   VStack,
+  Button,
 } from "@chakra-ui/react";
 
 const planData = [
@@ -167,33 +168,27 @@ export default function PricingPlans() {
           ))}
         </TabList>
 
-        <TabPanels>
+        <TabPanels mt={'2rem'}>
           {planData.map((category, index) => (
             <TabPanel key={index}>
               <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
                 {category.plans.map((plan, idx) => (
-                  <Box key={idx}>
-                    <Heading as="h2" fontWeight="bold">
-                      {plan.name}
+                  <Box display={'flex'} textAlign={'center'} alignItems={'center'} flexDirection={'column'} gap={{ md:'1.75rem', base:'1rem'}} bg={'#131414'} borderRadius={'2rem'} p={'1.5rem'} key={idx} color={'white'}>
+                    <Box bg={'#146EF5'} w={'max-content'} borderRadius={'4px'} >
+                      <Text px={'1rem'} py={'0.5rem'} fontWeight="600" lineHeight={'20px'} fontSize={{ md:'0.875rem', base:'0.5rem'}}>{plan.name}</Text>
+                    </Box>
+                    <Heading as="h1" fontWeight="600" fontSize={{ base:'2.125rem', md:'4.125rem'}} lineHeight={{ md:'79.2px', base:'50px'}}>
+                        {plan.price}
                     </Heading>
-                    <Text fontSize="sm" color="gray.500">
+                    <Text fontSize="sm">
+                      {plan.heading}
+                    </Text>
+                    <Text lineHeight={'22px'} fontWeight={'500'} fontSize="1.125rem">
                       {plan.description}
                     </Text>
-                    <VStack align="start">
-                      <Heading as="h2" fontWeight="bold">
-                        {plan.price}
-                      </Heading>
-                      <Link
-                        color="gray.500"
-                        href="#"
-                        _hover={{
-                          color: "gray.900",
-                          textDecoration: "underline",
-                        }}
-                      >
-                        View features
-                      </Link>
-                    </VStack>
+                    <Button w={'100%'} bg={'#146EF5'} color={'white'} borderRadius={'4px'}>
+                        Upgrade to Premium
+                    </Button>
                   </Box>
                 ))}
               </SimpleGrid>

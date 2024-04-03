@@ -68,9 +68,6 @@ export default function Home() {
 
   return (
     <>
-    {loading ? (
-      <Loading />
-    ) : (
     <div className="relative">
       <Image
         src={HomeBg}
@@ -473,7 +470,6 @@ export default function Home() {
       </div>
     </main>
     </div>
-    )}
     </>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Switch } from '@chakra-ui/react'
 import {
   Tabs,
   TabList,
@@ -13,6 +14,7 @@ import {
   SimpleGrid,
   VStack,
   Button,
+  HStack,
 } from "@chakra-ui/react";
 
 const planData = [
@@ -103,13 +105,31 @@ const planData = [
 export default function PricingPlans() {
   const [tabIndex, setTabIndex] = useState(0);
   const [activeAccordionIndex, setActiveAccordionIndex] = useState(-1);
+  const [isYearly, setIsYearly] = useState(false);
+  const [isMonthly, setIsMonthly ] = useState(true);
 
   const handleTabsChange = (index) => {
     setTabIndex(index);
     setActiveAccordionIndex(index);
   };
 
+  const handleSwitchChange = () => {
+    setIsYearly(!isYearly); // toggle the state on each click
+    setIsMonthly(false)
+    
+  };
+
+  const renderPrice = (price) => {
+    const priceNum = parseFloat(price.replace("$", ""));
+    return isYearly ? `$${priceNum * 12}` : price;
+  };
+
+  const yearlyTextStyles = isYearly ? { color: "white" } : { color:'#717171'};
+  const monthlyTextStyles = isMonthly ? {color:"white"} : {color:'#717171'};
+
+
   return (
+    <>
     <Box  p={{ base: 4, md: 8 }}>
       <VStack ml={{ base: "1rem", md: "5.5rem" }} spacing={2} mt={"5rem"} mr={"50%"}>
         <Heading
@@ -135,68 +155,84 @@ export default function PricingPlans() {
           Find the right plan for your needs
         </Heading>
       </VStack>
-
-      <Tabs
-        onChange={handleTabsChange}
-        position="relative"
-        variant="unstyled"
-        mt={8}
-        display={"flex"}
-        flexDirection={"column"}
-        alignItems={"center"}
-      >
-        <TabList
-          p={"0.5rem"}
-          borderRadius={"8px"}
-          border={"1px solid #222222"}
-          minH={"4.125rem"}
-          w={"52%"}
-          justifyContent={"space-between"}
-        >
-          {planData.map((category, index) => (
-            <Tab
-              key={index}
-              _selected={{ color: "white", bg: "#363636", borderRadius: "4px" }}
-              color={"#898989"}
-              lineHeight={"22px"}
-              fontWeight={"600"}
-              fontSize={"15px"}
-            >
-              {category.category}
-            </Tab>
-          ))}
-        </TabList>
-
-        <TabPanels mt={'2rem'}>
-          {planData.map((category, index) => (
-            <TabPanel key={index}>
-              <SimpleGrid  mx={'10rem'} columns={{ base: 1, md: 2 }} gap={'8rem'}>
-                {category.plans.map((plan, idx) => (
-                  <Box flex={1} display={'flex'} textAlign={'center'} alignItems={'center'} flexDirection={'column'} gap={{ md:'1.75rem', base:'1rem'}} bg={'#131414'} borderRadius={'2rem'} p={'1.5rem'} key={idx} color={'white'}>
-                    <Box bg={'#146EF5'} w={'max-content'} borderRadius={'4px'} >
-                      <Text px={'1rem'} py={'0.5rem'} fontWeight="600" lineHeight={'20px'} fontSize={{ md:'0.875rem', base:'0.5rem'}}>
-                        {plan.name}
-                      </Text>
-                    </Box>
-                    <Heading as="h1" fontWeight="600" fontSize={{ base:'2.125rem', md:'4.125rem'}} lineHeight={{ md:'79.2px', base:'50px'}}>
-                        {plan.price} {plan.perMonth && (<span style={{color:"white",marginLeft:'-0.75rem', fontWeight:'600', fontSize:'1.25rem'}}>{plan.perMonth}</span>)}
-                    </Heading>
-                    <Text lineHeight={'22px'} fontWeight={'500'} fontSize="1.125rem">
-                      {plan.heading}
-                    </Text>
-                    <Text h={'3rem'} lineHeight={'28px'} fontWeight={'400'} fontSize="1rem">
-                      {plan.description}
-                    </Text>
-                    <Button w={'100%'} bg={'#146EF5'} color={'white'} borderRadius={'4px'}>
-                        Upgrade to Premium
-                    </Button>
-                  </Box>
-                ))}
-              </SimpleGrid>
-            </TabPanel>
-          ))}
-        </TabPanels>
-      </Tabs>
+   
     </Box>
+
+     <VStack mt={{md:'4rem', base:'2.5rem'}} textAlign={'left'} alignItems={'flex-start'} mx={{md:'7.2rem'}}>
+       <Text mb={{md:'1.5rem', base:'0.75rem'}} className="gradient" fontWeight={'600'} lineHeight={{ md:'52px', base:'35px'}} fontSize={{md:"3.5rem", base:'2rem'}} letterSpacing={'0.56px'}>Site plans</Text>
+       <HStack gap={{md:'20rem', base:'4rem'}}>
+           <Text w={'50%'} lineHeight={'30px'} color={'#FFFFFF'} fontWeight={'500'} fontSize={{md:'1rem', base:'0.8rem'}}>Our site plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer</Text>
+           <Box lineHeight={'22px'} fontSize={{md:'1rem', base:'0.8rem'}} display={'flex'} flexDirection={'row'} gap={'1rem'}>
+              <Text color={"#717171"} style={monthlyTextStyles}>Billed monthly</Text>
+              <Switch size='lg' onChange={handleSwitchChange} />
+              <Text color="#717171" style={yearlyTextStyles}>Billed yearly</Text>
+            </Box>
+       </HStack>
+     </VStack>
+
+     <Box minW={'100%'} display={'flex'} textAlign={'left'} alignItems={'flex-start'} flexDirection={'column'}>
+     <Tabs
+       onChange={handleTabsChange}
+       position="relative"
+       variant="unstyled"
+       mt={8}
+       display={"flex"}
+       flexDirection={"column"}
+       alignItems={"center"}
+     >
+       <TabList
+         p={"0.5rem"}
+         borderRadius={"8px"}
+         border={"1px solid #222222"}
+         minH={"4.125rem"}
+         w={"52%"}
+         justifyContent={"space-between"}
+       >
+         {planData.map((category, index) => (
+           <Tab
+             key={index}
+             _selected={{ color: "white", bg: "#363636", borderRadius: "4px" }}
+             color={"#898989"}
+             lineHeight={"22px"}
+             fontWeight={"600"}
+             fontSize={"15px"}
+           >
+             {category.category}
+           </Tab>
+         ))}
+       </TabList>
+
+       <TabPanels mt={'2rem'}>
+         {planData.map((category, index) => (
+           <TabPanel key={index}>
+             <SimpleGrid  mx={'10rem'} columns={{ base: 1, md: 2 }} gap={'8rem'}>
+               {category.plans.map((plan, idx) => (
+                 <Box flex={1} display={'flex'} textAlign={'center'} alignItems={'center'} flexDirection={'column'} gap={{ md:'1.75rem', base:'1rem'}} bg={'#131414'} borderRadius={'2rem'} p={'1.5rem'} key={idx} color={'white'}>
+                   <Box bg={'#146EF5'} w={'max-content'} borderRadius={'4px'} >
+                     <Text px={'1rem'} py={'0.5rem'} fontWeight="600" lineHeight={'20px'} fontSize={{ md:'0.875rem', base:'0.5rem'}}>
+                       {plan.name}
+                     </Text>
+                   </Box>
+                   <Heading as="h1" fontWeight="600" fontSize={{ base:'2.125rem', md:'4.125rem'}} lineHeight={{ md:'79.2px', base:'50px'}}>
+                       {renderPrice(plan.price)} {plan.perMonth && (<span style={{color:"white",marginLeft:'-0.75rem', fontWeight:'600', fontSize:'1.25rem'}}>{plan.perMonth}</span>)}
+                   </Heading>
+                   <Text lineHeight={'22px'} fontWeight={'500'} fontSize="1.125rem">
+                     {plan.heading}
+                   </Text>
+                   <Text h={'3rem'} lineHeight={'28px'} fontWeight={'400'} fontSize="1rem">
+                     {plan.description}
+                   </Text>
+                   <Button w={'100%'} bg={'#146EF5'} color={'white'} borderRadius={'4px'}>
+                       Upgrade to Premium
+                   </Button>
+                 </Box>
+               ))}
+             </SimpleGrid>
+           </TabPanel>
+         ))}
+       </TabPanels>
+     </Tabs>
+   </Box>
+   </>
   );
 }

@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
             color="red"
             initialPosition={0.08}
             crawlSpeed={200}
-            height={4}
+            height={3}
             crawl={true}
             showSpinner={true}
             easing="ease"

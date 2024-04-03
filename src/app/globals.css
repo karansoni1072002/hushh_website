@@ -320,3 +320,11 @@ body {
   display: block;
   height: 1px;
 }
+
+
+/* Top Loader CSS */
+@media (max-width: 767px) { 
+  .spinner {
+      display: none !important;
+  }
+}

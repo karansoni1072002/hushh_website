@@ -22,6 +22,8 @@ import Image from "next/image";
 // import { MdCheckCircleOutline } from "react-icons/md";
 import BoxImage from "../_components/svg/keyHighlightImg.svg"
 import ManageFinanceBox from '../_components/svg/managefinanceBox.svg';
+import PricingFaq from "../_components/features/faq/pricingFaq";
+import ContactForm from "../_components/features/contactForm";
 
 const planData = [
   {
@@ -481,7 +483,9 @@ export default function PricingPlans() {
             <Image src={ManageFinanceBox} alt="ManageFinanceBox" />
             <Text fontSize={{ md: '1rem', base: '0.75rem' }} color={'#ABABAB'} lineHeight={{ md: '36px', base: '18px' }}>This summary aims to convey Hushh’s commitment to delivering value through innovative, user-centric products and services, ensuring clear communication of pricing and offerings to foster trust and loyalty across all user segments.</Text>
           </Box>
-        </HStack>
+      </HStack>
+      <PricingFaq/>
+      <ContactForm/>
     </>
   );
 }

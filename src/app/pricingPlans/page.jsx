@@ -21,6 +21,8 @@ import ListIconTick from "../_components/svg/icons/listIconTick";
 import Image from "next/image";
 // import { MdCheckCircleOutline } from "react-icons/md";
 import BoxImage from "../_components/svg/keyHighlightImg.svg"
+import ManageFinanceBox from '../_components/svg/managefinanceBox.svg';
+
 const planData = [
   {
     category: "Everyday Consumers",
@@ -369,7 +371,7 @@ export default function PricingPlans() {
           <Heading className="gradient" fontSize={{md:'3.75rem', base:'2rem'}} fontWeight={'600'} lineHeight={{ md:'63.65px', base:'45px'}}>Key Highlights</Heading>
           <List spacing={10} color={"white"} mt={'1rem'}>
             <ListItem display={"flex"}>
-              <Box>
+              <Box pr={'1rem'}>
                 <ListIconTick />
               </Box>
               <VStack textAlign={"left"}>
@@ -394,7 +396,7 @@ export default function PricingPlans() {
               </VStack>
             </ListItem>
             <ListItem display={"flex"}>
-              <Box>
+              <Box pr={'1rem'}>
                 <ListIconTick />
               </Box>
               <VStack textAlign={"left"}>
@@ -417,7 +419,7 @@ export default function PricingPlans() {
               </VStack>
             </ListItem>
             <ListItem display={"flex"}>
-              <Box>
+              <Box pr={'1rem'}>
                 <ListIconTick />
               </Box>
               <VStack textAlign={"left"}>
@@ -445,6 +447,41 @@ export default function PricingPlans() {
            <Image src={BoxImage} alt="BoxImageHighlight"/>
         </VStack>
       </Box>
+
+      <HStack
+          my={{ md: "8rem", base: "3rem" }}
+          px={{ md: "7rem", base: "1.25rem" }}
+          display={{ base: 'flex' }}
+          gap={{md:'4rem'}}
+          flexDirection={{ base: 'column', md: 'row' }}
+        >
+          <Box display={"flex"} flexDirection={"column"} gap={'1rem'} flex={1}>
+            <Text
+              className="default-gradient"
+              letterSpacing={"0.255rem"}
+              lineHeight={"1rem"}
+              fontWeight={"600"}
+              fontSize={{ md: "1rem", base: '0.75rem' }}
+            >
+              HUSHH
+            </Text>
+            <Text
+              className="gradient"
+              fontSize={{ md: "3.75rem", base: "1.75rem" }}
+              fontWeight={"600"}
+              lineHeight={{ md: "63.3px", base: "41.2px" }}
+            >
+              Final Takeaway
+            </Text>
+            <Box display={'flex'} flexDirection={'column'} gap={{ md: '1rem', base: '0rem' }}>
+              <Text fontSize={{md:'1rem', base:'0.8rem'}} fontWeight={'500'} color={'#ABACB0'} lineHeight={{ md:'36px', base:'25px'}}>Hushh’s diverse pricing strategy aims to democratize access to powerful data and AI tools, making them accessible to a wide audience. Whether you’re a consumer trusting us with your data, a developer building the next big app, a sales agent aiming for your next target, or a creator curating unique experiences, Hushh provides the tools, support, and platform to achieve your goals. With Hushh, embrace a smarter, more secure, and personalized digital future.</Text>
+            </Box>
+          </Box>
+          <Box display={'flex'} flexDirection={'column'} flex={1} gap={'1rem'}>
+            <Image src={ManageFinanceBox} alt="ManageFinanceBox" />
+            <Text fontSize={{ md: '1rem', base: '0.75rem' }} color={'#ABABAB'} lineHeight={{ md: '36px', base: '18px' }}>This summary aims to convey Hushh’s commitment to delivering value through innovative, user-centric products and services, ensuring clear communication of pricing and offerings to foster trust and loyalty across all user segments.</Text>
+          </Box>
+        </HStack>
     </>
   );
 }

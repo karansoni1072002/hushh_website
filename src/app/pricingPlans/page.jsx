@@ -127,10 +127,21 @@ export default function PricingPlans() {
     setIsMonthly(false);
   };
 
-  const renderPrice = (price) => {
+
+const renderPrice = (price, perMonth) => {
+    if (price === "Free") return "Free"; // If price is "Free", return "Free"
+
     const priceNum = parseFloat(price.replace("$", ""));
-    return isYearly ? `$${priceNum * 12}` : price;
-  };
+    const yearlyPrice = isYearly ? priceNum * 12 : priceNum;
+    const discountedPrice = isYearly ? yearlyPrice * 0.78 : priceNum; // Applying 22% discount if it's yearly, else use original price
+    const total = Math.floor(discountedPrice); // Remove decimal part
+
+    // Change perMonth text based on yearly toggle
+    const durationText = isYearly ? "/yr" : perMonth;
+    return `$${total}`; // Total price with updated duration text
+};
+
+
 
   const yearlyTextStyles = isYearly ? { color: "white" } : { color: "#717171" };
   const monthlyTextStyles = isMonthly
@@ -186,7 +197,6 @@ export default function PricingPlans() {
          <Divider borderStyle={'solid'} borderWidth={'2px'} borderColor={'#5A5A5A'} />
       </Box>
       
-
       <VStack
         mt={{ md: "7em", base: "2.5rem" }}
         textAlign={"left"}
@@ -214,6 +224,7 @@ export default function PricingPlans() {
             Our site plans provide easy 1-click publishing and hosting, right
             from inside our powerful visual designer
           </Text>
+        <VStack> 
           <Box
             lineHeight={"22px"}
             fontSize={{ md: "1rem", base: "0.8rem" }}
@@ -229,6 +240,8 @@ export default function PricingPlans() {
               Billed yearly
             </Text>
           </Box>
+          <Text fontWeight={'400'} style={yearlyTextStyles} fontSize={'0.85rem'} lineHeight={'22px'}>(Save up to 22%)</Text>
+        </VStack> 
         </HStack>
       </VStack>
 
@@ -327,7 +340,7 @@ export default function PricingPlans() {
                               fontSize: "1.25rem",
                             }}
                           >
-                            {plan.perMonth}
+                            {plan.perMonth && (isYearly ? "/yr" : '/mo')}
                           </span>
                         )}
                       </Heading>

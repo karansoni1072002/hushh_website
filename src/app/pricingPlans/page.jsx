@@ -17,6 +17,7 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import DropdownIcon from "../_components/svg/icons/dropdownIcon.svg";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 const planData = [
   {
@@ -235,8 +236,7 @@ export default function PricingPlans() {
      </Tabs>
      <Box mt={{base:'0.5rem',md:'1rem'}} gap={{md:'2rem', base:'1rem'}} display={'flex'} flexDirection={'column'} alignItems={'center'} textAlign={'center'} alignSelf={'center'}>
      <Text color={'white'} fontWeight={'500'} fontSize={{md:'1rem', base:'0.75rem'}} lineHeight={'36px'}>All prices are in USD and charged per site with applicable taxes added at checkout</Text>
-     <Button >View all plan features</Button>
-     {/* <DropdownIcon/> */}
+     <Button rightIcon={<ChevronDownIcon/>}>View all plan features</Button>
      </Box>
    </Box>
    </>

@@ -452,7 +452,7 @@ export default function PricingPlans() {
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
           display={{ base: 'flex' }}
-          gap={{md:'4rem'}}
+          gap={{md:'7rem'}}
           flexDirection={{ base: 'column', md: 'row' }}
         >
           <Box display={"flex"} flexDirection={"column"} gap={'1rem'} flex={1}>
@@ -474,7 +474,7 @@ export default function PricingPlans() {
               Final Takeaway
             </Text>
             <Box display={'flex'} flexDirection={'column'} gap={{ md: '1rem', base: '0rem' }}>
-              <Text fontSize={{md:'1rem', base:'0.8rem'}} fontWeight={'500'} color={'#ABACB0'} lineHeight={{ md:'36px', base:'25px'}}>Hushh’s diverse pricing strategy aims to democratize access to powerful data and AI tools, making them accessible to a wide audience. Whether you’re a consumer trusting us with your data, a developer building the next big app, a sales agent aiming for your next target, or a creator curating unique experiences, Hushh provides the tools, support, and platform to achieve your goals. With Hushh, embrace a smarter, more secure, and personalized digital future.</Text>
+              <Text fontSize={{md:'1rem', base:'0.8rem'}} fontWeight={'500'} color={'#ABABAB'} lineHeight={{ md:'36px', base:'25px'}}>Hushh’s diverse pricing strategy aims to democratize access to powerful data and AI tools, making them accessible to a wide audience. Whether you’re a consumer trusting us with your data, a developer building the next big app, a sales agent aiming for your next target, or a creator curating unique experiences, Hushh provides the tools, support, and platform to achieve your goals. With Hushh, embrace a smarter, more secure, and personalized digital future.</Text>
             </Box>
           </Box>
           <Box display={'flex'} flexDirection={'column'} flex={1} gap={'1rem'}>

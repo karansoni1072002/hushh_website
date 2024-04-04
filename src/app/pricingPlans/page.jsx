@@ -155,7 +155,7 @@ const renderPrice = (price, perMonth) => {
           ml={{ base: "1rem", md: "5.5rem" }}
           spacing={2}
           mt={"5rem"}
-          mr={{ md:"50%"}}
+          mr={{ md:"50%", base:'0'}}
         >
           <Heading
             lineHeight={"32px"}
@@ -164,7 +164,7 @@ const renderPrice = (price, perMonth) => {
             textAlign={"left"}
             as={"h2"}
             color={"#FFFFFF"}
-            fontSize={{ base: "0.75rem", md: "1.25rem" }}
+            fontSize={{ base: "0.85rem", md: "1.25rem" }}
             letterSpacing={"0.04rem"}
             fontWeight="500"
           >
@@ -172,7 +172,7 @@ const renderPrice = (price, perMonth) => {
           </Heading>
           <Heading
             as={"h1"}
-            lineHeight={{ md: "90.28px", base: "50px" }}
+            lineHeight={{ md: "90.28px", base: "40px" }}
             className="gradient"
             fontSize={{ base: "2.5rem", md: "4.625rem" }}
             fontWeight="700"
@@ -182,7 +182,7 @@ const renderPrice = (price, perMonth) => {
         </VStack>
       </Box>
 
-      <Box mb={{md:'1rem', base:'0.2rem'}} mt={{md:'5rem', base:'2rem'}} px={{md:'7.5rem', base:'1.5rem'}} alignItems={'center'} align={'center'} alignSelf={'center'} alignContent={'center'} w={'100%'} display={'flex'}>
+      <Box gap={{base:'1rem', md:'0'}} mb={{md:'1rem', base:'0.2rem'}} mt={{md:'5rem', base:'2rem'}} px={{md:'7.5rem', base:'1.5rem'}} alignItems={'center'} align={'center'} alignSelf={'center'} alignContent={'center'} w={'100%'} display={'flex'}>
         <Box gap={'0.5rem'} textAlign={'left'} flex={1} color={'white'} display={'flex'} flexDirection={'column'}>
            <Text fontWeight={'500'} fontSize={{ md:'1rem', base:'0.9rem'}} lineHeight={'19.5px'} letterSpacing={'1.5px'}>Site plans</Text>
            <Text fontWeight={'600'} fontSize={{ md:'1.5rem', base:'0.75rem'}} lineHeight={{ md:'30px', base:'20px'}}>Build, publish, and host with ease</Text>
@@ -344,7 +344,7 @@ const renderPrice = (price, perMonth) => {
               <TabPanel key={index}>
                 <SimpleGrid
                   mx={{ md:"10rem", base:'0'}}
-                  columns={{ base: 1, md: 2 }}
+                  columns={{ base: 2, md: 2 }}
                   gap={{md:"8rem", base:'1rem'}}
                 >
                   {category.plans.map((plan, idx) => (
@@ -357,7 +357,7 @@ const renderPrice = (price, perMonth) => {
                       gap={{ md: "1.75rem", base: "1rem" }}
                       bg={"#131414"}
                       borderRadius={"2rem"}
-                      p={"1.5rem"}
+                      p={{ md:"1.5rem", base:'1rem'}}
                       key={idx}
                       color={"white"}
                     >
@@ -367,8 +367,8 @@ const renderPrice = (price, perMonth) => {
                         borderRadius={"4px"}
                       >
                         <Text
-                          px={"1rem"}
-                          py={"0.5rem"}
+                          px={{ md:"1rem", base:'0.5rem'}}
+                          py={{ md:"0.5rem", base:'0.2rem'}}
                           fontWeight="600"
                           lineHeight={"20px"}
                           fontSize={{ md: "0.875rem", base: "0.5rem" }}
@@ -379,10 +379,10 @@ const renderPrice = (price, perMonth) => {
                       <Heading
                         as="h1"
                         fontWeight="600"
-                        fontSize={{ base: "2.125rem", md: "4.125rem" }}
-                        lineHeight={{ md: "79.2px", base: "50px" }}
+                        fontSize={{ base: "2rem", md: "4.125rem" }}
+                        lineHeight={{ md: "79.2px", base: "40px" }}
                       >
-                        {renderPrice(plan.price)}{" "}
+                        {renderPrice(plan.price)}{"  "}
                         {plan.perMonth && (
                           <span
                             style={{
@@ -392,22 +392,22 @@ const renderPrice = (price, perMonth) => {
                               fontSize: "1.25rem",
                             }}
                           >
-                            {plan.perMonth && (isYearly ? "/yr" : '/mo')}
+                            {plan.perMonth && (isYearly ? " /yr" : ' /mo')}
                           </span>
                         )}
                       </Heading>
                       <Text
                         lineHeight={"22px"}
                         fontWeight={"500"}
-                        fontSize="1.125rem"
+                        fontSize={{ md:"1.125rem", base:'0.85rem'}}
                       >
                         {plan.heading}
                       </Text>
                       <Text
-                        h={"3rem"}
-                        lineHeight={"28px"}
+                        h={{ md:"3rem"}}
+                        lineHeight={{md:"28px", base:'18px'}}
                         fontWeight={"400"}
-                        fontSize="1rem"
+                        fontSize={{ md:"1rem", base:'0.65rem'}}
                       >
                         {plan.description}
                       </Text>
@@ -416,6 +416,8 @@ const renderPrice = (price, perMonth) => {
                         bg={"#146EF5"}
                         color={"white"}
                         borderRadius={"4px"}
+                        fontWeight={'600'}
+                        fontSize={{md:'1rem', base:'0.6rem'}}
                       >
                         Upgrade to Premium
                       </Button>

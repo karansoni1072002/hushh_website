@@ -364,7 +364,7 @@ export default function PricingPlans() {
         </Box>
       </Box>
       <Box mx={'6rem'} mb={'1rem'} bg={'#131414'} gap={'5rem'} minW={'85%'} mt={{md:'6rem', base:'2rem'}} display={'flex'} flexDirection={'row'}>
-        <VStack gap={{ md:'1rem'}} textAlign={'left'} alignItems={'flex-start'} mt={{md:'4rem', base:'2rem'}}>
+        <VStack ml={'2rem'} gap={{ md:'1rem'}} textAlign={'left'} alignItems={'flex-start'} mt={{md:'4rem', base:'2rem'}}>
           <Text className="color-gradient" fontWeight={'600'} fontSize={{ md:'1rem', base:'0.5rem'}} lineHeight={'1rem'} letterSpacing={'0.255'}>HUSHH</Text>
           <Heading className="gradient" fontSize={{md:'3.75rem', base:'2rem'}} fontWeight={'600'} lineHeight={{ md:'63.65px', base:'45px'}}>Key Highlights</Heading>
           <List spacing={10} color={"white"} mt={'1rem'}>

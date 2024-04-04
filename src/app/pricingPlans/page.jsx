@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Container, List, ListIcon, ListItem, Switch } from "@chakra-ui/react";
+import { Container, Divider, List, ListIcon, ListItem, Switch } from "@chakra-ui/react";
 import {
   Tabs,
   TabList,
@@ -24,6 +24,7 @@ import BoxImage from "../_components/svg/keyHighlightImg.svg"
 import ManageFinanceBox from '../_components/svg/managefinanceBox.svg';
 import PricingFaq from "../_components/features/faq/pricingFaq";
 import ContactForm from "../_components/features/contactForm";
+
 
 const planData = [
   {
@@ -170,8 +171,24 @@ export default function PricingPlans() {
         </VStack>
       </Box>
 
+      <Box mb={{md:'1rem', base:'0.2rem'}} mt={{md:'5rem', base:'2rem'}} px={{md:'7.5rem', base:'1.5rem'}} alignItems={'center'} align={'center'} alignSelf={'center'} alignContent={'center'} w={'100%'} display={'flex'}>
+        <Box gap={'0.5rem'} textAlign={'left'} flex={1} color={'white'} display={'flex'} flexDirection={'column'}>
+           <Text fontWeight={'500'} fontSize={'1rem'} lineHeight={'19.5px'} letterSpacing={'1.5px'}>Site plans</Text>
+           <Text fontWeight={'600'} fontSize={'1.5rem'} lineHeight={'30px'}>Build, publish, and host with ease</Text>
+        </Box>
+        <Box gap={'0.5rem'} textAlign={'left'} flex={1} color={'#898989'} display={'flex'} flexDirection={'column'}>
+            <Text fontWeight={'500'} fontSize={'1rem'} lineHeight={'19.5px'} letterSpacing={'1.5px'}>Workspace plans</Text>
+            <Text fontWeight={'600'} fontSize={'1.5rem'} lineHeight={'30px'}>Add a team and stage multiple sites</Text>
+        </Box>
+      </Box>
+      <Box display={'flex'} mt={{md:'1rem', base:'0.5rem'}} px={{md:'7.5rem', base:'1.5rem'}}>
+         <Divider borderStyle={'solid'} borderWidth={'2px'} borderColor={'#146EF5'} />
+         <Divider borderStyle={'solid'} borderWidth={'2px'} borderColor={'#5A5A5A'} />
+      </Box>
+      
+
       <VStack
-        mt={{ md: "4rem", base: "2.5rem" }}
+        mt={{ md: "7em", base: "2.5rem" }}
         textAlign={"left"}
         alignItems={"flex-start"}
         mx={{ md: "7.2rem" }}

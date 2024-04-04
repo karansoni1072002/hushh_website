@@ -155,7 +155,7 @@ const renderPrice = (price, perMonth) => {
           ml={{ base: "1rem", md: "5.5rem" }}
           spacing={2}
           mt={"5rem"}
-          mr={"50%"}
+          mr={{ md:"50%"}}
         >
           <Heading
             lineHeight={"32px"}
@@ -184,12 +184,12 @@ const renderPrice = (price, perMonth) => {
 
       <Box mb={{md:'1rem', base:'0.2rem'}} mt={{md:'5rem', base:'2rem'}} px={{md:'7.5rem', base:'1.5rem'}} alignItems={'center'} align={'center'} alignSelf={'center'} alignContent={'center'} w={'100%'} display={'flex'}>
         <Box gap={'0.5rem'} textAlign={'left'} flex={1} color={'white'} display={'flex'} flexDirection={'column'}>
-           <Text fontWeight={'500'} fontSize={'1rem'} lineHeight={'19.5px'} letterSpacing={'1.5px'}>Site plans</Text>
-           <Text fontWeight={'600'} fontSize={'1.5rem'} lineHeight={'30px'}>Build, publish, and host with ease</Text>
+           <Text fontWeight={'500'} fontSize={{ md:'1rem', base:'0.9rem'}} lineHeight={'19.5px'} letterSpacing={'1.5px'}>Site plans</Text>
+           <Text fontWeight={'600'} fontSize={{ md:'1.5rem', base:'0.75rem'}} lineHeight={{ md:'30px', base:'20px'}}>Build, publish, and host with ease</Text>
         </Box>
         <Box gap={'0.5rem'} textAlign={'left'} flex={1} color={'#898989'} display={'flex'} flexDirection={'column'}>
-            <Text fontWeight={'500'} fontSize={'1rem'} lineHeight={'19.5px'} letterSpacing={'1.5px'}>Workspace plans</Text>
-            <Text fontWeight={'600'} fontSize={'1.5rem'} lineHeight={'30px'}>Add a team and stage multiple sites</Text>
+            <Text fontWeight={'500'} fontSize={{ md:'1rem', base:'0.9rem'}} letterSpacing={'1.5px'}>Workspace plans</Text>
+            <Text fontWeight={'600'}fontSize={{ md:'1.5rem', base:'0.75rem'}} lineHeight={{ md:'30px', base:'20px'}}>Add a team and stage multiple sites</Text>
         </Box>
       </Box>
       <Box display={'flex'} mt={{md:'1rem', base:'0.5rem'}} px={{md:'7.5rem', base:'1.5rem'}}>
@@ -202,6 +202,8 @@ const renderPrice = (price, perMonth) => {
         textAlign={"left"}
         alignItems={"flex-start"}
         mx={{ md: "7.2rem" }}
+        display={{md:'flex', base:'none'}}
+        flexDirection={{base:'column', md:'column'}}
       >
         <Text
           mb={{ md: "1.5rem", base: "0.75rem" }}
@@ -215,7 +217,7 @@ const renderPrice = (price, perMonth) => {
         </Text>
         <HStack gap={{ md: "20rem", base: "4rem" }}>
           <Text
-            w={"50%"}
+            w={{md:"50%",base:'100%'}}
             lineHeight={"30px"}
             color={"#FFFFFF"}
             fontWeight={"500"}
@@ -245,6 +247,55 @@ const renderPrice = (price, perMonth) => {
         </HStack>
       </VStack>
 
+      <HStack
+        mt={{ md: "7em", base: "2.5rem" }}
+        textAlign={"center"}
+        alignItems={"flex-start"}
+        display={{ base:'flex', md:'none'}}
+        flexDirection={{base:'column', md:'column'}}
+      >
+        <Text
+          mb={{ md: "1.5rem", base: "0.75rem" }}
+          className="gradient"
+          fontWeight={"600"}
+          lineHeight={{ md: "52px", base: "35px" }}
+          fontSize={{ md: "3.5rem", base: "2rem" }}
+          letterSpacing={"0.56px"}
+        >
+          Site plans
+        </Text>
+        <VStack gap={{ md: "20rem", base: "4rem" }}>
+          <Text
+            w={'100%'}
+            lineHeight={"30px"}
+            color={"#FFFFFF"}
+            fontWeight={"500"}
+            fontSize={{ md: "1rem", base: "0.8rem" }}
+          >
+            Our site plans provide easy 1-click publishing and hosting, right
+            from inside our powerful visual designer
+          </Text>
+        <VStack> 
+          <Box
+            lineHeight={"22px"}
+            fontSize={{ md: "1rem", base: "0.8rem" }}
+            display={"flex"}
+            flexDirection={"row"}
+            gap={"1rem"}
+          >
+            <Text color={"#717171"} style={monthlyTextStyles}>
+              Billed monthly
+            </Text>
+            <Switch size="lg" onChange={handleSwitchChange} />
+            <Text color="#717171" style={yearlyTextStyles}>
+              Billed yearly
+            </Text>
+          </Box>
+          <Text fontWeight={'400'} style={yearlyTextStyles} fontSize={'0.85rem'} lineHeight={'22px'}>(Save up to 22%)</Text>
+        </VStack> 
+        </VStack>
+      </HStack>
+
       <Box
         minW={"100%"}
         display={"flex"}
@@ -265,8 +316,8 @@ const renderPrice = (price, perMonth) => {
             p={"0.5rem"}
             borderRadius={"8px"}
             border={"1px solid #222222"}
-            minH={"4.125rem"}
-            w={"52%"}
+            minH={{ md:"4.125rem", base:'2rem'}}
+            w={{ md:"52%", base:'100%'}}
             justifyContent={"space-between"}
           >
             {planData.map((category, index) => (
@@ -278,9 +329,9 @@ const renderPrice = (price, perMonth) => {
                   borderRadius: "4px",
                 }}
                 color={"#898989"}
-                lineHeight={"22px"}
+                lineHeight={{md:"22px", base:'16px'}}
                 fontWeight={"600"}
-                fontSize={"15px"}
+                fontSize={{md:"15px", base:'10px'}}
               >
                 {category.category}
               </Tab>
@@ -291,9 +342,9 @@ const renderPrice = (price, perMonth) => {
             {planData.map((category, index) => (
               <TabPanel key={index}>
                 <SimpleGrid
-                  mx={"10rem"}
+                  mx={{ md:"10rem", base:'0'}}
                   columns={{ base: 1, md: 2 }}
-                  gap={"8rem"}
+                  gap={{md:"8rem", base:'1rem'}}
                 >
                   {category.plans.map((plan, idx) => (
                     <Box
@@ -397,7 +448,8 @@ const renderPrice = (price, perMonth) => {
           </Button>
         </Box>
       </Box>
-      <Box mx={'6rem'} mb={'1rem'} bg={'#131414'} gap={'5rem'} minW={'85%'} mt={{md:'6rem', base:'2rem'}} display={'flex'} flexDirection={'row'}>
+      
+      <Box mx={{ md:'6rem', base:'0'}} mb={'1rem'} bg={'#131414'} gap={'5rem'} minW={{ md:'85%', base:'100%'}} mt={{md:'6rem', base:'2rem'}} display={'flex'} flexDirection={'row'}>
         <VStack ml={'2rem'} gap={{ md:'1rem'}} textAlign={'left'} alignItems={'flex-start'} mt={{md:'4rem', base:'2rem'}}>
           <Text className="color-gradient" fontWeight={'600'} fontSize={{ md:'1rem', base:'0.5rem'}} lineHeight={'1rem'} letterSpacing={'0.255'}>HUSHH</Text>
           <Heading className="gradient" fontSize={{md:'3.75rem', base:'2rem'}} fontWeight={'600'} lineHeight={{ md:'63.65px', base:'45px'}}>Key Highlights</Heading>
@@ -475,7 +527,7 @@ const renderPrice = (price, perMonth) => {
             </ListItem>
           </List>
         </VStack>
-        <VStack alignContent={'flex-end'} alignItems={'flex-end'} alignSelf={'flex-end'} w={'100%'} h={'80%'} >
+        <VStack display={{md:'flex', base:'none'}} alignContent={'flex-end'} alignItems={'flex-end'} alignSelf={'flex-end'} w={'100%'} h={'80%'} >
            <Image src={BoxImage} alt="BoxImageHighlight"/>
         </VStack>
       </Box>

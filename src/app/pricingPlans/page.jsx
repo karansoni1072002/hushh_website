@@ -355,6 +355,7 @@ const renderPrice = (price, perMonth) => {
                       alignItems={"center"}
                       flexDirection={"column"}
                       gap={{ md: "1.75rem", base: "1rem" }}
+                      justifyContent={'space-between'}
                       bg={"#131414"}
                       borderRadius={"2rem"}
                       p={{ md:"1.5rem", base:'1rem'}}
@@ -363,7 +364,7 @@ const renderPrice = (price, perMonth) => {
                     >
                       <Box
                         bg={"#146EF5"}
-                        w={"max-content"}
+                        w={{md:"max-content"}}
                         borderRadius={"4px"}
                       >
                         <Text
@@ -379,7 +380,7 @@ const renderPrice = (price, perMonth) => {
                       <Heading
                         as="h1"
                         fontWeight="600"
-                        fontSize={{ base: "2rem", md: "4.125rem" }}
+                        fontSize={{ base: "1.75rem", md: "4.125rem" }}
                         lineHeight={{ md: "79.2px", base: "40px" }}
                       >
                         {renderPrice(plan.price)}{"  "}

@@ -24,7 +24,7 @@ import BoxImage from "../_components/svg/keyHighlightImg.svg"
 import ManageFinanceBox from '../_components/svg/managefinanceBox.svg';
 import PricingFaq from "../_components/features/faq/pricingFaq";
 import ContactForm from "../_components/features/contactForm";
-
+import { useMediaQuery } from "react-responsive";
 
 const planData = [
   {
@@ -116,6 +116,7 @@ export default function PricingPlans() {
   const [activeAccordionIndex, setActiveAccordionIndex] = useState(-1);
   const [isYearly, setIsYearly] = useState(false);
   const [isMonthly, setIsMonthly] = useState(true);
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
   const handleTabsChange = (index) => {
     setTabIndex(index);
@@ -141,8 +142,6 @@ const renderPrice = (price, perMonth) => {
     return `$${total}`; // Total price with updated duration text
 };
 
-
-
   const yearlyTextStyles = isYearly ? { color: "white" } : { color: "#717171" };
   const monthlyTextStyles = isMonthly
     ? { color: "white" }
@@ -154,7 +153,7 @@ const renderPrice = (price, perMonth) => {
         <VStack
           ml={{ base: "1rem", md: "5.5rem" }}
           spacing={2}
-          mt={"5rem"}
+          mt={{md:"8rem", base:'5rem'}}
           mr={{ md:"50%", base:'0'}}
         >
           <Heading
@@ -384,13 +383,24 @@ const renderPrice = (price, perMonth) => {
                         lineHeight={{ md: "79.2px", base: "40px" }}
                       >
                         {renderPrice(plan.price)}{"  "}
-                        {plan.perMonth && (
+                        {plan.perMonth && !isTabletOrMobile && (
                           <span
                             style={{
                               color: "white",
                               marginLeft: "-0.75rem",
                               fontWeight: "600",
                               fontSize: "1.25rem",
+                            }}
+                          >
+                            {plan.perMonth && (isYearly ? " /yr" : ' /mo')}
+                          </span>
+                        )}
+                        {plan.perMonth && isTabletOrMobile && (
+                          <span
+                            style={{
+                              color: "white",
+                              fontWeight: "600",
+                              fontSize: "1rem",
                             }}
                           >
                             {plan.perMonth && (isYearly ? " /yr" : ' /mo')}
@@ -419,6 +429,10 @@ const renderPrice = (price, perMonth) => {
                         borderRadius={"4px"}
                         fontWeight={'600'}
                         fontSize={{md:'1rem', base:'0.6rem'}}
+                        _hover={{
+                            color:'black',
+                            bg:'white'
+                        }}
                       >
                         Upgrade to Premium
                       </Button>
@@ -454,7 +468,7 @@ const renderPrice = (price, perMonth) => {
       </Box>
       
       <Box mx={{ md:'6rem', base:'0'}} mb={'1rem'} bg={'#131414'} gap={{ md:'5rem', base:'1rem'}} minW={{ md:'85%', base:'100%'}} mt={{md:'6rem', base:'4rem'}} display={'flex'} flexDirection={'row'}>
-        <VStack ml={{ md:'2rem', base:'0'}} mx={{md:'0', base:'1rem'}} gap={{ md:'1rem', base:'0rem'}} textAlign={'left'} alignItems={'flex-start'} my={{md:'4rem', base:'2rem'}}>
+        <VStack ml={{ md:'2rem', base:'0'}} mx={{base:'1rem'}} gap={{ md:'1rem', base:'0rem'}} textAlign={'left'} alignItems={'flex-start'} my={{md:'4rem', base:'2rem'}}>
           <Text className="color-gradient" fontWeight={'600'} fontSize={{ md:'1rem', base:'1rem'}} lineHeight={'1rem'} letterSpacing={'0.255'}>HUSHH</Text>
           <Heading className="gradient" fontSize={{md:'3.75rem', base:'2rem'}} fontWeight={'600'} lineHeight={{ md:'63.65px', base:'45px'}}>Key Highlights</Heading>
           <VStack display={{md:'none', base:'flex'}} w={'100%'} h={'50%'} >

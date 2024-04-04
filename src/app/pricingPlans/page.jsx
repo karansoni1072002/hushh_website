@@ -175,6 +175,8 @@ const renderPrice = (price, perMonth) => {
             className="gradient"
             fontSize={{ base: "2.5rem", md: "4.625rem" }}
             fontWeight="700"
+            alignSelf={"flex-start"}
+            textAlign={"left"}
           >
             Find the right plan for your needs
           </Heading>
@@ -300,7 +302,7 @@ const renderPrice = (price, perMonth) => {
         minW={"100%"}
         display={"flex"}
         textAlign={"left"}
-        alignItems={"flex-start"}
+        alignItems={{ md:"flex-start", base:'center'}}
         flexDirection={"column"}
       >
         <Tabs
@@ -316,7 +318,7 @@ const renderPrice = (price, perMonth) => {
             p={"0.5rem"}
             borderRadius={"8px"}
             border={"1px solid #222222"}
-            minH={{ md:"4.125rem", base:'2rem'}}
+            minH={{ md:"4.125rem", base:'1.5rem'}}
             w={{ md:"52%", base:'100%'}}
             justifyContent={"space-between"}
           >
@@ -329,7 +331,7 @@ const renderPrice = (price, perMonth) => {
                   borderRadius: "4px",
                 }}
                 color={"#898989"}
-                lineHeight={{md:"22px", base:'16px'}}
+                lineHeight={{md:"22px", base:'14px'}}
                 fontWeight={"600"}
                 fontSize={{md:"15px", base:'10px'}}
               >
@@ -471,9 +473,9 @@ const renderPrice = (price, perMonth) => {
         <VStack ml={{ md:'2rem', base:'0'}} mx={{base:'1rem'}} gap={{ md:'1rem', base:'0rem'}} textAlign={'left'} alignItems={'flex-start'} my={{md:'4rem', base:'2rem'}}>
           <Text className="color-gradient" fontWeight={'600'} fontSize={{ md:'1rem', base:'1rem'}} lineHeight={'1rem'} letterSpacing={'0.255'}>HUSHH</Text>
           <Heading className="gradient" fontSize={{md:'3.75rem', base:'2rem'}} fontWeight={'600'} lineHeight={{ md:'63.65px', base:'45px'}}>Key Highlights</Heading>
-          <VStack display={{md:'none', base:'flex'}} w={'100%'} h={'50%'} >
-           <Image src={BoxImage} alt="BoxImageHighlight"/>
-        </VStack>
+          <VStack display={{md:'none', base:'block'}} alignItems={'center'} justify={'center'} align={'center'} alignSelf={'center'} >
+             <Image src={BoxImage} alt="BoxImageHighlight" style={{width:'100%', height:'100%'}}/>
+          </VStack>
           <List spacing={{ md:10, base:5}} color={"white"} mt={'1rem'}>
             <ListItem display={"flex"}>
               <Box pr={{ md:'1rem', base:'0.5rem'}}>
@@ -582,7 +584,7 @@ const renderPrice = (price, perMonth) => {
               <Text fontSize={{md:'1rem', base:'0.8rem'}} fontWeight={'500'} color={'#ABABAB'} lineHeight={{ md:'36px', base:'25px'}}>Hushh’s diverse pricing strategy aims to democratize access to powerful data and AI tools, making them accessible to a wide audience. Whether you’re a consumer trusting us with your data, a developer building the next big app, a sales agent aiming for your next target, or a creator curating unique experiences, Hushh provides the tools, support, and platform to achieve your goals. With Hushh, embrace a smarter, more secure, and personalized digital future.</Text>
             </Box>
           </Box>
-          <Box display={'flex'} flexDirection={'column'} flex={1} gap={'1rem'}>
+          <Box my={{base:'1rem'}} display={'flex'} flexDirection={'column'} flex={1} gap={'1rem'}>
             <Image src={ManageFinanceBox} alt="ManageFinanceBox" />
             <Text fontSize={{ md: '1rem', base: '0.75rem' }} color={'#ABABAB'} lineHeight={{ md: '36px', base: '18px' }}>This summary aims to convey Hushh’s commitment to delivering value through innovative, user-centric products and services, ensuring clear communication of pricing and offerings to foster trust and loyalty across all user segments.</Text>
           </Box>

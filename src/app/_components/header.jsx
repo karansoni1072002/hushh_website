@@ -83,7 +83,7 @@ const Header = () => {
           </div>
         ) : (
           <div className="w-max">
-            <div className="text-white flex justify-between gap-20 px-7 ">
+            <div className="text-white flex justify-between gap-12 px-7 ">
               <Link href="/" style={{zIndex:'1000'}} onMouseEnter={() => setProductsSubmenu(false)}>HOME</Link>
               <Link href="/about" style={{zIndex:'1000'}} onMouseEnter={() => setProductsSubmenu(false)}>
                 ABOUT US
@@ -94,6 +94,9 @@ const Header = () => {
               </Link>
               <Link href="https://hushh-labs.github.io/hushh-labs-blog/" onMouseEnter={() => setProductsSubmenu(false)}>
                 LABS
+              </Link>
+              <Link href="/pricingPlans" onMouseEnter={() => setProductsSubmenu(false)}>
+                PRICING
               </Link>
               <ScrollLink to="contact-form" smooth={true} spy={true} duration={7000} onMouseEnter={() => setProductsSubmenu(false)} onClick={scrollToContactForm} style={{cursor:'pointer'}}>
                 CONTACT US
@@ -329,9 +332,13 @@ const Header = () => {
                   </div>
                 }
               </div>
-
-
-
+              <Link
+                href="/pricingPlans"
+                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Pricing
+              </Link>
 
               <Link
                 href="https://hushh-labs.github.io/hushh-labs-blog/"

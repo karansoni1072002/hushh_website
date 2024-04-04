@@ -249,13 +249,13 @@ const renderPrice = (price, perMonth) => {
 
       <HStack
         mt={{ md: "7em", base: "2.5rem" }}
-        textAlign={"center"}
-        alignItems={"flex-start"}
+        textAlign={{ md:"center", base:'center'}}
+        alignItems={{ md:"flex-start"}}
         display={{ base:'flex', md:'none'}}
         flexDirection={{base:'column', md:'column'}}
       >
         <Text
-          mb={{ md: "1.5rem", base: "0.75rem" }}
+          mb={{ md: "1.5rem", base: "0" }}
           className="gradient"
           fontWeight={"600"}
           lineHeight={{ md: "52px", base: "35px" }}
@@ -267,7 +267,7 @@ const renderPrice = (price, perMonth) => {
         <VStack gap={{ md: "20rem", base: "4rem" }}>
           <Text
             w={'100%'}
-            lineHeight={"30px"}
+            lineHeight={{ md:"30px", base:'20px'}}
             color={"#FFFFFF"}
             fontWeight={"500"}
             fontSize={{ md: "1rem", base: "0.8rem" }}
@@ -282,6 +282,7 @@ const renderPrice = (price, perMonth) => {
             display={"flex"}
             flexDirection={"row"}
             gap={"1rem"}
+            mt={{base:'-2rem', md:'0'}}
           >
             <Text color={"#717171"} style={monthlyTextStyles}>
               Billed monthly
@@ -438,24 +439,24 @@ const renderPrice = (price, perMonth) => {
             color={"white"}
             fontWeight={"500"}
             fontSize={{ md: "1rem", base: "0.75rem" }}
-            lineHeight={"36px"}
+            lineHeight={{ md:"36px", base:'20px'}}
           >
             All prices are in USD and charged per site with applicable taxes
             added at checkout
           </Text>
-          <Button rightIcon={<ChevronDownIcon />}>
+          <Button fontSize={{md:"1rem", base:"0.8rem"}} rightIcon={<ChevronDownIcon />}>
             View all plan features
           </Button>
         </Box>
       </Box>
       
-      <Box mx={{ md:'6rem', base:'0'}} mb={'1rem'} bg={'#131414'} gap={'5rem'} minW={{ md:'85%', base:'100%'}} mt={{md:'6rem', base:'2rem'}} display={'flex'} flexDirection={'row'}>
-        <VStack ml={'2rem'} gap={{ md:'1rem'}} textAlign={'left'} alignItems={'flex-start'} mt={{md:'4rem', base:'2rem'}}>
-          <Text className="color-gradient" fontWeight={'600'} fontSize={{ md:'1rem', base:'0.5rem'}} lineHeight={'1rem'} letterSpacing={'0.255'}>HUSHH</Text>
+      <Box mx={{ md:'6rem', base:'0'}} mb={'1rem'} bg={'#131414'} gap={{ md:'5rem', base:'1rem'}} minW={{ md:'85%', base:'100%'}} mt={{md:'6rem', base:'2rem'}} display={'flex'} flexDirection={'row'}>
+        <VStack ml={'2rem'} gap={{ md:'1rem', base:'0rem'}} textAlign={'left'} alignItems={'flex-start'} mt={{md:'4rem', base:'2rem'}}>
+          <Text className="color-gradient" fontWeight={'600'} fontSize={{ md:'1rem', base:'1rem'}} lineHeight={'1rem'} letterSpacing={'0.255'}>HUSHH</Text>
           <Heading className="gradient" fontSize={{md:'3.75rem', base:'2rem'}} fontWeight={'600'} lineHeight={{ md:'63.65px', base:'45px'}}>Key Highlights</Heading>
-          <List spacing={10} color={"white"} mt={'1rem'}>
+          <List spacing={{ md:10, base:5}} color={"white"} mt={'1rem'}>
             <ListItem display={"flex"}>
-              <Box pr={'1rem'}>
+              <Box pr={{ md:'1rem', base:'0.5rem'}}>
                 <ListIconTick />
               </Box>
               <VStack textAlign={"left"}>
@@ -468,11 +469,11 @@ const renderPrice = (price, perMonth) => {
                   flexDirection={"row"}
                   fontWeight={'700'}
                   fontSize={{ md:'1.5rem', base:'1rem'}}
-                  lineHeight={'32px'}
+                  lineHeight={{ md:'32px', base:'32px'}}
                 >
                   Simplicity & Transparency
                 </Heading>
-                <Text fontWeight={'500'} fontSize={{md:'1rem', base:'0.65rem'}} lineHeight={'30px'}>
+                <Text fontWeight={'500'} fontSize={{md:'1rem', base:'0.65rem'}} lineHeight={{ md:'30px', base:'20px'}}>
                   Pricing is designed to be straightforward across all services,
                   ensuring users can easily select the tools that best fit their
                   needs without encountering hidden fees.
@@ -480,7 +481,7 @@ const renderPrice = (price, perMonth) => {
               </VStack>
             </ListItem>
             <ListItem display={"flex"}>
-              <Box pr={'1rem'}>
+              <Box pr={{ md:'1rem', base:'0.5rem'}}>
                 <ListIconTick />
               </Box>
               <VStack textAlign={"left"}>
@@ -497,13 +498,13 @@ const renderPrice = (price, perMonth) => {
                 >
                   Scalable Solutions
                 </Heading>
-                <Text fontWeight={'500'} fontSize={{md:'1rem', base:'0.65rem'}} lineHeight={'30px'}>
+                <Text fontWeight={'500'} fontSize={{md:'1rem', base:'0.65rem'}} lineHeight={{ md:'30px', base:'20px'}}>
                   From free basic access to premium options, services are built to scale with the growth of individuals & businesses, ensuring long-term support
                 </Text>
               </VStack>
             </ListItem>
             <ListItem display={"flex"}>
-              <Box pr={'1rem'}>
+              <Box pr={{ md:'1rem', base:'0.5rem'}}>
                 <ListIconTick />
               </Box>
               <VStack textAlign={"left"}>
@@ -520,7 +521,7 @@ const renderPrice = (price, perMonth) => {
                 >
                   Community Focus
                 </Heading>
-                <Text fontWeight={'500'} fontSize={{md:'1rem', base:'0.65rem'}} lineHeight={'30px'}>
+                <Text fontWeight={'500'} fontSize={{md:'1rem', base:'0.65rem'}} lineHeight={{ md:'30px', base:'20px'}}>
                   Beyond the tools and platforms, Hushh fosters a community for support, learning, and collaboration, enhancing the value of every subscription.
                 </Text>
               </VStack>

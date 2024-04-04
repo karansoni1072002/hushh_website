@@ -450,10 +450,13 @@ const renderPrice = (price, perMonth) => {
         </Box>
       </Box>
       
-      <Box mx={{ md:'6rem', base:'0'}} mb={'1rem'} bg={'#131414'} gap={{ md:'5rem', base:'1rem'}} minW={{ md:'85%', base:'100%'}} mt={{md:'6rem', base:'2rem'}} display={'flex'} flexDirection={'row'}>
-        <VStack ml={'2rem'} gap={{ md:'1rem', base:'0rem'}} textAlign={'left'} alignItems={'flex-start'} mt={{md:'4rem', base:'2rem'}}>
+      <Box mx={{ md:'6rem', base:'0'}} mb={'1rem'} bg={'#131414'} gap={{ md:'5rem', base:'1rem'}} minW={{ md:'85%', base:'100%'}} mt={{md:'6rem', base:'4rem'}} display={'flex'} flexDirection={'row'}>
+        <VStack ml={{ md:'2rem', base:'0'}} mx={{md:'0', base:'1rem'}} gap={{ md:'1rem', base:'0rem'}} textAlign={'left'} alignItems={'flex-start'} my={{md:'4rem', base:'2rem'}}>
           <Text className="color-gradient" fontWeight={'600'} fontSize={{ md:'1rem', base:'1rem'}} lineHeight={'1rem'} letterSpacing={'0.255'}>HUSHH</Text>
           <Heading className="gradient" fontSize={{md:'3.75rem', base:'2rem'}} fontWeight={'600'} lineHeight={{ md:'63.65px', base:'45px'}}>Key Highlights</Heading>
+          <VStack display={{md:'none', base:'flex'}} w={'100%'} h={'50%'} >
+           <Image src={BoxImage} alt="BoxImageHighlight"/>
+        </VStack>
           <List spacing={{ md:10, base:5}} color={"white"} mt={'1rem'}>
             <ListItem display={"flex"}>
               <Box pr={{ md:'1rem', base:'0.5rem'}}>
@@ -540,11 +543,11 @@ const renderPrice = (price, perMonth) => {
           gap={{md:'7rem'}}
           flexDirection={{ base: 'column', md: 'row' }}
         >
-          <Box display={"flex"} flexDirection={"column"} gap={'1rem'} flex={1}>
+          <Box display={"flex"} flexDirection={"column"} gap={{ md:'1rem', base:'0.5rem'}} flex={1}>
             <Text
               className="default-gradient"
               letterSpacing={"0.255rem"}
-              lineHeight={"1rem"}
+              lineHeight={{ md:"1rem", base:'20px'}}
               fontWeight={"600"}
               fontSize={{ md: "1rem", base: '0.75rem' }}
             >

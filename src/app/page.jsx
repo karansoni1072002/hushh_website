@@ -128,11 +128,11 @@ export default function Home() {
             <Button
               border={"3px solid #606060"}
               borderRadius={"2px"}
-              w={"16rem"}
+              w={{ md:"16rem", base:'10rem'}}
               color={theme.colors._white}
               lineHeight={"28px"}
               background={"transparent"}
-              letterSpacing={"0.5rem"}
+              letterSpacing={{md:"0.5rem", base:'0.1rem'}}
               _hover={{
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
@@ -261,7 +261,7 @@ export default function Home() {
               experiences.
             </Text>
 
-            <Box pt={{ md: '40px', base: '20px' }} width={'100%'} pr={{ base: '1.25rem' }} justifyContent={{ base: 'space-between' }} display={"flex"} gap={{ md: "4rem" }}>
+            <Box mx={{base:'1rem'}} pt={{ md: '40px', base: '20px' }} width={'100%'} pr={{ base: '1.25rem' }} justifyContent={{ base: 'space-between' }} display={"flex"} gap={{ md: "4rem" }}>
               <VStack maxW={{ md: '290px' }} textAlign={'left'} alignItems={'left'}>
                 <HStack gap={{ md: "2rem" }}>
                   <ShieldIcon />
@@ -299,7 +299,7 @@ export default function Home() {
                 </Text>
               </VStack>
             </Box>
-            <VStack pr={'1.25rem'} alignContent={'left'} mt={'1.5rem'} textAlign={'left'} alignItems={'left'}>
+            <VStack mx={{base:'1rem'}} pr={'1.25rem'} alignContent={'left'} mt={'1.5rem'} textAlign={'left'} alignItems={'left'}>
               <HStack gap={"1rem"}>
                 <LockIcon />
                 <Text
@@ -365,6 +365,7 @@ export default function Home() {
           </Text>
           <Container
             display={"flex"}
+            mb={{md:'4rem', base:'1.75rem'}}
             pt={{ md: "2rem", base: "1rem" }}
             px={{ md: "10rem", base: "0.5rem" }}
             justifyContent={"center"}
@@ -460,6 +461,25 @@ export default function Home() {
               />
             </Grid>
           </Container>
+          <Button
+              border={"3px solid #606060"}
+              borderRadius={"2px"}
+              w={{ md:"16rem", base:'10rem'}}
+              color={theme.colors._white}
+              lineHeight={"28px"}
+              background={"transparent"}
+              letterSpacing={{md:"0.5rem", base:'0.1rem'}}
+              _hover={{
+                background:
+                  "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                border: 'none'
+              }}
+              onClick={() =>
+                router.push("/pricingPlans")
+              }
+            >
+              View Our Plans
+            </Button>
         </HStack>
 
         <TechnologySection />

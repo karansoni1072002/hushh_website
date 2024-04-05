@@ -111,12 +111,98 @@ const planData = [
   },
 ];
 
+const workspacePlansData = [
+    {
+        category: "Everyday Consumers",
+        plans: [
+          {
+            name: "DEVELOPERS & ENGINEERS",
+            heading: "Hush Vault: Free for basic use",
+            description: "A secure place for all your personal and business data",
+            price: "$5",
+            perMonth: "/mo",
+          },
+          {
+            name: "EVERYDAY CONSUMERS",
+            heading: "Hush AI Assistant",
+            description:
+              "Your personal navigator in the digital world, making data decisions simple and personalized",
+            price: "$10",
+            perMonth: "/mo",
+          },
+        ],
+      },
+      {
+        category: "Developers & Engineers",
+        plans: [
+          {
+            name: "DEVELOPERS & ENGINEERS",
+            heading: "Hush SDK & API Access",
+            description:
+              "Fuelling the next wave of AI and data-driven applications with robust, easy-to-integrate tools",
+            price: "$50",
+            perMonth: "/mo",
+          },
+          {
+            name: "DEVELOPERS & ENGINEERS",
+            heading: "Developer Support & Marketplace",
+            description:
+              " Free access to a supportive community and marketplace to monetize or discover innovative solutions",
+            price: "Free",
+          },
+        ],
+      },
+      {
+        category: "Sales Agents",
+        plans: [
+          {
+            name: "SALES AGENTS",
+            heading: "Data Insights Dashboard",
+            description:
+              "Providing actionable insights to refine sales strategies and hit targets",
+            price: "$250",
+            perMonth: "/mo",
+          },
+          {
+            name: "SALES AGENTS",
+            heading: "Prospect Identification Tool",
+            description:
+              "Leveraging AI to uncover high-potential leads and opportunities",
+            price: "$300",
+            perMonth: "/mo",
+          },
+        ],
+      },
+      {
+        category: "Creators & Aspiring Influence",
+        plans: [
+          {
+            name: "CREATORS & ASPIRING INFLUENCE",
+            heading: "Content Monetization Platform",
+            description:
+              "Revenue generated, empowering creators to earn from their unique content and insights",
+            price: "8%",
+            perMonth: "/comm",
+          },
+          {
+            name: "CREATORS & ASPIRING INFLUENCE",
+            heading: "Personal Brand Data Insights",
+            description:
+              "Offering deep analytics on audience engagement and preferences to tailor content effectively",
+            price: "$300",
+            perMonth: "/mo",
+          },
+        ],
+      },
+  ];
+
 export default function PricingPlans() {
   const [tabIndex, setTabIndex] = useState(0);
   const [activeAccordionIndex, setActiveAccordionIndex] = useState(-1);
   const [isYearly, setIsYearly] = useState(false);
   const [isMonthly, setIsMonthly] = useState(true);
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const [activePlanCategory, setActivePlanCategory] = useState('site'); // 'site' or 'workspace'
 
   const handleTabsChange = (index) => {
     setTabIndex(index);
@@ -128,6 +214,10 @@ export default function PricingPlans() {
     setIsMonthly(false);
   };
 
+  const handlePlanCategoryChange = (category) => {
+    setActivePlanCategory(category);
+    setTabIndex(0);  
+  };
 
 const renderPrice = (price, perMonth) => {
     if (price === "Free") return "Free"; // If price is "Free", return "Free"
@@ -143,7 +233,7 @@ const renderPrice = (price, perMonth) => {
 };
 
   const yearlyTextStyles = isYearly ? { color: "white" } : { color: "#717171" };
-  const monthlyTextStyles = isMonthly
+  const monthlyTextStyles = !isYearly
     ? { color: "white" }
     : { color: "#717171" };
 
@@ -184,18 +274,18 @@ const renderPrice = (price, perMonth) => {
       </Box>
 
       <Box gap={{base:'1rem', md:'0'}} mb={{md:'1rem', base:'0.2rem'}} mt={{md:'5rem', base:'2rem'}} px={{md:'7.5rem', base:'1.5rem'}} alignItems={'center'} align={'center'} alignSelf={'center'} alignContent={'center'} w={'100%'} display={'flex'}>
-        <Box gap={'0.5rem'} textAlign={'left'} flex={1} color={'white'} display={'flex'} flexDirection={'column'}>
+        <Box cursor={'pointer'} onClick={() => handlePlanCategoryChange('site')} gap={'0.5rem'} textAlign={'left'} flex={1} color={activePlanCategory === 'site' ? '#FFFFFF' : '#5A5A5A'}  display={'flex'} flexDirection={'column'}>
            <Text fontWeight={'500'} fontSize={{ md:'1rem', base:'0.9rem'}} lineHeight={'19.5px'} letterSpacing={'1.5px'}>Site plans</Text>
            <Text fontWeight={'600'} fontSize={{ md:'1.5rem', base:'0.75rem'}} lineHeight={{ md:'30px', base:'20px'}}>Build, publish, and host with ease</Text>
         </Box>
-        <Box gap={'0.5rem'} textAlign={'left'} flex={1} color={'#898989'} display={'flex'} flexDirection={'column'}>
+        <Box cursor={'pointer'} onClick={() => handlePlanCategoryChange('workspace')} gap={'0.5rem'} textAlign={'left'} flex={1} color={activePlanCategory === 'workspace' ? '#FFFFFF' : '#5A5A5A'}  display={'flex'} flexDirection={'column'}>
             <Text fontWeight={'500'} fontSize={{ md:'1rem', base:'0.9rem'}} letterSpacing={'1.5px'}>Workspace plans</Text>
             <Text fontWeight={'600'}fontSize={{ md:'1.5rem', base:'0.75rem'}} lineHeight={{ md:'30px', base:'20px'}}>Add a team and stage multiple sites</Text>
         </Box>
       </Box>
       <Box display={'flex'} mt={{md:'1rem', base:'0.5rem'}} px={{md:'7.5rem', base:'1.5rem'}}>
-         <Divider borderStyle={'solid'} borderWidth={'2px'} borderColor={'#146EF5'} />
-         <Divider borderStyle={'solid'} borderWidth={'2px'} borderColor={'#5A5A5A'} />
+         <Divider borderStyle={'solid'} borderWidth={'2px'} borderColor={activePlanCategory === 'site' ? '#146EF5' : '#5A5A5A'} />
+         <Divider borderStyle={'solid'} borderWidth={'2px'} borderColor={activePlanCategory === 'workspace' ? '#146EF5' : '#5A5A5A'} />
       </Box>
       
       <VStack
@@ -214,7 +304,7 @@ const renderPrice = (price, perMonth) => {
           fontSize={{ md: "3.5rem", base: "2rem" }}
           letterSpacing={"0.56px"}
         >
-          Site plans
+        {activePlanCategory === 'site' ? 'Site plans' : 'Workspace plans'}
         </Text>
         <HStack gap={{ md: "20rem", base: "4rem" }}>
           <Text
@@ -224,8 +314,10 @@ const renderPrice = (price, perMonth) => {
             fontWeight={"500"}
             fontSize={{ md: "1rem", base: "0.8rem" }}
           >
-            Our site plans provide easy 1-click publishing and hosting, right
-            from inside our powerful visual designer
+            {activePlanCategory === 'site' ? 
+              'Our site plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer' 
+              : 
+              'Our workspace plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer'}
           </Text>
         <VStack> 
           <Box
@@ -263,7 +355,7 @@ const renderPrice = (price, perMonth) => {
           fontSize={{ md: "3.5rem", base: "2rem" }}
           letterSpacing={"0.56px"}
         >
-          Site plans
+          {activePlanCategory === 'site' ? 'Site plans' : 'Workspace plans'}
         </Text>
         <VStack gap={{ md: "20rem", base: "4rem" }}>
           <Text
@@ -273,8 +365,10 @@ const renderPrice = (price, perMonth) => {
             fontWeight={"500"}
             fontSize={{ md: "1rem", base: "0.8rem" }}
           >
-            Our site plans provide easy 1-click publishing and hosting, right
-            from inside our powerful visual designer
+            {activePlanCategory === 'site' ? 
+              'Our site plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer' 
+              : 
+              'Our workspace plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer'}
           </Text>
         <VStack> 
           <Box
@@ -322,8 +416,7 @@ const renderPrice = (price, perMonth) => {
             w={{ md:"52%", base:'100%'}}
             justifyContent={"space-between"}
           >
-            {planData.map((category, index) => (
-              <Tab
+{(activePlanCategory === 'site' ? planData : workspacePlansData).map((category, index) => (              <Tab
                 key={index}
                 _selected={{
                   color: "white",
@@ -341,7 +434,7 @@ const renderPrice = (price, perMonth) => {
           </TabList>
 
           <TabPanels mt={"2rem"}>
-            {planData.map((category, index) => (
+          {(activePlanCategory === 'site' ? planData : workspacePlansData).map((category, index) => (
               <TabPanel key={index}>
                 <SimpleGrid
                   mx={{ md:"10rem", base:'0'}}

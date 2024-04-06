@@ -32,14 +32,14 @@ const planData = [
     plans: [
       {
         name: "DEVELOPERS & ENGINEERS",
-        heading: "Hush Vault: Free for basic use",
+        heading: "Hushh Vault: Free for basic use",
         description: "A secure place for all your personal and business data",
         price: "$5",
         perMonth: "/mo",
       },
       {
         name: "EVERYDAY CONSUMERS",
-        heading: "Hush AI Assistant",
+        heading: "Hushh AI Assistant",
         description:
           "Your personal navigator in the digital world, making data decisions simple and personalized",
         price: "$10",
@@ -52,7 +52,7 @@ const planData = [
     plans: [
       {
         name: "DEVELOPERS & ENGINEERS",
-        heading: "Hush SDK & API Access",
+        heading: "Hushh SDK & API Access",
         description:
           "Fuelling the next wave of AI and data-driven applications with robust, easy-to-integrate tools",
         price: "$50",
@@ -117,14 +117,14 @@ const workspacePlansData = [
         plans: [
           {
             name: "DEVELOPERS & ENGINEERS",
-            heading: "Hush Vault: Free for basic use",
+            heading: "Hushh Vault: Free for basic use",
             description: "A secure place for all your personal and business data",
             price: "$5",
             perMonth: "/mo",
           },
           {
             name: "EVERYDAY CONSUMERS",
-            heading: "Hush AI Assistant",
+            heading: "Hushh AI Assistant",
             description:
               "Your personal navigator in the digital world, making data decisions simple and personalized",
             price: "$10",
@@ -137,7 +137,7 @@ const workspacePlansData = [
         plans: [
           {
             name: "DEVELOPERS & ENGINEERS",
-            heading: "Hush SDK & API Access",
+            heading: "Hushh SDK & API Access",
             description:
               "Fuelling the next wave of AI and data-driven applications with robust, easy-to-integrate tools",
             price: "$50",
@@ -564,7 +564,7 @@ const renderPrice = (price, perMonth) => {
       
       <Box mx={{ md:'6rem', base:'0'}} mb={'1rem'} bg={'#131414'} gap={{ md:'5rem', base:'1rem'}} minW={{ md:'85%', base:'100%'}} mt={{md:'6rem', base:'4rem'}} display={'flex'} flexDirection={'row'}>
         <VStack ml={{ md:'2rem', base:'0'}} mx={{base:'1rem'}} gap={{ md:'1rem', base:'0rem'}} textAlign={'left'} alignItems={'flex-start'} my={{md:'4rem', base:'2rem'}}>
-          <Text className="color-gradient" fontWeight={'600'} fontSize={{ md:'1rem', base:'1rem'}} lineHeight={'1rem'} letterSpacing={'0.255'}>HUSHH</Text>
+          <Text className="color-gradient" fontWeight={'600'} fontSize={{ md:'1rem', base:'1rem'}} lineHeight={'1rem'} letterSpacing={'0.255'}>HUSHhH</Text>
           <Heading className="gradient" fontSize={{md:'3.75rem', base:'2rem'}} fontWeight={'600'} lineHeight={{ md:'63.65px', base:'45px'}}>Key Highlights</Heading>
           <VStack display={{md:'none', base:'block'}} alignItems={'center'} justify={'center'} align={'center'} alignSelf={'center'} >
              <Image src={BoxImage} alt="BoxImageHighlight" style={{width:'100%', height:'100%'}}/>
@@ -637,7 +637,7 @@ const renderPrice = (price, perMonth) => {
                   Community Focus
                 </Heading>
                 <Text fontWeight={'500'} fontSize={{md:'1rem', base:'0.65rem'}} lineHeight={{ md:'30px', base:'20px'}}>
-                  Beyond the tools and platforms, Hushh fosters a community for support, learning, and collaboration, enhancing the value of every subscription.
+                  Beyond the tools and platforms, Hushhh fosters a community for support, learning, and collaboration, enhancing the value of every subscription.
                 </Text>
               </VStack>
             </ListItem>
@@ -663,7 +663,7 @@ const renderPrice = (price, perMonth) => {
               fontWeight={"600"}
               fontSize={{ md: "1rem", base: '0.75rem' }}
             >
-              HUSHH
+              HUSHhH
             </Text>
             <Text
               className="gradient"
@@ -674,12 +674,12 @@ const renderPrice = (price, perMonth) => {
               Final Takeaway
             </Text>
             <Box display={'flex'} flexDirection={'column'} gap={{ md: '1rem', base: '0rem' }}>
-              <Text fontSize={{md:'1rem', base:'0.8rem'}} fontWeight={'500'} color={'#ABABAB'} lineHeight={{ md:'36px', base:'25px'}}>Hushh’s diverse pricing strategy aims to democratize access to powerful data and AI tools, making them accessible to a wide audience. Whether you’re a consumer trusting us with your data, a developer building the next big app, a sales agent aiming for your next target, or a creator curating unique experiences, Hushh provides the tools, support, and platform to achieve your goals. With Hushh, embrace a smarter, more secure, and personalized digital future.</Text>
+              <Text fontSize={{md:'1rem', base:'0.8rem'}} fontWeight={'500'} color={'#ABABAB'} lineHeight={{ md:'36px', base:'25px'}}>Hushhh’s diverse pricing strategy aims to democratize access to powerful data and AI tools, making them accessible to a wide audience. Whether you’re a consumer trusting us with your data, a developer building the next big app, a sales agent aiming for your next target, or a creator curating unique experiences, Hushhh provides the tools, support, and platform to achieve your goals. With Hushhh, embrace a smarter, more secure, and personalized digital future.</Text>
             </Box>
           </Box>
           <Box my={{base:'1rem'}} display={'flex'} flexDirection={'column'} flex={1} gap={'1rem'}>
             <Image src={ManageFinanceBox} alt="ManageFinanceBox" />
-            <Text fontSize={{ md: '1rem', base: '0.75rem' }} color={'#ABABAB'} lineHeight={{ md: '36px', base: '18px' }}>This summary aims to convey Hushh’s commitment to delivering value through innovative, user-centric products and services, ensuring clear communication of pricing and offerings to foster trust and loyalty across all user segments.</Text>
+            <Text fontSize={{ md: '1rem', base: '0.75rem' }} color={'#ABABAB'} lineHeight={{ md: '36px', base: '18px' }}>This summary aims to convey Hushhh’s commitment to delivering value through innovative, user-centric products and services, ensuring clear communication of pricing and offerings to foster trust and loyalty across all user segments.</Text>
           </Box>
       </HStack>
       <PricingFaq/>

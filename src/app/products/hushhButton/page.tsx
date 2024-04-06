@@ -723,7 +723,7 @@ const hushhButton = () => {
               lineHeight={{ md: "75px", base: "30px" }}
               className="gradient"
             >
-              Hush Button <br></br> Magic
+              Hushh Button <br></br> Magic
             </Heading>
             <Text
               lineHeight={{ md: "31.5px" }}

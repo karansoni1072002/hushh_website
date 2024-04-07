@@ -379,7 +379,7 @@ export default function Home() {
                 title="Hushh Wallet App​"
                 alignItems={"center"}
                 textAlign={'center'}
-                description="Helps you collect and share data with trusted brands​"
+                description="Secure data exchange with brands and agents (you control what you share)​"
                 onClick={() =>
                   router.push("/products/hushhWalletApp")
                 }
@@ -389,7 +389,7 @@ export default function Home() {
                 title="Hushh Button​​​"
                 textAlign={'center'}
                 alignItems={"center"}
-                description="Plugin that helps you exchange data with brands​"
+                description="Easy data exchange with brands on the go (plug-in for brand apps)​"
                 onClick={() =>
                   router.push("/products/hushhButton")
                 }
@@ -399,7 +399,7 @@ export default function Home() {
                 title="Vibe Search​"
                 textAlign={'center'}
                 alignItems={"center"}
-                description="Personalized search engine that lets you search across brands"
+                description="Personalized and powerful search engine across various brands (find what you want)"
                 onClick={() =>
                   router.push("/products/vibeSearch")
                 }
@@ -409,7 +409,7 @@ export default function Home() {
                 title="Browser Companion​"
                 alignItems={"center"}
                 textAlign={'center'}
-                description="Collects your web activity and preferences as you browse"
+                description="Track web activity and capture interests (across brands)"
                 onClick={() =>
                   router.push("/products/browserCompanion")
                 }
@@ -420,7 +420,7 @@ export default function Home() {
                 title="Concierge App​"
                 alignItems={"center"}
                 textAlign={'center'}
-                description="App for HNWIs  discreetly sharing user data for personalized, real-time luxury experiences"
+                description="Discreetly request services & connect with providers (anonymously)"
                 onClick={() =>
                   router.push("/products/conciergeApp")
                 }
@@ -430,7 +430,7 @@ export default function Home() {
                 title="Valet Chat​"
                 alignItems={"center"}
                 textAlign={'center'}
-                description="Ditch receipts, unlock insights: Valet Chat, your AI finance genie"
+                description="AI finance assistant & insights (ditch receipts, manage finances)"
                 onClick={() =>
                   router.push("/products/hushhValetChat")
                 }
@@ -440,7 +440,7 @@ export default function Home() {
                 title="VIBE Search APIs​"
                 alignItems={"center"}
                 textAlign={'center'}
-                description="List products effortlessly on Vibe Search App with seamless management and insightful analytics"
+                description="Sell the best products for your clients based on their vibe (for agents and businesses)"
                 onClick={() =>
                   router.push("/products/vibeSearch")
                 }
@@ -451,7 +451,7 @@ export default function Home() {
                 title="Hushh For Students​"
                 alignItems={"center"}
                 textAlign={'center'}
-                description="Empowering, rewarding digital engagement & Revolutionizing data exchange by empowering students"
+                description="Rewards & empowers students with data control (safe & secure)"
                 onClick={() =>
                   router.push("/products/hushhForStudents")
                 }

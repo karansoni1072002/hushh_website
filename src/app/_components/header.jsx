@@ -26,6 +26,8 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsSubmenu, setProductsSubmenu] = useState(false)
   const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false)
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [headerBackground, setHeaderBackground] = useState('transparent');
 
   const scrollToContactForm = () => {
     window.scrollTo({
@@ -33,6 +35,25 @@ const Header = () => {
       behavior: 'smooth',
     });
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setScrollPosition(position);
+
+      if (position > 0) {
+        setHeaderBackground('black');
+      } else {
+        setHeaderBackground('transparent');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const scrollTo = () => {
     scroll.scrollTo(7500);
@@ -65,7 +86,7 @@ const Header = () => {
     setIsMenuOpen(false)
   }
   return (
-    <div className={`w-full z-1000`}>
+    <div className={`w-full z-1000`} style={{ background: headerBackground }}>
       <div className=" flex items-center justify-between w-full px-6 py-2 z-1000 md:px-32 md:py-5">
         <div className="">
           <Link href='/'>
@@ -84,7 +105,9 @@ const Header = () => {
         ) : (
           <div className="w-max">
             <div className="text-white flex justify-between gap-12 px-7 ">
-              <Link href="/" style={{zIndex:'1000'}} onMouseEnter={() => setProductsSubmenu(false)}>HOME</Link>
+              <Link href="/" style={{zIndex:'1000'}} onMouseEnter={() => setProductsSubmenu(false)}>
+                HOME
+              </Link>
               <Link href="/about" style={{zIndex:'1000'}} onMouseEnter={() => setProductsSubmenu(false)}>
                 ABOUT US
               </Link>

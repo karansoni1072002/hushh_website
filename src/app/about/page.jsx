@@ -48,7 +48,7 @@ export default function About() {
                   >
                     86k+
                   </Text>
-                  <p className='text-fontColor4'>Followers</p>
+                  <p className='text-fontColor4'>LinkedIn Followers</p>
                 </div>
                 <hr className='h-[1px] bg-gradient-to-r from-lineGradient1 via-lineGradient2 to-lineGradient3' />
               </div>

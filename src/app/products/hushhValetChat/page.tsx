@@ -115,52 +115,18 @@ const hushhValetChat = () => {
           px={"4rem"}
           display={"flex"}
           flexDirection={{ base: "row", md: "row" }}
+          justifyContent="flex-end"
+          mr={'3rem'}
         >
-          <Box
-            gap={"0rem"}
-            display={"flex"}
-            flexDirection={"column"}
-            color={"white"}
-          >
-            <Text
-              fontWeight={"800"}
-              fontSize={{ md: "2.8rem", base: "1.25rem" }}
-            >
-              42k
-            </Text>
-            <Text fontSize={{ md: "1rem", base: "0.75rem" }} fontWeight={"500"}>
-              Integrations
-            </Text>
-          </Box>
-          <Box
-            gap={"0rem"}
-            display={"flex"}
-            flexDirection={"column"}
-            color={"white"}
-            alignItems={{ base: "center" }}
-            justifyContent={{ base: "center" }}
-            textAlign={{ base: "center" }}
-          >
-            <Text
-              fontWeight={"800"}
-              fontSize={{ md: "2.8rem", base: "1.25rem" }}
-            >
-              86k
-            </Text>
-            <Text fontSize={{ md: "1rem", base: "0.75rem" }} fontWeight={"500"}>
-              Followers
-            </Text>
-          </Box>
           <Button
-            ml={{ md: "55rem" }}
-            display={{ md: "flex", base: "none" }}
-            border={"1px solid #606060"}
-            borderRadius={"4rem"}
-            w={"9rem"}
-            color={extendedTheme.colors._white}
-            lineHeight={"28px"}
-            background={"transparent"}
-            letterSpacing={"0.2rem"}
+           display={{ md: "flex", base: "none" }}
+           border={"1px solid #606060"}
+           borderRadius={"4rem"}
+           w={"9rem"}
+           color={extendedTheme.colors._white}
+           lineHeight={"28px"}
+           background={"transparent"}
+           letterSpacing={"0.2rem"}
             onClick={scrollTo}
             _hover={{
               border:'none',

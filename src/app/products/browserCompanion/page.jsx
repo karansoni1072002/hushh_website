@@ -111,47 +111,14 @@ const browserCompanion = () => {
           </Button>
         </Box>
         <HStack
-          mt={"2rem"}
-          gap={"3rem"}
-          px={"4rem"}
-          display={"flex"}
-          flexDirection={{ base: "row", md: "row" }}
+           mt={"2rem"}
+           gap={"3rem"}
+           px={"4rem"}
+           display={"flex"}
+           flexDirection={{ base: "row", md: "row" }}
+           justifyContent="flex-end"
+           mr={'3rem'}
         >
-          <Box
-            gap={"0rem"}
-            display={"flex"}
-            flexDirection={"column"}
-            color={"white"}
-          >
-            <Text
-              fontWeight={"800"}
-              fontSize={{ md: "2.8rem", base: "1.25rem" }}
-            >
-              42k
-            </Text>
-            <Text fontSize={{ md: "1rem", base: "0.75rem" }} fontWeight={"500"}>
-              Integrations
-            </Text>
-          </Box>
-          <Box
-            gap={"0rem"}
-            display={"flex"}
-            flexDirection={"column"}
-            color={"white"}
-            alignItems={{ base: "center" }}
-            justifyContent={{ base: "center" }}
-            textAlign={{ base: "center" }}
-          >
-            <Text
-              fontWeight={"800"}
-              fontSize={{ md: "2.8rem", base: "1.25rem" }}
-            >
-              86k
-            </Text>
-            <Text fontSize={{ md: "1rem", base: "0.75rem" }} fontWeight={"500"}>
-              Followers
-            </Text>
-          </Box>
           <Button
             ml={{ md: "62.375rem" }}
             display={{ md: "flex", base: "none" }}

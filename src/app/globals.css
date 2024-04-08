@@ -50,6 +50,12 @@ body {
   border-color: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
 }
 
+.personalized-demo {
+  background: linear-gradient(265.12deg, #E54D60 4.12%, #A342FF 51.75%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .new-gradient {
   background: linear-gradient(263.99deg, #E54D60 71.61%, #A342FF 99.22%);
   -webkit-background-clip: text;

@@ -26,6 +26,8 @@ import {
   FormErrorMessage,
 } from "@chakra-ui/react";
 import HushhButtonDemo from "../_components/svg/hushhButtonDemo.svg";
+import ContactForm from "../_components/features/contactForm";
+import AboutFaq from "../_components/features/faq/aboutFaq";
 
 const DemoBookingPage = () => {
   const [formData, setFormData] = useState({
@@ -437,6 +439,8 @@ const DemoBookingPage = () => {
           </Grid>
         </VStack>
       </Box>
+      <AboutFaq/>
+      <ContactForm/>
     </>
   );
 };

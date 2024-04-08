@@ -195,7 +195,7 @@ export default function AboutFaq() {
                     <TabPanels>
                         {Object.keys(faqData).map((category, index) => (
                             <TabPanel p={4} key={category}>
-                                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ md: 10, base: 2 }}>
+                                <SimpleGrid columns={{ base: 1, md: 0 }} spacing={{ md: 1, base: 2 }}>
                                     <Accordion allowToggle>
                                         {faqData[category].map((faq, faqIndex) => (
                                             <AccordionItem

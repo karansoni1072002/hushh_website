@@ -250,9 +250,10 @@ const DemoBookingPage = () => {
                   placeholder="Please Select Product"
                   color={"#FFFFFF"}
                   border={"1px solid #242424"}
+                  bg={'#151515'}
                 >
                   {products.map((product, index) => (
-                    <option color="#FFFFFF" key={index} value={product}>
+                    <option style={{background:'#151515'}} key={index} value={product}>
                       {product}
                     </option>
                   ))}
@@ -282,8 +283,8 @@ const DemoBookingPage = () => {
                 <FormErrorMessage>{errors.phoneNumber}</FormErrorMessage>
               </FormControl>
 
-              <Button type="submit" mt={4} colorScheme="teal">
-                Submit
+              <Button fontWeight={'400'} fontSize={'1rem'} type="submit" mt={{md:6, base:3}} w={'full'} bg={'#0565FF'} color={'#FFFFFF'}>
+                Get Demo
               </Button>
             </form>
           </Box>
@@ -292,7 +293,7 @@ const DemoBookingPage = () => {
         <VStack
           gap={{ md: "0.1rem", base: "0.75rem" }}
           justify={"center"}
-          mt={{ md: "5rem", base: "2.5rem" }}
+          mt={{ md: "8rem", base: "3rem" }}
         >
           <Text
             as={"h2"}
@@ -312,7 +313,7 @@ const DemoBookingPage = () => {
           >
             Interactive demo videos
           </Heading>
-          <Grid templateColumns="repeat(4, 1fr)" gap={6}>
+          <Grid mt={{md:'2rem',base:'1rem'}} templateColumns="repeat(4, 1fr)" gap={6}>
             <GridItem
               borderRadius={"8px"}
               p={"1rem"}

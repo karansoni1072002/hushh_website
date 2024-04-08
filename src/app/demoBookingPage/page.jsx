@@ -28,8 +28,10 @@ import {
 import HushhButtonDemo from "../_components/svg/hushhButtonDemo.svg";
 import ContactForm from "../_components/features/contactForm";
 import AboutFaq from "../_components/features/faq/aboutFaq";
-
+import { InlineWidget } from "react-calendly";
+  
 const DemoBookingPage = () => {
+  const [showCalendly, setShowCalendly] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -105,8 +107,8 @@ const DemoBookingPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // Redirect to the Calendly page with form data as query parameters
-      window.location.href = `/schedule-call?name=${formData.name}&email=${formData.email}&message=${formData.message}`;
+      setShowCalendly(true);
+      // window.location.href = `https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&message=${formData.message}`;
     }
   };
   return (
@@ -175,120 +177,129 @@ const DemoBookingPage = () => {
             flex={1}
             flexDirection={"column"}
           >
-            <form
-              style={{ padding: "2rem", width: "100%" }}
-              onSubmit={handleSubmit}
-            >
-              <Heading
-                color={"#FFFFFF"}
-                fontWeight={"700"}
-                lineHeight={"30px"}
-                letterSpacing={"-0.2px"}
-                fontSize={{ md: "1.25rem", base: "0.85" }}
-                display={"flex"}
-                gap={"0.25rem"}
-                mb={{ md: "1.75rem", base: "0.8rem" }}
-              >
-                Schedule your free{" "}
-                <div className="personalized-demo">Personalized Demo</div>
-              </Heading>
-              <FormControl isInvalid={errors.name}>
-                <FormLabel
-                  fontWeight={"400"}
-                  fontSize={{ md: "14px", base: "10px" }}
-                  lineHeight={"26px"}
-                  letterSpacing={"-0.4px"}
-                  color={"#FFFFFF"}
-                >
-                  Name*
-                </FormLabel>
-                <Input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Name"
-                  border={"1px solid #242424"}
-                  color={"#FFFFFF"}
-                />
-                <FormErrorMessage>{errors.name}</FormErrorMessage>
-              </FormControl>
-              <FormControl isInvalid={errors.email} mt={4}>
-                <FormLabel
-                  fontWeight={"400"}
-                  fontSize={{ md: "14px", base: "10px" }}
-                  lineHeight={"26px"}
-                  letterSpacing={"-0.4px"}
-                  color={"#FFFFFF"}
-                >
-                  Business Email*
-                </FormLabel>
-                <Input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Email"
-                  border={"1px solid #242424"}
-                  color={"#FFFFFF"}
-                />
-                <FormErrorMessage>{errors.email}</FormErrorMessage>
-              </FormControl>
+           
+            {showCalendly ? (
+            <div>
+            <InlineWidget
+              url={`https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${formData.phoneNumber}&product=${formData.product}`}
+            />
+          </div>
+      ):(
+        <form
+        style={{ padding: "2rem", width: "100%" }}
+        onSubmit={handleSubmit}
+      >
+        <Heading
+          color={"#FFFFFF"}
+          fontWeight={"700"}
+          lineHeight={"30px"}
+          letterSpacing={"-0.2px"}
+          fontSize={{ md: "1.25rem", base: "0.85" }}
+          display={"flex"}
+          gap={"0.25rem"}
+          mb={{ md: "1.75rem", base: "0.8rem" }}
+        >
+          Schedule your free{" "}
+          <div className="personalized-demo">Personalized Demo</div>
+        </Heading>
+        <FormControl isInvalid={errors.name}>
+          <FormLabel
+            fontWeight={"400"}
+            fontSize={{ md: "14px", base: "10px" }}
+            lineHeight={"26px"}
+            letterSpacing={"-0.4px"}
+            color={"#FFFFFF"}
+          >
+            Name*
+          </FormLabel>
+          <Input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Name"
+            border={"1px solid #242424"}
+            color={"#FFFFFF"}
+          />
+          <FormErrorMessage>{errors.name}</FormErrorMessage>
+        </FormControl>
+        <FormControl isInvalid={errors.email} mt={4}>
+          <FormLabel
+            fontWeight={"400"}
+            fontSize={{ md: "14px", base: "10px" }}
+            lineHeight={"26px"}
+            letterSpacing={"-0.4px"}
+            color={"#FFFFFF"}
+          >
+            Business Email*
+          </FormLabel>
+          <Input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email"
+            border={"1px solid #242424"}
+            color={"#FFFFFF"}
+          />
+          <FormErrorMessage>{errors.email}</FormErrorMessage>
+        </FormControl>
 
-              <FormControl isInvalid={errors.product} mt={4}>
-                <FormLabel
-                  fontWeight={"400"}
-                  fontSize={{ md: "14px", base: "10px" }}
-                  lineHeight={"26px"}
-                  letterSpacing={"-0.4px"}
-                  color={"#FFFFFF"}
-                >
-                  Product
-                </FormLabel>
-                <Select
-                  name="product"
-                  value={formData.product}
-                  onChange={handleChange}
-                  placeholder="Please Select Product"
-                  color={"#FFFFFF"}
-                  border={"1px solid #242424"}
-                  bg={'#151515'}
-                >
-                  {products.map((product, index) => (
-                    <option style={{background:'#151515'}} key={index} value={product}>
-                      {product}
-                    </option>
-                  ))}
-                </Select>
-                <FormErrorMessage>{errors.product}</FormErrorMessage>
-              </FormControl>
+        <FormControl isInvalid={errors.product} mt={4}>
+          <FormLabel
+            fontWeight={"400"}
+            fontSize={{ md: "14px", base: "10px" }}
+            lineHeight={"26px"}
+            letterSpacing={"-0.4px"}
+            color={"#FFFFFF"}
+          >
+            Product
+          </FormLabel>
+          <Select
+            name="product"
+            value={formData.product}
+            onChange={handleChange}
+            placeholder="Please Select Product"
+            color={"#FFFFFF"}
+            border={"1px solid #242424"}
+            bg={'#151515'}
+          >
+            {products.map((product, index) => (
+              <option style={{background:'#151515'}} key={index} value={product}>
+                {product}
+              </option>
+            ))}
+          </Select>
+          <FormErrorMessage>{errors.product}</FormErrorMessage>
+        </FormControl>
 
-              <FormControl isInvalid={errors.phoneNumber} mt={4}>
-                <FormLabel
-                  color={"#FFFFFF"}
-                  fontWeight={"400"}
-                  fontSize={{ md: "14px", base: "10px" }}
-                  lineHeight={"26px"}
-                  letterSpacing={"-0.4px"}
-                >
-                  Phone Number
-                </FormLabel>
-                <Input
-                  type="tel"
-                  name="phoneNumber"
-                  value={formData.phoneNumber}
-                  onChange={handleChange}
-                  placeholder="Phone Number"
-                  border={"1px solid #242424"}
-                  color={"#FFFFFF"}
-                />
-                <FormErrorMessage>{errors.phoneNumber}</FormErrorMessage>
-              </FormControl>
+        <FormControl isInvalid={errors.phoneNumber} mt={4}>
+          <FormLabel
+            color={"#FFFFFF"}
+            fontWeight={"400"}
+            fontSize={{ md: "14px", base: "10px" }}
+            lineHeight={"26px"}
+            letterSpacing={"-0.4px"}
+          >
+            Phone Number
+          </FormLabel>
+          <Input
+            type="tel"
+            name="phoneNumber"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+            placeholder="Phone Number"
+            border={"1px solid #242424"}
+            color={"#FFFFFF"}
+          />
+          <FormErrorMessage>{errors.phoneNumber}</FormErrorMessage>
+        </FormControl>
 
-              <Button fontWeight={'400'} fontSize={'1rem'} type="submit" mt={{md:6, base:3}} w={'full'} bg={'#0565FF'} color={'#FFFFFF'}>
-                Get Demo
-              </Button>
-            </form>
+        <Button fontWeight={'400'} fontSize={'1rem'} type="submit" mt={{md:6, base:3}} w={'full'} bg={'#0565FF'} color={'#FFFFFF'}>
+          Get Demo
+        </Button>
+      </form>
+      )}
           </Box>
         </Stack>
 

@@ -185,45 +185,71 @@ const DemoBookingPage = () => {
                 fontSize={{ md: "1.25rem", base: "0.85" }}
                 display={"flex"}
                 gap={"0.25rem"}
-                mb={{md:"1.75rem", base:"0.8rem"}}
+                mb={{ md: "1.75rem", base: "0.8rem" }}
               >
                 Schedule your free{" "}
                 <div className="personalized-demo">Personalized Demo</div>
               </Heading>
               <FormControl isInvalid={errors.name}>
-                <FormLabel fontWeight={'400'} fontSize={{md:"14px",base:'10px'}} lineHeight={'26px'} letterSpacing={'-0.4px'} color={"#FFFFFF"}>Name*</FormLabel>
+                <FormLabel
+                  fontWeight={"400"}
+                  fontSize={{ md: "14px", base: "10px" }}
+                  lineHeight={"26px"}
+                  letterSpacing={"-0.4px"}
+                  color={"#FFFFFF"}
+                >
+                  Name*
+                </FormLabel>
                 <Input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Name"
-                  border={'1px solid #242424'}
+                  border={"1px solid #242424"}
+                  color={"#FFFFFF"}
                 />
                 <FormErrorMessage>{errors.name}</FormErrorMessage>
               </FormControl>
               <FormControl isInvalid={errors.email} mt={4}>
-                <FormLabel fontWeight={'400'} fontSize={{md:"14px",base:'10px'}} lineHeight={'26px'} letterSpacing={'-0.4px'} color={"#FFFFFF"}>Business Email*</FormLabel>
+                <FormLabel
+                  fontWeight={"400"}
+                  fontSize={{ md: "14px", base: "10px" }}
+                  lineHeight={"26px"}
+                  letterSpacing={"-0.4px"}
+                  color={"#FFFFFF"}
+                >
+                  Business Email*
+                </FormLabel>
                 <Input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Email"
-                  border={'1px solid #242424'}
+                  border={"1px solid #242424"}
+                  color={"#FFFFFF"}
                 />
                 <FormErrorMessage>{errors.email}</FormErrorMessage>
               </FormControl>
 
               <FormControl isInvalid={errors.product} mt={4}>
-                <FormLabel fontWeight={'400'} fontSize={{md:"14px",base:'10px'}} lineHeight={'26px'} letterSpacing={'-0.4px'} color={"#FFFFFF"}>Product</FormLabel>
+                <FormLabel
+                  fontWeight={"400"}
+                  fontSize={{ md: "14px", base: "10px" }}
+                  lineHeight={"26px"}
+                  letterSpacing={"-0.4px"}
+                  color={"#FFFFFF"}
+                >
+                  Product
+                </FormLabel>
                 <Select
                   name="product"
                   value={formData.product}
                   onChange={handleChange}
                   placeholder="Please Select Product"
                   color={"#FFFFFF"}
-                  border={'1px solid #242424'}
+                  border={"1px solid #242424"}
                 >
                   {products.map((product, index) => (
                     <option color="#FFFFFF" key={index} value={product}>
@@ -237,7 +263,10 @@ const DemoBookingPage = () => {
               <FormControl isInvalid={errors.phoneNumber} mt={4}>
                 <FormLabel
                   color={"#FFFFFF"}
-                  fontWeight={'400'} fontSize={{md:"14px",base:'10px'}} lineHeight={'26px'} letterSpacing={'-0.4px'}
+                  fontWeight={"400"}
+                  fontSize={{ md: "14px", base: "10px" }}
+                  lineHeight={"26px"}
+                  letterSpacing={"-0.4px"}
                 >
                   Phone Number
                 </FormLabel>
@@ -247,7 +276,8 @@ const DemoBookingPage = () => {
                   value={formData.phoneNumber}
                   onChange={handleChange}
                   placeholder="Phone Number"
-                  border={'1px solid #242424'}
+                  border={"1px solid #242424"}
+                  color={"#FFFFFF"}
                 />
                 <FormErrorMessage>{errors.phoneNumber}</FormErrorMessage>
               </FormControl>

@@ -20,8 +20,10 @@ import ValetChat from "./svg/valetChat";
 import VibeSearchApi from "./svg/vibeSearchApi";
 import { headerAssets } from './svg/icons/HeaderIcons/headerAssets'
 import { animateScroll as scroll } from "react-scroll";
+import { useToast } from '@chakra-ui/react';
 
 const Header = () => {
+  const toast = useToast();
   const { isMobile } = useResponsiveSizes();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsSubmenu, setProductsSubmenu] = useState(false)
@@ -85,6 +87,19 @@ const Header = () => {
     setProductsSubmenuMobile(false)
     setIsMenuOpen(false)
   }
+
+  const handleLoginClick = () => {
+    // Trigger the toast notification
+    toast({
+      title: 'Coming Soon',
+      description: 'Login functionality will be available soon.',
+      status: 'info',
+      duration: 3000,
+      isClosable: true,
+      position: "top-right", // or any other position you prefer
+    });
+  };
+
   return (
     <div className={`w-full z-1000`} style={{ background: headerBackground }}>
       <div className=" flex items-center justify-between w-full px-6 py-2 z-1000 md:px-32 md:py-5">
@@ -236,6 +251,7 @@ const Header = () => {
                   color: "white",
                   border: 'none'
                 }}
+                onClick={handleLoginClick}
               >
                 LOGIN
               </Button>
@@ -378,7 +394,8 @@ const Header = () => {
               <Link
                 href="/"
                 className="py-2 w-1/2 border border-myBorder border-t-0 bg-black rounded-b"
-                onClick={() => setIsMenuOpen(false)}
+                // onClick={() => setIsMenuOpen(false) }
+                onClick={handleLoginClick}
               >
                 LOGIN
               </Link>

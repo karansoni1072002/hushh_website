@@ -219,6 +219,7 @@ const DemoBookingPage = () => {
           <Input
             type="text"
             name="name"
+            className="formInput"
             value={formData.name}
             onChange={handleChange}
             placeholder="Name"
@@ -238,7 +239,9 @@ const DemoBookingPage = () => {
             Business Email*
           </FormLabel>
           <Input
+            className="formInput"
             type="email"
+            _active={{borderColor:'#FFFFFF'}}
             name="email"
             value={formData.email}
             onChange={handleChange}
@@ -261,6 +264,7 @@ const DemoBookingPage = () => {
           </FormLabel>
           <Select
             name="product"
+            className="formInput"
             value={formData.product}
             onChange={handleChange}
             placeholder="Please Select Product"

@@ -348,6 +348,14 @@ body {
   margin-right: 0.15rem;
 }
 
+.formInput:focus {
+  border-color: #FFFFFF; /* Set border color to white when input is focused */
+}
+
+.formInput:active {
+  border-color: #FFFFFF; /* Set border color to white when input is focused */
+}
+
 .PhoneInputCountrySelectArrow:focus {
   background-color: #FFFFFF;
 }

@@ -340,3 +340,53 @@ body {
       display: none !important;
   }
 }
+
+/* Booking Demo Page CSS form */
+/* CSS */
+.PhoneInputCountrySelectArrow {
+  color: #FFFFFF;
+  margin-right: 0.15rem;
+}
+
+.PhoneInputCountrySelectArrow:focus {
+  background-color: #FFFFFF;
+}
+
+.PhoneInputCountryFlag:focus {
+  outline: none;
+  border: none;
+}
+
+.PhoneInputInput {
+  background: #151515;
+  color: #FFFFFF;
+  border: 1px solid #242424 !important; /* Remove single quotes around the border value */
+  height: 2.5rem;
+  border-radius: 5px;
+  flex: 1;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.PhoneInputInput:focus {
+  border: 1px solid #FFFFFF !important; /* Adjust border color when focused */
+}
+
+.PhoneInputInternationalIconPhone {
+  color: #FFFFFF;
+}
+
+.PhoneInputInternationalIconGlobe {
+  color: #FFFFFF;
+}
+
+.PhoneInput {
+  border-color: #242424;
+  border-radius: 5px;
+}
+
+.PhoneInput {
+  /* This is done to stretch the contents of this component. */
+  display: flex;
+  align-items: center;
+}

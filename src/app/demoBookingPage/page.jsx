@@ -29,9 +29,12 @@ import HushhButtonDemo from "../_components/svg/hushhButtonDemo.svg";
 import ContactForm from "../_components/features/contactForm";
 import AboutFaq from "../_components/features/faq/aboutFaq";
 import { InlineWidget } from "react-calendly";
+import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
   
 const DemoBookingPage = () => {
   const [showCalendly, setShowCalendly] = useState(false);
+  const [value, setValue] = useState()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -111,11 +114,12 @@ const DemoBookingPage = () => {
       // window.location.href = `https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&message=${formData.message}`;
     }
   };
+
   return (
     <>
       <Box p={{ base: 4, md: 8 }}>
         <Stack
-          mt={{ md: "5rem", base: "2rem" }}
+          mt={{ md: "8rem", base: "2rem" }}
           px={{ base: 4, md: 14 }}
           display={"flex"}
           flexDirection={{ md: "row", base: "column" }}
@@ -179,7 +183,7 @@ const DemoBookingPage = () => {
           >
            
             {showCalendly ? (
-            <div>
+            <div style={{p:'0'}}>
             <InlineWidget
               url={`https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${formData.phoneNumber}&product=${formData.product}`}
             />
@@ -283,15 +287,15 @@ const DemoBookingPage = () => {
           >
             Phone Number
           </FormLabel>
-          <Input
-            type="tel"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-            placeholder="Phone Number"
-            border={"1px solid #242424"}
-            color={"#FFFFFF"}
-          />
+        <Box borderRadius={'5px'}>
+         <PhoneInput
+          defaultCountry="US"
+          color={"#FFFFFF"}
+          placeholder="Enter phone number"
+          value={formData.phoneNumber}
+          onChange={setValue}
+         />
+         </Box>  
           <FormErrorMessage>{errors.phoneNumber}</FormErrorMessage>
         </FormControl>
 

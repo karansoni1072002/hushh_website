@@ -34,6 +34,7 @@ import 'react-phone-number-input/style.css'
   
 const DemoBookingPage = () => {
   const [showCalendly, setShowCalendly] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [value, setValue] = useState()
   const [formData, setFormData] = useState({
     name: "",
@@ -78,10 +79,10 @@ const DemoBookingPage = () => {
       newErrors.email = "";
     }
 
-    if (!formData.phoneNumber) {
+    if (!phoneNumber) {
       newErrors.phoneNumber = "Phone number is required";
       valid = false;
-    } else if (!/^\d{10}$/.test(formData.phoneNumber)) {
+    } else if (!/^\+?\d{8,15}$/.test(phoneNumber)) {
       newErrors.phoneNumber = "Invalid phone number";
       valid = false;
     } else {
@@ -109,6 +110,10 @@ const DemoBookingPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormData((prevData) => ({
+      ...prevData,
+      phoneNumber: phoneNumber,
+    }));
     if (validateForm()) {
       setShowCalendly(true);
       // window.location.href = `https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&message=${formData.message}`;
@@ -299,9 +304,18 @@ const DemoBookingPage = () => {
           defaultCountry="US"
           color={"#FFFFFF"}
           placeholder="Enter phone number"
-          value={formData.phoneNumber}
-          onChange={setValue}
+          value={phoneNumber}
+          onChange={setPhoneNumber}
          />
+         {/* <PhoneInput
+          type="number"
+          name="phoneNumber"
+          value={formData.phoneNumber}
+          onChange={setPhoneNumber} 
+          placeholder="Enter phone number"
+          border={"1px solid #242424"}
+          color={"#FFFFFF"}
+         /> */}
          </Box>  
           <FormErrorMessage>{errors.phoneNumber}</FormErrorMessage>
         </FormControl>

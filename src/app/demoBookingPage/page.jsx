@@ -219,6 +219,7 @@ const DemoBookingPage = () => {
           <Input
             type="text"
             name="name"
+            focusBorderColor="#FFFFFF"
             className="formInput"
             value={formData.name}
             onChange={handleChange}
@@ -241,6 +242,7 @@ const DemoBookingPage = () => {
           <Input
             className="formInput"
             type="email"
+            focusBorderColor="#FFFFFF"
             _active={{borderColor:'#FFFFFF'}}
             name="email"
             value={formData.email}
@@ -265,6 +267,7 @@ const DemoBookingPage = () => {
           <Select
             name="product"
             className="formInput"
+            focusBorderColor="#FFFFFF"
             value={formData.product}
             onChange={handleChange}
             placeholder="Please Select Product"

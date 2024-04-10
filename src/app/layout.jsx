@@ -23,6 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PDGMHH7CL"></script>
       <GoogleTagManager gtmId="G-1PDGMHH7CL"/>
+      <meta name="google-site-verification" content="2yMPgnyqy54zZFkGkUxbtKD_9R60gWhe5Hk-DTYff9M" />
       <body
         style={{ backgroundColor: "black" }}
         className={`${mulish.variable} font-sans`}

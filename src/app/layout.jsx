@@ -10,7 +10,7 @@ import ContactForm from "./_components/features/contactForm";
 import HeaderComponent from "./_components/features/HeaderComponent";
 import emailjs from "@emailjs/browser";
 import NextTopLoader from "nextjs-toploader";
-
+import { GoogleTagManager } from '@next/third-parties/google'
 
 export const metadata = {
   title: 'HUSHH',
@@ -21,6 +21,8 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-18HSLFFKQK"></script>
+      <GoogleTagManager gtmId="G-18HSLFFKQK"/>
       <body
         style={{ backgroundColor: "black" }}
         className={`${mulish.variable} font-sans`}

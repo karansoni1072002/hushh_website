@@ -10,6 +10,7 @@ import ContactForm from "./_components/features/contactForm";
 import HeaderComponent from "./_components/features/HeaderComponent";
 import emailjs from "@emailjs/browser";
 import NextTopLoader from "nextjs-toploader";
+import Head from "next/head";
 
 export const metadata = {
   title: 'HUSHH',
@@ -24,6 +25,23 @@ export default function RootLayout({ children }) {
         style={{ backgroundColor: "black" }}
         className={`${mulish.variable} font-sans`}
       >
+        <Head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-18HSLFFKQK"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-18HSLFFKQK');
+              `,
+          }}
+        ></script>
+        </Head>
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link

@@ -162,10 +162,10 @@ const BrandWalletSection = () => {
             Experience the convenience of managing your digital life with Hushh, available on both iOS and Android.
             </Text>
             <Box display={{md:'block', base:'none'}} align={"center"} mt={"1.40rem"}>
-              <NextImage src={BrandWalletMobile} style={{position:'absolute', top:'110.7%'}} />
+              <NextImage src={BrandWalletMobile} alt="brandWalletdesktop" style={{position:'absolute', top:'110.7%'}} />
             </Box>
             <Box align={"center"} display={{md:'none', base:'block'}} mt={"1.40rem"}>
-               <NextImage src={BrandWalletMobile} />
+               <NextImage src={BrandWalletMobile} alt="brandWalletmobile" />
             </Box>
           </VStack>
         </Box>

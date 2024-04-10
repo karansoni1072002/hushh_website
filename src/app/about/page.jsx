@@ -146,7 +146,7 @@ export default function About() {
           </VStack>
           <div className="flex flex-col md:flex-row gap-12 md:gap-36 mt-20 md:mt-40 mb-24 md:mb-36">
             <div className="flex flex-col gap-10">
-              <Image src={AboutMission} />
+              <Image src={AboutMission} alt='aboutMission'/>
               <div className="md:w-[25rem] text-left">
                 <p className=' text-fontColor5 font-bold text-[22px]'>Our Mission</p>
                 <p className=' text-fontColor4 font-medium leading-9'>
@@ -155,7 +155,7 @@ export default function About() {
               </div>
             </div>
             <div className="flex flex-col gap-10">
-              <Image src={AboutVision} />
+              <Image src={AboutVision} alt='aboutVision'/>
               <div className="text-left">
                 <p className=' text-fontColor5 font-bold text-[22px]'>Our Vision</p>
                 <p className=' text-fontColor4 font-medium leading-9'>

@@ -21,8 +21,8 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-18HSLFFKQK"></script>
-      <GoogleTagManager gtmId="G-18HSLFFKQK"/>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PDGMHH7CL"></script>
+      <GoogleTagManager gtmId="G-1PDGMHH7CL"/>
       <body
         style={{ backgroundColor: "black" }}
         className={`${mulish.variable} font-sans`}

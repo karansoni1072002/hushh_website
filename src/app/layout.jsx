@@ -18,10 +18,13 @@ export const metadata = {
      default:'HUSHH',
      template:"%s - HUSHH"
   },
-  // description: 'Your data Your Business',
+  description: {
+    default:"Your Data Your Business",
+    template:"%s"
+  },
 }
 
-export default function RootLayout({ children, pageMeta }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PDGMHH7CL"></script>

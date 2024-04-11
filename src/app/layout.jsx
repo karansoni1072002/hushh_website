@@ -10,20 +10,27 @@ import ContactForm from "./_components/features/contactForm";
 import HeaderComponent from "./_components/features/HeaderComponent";
 import emailjs from "@emailjs/browser";
 import NextTopLoader from "nextjs-toploader";
+import Head from "next/head";
 import { GoogleTagManager } from '@next/third-parties/google'
 
 export const metadata = {
-  title: 'HUSHH',
+  title:{
+     default:'HUSHH',
+     template:"%s - HUSHH"
+  },
   description: 'Your data Your Business',
 }
 
-export default function RootLayout({ children }) {
-
+export default function RootLayout({ children, pageMeta }) {
   return (
     <html lang="en">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PDGMHH7CL"></script>
       <GoogleTagManager gtmId="G-1PDGMHH7CL"/>
       <meta name="google-site-verification" content="2yMPgnyqy54zZFkGkUxbtKD_9R60gWhe5Hk-DTYff9M" />
+      <head>
+
+      </head>
+
       <body
         style={{ backgroundColor: "black" }}
         className={`${mulish.variable} font-sans`}

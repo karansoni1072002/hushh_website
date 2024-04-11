@@ -37,6 +37,9 @@ const vibeSearch = () => {
 
   return (
     <>
+    <title>Vibe Search</title>
+    <meta name="description" content="Find perfect items to express your individuality in just one click" />
+    <meta name="keywords" content="Vibe Search, The vibe search app lets find and store all your favorite products that you come across by just taking a picture or by typing, Fashion, Vibe Match, Vibe search your companion for fashion and style, Find your style with your own stylist, Find products based on image and text, Save all your liked products, Get insights on your Fit and Style, Share your best Fit with Family and Friends, Find that perfect Fit and perfect look with just a click of a button, Integrate You Vibe with Vibe Search, vibe search also enables users to share your style preferences in their Hushh Wallet, easy to share and access important information, such as Your Size, FIt, Brands , Budget and Purchase history, Fit Brands and Sizes, Your Budget and purchase history track, Vibe search is more than just an app its your personal stylist on tap of a button, Share and Benefit, Search Any Style, Image based search, Save all your searches, Share curated list of products according to your vibe and fit along with your friends and family, Search any style throughout the internet, Your Personal Fashion Stylist at your Fingertips, Vibe search utilizes advanced algorithms and AI technology to analyze the captured data Find the best fit, Users receive personalized recommendations, discover new products and brands aligned with their interests, and stay up-to-date with the latest trends with Gen AI" />
       <Box
         maxW={"100%"}
         minW={"100%"}
@@ -476,7 +479,7 @@ const vibeSearch = () => {
               lineHeight={{ md: "31.5px", base: '20px' }}
               fontSize={{ md: "1.125rem", base: "0.75rem" }}
             >
-              The Vibe search utilizes advanced algorithms and AI technology to analyze the captured data Fid the best fit and style for you. Users receive personalized recommendations, discover new products and brands aligned with their interests, and stay up-to-date with the latest trends with Gen AI.            </Text>
+              The Vibe search utilizes advanced algorithms and AI technology to analyze the captured data Find the best fit and style for you. Users receive personalized recommendations, discover new products and brands aligned with their interests, and stay up-to-date with the latest trends with Gen AI.            </Text>
           </VStack>
         </Stack>
         <VibeSearchFaq />

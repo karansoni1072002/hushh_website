@@ -32,6 +32,7 @@ import BgAnimation from "../../../../public/Gif/bgAnimation.gif";
 import DataRetrievalMade from "../../../../public/Gif/dataRetrievalMade.gif";
 import Slogo from "../../../../public/Gif/slogo.gif";
 import Loading from "../../_components/features/loading";
+import Head from "next/head";
 
 const hushhButton = () => {
   const router = useRouter();
@@ -55,9 +56,11 @@ const hushhButton = () => {
 
   return (
     <>
+    <Head>
     <title>Hushh Button</title>
     <meta name="description" content="Share data for Personalized recommendations" />
     <meta name="keywords" content="Hushh Button, Data In, Data Out, powerful plugin, bridges the gap between your preferences/choices/needs/likes and your favourite brands with GenAI, shopping feels effortless and tailored, Data Sharing for Personalized Experiences, one-stop solution for seamless data sharing ,Hushh Button For Customers, Sync your preferences, past purchases, sizing information to brands with a single click, Get your brand-specific data sent directly to your Hushh Wallet for secure storage and management, Brands can offer products and services based on your unique profile, Hushh Button for Brands, Access authentic data from Hushh users who opt-in, allowing for personalized product recommendations and marketing campaigns, Simplified data collection and ensures compliance with user privacy preferences, personalized and rewarding shopping experience, Hushh Button is a win-win, brands gain valuable insights, Transformed Shopping Experience, curates recommendations based on their unique style, Hushh Button Magic, Data Retrieval Made Easy " />
+    </Head>
       {loading ? (
         <Loading />
       ) : (

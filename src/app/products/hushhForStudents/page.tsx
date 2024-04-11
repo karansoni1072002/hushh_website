@@ -30,6 +30,7 @@ import StudentAstronautImg from "../../_components/svg/studentAstronautImg.svg";
 import CollegeStudentImg from "../../_components/svg/collegeStudentImg.svg";
 import { useState, useEffect } from "react";
 import Loading from "../../_components/features/loading";
+import Head from "next/head";
 
 const hushhForStudents = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -58,9 +59,11 @@ const hushhForStudents = () => {
 
   return (
     <>
+    <Head>
     <title>Hushh For Students - HFS</title>
     <meta name="description" content="Rewards & empowers students with data control (safe & secure)" />
     <meta name="keywords" content="Hushh For Students, Empowering and rewarding digital engagement, Revolutionizing data exchange by empowering students, providing businesses with valuable insights, Data Value Setting, Secure Data Exchange​, Rewards and Points System​, HFS makes your data work for you, Build meaningful connection, Unlock the true potential of your data, Take ownership of your digital identity, Hushh Caters to a wide range of needs including - Students, Business, Developers" />
+    </Head>
     {loading ? (
       <Loading />
     ) : (

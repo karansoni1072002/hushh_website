@@ -1,14 +1,17 @@
 import React from 'react'
 import { Heading } from '@chakra-ui/react';
 import ContactForm from '../../_components/features/contactForm';
+import Head from 'next/head';
 
 const TermsOfUse = () => {
 
     const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
     return (
         <>
-        <title>Hushh - Terms of use</title>
-        <meta name="description" content="Hushh terms of use" />
+        <Head>
+          <title>Hushh - Terms of use</title>
+          <meta name="description" content="Hushh terms of use" />
+        </Head>
             <div className='pt-12 px-6 md:pt-[90px] md:px-32 text-white'>
                 <div className=" flex flex-col items-center">
                     <Heading

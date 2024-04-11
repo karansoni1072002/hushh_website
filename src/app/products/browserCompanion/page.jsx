@@ -18,6 +18,7 @@ import BgAnimation from "../../../../public/Gif/bgAnimation.gif";
 import BrowserGif from "../../../../public/Gif/browserGifBg.gif"
 import Loading from "../../_components/features/loading"
 import TypingGIF from "../../../../public/Gif/typing.gif";
+import Head from 'next/head'
 
 const browserCompanion = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -44,10 +45,12 @@ const browserCompanion = () => {
 
   return (
     <>
+    <Head>
     <title>Hushh - Browser Companion</title>
     <meta name="description" content="Intelligence as a service powered by your Data" />
     <meta name="keywords" content="HUSHH, hushh, Enhanced Recommendations and Personalized Experience,digital footprint with Gen AI, product that helps you keep track of your digital footprint, Tired of being tracked online, Track your own browsing activity, Choose what data to collect, Track your interests over time, Export the collected data to your hushh wallet, Sell your data responsibly and get tailored services, Streamlined Integration via Browser Companion, enables users to share their user activity in their Hushh Wallet, easy to organize and access important information, Intelligent Insights and Recommendations, extension utilizes advanced algorithms and AI technology, latest trends with Gen AI, receive personalized recommendations, analyze the captured data and generate brilliant insights" />
-      <Box
+    </Head>
+     <Box
         maxW={"100%"}
         minW={"100%"}
         display={"flex"}

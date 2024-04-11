@@ -35,6 +35,7 @@ import { useState, useEffect } from "react";
 import MarketIcon from "../../_components/svg/marketIcon";
 import ConciergeMobile from "../../_components/svg/icons/conciergeMobileIcon.svg";
 import Loading from "../../_components/features/loading";
+import Head from "next/head";
 
 const handlePlayDemo = () => {
   // Open the URL in a new tab
@@ -68,9 +69,11 @@ const conciergeApp = () => {
 
   return (
     <>
+    <Head>
     <title>Hushh - Concierge App</title>
     <meta name="description" content="Speak Your Wish Get Luxury Redefined" />
     <meta name="keywords" content="HUSHH, Experience Luxury, Redefined , transforms luxury experiences through the power of voice, AI and Real time data, traditional concierge services,  prioritizes your needs, not just your preferences with Gen AI, Effortless Service​, Personalized Recommendations​​​, Real-Time Responses, Discretion and Privacy​​​, Exclusive Opportunities​, Travel, Events, Lifestyle, VIP access to high-profile events, private viewings, red carpet experiences, Personal shopping, home management, day-to-day errands, specialized requests, Bespoke itineraries, private jet charters, exclusive tours, Receipt Radar revolutionizes the way you handle receipts, automatic scanning, smart categorization, customizable options, managing expenses " />
+    </Head>
     {loading ? (
       <Loading />
     ) : (

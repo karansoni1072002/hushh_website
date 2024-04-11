@@ -17,6 +17,7 @@ import BgAnimation from "../../../../public/Gif/bgAnimation.gif";
 import { useState, useEffect } from "react";
 import Loading from "../../_components/features/loading";
 import ValetChatGif from "../../../../public/Gif/valeTChatBg.gif";
+import Head from "next/head";
 
 const hushhValetChat = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -48,9 +49,11 @@ const hushhValetChat = () => {
 
   return (
     <>
+    <Head>
     <title>Hushh - Valet Chat</title>
     <meta name="description" content="Collect all your receipts from mail and manage them to help you better understand your spending habits and finance" />
     <meta name="keywords" content="Hushh Valet Chat, collect all your receipts from mai,  understand your spending habits and finance, Manage all your receipts at one place, get insights on your finance with Gen AI, Valet chat is your one stop solution to find and manage all your receipts at one place , Valet chat helps you Manage Finance, Sync all your receipts automatically, Chat with our AI to understand your Finances better, Manage and categories receipts for easy access, Share your receipts with people and receive insights, enables users to share their Reciepts in their Hushh Wallet, makes it easy to organize and access important information, such as receipts, warranty details, and more, all in one secure place, Intelligent Finance and Receipts Management, utilizes advanced algorithms and AI technology to analyze the captured data, Users receive personalized Insights on receipts" />
+    </Head>
     {loading ? (
       <Loading />
     ) : (

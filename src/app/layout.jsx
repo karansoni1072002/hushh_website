@@ -13,13 +13,13 @@ import NextTopLoader from "nextjs-toploader";
 import Head from "next/head";
 import { GoogleTagManager } from '@next/third-parties/google'
 
-export const metadata = {
-  title:{
-     default:'HUSHH',
-     template:"%s - HUSHH"
-  },
-  description: 'Your data Your Business',
-}
+// export const metadata = {
+//   title:{
+//      default:'HUSHH',
+//      template:"%s - HUSHH"
+//   },
+//   description: 'Your data Your Business',
+// }
 
 export default function RootLayout({ children, pageMeta }) {
   return (

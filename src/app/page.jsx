@@ -73,7 +73,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    document.title = "Hushh - Home";
+    // document.title = "Hushh - Home";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute("content", "Intelligence as a service powered by your Data");
@@ -83,7 +83,7 @@ export default function Home() {
       metaKeywords.setAttribute("content", "Data API Business, Data Autonomy, Data Equity, Consent-Driven Excellence, Technology For Everyone, Hushh Wallet App, Hushh Button, Vibe Search, Browser Companion, Concierge App, Valet Chat, Vibe Search API, Hushh For Students, Brand Wallet, Receipt Radar, Future of Digital Identity & Personalised Experiences, Gen AI, GenAI ");
     }
   }, []);
-
+  document.title="Hushh - Home";
   return (
     <>
     <Head>

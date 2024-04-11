@@ -43,7 +43,7 @@ import ReviewSlider from "./_components/features/reviewSlider";
 import HfsLogo from "./_components/svg/hfsLogo"; 
 import HomeBg from "./_components/svg/homeBG.svg";
 import Image from "next/image";
-import Loading from "./_components/features/loading";
+import Head from "next/head";
 
 export default function Home() {
   const router = useRouter();
@@ -68,6 +68,9 @@ export default function Home() {
 
   return (
     <>
+        <title>HUSHH - Home</title>
+        <meta name="description" content="Intelligence as a service powered by your Data" />
+        <meta name="keywords" content="Data API Business, Data Autonomy, Data Equity, Consent-Driven Excellence, Technology For Everyone, Hushh Wallet App, Hushh Button, Vibe Search, Browser Companion, Concierge App, Valet Chat, Vibe Search API, Hushh For Students, Brand Wallet, Receipt Radar, Future of Digital Identity & Personalised Experiences, Gen AI, GenAI " />
     <div className="relative">
       <Image
         src={HomeBg}

@@ -55,6 +55,9 @@ const hushhButton = () => {
 
   return (
     <>
+    <title>Hushh Button</title>
+    <meta name="description" content="Share data for Personalized recommendations" />
+    <meta name="keywords" content="Hushh Button, Data In, Data Out, powerful plugin, bridges the gap between your preferences/choices/needs/likes and your favourite brands with GenAI, shopping feels effortless and tailored, Data Sharing for Personalized Experiences, one-stop solution for seamless data sharing ,Hushh Button For Customers, Sync your preferences, past purchases, sizing information to brands with a single click, Get your brand-specific data sent directly to your Hushh Wallet for secure storage and management, Brands can offer products and services based on your unique profile, Hushh Button for Brands, Access authentic data from Hushh users who opt-in, allowing for personalized product recommendations and marketing campaigns, Simplified data collection and ensures compliance with user privacy preferences, personalized and rewarding shopping experience, Hushh Button is a win-win, brands gain valuable insights, Transformed Shopping Experience, curates recommendations based on their unique style, Hushh Button Magic, Data Retrieval Made Easy " />
       {loading ? (
         <Loading />
       ) : (
@@ -801,7 +804,7 @@ const hushhButton = () => {
                 color={"white"}
                 fontSize={{ md: "1.125rem", base: "0.56rem" }}
               >
-                The widget allows users to create their cookies and control what
+                The widget allows users to retieve their data and control what
                 information they want to share with different websites. This
                 gives users complete control over their data privacy while
                 enjoying a personalized shopping experience.

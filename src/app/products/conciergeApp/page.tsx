@@ -68,6 +68,9 @@ const conciergeApp = () => {
 
   return (
     <>
+    <title>Hushh - Concierge App</title>
+    <meta name="description" content="Speak Your Wish Get Luxury Redefined" />
+    <meta name="keywords" content="HUSHH, Experience Luxury, Redefined , transforms luxury experiences through the power of voice, AI and Real time data, traditional concierge services,  prioritizes your needs, not just your preferences with Gen AI, Effortless Service​, Personalized Recommendations​​​, Real-Time Responses, Discretion and Privacy​​​, Exclusive Opportunities​, Travel, Events, Lifestyle, VIP access to high-profile events, private viewings, red carpet experiences, Personal shopping, home management, day-to-day errands, specialized requests, Bespoke itineraries, private jet charters, exclusive tours, Receipt Radar revolutionizes the way you handle receipts, automatic scanning, smart categorization, customizable options, managing expenses " />
     {loading ? (
       <Loading />
     ) : (
@@ -247,7 +250,7 @@ const conciergeApp = () => {
             <ServiceCard
               icon={<TrustedAIIcon />}
               alignItems={''}
-              onClick={'#'}
+              onClick={null}
               title="Effortless Service​"
               textAlign={"left"}
               description="Simply speak your request using the app, and Hushh translates it into action. No more searching or filling out forms.​"
@@ -255,7 +258,7 @@ const conciergeApp = () => {
             <ServiceCard
               icon={<TechIntegrationIcon />}
               alignItems={''}
-              onClick={'#'}
+              onClick={null}
               title="Personalized Recommendations​​​"
               textAlign={"left"}
               description="Hushh analyzes your intent, not just your preferences, to recommend services that truly match your needs.​​"
@@ -263,7 +266,7 @@ const conciergeApp = () => {
             <ServiceCard
               icon={<ControlOver />}
               alignItems={''}
-              onClick={'#'}
+              onClick={null}
               title="Real-Time Responses​"
               textAlign={"left"}
               description="Get immediate responses to your requests from top-tier service providers, competing for your attention."
@@ -271,7 +274,7 @@ const conciergeApp = () => {
             <ServiceCard
               icon={<RedifiningIcon />}
               title="Discretion and Privacy​​​"
-              onClick={'#'}
+              onClick={null}
               alignItems={''}
               textAlign={"left"}
               description="Your identity and preferences remain confidential. Requests are shared anonymously with relevant service providers.​​"
@@ -279,7 +282,7 @@ const conciergeApp = () => {
             <ServiceCard
               icon={<TransparentSecureIcon />}
               title="Exclusive Opportunities​"
-              onClick={'#'}
+              onClick={null}
               alignItems={''}
               textAlign={"left"}
               description="Access exclusive deals and hidden gem recommendations you won't find anywhere else"

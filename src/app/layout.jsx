@@ -18,7 +18,7 @@ export const metadata = {
      default:'HUSHH',
      template:"%s - HUSHH"
   },
-  description: 'Your data Your Business',
+  // description: 'Your data Your Business',
 }
 
 export default function RootLayout({ children, pageMeta }) {

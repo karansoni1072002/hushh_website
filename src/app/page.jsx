@@ -45,6 +45,12 @@ import HomeBg from "./_components/svg/homeBG.svg";
 import Image from "next/image";
 import Head from "next/head";
 
+// export const metadata = {
+//   title:'',
+//   description:'',
+//   keywords:''
+// }
+
 export default function Home() {
   const router = useRouter();
   const [showPopup, setShowPopup] = useState(false);
@@ -66,10 +72,23 @@ export default function Home() {
     return () => clearTimeout(timeoutId);
   }, []);
 
+  useEffect(() => {
+    document.title = "Hushh - Home";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Intelligence as a service powered by your Data");
+    }
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute("content", "Data API Business, Data Autonomy, Data Equity, Consent-Driven Excellence, Technology For Everyone, Hushh Wallet App, Hushh Button, Vibe Search, Browser Companion, Concierge App, Valet Chat, Vibe Search API, Hushh For Students, Brand Wallet, Receipt Radar, Future of Digital Identity & Personalised Experiences, Gen AI, GenAI ");
+    }
+  }, []);
+
   return (
     <>
     <Head>
         <title>HUSHH - Home</title>
+        <meta name="title" content="HUSHH - Home"/>
         <meta name="description" content="Intelligence as a service powered by your Data" />
         <meta name="keywords" content="Data API Business, Data Autonomy, Data Equity, Consent-Driven Excellence, Technology For Everyone, Hushh Wallet App, Hushh Button, Vibe Search, Browser Companion, Concierge App, Valet Chat, Vibe Search API, Hushh For Students, Brand Wallet, Receipt Radar, Future of Digital Identity & Personalised Experiences, Gen AI, GenAI " />
     </Head>

@@ -16,12 +16,16 @@ import { GoogleTagManager } from '@next/third-parties/google'
 export const metadata = {
   title:{
      default:'HUSHH',
-     template:"%s - HUSHH"
+     template:"%s"
   },
   description: {
+    template:'%s',
     default:"Your Data Your Business",
-    template:"%s"
   },
+  keywords:{
+    template:'%s',
+    default:'Hushh, Hush, User Data API business,Hushh Button, Hushh Wallet App, Hushh Browser Companion, Hushh For Students, Hushh Valet Chat, Valet Chat, Vibe Search, Concierge App',
+  }
 }
 
 export default function RootLayout({ children }) {

@@ -12,17 +12,18 @@ import ContactForm from '../_components/features/contactForm'
 import AboutFaq from '../_components/features/faq/aboutFaq'
 import Head from 'next/head'
 
+export const metadata = {
+  title:'Hushh | About Us',
+  description:'Intelligence as a service powered by your Dat',
+  keywords:'HUSHH, hushh, Manish Sainani - Founder and CEO, Justin Donaldson - Co-founder, Advisors'
+}
+
 export default function About() {
 
   const gradient = 'linear(63.68deg, #ADA785, #D6D3C2)';
 
   return (
     <>
-    <Head>
-    <title>Hushh - About Us</title>
-    <meta name="description" content="Intelligence as a service powered by your Data" />
-    <meta name="keywords" content="HUSHH, hushh, Manish Sainani - Founder and CEO, Justin Donaldson - Co-founder, Advisors" />
-    </Head>
     <div className='w-full'>
       <Box w={'100%'} h={'100%'} pt={'10.5rem'} px={{ base: '1.5rem', md: '6.25rem' }} background={'black'} fontFamily={'Figtree'} mb={{ base: '2rem', md: '10.5rem' }}>
         <div className="md:flex md:justify-between md:gap-36">

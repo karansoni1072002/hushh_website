@@ -373,10 +373,10 @@ const ClientBrowserCompanion = () => {
           flexDirection={{ md: 'row', base: 'column' }}
         >
           <Box display={{ md:'flex', base:'none'}} flexDirection={'column'} flex={1} gap={{ md: '2rem', base: '1rem' }}>
-            <Image src={TypingGIF} alt="TypingGIF" style={{height:'607px', width:'540px'}} />
+            <Image src={TypingGIF} alt="TypingGIF" style={{height:'607px', width:'540px'}} unoptimized />
           </Box>
           <Box display={{ base:'flex', md:'none'}} flexDirection={'column'} flex={1} mb={'2rem'} gap={{ md: '2rem', base: '1rem' }}>
-            <Image src={TypingGIF} alt="TypingGIF" style={{height:'207px', width:'270px'}} />
+            <Image src={TypingGIF} alt="TypingGIF" style={{height:'207px', width:'270px'}} unoptimized/>
           </Box>
 
           <Box display={"flex"} flexDirection={"column"} gap={'2rem'} flex={1}>

@@ -3,7 +3,7 @@ import { Heading } from '@chakra-ui/react';
 import ContactForm from '../../_components/features/contactForm';
 
 export const metadata = {
-    title:'Hushh | Privacy Policy',
+    title:'Hushh | Privacy Policy - Secure & Safeguard ',
     description:'Hushh privacy and policy',
 }
 

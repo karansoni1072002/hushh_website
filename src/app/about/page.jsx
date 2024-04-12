@@ -13,7 +13,7 @@ import AboutFaq from '../_components/features/faq/aboutFaq'
 import Head from 'next/head'
 
 export const metadata = {
-  title:'Hushh | About Us',
+  title:'Hushh | About Our Data Empowerment Mission',
   description:'Intelligence as a service powered by your Dat',
   keywords:'HUSHH, hushh, Manish Sainani - Founder and CEO, Justin Donaldson - Co-founder, Advisors'
 }

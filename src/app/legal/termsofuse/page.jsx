@@ -4,8 +4,8 @@ import ContactForm from '../../_components/features/contactForm';
 import Head from 'next/head';
 
 export const metadata = {
-    title:'Hushh | Terms of use',
-    description:'Hushh terms of use',
+    title:'Hushh | Explore our Terms of use',
+    description:'Hushh - explore our terms of use',
 }
 
 const TermsOfUse = () => {

@@ -213,6 +213,7 @@ const ClientHushhValetChat = () => {
               src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710763036%2FValet_Chat_Hushh_Research_and_Labs_pfjt3j.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true"
               width="4  40"
               height="250"
+              title="Hushh Valet Chat Walkthrough"
               style={{
                 height: "auto",
                 width: "80%",
@@ -263,6 +264,7 @@ const ClientHushhValetChat = () => {
               src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710763036%2FValet_Chat_Hushh_Research_and_Labs_pfjt3j.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true"
               width="4  40"
               height="250"
+              title="Hushh Valet Chat Walkthrough"
               style={{
                 height: "auto",
                 width: "60%",

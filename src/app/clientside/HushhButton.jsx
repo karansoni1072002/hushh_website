@@ -682,6 +682,7 @@ import {
                   height: "40rem",
                   filter: "grayscale(100%)",
                 }}
+                unoptimized
               />
             </Box>
             <Box display={{ base: "block", md: "none" }}>
@@ -696,6 +697,7 @@ import {
                   height: "13rem",
                   filter: "grayscale(100%)",
                 }}
+                unoptimized
               />
             </Box>
 
@@ -740,6 +742,7 @@ import {
                   src={Slogo}
                   alt="sLogo"
                   style={{ width: "120px", height: "160px" }}
+                  unoptimized
                 />
               </Box>
               <Box display={{ md: "none", base: "block" }}>
@@ -747,6 +750,7 @@ import {
                   src={Slogo}
                   alt="sLogo"
                   style={{ width: "90px", height: "110px" }}
+                  unoptimized
                 />
               </Box>
 
@@ -779,6 +783,7 @@ import {
                   src={DataRetrievalMade}
                   alt="DataRetrievalMade"
                   style={{ width: "120px", height: "160px" }}
+                  unoptimized
                 />
               </Box>
               <Box display={{ md: "none", base: "block" }}>
@@ -786,6 +791,7 @@ import {
                   src={DataRetrievalMade}
                   alt="DataRetrievalMade"
                   style={{ width: "90px", height: "110px" }}
+                  unoptimized
                 />
               </Box>
               <Heading

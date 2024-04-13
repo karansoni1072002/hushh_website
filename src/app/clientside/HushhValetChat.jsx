@@ -57,10 +57,10 @@ const ClientHushhValetChat = () => {
         position={'relative'}
       >
         <Box display={{ base: 'none', md: 'block' }}>
-          <Image src={ValetChatGif} alt="ValetChatGif" style={{ position: 'absolute',transform: 'rotate(-95deg)', opacity: '0.5',top: '0px',left:'30%', zIndex: '-10', filter: 'grayscale(100%)'}} />
+          <Image src={ValetChatGif} alt="ValetChatGif" style={{ position: 'absolute',transform: 'rotate(-95deg)', opacity: '0.5',top: '0px',left:'30%', zIndex: '-10', filter: 'grayscale(100%)'}} unoptimized />
         </Box>
         <Box display={{ base: 'block', md: 'none' }}>
-          <Image src={ValetChatGif} alt="ValetChatGif" style={{ position: 'absolute',transform: 'rotate(-95deg)',opacity: '0.5', top:'0px',left:'30%', zIndex: '-10', width: '10rem', height: '16rem',filter: 'grayscale(100%)' }} />
+          <Image src={ValetChatGif} alt="ValetChatGif" style={{ position: 'absolute',transform: 'rotate(-95deg)',opacity: '0.5', top:'0px',left:'30%', zIndex: '-10', width: '10rem', height: '16rem',filter: 'grayscale(100%)' }} unoptimized/>
         </Box>
         <Box
           alignItems={"center"}
@@ -448,10 +448,10 @@ const ClientHushhValetChat = () => {
 
         <Stack margin={{ md: "10rem", base: "3.5rem" }} position={'relative'}>
         <Box display={{base:'none',md:'block'}}>
-          <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'40rem', filter:'grayscale(100%)'}}/>
+          <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'40rem', filter:'grayscale(100%)'}} unoptimized/>
         </Box> 
         <Box display={{base:'block',md:'none'}}>
-        <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'13rem', filter:'grayscale(100%)'}}/>
+        <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'13rem', filter:'grayscale(100%)'}} unoptimized/>
         </Box>
           <VStack px={{ md: "10rem", base: "0rem" }}>
             <Heading

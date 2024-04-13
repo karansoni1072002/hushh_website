@@ -463,10 +463,10 @@ const ClientVibeSearch = () => {
 
         <Stack margin={{ md: "10rem", base: "3.5rem" }} position={'relative'}>
         <Box display={{ base: 'none', md: 'block' }}>
-            <Image src={BgAnimation} alt="BgAnimation" style={{ position: 'absolute', top: '-15px', zIndex: '-10', width: '100%', height: '40rem', filter: 'grayscale(100%)' }} />
+            <Image src={BgAnimation} alt="BgAnimation" style={{ position: 'absolute', top: '-15px', zIndex: '-10', width: '100%', height: '40rem', filter: 'grayscale(100%)' }} unoptimized/>
           </Box>
           <Box display={{ base: 'block', md: 'none' }}>
-            <Image src={BgAnimation} alt="BgAnimation" style={{ position: 'absolute', top: '-15px', zIndex: '-10', width: '100%', height: '13rem' , filter: 'grayscale(100%)'}} />
+            <Image src={BgAnimation} alt="BgAnimation" style={{ position: 'absolute', top: '-15px', zIndex: '-10', width: '100%', height: '13rem' , filter: 'grayscale(100%)'}} unoptimized/>
           </Box>
           <VStack mb={{md:'2rem',base:'6rem'}} px={{ md: "10rem", base: "0rem" }} >
             <Heading

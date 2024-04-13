@@ -23,6 +23,7 @@ const PrivacyPolicy = () => {
                         className="gradient"
                         px={{ base: "0.5rem" }}
                         mb={{ base: "0.5rem" }}
+                        as={'h1'}
                     >
                         Privacy Policy
                     </Heading>

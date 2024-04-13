@@ -116,14 +116,14 @@ export default function ContactForm() {
                 flexDirection={"column"}
                 mb={{ md: "6rem", base: '2rem' }}
               >
-                <Heading
+                <Text
                   color={"#FFFFFF"}
                   fontWeight={"600"}
                   fontSize={{ md: "3.75rem", base: '2rem' }}
                   lineHeight={{ base: "28px", md: "55px" }}
                 >
               Connect with hushh
-            </Heading>
+            </Text>
             <Text color={"#C9C9C9"}>Say something to reach out to us</Text>
           </HStack>
           <HStack

@@ -64,6 +64,7 @@ const ClientVibeSearch = () => {
             className="gradient"
             px={{ base: "0.5rem" }}
             mb={{ base: "0.5rem" }}
+            as={'h1'}
           >
             Vibe Search
           </Heading>
@@ -72,6 +73,7 @@ const ClientVibeSearch = () => {
             mb={{ base: "1rem", md: "4rem" }}
             textAlign={"center"}
             color={"#656565"}
+            as={'h2'}
           >
             The vibe search app lets find and store all your favorite products that you come across by just taking a picture or by typing
           </Text>
@@ -160,13 +162,13 @@ const ClientVibeSearch = () => {
           textAlign={"center"}
           py={{ md: "3rem", base: "1rem" }}
         >
-          <Heading
+          <Text
             color={"#0D0D25"}
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
           >
             Introducing Vibe search your companion for fashion and style
-          </Heading>
+          </Text>
           <Text
             mt={"1rem"}
             color={"#656565"}

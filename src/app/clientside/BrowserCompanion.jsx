@@ -71,6 +71,7 @@ const ClientBrowserCompanion = () => {
             className="gradient"
             px={{ base: "0.5rem" }}
             mb={{ base: "0.5rem" }}
+            as={'h1'}
           >
             Browser Companion
           </Heading>
@@ -79,6 +80,7 @@ const ClientBrowserCompanion = () => {
             mb={{ base: "1rem", md: "4rem" }}
             textAlign={"center"}
             color={"#ABABAB"}
+            as={'h2'}
           >
             Tired of being tracked online? Every click, scroll, and search query leaves a trail of your identity, exploited by third-party organizations for targeted advertising. With Hushh, the power is back in your hands
           </Text>
@@ -171,13 +173,13 @@ const ClientBrowserCompanion = () => {
           textAlign={"center"}
           py={{ md: "3rem", base: "1rem" }}
         >
-          <Heading
+          <Text
             color={"#0D0D25"}
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
           >
             Introducing Hushh Browser Companion, a product that helps you keep track of your digital footprint with Gen AI
-          </Heading>
+          </Text>
           <Text
             mt={"1rem"}
             color={"#656565"}

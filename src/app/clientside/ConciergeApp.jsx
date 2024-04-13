@@ -93,6 +93,7 @@ const ClientConciergeApp = () => {
             className="gradient"
             px={{ base: "0.5rem" }}
             mb={{ base: "0.5rem" }}
+            as={'h1'}
           >
             Concierge App
           </Heading>
@@ -101,6 +102,7 @@ const ClientConciergeApp = () => {
             fontWeight={"700"}
             fontSize={{ md: "2rem", base: "1rem" }}
             lineHeight={{ md: "57.6px", base: "28.3px" }}
+            as={'h2'}
           >
             Experience Luxury, Redefined
           </Text>

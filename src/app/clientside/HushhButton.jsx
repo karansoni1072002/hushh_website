@@ -80,6 +80,7 @@ import {
               className="gradient"
               px={{ base: "0.5rem" }}
               mb={{ base: "0.5rem" }}
+              as={'h1'}
             >
               Hushh Button
             </Heading>
@@ -88,6 +89,7 @@ import {
               mb={{ base: "1rem", md: "4rem" }}
               textAlign={"center"}
               color={"#656565"}
+              as={'h2'}
             >
               Imagine a world where shopping feels effortless and tailored just
               for you. Hushh Button, a powerful plugin, bridges the gap between

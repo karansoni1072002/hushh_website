@@ -20,7 +20,6 @@ const TechnologySection = () => {
         textAlign={"center"}
       >
         <Heading
-          as={"h1"}
           className="gradient"
           fontSize={{ md:"3.75rem", base:'1.5rem'}}
           display={"flex"}

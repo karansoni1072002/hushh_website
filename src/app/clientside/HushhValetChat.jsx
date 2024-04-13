@@ -78,6 +78,7 @@ const ClientHushhValetChat = () => {
             className="gradient"
             px={{ base: "0.5rem" }}
             mb={{ base: "0.5rem" }}
+            as={'h1'}
           >
             Hushh Valet Chat
           </Heading>
@@ -86,6 +87,7 @@ const ClientHushhValetChat = () => {
             mb={{ base: "1rem", md: "4rem" }}
             textAlign={"center"}
             color={"#656565"}
+            as={'h2'}
           >
             Lets you collect all your receipts from mail and manage them to help you better understand your spending habits and finance
           </Text>

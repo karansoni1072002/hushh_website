@@ -103,6 +103,7 @@ const ClientHushhWallet = () => {
             pt={{ md: "8rem", base: "3rem" }}
             color={"#FFFFFF"}
             mb={{ base: "0.5rem" }}
+            as={'h1'}
           >
             World's first AI Powered Data Wallet
           </Heading>
@@ -114,6 +115,7 @@ const ClientHushhWallet = () => {
             fontWeight={"400"}
             fontSize={{ md: "1.25erm", base: "1rem" }}
             color={"white"}
+            as={'h2'}
           >
             Higher perk adoption, instant expense management, simple benefits
             access and much more
@@ -154,7 +156,7 @@ const ClientHushhWallet = () => {
         </Box>
       </Box>
       <VStack mt={{ md: "34rem", base: "10rem" }}>
-        <Heading
+        <Text
           className="color-gradient"
           fontWeight={"600"}
           fontSize={{ md: "1rem", base: "0.75rem" }}
@@ -163,7 +165,7 @@ const ClientHushhWallet = () => {
           mb={{ md: "2rem", base: "1rem" }}
         >
           OUR PARTNERS
-        </Heading>
+        </Text>
         <Divider
           border={"2px solid"}
           className="walletDivider"

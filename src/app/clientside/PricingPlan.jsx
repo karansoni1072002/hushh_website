@@ -470,7 +470,6 @@ const ClientPricingPlan = () => {
                         </Text>
                       </Box>
                       <Heading
-                        as="h1"
                         fontWeight="600"
                         fontSize={{ base: "1.75rem", md: "4.125rem" }}
                         lineHeight={{ md: "79.2px", base: "40px" }}
@@ -562,8 +561,8 @@ const ClientPricingPlan = () => {
       
       <Box mx={{ md:'6rem', base:'0'}} mb={'1rem'} bg={'#131414'} gap={{ md:'5rem', base:'1rem'}} minW={{ md:'85%', base:'100%'}} mt={{md:'6rem', base:'4rem'}} display={'flex'} flexDirection={'row'}>
         <VStack ml={{ md:'2rem', base:'0'}} mx={{base:'1rem'}} gap={{ md:'1rem', base:'0rem'}} textAlign={'left'} alignItems={'flex-start'} my={{md:'4rem', base:'2rem'}}>
-          <Text className="color-gradient" fontWeight={'600'} fontSize={{ md:'1rem', base:'1rem'}} lineHeight={'1rem'} letterSpacing={'0.255'}>HUSHhH</Text>
-          <Heading className="gradient" fontSize={{md:'3.75rem', base:'2rem'}} fontWeight={'600'} lineHeight={{ md:'63.65px', base:'45px'}}>Key Highlights</Heading>
+          <Text className="color-gradient" fontWeight={'600'} fontSize={{ md:'1rem', base:'1rem'}} lineHeight={'1rem'} letterSpacing={'0.255'}>HUSHH</Text>
+          <Text className="gradient" fontSize={{md:'3.75rem', base:'2rem'}} fontWeight={'600'} lineHeight={{ md:'63.65px', base:'45px'}}>Key Highlights</Text>
           <VStack display={{md:'none', base:'block'}} alignItems={'center'} justify={'center'} align={'center'} alignSelf={'center'} >
              <Image src={BoxImage} alt="BoxImageHighlight" style={{width:'100%', height:'100%'}}/>
           </VStack>
@@ -661,7 +660,7 @@ const ClientPricingPlan = () => {
               fontWeight={"600"}
               fontSize={{ md: "1rem", base: '0.75rem' }}
             >
-              HUSHhH
+              HUSHH
             </Text>
             <Text
               className="gradient"

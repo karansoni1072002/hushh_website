@@ -124,7 +124,7 @@ const ClientHome = () => {
               </Heading>
             </HStack>
 
-            <Text color={"#656565"} fontSize={"18px"}>
+            <Text color={"#656565"} fontSize={"18px"} as={'h2'}>
               We're the Data API Business that helps you collect, manage, and monetize your data
             </Text>
 
@@ -157,7 +157,6 @@ const ClientHome = () => {
           flexDirection={"column"}
         >
           <Heading
-            as={"h2"}
             className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text"
             fontWeight={600}
             letterSpacing={"0.25rem"}
@@ -247,7 +246,6 @@ const ClientHome = () => {
               OUR ADVANTAGES
             </Text>
 
-            <Heading>
               <Text
                 className="gradient"
                 lineHeight={"63px"}
@@ -257,7 +255,6 @@ const ClientHome = () => {
               >
                 Why Us?
               </Text>
-            </Heading>
             <Text px={{ base: '1rem', md: '0' }} alignItems={{ base: "center" }} pt={{ md: "1rem" }} fontWeight={'500'} color={extendedTheme.colors.secondary}>
               Empower individuals with data control. Today, we're a cutting-edge
               platform fostering trust, transparency, and personalized

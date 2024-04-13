@@ -136,14 +136,14 @@ export default function About() {
             >
               CORE VALUE COMPANY
             </Heading>
-            <Heading
+            <Text
               className="gradient"
               fontWeight={"400"}
               fontSize={{ base: "2.5rem", md: "3.75rem" }}
               lineHeight={"63.3px"}
             >
               Our Mission and Vision
-            </Heading>
+            </Text>
             <Text
               mt={"2rem"}
               textAlign={"center"}

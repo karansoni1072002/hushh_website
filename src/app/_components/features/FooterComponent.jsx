@@ -28,7 +28,7 @@ const FooterComponent = () => {
             <div className="desktop-view">
                 <div className="flex justify-between gap-52 items-start pb-[6.5rem] px-32">
                     <div className="w-96 gap-4 flex flex-col justify-normal">
-                        <h1 className='font-semibold text-2xl leading-10'>Future of “Digital Identity” & “Personalised Experiences”</h1>
+                        <p className='font-semibold text-2xl leading-10'>Future of “Digital Identity” & “Personalised Experiences”</p>
                         <p className='text-lg'>Manish Sainani, 2024</p>
                         <p>Call {' '} <a href="tel:+14252969050">+14252969050</a></p>
                     </div>
@@ -93,7 +93,7 @@ const FooterComponent = () => {
                 <div className="flex flex-col justify-center items-center gap-10 pb-10 pt-10">
                     <div className="w-full px-5 gap-4 flex flex-col justify-center items-start">
                         <HushhMobileFooterLogo />
-                        <h1 className='font-semibold text-xl leading-10'>Future of “Digital Identity” & “Personalised Experiences”</h1>
+                        <p className='font-semibold text-xl leading-10'>Future of “Digital Identity” & “Personalised Experiences”</p>
                         <p className='text-base'>Manish Sainani, 2024</p>
                         <p>Call {' '} <a href="tel:+14252969050">+14252969050</a></p>
                     </div>

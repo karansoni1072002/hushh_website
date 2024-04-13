@@ -492,14 +492,14 @@ const ClientHushhWallet = () => {
         alignItems={"center"}
         justifyContent={"center"}
       >
-        <Heading
+        <Text
           fontWeight={"400"}
           color={"#FFFFFF"}
           lineHeight={{ md: "25.83px", base: "16px" }}
           fontSize={{ md: "1.25rem", base: "1rem" }}
         >
           Our Uniqueness
-        </Heading>
+        </Text>
         <Text
           alignItems={"center"}
           justifyContent={"center"}

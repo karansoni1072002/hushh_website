@@ -435,7 +435,7 @@ const ClientVibeSearch = () => {
         </HStack>
 
         <Stack display={'flex'} gap={{ md: '1rem', base: '0.5rem' }} textAlign={'center'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
-          <Heading fontWeight={'400'} color={'#FFFFFF'} lineHeight={{ md: '25.83px', base: '16px' }} fontSize={{ md: '1.25rem', base: '1rem' }}>Our Uniqueness</Heading>
+          <Text fontWeight={'400'} color={'#FFFFFF'} lineHeight={{ md: '25.83px', base: '16px' }} fontSize={{ md: '1.25rem', base: '1rem' }}>Our Uniqueness</Text>
           <Text alignItems={'center'} justifyContent={'center'} lineHeight={{ md: "88.14px", base: '44px' }} color={'white'} fontWeight={'700'} fontSize={{ md: '5.6rem', base: '2.5rem' }}>More Than Just </Text>
           <Text alignItems={'center'} justifyContent={'center'} lineHeight={{ md: "88.14px", base: '44px' }} color={'white'} fontWeight={'700'} fontSize={{ md: '5.6rem', base: '2.5rem' }}> An App</Text>
           <Text display={'flex'} color={'#ABABAB'} lineHeight={'25px'} fontSize={{ md: '0.8rem', base: '0.8rem' }}>Vibe search is more than just an app its your personal stylist on tap of a button</Text>

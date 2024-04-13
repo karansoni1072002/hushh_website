@@ -249,7 +249,7 @@ const ClientPricingPlan = () => {
             display={"flex"}
             alignSelf={"flex-start"}
             textAlign={"left"}
-            as={"h2"}
+            as={"h1"}
             color={"#FFFFFF"}
             fontSize={{ base: "0.85rem", md: "1.25rem" }}
             letterSpacing={"0.04rem"}
@@ -258,7 +258,7 @@ const ClientPricingPlan = () => {
             Pricing
           </Heading>
           <Heading
-            as={"h1"}
+            as={"h2"}
             lineHeight={{ md: "90.28px", base: "40px" }}
             className="gradient"
             fontSize={{ base: "2.5rem", md: "4.625rem" }}
@@ -469,7 +469,7 @@ const ClientPricingPlan = () => {
                           {plan.name}
                         </Text>
                       </Box>
-                      <Heading
+                      <Text
                         fontWeight="600"
                         fontSize={{ base: "1.75rem", md: "4.125rem" }}
                         lineHeight={{ md: "79.2px", base: "40px" }}
@@ -498,7 +498,7 @@ const ClientPricingPlan = () => {
                             {plan.perMonth && (isYearly ? " /yr" : ' /mo')}
                           </span>
                         )}
-                      </Heading>
+                      </Text>
                       <Text
                         lineHeight={"22px"}
                         fontWeight={"500"}

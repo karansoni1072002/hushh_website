@@ -82,7 +82,7 @@ const ClientHFS = () => {
             className="gradient"
             px={{ base: "0.5rem" }}
             mb={{ base: "0.5rem" }}
-            as={'h1'}
+            as='h1'
           >
            Hushh For Students
           </Heading>
@@ -92,7 +92,7 @@ const ClientHFS = () => {
             fontSize={{ md: "2rem", base: "1rem" }}
             lineHeight={{ md: "57.6px", base: "28.3px" }}
             textAlign={'center'}
-            as={'h2'}
+            as='h2'
           >
             Empowering and rewarding digital engagement
           </Text>

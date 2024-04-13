@@ -156,7 +156,7 @@ const ClientHome = () => {
           display={"flex"}
           flexDirection={"column"}
         >
-          <Heading
+          <Text
             className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text"
             fontWeight={600}
             letterSpacing={"0.25rem"}
@@ -164,7 +164,7 @@ const ClientHome = () => {
             mb={{md:'1.25rem'}}
           >
             BRANDS WE WORK WITH
-          </Heading>
+          </Text>
           <Text
             align={"center"}
             lineHeight={{ md: "63.3px", base: '2rem' }}

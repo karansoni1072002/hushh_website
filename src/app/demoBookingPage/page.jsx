@@ -190,7 +190,7 @@ const DemoBookingPage = () => {
             {showCalendly ? (
             <div style={{p:'0'}}>
             <InlineWidget
-              url={`https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${formData.phoneNumber}&product=${formData.product}`}
+              url={`https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${phoneNumber}&product=${formData.product}`}
             />
           </div>
       ):(

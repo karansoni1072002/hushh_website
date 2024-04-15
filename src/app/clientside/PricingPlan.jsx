@@ -31,7 +31,7 @@ import ManageFinanceBox from "../_components/svg/managefinanceBox.svg";
 import PricingFaq from "../_components/features/faq/pricingFaq";
 import ContactForm from "../_components/features/contactForm";
 import { useMediaQuery } from "react-responsive";
-import InfoIcon from "../_components/svg/icons/infoIcon.svg"
+import InfoIcon from "../_components/svg/icons/infoIcon.svg";
 
 const planData = [
   {
@@ -635,7 +635,8 @@ const ClientPricingPlan = () => {
         mb={{ md: "1rem", base: "0.2rem" }}
         mt={{ md: "5rem", base: "2rem" }}
         px={{ md: "7.5rem", base: "1.5rem" }}
-        alignItems={"center"}
+        alignItems={{ md: "center" }}
+        justifyContent="space-evenly"
         align={"center"}
         alignSelf={"center"}
         alignContent={"center"}
@@ -654,7 +655,7 @@ const ClientPricingPlan = () => {
         >
           <Text
             fontWeight={"500"}
-            fontSize={{ md: "1rem", base: "0.9rem" }}
+            fontSize={{ md: "1rem", base: "0.7rem" }}
             lineHeight={"19.5px"}
             letterSpacing={"1.5px"}
           >
@@ -680,7 +681,7 @@ const ClientPricingPlan = () => {
         >
           <Text
             fontWeight={"500"}
-            fontSize={{ md: "1rem", base: "0.9rem" }}
+            fontSize={{ md: "1rem", base: "0.7rem" }}
             letterSpacing={"1.5px"}
           >
             PROFESSIONAL PLANS
@@ -846,12 +847,13 @@ const ClientPricingPlan = () => {
           alignItems={"center"}
         >
           <TabList
-            p={"0.5rem"}
+            p={{ md: "0.5rem", base: "0.5rem" }}
             borderRadius={"8px"}
             border={"1px solid #222222"}
-            minH={{ md: "4.125rem" }}
-            w={{ md: "52%", base: "100%" }}
-            justifyContent={"space-between"}
+            minH={{ md: "4.125rem", base: "auto" }}
+            w={{ md: "52%", base: "auto" }}
+            justifyContent={{ md: "space-between", base: "flex-start" }}
+            flexWrap={{ base: "wrap" }}
           >
             {(activePlanCategory === "site"
               ? planData
@@ -868,6 +870,7 @@ const ClientPricingPlan = () => {
                 lineHeight={{ md: "22px", base: "14px" }}
                 fontWeight={"600"}
                 fontSize={{ md: "15px", base: "10px" }}
+                mr={{ base: "2", md: "0" }}
               >
                 {category.category}
               </Tab>
@@ -887,136 +890,147 @@ const ClientPricingPlan = () => {
                 >
                   {category.plans.map((plan, idx) => (
                     <>
-                   <Box bg={"#131414"} display={"flex"}
-                      textAlign={"center"}
-                      alignItems={"center"}
-                      flexDirection={"column"}>
-                    <Box
-                      flex={1}
-                      display={"flex"}
-                      textAlign={"center"}
-                      alignItems={"center"}
-                      flexDirection={"column"}
-                      minW={{ md:'20rem', base:'100%'}}
-                      gap={{ md: "1rem", base: "0.5rem" }}
-                      justifyContent={"flex-start"}
-                      borderRadius={"2rem"}
-                      p={{ md: "1.5rem", base: "1rem" }}
-                      key={idx}
-                      color={"white"}
-                      height={'100%'}
-                    >
                       <Box
-                        bg={"#146EF5"}
-                        w={{ md: "max-content" }}
+                        bg={"#131414"}
+                        display={"flex"}
+                        textAlign={"center"}
+                        alignItems={"center"}
                         borderRadius={"4px"}
+                        flexDirection={"column"}
                       >
-                        <Text
-                          px={{ md: "1rem", base: "0.5rem" }}
-                          py={{ md: "0.5rem", base: "0.2rem" }}
-                          fontWeight="600"
-                          lineHeight={"20px"}
-                          fontSize={{ md: "0.875rem", base: "0.5rem" }}
+                        <Box
+                          flex={1}
+                          display={"flex"}
+                          textAlign={"center"}
+                          alignItems={"center"}
+                          flexDirection={"column"}
+                          minW={{ md: "20rem", base: "100%" }}
+                          gap={{ md: "1rem", base: "0.5rem" }}
+                          justifyContent={"flex-start"}
+                          borderRadius={"2rem"}
+                          p={{ md: "1.5rem", base: "1rem" }}
+                          key={idx}
+                          color={"white"}
+                          height={"100%"}
                         >
-                          {plan.name}
-                        </Text>
-                      </Box>
-                      <Text
-                        fontWeight="600"
-                        fontSize={{ base: "1.75rem", md: "4.125rem" }}
-                        lineHeight={{ md: "79.2px", base: "40px" }}
-                        mt={{md:'1rem', base:'0.5rem'}}
-                      >
-                        {renderPrice(plan.price)}
-                        {"  "}
-                        {plan.perMonth && !isTabletOrMobile && (
-                          <span
-                            style={{
-                              color: "white",
-                              marginLeft: "-0.75rem",
-                              fontWeight: "600",
-                              fontSize: "1.25rem",
-                            }}
-                          >
-                            {plan.perMonth && (isYearly ? " /yr" : " /mo")}
-                          </span>
-                        )}
-                        {plan.perMonth && isTabletOrMobile && (
-                          <span
-                            style={{
-                              color: "white",
-                              fontWeight: "600",
-                              fontSize: "1rem",
-                            }}
-                          >
-                            {plan.perMonth && (isYearly ? " /yr" : " /mo")}
-                          </span>
-                        )}
-                      </Text>
-                      <Text
-                        color={'#535353'}
-                        lineHeight={"25.6px"}
-                        fontWeight={"400"}
-                        fontSize={{ md: "1rem", base: "0.65rem" }}
-                      >
-                        {plan.advetisment}
-                      </Text>
-                      <Divider p={0} />
-                      <Text
-                        lineHeight={{ md: "28px", base: "18px" }}
-                        fontWeight={"400"}
-                        fontSize={{ md: "1rem", base: "0.65rem" }}
-                      >
-                        {plan.brands}
-                      </Text>
-                      <Divider />
-                      {plan.features.map((featureGroup, groupIndex) => (
-                        <React.Fragment key={groupIndex}>
-                          {featureGroup.map((feature, featureIndex) => (
-                          <Box 
-                           display={'flex'}
-                           flexDirection={'row'}
-                           alignItems={'flex-start'}
-                           w={'100%'}
-                           justifyContent={'space-between'}
-                           textAlign={'left'}
+                          <Box
+                            bg={"#146EF5"}
+                            w={{ md: "max-content" }}
+                            borderRadius={"4px"}
                           >
                             <Text
-                              key={featureIndex}
-                              lineHeight={"22px"}
-                              fontWeight={"500"}
-                              fontSize={{ md: "1rem", base: "0.75rem" }}
-                              w={'70%'}
+                              px={{ md: "1rem", base: "0.5rem" }}
+                              py={{ md: "0.5rem", base: "0.2rem" }}
+                              fontWeight="600"
+                              lineHeight={"20px"}
+                              fontSize={{ md: "0.875rem", base: "0.5rem" }}
                             >
-                              {feature} 
+                              {plan.name}
                             </Text>
-                            <Box display={'flex'} alignItems={'flex-end'}>
-                               <Image src={InfoIcon} alt="InfoIcon" />
-                            </Box>
                           </Box>
+                          <Text
+                            fontWeight="600"
+                            fontSize={{ base: "1.75rem", md: "4.125rem" }}
+                            lineHeight={{ md: "79.2px", base: "40px" }}
+                            mt={{ md: "1rem", base: "0.5rem" }}
+                          >
+                            {renderPrice(plan.price)}
+                            {"  "}
+                            {plan.perMonth && !isTabletOrMobile && (
+                              <span
+                                style={{
+                                  color: "white",
+                                  marginLeft: "-0.75rem",
+                                  fontWeight: "600",
+                                  fontSize: "1.25rem",
+                                }}
+                              >
+                                {plan.perMonth && (isYearly ? " /yr" : " /mo")}
+                              </span>
+                            )}
+                            {plan.perMonth && isTabletOrMobile && (
+                              <span
+                                style={{
+                                  color: "white",
+                                  fontWeight: "600",
+                                  fontSize: "1rem",
+                                }}
+                              >
+                                {plan.perMonth && (isYearly ? " /yr" : " /mo")}
+                              </span>
+                            )}
+                          </Text>
+                          <Text
+                            color={"#535353"}
+                            lineHeight={"25.6px"}
+                            fontWeight={"400"}
+                            fontSize={{ md: "1rem", base: "0.65rem" }}
+                          >
+                            {plan.advetisment}
+                          </Text>
+                          <Divider p={0} />
+                          <Text
+                            lineHeight={{ md: "28px", base: "18px" }}
+                            fontWeight={"400"}
+                            fontSize={{ md: "1rem", base: "0.65rem" }}
+                          >
+                            {plan.brands}
+                          </Text>
+                          <Divider />
+                          {plan.features.map((featureGroup, groupIndex) => (
+                            <React.Fragment key={groupIndex}>
+                              {featureGroup.map((feature, featureIndex) => (
+                                <Box
+                                  display={"flex"}
+                                  flexDirection={"row"}
+                                  alignItems={"flex-start"}
+                                  w={"100%"}
+                                  justifyContent={"space-between"}
+                                  textAlign={"left"}
+                                >
+                                  <Text
+                                    key={featureIndex}
+                                    lineHeight={"22px"}
+                                    fontWeight={"500"}
+                                    fontSize={{ md: "1rem", base: "0.75rem" }}
+                                    w={"70%"}
+                                  >
+                                    {feature}
+                                  </Text>
+                                  <Box display={"flex"} alignItems={"flex-end"}>
+                                    <Image src={InfoIcon} alt="InfoIcon" />
+                                  </Box>
+                                </Box>
+                              ))}
+                              {groupIndex < plan.features.length - 1 && (
+                                <Divider />
+                              )}
+                            </React.Fragment>
                           ))}
-                          {groupIndex < plan.features.length - 1 && <Divider />}
-                        </React.Fragment>
-                      ))}
-                      
-                    </Box>
-                    <Box my={{md:'2rem',base:'1rem'}} display={'flex'} alignItems={'flex-end'} >
-                       <Button
-                        minW={"15rem"}
-                        bg={"#146EF5"}
-                        color={"white"}
-                        borderRadius={"4px"}
-                        fontWeight={"600"}
-                        fontSize={{ md: "1rem", base: "0.6rem" }}
-                        _hover={{
-                          color: "black",
-                          bg: "white",
-                        }}
-                      >
-                        {plan.price === 'Free' ? 'Start For Free':'Add Site Plan'}
-                      </Button>
-                    </Box>
-                  </Box> 
+                        </Box>
+                        <Box
+                          my={{ md: "2rem", base: "1rem" }}
+                          display={"flex"}
+                          alignItems={"flex-end"}
+                        >
+                          <Button
+                            minW={"15rem"}
+                            bg={"#146EF5"}
+                            color={"white"}
+                            borderRadius={"4px"}
+                            fontWeight={"600"}
+                            fontSize={{ md: "1rem", base: "0.6rem" }}
+                            _hover={{
+                              color: "black",
+                              bg: "white",
+                            }}
+                          >
+                            {plan.price === "Free"
+                              ? "Start For Free"
+                              : "Add Site Plan"}
+                          </Button>
+                        </Box>
+                      </Box>
                     </>
                   ))}
                 </SimpleGrid>

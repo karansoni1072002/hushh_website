@@ -849,7 +849,7 @@ const ClientPricingPlan = () => {
             p={"0.5rem"}
             borderRadius={"8px"}
             border={"1px solid #222222"}
-            minH={{ md: "4.125rem", base: "1.5rem" }}
+            minH={{ md: "4.125rem" }}
             w={{ md: "52%", base: "100%" }}
             justifyContent={"space-between"}
           >
@@ -882,21 +882,24 @@ const ClientPricingPlan = () => {
               <TabPanel key={index}>
                 <SimpleGrid
                   mx={{ md: "10rem", base: "0" }}
-                  columns={{ base: 3, md: 3 }}
+                  columns={{ base: 1, md: 3 }}
                   gap={{ md: "4rem", base: "1rem" }}
                 >
                   {category.plans.map((plan, idx) => (
                     <>
+                   <Box bg={"#131414"} display={"flex"}
+                      textAlign={"center"}
+                      alignItems={"center"}
+                      flexDirection={"column"}>
                     <Box
                       flex={1}
                       display={"flex"}
                       textAlign={"center"}
                       alignItems={"center"}
                       flexDirection={"column"}
-                      minW={{ md:'20rem', base:'9rem'}}
+                      minW={{ md:'20rem', base:'100%'}}
                       gap={{ md: "1rem", base: "0.5rem" }}
                       justifyContent={"flex-start"}
-                      bg={"#131414"}
                       borderRadius={"2rem"}
                       p={{ md: "1.5rem", base: "1rem" }}
                       key={idx}
@@ -922,6 +925,7 @@ const ClientPricingPlan = () => {
                         fontWeight="600"
                         fontSize={{ base: "1.75rem", md: "4.125rem" }}
                         lineHeight={{ md: "79.2px", base: "40px" }}
+                        mt={{md:'1rem', base:'0.5rem'}}
                       >
                         {renderPrice(plan.price)}
                         {"  "}
@@ -959,7 +963,6 @@ const ClientPricingPlan = () => {
                       </Text>
                       <Divider p={0} />
                       <Text
-                        // h={{ md: "3rem" }}
                         lineHeight={{ md: "28px", base: "18px" }}
                         fontWeight={"400"}
                         fontSize={{ md: "1rem", base: "0.65rem" }}
@@ -995,8 +998,11 @@ const ClientPricingPlan = () => {
                           {groupIndex < plan.features.length - 1 && <Divider />}
                         </React.Fragment>
                       ))}
-                      <Button
-                        w={"100%"}
+                      
+                    </Box>
+                    <Box my={{md:'2rem',base:'1rem'}} display={'flex'} alignItems={'flex-end'} >
+                       <Button
+                        minW={"15rem"}
                         bg={"#146EF5"}
                         color={"white"}
                         borderRadius={"4px"}
@@ -1007,9 +1013,10 @@ const ClientPricingPlan = () => {
                           bg: "white",
                         }}
                       >
-                        Upgrade to Premium
+                        {plan.price === 'Free' ? 'Start For Free':'Add Site Plan'}
                       </Button>
                     </Box>
+                  </Box> 
                     </>
                   ))}
                 </SimpleGrid>

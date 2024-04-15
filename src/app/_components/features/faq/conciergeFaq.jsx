@@ -122,108 +122,113 @@ const ConciergeFaq = () => {
   
     const handleTabsChange = (index) => {
       setTabIndex(index);
-      setActiveAccordionIndex(index);
+      setActiveAccordionIndex(null);
     };
   
     const handleToggle = (index) => {
-      setActiveAccordionIndex((prevIndex) => (prevIndex === index ? -1 : index));
+      setActiveAccordionIndex((prevIndex) => (prevIndex === index ? null : index));
+    };
+  
+    const handleAccordionChange = (index) => {
+      setActiveAccordionIndex(activeIndex => activeIndex === index ? null : index);
     };
   
     return (
       <Box py={{md:10, base:'2rem'}} px={{ md: "10rem", base:'2rem' }}>
-        <Heading
-          className={"gradient"}
-          fontWeight={"400"}
-          fontSize={{ md: "3.75rem", base: "2rem" }}
-          lineHeight={{md:"75px", base:'46px'}}
-          mb={8}
-          textAlign="left"
-        >
-          Frequently Asked Questions
-        </Heading>
-        <Box display={'flex'} w={'100%'}>
-        <Tabs
-          index={tabIndex}
-          onChange={handleTabsChange}
-          variant="soft-rounded"
-          colorScheme="purple"
-        >
-          <TabList mb="1em" display={{base:'block', md:'flex'}}>
-            {Object.keys(faqData).map((category, index) => (
-              <Tab
-                key={category}
-                color={"white"}
-                className={index === tabIndex ? "gradientText" : ""}
-                _selected={{
-                  color: "transparent",
-                  sx: {
-                    backgroundImage:
-                      "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  },
-                  _after: {
-                    content: '""',
-                    display: "block",
-                    height: "2px",
-                    background:
-                      "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                    borderRadius: "2px",
-                  },
-                }}
-              >
-                {category}
-              </Tab>
-            ))}
-          </TabList>
-  
-          <TabPanels>
-            {Object.keys(faqData).map((category, index) => (
-              <TabPanel p={4} key={category}>
-                <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ md:10, base:2}}>
-                  <Accordion allowToggle>
-                    {faqData[category].map((faq, faqIndex) => (
-                      <AccordionItem
-                        key={faqIndex}
-                        borderRadius={"8px"}
-                        border={0}
-                        bg={"#141414"}
-                        mb={4}
-                      >
-                        {({ isExpanded }) => (
-                          <>
-                            <h2>
-                              <AccordionButton _expanded={{ bg: "#27272a" }}>
-                                <Box
-                                  as="span"
-                                  color={"#CFD3D7"}
-                                  flex="1"
-                                  textAlign="left"
-                                >
-                                  {faq.question}
-                                </Box>
-                                {isExpanded ? (
-                                  <MinusIcon fontSize="12px" />
-                                ) : (
-                                  <AddIcon fontSize="12px" />
-                                )}
-                              </AccordionButton>
-                            </h2>
-                            <AccordionPanel pb={4} color={"#A2A9B0"}>
-                              {faq.answer}
-                            </AccordionPanel>
-                          </>
-                        )}
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </SimpleGrid>
-              </TabPanel>
-            ))}
-          </TabPanels>
-        </Tabs>
-        </Box>
+      <Heading
+        className={"gradient"}
+        fontWeight={"400"}
+        fontSize={{ md: "3.75rem", base: "2rem" }}
+        lineHeight={{md:"75px", base:'46px'}}
+        mb={8}
+        textAlign="left"
+      >
+        Frequently Asked Questions
+      </Heading>
+      <Box display={'flex'} w={'100%'}>
+      <Tabs
+        index={tabIndex}
+        onChange={handleTabsChange}
+        variant="soft-rounded"
+        colorScheme="purple"
+      >
+        <TabList mb="1em" display={{base:'block', md:'flex'}}>
+          {Object.keys(faqData).map((category, index) => (
+            <Tab
+              key={category}
+              color={"white"}
+              className={index === tabIndex ? "gradientText" : ""}
+              _selected={{
+                color: "transparent",
+                sx: {
+                  backgroundImage:
+                    "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                },
+                _after: {
+                  content: '""',
+                  display: "block",
+                  height: "2px",
+                  background:
+                    "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                  borderRadius: "2px",
+                },
+              }}
+            >
+              {category}
+            </Tab>
+          ))}
+        </TabList>
+
+        <TabPanels>
+          {Object.keys(faqData).map((category, index) => (
+            <TabPanel p={4} key={category}>
+              <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+              {faqData[category].map((faq, faqIndex) => (
+                <Accordion allowToggle key={faqIndex}  index={activeAccordionIndex === faqIndex ? 0 : null} onChange={() => handleAccordionChange(faqIndex)}>
+                    <AccordionItem
+                      key={faqIndex}
+                      borderRadius={"8px"}
+                      border={0}
+                      bg={"#141414"}
+                      mb={4}
+                    >
+                      {({ isExpanded }) => (
+                        <>
+                          <h2>
+                            <AccordionButton _expanded={{ bg: "#27272a" }}>
+                              <Box
+                                as="span"
+                                color={"#CFD3D7"}
+                                flex="1"
+                                textAlign="left"
+                              >
+                                {faq.question}
+                              </Box>
+                              {isExpanded ? (
+                                <MinusIcon fontSize="12px" />
+                              ) : (
+                                <AddIcon fontSize="12px" />
+                              )}
+                            </AccordionButton>
+                          </h2>
+                          <AccordionPanel pb={4} color={"#A2A9B0"}>
+                            {faq.answer}
+                          </AccordionPanel>
+                        </>
+                      )}
+                    </AccordionItem>
+                </Accordion>
+                                  ))}
+
+              </SimpleGrid>
+            </TabPanel>
+          ))}
+        </TabPanels>
+      </Tabs>
       </Box>
+    </Box>
     );
 }
 

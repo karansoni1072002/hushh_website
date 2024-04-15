@@ -118,11 +118,15 @@ export default function vibeSearchFaq() {
 
   const handleTabsChange = (index) => {
     setTabIndex(index);
-    setActiveAccordionIndex(index);
+    setActiveAccordionIndex(null);
   };
 
   const handleToggle = (index) => {
-    setActiveAccordionIndex((prevIndex) => (prevIndex === index ? -1 : index));
+    setActiveAccordionIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
+  const handleAccordionChange = (index) => {
+    setActiveAccordionIndex(activeIndex => activeIndex === index ? null : index);
   };
 
   return (
@@ -176,9 +180,9 @@ export default function vibeSearchFaq() {
         <TabPanels>
           {Object.keys(faqData).map((category, index) => (
             <TabPanel p={4} key={category}>
-              <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ md:10, base:2}}>
-                <Accordion allowToggle>
-                  {faqData[category].map((faq, faqIndex) => (
+              <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+              {faqData[category].map((faq, faqIndex) => (
+                <Accordion allowToggle key={faqIndex}  index={activeAccordionIndex === faqIndex ? 0 : null} onChange={() => handleAccordionChange(faqIndex)}>
                     <AccordionItem
                       key={faqIndex}
                       borderRadius={"8px"}
@@ -211,8 +215,9 @@ export default function vibeSearchFaq() {
                         </>
                       )}
                     </AccordionItem>
-                  ))}
                 </Accordion>
+                                  ))}
+
               </SimpleGrid>
             </TabPanel>
           ))}

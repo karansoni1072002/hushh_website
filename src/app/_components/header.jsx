@@ -89,15 +89,16 @@ const Header = () => {
   }
 
   const handleLoginClick = () => {
-    // Trigger the toast notification
-    toast({
-      title: 'Coming Soon',
-      description: 'Login functionality will be available soon.',
-      status: 'info',
-      duration: 3000,
-      isClosable: true,
-      position: "top-right", // or any other position you prefer
-    });
+    // toast({
+    //   title: 'Coming Soon',
+    //   description: 'Login functionality will be available soon.',
+    //   status: 'info',
+    //   duration: 3000,
+    //   isClosable: true,
+    //   position: "top-right",
+    // });
+    window.open('https://hushh-button.vercel.app/user/login', '_blank');
+
   };
 
   return (

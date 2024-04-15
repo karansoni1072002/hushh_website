@@ -122,7 +122,6 @@ export default function BrowserFaq() {
   };
 
   const handleAccordionChange = (index) => {
-    // 이미 열려있는 아코디언을 클릭한 경우 모든 아코디언을 닫습니다.
     setActiveAccordionIndex(activeIndex => activeIndex === index ? null : index);
   };
 

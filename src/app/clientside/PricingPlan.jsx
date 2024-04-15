@@ -24,6 +24,7 @@ import ManageFinanceBox from '../_components/svg/managefinanceBox.svg';
 import PricingFaq from "../_components/features/faq/pricingFaq";
 import ContactForm from "../_components/features/contactForm";
 import { useMediaQuery } from "react-responsive";
+
 const planData = [
     {
       category: "Everyday Consumers",
@@ -273,11 +274,11 @@ const ClientPricingPlan = () => {
 
       <Box gap={{base:'1rem', md:'0'}} mb={{md:'1rem', base:'0.2rem'}} mt={{md:'5rem', base:'2rem'}} px={{md:'7.5rem', base:'1.5rem'}} alignItems={'center'} align={'center'} alignSelf={'center'} alignContent={'center'} w={'100%'} display={'flex'}>
         <Box cursor={'pointer'} onClick={() => handlePlanCategoryChange('site')} gap={'0.5rem'} textAlign={'left'} flex={1} color={activePlanCategory === 'site' ? '#FFFFFF' : '#5A5A5A'}  display={'flex'} flexDirection={'column'}>
-           <Text fontWeight={'500'} fontSize={{ md:'1rem', base:'0.9rem'}} lineHeight={'19.5px'} letterSpacing={'1.5px'}>Site plans</Text>
+           <Text fontWeight={'500'} fontSize={{ md:'1rem', base:'0.9rem'}} lineHeight={'19.5px'} letterSpacing={'1.5px'}>USER PLANS</Text>
            <Text fontWeight={'600'} fontSize={{ md:'1.5rem', base:'0.75rem'}} lineHeight={{ md:'30px', base:'20px'}}>Build, publish, and host with ease</Text>
         </Box>
         <Box cursor={'pointer'} onClick={() => handlePlanCategoryChange('workspace')} gap={'0.5rem'} textAlign={'left'} flex={1} color={activePlanCategory === 'workspace' ? '#FFFFFF' : '#5A5A5A'}  display={'flex'} flexDirection={'column'}>
-            <Text fontWeight={'500'} fontSize={{ md:'1rem', base:'0.9rem'}} letterSpacing={'1.5px'}>Workspace plans</Text>
+            <Text fontWeight={'500'} fontSize={{ md:'1rem', base:'0.9rem'}} letterSpacing={'1.5px'}>PROFESSIONAL PLANS</Text>
             <Text fontWeight={'600'}fontSize={{ md:'1.5rem', base:'0.75rem'}} lineHeight={{ md:'30px', base:'20px'}}>Add a team and stage multiple sites</Text>
         </Box>
       </Box>
@@ -302,7 +303,7 @@ const ClientPricingPlan = () => {
           fontSize={{ md: "3.5rem", base: "2rem" }}
           letterSpacing={"0.56px"}
         >
-        {activePlanCategory === 'site' ? 'Site plans' : 'Workspace plans'}
+        {activePlanCategory === 'site' ? 'User plans' : 'Professional plans'}
         </Text>
         <HStack gap={{ md: "20rem", base: "4rem" }}>
           <Text
@@ -313,9 +314,9 @@ const ClientPricingPlan = () => {
             fontSize={{ md: "1rem", base: "0.8rem" }}
           >
             {activePlanCategory === 'site' ? 
-              'Our site plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer' 
+              'Our user plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer' 
               : 
-              'Our workspace plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer'}
+              'Our professional plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer'}
           </Text>
         <VStack> 
           <Box
@@ -353,7 +354,7 @@ const ClientPricingPlan = () => {
           fontSize={{ md: "3.5rem", base: "2rem" }}
           letterSpacing={"0.56px"}
         >
-          {activePlanCategory === 'site' ? 'Site plans' : 'Workspace plans'}
+          {activePlanCategory === 'site' ? 'USER PLANS' : 'PROFESSIONAL PLANS'}
         </Text>
         <VStack gap={{ md: "20rem", base: "4rem" }}>
           <Text
@@ -364,9 +365,9 @@ const ClientPricingPlan = () => {
             fontSize={{ md: "1rem", base: "0.8rem" }}
           >
             {activePlanCategory === 'site' ? 
-              'Our site plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer' 
+              'Our user plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer' 
               : 
-              'Our workspace plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer'}
+              'Our professional plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer'}
           </Text>
         <VStack> 
           <Box

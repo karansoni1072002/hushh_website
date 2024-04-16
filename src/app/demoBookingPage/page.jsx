@@ -170,10 +170,21 @@ const DemoBookingPage = () => {
               className="gradient"
               fontWeight={"700"}
               fontSize={{ md: "4.625rem", base: "2.31rem" }}
-              lineHeight={{ md: "90.28px", base: "48px" }}
+              lineHeight={{ md: "90.28px", base: "42px" }}
               as={"h1"}
+              display={{md:'block',base:'none'}}
             >
               Explore hushh in <div className="new-gradient"> Action</div>
+            </Heading>
+            <Heading
+              className="gradient"
+              fontWeight={"700"}
+              fontSize={{ md: "4.625rem", base: "2.31rem" }}
+              lineHeight={{ md: "90.28px", base: "42px" }}
+              as={"h1"}
+              display={{md:'none',base:'block'}}
+            >
+              Explore hushh in <span className="bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text"> Action</span>
             </Heading>
             <Text
               fontSize={{ md: "1.25rem", base: "1rem" }}

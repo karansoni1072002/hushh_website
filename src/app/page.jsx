@@ -136,10 +136,10 @@ export default function Home() {
                 border: 'none'
               }}
               onClick={() =>
-                router.push("https://sites.google.com/hush1one.com/drops/home/journey")
+                router.push("/demoBookingPage")
               }
             >
-              LEARN MORE
+              Book A Demo
             </Button>
           </VStack>
         </Box>

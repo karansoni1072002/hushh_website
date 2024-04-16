@@ -229,10 +229,10 @@ const DemoBookingPage = () => {
             flexDirection={"column"}
           >
             {showCalendly && !showThankYou && (
-              <div style={{ p: "0" }}>
+              <div style={{ p: "0",  overflow:'hidden'  }}>
                 <InlineWidget
+                  styles={{height:'100%',minHeight:'600px', width:'100%',marginTop:'-3rem',}}
                   url={`https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${phoneNumber}&product=${formData.product}`}
-                  // onEventScheduled={onEventScheduled}
                   onSubmit={() => {
                     setScheduled(false);
                     setShowCalendly(false);

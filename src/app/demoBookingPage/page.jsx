@@ -421,11 +421,7 @@ const DemoBookingPage = () => {
                     color: "white",
                   }}
                   cursor={"pointer"}
-                  onClick={() =>
-                    router.push(
-                      "https://sites.google.com/hush1one.com/drops/products/test-builds"
-                    )
-                  }
+                  onClick={() => window.open("https://www.youtube.com/@hushhai/videos", "_blank")}
                 >
                   EXPLORE OUR DEMOS
                 </Box>

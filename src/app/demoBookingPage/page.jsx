@@ -257,12 +257,12 @@ const DemoBookingPage = () => {
                 <FormControl isInvalid={errors.name}>
                   <FormLabel
                     fontWeight={"400"}
-                    fontSize={{ md: "14px", base: "10px" }}
+                    fontSize={{ md: "14px", base: "12px" }}
                     lineHeight={"26px"}
                     letterSpacing={"-0.4px"}
                     color={"#FFFFFF"}
                   >
-                    Name*
+                    Name *
                   </FormLabel>
                   <Input
                     type="text"
@@ -280,12 +280,12 @@ const DemoBookingPage = () => {
                 <FormControl isInvalid={errors.email} mt={4}>
                   <FormLabel
                     fontWeight={"400"}
-                    fontSize={{ md: "14px", base: "10px" }}
+                    fontSize={{ md: "14px", base: "12px" }}
                     lineHeight={"26px"}
                     letterSpacing={"-0.4px"}
                     color={"#FFFFFF"}
                   >
-                    Business Email*
+                    Business Email *
                   </FormLabel>
                   <Input
                     className="formInput"
@@ -305,12 +305,12 @@ const DemoBookingPage = () => {
                 <FormControl isInvalid={errors.product} mt={4}>
                   <FormLabel
                     fontWeight={"400"}
-                    fontSize={{ md: "14px", base: "10px" }}
+                    fontSize={{ md: "14px", base: "12px" }}
                     lineHeight={"26px"}
                     letterSpacing={"-0.4px"}
                     color={"#FFFFFF"}
                   >
-                    Product
+                    Product *
                   </FormLabel>
                   <Select
                     name="product"
@@ -340,11 +340,11 @@ const DemoBookingPage = () => {
                   <FormLabel
                     color={"#FFFFFF"}
                     fontWeight={"400"}
-                    fontSize={{ md: "14px", base: "10px" }}
+                    fontSize={{ md: "14px", base: "12px" }}
                     lineHeight={"26px"}
                     letterSpacing={"-0.4px"}
                   >
-                    Phone Number
+                    Phone Number *
                   </FormLabel>
                   <Box borderRadius={"5px"}>
                     <PhoneInput

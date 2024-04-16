@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
         style={{ backgroundColor: "black" }}
         className={`${mulish.variable} font-sans`}
       >
+        <link rel="icon" href="./favicon.ico"/>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link

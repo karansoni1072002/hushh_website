@@ -14,7 +14,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import BlueTick from "../_components/svg/icons/blueTick.svg";
 import {
@@ -28,14 +28,18 @@ import {
 import HushhButtonDemo from "../_components/svg/hushhButtonDemo.svg";
 import ContactForm from "../_components/features/contactForm";
 import AboutFaq from "../_components/features/faq/aboutFaq";
-import { InlineWidget } from "react-calendly";
-import PhoneInput from 'react-phone-number-input'
-import 'react-phone-number-input/style.css'
-  
+import { InlineWidget, useCalendlyEventListener } from "react-calendly";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+import { useToast } from '@chakra-ui/react'
+
 const DemoBookingPage = () => {
   const [showCalendly, setShowCalendly] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [value, setValue] = useState()
+  const [value, setValue] = useState();
+  const toast = useToast()
+  const [scheduled, setScheduled] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -57,6 +61,31 @@ const DemoBookingPage = () => {
     "Vibe Search",
     "All",
   ];
+
+  const onEventScheduled = () => {
+    setShowCalendly(false); // Hide Calendly widget
+    setShowThankYou(true); // Show thank you message
+    console.log("SHow calendly", showCalendly);
+    console.log("Thank You msg", showThankYou);
+  };
+
+  useCalendlyEventListener("scheduled", onEventScheduled);
+  useCalendlyEventListener({
+    onProfilePageViewed: () => console.log("onProfilePageViewed"),
+    onDateAndTimeSelected: () => console.log("onDateAndTimeSelected"),
+    onEventTypeViewed: () => console.log("onEventTypeViewed"),
+    onEventScheduled: (e) => {
+      console.log("On Event Scheduled", e.data.payload);
+      setScheduled(false);
+      setShowCalendly(false);
+      setShowThankYou(true);
+    },
+  });
+
+  useEffect(() => {
+    console.log("showCalendly:", showCalendly);
+    console.log("showThankYou:", showThankYou);
+  }, [showCalendly, showThankYou]);
 
   const validateForm = () => {
     let valid = true;
@@ -116,7 +145,9 @@ const DemoBookingPage = () => {
     }));
     if (validateForm()) {
       setShowCalendly(true);
+      setScheduled(true);
       // window.location.href = `https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&message=${formData.message}`;
+      setShowThankYou(false);
     }
   };
 
@@ -124,8 +155,8 @@ const DemoBookingPage = () => {
     <>
       <Box p={{ base: 4, md: 8 }}>
         <Stack
-          mt={{ md: "8rem", base: "2rem" }}
-          px={{ base: 4, md: 14 }}
+          mt={{ md: "8rem", base: "4rem" }}
+          px={{ base: 2, md: 14 }}
           display={"flex"}
           flexDirection={{ md: "row", base: "column" }}
         >
@@ -139,7 +170,7 @@ const DemoBookingPage = () => {
               className="gradient"
               fontWeight={"700"}
               fontSize={{ md: "4.625rem", base: "2.31rem" }}
-              lineHeight={{ md: "90.28px", base: "58px" }}
+              lineHeight={{ md: "90.28px", base: "48px" }}
               as={"h1"}
             >
               Explore hushh in <div className="new-gradient"> Action</div>
@@ -186,145 +217,220 @@ const DemoBookingPage = () => {
             flex={1}
             flexDirection={"column"}
           >
-           
-            {showCalendly ? (
-            <div style={{p:'0'}}>
-            <InlineWidget
-              url={`https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${phoneNumber}&product=${formData.product}`}
-            />
-          </div>
-      ):(
-        <form
-        style={{ padding: "2rem", width: "100%" }}
-        onSubmit={handleSubmit}
-      >
-        <Heading
-          color={"#FFFFFF"}
-          fontWeight={"700"}
-          lineHeight={"30px"}
-          letterSpacing={"-0.2px"}
-          fontSize={{ md: "1.25rem", base: "0.85" }}
-          display={"flex"}
-          gap={"0.25rem"}
-          mb={{ md: "1.75rem", base: "0.8rem" }}
-        >
-          Schedule your free{" "}
-          <div className="personalized-demo">Personalized Demo</div>
-        </Heading>
-        <FormControl isInvalid={errors.name}>
-          <FormLabel
-            fontWeight={"400"}
-            fontSize={{ md: "14px", base: "10px" }}
-            lineHeight={"26px"}
-            letterSpacing={"-0.4px"}
-            color={"#FFFFFF"}
-          >
-            Name*
-          </FormLabel>
-          <Input
-            type="text"
-            name="name"
-            focusBorderColor="#FFFFFF"
-            className="formInput"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Name"
-            border={"1px solid #242424"}
-            color={"#FFFFFF"}
-          />
-          <FormErrorMessage>{errors.name}</FormErrorMessage>
-        </FormControl>
-        <FormControl isInvalid={errors.email} mt={4}>
-          <FormLabel
-            fontWeight={"400"}
-            fontSize={{ md: "14px", base: "10px" }}
-            lineHeight={"26px"}
-            letterSpacing={"-0.4px"}
-            color={"#FFFFFF"}
-          >
-            Business Email*
-          </FormLabel>
-          <Input
-            className="formInput"
-            type="email"
-            focusBorderColor="#FFFFFF"
-            _active={{borderColor:'#FFFFFF'}}
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Email"
-            border={"1px solid #242424"}
-            color={"#FFFFFF"}
-          />
-          <FormErrorMessage>{errors.email}</FormErrorMessage>
-        </FormControl>
+            {showCalendly && !showThankYou && (
+              <div style={{ p: "0" }}>
+                <InlineWidget
+                  url={`https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${phoneNumber}&product=${formData.product}`}
+                  // onEventScheduled={onEventScheduled}
+                  onSubmit={() => {
+                    setScheduled(false);
+                    setShowCalendly(false);
+                    setShowThankYou(true);
+                  }}
+                  onEventScheduled={() => {
+                    setScheduled(false);
+                    setShowCalendly(false);
+                    setShowThankYou(true);
+                  }}
+                />
+              </div>
+            )}
+            {!showCalendly && !showThankYou && (
+              <form
+                style={{ padding: "2rem", width: "100%" }}
+                onSubmit={handleSubmit}
+              >
+                <Heading
+                  color={"#FFFFFF"}
+                  fontWeight={"700"}
+                  lineHeight={"30px"}
+                  letterSpacing={"-0.2px"}
+                  fontSize={{ md: "1.25rem", base: "1.25rem" }}
+                  display={"flex"}
+                  flexDirection={{base:'column', md:'row'}}
+                  gap={{md:"0.5rem", base:'0.1rem'}}
+                  mb={{ md: "1.75rem", base: "0.8rem" }}
+                >
+                  Schedule your free{" "}
+                  <div className="personalized-demo">Personalized Demo</div>
+                </Heading>
+                <FormControl isInvalid={errors.name}>
+                  <FormLabel
+                    fontWeight={"400"}
+                    fontSize={{ md: "14px", base: "10px" }}
+                    lineHeight={"26px"}
+                    letterSpacing={"-0.4px"}
+                    color={"#FFFFFF"}
+                  >
+                    Name*
+                  </FormLabel>
+                  <Input
+                    type="text"
+                    name="name"
+                    focusBorderColor="#FFFFFF"
+                    className="formInput"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Name"
+                    border={"1px solid #242424"}
+                    color={"#FFFFFF"}
+                  />
+                  <FormErrorMessage>{errors.name}</FormErrorMessage>
+                </FormControl>
+                <FormControl isInvalid={errors.email} mt={4}>
+                  <FormLabel
+                    fontWeight={"400"}
+                    fontSize={{ md: "14px", base: "10px" }}
+                    lineHeight={"26px"}
+                    letterSpacing={"-0.4px"}
+                    color={"#FFFFFF"}
+                  >
+                    Business Email*
+                  </FormLabel>
+                  <Input
+                    className="formInput"
+                    type="email"
+                    focusBorderColor="#FFFFFF"
+                    _active={{ borderColor: "#FFFFFF" }}
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email"
+                    border={"1px solid #242424"}
+                    color={"#FFFFFF"}
+                  />
+                  <FormErrorMessage>{errors.email}</FormErrorMessage>
+                </FormControl>
 
-        <FormControl isInvalid={errors.product} mt={4}>
-          <FormLabel
-            fontWeight={"400"}
-            fontSize={{ md: "14px", base: "10px" }}
-            lineHeight={"26px"}
-            letterSpacing={"-0.4px"}
-            color={"#FFFFFF"}
-          >
-            Product
-          </FormLabel>
-          <Select
-            name="product"
-            className="formInput"
-            focusBorderColor="#FFFFFF"
-            value={formData.product}
-            onChange={handleChange}
-            placeholder="Please Select Product"
-            color={"#FFFFFF"}
-            border={"1px solid #242424"}
-            bg={'#151515'}
-          >
-            {products.map((product, index) => (
-              <option style={{background:'#151515'}} key={index} value={product}>
-                {product}
-              </option>
-            ))}
-          </Select>
-          <FormErrorMessage>{errors.product}</FormErrorMessage>
-        </FormControl>
+                <FormControl isInvalid={errors.product} mt={4}>
+                  <FormLabel
+                    fontWeight={"400"}
+                    fontSize={{ md: "14px", base: "10px" }}
+                    lineHeight={"26px"}
+                    letterSpacing={"-0.4px"}
+                    color={"#FFFFFF"}
+                  >
+                    Product
+                  </FormLabel>
+                  <Select
+                    name="product"
+                    className="formInput"
+                    focusBorderColor="#FFFFFF"
+                    value={formData.product}
+                    onChange={handleChange}
+                    placeholder="Please Select Product"
+                    color={"#FFFFFF"}
+                    border={"1px solid #242424"}
+                    bg={"#151515"}
+                  >
+                    {products.map((product, index) => (
+                      <option
+                        style={{ background: "#151515" }}
+                        key={index}
+                        value={product}
+                      >
+                        {product}
+                      </option>
+                    ))}
+                  </Select>
+                  <FormErrorMessage>{errors.product}</FormErrorMessage>
+                </FormControl>
 
-        <FormControl isInvalid={errors.phoneNumber} mt={4}>
-          <FormLabel
-            color={"#FFFFFF"}
-            fontWeight={"400"}
-            fontSize={{ md: "14px", base: "10px" }}
-            lineHeight={"26px"}
-            letterSpacing={"-0.4px"}
-          >
-            Phone Number
-          </FormLabel>
-        <Box borderRadius={'5px'}>
-         <PhoneInput
-          defaultCountry="US"
-          color={"#FFFFFF"}
-          placeholder="Enter phone number"
-          value={phoneNumber}
-          onChange={setPhoneNumber}
-         />
-         {/* <PhoneInput
-          type="number"
-          name="phoneNumber"
-          value={formData.phoneNumber}
-          onChange={setPhoneNumber} 
-          placeholder="Enter phone number"
-          border={"1px solid #242424"}
-          color={"#FFFFFF"}
-         /> */}
-         </Box>  
-          <FormErrorMessage>{errors.phoneNumber}</FormErrorMessage>
-        </FormControl>
+                <FormControl isInvalid={errors.phoneNumber} mt={4}>
+                  <FormLabel
+                    color={"#FFFFFF"}
+                    fontWeight={"400"}
+                    fontSize={{ md: "14px", base: "10px" }}
+                    lineHeight={"26px"}
+                    letterSpacing={"-0.4px"}
+                  >
+                    Phone Number
+                  </FormLabel>
+                  <Box borderRadius={"5px"}>
+                    <PhoneInput
+                      defaultCountry="US"
+                      color={"#FFFFFF"}
+                      placeholder="Enter phone number"
+                      value={phoneNumber}
+                      onChange={setPhoneNumber}
+                    />
+                  </Box>
+                  <FormErrorMessage>{errors.phoneNumber}</FormErrorMessage>
+                </FormControl>
 
-        <Button fontWeight={'400'} fontSize={'1rem'} type="submit" mt={{md:6, base:3}} w={'full'} bg={'#0565FF'} color={'#FFFFFF'}>
-          Get Demo
-        </Button>
-      </form>
-      )}
+                <Button
+                  fontWeight={"400"}
+                  fontSize={"1rem"}
+                  type="submit"
+                  mt={{ md: 6, base: 3 }}
+                  w={"full"}
+                  bg={"#0565FF"}
+                  color={"#FFFFFF"}
+                >
+                  Get Demo
+                </Button>
+              </form>
+            )}
+            {!showCalendly && showThankYou && (
+              <Box p={{md:10, base:5}} textAlign="left">
+                <Text
+                  color="#FFFFFF"
+                  fontSize={{ md: "4.1rem", base: "2rem" }}
+                  fontWeight={"700"}
+                  lineHeight={{ md:"80px", base:'45px'}}
+                  mb={{md:"1.5rem", base:'1rem'}}
+                >
+                  <span style={{background:'linear-gradient(269.19deg, #E54D60 47%, #A342FF 98.76%)', color:'transparent',backgroundClip:'text'}}>Thank you</span>{" "} for your Submission.
+                </Text>
+                <Text
+                  fontWeight={"700"}
+                  lineHeight={"30px"}
+                  fontSize={{ md: "1.25rem", base: "0.75rem" }}
+                  letterSpacing={"-0.2px"}
+                  color={"#FFFFFF"}
+                  mb={{md:"2.75rem", base:'1.75rem'}}
+                >
+                  You’re one step closer to rocking the social media strategy
+                  you’ve been dreaming about. One of our experts will be
+                  reaching out soon.
+                </Text>
+                <Text
+                  letterSpacing={"-0.2px"}
+                  fontWeight={"700"}
+                  lineHeight={"30px"}
+                  fontSize={{ md: "1.25rem", base: "0.75rem" }}
+                  color={"#FFFFFF"}
+                >
+                  While you’re here...
+                </Text>
+                <Box
+                  mt={{md:"4rem", base:'2rem'}}
+                  p={{ md:"0.5rem",base:'0.25rem'}}
+                  align={"center"}
+                  border={"1px solid #606060"}
+                  borderRadius={"5px"}
+                  w={{ md:"22rem",base:'12rem'}}
+                  fontWeight={'400'}
+                  fontSize={{md:'1.15rem', base:'0.75rem'}}
+                  className="color-gradient"
+                  lineHeight={{ md:"32.4px",base:'20px'}}
+                  letterSpacing={{ md:"0.5rem",base:'0.25rem'}}
+                  _hover={{
+                    background:
+                      "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                    color: "white",
+                  }}
+                  cursor={"pointer"}
+                  onClick={() =>
+                    router.push(
+                      "https://sites.google.com/hush1one.com/drops/products/test-builds"
+                    )
+                  }
+                >
+                  EXPLORE OUR DEMOS
+                </Box>
+              </Box>
+             )}
           </Box>
         </Stack>
 
@@ -351,7 +457,11 @@ const DemoBookingPage = () => {
           >
             Interactive demo videos
           </Heading>
-          <Grid mt={{md:'2rem',base:'1rem'}} templateColumns="repeat(4, 1fr)" gap={6}>
+          <Grid
+            mt={{ md: "2rem", base: "1rem" }}
+            templateColumns={{ md:"repeat(4, 1fr)", base:"repeat(2,1fr)"}}
+            gap={6}
+          >
             <GridItem
               borderRadius={"8px"}
               p={"1rem"}
@@ -364,10 +474,10 @@ const DemoBookingPage = () => {
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
-                lineHeight={"32px"}
-                fontSize={{ md: "1.5rem", base: "1rem" }}
+                lineHeight={{md:"32px",base:'20px'}}
+                fontSize={{ md: "1.5rem", base: "0.85rem" }}
                 letterSpacing={"-0.2px"}
-                mt={{ md: "1.25rem", base: "0.75rem" }}
+                my={{ md: "2.15rem", base: "0.5rem" }}
               >
                 Hushh Button
               </Text>
@@ -377,7 +487,9 @@ const DemoBookingPage = () => {
                 letterSpacing={"-0.4px"}
                 lineHeight={"26px"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
-                my={{ md: "2.15rem", base: "1.15rem" }}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+                cursor={'pointer'}
+                onClick={() => window.open("https://youtu.be/k16zt1WSvnM?si=ZWkZt8Y-fahjyl4l", "_blank")}
               >
                 Watch Now
               </Text>
@@ -394,10 +506,10 @@ const DemoBookingPage = () => {
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
-                lineHeight={"32px"}
-                fontSize={{ md: "1.5rem", base: "1rem" }}
+                lineHeight={{md:"32px",base:'20px'}}
+                fontSize={{ md: "1.5rem", base: "0.85rem" }}
                 letterSpacing={"-0.2px"}
-                mt={{ md: "1.25rem", base: "0.75rem" }}
+                my={{ md: "2.15rem", base: "0.5rem" }}
               >
                 Browser Companion
               </Text>
@@ -407,7 +519,15 @@ const DemoBookingPage = () => {
                 letterSpacing={"-0.4px"}
                 lineHeight={"26px"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
-                my={{ md: "2.15rem", base: "1.15rem" }}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+                onClick={() => toast({
+                  title: 'Demo Coming Soon',
+                  // description: "Thank you for reaching out to us",
+                  status: 'warning',
+                  duration: 3000,
+                  isClosable: true,
+                })}
+                cursor={'pointer'}
               >
                 Watch Now
               </Text>
@@ -424,10 +544,10 @@ const DemoBookingPage = () => {
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
-                lineHeight={"32px"}
-                fontSize={{ md: "1.5rem", base: "1rem" }}
+                lineHeight={{md:"32px",base:'20px'}}
+                fontSize={{ md: "1.5rem", base: "0.85rem" }}
                 letterSpacing={"-0.2px"}
-                mt={{ md: "1.25rem", base: "0.75rem" }}
+                my={{ md: "2.15rem", base: "0.5rem" }}
               >
                 Vibe Search
               </Text>
@@ -437,7 +557,9 @@ const DemoBookingPage = () => {
                 letterSpacing={"-0.4px"}
                 lineHeight={"26px"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
-                my={{ md: "2.15rem", base: "1.15rem" }}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+                cursor={'pointer'}
+                onClick={() => window.open("https://youtu.be/2Ji8afCx5SI?si=sj6vlqdERzTPcClv", "_blank")}
               >
                 Watch Now
               </Text>
@@ -454,10 +576,10 @@ const DemoBookingPage = () => {
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
-                lineHeight={"32px"}
-                fontSize={{ md: "1.5rem", base: "1rem" }}
+                lineHeight={{md:"32px",base:'20px'}}
+                fontSize={{ md: "1.5rem", base: "0.85rem" }}
                 letterSpacing={"-0.2px"}
-                mt={{ md: "1.25rem", base: "0.75rem" }}
+                my={{ md: "2.15rem", base: "0.5rem" }}
               >
                 Hushh App
               </Text>
@@ -467,7 +589,10 @@ const DemoBookingPage = () => {
                 letterSpacing={"-0.4px"}
                 lineHeight={"26px"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
-                my={{ md: "2.15rem", base: "1.15rem" }}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+                display={'flex'}
+                cursor={'pointer'}
+                onClick={() => window.open("https://youtu.be/0-UHsKOYpQU?si=Q-9864DkYSlf0xCA", "_blank")}
               >
                 Watch Now
               </Text>

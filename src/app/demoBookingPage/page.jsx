@@ -14,9 +14,11 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import RigthArrow from "../_components/svg/icons/rightArrowWhite.svg"
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import BlueTick from "../_components/svg/icons/blueTick.svg";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 import {
   FormControl,
   FormLabel,
@@ -521,10 +523,12 @@ const DemoBookingPage = () => {
                 fontSize={{ md: "1rem", base: "0.65rem" }}
                 my={{ md: "2.15rem", base: "0.5rem" }}
                 cursor={'pointer'}
+                display={'flex'}
+                gap={{md:"0.4rem", base:'0.2rem'}}
                 onClick={() => window.open("https://youtu.be/k16zt1WSvnM?si=ZWkZt8Y-fahjyl4l", "_blank")}
               >
-                Watch Now
-              </Text>
+                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
+              </Text>  
             </GridItem>
             <GridItem
               borderRadius={"8px"}
@@ -559,9 +563,11 @@ const DemoBookingPage = () => {
                   duration: 3000,
                   isClosable: true,
                 })}
+                display={'flex'}
                 cursor={'pointer'}
+                gap={{md:"0.4rem", base:'0.2rem'}}
               >
-                Watch Now
+                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
               </Text>
             </GridItem>
             <GridItem
@@ -591,9 +597,11 @@ const DemoBookingPage = () => {
                 fontSize={{ md: "1rem", base: "0.65rem" }}
                 my={{ md: "2.15rem", base: "0.5rem" }}
                 cursor={'pointer'}
+                display={'flex'}
+                gap={{md:"0.4rem", base:'0.2rem'}}
                 onClick={() => window.open("https://youtu.be/2Ji8afCx5SI?si=sj6vlqdERzTPcClv", "_blank")}
               >
-                Watch Now
+                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
               </Text>
             </GridItem>
             <GridItem
@@ -624,9 +632,10 @@ const DemoBookingPage = () => {
                 my={{ md: "2.15rem", base: "0.5rem" }}
                 display={'flex'}
                 cursor={'pointer'}
+                gap={{md:"0.4rem", base:'0.2rem'}}
                 onClick={() => window.open("https://youtu.be/0-UHsKOYpQU?si=Q-9864DkYSlf0xCA", "_blank")}
               >
-                Watch Now
+                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
               </Text>
             </GridItem>
           </Grid>

@@ -32,8 +32,10 @@ import { InlineWidget, useCalendlyEventListener } from "react-calendly";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { useToast } from '@chakra-ui/react'
+import { useMediaQuery } from "react-responsive";
 
 const DemoBookingPage = () => {
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
   const [showCalendly, setShowCalendly] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [value, setValue] = useState();
@@ -156,7 +158,6 @@ const DemoBookingPage = () => {
       <Box p={{ base: 4, md: 8 }}>
         <Stack
           mt={{ md: "8rem", base: "4rem" }}
-          px={{ base: 2, md: 14 }}
           display={"flex"}
           flexDirection={{ md: "row", base: "column" }}
         >
@@ -164,6 +165,7 @@ const DemoBookingPage = () => {
             gap={{ md: "1.5rem", base: "1rem" }}
             display={"flex"}
             flex={1}
+            px={{ base: 2, md: 14 }}
             flexDirection={"column"}
           >
             <Heading
@@ -227,12 +229,13 @@ const DemoBookingPage = () => {
             display={"flex"}
             flex={1}
             flexDirection={"column"}
+            overflow={'hidden'}
           >
-            {showCalendly && !showThankYou && (
-              <div style={{ p: "0",  overflow:'hidden'  }}>
+            {showCalendly && !showThankYou && !isTabletOrMobile  && (
+              <div style={{ height: '100%', width: '100%',marginLeft:'-3rem',marginBottom:'-2rem' , p:'0', m:'0'}}>
                 <InlineWidget
-                  styles={{height:'100%',minHeight:'600px', width:'100%',marginTop:'-3rem',}}
-                  url={`https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${phoneNumber}&product=${formData.product}`}
+                  styles={{height:'750px', borderRadius:'1rem',maxHeight:'630px',width:'760px',marginTop:'-4rem'}}
+                  url={`https://calendly.com/hushh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${phoneNumber}&product=${formData.product}`}
                   onSubmit={() => {
                     setScheduled(false);
                     setShowCalendly(false);
@@ -245,6 +248,24 @@ const DemoBookingPage = () => {
                   }}
                 />
               </div>
+            )}
+            {showCalendly && !showThankYou && isTabletOrMobile  && (
+              <div style={{ p: "0", borderRadius:'1rem', overflow:'hidden'  }}>
+              <InlineWidget
+                styles={{height:'750px', minWidth:'320px',marginTop:'0rem',overflow:'hidden'}}
+                url={`https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${phoneNumber}&product=${formData.product}`}
+                onSubmit={() => {
+                  setScheduled(false);
+                  setShowCalendly(false);
+                  setShowThankYou(true);
+                }}
+                onEventScheduled={() => {
+                  setScheduled(false);
+                  setShowCalendly(false);
+                  setShowThankYou(true);
+                }}
+              />
+            </div>
             )}
             {!showCalendly && !showThankYou && (
               <form

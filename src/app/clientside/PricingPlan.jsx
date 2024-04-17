@@ -76,9 +76,8 @@ const planData = [
             "Share your vibe",
             "Style Profile",
             "Advance Search Filters",
-            "Unlimited Searches",
-            "Search History",
           ],
+          ["Unlimited Searches", "Search History"],
           ["Saved Searches", "Customizable UI"],
         ],
       },
@@ -179,7 +178,7 @@ const planData = [
             "Categorization",
             "Conversational AI",
             "Multimedia Sharing",
-            "Export Options",
+            "Export Options"],[
             "Customizable Themes",
             "Chat Backup",
           ],
@@ -295,138 +294,107 @@ const planData = [
 
 const workspacePlansData = [
   {
-    category: "Vibe Search",
+    category: "Luxury App Agent",
     plans: [
       {
         name: "EVERYDAY CONSUMERS",
         price: "Free",
         advetisment: "Ads included",
-        brands: "Upto 10 brands",
+        brands: "Basic Data Access",
         perMonth: "/mo",
-        features: [["Basic Search"], ["Search History", "Share your vibe"]],
+        features: [["Advanced Data Insights"], ["User Targeting Options", "Data Card Sharing","Commision Structure"],["Brand Reputation Tools","Campaign Management"]],
+      },
+      {
+        name: "PRO",
+        price: "$14",
+        advetisment: "Ads included",
+        brands: "Basic Data Access",
+        perMonth: "/mo",
+        features: [["Advanced Data Insights"], ["User Targeting Options", "Data Card Sharing","Commision Structure"],["Brand Reputation Tools","Campaign Management"]],
+      },
+      {
+        name: "PREMIUM",
+        price: "$23",
+        advetisment: "Ads Free",
+        brands: "Basic Data Access",
+        perMonth: "/mo",
+        features: [["Advanced Data Insights"], ["User Targeting Options", "Data Card Sharing","Commision Structure"],["Brand Reputation Tools","Campaign Management"],["Brand Interaction Analytics","Customizable Reporting"]],
+      },
+    ],
+  },
+  {
+    category: "Vibe Search API",
+    plans: [
+      {
+        name: "EVERYDAY CONSUMERS",
+        price: "Free",
+        advetisment: "Ads included",
+        brands: "Basic Integration",
+        perMonth: "/mo",
+        features: [
+          ["Maximum Products Indexed"],
+          [
+            "API Calls per month",
+            "Response Time",
+            "Recommendation Types",
+          ]
+        ],
       },
       {
         name: "PRO",
         price: "$14",
         advetisment: "No Ads",
-        brands: "Upto 50 brands",
+        brands: "Basic Integration",
         perMonth: "/mo",
         features: [
+          ["Maximum Products Indexed"],
           [
-            "Basic Search",
-            "Search History",
-            "Share your vibe",
-            "Style Profile",
-            "Advance Search Filters",
+            "API Calls per month",
+            "Response Time",
+            "Recommendation Types",
           ],
-          ["Unlimited Searches", "Search History"],
-          ["Saved Searches"],
+          ["Customer Data Integration", "Customizable Search Filters"],
         ],
       },
       {
         name: "PREMIUM",
         price: "$23",
         advetisment: "No Ads",
-        brands: "Unlimited brands",
+        brands: "Advanced Integration",
         perMonth: "/mo",
         features: [
+          ["Maximum Products Indexed"],
           [
-            "Basic Search",
-            "Search History",
-            "Share your vibe",
-            "Style Profile",
-            "Advance Search Filters",
-            "Unlimited Searches",
-            "Search History",
+            "API Calls per month",
+            "Response Time",
+            "Recommendation Types",
           ],
-          ["Saved Searches", "Customizable UI"],
-        ],
-      },
-    ],
-  },
-  {
-    category: "Wallet App",
-    plans: [
-      {
-        name: "EVERYDAY CONSUMERS",
-        price: "Free",
-        advetisment: "Ads included",
-        brands: "Upto 5 cards",
-        perMonth: "/mo",
-        features: [
-          ["Limited Sources Data Aggregation"],
+          ["Customer Data Integration", "Customizable Search Filters"],
           [
-            "Data Card Creation",
-            "Selective Data Sharing",
-            "Security Standard Encryption",
-          ],
-          ["Basic rewards ", "Anonymization"],
-        ],
-      },
-      {
-        name: "PRO",
-        price: "$14",
-        advetisment: "No Ads",
-        brands: "Upto 25 cards",
-        perMonth: "/mo",
-        features: [
-          ["Limited Sources Data Aggregation"],
-          [
-            "Data Card Creation",
-            "Selective Data Sharing",
-            "Security Standard Encryption",
-          ],
-          ["Advanced rewards", "Anonymization"],
-        ],
-      },
-      {
-        name: "PREMIUM",
-        price: "$23",
-        advetisment: "No Ads",
-        brands: "Upto 25 cards",
-        perMonth: "/mo",
-        features: [
-          ["Limited Sources Data Aggregation"],
-          [
-            "Data Card Creation",
-            "Selective Data Sharing",
-            "Security Standard Encryption",
-          ],
-          [
-            "Advanced rewards",
-            "Anonymization",
-            "Data Backup",
-            "Customizable Privacy Settings",
+            "Enhanced Search Analytics",
           ],
         ],
       },
     ],
   },
   {
-    category: "Valet Chat",
+    category: "Agent Concierge App",
     plans: [
       {
         name: "EVERYDAY CONSUMERS",
         price: "Free",
         advetisment: "Ads included",
-        brands: "Reciept Import",
+        brands: "Maximum Service Categories",
         perMonth: "/mo",
-        features: [["Categorization", "Conversational AI"]],
+        features: [["Client Matching"],["Lead Volume","Hushh Coin Commision","Recommendation Types"]],
       },
       {
         name: "PRO",
         price: "$14",
         advetisment: "No Ads",
-        brands: "Reciept Import",
+        brands: "Maximum Service Categories",
         perMonth: "/mo",
-        features: [
-          [
-            "Categorization",
-            "Conversational AI",
-            "Multimedia Sharing",
-            "Export Options",
-          ],
-        ],
+        features: [["Client Matching"],["Lead Volume","Hushh Coin Commision","Recommendation Types"],["Client Match Radius","Featured Agent Listing"]],
       },
       {
         name: "PREMIUM",
@@ -434,120 +402,7 @@ const workspacePlansData = [
         advetisment: "No Ads",
         brands: "Reciept Import",
         perMonth: "/mo",
-        features: [
-          [
-            "Categorization",
-            "Conversational AI",
-            "Multimedia Sharing",
-            "Export Options",
-            "Customizable Themes",
-            "Chat Backup",
-          ],
-        ],
-      },
-    ],
-  },
-  {
-    category: "Concierge App",
-    plans: [
-      {
-        name: "EVERYDAY CONSUMERS",
-        price: "Free",
-        advetisment: "Ads included",
-        brands: "Request Format",
-        perMonth: "/mo",
-        features: [
-          [
-            "Response Speed",
-            "Service Provider Choice",
-            "Basic Assistance",
-            "Request Anonymity Level",
-          ],
-        ],
-      },
-      {
-        name: "PRO",
-        price: "$14",
-        advetisment: "No Ads",
-        brands: "Request Format",
-        perMonth: "/mo",
-        features: [
-          [
-            "Response Speed",
-            "Service Provider Choice",
-            "Basic Assistance",
-            "Request Anonymity Level",
-          ],
-          ["Advanced AI Capabilities"],
-        ],
-      },
-      {
-        name: "PREMIUM",
-        price: "$23",
-        advetisment: "No Ads",
-        brands: "Request Format",
-        perMonth: "/mo",
-        features: [
-          [
-            "Response Speed",
-            "Service Provider Choice",
-            "Basic Assistance",
-            "Request Anonymity Level",
-          ],
-          ["Advanced AI Capabilities"],
-        ],
-      },
-    ],
-  },
-  {
-    category: "Browser Companion",
-    plans: [
-      {
-        name: "EVERYDAY CONSUMERS",
-        price: "Free",
-        advetisment: "Ads included",
-        brands: "Request Format",
-        perMonth: "/mo",
-        features: [
-          [
-            "Response Speed",
-            "Service Provider Choice",
-            "Basic Assistance",
-            "Request Anonymity Level",
-          ],
-        ],
-      },
-      {
-        name: "PRO",
-        price: "$14",
-        advetisment: "No Ads",
-        brands: "Request Format",
-        perMonth: "/mo",
-        features: [
-          [
-            "Response Speed",
-            "Service Provider Choice",
-            "Basic Assistance",
-            "Request Anonymity Level",
-          ],
-          ["Advanced AI Capabilities"],
-        ],
-      },
-      {
-        name: "PREMIUM",
-        price: "$23",
-        advetisment: "No Ads",
-        brands: "Request Format",
-        perMonth: "/mo",
-        features: [
-          [
-            "Response Speed",
-            "Service Provider Choice",
-            "Basic Assistance",
-            "Request Anonymity Level",
-          ],
-          ["Advanced AI Capabilities"],
-        ],
+        features: [["Client Matching"],["Lead Volume","Hushh Coin Commision","Recommendation Types"],["Client Match Radius","Featured Agent Listing"],["Advanced AI Capabilities"]],
       },
     ],
   },
@@ -979,7 +834,7 @@ const ClientPricingPlan = () => {
                           <Divider />
                           {plan.features.map((featureGroup, groupIndex) => (
                             <React.Fragment key={groupIndex}>
-                              {featureGroup.map((feature, featureIndex) => (
+                              {featureGroup?.map((feature, featureIndex) => (
                                 <Box
                                   display={"flex"}
                                   flexDirection={"row"}

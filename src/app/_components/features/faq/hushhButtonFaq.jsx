@@ -12,11 +12,10 @@ import {
   Tab,
   TabPanels,
   TabPanel,
-  Heading,
-  Container,
   SimpleGrid,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { Text } from "@chakra-ui/react";
 
 const faqData = {
   General: [

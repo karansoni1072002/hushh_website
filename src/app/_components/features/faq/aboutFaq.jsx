@@ -16,6 +16,7 @@ import {
   Container,
   SimpleGrid,
 } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import { useState } from "react";
 
 const faqData = {

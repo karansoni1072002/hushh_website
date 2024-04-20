@@ -473,7 +473,7 @@ const ClientVibeSearch = () => {
             <Image src={BgAnimation} alt="BgAnimation" style={{ position: 'absolute', top: '-15px', zIndex: '-10', width: '100%', height: '13rem' , filter: 'grayscale(100%)'}} unoptimized/>
           </Box>
           <VStack mb={{md:'2rem',base:'6rem'}} px={{ md: "10rem", base: "0rem" }} >
-            <Heading
+            <Text
               textAlign={"center"}
               className="gradient"
               fontWeight={"400"}
@@ -481,7 +481,7 @@ const ClientVibeSearch = () => {
               lineHeight={{ base: "35px", md: "75px" }}
             >
               Your Personal Fashion Stylist at <br></br> your Fingertips
-            </Heading>
+            </Text>
             <Text
               mt={{ md: "2rem", base: "1rem" }}
               color={"white"}

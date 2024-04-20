@@ -328,8 +328,7 @@ const ClientHome = () => {
           display={"flex"}
           flexDirection={"column"}
         >
-          <Heading
-            as={"h2"}
+          <Text
             className="color-gradient"
             fontWeight={600}
             letterSpacing={"0.25rem"}
@@ -337,7 +336,7 @@ const ClientHome = () => {
             lineHeight={'1rem'}
           >
             PRODUCT SHOWCASE
-          </Heading>
+          </Text>
           <Box
             align={"center"}
             lineHeight={{ md: "63.3px" }}

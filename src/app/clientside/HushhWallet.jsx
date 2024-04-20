@@ -220,7 +220,7 @@ const ClientHushhWallet = () => {
           lineHeight={{ md: "91.78px", base: "50px" }}
           fontSize={{ md: "5.4rem", base: "2.7rem" }}
         >
-          <Heading
+          <Text
             fontWeight={"400"}
             fontSize={"5.43rem"}
             fontFamily={"Bebas Neue"}
@@ -229,14 +229,14 @@ const ClientHushhWallet = () => {
             textAlign={{ base: "center" }}
           >
             YOUR PERSONAL DATA,
-          </Heading>
+          </Text>
           <Image src={HushhLogoS} alt="HushhLogoS" style={{ zIndex: "3" }} />
           <Image
             src={WhiteShadow}
             alt="whiteShadow"
             style={{ position: "absolute", zIndex: "-100" }}
           />
-          <Heading
+          <Text
             fontWeight={"400"}
             fontSize={"5.43rem"}
             fontFamily={"Bebas Neue"}
@@ -245,7 +245,7 @@ const ClientHushhWallet = () => {
             textAlign={{ base: "center" }}
           >
             YOUR OWN BUSINESS
-          </Heading>
+          </Text>
         </HStack>
         <Text
           px={{ md: "10rem", base: "1rem" }}
@@ -283,7 +283,7 @@ const ClientHushhWallet = () => {
           lineHeight={{ md: "91.78px", base: "50px" }}
           fontSize={{ md: "5.4rem", base: "2.7rem" }}
         >
-          <Heading
+          <Text
             fontWeight={"400"}
             fontSize={"2.75rem"}
             fontFamily={"Bebas Neue"}
@@ -291,14 +291,14 @@ const ClientHushhWallet = () => {
             textAlign={{ base: "center" }}
           >
             YOUR PERSONAL DATA,
-          </Heading>
+          </Text>
           <Image src={HushhLogoS} style={{ height: "9rem" }} alt="HushhLogoS" />
           <Image
             src={WhiteShadow}
             alt="whiteShadow"
             style={{ position: "absolute", zIndex: "-100", height: "25rem" }}
           />
-          <Heading
+          <Text
             fontWeight={"400"}
             fontSize={"2.75rem"}
             fontFamily={"Bebas Neue"}
@@ -307,7 +307,7 @@ const ClientHushhWallet = () => {
             px={"1rem"}
           >
             YOUR OWN BUSINESS
-          </Heading>
+          </Text>
         </HStack>
         <Text
           px={{ md: "10rem", base: "1rem" }}
@@ -341,7 +341,7 @@ const ClientHushhWallet = () => {
           textAlign={"left"}
           alignItems={"flex-start"}
         >
-          <Heading
+          <Text
             className="color-gradient"
             fontWeight={"600"}
             fontSize={{ md: "1rem", base: "0.75rem" }}
@@ -349,7 +349,7 @@ const ClientHushhWallet = () => {
             letterSpacing={"0.255rem"}
           >
             GLOBAL SCALE
-          </Heading>
+          </Text>
           <Text
             color={"white"}
             fontWeight={"700"}
@@ -380,7 +380,7 @@ const ClientHushhWallet = () => {
               border={"1px solid #FFFFFF"}
               borderRadius={"0.75rem"}
             >
-              <Heading
+              <Text
                 fontWeight={"700"}
                 fontSize={{ md: "1.5rem", base: "1rem" }}
                 lineHeight={{ md: "33.6px" }}
@@ -388,7 +388,7 @@ const ClientHushhWallet = () => {
                 marginBottom={{ base: "0.75rem", md: "1rem" }}
               >
                 Phone Data
-              </Heading>
+              </Text>
               <Text
                 fontWeight={"400"}
                 fontSize={{ md: "0.875rem", base: "0.5rem" }}
@@ -407,7 +407,7 @@ const ClientHushhWallet = () => {
               border={"1px solid #FFFFFF"}
               borderRadius={"0.75rem"}
             >
-              <Heading
+              <Text
                 fontWeight={"700"}
                 fontSize={{ md: "1.5rem", base: "1rem" }}
                 lineHeight={{ md: "33.6px" }}
@@ -415,7 +415,7 @@ const ClientHushhWallet = () => {
                 marginBottom={{ base: "0.75rem", md: "1rem" }}
               >
                 Data Companies
-              </Heading>
+              </Text>
               <Text
                 fontWeight={"400"}
                 fontSize={{ md: "0.875rem", base: "0.5rem" }}
@@ -434,7 +434,7 @@ const ClientHushhWallet = () => {
               border={"1px solid #FFFFFF"}
               borderRadius={"0.75rem"}
             >
-              <Heading
+              <Text
                 fontWeight={"700"}
                 fontSize={{ md: "1.5rem", base: "1rem" }}
                 lineHeight={{ md: "33.6px" }}
@@ -442,7 +442,7 @@ const ClientHushhWallet = () => {
                 marginBottom={{ base: "0.75rem", md: "1rem" }}
               >
                 Shopping Brands
-              </Heading>
+              </Text>
               <Text
                 fontWeight={"400"}
                 fontSize={{ md: "0.875rem", base: "0.5rem" }}
@@ -541,7 +541,7 @@ const ClientHushhWallet = () => {
         mt={{ md: "-18rem", base: "1.5ren" }}
         textAlign={{ md: "left", base: "center" }}
       >
-        <Heading
+        <Text
           px={{ md: "5rem", base: "1rem" }}
           mr={{ md: "40%", base: 0 }}
           fontWeight={"400"}
@@ -550,7 +550,7 @@ const ClientHushhWallet = () => {
           lineHeight={{ md: "63.3px", base: "43px" }}
         >
           Personalized Experiences, Rewarded Interactions
-        </Heading>
+        </Text>
         <Text
           px={{ md: "5rem", base: "1.25rem" }}
           mr={{ md: "40%", base: 0 }}
@@ -622,7 +622,7 @@ const ClientHushhWallet = () => {
             h={"70%"}
             right={0}
           >
-            <Heading
+            <Text
               mb={{ md: "1rem", base: "0.5rem" }}
               color={"#0D0D25"}
               fontSize={{ md: "3.75rem", base: "1.25rem" }}
@@ -631,7 +631,7 @@ const ClientHushhWallet = () => {
               mr={"40%"}
             >
               Enter a world made for you
-            </Heading>
+            </Text>
             <Text
               mb={{ md: "2rem", base: "1rem" }}
               color={"#0D0D25"}
@@ -692,7 +692,7 @@ const ClientHushhWallet = () => {
         px={"0.75rem"}
         pt={'0.75rem'}
       >
-        <Heading
+        <Text
           mb={{ base: "0.5rem" }}
           color={"#0D0D25"}
           fontSize={{ base: "1.25rem" }}
@@ -700,7 +700,7 @@ const ClientHushhWallet = () => {
           fontWeight={"500"}
         >
           Enter a world made for you
-        </Heading>
+        </Text>
         <Text
           mb={{ md: "2rem", base: "1rem" }}
           color={"#0D0D25"}

@@ -176,13 +176,13 @@ const ClientHushhValetChat = () => {
           textAlign={"center"}
           py={{ md: "3rem", base: "1rem" }}
         >
-          <Heading
+          <Text
             color={"#0D0D25"}
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
           >
             Manage all your receipts at one place and get insights on your finance with Gen AI
-          </Heading>
+          </Text>
           <Text
             mt={"1rem"}
             color={"#656565"}
@@ -458,7 +458,7 @@ const ClientHushhValetChat = () => {
         <Image src={BgAnimation} alt="BgAnimation" style={{position:'absolute', top:'-15px',zIndex:'-10',width:'100%',height:'13rem', filter:'grayscale(100%)'}} unoptimized/>
         </Box>
           <VStack px={{ md: "10rem", base: "0rem" }}>
-            <Heading
+            <Text
               textAlign={"center"}
               className="gradient"
               fontWeight={"400"}
@@ -466,7 +466,7 @@ const ClientHushhValetChat = () => {
               lineHeight={{ base: "45px", md: "75px" }}
             >
               Intelligent Finance and Receipts <br></br> Management
-            </Heading>
+            </Text>
             <Text
               mt={{ md: "2rem", base: "1rem" }}
               color={"white"}

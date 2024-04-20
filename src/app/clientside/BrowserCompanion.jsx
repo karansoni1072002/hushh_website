@@ -461,7 +461,7 @@ const ClientBrowserCompanion = () => {
           </Box>
           <VStack mb={{md:'2rem',base:'6rem'}} px={{ md: "10rem", base: "0rem" }} >
 
-            <Heading
+            <Text
               textAlign={"center"}
               className="gradient"
               fontWeight={"400"}
@@ -469,7 +469,7 @@ const ClientBrowserCompanion = () => {
               lineHeight={{ base: "45px", md: "75px" }}
             >
               Intelligent Insights and <br></br> Recommendations
-            </Heading>
+            </Text>
             <Text
               mt={{ md: "2rem", base: "1rem" }}
               color={"white"}

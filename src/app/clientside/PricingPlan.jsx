@@ -244,7 +244,7 @@ const ClientPricingPlan = () => {
           mt={{md:"8rem", base:'5rem'}}
           mr={{ md:"50%", base:'0'}}
         >
-          <Heading
+          <Text
             lineHeight={"32px"}
             display={"flex"}
             alignSelf={"flex-start"}
@@ -256,7 +256,7 @@ const ClientPricingPlan = () => {
             fontWeight="500"
           >
             Pricing
-          </Heading>
+          </Text>
           <Heading
             as={"h2"}
             lineHeight={{ md: "90.28px", base: "40px" }}
@@ -572,7 +572,7 @@ const ClientPricingPlan = () => {
                 <ListIconTick />
               </Box>
               <VStack textAlign={"left"}>
-                <Heading
+                <Text
                   alignContent={"flex-start"}
                   align={"flex-start"}
                   alignSelf={"flex-start"}
@@ -584,7 +584,7 @@ const ClientPricingPlan = () => {
                   lineHeight={{ md:'32px', base:'32px'}}
                 >
                   Simplicity & Transparency
-                </Heading>
+                </Text>
                 <Text fontWeight={'500'} fontSize={{md:'1rem', base:'0.65rem'}} lineHeight={{ md:'30px', base:'20px'}}>
                   Pricing is designed to be straightforward across all services,
                   ensuring users can easily select the tools that best fit their
@@ -597,7 +597,7 @@ const ClientPricingPlan = () => {
                 <ListIconTick />
               </Box>
               <VStack textAlign={"left"}>
-                <Heading
+                <Text
                   alignContent={"flex-start"}
                   align={"flex-start"}
                   alignSelf={"flex-start"}
@@ -609,7 +609,7 @@ const ClientPricingPlan = () => {
                   lineHeight={'32px'}
                 >
                   Scalable Solutions
-                </Heading>
+                </Text>
                 <Text fontWeight={'500'} fontSize={{md:'1rem', base:'0.65rem'}} lineHeight={{ md:'30px', base:'20px'}}>
                   From free basic access to premium options, services are built to scale with the growth of individuals & businesses, ensuring long-term support
                 </Text>
@@ -620,7 +620,7 @@ const ClientPricingPlan = () => {
                 <ListIconTick />
               </Box>
               <VStack textAlign={"left"}>
-                <Heading
+                <Text
                   alignContent={"flex-start"}
                   align={"flex-start"}
                   alignSelf={"flex-start"}
@@ -632,7 +632,7 @@ const ClientPricingPlan = () => {
                   lineHeight={'32px'}
                 >
                   Community Focus
-                </Heading>
+                </Text>
                 <Text fontWeight={'500'} fontSize={{md:'1rem', base:'0.65rem'}} lineHeight={{ md:'30px', base:'20px'}}>
                   Beyond the tools and platforms, Hushhh fosters a community for support, learning, and collaboration, enhancing the value of every subscription.
                 </Text>

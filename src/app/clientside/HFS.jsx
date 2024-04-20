@@ -86,7 +86,7 @@ const ClientHFS = () => {
           >
            Hushh For Students
           </Heading>
-          <Text
+          <Heading
             className="color-gradient"
             fontWeight={"700"}
             fontSize={{ md: "2rem", base: "1rem" }}
@@ -95,7 +95,7 @@ const ClientHFS = () => {
             as='h2'
           >
             Empowering and rewarding digital engagement
-          </Text>
+          </Heading>
           <Text
             px={{ md: "17.8rem" }}
             mb={{ base: "1rem", md: "4rem" }}
@@ -186,8 +186,7 @@ const ClientHFS = () => {
           textAlign={"center"}
           gap={{ md: "2rem", base: "1rem" }}
         >
-          <Heading
-            as="h1"
+          <Text
             className="gradient"
             fontSize={{ md: "3.75rem", base: "1.5rem" }}
             display={{ md:"flex", base:'none'}}
@@ -198,16 +197,15 @@ const ClientHFS = () => {
               Hushh elevates
             </Text>{" "}
             your experience
-          </Heading>
-          <Heading
-            as="h1"
+          </Text>
+          <Text
             className="gradient"
             fontSize={{ md: "3.75rem", base: "1.5rem" }}
             display={{ md:"none", base:'flex'}}
             fontWeight={400}
           >
             Here's how Hushh elevates your experience
-          </Heading>
+          </Text>
           <Text
             color={extendedTheme.colors.secondary}
             fontWeight={"500"}

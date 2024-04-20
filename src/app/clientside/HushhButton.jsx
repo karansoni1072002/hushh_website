@@ -187,13 +187,13 @@ import {
             textAlign={"center"}
             py={{ md: "3rem", base: "1rem" }}
           >
-            <Heading
+            <Text
               color={"#0D0D25"}
               fontWeight={"700"}
               fontSize={{ md: "3.5rem", base: "1.5rem" }}
             >
               Seamless Data Sharing for Personalized Experiences
-            </Heading>
+            </Text>
             <Text
               mt={"1rem"}
               color={"#656565"}
@@ -313,14 +313,14 @@ import {
               justifyContent="flex-start"
             >
               <Box display={{ base: "flex", md: "none" }} gap={"1rem"}>
-                <Heading className="gradient">
+                <Text className="gradient">
                   <Text fontSize={{ md: "2rem", base: "1.5rem" }}>
                     Hushh Button For
                   </Text>
                   <Text fontSize={{ md: "3.75rem", base: "2rem" }}>
                     Customers
                   </Text>
-                </Heading>
+                </Text>
                 <Image
                   src={HushhEmoji}
                   alt="hushhButtonCircle"
@@ -328,7 +328,7 @@ import {
                 />
               </Box>
 
-              <Heading
+              <Text
                 className="gradient"
                 display={{ md: "flex", base: "none" }}
                 flexDirection={"column"}
@@ -339,7 +339,7 @@ import {
                 <Text fontSize={{ md: "3.75rem", base: "2rem" }}>
                   Customers
                 </Text>
-              </Heading>
+              </Text>
 
               <UnorderedList
                 mb={"1rem"}
@@ -423,15 +423,14 @@ import {
                   style={{ width: "40%" }}
                   alt="hushhButtonCircle"
                 />
-                <Heading className="gradient">
+                <Text className="gradient">
                   <Text fontSize={{ md: "2rem", base: "1.5rem" }}>
                     Hushh Button For
                   </Text>
                   <Text fontSize={{ md: "3.75rem", base: "2rem" }}>Brands</Text>
-                </Heading>
+                </Text>
               </HStack>
-
-              <Heading
+              <Text
                 className="gradient"
                 display={{ md: "flex", base: "none" }}
                 flexDirection={{ md: "column" }}
@@ -440,7 +439,7 @@ import {
                   Hushh Button For
                 </Text>
                 <Text fontSize={{ md: "3.75rem", base: "2rem" }}>Brands</Text>
-              </Heading>
+              </Text>
               <UnorderedList
                 mt={{ base: "0.75rem", md: "1.5rem" }}
                 mb={"1rem"}
@@ -706,7 +705,7 @@ import {
             </Box>
 
             <VStack px={{ md: "10rem", base: "0rem" }}>
-              <Heading
+              <Text
                 textAlign={"center"}
                 className="gradient"
                 fontWeight={"400"}
@@ -714,7 +713,7 @@ import {
                 lineHeight={{ base: "45px", md: "75px" }}
               >
                 Transformed Shopping <br></br> Experience
-              </Heading>
+              </Text>
               <Text
                 mt={{ md: "2rem", base: "1rem" }}
                 color={"white"}
@@ -758,14 +757,14 @@ import {
                 />
               </Box>
 
-              <Heading
+              <Text
                 fontWeight={"400"}
                 fontSize={{ md: "3.75rem", base: "1.25rem" }}
                 lineHeight={{ md: "75px", base: "30px" }}
                 className="gradient"
               >
                 Hushh Button <br></br> Magic
-              </Heading>
+              </Text>
               <Text
                 lineHeight={{ md: "31.5px" }}
                 color={"white"}
@@ -798,14 +797,14 @@ import {
                   unoptimized
                 />
               </Box>
-              <Heading
+              <Text
                 fontWeight={"400"}
                 fontSize={{ md: "3.75rem", base: "1.25rem" }}
                 lineHeight={{ md: "75px", base: "30px" }}
                 className="gradient"
               >
                 Data Retrieval Made Easy
-              </Heading>
+              </Text>
               <Text
                 lineHeight={{ md: "31.5px" }}
                 color={"white"}

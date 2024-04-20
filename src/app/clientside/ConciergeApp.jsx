@@ -199,8 +199,7 @@ const ClientConciergeApp = () => {
           textAlign={"center"}
           gap={{ md: "2rem", base: "1rem" }}
         >
-          <Heading
-            as="h1"
+          <Text
             className="gradient"
             fontSize={{ md: "3.75rem", base: "1.5rem" }}
             display={{ md:"flex", base:'none'}}
@@ -211,16 +210,15 @@ const ClientConciergeApp = () => {
               Hushh elevates
             </Text>{" "}
             your experience
-          </Heading>
-          <Heading
-            as="h1"
+          </Text>
+          <Text
             className="gradient"
             fontSize={{ md: "3.75rem", base: "1.5rem" }}
             display={{ md:"none", base:'flex'}}
             fontWeight={400}
           >
             Here's how Hushh elevates your experience
-          </Heading>
+          </Text>
           <Text
             color={extendedTheme.colors.secondary}
             fontWeight={"500"}
@@ -293,7 +291,7 @@ const ClientConciergeApp = () => {
           mt={{ base: "2rem", md: "9rem" }}
           px={{ md: "9rem", base: "1rem" }}
         >
-          <Heading
+          <Text
             className="gradient"
             fontWeight={"700"}
             lineHeight={{ md: "75px", base: "28px" }}
@@ -302,8 +300,8 @@ const ClientConciergeApp = () => {
             display={{md:'flex', base:'none'}}
           >
             Hushh caters to a wide range <br></br> of needs, including
-          </Heading>
-          <Heading
+          </Text>
+          <Text
             className="gradient"
             fontWeight={"700"}
             lineHeight={{ md: "75px", base: "28px" }}
@@ -313,7 +311,7 @@ const ClientConciergeApp = () => {
             textAlign={'center'}
           >
             Hushh caters to a wide range of needs, including
-          </Heading>
+          </Text>
           <Grid
             templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
             gap={{ md: 10, base: 4 }}
@@ -327,14 +325,14 @@ const ClientConciergeApp = () => {
               bg={"white"}
               borderRadius={"1.75rem"}
             >
-              <Heading
+              <Text
                 fontWeight={"700"}
                 fontSize={{ md: "1.75rem",base:'1rem' }}
                 lineHeight={{ md:"38.53px"}}
                 marginBottom={{base:'0.75rem', md:'2rem'}}
               >
                 Travel
-              </Heading>
+              </Text>
               <Text
                 fontWeight={"400"}
                 fontSize={{ md: "1rem", base: "0.5rem" }}
@@ -354,7 +352,7 @@ const ClientConciergeApp = () => {
               borderRadius={"1.75rem"}
               background="linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)"
             >
-              <Heading
+              <Text
                 fontWeight={"700"}
                 fontSize={{ md: "1.75rem",base:'1rem' }}
                 lineHeight={{ md:"38.53px"}}
@@ -362,7 +360,7 @@ const ClientConciergeApp = () => {
                 color={'white'}
               >
                 Events
-              </Heading>
+              </Text>
               <Text
                 fontWeight={"400"}
                 fontSize={{ md: "1rem", base: "0.5rem" }}
@@ -383,14 +381,14 @@ const ClientConciergeApp = () => {
               bg={"white"}
               borderRadius={"1.75rem"}
             >
-              <Heading
+              <Text
                 fontWeight={"700"}
                 fontSize={{ md: "1.75rem",base:'1rem' }}
                 lineHeight={{ md:"38.53px"}}
                 marginBottom={{base:'0.75rem', md:'2rem'}}
               >
                 Lifestyle
-              </Heading>
+              </Text>
               <Text
                 fontWeight={"400"}
                 fontSize={{ md: "1rem", base: "0.5rem" }}
@@ -422,25 +420,24 @@ const ClientConciergeApp = () => {
           maxW={{ base: "100%", md: "50%" }}
           textAlign={{ base: "center", md: "left" }}
         >
-          <Heading
-            as={"h2"}
+          <Text
             className="color-gradient"
             fontWeight={600}
             letterSpacing={"0.25rem"}
             fontSize={"1rem"}
           >
             Concierge App
-          </Heading>{" "}
+          </Text>{" "}
           <Box maxWidth={{ base: "100%", md: "40%" }} display={{base:"flex", md:'none'}} mb={{base:'2rem'}}>
           <Image src={ConciergeMobile} alt="ConciergeMobile" />
         </Box>
-          <Heading
+          <Text
             className="gradient"
             fontWeight="700"
             fontSize={{ md: "3.75rem", base: "1.25rem" }}
           >
             The <br></br> Hushh Difference
-          </Heading>
+          </Text>
           <Text
             color={extendedTheme.colors.secondary}
             lineHeight={{ base: "18px", md: "36px" }}

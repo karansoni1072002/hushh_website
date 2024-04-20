@@ -29,7 +29,7 @@ const PrivacyPolicy = () => {
                     </Heading>
                     <div className="pb-24">
 
-                        <h2 className='font-medium text-center text-fontColor4'>Hushone’s Privacy Policy explains how we collect and use your personal data</h2>
+                        <h2 className='font-medium text-center text-fontColor4'>Our Privacy Policy explains how we collect and use your personal data</h2>
 
 
                     </div>

@@ -107,7 +107,7 @@ const ClientHushhWallet = () => {
           >
             World's first AI Powered Data Wallet
           </Heading>
-          <Heading
+          <Text
             px={{ md: "17.8rem" }}
             mb={{ base: "1rem", md: "1rem" }}
             textAlign={"center"}
@@ -118,7 +118,7 @@ const ClientHushhWallet = () => {
           >
             Higher perk adoption, instant expense management, simple benefits
             access and much more
-          </Heading>
+          </Text>
           <Button
             borderRadius={"3.3rem"}
             w={"fit-content"}

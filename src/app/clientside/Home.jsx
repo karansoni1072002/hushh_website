@@ -124,9 +124,9 @@ const ClientHome = () => {
               </Heading>
             </HStack>
 
-            <Heading color={"#656565"} fontSize={"18px"} as={'h2'}>
+            <Text color={"#656565"} fontSize={"18px"}>
               We're the Data API Business, helping you collect, manage, and monetize data
-            </Heading>
+            </Text>
 
             <Button
               border={"3px solid #606060"}

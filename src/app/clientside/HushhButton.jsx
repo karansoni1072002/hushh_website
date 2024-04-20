@@ -81,19 +81,18 @@ import {
             >
               Hushh Button
             </Heading>
-            <Heading
+            <Text
               px={{ md: "17.8rem" }}
               mb={{ base: "1rem", md: "4rem" }}
               textAlign={"center"}
               color={"#656565"}
-              as={'h2'}
               fontSize={{ md:'1rem', base:'1rem'}}
             >
               Imagine a world where shopping feels effortless and tailored just
               for you. Hushh Button, a powerful plugin, bridges the gap between
               your preferences/choices/needs/likes and your favourite brands
               with GenAI
-            </Heading>
+            </Text>
             <Button
               border={"1px solid #606060"}
               borderRadius={"2px"}

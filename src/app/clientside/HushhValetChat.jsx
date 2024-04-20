@@ -177,7 +177,7 @@ const ClientHushhValetChat = () => {
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
             as={'h2'}
           >
-            Manage & keep all your receipts in one place, gaining insights into your finances
+            Manage your receipts in one place, gaining insights into your finances
           </Text>
           <Text
             mt={"1rem"}

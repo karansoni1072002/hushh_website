@@ -2,7 +2,7 @@ import {
   Box,
   Grid,
   HStack,
-  Heading,
+  Text,
   Text,
   VStack,
   Button,
@@ -23,14 +23,14 @@ const BrandWalletSection = () => {
 
   return (
     <VStack mt={{ md: "8rem", base: "5rem" }}>
-      <Heading
+      <Text
         className="gradient"
         fontSize={{ md: "3.75rem", base: "1.5rem" }}
         mx={"0.5rem"}
         textAlign={"center"}
       >
         Build your own brand wallet
-      </Heading>
+      </Text>
       <Text
         textAlign={"center"}
         fontSize={{ md: "1rem" }}
@@ -63,12 +63,12 @@ const BrandWalletSection = () => {
             borderRadius={"2.5rem"}
           >
             <SendReceiveIcon />
-            <Heading
+            <Text
               fontSize={{ md: "1.25rem", base: "1rem" }}
               color={extendedTheme.colors._white}
             >
               HUSHH Bot
-            </Heading>
+            </Text>
             <Text color={extendedTheme.colors._white}>
             Your personal AI, learning from you. Get things done, find answers, and live smarter
             </Text>
@@ -83,12 +83,12 @@ const BrandWalletSection = () => {
             borderRadius={"2.5rem"}
           >
             <WalletIcon />
-            <Heading
+            <Text
               fontSize={{ md: "1.25rem", base: "1rem" }}
               color={extendedTheme.colors._white}
             >
               100% SECURE WALLET
-            </Heading>
+            </Text>
             <Text color={extendedTheme.colors._white}>
               Rest assured knowing that your digital assets are in safe hands with Hushh Bot, your 100% secure wallet solution.
             </Text>
@@ -111,9 +111,9 @@ const BrandWalletSection = () => {
             borderRadius={"1rem"}
           >
             <SendReceiveIcon width={20} height={20} />
-            <Heading fontSize={"0.875rem"} color={extendedTheme.colors._white}>
+            <Text fontSize={"0.875rem"} color={extendedTheme.colors._white}>
               HUSHH BOT
-            </Heading>
+            </Text>
             <Text
               fontSize={"0.75rem"}
               color={extendedTheme.colors._white}
@@ -131,9 +131,9 @@ const BrandWalletSection = () => {
             borderRadius={"1rem"}
           >
             <WalletIcon width={20} height={20} /> {/* Adjust icon size */}
-            <Heading fontSize={"0.875rem"} color={extendedTheme.colors._white}>
+            <Text fontSize={"0.875rem"} color={extendedTheme.colors._white}>
             100% SECURE WALLET
-            </Heading>
+            </Text>
             <Text
               fontSize={"0.75rem"}
               color={extendedTheme.colors._white}
@@ -155,9 +155,9 @@ const BrandWalletSection = () => {
           // display={{base:'none', md:'flex'}}
         >
           <VStack align={"left"} px={"2rem"} pt={"2rem"} gap={"1.6rem"} position={'relative'}>
-            <Heading fontSize={"20px"} color={extendedTheme.colors._white}>
+            <Text fontSize={"20px"} color={extendedTheme.colors._white}>
               iOS & ANDROID APP
-            </Heading>
+            </Text>
             <Text color={extendedTheme.colors._white}>
             Experience the convenience of managing your digital life with Hushh, available on both iOS and Android.
             </Text>
@@ -188,12 +188,12 @@ const BrandWalletSection = () => {
             borderRadius={"2.5rem"}
           >
             <ChartIcon />
-            <Heading
+            <Text
               fontSize={{ md: "1.25rem", base: "1rem" }}
               color={extendedTheme.colors._white}
             >
               SHARE AND BENEFIT
-            </Heading>
+            </Text>
             <Text color={extendedTheme.colors._white}>
                Share your data, earn points, and unlock rewards like discounts, gift cards, and cashback offers from our partner brands!
             </Text>
@@ -208,12 +208,12 @@ const BrandWalletSection = () => {
             borderRadius={"2.5rem"}
           >
             <RefreshIcon />
-            <Heading
+            <Text
               fontSize={{ md: "1.25rem", base: "1rem" }}
               color={extendedTheme.colors._white}
             >
               RECEIPT RADAR
-            </Heading>
+            </Text>
             <Text color={extendedTheme.colors._white}>
                With automatic scanning, smart categorization, and customizable options, managing expenses becomes a breeze.
             </Text>
@@ -235,9 +235,9 @@ const BrandWalletSection = () => {
             borderRadius={"1rem"}
           >
             <ChartIcon width={20} height={20} /> {/* Adjust icon size */}
-            <Heading fontSize={"0.875rem"} color={extendedTheme.colors._white}>
+            <Text fontSize={"0.875rem"} color={extendedTheme.colors._white}>
             Seamless Integration
-            </Heading>{" "}
+            </Text>{" "}
             <Text
               fontSize={"0.75rem"}
               color={extendedTheme.colors._white}
@@ -255,9 +255,9 @@ const BrandWalletSection = () => {
             borderRadius={"1rem"}
           >
             <RefreshIcon width={20} height={20} />
-            <Heading fontSize={"0.875rem"} color={extendedTheme.colors._white}>
+            <Text fontSize={"0.875rem"} color={extendedTheme.colors._white}>
             Optimized Data Sharing
-            </Heading>
+            </Text>
             <Text
               fontSize={"0.75rem"}
               color={extendedTheme.colors._white}

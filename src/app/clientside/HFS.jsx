@@ -257,9 +257,9 @@ const ClientHFS = () => {
 
         <VStack mt={{md:'5rem',base:'2rem'}}>
             <Box mx={{md:'8rem', base:'1.5rem'}} textAlign={'center'}>
-                <Heading className="gradient" lineHeight={{md:'75px', base:'30px'}} fontWeight={'700'} fontSize={{md:'3.75rem', base:'1.5rem'}}>
+                <Text className="gradient" lineHeight={{md:'75px', base:'30px'}} fontWeight={'700'} fontSize={{md:'3.75rem', base:'1.5rem'}}>
                     Control your data, earn rewards – hushh for students makes your data work for you.
-                </Heading>
+                </Text>
             </Box>
             <Box position={'relative'} mt={{md:'-17rem'}}>
                <Image src={AssestBg} alt="AssestBg" />
@@ -276,7 +276,7 @@ const ClientHFS = () => {
           display={'flex'}
           alignItems={'center'}
         >
-          <Heading
+          <Text
             className="gradient"
             fontWeight={"700"}
             lineHeight={{ md: "75px", base: "28px" }}
@@ -286,8 +286,8 @@ const ClientHFS = () => {
             textAlign={'center'}
           >
             Hushh caters to a wide range <br></br> of needs, including
-          </Heading>
-          <Heading
+          </Text>
+          <Text
             className="gradient"
             fontWeight={"700"}
             lineHeight={{ md: "75px", base: "28px" }}
@@ -297,7 +297,7 @@ const ClientHFS = () => {
             textAlign={'center'}
           >
             Hushh caters to a wide range of needs, including
-          </Heading>
+          </Text>
           <Grid
             templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
             gap={{ md: 10, base: 4 }}
@@ -311,14 +311,14 @@ const ClientHFS = () => {
               bg={"white"}
               borderRadius={"1.75rem"}
             >
-              <Heading
+              <Text
                 fontWeight={"700"}
                 fontSize={{ md: "1.75rem",base:'1rem' }}
                 lineHeight={{ md:"38.53px"}}
                 marginBottom={{base:'0.75rem', md:'1rem'}}
               >
                 Students
-              </Heading>
+              </Text>
               <Text
                 fontWeight={"400"}
                 fontSize={{ md: "1rem", base: "0.5rem" }}
@@ -337,7 +337,7 @@ const ClientHFS = () => {
               borderRadius={"1.75rem"}
               background="linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)"
             >
-              <Heading
+              <Text
                 fontWeight={"700"}
                 fontSize={{ md: "1.75rem",base:'1rem' }}
                 lineHeight={{ md:"38.53px"}}
@@ -345,7 +345,7 @@ const ClientHFS = () => {
                 color={'white'}
               >
                 Business
-              </Heading>
+              </Text>
               <Text
                 fontWeight={"400"}
                 fontSize={{ md: "1rem", base: "0.5rem" }}
@@ -364,14 +364,14 @@ const ClientHFS = () => {
               bg={"white"}
               borderRadius={"1.75rem"}
             >
-              <Heading
+              <Text
                 fontWeight={"700"}
                 fontSize={{ md: "1.75rem",base:'1rem' }}
                 lineHeight={{ md:"38.53px"}}
                 marginBottom={{base:'0.75rem', md:'1rem'}}
               >
                 Developers
-              </Heading>
+              </Text>
               <Text
                 fontWeight={"400"}
                 fontSize={{ md: "1rem", base: "0.5rem" }}

@@ -29,11 +29,7 @@ const TermsOfUse = () => {
                         Terms of Use
                     </Heading>
                     <div className="pb-24">
-                        {/* <h1 className='text-4xl font-bold text-center pb-6'>Hushone, Inc Privacy Policy</h1> */}
-
-                        <p className='font-medium text-center text-fontColor4'>These Terms and Conditions of Use (the "Terms of Use") apply to the Hushone, Inc</p>
-
-
+                        <h2 className='font-medium text-center text-fontColor4'>These Terms and Conditions of Use (the "Terms of Use") apply to the Hushone, Inc</h2>
                     </div>
                     <div className="text-base font-semibold text-fontColor4 leading-9">
                         Updated Mar 17, 2024

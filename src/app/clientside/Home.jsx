@@ -96,7 +96,7 @@ const ClientHome = () => {
           >
             <HStack>
               <Heading
-                as={"h1"}
+                as={"h3"}
                 fontSize={{ md: "5rem", base: "2rem" }}
                 className="text-headText"
                 lineHeight={{ md: "5.5rem", base: "2.5rem" }}
@@ -347,6 +347,7 @@ const ClientHome = () => {
             display={"flex"}
             flexDirection={'row'}
             fontSize={{ md: "3.75rem", base: "1.5rem" }}
+            as={"h1"}
           >
             Technology For <Text fontWeight ='700' display='flex'  marginLeft={{ md:'1rem'}}> Everyone!</Text> 
           </Box>

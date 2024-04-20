@@ -55,10 +55,7 @@ import {
   
   return (
     <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <Box
+      <Box
           maxW={"100%"}
           minW={"100%"}
           display={"flex"}
@@ -818,8 +815,7 @@ import {
             </VStack>
           </HStack>
           <HushhButtonFaq />
-        </Box>
-      )}
+      </Box>
       <ContactForm />
     </>
   )

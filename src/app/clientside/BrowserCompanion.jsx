@@ -60,8 +60,6 @@ const ClientBrowserCompanion = () => {
           flexDirection={"column"}
           mt={{ base: "3rem" }}
         >
-
-
           <Heading
             fontWeight={"700"}
             lineHeight={{ md: "255.6px", base: "60px" }}

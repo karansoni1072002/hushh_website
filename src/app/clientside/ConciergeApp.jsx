@@ -34,7 +34,7 @@ import BoltIcon from "../_components/svg/boltIcon";
 import { useState, useEffect } from "react";
 import MarketIcon from "../_components/svg/marketIcon";
 import ConciergeMobile from "../_components/svg/icons/conciergeMobileIcon.svg";
-import Loading from "../_components/features/loading";
+// import Loading from "../_components/features/loading";
 
 const handlePlayDemo = () => {
     // Open the URL in a new tab
@@ -68,9 +68,6 @@ const ClientConciergeApp = () => {
   
   return (
     <>
-    {loading ? (
-      <Loading />
-    ) : (
       <Box
         maxW={"100%"}
         minW={"100%"}
@@ -481,7 +478,6 @@ const ClientConciergeApp = () => {
 
         <ConciergeFaq />
       </Box>
-    )}
       <ContactForm />
     </>
   )

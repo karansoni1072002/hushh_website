@@ -15,7 +15,6 @@ import ValetChatFaq from '../_components/features/faq/valetChatFaq';
 import ContactForm from '../_components/features/contactForm'
 import BgAnimation from "../../../public/Gif/bgAnimation.gif";
 import { useState, useEffect } from "react";
-import Loading from "../_components/features/loading";
 import ValetChatGif from "../../../public/Gif/valeTChatBg.gif";
 
 const ClientHushhValetChat = () => {
@@ -46,9 +45,6 @@ const ClientHushhValetChat = () => {
 
   return (
     <>
-    {loading ? (
-      <Loading />
-    ) : (
       <Box
         maxW={"100%"}
         minW={"100%"}
@@ -481,7 +477,6 @@ const ClientHushhValetChat = () => {
         </Stack>
         <ValetChatFaq />
       </Box>
-    )}
       <ContactForm />
     </>
   )

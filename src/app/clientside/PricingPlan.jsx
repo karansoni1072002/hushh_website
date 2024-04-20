@@ -32,6 +32,7 @@ import PricingFaq from "../_components/features/faq/pricingFaq";
 import ContactForm from "../_components/features/contactForm";
 import { useMediaQuery } from "react-responsive";
 import InfoIcon from "../_components/svg/icons/infoIcon.svg";
+import { Tooltip } from "@chakra-ui/react";
 
 const planData = [
   {
@@ -860,7 +861,9 @@ const ClientPricingPlan = () => {
                                     {feature}
                                   </Text>
                                   <Box display={"flex"} alignItems={"flex-end"}>
+                                  <Tooltip hasArrow label='Advanced rewards (early access, exclusive offers)' bg='#FFFFFF' borderRadius={'8px'} color='#000000'>
                                     <Image src={InfoIcon} alt="InfoIcon" />
+                                  </Tooltip>  
                                   </Box>
                                 </Box>
                               ))}
@@ -881,7 +884,7 @@ const ClientPricingPlan = () => {
                             color={"white"}
                             borderRadius={"4px"}
                             fontWeight={"600"}
-                            className="planButton"
+                            className="planButton"  
                             fontSize={{ md: "1rem", base: "0.6rem" }}
                             _hover={{
                               color: "black",

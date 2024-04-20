@@ -1,6 +1,5 @@
 "use client";
 import {
-  Text,
   VStack,
   Text,
   Box,

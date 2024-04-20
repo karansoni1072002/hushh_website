@@ -1,5 +1,5 @@
 import React from "react";
-import { GridItem, VStack, Heading, Text } from "@chakra-ui/react";
+import { GridItem, VStack, Text } from "@chakra-ui/react";
 
 const ServiceCard = ({ icon, title, description, alignItems , textAlign , onClick}) => {
   return (

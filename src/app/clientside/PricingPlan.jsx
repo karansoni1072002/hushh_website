@@ -752,6 +752,7 @@ const ClientPricingPlan = () => {
                         alignItems={"center"}
                         borderRadius={"4px"}
                         flexDirection={"column"}
+                        className="plan"
                       >
                         <Box
                           flex={1}
@@ -772,6 +773,7 @@ const ClientPricingPlan = () => {
                             bg={"#146EF5"}
                             w={{ md: "max-content" }}
                             borderRadius={"4px"}
+                            className="planName"
                           >
                             <Text
                               px={{ md: "1rem", base: "0.5rem" }}
@@ -780,6 +782,7 @@ const ClientPricingPlan = () => {
                               lineHeight={"20px"}
                               fontSize={{ md: "0.875rem", base: "0.5rem" }}
                             >
+                              {/* I want this plan name box to be black in color and white in bg when in hovering condition */}
                               {plan.name}
                             </Text>
                           </Box>
@@ -788,6 +791,7 @@ const ClientPricingPlan = () => {
                             fontSize={{ base: "1.75rem", md: "4.125rem" }}
                             lineHeight={{ md: "79.2px", base: "40px" }}
                             mt={{ md: "1rem", base: "0.5rem" }}
+                            className="planPrice"
                           >
                             {renderPrice(plan.price)}
                             {"  "}
@@ -820,6 +824,7 @@ const ClientPricingPlan = () => {
                             lineHeight={"25.6px"}
                             fontWeight={"400"}
                             fontSize={{ md: "1rem", base: "0.65rem" }}
+                            className="planAdvertisment"
                           >
                             {plan.advetisment}
                           </Text>
@@ -828,6 +833,7 @@ const ClientPricingPlan = () => {
                             lineHeight={{ md: "28px", base: "18px" }}
                             fontWeight={"400"}
                             fontSize={{ md: "1rem", base: "0.65rem" }}
+                            className="planBrands"
                           >
                             {plan.brands}
                           </Text>
@@ -849,6 +855,7 @@ const ClientPricingPlan = () => {
                                     fontWeight={"500"}
                                     fontSize={{ md: "1rem", base: "0.75rem" }}
                                     w={"70%"}
+                                    className="planFeatures"
                                   >
                                     {feature}
                                   </Text>
@@ -874,6 +881,7 @@ const ClientPricingPlan = () => {
                             color={"white"}
                             borderRadius={"4px"}
                             fontWeight={"600"}
+                            className="planButton"
                             fontSize={{ md: "1rem", base: "0.6rem" }}
                             _hover={{
                               color: "black",

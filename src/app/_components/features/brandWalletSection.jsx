@@ -3,7 +3,6 @@ import {
   Grid,
   HStack,
   Text,
-  Text,
   VStack,
   Button,
 } from "@chakra-ui/react";

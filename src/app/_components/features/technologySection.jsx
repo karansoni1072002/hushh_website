@@ -19,13 +19,13 @@ const TechnologySection = () => {
         flexDirection={"column"}
         textAlign={"center"}
       >
-        <Heading
+        <Text
           className="gradient"
           fontSize={{ md:"3.75rem", base:'1.5rem'}}
           display={"flex"}
         >
           Our Technology Services
-        </Heading>
+        </Text>
         <Text
           color={extendedTheme.colors.secondary}
           fontWeight={"500"}

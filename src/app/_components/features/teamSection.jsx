@@ -147,7 +147,6 @@ const TeamSection = () => {
           <VStack mt={{ base: "2rem", md: "8rem" }}>
             <div className="pb-2.5">
               <Text
-                as={"h2"}
                 className="color-gradient"
                 fontWeight={600}
                 letterSpacing={"0.25rem"}

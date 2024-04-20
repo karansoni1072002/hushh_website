@@ -127,7 +127,7 @@ export default function About() {
         </div>
         <div className="text-center md:mt-0 mt-24">
           <VStack>
-            <Heading
+            <Text
               as={"h2"}
               className="color-gradient"
               fontWeight={600}
@@ -135,7 +135,7 @@ export default function About() {
               fontSize={"1rem"}
             >
               CORE VALUE COMPANY
-            </Heading>
+            </Text>
             <Text
               className="gradient"
               fontWeight={"400"}

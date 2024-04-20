@@ -1,6 +1,6 @@
 "use client";
 import {
-  Heading,
+  Text,
   VStack,
   Text,
   Box,
@@ -49,18 +49,17 @@ const TeamSection = () => {
         <div className="">
           <VStack>
             <div className="pb-2.5">
-              <Heading
-                as={"h2"}
+              <Text
                 className="color-gradient"
                 fontWeight={600}
                 letterSpacing={"0.25rem"}
                 fontSize={"1rem"}
               >
                 MEET THE FOUNDERS
-              </Heading>
+              </Text>
             </div>
             <div className="md:pb-10 pb-4">
-              <Heading
+              <Text
                 className="gradient"
                 fontWeight={"400"}
                 fontSize={{ base: "2.5rem", md: "3.75rem" }}
@@ -68,7 +67,7 @@ const TeamSection = () => {
                 textAlign={{ base: "center" }}
               >
                 Our Team Leader
-              </Heading>
+              </Text>
             </div>
             <div className="font-medium text-fontColor4 leading-9 md:w-[30rem] text-center">
               <p>
@@ -148,7 +147,7 @@ const TeamSection = () => {
         <div className="mt-24 md:mt-0">
           <VStack mt={{ base: "2rem", md: "8rem" }}>
             <div className="pb-2.5">
-              <Heading
+              <Text
                 as={"h2"}
                 className="color-gradient"
                 fontWeight={600}
@@ -156,17 +155,17 @@ const TeamSection = () => {
                 fontSize={"1rem"}
               >
                 THE TEAM
-              </Heading>
+              </Text>
             </div>
             <div className="md:pb-10 pb-4">
-              <Heading
+              <Text
                 className="gradient"
                 fontWeight={"400"}
                 fontSize={{ base: "2.5rem", md: "3.75rem" }}
                 lineHeight={"63.3px"}
               >
                 Our Team
-              </Heading>
+              </Text>
             </div>
             <div className="font-medium text-fontColor4 leading-9 md:w-[30rem] text-center">
               <p>
@@ -778,7 +777,7 @@ const TeamSection = () => {
         <div className="mt-24 md:mt-0">
           <VStack mt={{ base: "2rem", md: "8rem" }}>
             <div className="pb-2.5">
-              <Heading
+              <Text
                 as={"h2"}
                 className="color-gradient"
                 fontWeight={600}
@@ -786,17 +785,17 @@ const TeamSection = () => {
                 fontSize={"1rem"}
               >
                 MEET OUR ADVISORS
-              </Heading>
+              </Text>
             </div>
             <div className="md:pb-10 pb-4">
-              <Heading
+              <Text
                 className="gradient"
                 fontWeight={"400"}
                 fontSize={{ base: "2.5rem", md: "3.75rem" }}
                 lineHeight={"63.3px"}
               >
                 Wisdom in Action
-              </Heading>
+              </Text>
             </div>
             <div className="font-medium text-fontColor4 leading-9 md:w-[30rem] text-center">
               <p>
@@ -902,7 +901,7 @@ const TeamSection = () => {
                   />
                   )}
                 </Box>
-                <Heading
+                <Text
                   display={"flex"}
                   gap={"1rem"}
                   my={{ md: "0.75rem",base:'0.5rem' }}
@@ -929,7 +928,7 @@ const TeamSection = () => {
                     />
                     )}
                   </Link>
-                </Heading>
+                </Text>
                 <Box display={'flex'} gap={'0.5rem'} fontSize={{ md:"1rem", base:'0.75rem'}}>
                 <Text mb={{ md: "0.75rem", base:'0.5rem' }}  fontSize={{ md:"1rem", base:'0.75rem'}}>
                   🤫 {" "}

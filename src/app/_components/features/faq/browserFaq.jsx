@@ -189,7 +189,7 @@ export default function BrowserFaq() {
                   >
                     {({ isExpanded }) => (
                       <>
-                        <h2>
+                        <div>
                           <AccordionButton _expanded={{ bg: "#27272a" }}>
                             <Box
                               as="span"
@@ -205,7 +205,7 @@ export default function BrowserFaq() {
                               <AddIcon fontSize="12px" />
                             )}
                           </AccordionButton>
-                        </h2>
+                        </div>
                         <AccordionPanel pb={4} color={"#A2A9B0"}>
                           {faq.answer}
                         </AccordionPanel>

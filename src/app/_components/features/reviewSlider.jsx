@@ -84,7 +84,7 @@ const ReviewSlider = () => {
 
   return (
     <>
-      <Heading
+      <Text
         textAlign={"center"}
         mt={{ base: "3rem", md: "7rem" }}
         fontSize={{ base: "2rem", md: "3.75rem" }}
@@ -93,7 +93,7 @@ const ReviewSlider = () => {
         visibility={'visible'}
       >
         What our users say?
-      </Heading>
+      </Text>
       <Text textAlign={"center"} fontWeight={'500'} fontSize={{ base: "1rem", md: "1.75rem" }} className="default-gradient">Coming Soon!!</Text>
       <Text textAlign={"center"} fontWeight={'400'} fontSize={{ base: "0.75rem", md: "1.15rem" }} className="gradient"  >"We're building amazing products and can't wait to share it with you! Here are some testimonials of what we're aiming to achieve"</Text>
       <Swiper

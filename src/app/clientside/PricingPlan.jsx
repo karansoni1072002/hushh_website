@@ -244,7 +244,7 @@ const ClientPricingPlan = () => {
           mt={{md:"8rem", base:'5rem'}}
           mr={{ md:"50%", base:'0'}}
         >
-          <Text
+          <Heading
             lineHeight={"32px"}
             display={"flex"}
             alignSelf={"flex-start"}
@@ -256,7 +256,7 @@ const ClientPricingPlan = () => {
             fontWeight="500"
           >
             Pricing
-          </Text>
+          </Heading>
           <Heading
             as={"h2"}
             lineHeight={{ md: "90.28px", base: "40px" }}

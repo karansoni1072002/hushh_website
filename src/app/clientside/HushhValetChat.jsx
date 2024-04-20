@@ -82,7 +82,7 @@ const ClientHushhValetChat = () => {
           >
             Hushh Valet Chat
           </Heading>
-          <Text
+          <Heading
             px={{ md: "17.8rem" }}
             mb={{ base: "1rem", md: "4rem" }}
             textAlign={"center"}
@@ -90,7 +90,7 @@ const ClientHushhValetChat = () => {
             as={'h2'}
           >
             Lets you collect all your receipts from mail and manage them to help you better understand your spending habits and finance
-          </Text>
+          </Heading>
           <Button
             border={"1px solid #606060"}
             borderRadius={"2px"}

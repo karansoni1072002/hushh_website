@@ -127,7 +127,7 @@ export default function BrowserFaq() {
 
   return (
     <Box py={{md:10, base:'2rem'}} px={{ md: "10rem", base:'2rem' }}>
-    <Heading
+    <Text
       className={"gradient"}
       fontWeight={"400"}
       fontSize={{ md: "3.75rem", base: "2rem" }}
@@ -136,7 +136,7 @@ export default function BrowserFaq() {
       textAlign="left"
     >
       Frequently Asked Questions
-    </Heading>
+    </Text>
     <Box display={'flex'} w={'100%'}>
     <Tabs
       index={tabIndex}

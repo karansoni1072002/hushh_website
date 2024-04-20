@@ -158,19 +158,6 @@ export default function AboutFaq() {
       px={{ md: "10rem", base: "2rem" }}
       bg={"#060606"}
     >
-      {/* <div className="">
-                <Heading
-                    className={"gradient"}
-                    fontWeight={"400"}
-                    fontSize={{ md: "3.75rem", base: "2rem" }}
-                    lineHeight={{ md: "75px", base: '46px' }}
-                    mb={8}
-                    textAlign="left"
-                >
-                    Frequently Asked Questions
-                </Heading>
-
-            </div> */}
       <Box display={"flex"} w={"100%"}>
         <Tabs
           index={tabIndex}
@@ -181,7 +168,7 @@ export default function AboutFaq() {
         >
           <div className="md:flex items-end justify-between w-full mb-4 md:mb-[3.125rem] md:px-4">
             <div className="mb-8 md:mb-0 md:w-[29rem]">
-              <Heading
+              <Text
                 className={"gradient"}
                 fontWeight={"400"}
                 fontSize={{ md: "3.75rem", base: "2rem" }}
@@ -189,7 +176,7 @@ export default function AboutFaq() {
                 textAlign="left"
               >
                 Frequently Asked Questions
-              </Heading>
+              </Text>
             </div>
             <div className=" md:pb-8">
               <TabList display={{ base: "block", md: "flex" }}>

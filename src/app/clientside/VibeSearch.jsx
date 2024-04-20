@@ -68,7 +68,7 @@ const ClientVibeSearch = () => {
           >
             Vibe Search
           </Heading>
-          <Text
+          <Heading
             px={{ md: "17.8rem" }}
             mb={{ base: "1rem", md: "4rem" }}
             textAlign={"center"}
@@ -76,7 +76,7 @@ const ClientVibeSearch = () => {
             as={'h2'}
           >
             The vibe search app lets find and store all your favorite products that you come across by just taking a picture or by typing
-          </Text>
+          </Heading>
           <Button
             border={"1px solid #606060"}
             borderRadius={"2px"}

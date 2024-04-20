@@ -97,7 +97,7 @@ const ClientConciergeApp = () => {
           >
             Concierge App
           </Heading>
-          <Text
+          <Heading
             className="color-gradient"
             fontWeight={"700"}
             fontSize={{ md: "2rem", base: "1rem" }}
@@ -105,7 +105,7 @@ const ClientConciergeApp = () => {
             as={'h2'}
           >
             Experience Luxury, Redefined
-          </Text>
+          </Heading>
           <Text
             px={{ md: "17.8rem" }}
             mb={{ base: "1rem", md: "4rem" }}

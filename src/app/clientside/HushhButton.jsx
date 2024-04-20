@@ -87,11 +87,12 @@ import {
               textAlign={"center"}
               color={"#656565"}
               as={'h2'}
+              fontSize={{ md:'1rem', base:'1rem'}}
             >
               Imagine a world where shopping feels effortless and tailored just
               for you. Hushh Button, a powerful plugin, bridges the gap between
               your preferences/choices/needs/likes and your favourite brands
-              with GenAI.
+              with GenAI
             </Heading>
             <Button
               border={"1px solid #606060"}
@@ -188,6 +189,7 @@ import {
               color={"#0D0D25"}
               fontWeight={"700"}
               fontSize={{ md: "3.5rem", base: "1.5rem" }}
+              as={'h2'}
             >
               Seamless Data Sharing for Personalized Experiences
             </Text>

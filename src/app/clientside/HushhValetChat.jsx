@@ -78,15 +78,14 @@ const ClientHushhValetChat = () => {
           >
             Hushh Valet Chat
           </Heading>
-          <Heading
+          <Text
             px={{ md: "17.8rem" }}
             mb={{ base: "1rem", md: "4rem" }}
             textAlign={"center"}
             color={"#656565"}
-            as={'h2'}
           >
             Lets you collect all your receipts from mail and manage them to help you better understand your spending habits and finance
-          </Heading>
+          </Text>
           <Button
             border={"1px solid #606060"}
             borderRadius={"2px"}
@@ -176,8 +175,9 @@ const ClientHushhValetChat = () => {
             color={"#0D0D25"}
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
+            as={'h2'}
           >
-            Manage all your receipts at one place and get insights on your finance with Gen AI
+            Manage & keep all your receipts in one place, gaining insights into your finances
           </Text>
           <Text
             mt={"1rem"}

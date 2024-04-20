@@ -125,7 +125,7 @@ const ClientHome = () => {
             </HStack>
 
             <Heading color={"#656565"} fontSize={"18px"} as={'h2'}>
-              We're the Data API Business that helps you collect, manage, and monetize your data
+              We're the Data API Business, helping you collect, manage, and monetize data
             </Heading>
 
             <Button

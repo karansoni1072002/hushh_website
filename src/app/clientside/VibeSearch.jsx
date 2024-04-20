@@ -68,15 +68,14 @@ const ClientVibeSearch = () => {
           >
             Vibe Search
           </Heading>
-          <Heading
+          <Text
             px={{ md: "17.8rem" }}
             mb={{ base: "1rem", md: "4rem" }}
             textAlign={"center"}
             color={"#656565"}
-            as={'h2'}
           >
             The vibe search app lets find and store all your favorite products that you come across by just taking a picture or by typing
-          </Heading>
+          </Text>
           <Button
             border={"1px solid #606060"}
             borderRadius={"2px"}
@@ -166,6 +165,7 @@ const ClientVibeSearch = () => {
             color={"#0D0D25"}
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
+            as={'h2'}
           >
             Introducing Vibe search your companion for fashion and style
           </Text>

@@ -115,7 +115,6 @@ const ClientHushhWallet = () => {
             fontWeight={"400"}
             fontSize={{ md: "1.25erm", base: "1rem" }}
             color={"white"}
-            as={'h2'}
           >
             Higher perk adoption, instant expense management, simple benefits
             access and much more
@@ -548,6 +547,7 @@ const ClientHushhWallet = () => {
           className="gradient"
           fontSize={{ md: "3.75rem", base: "1.75rem" }}
           lineHeight={{ md: "63.3px", base: "43px" }}
+          as={'h2'}
         >
           Personalized Experiences, Rewarded Interactions
         </Text>

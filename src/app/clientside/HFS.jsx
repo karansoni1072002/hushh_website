@@ -257,7 +257,7 @@ const ClientHFS = () => {
 
         <VStack mt={{md:'5rem',base:'2rem'}}>
             <Box mx={{md:'8rem', base:'1.5rem'}} textAlign={'center'}>
-                <Text className="gradient" lineHeight={{md:'75px', base:'30px'}} fontWeight={'700'} fontSize={{md:'3.75rem', base:'1.5rem'}}>
+                <Text as={'p'} className="gradient" lineHeight={{md:'75px', base:'30px'}} fontWeight={'700'} fontSize={{md:'3.75rem', base:'1.5rem'}}>
                     Control your data, earn rewards – hushh for students makes your data work for you.
                 </Text>
             </Box>

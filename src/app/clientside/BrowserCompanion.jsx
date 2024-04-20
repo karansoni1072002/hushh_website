@@ -78,7 +78,7 @@ const ClientBrowserCompanion = () => {
             mb={{ base: "1rem", md: "4rem" }}
             textAlign={"center"}
             color={"#ABABAB"}
-            as={'h2'}
+            fontSize={{ md: "1rem", base: "0.75rem" }}
           >
             Tired of being tracked online? Every click, scroll, and search query leaves a trail of your identity, exploited by third-party organizations for targeted advertising. With Hushh, the power is back in your hands
           </Text>
@@ -465,6 +465,7 @@ const ClientBrowserCompanion = () => {
               fontWeight={"400"}
               fontSize={{ md: "3.75rem", base: "1.25rem" }}
               lineHeight={{ base: "45px", md: "75px" }}
+              as={'h2'}
             >
               Intelligent Insights and <br></br> Recommendations
             </Text>

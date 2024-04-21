@@ -14,7 +14,7 @@ import Head from 'next/head'
 
 export const metadata = {
   title:'Hushh | About Our Data Empowerment Mission',
-  description:'Intelligence as a service powered by your Dat',
+  description:"Intelligence as a service powered by your Data - We're user data api business",
   keywords:'HUSHH, hushh, Manish Sainani - Founder and CEO, Justin Donaldson - Co-founder, Advisors'
 }
 

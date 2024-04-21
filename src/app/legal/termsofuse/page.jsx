@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 export const metadata = {
     title:'Hushh | Explore our Terms of use',
-    description:'Hushh - explore our terms of use',
+    description:'Hushh - explore our terms of use, We are user data api (visa for data) business',
 }
 
 const TermsOfUse = () => {

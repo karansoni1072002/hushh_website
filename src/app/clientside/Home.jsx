@@ -123,7 +123,7 @@ const ClientHome = () => {
               </Text>
             </HStack>
 
-            <Text color={"#656565"} as={'h1'} fontSize={"18px"}>
+            <Text color={"#656565"} fontSize={"18px"}>
               We're the Data API Business, helping you collect, manage, and monetize data
             </Text>
 
@@ -161,7 +161,7 @@ const ClientHome = () => {
             letterSpacing={"0.25rem"}
             fontSize={"1rem"}
             mb={{md:'1.25rem'}}
-            as={'h2'}
+            as={'h1'}
           >
             BRANDS WE WORK WITH
           </Text>

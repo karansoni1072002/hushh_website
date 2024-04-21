@@ -50,6 +50,18 @@ body {
   border-color: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
 }
 
+.personalized-demo {
+  background: linear-gradient(265.12deg, #E54D60 4.12%, #A342FF 51.75%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.new-gradient {
+  background: linear-gradient(263.99deg, #E54D60 71.61%, #A342FF 99.22%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .default-gradient {
   background: linear-gradient(#E54D60 8.81%, #A342FF 94.26%);
   -webkit-background-clip: text;
@@ -57,6 +69,8 @@ body {
   border-color: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
 }
 
+
+/* Perfect Gradient Color for Background */
 .gradient-bg {
   background: linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%);
 }
@@ -327,4 +341,59 @@ body {
   .spinner {
       display: none !important;
   }
+}
+
+/* Booking Demo Page CSS form */
+/* CSS */
+.PhoneInputCountrySelectArrow {
+  color: #FFFFFF;
+  margin-right: 0.15rem;
+}
+
+
+.formInput:active {
+  border-color: #FFFFFF; /* Set border color to white when input is focused */
+}
+
+.PhoneInputCountrySelectArrow:focus {
+  background-color: #FFFFFF;
+}
+
+.PhoneInputCountryFlag:focus {
+  outline: none;
+  border: none;
+}
+
+.PhoneInputInput {
+  background: #151515;
+  color: #FFFFFF;
+  border: 1px solid #242424 !important; /* Remove single quotes around the border value */
+  height: 2.5rem;
+  border-radius: 5px;
+  flex: 1;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.PhoneInputInput:focus {
+  border: 1px solid #FFFFFF !important; /* Adjust border color when focused */
+}
+
+.PhoneInputInternationalIconPhone {
+  color: #FFFFFF;
+}
+
+.PhoneInputInternationalIconGlobe {
+  color: #FFFFFF;
+}
+
+.PhoneInput {
+  border-color: #242424;
+  border-radius: 5px;
+}
+
+.PhoneInput {
+  /* This is done to stretch the contents of this component. */
+  display: flex;
+  align-items: center;
 }

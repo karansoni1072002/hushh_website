@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, HStack, Text } from "@chakra-ui/react";
+import { Box, Container, Grid, HStack, Text } from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/react";
 import { ServiceCard } from "../primitives/serviceCard";
 import TrustedAIIcon from "../svg/trustedAI";
@@ -8,12 +8,15 @@ import TechIntegrationIcon from "../svg/techIntegration";
 import RedifiningIcon from "../svg/redifiningIcon";
 import TransparentSecureIcon from "../svg/tranparentSecure";
 import extendedTheme from "../../theme";
+import { Router } from "next/router";
+import { useRouter } from "next/navigation";
 
 const TechnologySection = () => {
+  const router = useRouter();
   return (
     <>
       <HStack
-        mt={{md:"8rem", base:"5rem"}}
+        mt={{ md: "8rem", base: "5rem" }}
         w={"100%"}
         display={"flex"}
         flexDirection={"column"}
@@ -21,7 +24,7 @@ const TechnologySection = () => {
       >
         <Text
           className="gradient"
-          fontSize={{ md:"3.75rem", base:'1.5rem'}}
+          fontSize={{ md: "3.75rem", base: "1.5rem" }}
           display={"flex"}
         >
           Our Technology Services
@@ -30,8 +33,8 @@ const TechnologySection = () => {
           color={extendedTheme.colors.secondary}
           fontWeight={"500"}
           fontSize={"1rem"}
-          lineHeight={{ md:"2.25rem", base:'1.5rem'}}
-          px={{ md:"20rem", base:'1rem' }}
+          lineHeight={{ md: "2.25rem", base: "1.5rem" }}
+          px={{ md: "20rem", base: "1rem" }}
         >
           Our technology services deliver cutting-edge solutions tailored to
           drive efficiency, enhance performance, and fuel growth in today's
@@ -39,28 +42,34 @@ const TechnologySection = () => {
         </Text>
       </HStack>
 
-      <Container display={'flex'} pt={{md:'2rem'}} px={{md:'10rem'}} justifyContent={"center"} minW={{ md:'100%', base:'100%' }}>
+      <Container
+        display={"flex"}
+        pt={{ md: "2rem" }}
+        px={{ md: "10rem" }}
+        justifyContent={"center"}
+        minW={{ md: "100%", base: "100%" }}
+      >
         <Grid
           templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
-          gap={{ md:10 , base:10}}
+          gap={{ md: 10, base: 10 }}
           flexWrap="wrap"
         >
           <ServiceCard
             icon={<TrustedAIIcon />}
             title="Redefining Personal Data Assistance​"
-            textAlign={'left'}
+            textAlign={"left"}
             description="Leverage AI assistants that understand your data and provide personalized support – for information retrieval, streamline work, and more​"
           />
           <ServiceCard
             icon={<TechIntegrationIcon />}
             title="Seamless Tech Integrationn​​​"
-            textAlign={'left'}
+            textAlign={"left"}
             description="Our platform seamlessly integrates with your existing tools to streamline your operations​​"
           />
           <ServiceCard
             icon={<ControlOver />}
             title="Control & Security​"
-            textAlign={'left'}
+            textAlign={"left"}
             description="Built with trust in mind, our platform is SOC 2 and GDPR compliant, ensuring the security and privacy of your data"
           />
           {/* <ServiceCard
@@ -77,6 +86,32 @@ const TechnologySection = () => {
           /> */}
         </Grid>
       </Container>
+    <Box w={'100%'} display={'flex'} justifyContent="center"> 
+      <Box
+        mt={{ md: "4rem", base: "2rem" }}
+        p={{ md: "0.5rem", base: "0.5rem" }}
+        align={"center"}
+        border={"1px solid #606060"}
+        borderRadius={"5px"}
+        w={{ md: "16rem", base: "10rem" }}
+        fontWeight={"400"}
+        fontSize={{ md: "1.15rem", base: "0.75rem" }}
+        className="color-gradient"
+        lineHeight={{ md: "32.4px", base: "20px" }}
+        letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
+        _hover={{
+          background:
+            "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+          color: "white",
+        }}
+        cursor={"pointer"}
+        onClick={() =>
+          router.push("/demoBookingPage")
+        }
+      >
+        Book A Call
+      </Box>
+    </Box> 
     </>
   );
 };

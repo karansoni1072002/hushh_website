@@ -39,13 +39,13 @@ const HushhCoinUiBox = () => {
           <Box maxWidth={{ base: "100%", md: "40%" }} display={{base:"flex", md:'none'}} mb={{base:'2rem'}}>
           <NextImage src={ReceiptRadar} alt="receiptRadar" />
         </Box>
-          <Heading
+          <Text
             className="gradient"
             fontWeight="700"
             fontSize={{ md: "3.75rem", base: "1.25rem" }}
           >
             Effortless Receipt Management
-          </Heading>
+          </Text>
           <Text
             color={extendedTheme.colors.secondary}
             lineHeight={{ base: "18px", md: "36px" }}

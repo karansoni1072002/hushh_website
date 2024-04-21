@@ -95,8 +95,7 @@ const ClientHome = () => {
             ml={{ base: "1rem", md: "5.5rem" }}
           >
             <HStack>
-              <Heading
-                as={"h3"}
+              <Text
                 fontSize={{ md: "5rem", base: "2rem" }}
                 className="text-headText"
                 lineHeight={{ md: "5.5rem", base: "2.5rem" }}
@@ -121,10 +120,10 @@ const ClientHome = () => {
                     </span>
                   </div>
                 </span>
-              </Heading>
+              </Text>
             </HStack>
 
-            <Text color={"#656565"} fontSize={"18px"}>
+            <Text color={"#656565"} as={'h1'} fontSize={"18px"}>
               We're the Data API Business, helping you collect, manage, and monetize data
             </Text>
 
@@ -162,6 +161,7 @@ const ClientHome = () => {
             letterSpacing={"0.25rem"}
             fontSize={"1rem"}
             mb={{md:'1.25rem'}}
+            as={'h2'}
           >
             BRANDS WE WORK WITH
           </Text>
@@ -347,7 +347,6 @@ const ClientHome = () => {
             display={"flex"}
             flexDirection={'row'}
             fontSize={{ md: "3.75rem", base: "1.5rem" }}
-            as={"h1"}
           >
             Technology For <Text fontWeight ='700' display='flex'  marginLeft={{ md:'1rem'}}> Everyone!</Text> 
           </Box>

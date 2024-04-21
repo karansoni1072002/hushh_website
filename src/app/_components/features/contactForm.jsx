@@ -32,7 +32,7 @@ export default function ContactForm() {
   } = useForm();
 
   // const form = useRef();
-
+  const [formErrors, setFormErrors] = useState({});
   const [ firstName , setFirstName ] = useState('');
   const [ lastName , setLastName ] = useState('');
   const [ email , setEmail ] = useState('');
@@ -42,8 +42,79 @@ export default function ContactForm() {
 
   const toast = useToast()
 
+  const validateForm = () => {
+    let isValid = true;
+    let newErrors = {};
+
+    if (!firstName.trim()) {
+      newErrors.firstName = "First name is required";
+      isValid = false;
+    }
+
+    if (!lastName.trim()) {
+      newErrors.lastName = "Last name is required";
+      isValid = false;
+    }
+
+    if (!email.trim()) {
+      newErrors.email = "Email is required";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = "Invalid email format";
+      isValid = false;
+    }
+
+    if (!number.trim()) {
+      newErrors.number = "Phone number is required";
+      isValid = false;
+    } else if (!/^\+?\d{8,15}$/.test(number)) {
+      newErrors.number = "Invalid phone number";
+      isValid = false;
+    }
+
+    if (!subject.trim()) {
+      newErrors.subject = "Subject is required";
+      isValid = false;
+    }
+
+    if (!message.trim()) {
+      newErrors.message = "Message is required";
+      isValid = false;
+    }
+
+    setFormErrors(newErrors);
+    return isValid;
+  };
+
+  const onSubmit = async (data, e) => {
+    e.preventDefault();
+    await sendEmail(data);
+    reset();  // This will reset the form fields after submission
+  };
+
   const sendEmail = async (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return; // Stop the function if validation fails
+    }
+    const previousSubmissionTime = localStorage.getItem(`${email}_${firstName}`);
+
+    if (previousSubmissionTime) {
+      const currentTime = new Date().getTime();
+      const timeDifference = (currentTime - new Date(previousSubmissionTime).getTime()) / (1000 * 3600); // 시간 차이를 시간 단위로 계산합니다.
+  
+      if (timeDifference < 2) { 
+        toast({
+          title: 'Please try again later!',
+          description: "You have already submitted the form. Please try again after 2-3 hours",
+          status: 'warning',
+          duration: 3000,
+          isClosable: true,
+        })
+        return;
+      }
+    }
+  localStorage.setItem(`${email}_${firstName}`, new Date().toISOString());
 
     const serviceId = 'service_kwvlp08';
     const templateId = 'template_nc0x47v';
@@ -149,7 +220,7 @@ export default function ContactForm() {
 
             {/* Contact Form */}
             <Box  p={{ md: "4rem", base: '1rem' }} flex={1.75} display={"flex"}>
-              <form id="form" /*onSubmit={sendEmail} */ style={{ color: "white" }}>
+              <form id="form" onSubmit={sendEmail} style={{ color: "white" }}>
                 <HStack display={{ base: 'block', md: 'flex' }} flexDirection={{ base: 'column', md: 'row' }} gap={{ md: "2rem", base: '1rem' }} mb={{ md: "2rem", base: '1rem' }}>
                   <Stack gap={{ md: "1rem", base: '0.5rem' }} mb={{ base: '1rem' }}>
                     <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>First Name</Text>
@@ -157,12 +228,12 @@ export default function ContactForm() {
                       variant="unstyled"
                       size={'sm'}
                       w={'12rem'}
-                      borderBottom="1px solid white"
-                      {...register("firstName", { required: true, maxLength: 100 })}
                       placeholder="First Name"
+                      borderBottom="1px solid white"
                       value={firstName} 
                       onChange={(e) => setFirstName(e.target.value)} // Update state on change
                     />
+                    {formErrors.firstName && <Text color="red" fontSize="sm">{formErrors.firstName}</Text>}
                   </Stack>
 
                   <Stack gap={{ md: "1rem", base: '0.5rem' }} mb={{ base: '1rem' }}>
@@ -172,11 +243,11 @@ export default function ContactForm() {
                       size={'sm'}
                       w={'12rem'}
                       borderBottom="1px solid white"
-                      {...register("lastName", { required: true, maxLength: 100 })}
                       placeholder="Last Name"
                       value={lastName} 
-                      onChange={(e) => setLastName(e.target.value)} // Update state on change
+                      onChange={(e) => setLastName(e.target.value)} 
                     />
+                      {formErrors.lastName && <Text color="red" fontSize="sm">{formErrors.lastName}</Text>}
                   </Stack>
                 </HStack>
 
@@ -187,15 +258,12 @@ export default function ContactForm() {
                       variant="unstyled"
                       size={'sm'}
                       w={'12rem'}
-                      borderBottom="1px solid white"
-                      {...register("email", {
-                        required: true,
-                        pattern: /^\S+@\S+$/i,
-                      })}                      
-                      placeholder="@email"
+                      borderBottom="1px solid white"                    
+                      placeholder="harry@gmail.com"
                       value={email} 
                       onChange={(e) => setEmail(e.target.value)} // Update state on change
                     />
+                      {formErrors.email && <Text color="red" fontSize="sm">{formErrors.email}</Text>}
                   </Stack>
                   <Stack gap={{ md: "1rem", base: '0.5rem' }} mb={{ base: '1rem' }}>
                     <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Phone Number</Text>
@@ -204,16 +272,11 @@ export default function ContactForm() {
                      size={'sm'}
                      w={'12rem'}
                      borderBottom="1px solid white"
-                      {...register("number", {
-                        required: true,
-                        minLength: 6,
-                        maxLength: 12,
-                      })}
                       placeholder="number"
                       value={number} 
                       onChange={(e) => setNumber(e.target.value)}
-
                     />
+                      {formErrors.number && <Text color="red" fontSize="sm">{formErrors.number}</Text>}
                   </Stack>
                 </HStack>
 
@@ -228,7 +291,6 @@ export default function ContactForm() {
                   <RadioGroup defaultValue="ProductInquiry">
                     <HStack display={{ md: 'flex', base: 'flex' }} flexDirection={{ base: 'column', md: 'row' }} spacing={{ md: "2rem", base: '1rem' }} align={"stretch"}>
                       <Radio
-                        {...register("subject", { required: true })}
                         colorScheme="white"
                         name="subject"
                         onChange={(e) => setSubject('Explore Hushh Products')}
@@ -236,28 +298,22 @@ export default function ContactForm() {
                         <Text fontSize={'0.75rem'}>Explore Hushh Products</Text>
                       </Radio>
                       <Radio
-                        {...register("subject", { required: true })}
                         colorScheme="white"
                         name="subject"
                         className="radio-option"
-                        // value='subject2'
                         onChange={(e) => setSubject('Enhance my client')}
                       >
                         <Text fontSize={'0.75rem'}>Enhance my client</Text>
                       </Radio>
                       <Radio
-                        {...register("subject", { required: true })}
                         colorScheme="white"
                         name="subject"
-                        // value='subject3'
                         onChange={(e) => setSubject('Partner with Hushh')}
                       >
                         <Text fontSize={'0.75rem'}>Partner with Hushh</Text>
                       </Radio>
                       <Radio
-                        {...register("subject", { required: true })}
                         colorScheme="white"
-                        // value={subject}
                         onChange={(e) => setSubject('Get Support')}
                         name="subject"
                         className="radio-option"
@@ -266,6 +322,7 @@ export default function ContactForm() {
                       </Radio>
                     </HStack>
                   </RadioGroup>
+                  {formErrors.subject && <Text color="red" fontSize="sm">{formErrors.subject}</Text>}
                 </HStack>
                 <HStack mb={{ md: "4rem", base: '2rem' }} alignItems={"left"} flexDirection={"column"}>
                   <Text fontWeight={'500'} fontSize={'0.75rem'} color={"white"}>Message</Text>
@@ -273,10 +330,10 @@ export default function ContactForm() {
                     h={"6.25rem"}
                     w={{ base: '15.625rem', md: '100%' }}
                     placeholder="Type your message here"
-                    {...register("message", { required: true })}
                     value={message} 
                     onChange={(e) => setMessage(e.target.value)}
                   />
+                  {formErrors.message && <Text color="red" fontSize="sm">{formErrors.message}</Text>}
                 </HStack>
                 <HStack justifyContent="flex-end" w={"100%"}>
                   <Button

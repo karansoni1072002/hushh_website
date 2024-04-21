@@ -4,7 +4,7 @@ import ContactForm from '../../_components/features/contactForm';
 
 export const metadata = {
     title:'Hushh | Privacy Policy - Secure & Safeguard ',
-    description:'Hushh privacy and policy',
+    description:'Hushh privacy policy explains how we protect your data and keep it secure',
 }
 
 const PrivacyPolicy = () => {

@@ -97,6 +97,25 @@ export default function ContactForm() {
     if (!validateForm()) {
       return; // Stop the function if validation fails
     }
+    const previousSubmissionTime = localStorage.getItem(`${email}_${firstName}`);
+
+    if (previousSubmissionTime) {
+      const currentTime = new Date().getTime();
+      const timeDifference = (currentTime - new Date(previousSubmissionTime).getTime()) / (1000 * 3600); // 시간 차이를 시간 단위로 계산합니다.
+  
+      if (timeDifference < 2) { 
+        toast({
+          title: 'Please try again later!',
+          description: "You have already submitted the form. Please try again after 2-3 hours",
+          status: 'warning',
+          duration: 3000,
+          isClosable: true,
+        })
+        return;
+      }
+    }
+  localStorage.setItem(`${email}_${firstName}`, new Date().toISOString());
+
     const serviceId = 'service_kwvlp08';
     const templateId = 'template_nc0x47v';
     const user_Id = '9KjZ-7TNPYvuqx3as';

@@ -197,7 +197,7 @@ const ClientHome = () => {
         >
           {/* Left side box */}
           <Box position={'relative'} flex="1" bg={extendedTheme.colors._black} display={{ base: "none", md: "block" }}>
-            <NextImage
+            <Image
               src={LouisVuitton}
               alt="Louis Vuitton"
               width={350.62}
@@ -209,7 +209,7 @@ const ClientHome = () => {
                 left: "100px",
               }}
             />
-            <NextImage
+            <Image
               style={{
                 position: "relative",
                 top: "-90.67px",
@@ -221,7 +221,7 @@ const ClientHome = () => {
               width={420.62}
               height={363.19}
             />
-            <NextImage
+            <Image
               style={{
                 position: "absolute",
                 top: "200.67px",

@@ -473,7 +473,6 @@ const ClientDemoBooking = () => {
           mt={{ md: "8rem", base: "3rem" }}
         >
           <Text
-            as={"h2"}
             className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text"
             fontWeight={500}
             letterSpacing={"0.04rem"}

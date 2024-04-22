@@ -16,6 +16,7 @@ import VibeSearchBg from '../_components/svg/vibeBg.svg';
 import ContactForm from '../_components/features/contactForm'
 import Head from "next/head";
 import BgAnimation from "../../../public/Gif/bgAnimation.gif";
+import VibeSearchGif from "../../../public/Gif/vibeSearchGIf.gif"
 
 
 const ClientVibeSearch = () => {
@@ -47,7 +48,14 @@ const ClientVibeSearch = () => {
         minW={"100%"}
         display={"flex"}
         flexDirection={"column"}
+        position={'relative'}
       >
+        <Box display={{ base: 'none', md: 'block' }}>
+            <Image src={VibeSearchGif} alt="VibeSearchGif" style={{ position: 'absolute', top: '-15px',left:'30%',transform: 'rotate(-225deg)', opacity: '0.5', zIndex: '-10', height: '40rem', filter: 'grayscale(100%)' }} unoptimized />
+          </Box>
+          <Box display={{ base: 'block', md: 'none' }}>
+            <Image src={VibeSearchGif} alt="VibeSearchGif" style={{ position: 'absolute', top: '-15px',transform: 'rotate(-95deg)', opacity: '0.5', zIndex: '-10', width: '100%', height: '13rem' , filter: 'grayscale(100%)'}} unoptimized />
+          </Box>
         <Box
           alignItems={"center"}
           w={"100%"}

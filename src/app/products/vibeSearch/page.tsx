@@ -1,6 +1,7 @@
 import React from "react";
 import ClientVibeSearch from "../../clientside/VibeSearch"
 import VibeSearchIntegrationBox from '../../_components/svg/vibeIntegrationBox.svg';
+import OgImage from '../../../../public/Images/Logo/Logo.png'
 
 export const metadata = {
   title:'Hushh | Vibe Search - match your perfect outfit with us',
@@ -9,7 +10,7 @@ export const metadata = {
   openGraph: {
     images: [
       {
-        src: {VibeSearchIntegrationBox},
+        src: '../../../../public/Images/Logo/Logo.png',
         alt: "Vibe Search App",
         width: 1200,
         height: 630,

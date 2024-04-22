@@ -134,17 +134,17 @@ const ClientHome = () => {
               color={theme.colors._white}
               lineHeight={"28px"}
               background={"transparent"}
-              letterSpacing={{md:"0.5rem", base:'0.1rem'}}
+              letterSpacing={{md:"0.4rem", base:'0.1rem'}}
               _hover={{
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 border: 'none'
               }}
               onClick={() =>
-                router.push("https://sites.google.com/hush1one.com/drops/home/journey")
+                router.push("/demoBookingPage")
               }
             >
-              LEARN MORE
+              Schedule call 
             </Button>
           </VStack>
         </Box>

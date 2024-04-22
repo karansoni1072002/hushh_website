@@ -31,7 +31,7 @@ import {
   import BgAnimation from "../../../public/Gif/bgAnimation.gif";
   import DataRetrievalMade from "../../../public/Gif/dataRetrievalMade.gif";
   import Slogo from "../../../public/Gif/slogo.gif";
-  import ValetChatGif from "../../../public/Gif/valeTChatBg.gif";
+  import VibeSearchGif from "../../../public/Gif/vibeSearchGIf.gif"
 
   const ClientHushhButton = () => {
     const router = useRouter();
@@ -63,10 +63,10 @@ import {
           position={'relative'}
         >
         <Box display={{ base: 'none', md: 'block' }}>
-          <Image src={ValetChatGif} alt="ValetChatGif" style={{ position: 'absolute',transform: 'rotate(-95deg)', opacity: '0.5',top: '0px',left:'30%', zIndex: '-10', filter: 'grayscale(100%)'}} unoptimized />
+          <Image src={VibeSearchGif} alt="VibeSearchGif1" style={{ position: 'absolute',transform: 'rotate(-95deg)', opacity: '0.5',top: '0px',left:'30%', zIndex: '-10', filter: 'grayscale(100%)'}} unoptimized />
         </Box>
         <Box display={{ base: 'block', md: 'none' }}>
-          <Image src={ValetChatGif} alt="ValetChatGif" style={{ position: 'absolute',transform: 'rotate(-95deg)',opacity: '0.5', top:'0px',left:'30%', zIndex: '-10', width: '10rem', height: '16rem',filter: 'grayscale(100%)' }} unoptimized/>
+          <Image src={VibeSearchGif} alt="VibeSearchGif1" style={{ position: 'absolute',transform: 'rotate(-95deg)',opacity: '0.5', top:'0px',left:'30%', zIndex: '-10', width: '10rem', height: '16rem',filter: 'grayscale(100%)' }} unoptimized/>
         </Box>
           <Box
             alignItems={"center"}

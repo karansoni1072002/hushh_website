@@ -32,7 +32,14 @@ import AboutFaq from "../_components/features/faq/aboutFaq";
 import { InlineWidget, useCalendlyEventListener } from "react-calendly";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import { useToast } from '@chakra-ui/react'
+import { useToast } from '@chakra-ui/react';
+import ChromeDemo from "../_components/svg/demoImages/chromeExtensionDemo.svg"
+import ConciergeDemo from "../_components/svg/demoImages/conciergeAppDemo.svg"
+import WalletDemo from "../_components/svg/demoImages/hushhWalletDemo.svg"
+import ValetDemo from "../_components/svg/demoImages/valetChatDemo.svg"
+import VibeSearchDemo from "../_components/svg/demoImages/vibeSearchDemo.svg"
+import VibeSearchApiDemo from "../_components/svg/demoImages/vibeSearchApiDemo.svg"
+import VibeSearchMarketDemo from "../_components/svg/demoImages/vibeSearchMarketplaceDemo.svg"
 import { useMediaQuery } from "react-responsive";
 
 const ClientDemoBooking = () => {
@@ -491,8 +498,8 @@ const ClientDemoBooking = () => {
           </Text>
           <Grid
             mt={{ md: "2rem", base: "1rem" }}
-            templateColumns={{ md:"repeat(4, 1fr)", base:"repeat(2,1fr)"}}
-            gap={6}
+            templateColumns={{ md:"repeat(3, 1fr)", base:"repeat(2,1fr)"}}
+            gap={10}
           >
             <GridItem
               borderRadius={"8px"}
@@ -536,7 +543,7 @@ const ClientDemoBooking = () => {
               border={"1px solid #4B4B4B"}
               bg={"#121212"}
             >
-              <Image src={HushhButtonDemo} alt="HushhButtonDemo" />
+              <Image src={ChromeDemo} alt="ChromeDemo" />
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
@@ -576,7 +583,7 @@ const ClientDemoBooking = () => {
               border={"1px solid #4B4B4B"}
               bg={"#121212"}
             >
-              <Image src={HushhButtonDemo} alt="HushhButtonDemo" />
+              <Image src={VibeSearchDemo} alt="VibeSearchDemo" />
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
@@ -597,7 +604,7 @@ const ClientDemoBooking = () => {
                 cursor={'pointer'}
                 display={'flex'}
                 gap={{md:"0.4rem", base:'0.2rem'}}
-                onClick={() => window.open("https://youtu.be/2Ji8afCx5SI?si=sj6vlqdERzTPcClv", "_blank")}
+                onClick={() => window.open("https://youtu.be/2Ji8afCx5SI?si=1rLTsNcIixWE4Dh6", "_blank")}
               >
                 Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
               </Text>
@@ -610,7 +617,7 @@ const ClientDemoBooking = () => {
               border={"1px solid #4B4B4B"}
               bg={"#121212"}
             >
-              <Image src={HushhButtonDemo} alt="HushhButtonDemo" />
+              <Image src={WalletDemo} alt="WalletDemo" />
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
@@ -619,7 +626,143 @@ const ClientDemoBooking = () => {
                 letterSpacing={"-0.2px"}
                 my={{ md: "2.15rem", base: "0.5rem" }}
               >
-                Hushh App
+                Hushh Wallet App
+              </Text>
+              <Text
+                color={"#0565FF"}
+                fontWeight={"400"}
+                letterSpacing={"-0.4px"}
+                lineHeight={"26px"}
+                fontSize={{ md: "1rem", base: "0.65rem" }}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+                display={'flex'}
+                cursor={'pointer'}
+                gap={{md:"0.4rem", base:'0.2rem'}}
+                onClick={() => window.open("https://youtu.be/CzGi_Z_hGaQ?si=OCIPnw0boCSaTerW", "_blank")}
+              >
+                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
+              </Text>
+            </GridItem>
+            <GridItem
+              borderRadius={"8px"}
+              p={"1rem"}
+              display={"flex"}
+              flexDirection={"column"}
+              border={"1px solid #4B4B4B"}
+              bg={"#121212"}
+            >
+              <Image src={ConciergeDemo} alt="ConciergeDemo" />
+              <Text
+                color={"#FFFFFF"}
+                fontWeight={"400"}
+                lineHeight={{md:"32px",base:'20px'}}
+                fontSize={{ md: "1.5rem", base: "0.85rem" }}
+                letterSpacing={"-0.2px"}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+              >
+                Concierge App
+              </Text>
+              <Text
+                color={"#0565FF"}
+                fontWeight={"400"}
+                letterSpacing={"-0.4px"}
+                lineHeight={"26px"}
+                fontSize={{ md: "1rem", base: "0.65rem" }}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+                display={'flex'}
+                cursor={'pointer'}
+                gap={{md:"0.4rem", base:'0.2rem'}}
+                onClick={() => window.open("https://youtu.be/J0Q_n6CWfO8?si=hqxXUFpUgNlvB1pE", "_blank")}
+              >
+                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
+              </Text>
+            </GridItem>
+            <GridItem
+              borderRadius={"8px"}
+              p={"1rem"}
+              display={"flex"}
+              flexDirection={"column"}
+              border={"1px solid #4B4B4B"}
+              bg={"#121212"}
+            >
+              <Image src={ValetDemo} alt="ValetDemo" />
+              <Text
+                color={"#FFFFFF"}
+                fontWeight={"400"}
+                lineHeight={{md:"32px",base:'20px'}}
+                fontSize={{ md: "1.5rem", base: "0.85rem" }}
+                letterSpacing={"-0.2px"}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+              >
+                Valet Chat App
+              </Text>
+              <Text
+                color={"#0565FF"}
+                fontWeight={"400"}
+                letterSpacing={"-0.4px"}
+                lineHeight={"26px"}
+                fontSize={{ md: "1rem", base: "0.65rem" }}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+                display={'flex'}
+                cursor={'pointer'}
+                gap={{md:"0.4rem", base:'0.2rem'}}
+                onClick={() => window.open("https://youtu.be/iY9HyVvpkUs?si=kQT1qiDKNkAYvz6f", "_blank")}
+              >
+                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
+              </Text>
+            </GridItem>
+            <GridItem
+              borderRadius={"8px"}
+              p={"1rem"}
+              display={"flex"}
+              flexDirection={"column"}
+              border={"1px solid #4B4B4B"}
+              bg={"#121212"}
+            >
+              <Image src={VibeSearchApiDemo} alt="VibeSearchApiDemo" />
+              <Text
+                color={"#FFFFFF"}
+                fontWeight={"400"}
+                lineHeight={{md:"32px",base:'20px'}}
+                fontSize={{ md: "1.5rem", base: "0.85rem" }}
+                letterSpacing={"-0.2px"}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+              >
+                Vibe Search API
+              </Text>
+              <Text
+                color={"#0565FF"}
+                fontWeight={"400"}
+                letterSpacing={"-0.4px"}
+                lineHeight={"26px"}
+                fontSize={{ md: "1rem", base: "0.65rem" }}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+                display={'flex'}
+                cursor={'pointer'}
+                gap={{md:"0.4rem", base:'0.2rem'}}
+                onClick={() => window.open("https://youtu.be/mXymL7IZBPg?si=lQ9CxJkU3bpFvDr8", "_blank")}
+              >
+                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
+              </Text>
+            </GridItem>
+            <GridItem
+              borderRadius={"8px"}
+              p={"1rem"}
+              display={"flex"}
+              flexDirection={"column"}
+              border={"1px solid #4B4B4B"}
+              bg={"#121212"}
+            >
+              <Image src={VibeSearchMarketDemo} alt="VibeSearchMarketDemo" />
+              <Text
+                color={"#FFFFFF"}
+                fontWeight={"400"}
+                lineHeight={{md:"32px",base:'20px'}}
+                fontSize={{ md: "1.5rem", base: "0.85rem" }}
+                letterSpacing={"-0.2px"}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+              >
+                Vibe Search Marketplace
               </Text>
               <Text
                 color={"#0565FF"}

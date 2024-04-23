@@ -1,6 +1,14 @@
-'use client'
-import React from 'react'
-import { Box, Button, HStack, Heading, Stack, Text, VStack } from "@chakra-ui/react";
+"use client";
+import React from "react";
+import {
+  Box,
+  Button,
+  HStack,
+  Heading,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import extendedTheme from "../theme";
 import Image from "next/image";
 import DirectionLine from "../_components/svg/icons/directionLine.svg";
@@ -9,23 +17,23 @@ import FrameCard2 from "../_components/svg/card/buttonvoucherCard.svg";
 import FramCard1 from "../_components/svg/card/frameCardHushhButton.svg";
 import BrowserBox from "../_components/svg/browserCompanionBoxImg.svg";
 import BrowserFaq from "../_components/features/faq/browserFaq";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { animateScroll as scroll } from 'react-scroll';
-import ContactForm from '../_components/features/contactForm'
+import { animateScroll as scroll } from "react-scroll";
+import ContactForm from "../_components/features/contactForm";
 import BgAnimation from "../../../public/Gif/bgAnimation.gif";
-import BrowserGif from "../../../public/Gif/browserGifBg.gif"
+import BrowserGif from "../../../public/Gif/browserGifBg.gif";
 import TypingGIF from "../../../public/Gif/typing.gif";
 
 const ClientBrowserCompanion = () => {
-    const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
+  const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 200); 
+    }, 200);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -36,22 +44,47 @@ const ClientBrowserCompanion = () => {
 
   const scrollInMobile = () => {
     scroll.scrollTo(450);
-  }
+  };
 
   return (
     <>
-     <Box
+      <Box
         maxW={"100%"}
         minW={"100%"}
         display={"flex"}
         flexDirection={"column"}
-        pos={'relative'}
+        pos={"relative"}
       >
-        <Box display={{ base: 'none', md: 'block' }}>
-          <Image src={BrowserGif} alt="BrowserGif" style={{ position: 'absolute', top: '0px', zIndex: '-10', width: '100%', opacity:'0.7',height: '40rem', filter: 'grayscale(100%)'}} unoptimized />
+        <Box display={{ base: "none", md: "block" }}>
+          <Image
+            src={BrowserGif}
+            alt="BrowserGif"
+            style={{
+              position: "absolute",
+              top: "0px",
+              zIndex: "-10",
+              width: "100%",
+              opacity: "0.7",
+              height: "40rem",
+              filter: "grayscale(100%)",
+            }}
+            unoptimized
+          />
         </Box>
-        <Box display={{ base: 'block', md: 'none' }}>
-          <Image src={BrowserGif} alt="BrowserGif" style={{ position: 'absolute', top: '55px', zIndex: '-10', width: '100%', height: '16rem',filter: 'grayscale(100%)' }} unoptimized />
+        <Box display={{ base: "block", md: "none" }}>
+          <Image
+            src={BrowserGif}
+            alt="BrowserGif"
+            style={{
+              position: "absolute",
+              top: "55px",
+              zIndex: "-10",
+              width: "100%",
+              height: "16rem",
+              filter: "grayscale(100%)",
+            }}
+            unoptimized
+          />
         </Box>
         <Box
           alignItems={"center"}
@@ -69,7 +102,7 @@ const ClientBrowserCompanion = () => {
             className="gradient"
             px={{ base: "0.5rem" }}
             mb={{ base: "0.5rem" }}
-            as={'h1'}
+            as={"h1"}
           >
             Browser Companion
           </Heading>
@@ -80,7 +113,10 @@ const ClientBrowserCompanion = () => {
             color={"#ABABAB"}
             fontSize={{ md: "1rem", base: "0.75rem" }}
           >
-            Tired of being tracked online? Every click, scroll, and search query leaves a trail of your identity, exploited by third-party organizations for targeted advertising. With Hushh, the power is back in your hands
+            Tired of being tracked online? Every click, scroll, and search query
+            leaves a trail of your identity, exploited by third-party
+            organizations for targeted advertising. With Hushh, the power is
+            back in your hands
           </Text>
           <Button
             border={"1px solid #606060"}
@@ -94,23 +130,25 @@ const ClientBrowserCompanion = () => {
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-              border:'none'
+              border: "none",
             }}
             onClick={() =>
-              router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+              router.push(
+                "https://sites.google.com/hush1one.com/drops/products/chrome-extension",
+              )
             }
           >
             LEARN MORE
           </Button>
         </Box>
         <HStack
-           mt={"2rem"}
-           gap={"3rem"}
-           px={"4rem"}
-           display={"flex"}
-           flexDirection={{ base: "row", md: "row" }}
-           justifyContent="flex-end"
-           mr={'3rem'}
+          mt={"2rem"}
+          gap={"3rem"}
+          px={"4rem"}
+          display={"flex"}
+          flexDirection={{ base: "row", md: "row" }}
+          justifyContent="flex-end"
+          mr={"3rem"}
         >
           <Button
             ml={{ md: "62.375rem" }}
@@ -126,7 +164,7 @@ const ClientBrowserCompanion = () => {
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-              border:'none'
+              border: "none",
             }}
             padding={"15px 68px 15px 68px"}
           >
@@ -152,7 +190,7 @@ const ClientBrowserCompanion = () => {
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-              border:'none'
+              border: "none",
             }}
             padding={"15px 68px 15px 68px"}
           >
@@ -176,7 +214,8 @@ const ClientBrowserCompanion = () => {
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
           >
-            Introducing Hushh Browser Companion, a product that helps you keep track of your digital footprint with Gen AI
+            Introducing Hushh Browser Companion, a product that helps you keep
+            track of your digital footprint with Gen AI
           </Text>
           <Text
             mt={"1rem"}
@@ -285,16 +324,16 @@ const ClientBrowserCompanion = () => {
         <HStack
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
-          display={{ base: 'flex' }}
-          flexDirection={{ base: 'column', md: 'row' }}
+          display={{ base: "flex" }}
+          flexDirection={{ base: "column", md: "row" }}
         >
-          <Box display={"flex"} flexDirection={"column"} gap={'1rem'} flex={1}>
+          <Box display={"flex"} flexDirection={"column"} gap={"1rem"} flex={1}>
             <Text
               className="default-gradient"
               letterSpacing={"0.255rem"}
               lineHeight={"1rem"}
               fontWeight={"600"}
-              fontSize={{ md: "1rem", base: '0.75rem' }}
+              fontSize={{ md: "1rem", base: "0.75rem" }}
             >
               HUSHH
             </Text>
@@ -338,29 +377,47 @@ const ClientBrowserCompanion = () => {
             >
               Track your own browsing activity
             </Box>
-            <Box fontSize={{ md: '1.25rem', base: '0.75rem' }} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'30.04px'} color={'#ABACB0'} gap={{ md: '1rem', base: '0rem' }}>
+            <Box
+              fontSize={{ md: "1.25rem", base: "0.75rem" }}
+              display={"flex"}
+              flexDirection={"column"}
+              fontWeight={"500"}
+              lineHeight={"30.04px"}
+              color={"#ABACB0"}
+              gap={{ md: "1rem", base: "0rem" }}
+            >
               <Text>Choose what data to collect</Text>
               <Text>Track your interests over time</Text>
               <Text>Export the collected data to your hushh wallet</Text>
               <Text>Sell your data responsibly and get tailored services</Text>
             </Box>
           </Box>
-          <Box display={'flex'} flexDirection={'column'} flex={1} gap={'1rem'}>
+          <Box display={"flex"} flexDirection={"column"} flex={1} gap={"1rem"}>
             <Image src={BrowserBox} alt="BrowserBox" />
-            <Text fontSize={{ md: '1rem', base: '0.75rem' }} color={'#ABABAB'} lineHeight={{ md: '36px', base: '18px' }}>See exactly what data is being collected about you, including search queries, brand interactions, interests, preferences, likes, and clicks. Gain insights into your online behavior and understand what shapes your digital footprint</Text>
+            <Text
+              fontSize={{ md: "1rem", base: "0.75rem" }}
+              color={"#ABABAB"}
+              lineHeight={{ md: "36px", base: "18px" }}
+            >
+              See exactly what data is being collected about you, including
+              search queries, brand interactions, interests, preferences, likes,
+              and clicks. Gain insights into your online behavior and understand
+              what shapes your digital footprint
+            </Text>
             <Button
-              borderRadius={'3.3rem'}
-              w={'fit-content'}
-              p={'1rem 2rem'}
+              borderRadius={"3.3rem"}
+              w={"fit-content"}
+              p={"1rem 2rem"}
               _hover={{
-                color: 'white',
-                bg: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)',
-                border:'none'
+                color: "white",
+                bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                border: "none",
               }}
               onClick={() =>
-                router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+                router.push(
+                  "https://sites.google.com/hush1one.com/drops/products/chrome-extension",
+                )
               }
-
             >
               Explore
             </Button>
@@ -370,18 +427,39 @@ const ClientBrowserCompanion = () => {
         <HStack
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
-          gap={{ md: '2rem', base: '0.25rem' }}
-          display={'flex'}
-          flexDirection={{ md: 'row', base: 'column' }}
+          gap={{ md: "2rem", base: "0.25rem" }}
+          display={"flex"}
+          flexDirection={{ md: "row", base: "column" }}
         >
-          <Box display={{ md:'flex', base:'none'}} flexDirection={'column'} flex={1} gap={{ md: '2rem', base: '1rem' }}>
-            <Image src={TypingGIF} alt="TypingGIF" style={{height:'607px', width:'540px'}} unoptimized />
+          <Box
+            display={{ md: "flex", base: "none" }}
+            flexDirection={"column"}
+            flex={1}
+            gap={{ md: "2rem", base: "1rem" }}
+          >
+            <Image
+              src={TypingGIF}
+              alt="TypingGIF"
+              style={{ height: "607px", width: "540px" }}
+              unoptimized
+            />
           </Box>
-          <Box display={{ base:'flex', md:'none'}} flexDirection={'column'} flex={1} mb={'2rem'} gap={{ md: '2rem', base: '1rem' }}>
-            <Image src={TypingGIF} alt="TypingGIF" style={{height:'207px', width:'270px'}} unoptimized/>
+          <Box
+            display={{ base: "flex", md: "none" }}
+            flexDirection={"column"}
+            flex={1}
+            mb={"2rem"}
+            gap={{ md: "2rem", base: "1rem" }}
+          >
+            <Image
+              src={TypingGIF}
+              alt="TypingGIF"
+              style={{ height: "207px", width: "270px" }}
+              unoptimized
+            />
           </Box>
 
-          <Box display={"flex"} flexDirection={"column"} gap={'2rem'} flex={1}>
+          <Box display={"flex"} flexDirection={"column"} gap={"2rem"} flex={1}>
             <Text
               className="default-gradient"
               letterSpacing={"0.255rem"}
@@ -423,8 +501,21 @@ const ClientBrowserCompanion = () => {
             >
               Streamlined Integration via Browser Companion
             </Box>
-            <Box fontSize={'1rem'} display={'flex'} flexDirection={'column'} fontWeight={'500'} lineHeight={'36px'} color={'#ABABAB'} gap={'1rem'}>
-              <Text>Hushh Web Browser Companion also enables users to share their user activity in their Hushh Wallet. This makes it easy to organize and access important information, such as receipts, warranty details, and more, all in one secure place.</Text>
+            <Box
+              fontSize={"1rem"}
+              display={"flex"}
+              flexDirection={"column"}
+              fontWeight={"500"}
+              lineHeight={"36px"}
+              color={"#ABABAB"}
+              gap={"1rem"}
+            >
+              <Text>
+                Hushh Web Browser Companion also enables users to share their
+                user activity in their Hushh Wallet. This makes it easy to
+                organize and access important information, such as receipts,
+                warranty details, and more, all in one secure place.
+              </Text>
             </Box>
             <Button
               border={"3px solid #606060"}
@@ -438,34 +529,61 @@ const ClientBrowserCompanion = () => {
               _hover={{
                 background:
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                border:'none'
+                border: "none",
               }}
               onClick={() =>
-                router.push("https://sites.google.com/hush1one.com/drops/products/chrome-extension")
+                router.push(
+                  "https://sites.google.com/hush1one.com/drops/products/chrome-extension",
+                )
               }
             >
               REQUEST ACCESS
             </Button>
           </Box>
-
         </HStack>
 
-        <Stack margin={{ md: "10rem", base: "3.5rem" }} position={'relative'}>
-          <Box display={{ base: 'none', md: 'block' }}>
-            <Image src={BgAnimation} alt="BgAnimation" style={{ position: 'absolute', top: '-15px', zIndex: '-10', width: '100%', height: '40rem', filter: 'grayscale(100%)' }} unoptimized />
+        <Stack margin={{ md: "10rem", base: "3.5rem" }} position={"relative"}>
+          <Box display={{ base: "none", md: "block" }}>
+            <Image
+              src={BgAnimation}
+              alt="BgAnimation"
+              style={{
+                position: "absolute",
+                top: "-15px",
+                zIndex: "-10",
+                width: "100%",
+                height: "40rem",
+                filter: "grayscale(100%)",
+              }}
+              unoptimized
+            />
           </Box>
-          <Box display={{ base: 'block', md: 'none' }}>
-            <Image src={BgAnimation} alt="BgAnimation" style={{ position: 'absolute', top: '-15px', zIndex: '-10', width: '100%', height: '13rem' , filter: 'grayscale(100%)'}} unoptimized />
+          <Box display={{ base: "block", md: "none" }}>
+            <Image
+              src={BgAnimation}
+              alt="BgAnimation"
+              style={{
+                position: "absolute",
+                top: "-15px",
+                zIndex: "-10",
+                width: "100%",
+                height: "13rem",
+                filter: "grayscale(100%)",
+              }}
+              unoptimized
+            />
           </Box>
-          <VStack mb={{md:'2rem',base:'6rem'}} px={{ md: "10rem", base: "0rem" }} >
-
+          <VStack
+            mb={{ md: "2rem", base: "6rem" }}
+            px={{ md: "10rem", base: "0rem" }}
+          >
             <Text
               textAlign={"center"}
               className="gradient"
               fontWeight={"400"}
               fontSize={{ md: "3.75rem", base: "1.25rem" }}
               lineHeight={{ base: "45px", md: "75px" }}
-              as={'h2'}
+              as={"h2"}
             >
               Intelligent Insights and <br></br> Recommendations
             </Text>
@@ -474,10 +592,14 @@ const ClientBrowserCompanion = () => {
               color={"white"}
               textAlign={"center"}
               fontWeight={"400"}
-              lineHeight={{ md: "31.5px", base: '20px' }}
+              lineHeight={{ md: "31.5px", base: "20px" }}
               fontSize={{ md: "1.125rem", base: "0.75rem" }}
             >
-              The extension utilizes advanced algorithms and AI technology to analyze the captured data and generate brilliant insights. Users receive personalized recommendations, discover new products and brands, aligned with their interests, and stay up-to-date with the latest trends with Gen AI.
+              The extension utilizes advanced algorithms and AI technology to
+              analyze the captured data and generate brilliant insights. Users
+              receive personalized recommendations, discover new products and
+              brands, aligned with their interests, and stay up-to-date with the
+              latest trends with Gen AI.
             </Text>
           </VStack>
         </Stack>
@@ -485,7 +607,7 @@ const ClientBrowserCompanion = () => {
       </Box>
       <ContactForm />
     </>
-  )
-}
+  );
+};
 
-export default ClientBrowserCompanion
+export default ClientBrowserCompanion;

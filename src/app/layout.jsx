@@ -11,38 +11,43 @@ import HeaderComponent from "./_components/features/HeaderComponent";
 import emailjs from "@emailjs/browser";
 import NextTopLoader from "nextjs-toploader";
 import Head from "next/head";
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata = {
-  title:{
-     default:'HUSHH',
-     template:"%s",
+  title: {
+    default: "HUSHH",
+    template: "%s",
   },
   description: {
-    template:'%s',
-    default:"Your Data Your Business",
+    template: "%s",
+    default: "Your Data Your Business",
   },
-  keywords:{
-    template:'%s',
-    default:'Hushh, Hush, User Data API business,Hushh Button, Hushh Wallet App, Hushh Browser Companion, Hushh For Students, Hushh Valet Chat, Valet Chat, Vibe Search, Concierge App',
-  }
-}
+  keywords: {
+    template: "%s",
+    default:
+      "Hushh, Hush, User Data API business,Hushh Button, Hushh Wallet App, Hushh Browser Companion, Hushh For Students, Hushh Valet Chat, Valet Chat, Vibe Search, Concierge App",
+  },
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PDGMHH7CL"></script>
-      <GoogleTagManager gtmId="G-1PDGMHH7CL"/>
-      <meta name="google-site-verification" content="2yMPgnyqy54zZFkGkUxbtKD_9R60gWhe5Hk-DTYff9M" />
-      <head>
-
-      </head>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-1PDGMHH7CL"
+      ></script>
+      <GoogleTagManager gtmId="G-1PDGMHH7CL" />
+      <meta
+        name="google-site-verification"
+        content="2yMPgnyqy54zZFkGkUxbtKD_9R60gWhe5Hk-DTYff9M"
+      />
+      <head></head>
 
       <body
         style={{ backgroundColor: "black" }}
         className={`${mulish.variable} font-sans`}
       >
-        <link rel="icon" href="./favicon.ico"/>
+        <link rel="icon" href="./favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -91,8 +96,7 @@ export default function RootLayout({ children }) {
                       '
             zIndex={1600}
             showAtBottom={false}
-          />
-          {" "}
+          />{" "}
           <div className="">
             <Providers>{children}</Providers>
           </div>

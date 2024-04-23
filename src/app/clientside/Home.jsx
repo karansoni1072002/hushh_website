@@ -23,7 +23,6 @@ import HushhWalletIcon from "../_components/svg/hushhWalletIcon";
 import KeyIcon from "../_components/svg/keyIcon";
 import LockIcon from "../_components/svg/LockIcon";
 import LouisVuitton from "../../../public/Images/LouisVuitton.png";
-import NextImage from "next/image";
 import { useState, useEffect } from "react";
 import React from "react";
 import SephoraCard from "../../../public/Images/Sephora.png";
@@ -34,7 +33,6 @@ import VibeSearchIcon from "../_components/svg/vibeSearch";
 import extendedTheme from "../theme";
 import theme from "../theme";
 import { useRouter } from "next/navigation";
-// import { useRouter } from "next/router";
 import HushhCoinUiBox from "../_components/features/hushhCoinUiBox";
 import ContactForm from "../_components/features/contactForm";
 import NotificationPopup from "../_components/features/popupNotification";
@@ -81,15 +79,15 @@ const ClientHome = () => {
       </Head>
 
       <div className="relative">
-      <Image
-       src={HomeBg}
-       alt="HomeBg"
-       objectFit="cover"
-       className="z-0 w-full"
-       placeholder="blur"
-      //  priority
-       blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
-      />
+        <Image
+          src={HomeBg}
+          alt="HomeBg"
+          objectFit="cover"
+          className="z-0 w-full"
+          placeholder="blur"
+          //  priority
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
+        />
         <main className="bg-myBG  font-Figtree z-10">
           <div className="absolute top-0 w-full z-10">
             {showPopup && (
@@ -117,10 +115,18 @@ const ClientHome = () => {
                     Intelligence as a service powered by your{" "}
                     <div className="wrapper">
                       <div className="words">
-                        <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Data</div>
-                        <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Social Media</div>
-                        <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Phone Data</div>
-                        <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Shopping History</div>
+                        <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                          Data
+                        </div>
+                        <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                          Social Media
+                        </div>
+                        <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                          Phone Data
+                        </div>
+                        <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                          Shopping History
+                        </div>
                       </div>
                     </div>
                   </Heading>

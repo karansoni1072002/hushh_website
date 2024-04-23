@@ -32,22 +32,22 @@ import AboutFaq from "../_components/features/faq/aboutFaq";
 import { InlineWidget, useCalendlyEventListener } from "react-calendly";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import { useToast } from '@chakra-ui/react';
-import ChromeDemo from "../_components/svg/demoImages/chromeExtensionDemo.svg"
-import ConciergeDemo from "../_components/svg/demoImages/conciergeAppDemo.svg"
-import WalletDemo from "../_components/svg/demoImages/hushhWalletDemo.svg"
-import ValetDemo from "../_components/svg/demoImages/valetChatDemo.svg"
-import VibeSearchDemo from "../_components/svg/demoImages/vibeSearchDemo.svg"
-import VibeSearchApiDemo from "../_components/svg/demoImages/vibeSearchApiDemo.svg"
-import VibeSearchMarketDemo from "../_components/svg/demoImages/vibeSearchMarketplaceDemo.svg"
+import { useToast } from "@chakra-ui/react";
+import ChromeDemo from "../_components/svg/demoImages/chromeExtensionDemo.svg";
+import ConciergeDemo from "../_components/svg/demoImages/conciergeAppDemo.svg";
+import WalletDemo from "../_components/svg/demoImages/hushhWalletDemo.svg";
+import ValetDemo from "../_components/svg/demoImages/valetChatDemo.svg";
+import VibeSearchDemo from "../_components/svg/demoImages/vibeSearchDemo.svg";
+import VibeSearchApiDemo from "../_components/svg/demoImages/vibeSearchApiDemo.svg";
+import VibeSearchMarketDemo from "../_components/svg/demoImages/vibeSearchMarketplaceDemo.svg";
 import { useMediaQuery } from "react-responsive";
 
 const ClientDemoBooking = () => {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   const [showCalendly, setShowCalendly] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [value, setValue] = useState();
-  const toast = useToast()
+  const toast = useToast();
   const [scheduled, setScheduled] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const [formData, setFormData] = useState({
@@ -182,7 +182,7 @@ const ClientDemoBooking = () => {
               fontSize={{ md: "4.625rem", base: "2.31rem" }}
               lineHeight={{ md: "90.28px", base: "42px" }}
               as={"h1"}
-              display={{md:'block',base:'none'}}
+              display={{ md: "block", base: "none" }}
             >
               Explore hushh in <div className="new-gradient"> Action</div>
             </Heading>
@@ -191,9 +191,13 @@ const ClientDemoBooking = () => {
               fontWeight={"700"}
               fontSize={{ md: "4.625rem", base: "2.31rem" }}
               lineHeight={{ md: "90.28px", base: "42px" }}
-              display={{md:'none',base:'block'}}
+              display={{ md: "none", base: "block" }}
             >
-              Explore hushh in <span className="bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text"> Action</span>
+              Explore hushh in{" "}
+              <span className="bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                {" "}
+                Action
+              </span>
             </Text>
             <Text
               fontSize={{ md: "1.25rem", base: "1rem" }}
@@ -201,7 +205,7 @@ const ClientDemoBooking = () => {
               fontWeight={"400"}
               lineHeight={"30px"}
               letterSpacing={"-0.4px"}
-              as={'h2'}
+              as={"h2"}
             >
               Join us for a live demonstration of Hushh and unlock the secrets
               to building apps faster.
@@ -237,12 +241,27 @@ const ClientDemoBooking = () => {
             display={"flex"}
             flex={1}
             flexDirection={"column"}
-            overflow={'hidden'}
+            overflow={"hidden"}
           >
-            {showCalendly && !showThankYou && !isTabletOrMobile  && (
-              <div style={{ height: '100%', width: '100%',marginLeft:'-3rem',marginBottom:'-2rem' , p:'0', m:'0'}}>
+            {showCalendly && !showThankYou && !isTabletOrMobile && (
+              <div
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  marginLeft: "-3rem",
+                  marginBottom: "-2rem",
+                  p: "0",
+                  m: "0",
+                }}
+              >
                 <InlineWidget
-                  styles={{height:'750px', borderRadius:'1rem',maxHeight:'630px',width:'760px',marginTop:'-4rem'}}
+                  styles={{
+                    height: "750px",
+                    borderRadius: "1rem",
+                    maxHeight: "630px",
+                    width: "760px",
+                    marginTop: "-4rem",
+                  }}
                   url={`https://calendly.com/hushh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${phoneNumber}&product=${formData.product}`}
                   onSubmit={() => {
                     setScheduled(false);
@@ -257,23 +276,28 @@ const ClientDemoBooking = () => {
                 />
               </div>
             )}
-            {showCalendly && !showThankYou && isTabletOrMobile  && (
-              <div style={{ p: "0", borderRadius:'1rem', overflow:'hidden'  }}>
-              <InlineWidget
-                styles={{height:'750px', minWidth:'320px',marginTop:'0rem',overflow:'hidden'}}
-                url={`https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${phoneNumber}&product=${formData.product}`}
-                onSubmit={() => {
-                  setScheduled(false);
-                  setShowCalendly(false);
-                  setShowThankYou(true);
-                }}
-                onEventScheduled={() => {
-                  setScheduled(false);
-                  setShowCalendly(false);
-                  setShowThankYou(true);
-                }}
-              />
-            </div>
+            {showCalendly && !showThankYou && isTabletOrMobile && (
+              <div style={{ p: "0", borderRadius: "1rem", overflow: "hidden" }}>
+                <InlineWidget
+                  styles={{
+                    height: "750px",
+                    minWidth: "320px",
+                    marginTop: "0rem",
+                    overflow: "hidden",
+                  }}
+                  url={`https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${phoneNumber}&product=${formData.product}`}
+                  onSubmit={() => {
+                    setScheduled(false);
+                    setShowCalendly(false);
+                    setShowThankYou(true);
+                  }}
+                  onEventScheduled={() => {
+                    setScheduled(false);
+                    setShowCalendly(false);
+                    setShowThankYou(true);
+                  }}
+                />
+              </div>
             )}
             {!showCalendly && !showThankYou && (
               <form
@@ -287,8 +311,8 @@ const ClientDemoBooking = () => {
                   letterSpacing={"-0.2px"}
                   fontSize={{ md: "1.25rem", base: "1.25rem" }}
                   display={"flex"}
-                  flexDirection={{base:'column', md:'row'}}
-                  gap={{md:"0.5rem", base:'0.1rem'}}
+                  flexDirection={{ base: "column", md: "row" }}
+                  gap={{ md: "0.5rem", base: "0.1rem" }}
                   mb={{ md: "1.75rem", base: "0.8rem" }}
                 >
                   Schedule your free{" "}
@@ -407,8 +431,9 @@ const ClientDemoBooking = () => {
                   bg={"#0565FF"}
                   color={"#FFFFFF"}
                   _hover={{
-                    background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)',
-                    color:'#FFFFFF'
+                    background:
+                      "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                    color: "#FFFFFF",
                   }}
                 >
                   Get Demo
@@ -416,15 +441,25 @@ const ClientDemoBooking = () => {
               </form>
             )}
             {!showCalendly && showThankYou && (
-              <Box p={{md:10, base:5}} textAlign="left">
+              <Box p={{ md: 10, base: 5 }} textAlign="left">
                 <Text
                   color="#FFFFFF"
                   fontSize={{ md: "4.1rem", base: "2rem" }}
                   fontWeight={"700"}
-                  lineHeight={{ md:"80px", base:'45px'}}
-                  mb={{md:"1.5rem", base:'1rem'}}
+                  lineHeight={{ md: "80px", base: "45px" }}
+                  mb={{ md: "1.5rem", base: "1rem" }}
                 >
-                  <span style={{background:'linear-gradient(269.19deg, #E54D60 47%, #A342FF 98.76%)', color:'transparent',backgroundClip:'text'}}>Thank you</span>{" "} for your Submission.
+                  <span
+                    style={{
+                      background:
+                        "linear-gradient(269.19deg, #E54D60 47%, #A342FF 98.76%)",
+                      color: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    Thank you
+                  </span>{" "}
+                  for your Submission.
                 </Text>
                 <Text
                   fontWeight={"700"}
@@ -432,7 +467,7 @@ const ClientDemoBooking = () => {
                   fontSize={{ md: "1.25rem", base: "0.75rem" }}
                   letterSpacing={"-0.2px"}
                   color={"#FFFFFF"}
-                  mb={{md:"2.75rem", base:'1.75rem'}}
+                  mb={{ md: "2.75rem", base: "1.75rem" }}
                 >
                   You’re one step closer to rocking the social media strategy
                   you’ve been dreaming about. One of our experts will be
@@ -448,29 +483,34 @@ const ClientDemoBooking = () => {
                   While you’re here...
                 </Text>
                 <Box
-                  mt={{md:"4rem", base:'2rem'}}
-                  p={{ md:"0.5rem",base:'0.25rem'}}
+                  mt={{ md: "4rem", base: "2rem" }}
+                  p={{ md: "0.5rem", base: "0.25rem" }}
                   align={"center"}
                   border={"1px solid #606060"}
                   borderRadius={"5px"}
-                  w={{ md:"22rem",base:'12rem'}}
-                  fontWeight={'400'}
-                  fontSize={{md:'1.15rem', base:'0.75rem'}}
+                  w={{ md: "22rem", base: "12rem" }}
+                  fontWeight={"400"}
+                  fontSize={{ md: "1.15rem", base: "0.75rem" }}
                   className="color-gradient"
-                  lineHeight={{ md:"32.4px",base:'20px'}}
-                  letterSpacing={{ md:"0.5rem",base:'0.25rem'}}
+                  lineHeight={{ md: "32.4px", base: "20px" }}
+                  letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
                   _hover={{
                     background:
                       "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                     color: "white",
                   }}
                   cursor={"pointer"}
-                  onClick={() => window.open("https://www.youtube.com/@hushhai/videos", "_blank")}
+                  onClick={() =>
+                    window.open(
+                      "https://www.youtube.com/@hushhai/videos",
+                      "_blank",
+                    )
+                  }
                 >
                   EXPLORE OUR DEMOS
                 </Box>
               </Box>
-             )}
+            )}
           </Box>
         </Stack>
 
@@ -498,7 +538,7 @@ const ClientDemoBooking = () => {
           </Text>
           <Grid
             mt={{ md: "2rem", base: "1rem" }}
-            templateColumns={{ md:"repeat(3, 1fr)", base:"repeat(2,1fr)"}}
+            templateColumns={{ md: "repeat(3, 1fr)", base: "repeat(2,1fr)" }}
             gap={10}
           >
             <GridItem
@@ -513,7 +553,7 @@ const ClientDemoBooking = () => {
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
-                lineHeight={{md:"32px",base:'20px'}}
+                lineHeight={{ md: "32px", base: "20px" }}
                 fontSize={{ md: "1.5rem", base: "0.85rem" }}
                 letterSpacing={"-0.2px"}
                 my={{ md: "2.15rem", base: "0.5rem" }}
@@ -527,13 +567,18 @@ const ClientDemoBooking = () => {
                 lineHeight={"26px"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
                 my={{ md: "2.15rem", base: "0.5rem" }}
-                cursor={'pointer'}
-                display={'flex'}
-                gap={{md:"0.4rem", base:'0.2rem'}}
-                onClick={() => window.open("https://youtu.be/k16zt1WSvnM?si=ZWkZt8Y-fahjyl4l", "_blank")}
+                cursor={"pointer"}
+                display={"flex"}
+                gap={{ md: "0.4rem", base: "0.2rem" }}
+                onClick={() =>
+                  window.open(
+                    "https://youtu.be/k16zt1WSvnM?si=ZWkZt8Y-fahjyl4l",
+                    "_blank",
+                  )
+                }
               >
-                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
-              </Text>  
+                Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
+              </Text>
             </GridItem>
             <GridItem
               borderRadius={"8px"}
@@ -547,7 +592,7 @@ const ClientDemoBooking = () => {
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
-                lineHeight={{md:"32px",base:'20px'}}
+                lineHeight={{ md: "32px", base: "20px" }}
                 fontSize={{ md: "1.5rem", base: "0.85rem" }}
                 letterSpacing={"-0.2px"}
                 my={{ md: "2.15rem", base: "0.5rem" }}
@@ -561,18 +606,20 @@ const ClientDemoBooking = () => {
                 lineHeight={"26px"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
                 my={{ md: "2.15rem", base: "0.5rem" }}
-                onClick={() => toast({
-                  title: 'Demo Coming Soon',
-                  // description: "Thank you for reaching out to us",
-                  status: 'warning',
-                  duration: 3000,
-                  isClosable: true,
-                })}
-                display={'flex'}
-                cursor={'pointer'}
-                gap={{md:"0.4rem", base:'0.2rem'}}
+                onClick={() =>
+                  toast({
+                    title: "Demo Coming Soon",
+                    // description: "Thank you for reaching out to us",
+                    status: "warning",
+                    duration: 3000,
+                    isClosable: true,
+                  })
+                }
+                display={"flex"}
+                cursor={"pointer"}
+                gap={{ md: "0.4rem", base: "0.2rem" }}
               >
-                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
+                Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
               </Text>
             </GridItem>
             <GridItem
@@ -587,7 +634,7 @@ const ClientDemoBooking = () => {
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
-                lineHeight={{md:"32px",base:'20px'}}
+                lineHeight={{ md: "32px", base: "20px" }}
                 fontSize={{ md: "1.5rem", base: "0.85rem" }}
                 letterSpacing={"-0.2px"}
                 my={{ md: "2.15rem", base: "0.5rem" }}
@@ -601,12 +648,17 @@ const ClientDemoBooking = () => {
                 lineHeight={"26px"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
                 my={{ md: "2.15rem", base: "0.5rem" }}
-                cursor={'pointer'}
-                display={'flex'}
-                gap={{md:"0.4rem", base:'0.2rem'}}
-                onClick={() => window.open("https://youtu.be/2Ji8afCx5SI?si=1rLTsNcIixWE4Dh6", "_blank")}
+                cursor={"pointer"}
+                display={"flex"}
+                gap={{ md: "0.4rem", base: "0.2rem" }}
+                onClick={() =>
+                  window.open(
+                    "https://youtu.be/2Ji8afCx5SI?si=1rLTsNcIixWE4Dh6",
+                    "_blank",
+                  )
+                }
               >
-                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
+                Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
               </Text>
             </GridItem>
             <GridItem
@@ -621,7 +673,7 @@ const ClientDemoBooking = () => {
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
-                lineHeight={{md:"32px",base:'20px'}}
+                lineHeight={{ md: "32px", base: "20px" }}
                 fontSize={{ md: "1.5rem", base: "0.85rem" }}
                 letterSpacing={"-0.2px"}
                 my={{ md: "2.15rem", base: "0.5rem" }}
@@ -635,12 +687,17 @@ const ClientDemoBooking = () => {
                 lineHeight={"26px"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
                 my={{ md: "2.15rem", base: "0.5rem" }}
-                display={'flex'}
-                cursor={'pointer'}
-                gap={{md:"0.4rem", base:'0.2rem'}}
-                onClick={() => window.open("https://youtu.be/CzGi_Z_hGaQ?si=OCIPnw0boCSaTerW", "_blank")}
+                display={"flex"}
+                cursor={"pointer"}
+                gap={{ md: "0.4rem", base: "0.2rem" }}
+                onClick={() =>
+                  window.open(
+                    "https://youtu.be/CzGi_Z_hGaQ?si=OCIPnw0boCSaTerW",
+                    "_blank",
+                  )
+                }
               >
-                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
+                Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
               </Text>
             </GridItem>
             <GridItem
@@ -655,7 +712,7 @@ const ClientDemoBooking = () => {
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
-                lineHeight={{md:"32px",base:'20px'}}
+                lineHeight={{ md: "32px", base: "20px" }}
                 fontSize={{ md: "1.5rem", base: "0.85rem" }}
                 letterSpacing={"-0.2px"}
                 my={{ md: "2.15rem", base: "0.5rem" }}
@@ -669,12 +726,17 @@ const ClientDemoBooking = () => {
                 lineHeight={"26px"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
                 my={{ md: "2.15rem", base: "0.5rem" }}
-                display={'flex'}
-                cursor={'pointer'}
-                gap={{md:"0.4rem", base:'0.2rem'}}
-                onClick={() => window.open("https://youtu.be/J0Q_n6CWfO8?si=hqxXUFpUgNlvB1pE", "_blank")}
+                display={"flex"}
+                cursor={"pointer"}
+                gap={{ md: "0.4rem", base: "0.2rem" }}
+                onClick={() =>
+                  window.open(
+                    "https://youtu.be/J0Q_n6CWfO8?si=hqxXUFpUgNlvB1pE",
+                    "_blank",
+                  )
+                }
               >
-                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
+                Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
               </Text>
             </GridItem>
             <GridItem
@@ -689,7 +751,7 @@ const ClientDemoBooking = () => {
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
-                lineHeight={{md:"32px",base:'20px'}}
+                lineHeight={{ md: "32px", base: "20px" }}
                 fontSize={{ md: "1.5rem", base: "0.85rem" }}
                 letterSpacing={"-0.2px"}
                 my={{ md: "2.15rem", base: "0.5rem" }}
@@ -703,12 +765,17 @@ const ClientDemoBooking = () => {
                 lineHeight={"26px"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
                 my={{ md: "2.15rem", base: "0.5rem" }}
-                display={'flex'}
-                cursor={'pointer'}
-                gap={{md:"0.4rem", base:'0.2rem'}}
-                onClick={() => window.open("https://youtu.be/iY9HyVvpkUs?si=kQT1qiDKNkAYvz6f", "_blank")}
+                display={"flex"}
+                cursor={"pointer"}
+                gap={{ md: "0.4rem", base: "0.2rem" }}
+                onClick={() =>
+                  window.open(
+                    "https://youtu.be/iY9HyVvpkUs?si=kQT1qiDKNkAYvz6f",
+                    "_blank",
+                  )
+                }
               >
-                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
+                Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
               </Text>
             </GridItem>
             <GridItem
@@ -723,7 +790,7 @@ const ClientDemoBooking = () => {
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
-                lineHeight={{md:"32px",base:'20px'}}
+                lineHeight={{ md: "32px", base: "20px" }}
                 fontSize={{ md: "1.5rem", base: "0.85rem" }}
                 letterSpacing={"-0.2px"}
                 my={{ md: "2.15rem", base: "0.5rem" }}
@@ -737,12 +804,17 @@ const ClientDemoBooking = () => {
                 lineHeight={"26px"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
                 my={{ md: "2.15rem", base: "0.5rem" }}
-                display={'flex'}
-                cursor={'pointer'}
-                gap={{md:"0.4rem", base:'0.2rem'}}
-                onClick={() => window.open("https://youtu.be/mXymL7IZBPg?si=lQ9CxJkU3bpFvDr8", "_blank")}
+                display={"flex"}
+                cursor={"pointer"}
+                gap={{ md: "0.4rem", base: "0.2rem" }}
+                onClick={() =>
+                  window.open(
+                    "https://youtu.be/mXymL7IZBPg?si=lQ9CxJkU3bpFvDr8",
+                    "_blank",
+                  )
+                }
               >
-                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
+                Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
               </Text>
             </GridItem>
             <GridItem
@@ -757,7 +829,7 @@ const ClientDemoBooking = () => {
               <Text
                 color={"#FFFFFF"}
                 fontWeight={"400"}
-                lineHeight={{md:"32px",base:'20px'}}
+                lineHeight={{ md: "32px", base: "20px" }}
                 fontSize={{ md: "1.5rem", base: "0.85rem" }}
                 letterSpacing={"-0.2px"}
                 my={{ md: "2.15rem", base: "0.5rem" }}
@@ -771,21 +843,26 @@ const ClientDemoBooking = () => {
                 lineHeight={"26px"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
                 my={{ md: "2.15rem", base: "0.5rem" }}
-                display={'flex'}
-                cursor={'pointer'}
-                gap={{md:"0.4rem", base:'0.2rem'}}
-                onClick={() => window.open("https://youtu.be/0-UHsKOYpQU?si=Q-9864DkYSlf0xCA", "_blank")}
+                display={"flex"}
+                cursor={"pointer"}
+                gap={{ md: "0.4rem", base: "0.2rem" }}
+                onClick={() =>
+                  window.open(
+                    "https://youtu.be/0-UHsKOYpQU?si=Q-9864DkYSlf0xCA",
+                    "_blank",
+                  )
+                }
               >
-                Watch Now <ArrowForwardIcon style={{marginTop:'0.35rem'}}/>
+                Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
               </Text>
             </GridItem>
           </Grid>
         </VStack>
       </Box>
-      <AboutFaq/>
-      <ContactForm/>
+      <AboutFaq />
+      <ContactForm />
     </>
   );
-}
+};
 
-export default ClientDemoBooking
+export default ClientDemoBooking;

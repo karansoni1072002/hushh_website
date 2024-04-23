@@ -1,18 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Box, Flex, IconButton, Input, Text, VStack } from '@chakra-ui/react';
-import { SearchIcon } from '@chakra-ui/icons';
-import { useResponsiveSizes } from '../../context/responsive';
-import contentMap from '../productData/contentMap';
-import { useRouter } from 'next/navigation';
-import { useMediaQuery } from 'react-responsive';
+import React, { useState, useEffect, useRef } from "react";
+import { Box, Flex, IconButton, Input, Text, VStack } from "@chakra-ui/react";
+import { SearchIcon } from "@chakra-ui/icons";
+import { useResponsiveSizes } from "../../context/responsive";
+import contentMap from "../productData/contentMap";
+import { useRouter } from "next/navigation";
+import { useMediaQuery } from "react-responsive";
 
 const SearchBar = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [showRecommendations, setShowRecommendations] = useState(false);
   const [recommendations, setRecommendations] = useState([]);
   const router = useRouter();
   const isMobile = useResponsiveSizes();
-  const isDesktop = useMediaQuery({ query: '(min-width: 1824px)' })
+  const isDesktop = useMediaQuery({ query: "(min-width: 1824px)" });
   const [isClicked, setIsClicked] = useState(false);
   const inputRef = useRef(null);
   const recommendationsRef = useRef(null);
@@ -27,9 +27,8 @@ const SearchBar = () => {
     const matched = contentMap.filter(
       (item) =>
         item.keywords.some((keyword) =>
-          keyword.toLowerCase().includes(query.toLowerCase())
-        ) ||
-        item.content.toLowerCase().includes(query.toLowerCase())
+          keyword.toLowerCase().includes(query.toLowerCase()),
+        ) || item.content.toLowerCase().includes(query.toLowerCase()),
     );
 
     setRecommendations(matched);
@@ -47,24 +46,29 @@ const SearchBar = () => {
   const highlightMatchedText = (text, query) => {
     const index = text.toLowerCase().indexOf(query.toLowerCase());
     if (index !== -1) {
-      const startIndex = Math.max(0, isDesktop ?  index - 10 : index - 25);
-      const endIndex = Math.min(text.length, isDesktop ?  index + query.length + 15 : index + query.length + 20 );
+      const startIndex = Math.max(0, isDesktop ? index - 10 : index - 25);
+      const endIndex = Math.min(
+        text.length,
+        isDesktop ? index + query.length + 15 : index + query.length + 20,
+      );
       const highlightedText = text.substring(startIndex, endIndex);
       const formattedText = (
         <Text as="span" key={index}>
           ...{highlightedText.substring(0, index - startIndex)}
           <Text as="span" fontWeight="bold">
-            {highlightedText.substring(index - startIndex, index - startIndex + query.length)}
+            {highlightedText.substring(
+              index - startIndex,
+              index - startIndex + query.length,
+            )}
           </Text>
           {highlightedText.substring(index - startIndex + query.length)}
-         ...
+          ...
         </Text>
       );
       return formattedText;
     }
     return <Text>{text}</Text>;
-};
-
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -79,109 +83,115 @@ const SearchBar = () => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
     <VStack width="70%" spacing={4}>
-      <Flex width="100%" position="relative" mt={'0.75rem'}>
-      {!isClicked ? (
-      <IconButton
-        icon={<SearchIcon color={'#606060'} boxSize={ isMobile ? 20 : 32 } />}
-        aria-label="Search"
-        className="search-icon"
-        onClick={() => setIsClicked(true)}
-        colorScheme="#606060"
-      />
-    ) : (
-      <Input
-        ref={inputRef}
-        placeholder="Search..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        variant="filled"
-        borderRadius="none"
-        width={"100%"}
-        size="md"
-        bg="black"
-        _hover={{
-          background: "none",
-        }}
-        border={"3px solid #606060"}
-        _focus={{ color: "#FFFFFF", border: "1px solid #FFFFFF" }}
-        _placeholder={{ color: "gray.400" }}
-        px="4"
-        py="2"
-        onKeyPress={(e) => {
-          if (e.key === "Enter") {
-            handleSearch();
-          }
-        }}
-      />
-    )}
+      <Flex width="100%" position="relative" mt={"0.75rem"}>
+        {!isClicked ? (
+          <IconButton
+            icon={<SearchIcon color={"#606060"} boxSize={isMobile ? 20 : 32} />}
+            aria-label="Search"
+            className="search-icon"
+            onClick={() => setIsClicked(true)}
+            colorScheme="#606060"
+          />
+        ) : (
+          <Input
+            ref={inputRef}
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            variant="filled"
+            borderRadius="none"
+            width={"100%"}
+            size="md"
+            bg="black"
+            _hover={{
+              background: "none",
+            }}
+            border={"3px solid #606060"}
+            _focus={{ color: "#FFFFFF", border: "1px solid #FFFFFF" }}
+            _placeholder={{ color: "gray.400" }}
+            px="4"
+            py="2"
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                handleSearch();
+              }
+            }}
+          />
+        )}
       </Flex>
       {showRecommendations && (
         <VStack
           align="stretch"
           position="absolute"
           zIndex="10"
-          borderRadius={'16px'}
+          borderRadius={"16px"}
           ref={recommendationsRef}
           bg="white"
           shadow="md"
           maxH="300px"
           overflowY="auto"
           p={15}
-          maxW={'25rem'}
-          mt={'3rem'}
+          maxW={"25rem"}
+          mt={"3rem"}
         >
           {recommendations.length === 0 ? (
             <Box
               p={3}
-              minW={{ base: '90%', md: '20rem' }}
+              minW={{ base: "90%", md: "20rem" }}
               borderBottom="1px solid"
               borderColor="gray.200"
-              display={'flex'}
-              gap={'1rem'}
+              display={"flex"}
+              gap={"1rem"}
             >
-              <Text color={'#111B29'} fontSize={'1rem'} fontWeight={'600'}>
+              <Text color={"#111B29"} fontSize={"1rem"} fontWeight={"600"}>
                 No results found
               </Text>
             </Box>
           ) : (
-          recommendations.map((rec, index) => (
-            <Box
-              key={index}
-              onClick={() => {
-                router.push(rec.url);
-                setShowRecommendations(false);
-              }}
-              _hover={{ bg: 'gray.100', cursor: 'pointer' }}
-              p={3}
-              minW={{ base: '90%', md: '20rem' }}
-              borderBottom="1px solid"
-              borderColor="gray.200"
-              display={'flex'}
-              gap={'1rem'}
-            >
-             <Box>{rec.icon}</Box>
-             <Box display={'flex'} flexDirection={'column'}>
-             <Text color={'#111B29'} fontSize={'1rem'} fontWeight={'600'}>
-                {highlightMatchedText(rec.showRecommentationContentHeading, searchQuery)}
-              </Text>
-              <Text fontSize={'0.8rem'} fontWeight={'300'}>
-                {highlightMatchedText(rec.showRecommentationContentDescription, searchQuery)}
-              </Text>
-              <Text fontSize={'0.7rem'} fontWeight={'300'}>
-                {highlightMatchedText(rec.content, searchQuery)}
-              </Text>
-             </Box>
-            </Box>
-          ))
+            recommendations.map((rec, index) => (
+              <Box
+                key={index}
+                onClick={() => {
+                  router.push(rec.url);
+                  setShowRecommendations(false);
+                }}
+                _hover={{ bg: "gray.100", cursor: "pointer" }}
+                p={3}
+                minW={{ base: "90%", md: "20rem" }}
+                borderBottom="1px solid"
+                borderColor="gray.200"
+                display={"flex"}
+                gap={"1rem"}
+              >
+                <Box>{rec.icon}</Box>
+                <Box display={"flex"} flexDirection={"column"}>
+                  <Text color={"#111B29"} fontSize={"1rem"} fontWeight={"600"}>
+                    {highlightMatchedText(
+                      rec.showRecommentationContentHeading,
+                      searchQuery,
+                    )}
+                  </Text>
+                  <Text fontSize={"0.8rem"} fontWeight={"300"}>
+                    {highlightMatchedText(
+                      rec.showRecommentationContentDescription,
+                      searchQuery,
+                    )}
+                  </Text>
+                  <Text fontSize={"0.7rem"} fontWeight={"300"}>
+                    {highlightMatchedText(rec.content, searchQuery)}
+                  </Text>
+                </Box>
+              </Box>
+            ))
           )}
         </VStack>
       )}

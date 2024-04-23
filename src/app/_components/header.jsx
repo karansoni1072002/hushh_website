@@ -2,7 +2,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import HushhHeaderLogo from "./svg/hushhHeaderLogo";
 import Link from "next/link";
-import {Link as ScrollLink} from 'react-scroll'
+import { Link as ScrollLink } from "react-scroll";
 
 import { Button, Container } from "@chakra-ui/react";
 import theme from "../theme";
@@ -18,23 +18,23 @@ import ChromeExtentionLogo from "./svg/ChromeExtensionLogo";
 import ConciergeApp from "./svg/conciergeApp";
 import ValetChat from "./svg/valetChat";
 import VibeSearchApi from "./svg/vibeSearchApi";
-import { headerAssets } from './svg/icons/HeaderIcons/headerAssets'
+import { headerAssets } from "./svg/icons/HeaderIcons/headerAssets";
 import { animateScroll as scroll } from "react-scroll";
-import { useToast } from '@chakra-ui/react';
+import { useToast } from "@chakra-ui/react";
 
 const Header = () => {
   const toast = useToast();
   const { isMobile } = useResponsiveSizes();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [productsSubmenu, setProductsSubmenu] = useState(false)
-  const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false)
+  const [productsSubmenu, setProductsSubmenu] = useState(false);
+  const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [headerBackground, setHeaderBackground] = useState('transparent');
+  const [headerBackground, setHeaderBackground] = useState("transparent");
 
   const scrollToContactForm = () => {
     window.scrollTo({
-      top: document.getElementById('contact-form').offsetTop,
-      behavior: 'smooth',
+      top: document.getElementById("contact-form").offsetTop,
+      behavior: "smooth",
     });
   };
 
@@ -44,16 +44,16 @@ const Header = () => {
       setScrollPosition(position);
 
       if (position > 0) {
-        setHeaderBackground('black');
+        setHeaderBackground("black");
       } else {
-        setHeaderBackground('transparent');
+        setHeaderBackground("transparent");
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -84,9 +84,9 @@ const Header = () => {
     };
   });
   const handleSubmenuClick = () => {
-    setProductsSubmenuMobile(false)
-    setIsMenuOpen(false)
-  }
+    setProductsSubmenuMobile(false);
+    setIsMenuOpen(false);
+  };
 
   const handleLoginClick = () => {
     // toast({
@@ -97,21 +97,20 @@ const Header = () => {
     //   isClosable: true,
     //   position: "top-right",
     // });
-    window.open('https://hushh-button.vercel.app/user/login', '_blank');
-
+    window.open("https://hushh-button.vercel.app/user/login", "_blank");
   };
 
   return (
     <div className={`w-full z-1000`} style={{ background: headerBackground }}>
       <div className=" flex items-center justify-between w-full px-6 py-2 z-1000 md:px-32 md:py-5">
         <div className="">
-          <Link href='/'>
+          <Link href="/">
             <HushhHeaderLogo />
           </Link>
         </div>
         {isMobile ? (
           <div className="w-full flex py-2 justify-end">
-            <Container display={'flex'} gap={'1rem'}>
+            <Container display={"flex"} gap={"1rem"}>
               <SearchBar />
               <div className=" text-white" onClick={handleMenuIconToggle}>
                 {isMenuOpen ? <CloseMenuIcon /> : <Bars3Icon />}
@@ -121,119 +120,201 @@ const Header = () => {
         ) : (
           <div className="w-max">
             <div className="text-white flex justify-between gap-12 px-7 ">
-              <Link href="/" style={{zIndex:'1000'}} onMouseEnter={() => setProductsSubmenu(false)}>
+              <Link
+                href="/"
+                style={{ zIndex: "1000" }}
+                onMouseEnter={() => setProductsSubmenu(false)}
+              >
                 HOME
               </Link>
-              <Link href="/about" style={{zIndex:'1000'}} onMouseEnter={() => setProductsSubmenu(false)}>
+              <Link
+                href="/about"
+                style={{ zIndex: "1000" }}
+                onMouseEnter={() => setProductsSubmenu(false)}
+              >
                 ABOUT US
               </Link>
-              <Link href="#" className="flex items-center gap-2 group" onMouseEnter={() => setProductsSubmenu(true)}>
+              <Link
+                href="#"
+                className="flex items-center gap-2 group"
+                onMouseEnter={() => setProductsSubmenu(true)}
+              >
                 PRODUCTS
-                <ChevronArrowIcon className='group-hover:rotate-0 rotate-180 transition-all duration-300' />
+                <ChevronArrowIcon className="group-hover:rotate-0 rotate-180 transition-all duration-300" />
               </Link>
-              <Link href="https://hushh-labs.github.io/hushh-labs-blog/" onMouseEnter={() => setProductsSubmenu(false)}>
+              <Link
+                href="https://hushh-labs.github.io/hushh-labs-blog/"
+                onMouseEnter={() => setProductsSubmenu(false)}
+              >
                 LABS
               </Link>
-              <Link href="/pricingPlans" onMouseEnter={() => setProductsSubmenu(false)}>
+              <Link
+                href="/pricingPlans"
+                onMouseEnter={() => setProductsSubmenu(false)}
+              >
                 PRICING
               </Link>
-              <ScrollLink to="contact-form" smooth={true} spy={true} duration={7000} onMouseEnter={() => setProductsSubmenu(false)} onClick={scrollToContactForm} style={{cursor:'pointer'}}>
+              <ScrollLink
+                to="contact-form"
+                smooth={true}
+                spy={true}
+                duration={7000}
+                onMouseEnter={() => setProductsSubmenu(false)}
+                onClick={scrollToContactForm}
+                style={{ cursor: "pointer" }}
+              >
                 CONTACT US
               </ScrollLink>
             </div>
-            {
-              productsSubmenu &&
-              <div className="bg-white z-100 flex flex-col gap-4 absolute pl-8 pr-8 mt-4 pt-5 pb-7 rounded-2xl shadow-lg shadow-[#A7AEBA1F]" onMouseEnter={() => setProductsSubmenu(true)} onMouseLeave={() => setProductsSubmenu(false)}>
-                <p className="text-xs text-fontColor2 font-semibold">HUSHH PRODUCTS</p>
-                <div className="flex gap-2" >
+            {productsSubmenu && (
+              <div
+                className="bg-white z-100 flex flex-col gap-4 absolute pl-8 pr-8 mt-4 pt-5 pb-7 rounded-2xl shadow-lg shadow-[#A7AEBA1F]"
+                onMouseEnter={() => setProductsSubmenu(true)}
+                onMouseLeave={() => setProductsSubmenu(false)}
+              >
+                <p className="text-xs text-fontColor2 font-semibold">
+                  HUSHH PRODUCTS
+                </p>
+                <div className="flex gap-2">
                   <div className="flex-1 flex flex-col gap-2">
                     <Link
-                      href={'/products/hushhButton'}
+                      href={"/products/hushhButton"}
                       onClick={() => setProductsSubmenu(false)}
-                      className="flex gap-4 items-start hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
+                      className="flex gap-4 items-start hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                    >
                       <div className="">
                         <HushhButtonIcon size={24} />
                       </div>
                       <div className="">
-                        <h1 className='font-semibold'>Hushh Button</h1>
-                        <p className='text-sm font-medium text-fontColor3'>Share data for personalized <br /> recommendations.</p>
+                        <h1 className="font-semibold">Hushh Button</h1>
+                        <p className="text-sm font-medium text-fontColor3">
+                          Share data for personalized <br /> recommendations.
+                        </p>
                       </div>
                     </Link>
-                    <Link href={'/products/browserCompanion'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
+                    <Link
+                      href={"/products/browserCompanion"}
+                      onClick={() => setProductsSubmenu(false)}
+                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                    >
                       <div className="">
-                        <ChromeExtentionLogo className='w-6 h-6' />
+                        <ChromeExtentionLogo className="w-6 h-6" />
                       </div>
                       <div className="">
-                        <h1 className='font-semibold'>Hushh Browser Companion</h1>
-                        <p className='text-sm font-medium text-fontColor3'>Enhanced recommendations &<br /> impactful marketing.</p>
+                        <h1 className="font-semibold">
+                          Hushh Browser Companion
+                        </h1>
+                        <p className="text-sm font-medium text-fontColor3">
+                          Enhanced recommendations &<br /> impactful marketing.
+                        </p>
                       </div>
                     </Link>
-                    <Link href={'/products/conciergeApp'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
+                    <Link
+                      href={"/products/conciergeApp"}
+                      onClick={() => setProductsSubmenu(false)}
+                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                    >
                       <div className="">
-                        <ConciergeApp className='w-6 h-6' />
+                        <ConciergeApp className="w-6 h-6" />
                       </div>
                       <div className="">
-                        <h1 className='font-semibold'>Hushh Concierge App</h1>
-                        <p className='text-sm font-medium text-fontColor3'>Speak your wish, get luxury <br /> redefined: Hushh Concierge</p>
+                        <h1 className="font-semibold">Hushh Concierge App</h1>
+                        <p className="text-sm font-medium text-fontColor3">
+                          Speak your wish, get luxury <br /> redefined: Hushh
+                          Concierge
+                        </p>
                       </div>
                     </Link>
-                    <Link href={'/products/vibeSearch'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
+                    <Link
+                      href={"/products/vibeSearch"}
+                      onClick={() => setProductsSubmenu(false)}
+                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                    >
                       <div className="">
-                        <VibeSearchIcon className='w-6 h-6' />
+                        <VibeSearchIcon className="w-6 h-6" />
                       </div>
                       <div className="">
-                        <h1 className='font-semibold'>VIBE Search App</h1>
-                        <p className='text-sm font-medium text-fontColor3'>Find perfect items to express your <br /> individuality in just one click.</p>
+                        <h1 className="font-semibold">VIBE Search App</h1>
+                        <p className="text-sm font-medium text-fontColor3">
+                          Find perfect items to express your <br />{" "}
+                          individuality in just one click.
+                        </p>
                       </div>
                     </Link>
                   </div>
 
                   <div className="flex-1 flex flex-col gap-2 w-full">
-                    <Link href={'/products/hushhWalletApp'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 items-start hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
+                    <Link
+                      href={"/products/hushhWalletApp"}
+                      onClick={() => setProductsSubmenu(false)}
+                      className="flex gap-4 items-start hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                    >
                       <div className="">
-                        <HushhWalletIcon className='w-6 h-6' />
+                        <HushhWalletIcon className="w-6 h-6" />
                       </div>
                       <div className="">
-                        <h1 className='font-semibold'>Hushh Wallet App</h1>
-                        <p className='text-sm font-medium text-fontColor3'>Customer User Flow + Client Advisor User Flow</p>
-                      </div>
-                    </Link>
-                    <Link href={'/products/hushhValetChat'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
-                      <div className="">
-                        <ValetChat className='w-6 h-6' />
-                      </div>
-                      <div className="">
-                        <h1 className='font-semibold'>Valet Chat</h1>
-                        <p className='text-sm font-medium text-fontColor3'>Valet Chat: Ditch receipts, unlock <br /> insights.</p>
+                        <h1 className="font-semibold">Hushh Wallet App</h1>
+                        <p className="text-sm font-medium text-fontColor3">
+                          Customer User Flow + Client Advisor User Flow
+                        </p>
                       </div>
                     </Link>
-                    <Link href={'#'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
+                    <Link
+                      href={"/products/hushhValetChat"}
+                      onClick={() => setProductsSubmenu(false)}
+                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                    >
                       <div className="">
-                        <VibeSearchApi className='w-6 h-6' />
+                        <ValetChat className="w-6 h-6" />
                       </div>
                       <div className="">
-                        <h1 className='font-semibold'>VIBE Search APIs</h1>
-                        <p className='text-sm font-medium text-fontColor3'>List products on Vibe Search with <br /> management and analytics.</p>
+                        <h1 className="font-semibold">Valet Chat</h1>
+                        <p className="text-sm font-medium text-fontColor3">
+                          Valet Chat: Ditch receipts, unlock <br /> insights.
+                        </p>
                       </div>
                     </Link>
-                    <Link href={'#'} onClick={() => setProductsSubmenu(false)} className="flex gap-4 group hover:text-white hover:bg-black px-5 py-2.5 rounded-xl">
+                    <Link
+                      href={"#"}
+                      onClick={() => setProductsSubmenu(false)}
+                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                    >
                       <div className="">
-                        <headerAssets.VibeSearchMarketplace className='w-6 h-6' />
+                        <VibeSearchApi className="w-6 h-6" />
                       </div>
                       <div className="">
-                        <h1 className='font-semibold'>VIBE Search Marketplace</h1>
-                        <p className='text-sm font-medium text-fontColor3'>News and updates</p>
+                        <h1 className="font-semibold">VIBE Search APIs</h1>
+                        <p className="text-sm font-medium text-fontColor3">
+                          List products on Vibe Search with <br /> management
+                          and analytics.
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      href={"#"}
+                      onClick={() => setProductsSubmenu(false)}
+                      className="flex gap-4 group hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                    >
+                      <div className="">
+                        <headerAssets.VibeSearchMarketplace className="w-6 h-6" />
+                      </div>
+                      <div className="">
+                        <h1 className="font-semibold">
+                          VIBE Search Marketplace
+                        </h1>
+                        <p className="text-sm font-medium text-fontColor3">
+                          News and updates
+                        </p>
                       </div>
                     </Link>
                   </div>
                 </div>
               </div>
-            }
+            )}
           </div>
         )}
 
-
-<div className="z-100">
+        <div className="z-100">
           {!isMobile && (
             <div className="login">
               <SearchBar />
@@ -250,7 +331,7 @@ const Header = () => {
                   background:
                     "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                   color: "white",
-                  border: 'none'
+                  border: "none",
                 }}
                 onClick={handleLoginClick}
               >
@@ -286,91 +367,128 @@ const Header = () => {
               >
                 <div className="flex gap-2 items-center justify-center">
                   PRODUCTS
-                  <ChevronArrowIcon className={`${productsSubmenuMobile ? '' : 'rotate-180'} group-hover:rotate-0 transition-all duration-300`} />
+                  <ChevronArrowIcon
+                    className={`${productsSubmenuMobile ? "" : "rotate-180"} group-hover:rotate-0 transition-all duration-300`}
+                  />
                 </div>
               </Link>
               <div className="w-full">
-                {
-                  productsSubmenuMobile &&
+                {productsSubmenuMobile && (
                   <div className=" flex flex-col w-full items-end">
                     {/* <p className="text-xs text-fontColor2 font-semibold">HUSHH PRODUCTS</p> */}
 
                     <div className=" flex flex-col w-3/4 ">
-                      <Link href={'/products/hushhButton'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link
+                        href={"/products/hushhButton"}
+                        onClick={handleSubmenuClick}
+                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
+                      >
                         <div className="">
                           <HushhButtonIcon size={24} />
                         </div>
                         <div className="">
-                          <h1 className='font-semibold'>Hushh Button</h1>
+                          <h1 className="font-semibold">Hushh Button</h1>
                           {/* <p className='text-sm font-medium text-fontColor3'>Share data for personalized <br /> recommendations.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/products/browserCompanion'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link
+                        href={"/products/browserCompanion"}
+                        onClick={handleSubmenuClick}
+                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
+                      >
                         <div className="">
-                          <ChromeExtentionLogo className='w-6 h-6' />
+                          <ChromeExtentionLogo className="w-6 h-6" />
                         </div>
                         <div className="">
-                          <h1 className='font-semibold'>Hushh Browser Companion</h1>
+                          <h1 className="font-semibold">
+                            Hushh Browser Companion
+                          </h1>
                           {/* <p className='text-sm font-medium text-fontColor3'>Enhanced recommendations &<br /> impactful marketing.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/products/conciergeApp'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link
+                        href={"/products/conciergeApp"}
+                        onClick={handleSubmenuClick}
+                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
+                      >
                         <div className="">
-                          <ConciergeApp className='w-6 h-6' />
+                          <ConciergeApp className="w-6 h-6" />
                         </div>
                         <div className="">
-                          <h1 className='font-semibold'>Hushh Concierge App</h1>
+                          <h1 className="font-semibold">Hushh Concierge App</h1>
                           {/* <p className='text-sm font-medium text-fontColor3'>Speak your wish, get luxury <br /> redefined: Hushh Concierge</p> */}
                         </div>
                       </Link>
-                      <Link href={'/products/vibeSearch'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link
+                        href={"/products/vibeSearch"}
+                        onClick={handleSubmenuClick}
+                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
+                      >
                         <div className="">
-                          <VibeSearchIcon className='w-6 h-6' />
+                          <VibeSearchIcon className="w-6 h-6" />
                         </div>
                         <div className="">
-                          <h1 className='font-semibold'>VIBE Search App</h1>
+                          <h1 className="font-semibold">VIBE Search App</h1>
                           {/* <p className='text-sm font-medium text-fontColor3'>Find perfect items to express your <br /> individuality in just one click.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/products/hushhWalletApp'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0">
+                      <Link
+                        href={"/products/hushhWalletApp"}
+                        onClick={handleSubmenuClick}
+                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0"
+                      >
                         <div className="">
-                          <HushhWalletIcon className='w-6 h-6' />
+                          <HushhWalletIcon className="w-6 h-6" />
                         </div>
                         <div className="">
-                          <h1 className='font-semibold'>Hushh Wallet App</h1>
+                          <h1 className="font-semibold">Hushh Wallet App</h1>
                           {/* <p className='text-sm font-medium text-fontColor3'>Customer User Flow + Client Advisor User Flow</p> */}
                         </div>
                       </Link>
-                      <Link href={'/products/hushhValetChat'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link
+                        href={"/products/hushhValetChat"}
+                        onClick={handleSubmenuClick}
+                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
+                      >
                         <div className="">
-                          <ValetChat className='w-6 h-6' />
+                          <ValetChat className="w-6 h-6" />
                         </div>
                         <div className="">
-                          <h1 className='font-semibold'>Valet Chat</h1>
+                          <h1 className="font-semibold">Valet Chat</h1>
                           {/* <p className='text-sm font-medium text-fontColor3'>Valet Chat: Ditch receipts, unlock <br /> insights.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link
+                        href={"/"}
+                        onClick={handleSubmenuClick}
+                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
+                      >
                         <div className="">
-                          <VibeSearchApi className='w-6 h-6' />
+                          <VibeSearchApi className="w-6 h-6" />
                         </div>
                         <div className="">
-                          <h1 className='font-semibold'>VIBE Search APIs</h1>
+                          <h1 className="font-semibold">VIBE Search APIs</h1>
                           {/* <p className='text-sm font-medium text-fontColor3'>List products on Vibe Search with <br /> management and analytics.</p> */}
                         </div>
                       </Link>
-                      <Link href={'/'} onClick={handleSubmenuClick} className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 ">
+                      <Link
+                        href={"/"}
+                        onClick={handleSubmenuClick}
+                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
+                      >
                         <div className="">
-                          <headerAssets.VibeSearchMarketplace className='w-6 h-6' />
+                          <headerAssets.VibeSearchMarketplace className="w-6 h-6" />
                         </div>
                         <div className="">
-                          <h1 className='font-semibold'>VIBE Search Marketplace</h1>
+                          <h1 className="font-semibold">
+                            VIBE Search Marketplace
+                          </h1>
                           {/* <p className='text-sm font-medium text-fontColor3'>News and updates</p> */}
                         </div>
                       </Link>
                     </div>
                   </div>
-                }
+                )}
               </div>
               <Link
                 href="/pricingPlans"
@@ -387,8 +505,16 @@ const Header = () => {
               >
                 LABS
               </Link>
-              <ScrollLink to="contact-form" spy={true} smooth={true} duration={7000} onClick={() => { setIsMenuOpen(false); scrollToContactForm(); }}
-                    className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
+              <ScrollLink
+                to="contact-form"
+                spy={true}
+                smooth={true}
+                duration={7000}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToContactForm();
+                }}
+                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
               >
                 CONTACT US
               </ScrollLink>
@@ -404,10 +530,9 @@ const Header = () => {
           </div>
         ) : (
           <div className=""></div>
-        )
-        }
-      </div >
-    </div >
+        )}
+      </div>
+    </div>
   );
 };
 

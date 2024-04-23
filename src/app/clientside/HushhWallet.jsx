@@ -61,21 +61,20 @@ const BrandContainer = styled.div`
 `;
 
 const ClientHushhWallet = () => {
-    const scrollTo = () => {
-        scroll.scrollTo(850);
-      };
-    
-      const scrollInMobile = () => {
-        scroll.scrollTo(450);
-      };
-    
-      const learnMoreScroll = () => {
-        scroll.scrollTo(1500);
-      };
-    
-      const router = useRouter();
-    
-    
+  const scrollTo = () => {
+    scroll.scrollTo(850);
+  };
+
+  const scrollInMobile = () => {
+    scroll.scrollTo(450);
+  };
+
+  const learnMoreScroll = () => {
+    scroll.scrollTo(1500);
+  };
+
+  const router = useRouter();
+
   return (
     <>
       <Box
@@ -87,7 +86,7 @@ const ClientHushhWallet = () => {
         <Box
           alignItems={"center"}
           w={"100%"}
-          id={'1'}
+          id={"1"}
           display={"flex"}
           flexDirection={"column"}
           mt={{ base: "3rem" }}
@@ -103,7 +102,7 @@ const ClientHushhWallet = () => {
             pt={{ md: "8rem", base: "3rem" }}
             color={"#FFFFFF"}
             mb={{ base: "0.5rem" }}
-            as={'h1'}
+            as={"h1"}
           >
             World's first AI Powered Data Wallet
           </Heading>
@@ -124,7 +123,7 @@ const ClientHushhWallet = () => {
             w={"fit-content"}
             p={"1rem 2rem"}
             _hover={{
-              border:'none',
+              border: "none",
               color: "white",
               bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
@@ -547,7 +546,7 @@ const ClientHushhWallet = () => {
           className="gradient"
           fontSize={{ md: "3.75rem", base: "1.75rem" }}
           lineHeight={{ md: "63.3px", base: "43px" }}
-          as={'h2'}
+          as={"h2"}
         >
           Personalized Experiences, Rewarded Interactions
         </Text>
@@ -653,8 +652,9 @@ const ClientHushhWallet = () => {
                 border={"1px solid #FFFFFF"}
                 borderRadius={"80px"}
                 _hover={{
-                    border:'none',
-                    background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
+                  border: "none",
+                  background:
+                    "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 }}
               >
                 APP STORE
@@ -669,14 +669,15 @@ const ClientHushhWallet = () => {
                 border={"1px solid #FFFFFF"}
                 borderRadius={"80px"}
                 _hover={{
-                    border:'none',
-                    background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
+                  border: "none",
+                  background:
+                    "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 }}
               >
                 PLAY STORE
               </Button>
             </HStack>
-            <Box pos={"absolute"} right={"7%"} bottom={0} >
+            <Box pos={"absolute"} right={"7%"} bottom={0}>
               <Image src={BrandWalletMobile} alt="BrandWalletMobile" />
             </Box>
           </Box>
@@ -690,7 +691,7 @@ const ClientHushhWallet = () => {
         flexDirection={"column"}
         position={"relative"}
         px={"0.75rem"}
-        pt={'0.75rem'}
+        pt={"0.75rem"}
       >
         <Text
           mb={{ base: "0.5rem" }}
@@ -721,8 +722,9 @@ const ClientHushhWallet = () => {
             border={"1px solid #FFFFFF"}
             borderRadius={"80px"}
             _hover={{
-                background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)',
-                border:'none',
+              background:
+                "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border: "none",
             }}
           >
             APP STORE
@@ -737,8 +739,9 @@ const ClientHushhWallet = () => {
             border={"1px solid #FFFFFF"}
             borderRadius={"80px"}
             _hover={{
-                background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)',
-                border:'none',
+              background:
+                "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border: "none",
             }}
           >
             PLAY STORE
@@ -752,7 +755,12 @@ const ClientHushhWallet = () => {
         >
           <Image
             src={BrandWalletMobile}
-            style={{ position: "relative", height: "30%",bottom:'0', width: "40%" }}
+            style={{
+              position: "relative",
+              height: "30%",
+              bottom: "0",
+              width: "40%",
+            }}
             alt="BrandWalletMobile"
           />
         </Box>
@@ -761,7 +769,7 @@ const ClientHushhWallet = () => {
       <WalletFaq />
       <ContactForm />
     </>
-  )
-}
+  );
+};
 
-export default ClientHushhWallet
+export default ClientHushhWallet;

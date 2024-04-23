@@ -143,13 +143,13 @@ export default function AboutFaq() {
 
   const handleToggle = (index) => {
     setActiveAccordionIndex((prevIndex) =>
-      prevIndex === index ? null : index
+      prevIndex === index ? null : index,
     );
   };
 
   const handleAccordionChange = (index) => {
     setActiveAccordionIndex((activeIndex) =>
-      activeIndex === index ? null : index
+      activeIndex === index ? null : index,
     );
   };
 

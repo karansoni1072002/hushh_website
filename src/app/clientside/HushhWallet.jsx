@@ -656,7 +656,7 @@ const ClientHushhWallet = () => {
                     border:'none',
                     background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
                 }}
-                onClick={router.push('https://testflight.apple.com/join/u6FFaw2B')}
+                onClick={() => router.push('https://testflight.apple.com/join/u6FFaw2B')}
               >
                 APP STORE
               </Button>
@@ -673,7 +673,7 @@ const ClientHushhWallet = () => {
                     border:'none',
                     background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
                 }}
-                onClick={router.push('https://drive.google.com/file/d/1c2atlHg2fMja1Cyoe_5HpA49LPz7qkmB/view?usp=sharing')}
+                onClick={() => router.push('https://drive.google.com/file/d/1c2atlHg2fMja1Cyoe_5HpA49LPz7qkmB/view?usp=sharing')}
               >
                 PLAY STORE
               </Button>

@@ -127,7 +127,7 @@ const ClientHushhWallet = () => {
               color: "white",
               bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
-            onClick={scrollTo}
+            onClick={router.push('https://testflight.apple.com/join/u6FFaw2B')}
             zIndex={"6"}
           >
             Explore
@@ -656,6 +656,7 @@ const ClientHushhWallet = () => {
                   background:
                     "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 }}
+                onClick={() => router.push('https://testflight.apple.com/join/u6FFaw2B')}
               >
                 APP STORE
               </Button>
@@ -673,6 +674,7 @@ const ClientHushhWallet = () => {
                   background:
                     "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 }}
+                onClick={() => router.push('https://drive.google.com/file/d/1c2atlHg2fMja1Cyoe_5HpA49LPz7qkmB/view?usp=sharing')}
               >
                 PLAY STORE
               </Button>

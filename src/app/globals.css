@@ -374,3 +374,28 @@ body {
   display: flex;
   align-items: center;
 }
+/* Pricing Plan Hover Effect CSS */
+.plan {
+  background-color: #131414;
+  color: white;
+}
+
+.plan:hover {
+  background-color: #146EF5;
+  color: #FFFFFF;
+  /* cursor: pointer; */
+}
+
+.plan:hover .planName {
+  background: #FFFFFF;
+  color: #080808;
+}
+
+.plan:hover .planAdvertisment {
+  color:#FFFFFF;
+}
+
+.plan:hover .planButton {
+  background: #FFFFFF;
+  color: #080808;
+}

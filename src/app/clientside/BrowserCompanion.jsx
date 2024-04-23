@@ -134,7 +134,7 @@ const ClientBrowserCompanion = () => {
             }}
             onClick={() =>
               router.push(
-                "https://sites.google.com/hush1one.com/drops/products/chrome-extension",
+                "https://sites.google.com/hush1one.com/drops/products/chrome-extension"
               )
             }
           >
@@ -247,7 +247,7 @@ const ClientBrowserCompanion = () => {
               src={DirectionLine}
             />
             <iframe
-              src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710411292%2FHushh_button_-_developer_walkthrough_uwwiy0.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true&player[pictureInPictureToggle]=false&source[poster]=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fimage%2Fupload%2FScreenshot_2024-03-14_160021_hapzpw.jpg"
+              src="https://player.cloudinary.com/embed/?public_id=hushh_browser_companion_j2rfyq&cloud_name=dr5alaq5u&player[controls]=true&player[fluid]=true&source[info][title]=Hushh%20Browser%20Companion&source[info][subtitle]=A%20product%20that%20helps%20you%20keep%20track%20of%20your%20digital%20footprint%20with%20Gen%20AI"
               width="4  40"
               height="250"
               title="Browser Companion (Chrome Extension) Walkthrough"
@@ -298,7 +298,7 @@ const ClientBrowserCompanion = () => {
               src={DirectionLine}
             />
             <iframe
-              src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710411292%2FHushh_button_-_developer_walkthrough_uwwiy0.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true&player[pictureInPictureToggle]=false&source[poster]=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fimage%2Fupload%2FScreenshot_2024-03-14_160021_hapzpw.jpg"
+              src="https://player.cloudinary.com/embed/?public_id=hushh_browser_companion_j2rfyq&cloud_name=dr5alaq5u&player[controls]=true&player[fluid]=true&source[info][title]=Hushh%20Browser%20Companion&source[info][subtitle]=A%20product%20that%20helps%20you%20keep%20track%20of%20your%20digital%20footprint%20with%20Gen%20AI"
               width="4  40"
               height="250"
               title="Browser Companion (Chrome Extension) Walkthrough"
@@ -309,8 +309,8 @@ const ClientBrowserCompanion = () => {
                 borderRadius: "1rem",
               }}
               allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-              allowFullScreen
-              frameBorder="0"
+              allowfullscreen
+              frameborder="0"
             ></iframe>
             <Image
               className="frameCard1"
@@ -415,7 +415,7 @@ const ClientBrowserCompanion = () => {
               }}
               onClick={() =>
                 router.push(
-                  "https://sites.google.com/hush1one.com/drops/products/chrome-extension",
+                  "https://sites.google.com/hush1one.com/drops/products/chrome-extension"
                 )
               }
             >
@@ -533,7 +533,7 @@ const ClientBrowserCompanion = () => {
               }}
               onClick={() =>
                 router.push(
-                  "https://sites.google.com/hush1one.com/drops/products/chrome-extension",
+                  "https://sites.google.com/hush1one.com/drops/products/chrome-extension"
                 )
               }
             >

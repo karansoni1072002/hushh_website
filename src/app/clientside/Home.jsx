@@ -81,12 +81,15 @@ const ClientHome = () => {
       </Head>
 
       <div className="relative">
-        <Image
-          src={HomeBg}
-          alt="HomeBg"
-          objectFit="cover"
-          className="z-0 w-full"
-        />
+      <Image
+       src={HomeBg}
+       alt="HomeBg"
+       objectFit="cover"
+       className="z-0 w-full"
+       placeholder="blur"
+      //  priority
+       blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
+      />
         <main className="bg-myBG  font-Figtree z-10">
           <div className="absolute top-0 w-full z-10">
             {showPopup && (

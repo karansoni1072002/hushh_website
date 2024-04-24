@@ -102,7 +102,7 @@ const planData = [
         price: "5% transaction fee",
         advetisment: "No Ads",
         brands: "",
-        perMonth: "/mo",
+        perMonth: "",
         features: [
             [
               "Personalized service booking",
@@ -236,8 +236,8 @@ const planData = [
         name: "Ultra Max",
         price: "$200",
         advetisment: "No Ads",
-        brands: "+$2,000 setup",
-        perMonth: "/mo",
+        brands: "",
+        perMonth: "/mo +$2,000 setup",
         features: [
             ["Custom cloud infrastructure"],
             ["Managed IT services"]
@@ -578,7 +578,7 @@ const ClientPricingPage = () => {
             borderRadius={"8px"}
             border={"1px solid #222222"}
             minH={{ md: "4.125rem", base: "auto" }}
-            w={{ md: "100%", base: "auto" }}
+            w={{ md: "auto", base: "auto" }}
             justifyContent={{ md: "center", base: "flex-start" }}
             flexWrap={{ base: "wrap" , md:'normal'}}
           >

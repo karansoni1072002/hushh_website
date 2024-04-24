@@ -1,192 +1,990 @@
 "use client";
 import React, { useState } from "react";
 import {
-    Accordion,
-    AccordionItem,
-    AccordionButton,
-    AccordionPanel,
-    AccordionIcon,
-    Box,
-    Heading,
-    Text,
-    List,
-    ListItem,
-    ListIcon,
-    Badge,
-    Tabs,
-    TabList,
-    TabPanels,
-    Tab,
-    TabPanel,
-    Container,
-    SimpleGrid,
-  } from '@chakra-ui/react';
-  import { CheckCircleIcon } from '@chakra-ui/icons';
+  Divider,
+  List,
+  ListItem,
+  Switch,
+} from "@chakra-ui/react";
+import {
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  Box,
+  Heading,
+  Text,
+  SimpleGrid,
+  VStack,
+  Button,
+  HStack,
+} from "@chakra-ui/react";
+import { ChevronDownIcon } from "@chakra-ui/icons";
+import ListIconTick from "../_components/svg/icons/listIconTick";
+import Image from "next/image";
+import BoxImage from "../_components/svg/keyHighlightImg.svg";
+import ManageFinanceBox from "../_components/svg/managefinanceBox.svg";
+import PricingFaq from "../_components/features/faq/pricingFaq";
+import ContactForm from "../_components/features/contactForm";
+import { useMediaQuery } from "react-responsive";
+import InfoIcon from "../_components/svg/icons/infoIcon.svg";
+import { Tooltip } from "@chakra-ui/react";
+
+const planData = [
+  {
+    category: "Personal Assistant",
+    plans: [
+      {
+        name: "Basic",
+        price: "Free",
+        advetisment: "Ads included",
+        brands: "",
+        perMonth: "/mo",
+        features: [["AI-powered assistance"], ["Basic query handling"]],
+      },
+      {
+        name: "PRO",
+        price: "$15",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+          [
+            "Advanced AI assistance",
+          ],
+          ["Scheduling features", "Personalized alerts"],
+        ],
+      },
+      {
+        name: "Ultra X",
+        price: "$100",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/request",
+        features: [
+          [
+            "Priority request handling",
+          ],
+          ["Bespoke personal assistance"],
+        ],
+      },
+      {
+        name: "Ultra Max",
+        price: "$500",
+        advetisment: "No Ads",
+        brands: "Unlimited brands",
+        perMonth: "/mo",
+        features: [
+          ["Dedicated personal assistant"],
+          ["24/7 availability"],
+        ],
+      },
+    ],
+  },
+  {
+    category: "Concierge",
+    plans: [
+      {
+        name: "Basic",
+        price: "Free",
+        advetisment: "Ads included",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+          [
+            "Access to general services",          
+           ],
+        ],
+      },
+      {
+        name: "PRO",
+        price: "5% transaction fee",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+            [
+              "Personalized service booking",
+              "Exclusive Event Bookings"
+            ],
+        ],
+      },
+      {
+        name: "Ultra X",
+        price: "$100",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/request",
+        features: [
+            [
+                "Premium service bookings",
+                "Tailored recommendations",
+              ],
+            ["Exclusive event bookings"],        
+        ],
+      },
+      {
+        name: "Ultra Max",
+        price: "",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "",
+        features: [
+            ["Advanced service bookings"],
+            [
+                "Unlimited concierge services",
+                "Global access to events and bookings",
+              ],
+        ],
+      },
+    ],
+  },
+  {
+    category: "Luxury Marketplace",
+    plans: [
+      {
+        name: "Basic",
+        price: "Free",
+        advetisment: "Ads included",
+        brands: "",
+        perMonth: "/mo",
+        features: [["Access to marketplace"]],
+      },
+      {
+        name: "PRO",
+        price: "$100",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+          [
+            "Premium listings unlocked",
+          ],
+          ["Special offers and deals"]
+        ],
+      },
+      {
+        name: "Ultra X",
+        price: "$500",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+         [
+            "Access to exclusive prodcuts",
+            "Early releases",
+          ],
+        ],
+      },
+      {
+        name: "Ultra Max",
+        price: "$10,000",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/lifetime",
+        features: [
+         [
+            "Lifetime Membership",
+          ],
+          [
+            "Personal shopping advisor"
+          ]
+        ],
+      },
+    ],
+  },
+  {
+    category: "Cloud Services",
+    plans: [
+      {
+        name: "Basic",
+        price: "$0.10/GB Storage",
+        advetisment: "Ads included",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+          [
+            "Secure data storage",
+          ],
+          ["Basic backup and sync"]
+        ],
+      },
+      {
+        name: "PRO",
+        price: "$50",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+          ["Enhanced security features"],
+          ["More storage and bakcup options"]
+        ],
+      },
+      {
+        name: "Ultra X",
+        price: "$150",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+            ["Advanced cloud solutions"],
+            ["Priority support"]
+        ],
+      },
+      {
+        name: "Ultra Max",
+        price: "$200",
+        advetisment: "No Ads",
+        brands: "+$2,000 setup",
+        perMonth: "/mo",
+        features: [
+            ["Custom cloud infrastructure"],
+            ["Managed IT services"]
+        ],
+      },
+    ],
+  },
+  {
+    category: "Investment Insights",
+    plans: [
+      {
+        name: "Basic",
+        price: "Free",
+        advetisment: "Ads included",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+          [
+            "Access to basic market insights",
+          ],
+        ],
+      },
+      {
+        name: "PRO",
+        price: "$500",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+          [
+            "In-depth analytics and reporting",
+          ],
+          ["Personal investment advisor"],
+        ],
+      },
+      {
+        name: "Ultra X",
+        price: "Coming Soon!",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+          ["Advanced AI Capabilities"],
+        ],
+      },
+      {
+        name: "Ultra Max",
+        price: "Coming Soon!",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+          ["Advanced AI Capabilities"],
+          ["Customer Support and Assistance"]
+        ],
+      },
+    ],
+  },
+  {
+    category: "Ultra G1",
+    plans: [
+      {
+        name: "Basic",
+        price: "Free",
+        advetisment: "Ads included",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+            ["Coming Soon!!"],
+
+        ],
+      },
+      {
+        name: "PRO",
+        price: "",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+            ["Coming Soon!!"],
+        ],
+      },
+      {
+        name: "Ultra X",
+        price: "",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+          ["Coming Soon!!"],
+        ],
+      },
+      {
+        name: "Ultra Max",
+        price: "",
+        advetisment: "No Ads",
+        brands: "",
+        perMonth: "/mo",
+        features: [
+          ["Exclusive access to Ultra G1 services"],
+        ],
+      },
+    ],
+  },
+  {
+    category: "Luxury Experience",
+    plans: [
+        {
+          name: "Basic",
+          price: "Free",
+          advetisment: "Ads included",
+          brands: "",
+          perMonth: "/mo",
+          features: [
+              ["Coming Soon!!"],
   
-  const pricingTiers = [
-    {
-      category: 'HushhAI & HushhPDA',
-      plans: [
-        { name: 'Standard', price: 'Free', description: 'with basic AI functionalities' },
-        { name: 'Premium', price: '$9.99/month', description: 'Advanced personal insights and data integration' },
-        { name: 'Ultra X', price: '$99/month', description: 'Bespoke AI concierge services, including real-time decision support' },
-        { name: 'Ultra Max', price: '$499/month', description: 'Full-suite personal assistant with predictive lifestyle management' },
+          ],
+        },
+        {
+          name: "PRO",
+          price: "",
+          advetisment: "No Ads",
+          brands: "",
+          perMonth: "/mo",
+          features: [
+              ["Coming Soon!!"],
+          ],
+        },
+        {
+          name: "Ultra X",
+          price: "",
+          advetisment: "No Ads",
+          brands: "",
+          perMonth: "/mo",
+          features: [
+            ["Coming Soon!!"],
+          ],
+        },
+        {
+          name: "Ultra Max",
+          price: "",
+          advetisment: "No Ads",
+          brands: "",
+          perMonth: "/mo",
+          features: [
+            ["Tailored luxury experiences and travels"],
+          ],
+        },
       ],
-    },
-    {
-        category: 'HushhQR and HushhPay',
-        plans: [
-          { name: 'Basic', price: 'Free', description: 'Free basic transactions' },
-          { name: 'Business', price: '$29.99/month', description: 'Enhanced transaction capabilities and analytics' },
-          { name: 'Luxury Retail Tier', price: '$199/month', description: 'High-value transaction services, luxury consumer engagement tools' },
-        ],
-      },
-      {
-        category: 'HushhFeed and Vibe Search',
-        plans: [
-          { name: 'Standard Access', price: 'Free', description: 'Free with ads' },
-          { name: 'Premium', price: '$4.99/month', description: 'Ad-free experience with enhanced customization' },
-          { name: 'Exclusive Content Tier', price: '$19.99/month', description: 'Access to premium content, exclusive deals' },
-        ],
-      },
-      {
-        category: 'HushhAI & HushhPDA',
-        plans: [
-          { name: 'Standard', price: 'Free', description: 'with basic AI functionalities' },
-          { name: 'Premium', price: '$9.99/month', description: 'Advanced personal insights and data integration' },
-          { name: 'Ultra X', price: '$99/month', description: 'Bespoke AI concierge services, including real-time decision support' },
-          { name: 'Ultra Max', price: '$499/month', description: 'Full-suite personal assistant with predictive lifestyle management' },
-        ],
-      },
-      {
-        category: 'Hushh Marketplace',
-        plans: [
-          { name: 'Free Listing', price: 'Free', description: 'Basic listing with transaction fees' },
-          { name: 'Professional', price: '$49/month', description: 'Enhanced visibility and analytics' },
-          { name: 'Elite Seller', price: '$149/month', description: 'Top-tier visibility, dedicated support, and business insights' },
-        ],
-      },
-      {
-        category: 'HushhAPI & Developer SDK',
-        plans: [
-          { name: 'Developer Free Tier', price: 'Free', description: 'Access to basic APIs' },
-          { name: 'Pro', price: '$99/month', description: 'Extended access and higher request limits' },
-          { name: 'Enterprise Solution', price: 'Custom pricing', description: 'Comprehensive access with full support and integration services' },
-        ],
-      },
-      {
-        category: 'HushhAds',
-        plans: [
-          { name: 'CPC/CPM Model', price: 'Competitive industry rates', description: 'Access to basic Models' },
-          { name: 'Premium Campaigns', price: 'Custom pricing', description: 'High-engagement campaigns with advanced targeting' },
-        ],
-      },
-      {
-        category: 'Hushh Concierge Services',
-        plans: [
-          { name: 'Per Use', price: 'Custom', description: 'Standard rates for booking services' },
-          { name: 'Membership', price: '$999/year', description: 'Includes premium bookings and exclusive access to events' },
-          { name: 'Ultra Concierge', price: '$9,999/year', description: 'Tailored for the ultra-rich with bespoke global concierge services' },
-        ],
-      },
-      {
-        category: 'Hushh Vibe Search & Valet Chat',
-        plans: [
-          { name: 'Basic', price: 'Free', description: 'Basic functionality with ads' },
-          { name: 'Premium', price: '$6.99/month', description: 'Enhanced features and no ads' },
-          { name: 'Business', price: ' $49.99/month', description: 'Business-grade features, analytics, and support' },
-        ],
-      },
-  ];
+  },
+  {
+    category: "VR Meetings & Workspace",
+    plans: [
+        {
+          name: "Basic",
+          price: "Free",
+          advetisment: "Ads included",
+          brands: "",
+          perMonth: "/mo",
+          features: [
+              ["Coming Soon!!"],
   
-  const operationalStrategy = [
-    { name: '1 Marketing Guru', description: 'Manages branding, marketing campaigns, and oversees the AI-driven marketing content creation.' },
-    { name: '1 Business Guru', description: 'Focuses on strategy, partnerships, and maintaining optimal operational performance.' },
-    { name: '36 Engineers', description: 'Develops and maintains the AI and machine learning algorithms, oversees the platform’s technical infrastructure, and ensures seamless integration across services.' },
-    // ... Add any additional operational strategy points here
-  ];
-  
-  const salesModel = [
-    { name: 'Affiliate Program', description: 'Empowers sales affiliates through training and tools to create engaging content and sell effectively via social media and personal networks.' },
-    { name: 'AI-Driven Engagement', description: 'AI tools help affiliates identify potential customers, optimize sales pitches, and manage interactions.' },
-    { name: 'Content Creation Platforms', description: 'Leverage platforms like TikTok, Instagram, and YouTube to drive sales directly through embedded commerce functionalities.' },
-    // ... Add any additional sales model points here
-  ];
-  
-  const ClientPricingPage = () => {
-    // State to manage which tab is selected
-    const [tabIndex, setTabIndex] = useState(0);
-  
-    // Handle tab change
-    const handleTabsChange = (index) => {
-      setTabIndex(index);
-    };
-  
-    return (
-      <Container maxW="container.xl" py={10} >
-        <Box mt={{md:'4rem', base:'2rem'}}>
-        <Heading as="h1" size="xl" textAlign="center" mb={10} className="gradient">
-          Hushh Exclusive Pricing Plans
-        </Heading>
-        <Tabs index={tabIndex} onChange={handleTabsChange} isFitted variant="enclosed-colored" colorScheme="purple">
-          <TabList>
-            <Tab>Pricing Tiers</Tab>
-            <Tab>Operational Strategy</Tab>
-            <Tab>Sales Model</Tab>
+          ],
+        },
+        {
+          name: "PRO",
+          price: "",
+          advetisment: "No Ads",
+          brands: "",
+          perMonth: "/mo",
+          features: [
+              ["Coming Soon!!"],
+          ],
+        },
+        {
+          name: "Ultra X",
+          price: "",
+          advetisment: "No Ads",
+          brands: "",
+          perMonth: "/mo",
+          features: [
+            ["Coming Soon!!"],
+          ],
+        },
+        {
+          name: "Ultra Max",
+          price: "",
+          advetisment: "No Ads",
+          brands: "",
+          perMonth: "/mo",
+          features: [
+            ["Advanced virtual reality meeting spaces"],
+          ],
+        },
+      ],
+  },
+  {
+    category: "Affiliate Program",
+    plans: [
+      {
+        name: "Standard Commission",
+        price: "",
+        advetisment: "",
+        brands: "",
+        perMonth: "",
+        features: [
+          [
+            "Up to 30% on direct sales",
+          ],
+          ["Access to free entry tool"]
+        ],
+      },
+      {
+        name: "Elite Commission",
+        price: "",
+        advetisment: "",
+        brands: "",
+        perMonth: "",
+        features: [
+          [
+            "Up to 50% on high--ticket items",
+          ],
+          ["Elite Tools"],
+          ["Full Access"]
+        ],
+      },
+    ],
+  },
+];
+
+const ClientPricingPage = () => {
+  const [tabIndex, setTabIndex] = useState(0);
+  const [activeAccordionIndex, setActiveAccordionIndex] = useState(-1);
+  const [isYearly, setIsYearly] = useState(false);
+  const [isMonthly, setIsMonthly] = useState(true);
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const [activePlanCategory, setActivePlanCategory] = useState("site"); // 'site' or 'workspace'
+
+  const handleTabsChange = (index) => {
+    setTabIndex(index);
+    setActiveAccordionIndex(index);
+  };
+
+  const handleSwitchChange = () => {
+    setIsYearly(!isYearly); // toggle the state on each click
+    setIsMonthly(false);
+  };
+
+  const handlePlanCategoryChange = (category) => {
+    setActivePlanCategory(category);
+    setTabIndex(0);
+  };
+
+  const renderPrice = (price, perMonth) => {
+    if (price === "Free") return "Free"; // If price is "Free", return "Free"
+
+    const priceNum = parseFloat(price.replace("$", ""));
+    const yearlyPrice = isYearly ? priceNum * 12 : priceNum;
+    const discountedPrice = isYearly ? yearlyPrice * 0.78 : priceNum; // Applying 22% discount if it's yearly, else use original price
+    const total = Math.floor(discountedPrice); // Remove decimal part
+
+    // Change perMonth text based on yearly toggle
+    const durationText = isYearly ? "/yr" : perMonth;
+    return `$${total}`; // Total price with updated duration text
+  };
+
+  const yearlyTextStyles = isYearly ? { color: "white" } : { color: "#717171" };
+  const monthlyTextStyles = !isYearly
+    ? { color: "white" }
+    : { color: "#717171" };
+
+  return (
+    <>
+      <Box p={{ base: 4, md: 8 }}>
+        <VStack
+          ml={{ base: "1rem", md: "5.5rem" }}
+          spacing={2}
+          mt={{ md: "8rem", base: "5rem" }}
+          mr={{ md: "50%", base: "0" }}
+        >
+          <Heading
+            lineHeight={"32px"}
+            display={"flex"}
+            alignSelf={"flex-start"}
+            textAlign={"left"}
+            as={"h1"}
+            color={"#FFFFFF"}
+            fontSize={{ base: "0.85rem", md: "1.25rem" }}
+            letterSpacing={"0.04rem"}
+            fontWeight="500"
+          >
+            Pricing
+          </Heading>
+          <Heading
+            as={"h2"}
+            lineHeight={{ md: "90.28px", base: "40px" }}
+            className="gradient"
+            fontSize={{ base: "2.5rem", md: "4.625rem" }}
+            fontWeight="700"
+            alignSelf={"flex-start"}
+            textAlign={"left"}
+          >
+            Find the right plan for your needs
+          </Heading>
+        </VStack>
+      </Box>
+
+      <Box
+        minW={"100%"}
+        display={"flex"}
+        textAlign={"left"}
+        alignItems={{ md: "center", base: "center" }}
+        flexDirection={"column"}
+      >
+        <Tabs
+          onChange={handleTabsChange}
+          position="relative"
+          variant="unstyled"
+          mt={8}
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"center"}
+        >
+          <TabList
+            p={{ md: "", base: "0.5rem" }}
+            borderRadius={"8px"}
+            border={"1px solid #222222"}
+            minH={{ md: "4.125rem", base: "auto" }}
+            w={{ md: "100%", base: "auto" }}
+            justifyContent={{ md: "center", base: "flex-start" }}
+            flexWrap={{ base: "wrap" }}
+          >
+            {(activePlanCategory === "site"
+              ? planData
+              : workspacePlansData
+            ).map((category, index) => (
+              <Tab
+                key={index}
+                _selected={{
+                  color: "white",
+                  bg: "#363636",
+                  borderRadius: "4px",
+                }}
+                color={"#898989"}
+                lineHeight={{ md: "22px", base: "14px" }}
+                fontWeight={"600"}
+                fontSize={{ md: "15px", base: "10px" }}
+                mr={{ base: "2", md: "0" }}
+              >
+                {category.category}
+              </Tab>
+            ))}
           </TabList>
-          <TabPanels color={'white'}>
-            <TabPanel>
-              <Accordion allowToggle>
-                {pricingTiers.map((tier, index) => (
-                  <AccordionItem key={index}>
-                    <h2>
-                      <AccordionButton>
-                        <Box flex="1" textAlign="left">
-                          {tier.category}
+
+          <TabPanels mt={"2rem"}>
+            {(activePlanCategory === "site"
+              ? planData
+              : workspacePlansData
+            ).map((category, index) => (
+              <TabPanel key={index}>
+                <SimpleGrid
+                  mx={{ md: "10rem", base: "0" }}
+                  columns={{ base: 2, md: 4 }}
+                  gap={{ md: "4rem", base: "1rem" }}
+                >
+                  {category.plans.map((plan, idx) => (
+                    <>
+                      <Box
+                        bg={"#131414"}
+                        display={"flex"}
+                        textAlign={"center"}
+                        alignItems={"center"}
+                        borderRadius={"4px"}
+                        flexDirection={"column"}
+                        className="plan"
+                      >
+                        <Box
+                          flex={1}
+                          display={"flex"}
+                          textAlign={"center"}
+                          alignItems={"center"}
+                          flexDirection={"column"}
+                          minW={{ md: "20rem", base: "100%" }}
+                          gap={{ md: "1rem", base: "0.5rem" }}
+                          justifyContent={"flex-start"}
+                          borderRadius={"2rem"}
+                          p={{ md: "1.5rem", base: "1rem" }}
+                          key={idx}
+                          color={"white"}
+                          height={"100%"}
+                        >
+                          <Box
+                            bg={"#146EF5"}
+                            w={{ md: "max-content" }}
+                            borderRadius={"4px"}
+                            className="planName"
+                          >
+                            <Text
+                              px={{ md: "1rem", base: "0.5rem" }}
+                              py={{ md: "0.5rem", base: "0.2rem" }}
+                              fontWeight="600"
+                              lineHeight={"20px"}
+                              fontSize={{ md: "0.875rem", base: "0.5rem" }}
+                            >
+                              {plan.name}
+                            </Text>
+                          </Box>
+                          <Text
+                            fontWeight="600"
+                            fontSize={{ base: "1rem", md: "2.125rem" }}
+                            lineHeight={{ md: "38.2px", base: "28px" }}
+                            mt={{ md: "1rem", base: "0.5rem" }}
+                            className="planPrice"
+                          >
+                            {plan.price}                            {"  "}
+                           <span style={{fontSize:'0.9rem'}}>{plan.perMonth}</span> 
+                          </Text>
+                          <Text
+                            color={"#535353"}
+                            lineHeight={"25.6px"}
+                            fontWeight={"400"}
+                            fontSize={{ md: "0.85rem", base: "0.55rem" }}
+                            className="planAdvertisment"
+                          >
+                            {plan.advetisment}
+                          </Text>
+                          <Divider w={{md:'15rem', base:'100%'}} />
+                          {plan.features.map((featureGroup, groupIndex) => (
+                            <React.Fragment key={groupIndex}>
+                              {featureGroup?.map((feature, featureIndex) => (
+                                <Box
+                                  display={"flex"}
+                                  flexDirection={"row"}
+                                  alignItems={"flex-start"}
+                                  w={"80%"}
+                                  justifyContent={"space-between"}
+                                  textAlign={"left"}
+                                >
+                                  <Text
+                                    key={featureIndex}
+                                    lineHeight={"22px"}
+                                    fontWeight={"500"}
+                                    fontSize={{ md: "0.85rem", base: "0.5rem" }}
+                                    // w={"70%"}
+                                    className="planFeatures"
+                                  >
+                                    {feature}
+                                  </Text>
+                                  <Box display={"flex"} alignItems={"flex-end"}>
+                                  <Tooltip hasArrow label='Advanced rewards (early access, exclusive offers)' bg='#FFFFFF' borderRadius={'8px'} color='#000000'>
+                                    <Image src={InfoIcon} alt="InfoIcon" />
+                                  </Tooltip>  
+                                  </Box>
+                                </Box>
+                              ))}
+                              {groupIndex < plan.features.length - 1 && (
+                                <Divider w={{md:'15rem', base:'100%'}}  />
+                              )}
+                            </React.Fragment>
+                          ))}
                         </Box>
-                        <AccordionIcon />
-                      </AccordionButton>
-                    </h2>
-                    <AccordionPanel pb={4}>
-                      <List spacing={3}>
-                        {tier.plans.map((plan, index) => (
-                          <ListItem key={index}>
-                            <ListIcon as={CheckCircleIcon} color="green.500" />
-                            {plan.name} - <Badge ml={1} colorScheme="green">{plan.price}</Badge> {plan.description}
-                          </ListItem>
-                        ))}
-                      </List>
-                    </AccordionPanel>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </TabPanel>
-            <TabPanel>
-              <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={5}>
-                {operationalStrategy.map((item, index) => (
-                  <Box p={5} shadow="md" borderWidth="1px" key={index}>
-                    <Heading fontSize="xl">{item.name}</Heading>
-                    <Text mt={4}>{item.description}</Text>
-                  </Box>
-                ))}
-              </SimpleGrid>
-            </TabPanel>
-            <TabPanel>
-              <List spacing={3}>
-                {salesModel.map((model, index) => (
-                  <ListItem key={index}>
-                    <ListIcon as={CheckCircleIcon} color="green.500" />
-                    <Text as="span" fontWeight="bold">{model.name} - </Text>{model.description}
-                  </ListItem>
-                ))}
-              </List>
-            </TabPanel>
+                        <Box
+                          my={{ md: "2rem", base: "1rem" }}
+                          display={"flex"}
+                          alignItems={"flex-end"}
+                        >
+                          <Button
+                            minW={{md:"12rem", base:'5rem'}}
+                            bg={"#146EF5"}
+                            color={"white"}
+                            borderRadius={"4px"}
+                            fontWeight={"600"}
+                            className="planButton"  
+                            fontSize={{ md: "1rem", base: "0.6rem" }}
+                            _hover={{
+                              color: "black",
+                              bg: "white",
+                            }}
+                          >
+                            {plan.price === "Free"
+                              ? "Start For Free"
+                              : "Add Site Plan"}
+                          </Button>
+                        </Box>
+                      </Box>
+                    </>
+                  ))}
+                </SimpleGrid>
+              </TabPanel>
+            ))}
           </TabPanels>
         </Tabs>
+        <Box
+          mt={{ base: "0.5rem", md: "1rem" }}
+          gap={{ md: "2rem", base: "1rem" }}
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"center"}
+          textAlign={"center"}
+          alignSelf={"center"}
+        >
+          <Text
+            color={"white"}
+            fontWeight={"500"}
+            fontSize={{ md: "1rem", base: "0.75rem" }}
+            lineHeight={{ md: "36px", base: "20px" }}
+          >
+            All prices are in USD and charged per site with applicable taxes
+            added at checkout
+          </Text>
+          <Button
+            fontSize={{ md: "1rem", base: "0.8rem" }}
+            rightIcon={<ChevronDownIcon />}
+          >
+            View all plan features
+          </Button>
         </Box>
-      
-      </Container>
-    );
-  };
+      </Box>
+
+      <Box
+        mx={{ md: "6rem", base: "0" }}
+        mb={"1rem"}
+        bg={"#131414"}
+        gap={{ md: "5rem", base: "1rem" }}
+        minW={{ md: "85%", base: "100%" }}
+        mt={{ md: "6rem", base: "4rem" }}
+        display={"flex"}
+        flexDirection={"row"}
+      >
+        <VStack
+          ml={{ md: "2rem", base: "0" }}
+          mx={{ base: "1rem" }}
+          gap={{ md: "1rem", base: "0rem" }}
+          textAlign={"left"}
+          alignItems={"flex-start"}
+          my={{ md: "4rem", base: "2rem" }}
+        >
+          <Text
+            className="color-gradient"
+            fontWeight={"600"}
+            fontSize={{ md: "1rem", base: "1rem" }}
+            lineHeight={"1rem"}
+            letterSpacing={"0.255"}
+          >
+            HUSHH
+          </Text>
+          <Text
+            className="gradient"
+            fontSize={{ md: "3.75rem", base: "2rem" }}
+            fontWeight={"600"}
+            lineHeight={{ md: "63.65px", base: "45px" }}
+          >
+            Key Highlights
+          </Text>
+          <VStack
+            display={{ md: "none", base: "block" }}
+            alignItems={"center"}
+            justify={"center"}
+            align={"center"}
+            alignSelf={"center"}
+          >
+            <Image
+              src={BoxImage}
+              alt="BoxImageHighlight"
+              style={{ width: "100%", height: "100%" }}
+            />
+          </VStack>
+          <List spacing={{ md: 10, base: 5 }} color={"white"} mt={"1rem"}>
+            <ListItem display={"flex"}>
+              <Box pr={{ md: "1rem", base: "0.5rem" }}>
+                <ListIconTick />
+              </Box>
+              <VStack textAlign={"left"}>
+                <Text
+                  alignContent={"flex-start"}
+                  align={"flex-start"}
+                  alignSelf={"flex-start"}
+                  alignItems={"flex-start"}
+                  display={"flex"}
+                  flexDirection={"row"}
+                  fontWeight={"700"}
+                  fontSize={{ md: "1.5rem", base: "1rem" }}
+                  lineHeight={{ md: "32px", base: "32px" }}
+                >
+                  Simplicity & Transparency
+                </Text>
+                <Text
+                  fontWeight={"500"}
+                  fontSize={{ md: "1rem", base: "0.65rem" }}
+                  lineHeight={{ md: "30px", base: "20px" }}
+                >
+                  Pricing is designed to be straightforward across all services,
+                  ensuring users can easily select the tools that best fit their
+                  needs without encountering hidden fees.
+                </Text>
+              </VStack>
+            </ListItem>
+            <ListItem display={"flex"}>
+              <Box pr={{ md: "1rem", base: "0.5rem" }}>
+                <ListIconTick />
+              </Box>
+              <VStack textAlign={"left"}>
+                <Text
+                  alignContent={"flex-start"}
+                  align={"flex-start"}
+                  alignSelf={"flex-start"}
+                  alignItems={"flex-start"}
+                  display={"flex"}
+                  flexDirection={"row"}
+                  fontWeight={"700"}
+                  fontSize={{ md: "1.5rem", base: "1rem" }}
+                  lineHeight={"32px"}
+                >
+                  Scalable Solutions
+                </Text>
+                <Text
+                  fontWeight={"500"}
+                  fontSize={{ md: "1rem", base: "0.65rem" }}
+                  lineHeight={{ md: "30px", base: "20px" }}
+                >
+                  From free basic access to premium options, services are built
+                  to scale with the growth of individuals & businesses, ensuring
+                  long-term support
+                </Text>
+              </VStack>
+            </ListItem>
+            <ListItem display={"flex"}>
+              <Box pr={{ md: "1rem", base: "0.5rem" }}>
+                <ListIconTick />
+              </Box>
+              <VStack textAlign={"left"}>
+                <Text
+                  alignContent={"flex-start"}
+                  align={"flex-start"}
+                  alignSelf={"flex-start"}
+                  alignItems={"flex-start"}
+                  display={"flex"}
+                  flexDirection={"row"}
+                  fontWeight={"700"}
+                  fontSize={{ md: "1.5rem", base: "1rem" }}
+                  lineHeight={"32px"}
+                >
+                  Community Focus
+                </Text>
+                <Text
+                  fontWeight={"500"}
+                  fontSize={{ md: "1rem", base: "0.65rem" }}
+                  lineHeight={{ md: "30px", base: "20px" }}
+                >
+                  Beyond the tools and platforms, Hushhh fosters a community for
+                  support, learning, and collaboration, enhancing the value of
+                  every subscription.
+                </Text>
+              </VStack>
+            </ListItem>
+          </List>
+        </VStack>
+        <VStack
+          display={{ md: "flex", base: "none" }}
+          alignContent={"flex-end"}
+          alignItems={"flex-end"}
+          alignSelf={"flex-end"}
+          w={"100%"}
+          h={"80%"}
+        >
+          <Image src={BoxImage} alt="BoxImageHighlight" />
+        </VStack>
+      </Box>
+
+      <HStack
+        my={{ md: "8rem", base: "3rem" }}
+        px={{ md: "7rem", base: "1.25rem" }}
+        display={{ base: "flex" }}
+        gap={{ md: "7rem" }}
+        flexDirection={{ base: "column", md: "row" }}
+      >
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          gap={{ md: "1rem", base: "0.5rem" }}
+          flex={1}
+        >
+          <Text
+            className="default-gradient"
+            letterSpacing={"0.255rem"}
+            lineHeight={{ md: "1rem", base: "20px" }}
+            fontWeight={"600"}
+            fontSize={{ md: "1rem", base: "0.75rem" }}
+          >
+            HUSHH
+          </Text>
+          <Text
+            className="gradient"
+            fontSize={{ md: "3.75rem", base: "1.75rem" }}
+            fontWeight={"600"}
+            lineHeight={{ md: "63.3px", base: "41.2px" }}
+          >
+            Final Takeaway
+          </Text>
+          <Box
+            display={"flex"}
+            flexDirection={"column"}
+            gap={{ md: "1rem", base: "0rem" }}
+          >
+            <Text
+              fontSize={{ md: "1rem", base: "0.8rem" }}
+              fontWeight={"500"}
+              color={"#ABABAB"}
+              lineHeight={{ md: "36px", base: "25px" }}
+            >
+              Hushhh’s diverse pricing strategy aims to democratize access to
+              powerful data and AI tools, making them accessible to a wide
+              audience. Whether you’re a consumer trusting us with your data, a
+              developer building the next big app, a sales agent aiming for your
+              next target, or a creator curating unique experiences, Hushhh
+              provides the tools, support, and platform to achieve your goals.
+              With Hushhh, embrace a smarter, more secure, and personalized
+              digital future.
+            </Text>
+          </Box>
+        </Box>
+        <Box
+          my={{ base: "1rem" }}
+          display={"flex"}
+          flexDirection={"column"}
+          flex={1}
+          gap={"1rem"}
+        >
+          <Image src={ManageFinanceBox} alt="ManageFinanceBox" />
+          <Text
+            fontSize={{ md: "1rem", base: "0.75rem" }}
+            color={"#ABABAB"}
+            lineHeight={{ md: "36px", base: "18px" }}
+          >
+            This summary aims to convey Hushhh’s commitment to delivering value
+            through innovative, user-centric products and services, ensuring
+            clear communication of pricing and offerings to foster trust and
+            loyalty across all user segments.
+          </Text>
+        </Box>
+      </HStack>
+      <PricingFaq />
+      <ContactForm />
+    </>
+  );
+};
+
+export default ClientPricingPage;
+
   
-  export default ClientPricingPage;

@@ -202,7 +202,7 @@ const planData = [
         price: "$0.10/GB Storage",
         advetisment: "Ads included",
         brands: "",
-        perMonth: "/mo",
+        perMonth: "",
         features: [
           [
             "Secure data storage",
@@ -545,14 +545,17 @@ const ClientPricingPage = () => {
         </VStack>
 
        <VStack mt={{md:'2rem', base:'1rem'}} mr={{ md: "30%", base: "0" }}  ml={{ base: "1rem", md: "5.5rem" }} gap={{md:'1rem', base:'0.5rem'}}>
-        <Text color={'white'} fontSize={{md:'1rem', base:'0.75rem'}} lineHeight={'30px'} fontWeight={'500'}>
+        <Text color={'white'} fontSize={{md:'1rem', base:'0.75rem'}} lineHeight={{ md:'30px', base:'20px'}} fontWeight={'500'}>
            Join Hushh on a journey of personal data empowerment. From free access to basic services to the ultimate luxury experiences, Hushh crafts tailored solutions for every facet of your digital life.
         </Text>
-        <Text textAlign={'left'} display={'flex'} color={'#474747'} fontSize={'1rem'} fontWeight={'400'} lineHeight={'21px'}>- Basic Tier: Suitable for new users exploring the platform</Text>
+        <Box textAlign={'left'} flexDirection={'column'} justifySelf={'flex-start'} alignSelf={'flex-start'} justifyContent={'flex-start'} display={'flex'} color={'#474747'} fontSize={{ md:'1rem', base:'0.75rem'}} fontWeight={'400'} lineHeight={'21px'}>
+            <Text>- Basic Tier: Suitable for new users exploring the platform</Text>
+            <Text>- Pro Tier: Designed for users needing more personalized and advanced services.</Text>
+            <Text>- Ultra X: Caters to individuals requiring premium, professional services.</Text>
+            <Text>- Ultra Max: Offers the pinnacle of luxury and personalization with exclusive services and products.</Text>
+        </Box>
       </VStack>
       </Box>
-
-     
 
       <Box
         minW={"100%"}
@@ -656,7 +659,7 @@ const ClientPricingPage = () => {
                           </Box>
                           <Text
                             fontWeight="600"
-                            fontSize={{ base: "1rem", md: "2.125rem" }}
+                            fontSize={{ base: "0.85rem", md: "1.75rem" }}
                             lineHeight={{ md: "38.2px", base: "28px" }}
                             mt={{ md: "1rem", base: "0.5rem" }}
                             className="planPrice"

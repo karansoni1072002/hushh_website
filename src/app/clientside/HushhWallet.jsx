@@ -2,7 +2,6 @@
 import {
   Box,
   Button,
-  Container,
   Divider,
   Grid,
   HStack,
@@ -12,7 +11,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import extendedTheme from "../theme";
 import { animateScroll as scroll } from "react-scroll";
 import Image from "next/image";
 import LouiWalletBg from "../_components/svg/louiVuittonWallet.svg";
@@ -61,18 +59,6 @@ const BrandContainer = styled.div`
 `;
 
 const ClientHushhWallet = () => {
-  const scrollTo = () => {
-    scroll.scrollTo(850);
-  };
-
-  const scrollInMobile = () => {
-    scroll.scrollTo(450);
-  };
-
-  const learnMoreScroll = () => {
-    scroll.scrollTo(1500);
-  };
-
   const router = useRouter();
 
   return (

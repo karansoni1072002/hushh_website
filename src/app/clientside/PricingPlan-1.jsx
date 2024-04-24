@@ -23,7 +23,6 @@ import {
   } from '@chakra-ui/react';
   import { CheckCircleIcon } from '@chakra-ui/icons';
   
-  // The content of the pricing page structured as an array of objects
   const pricingTiers = [
     {
       category: 'HushhAI & HushhPDA',
@@ -114,7 +113,7 @@ import {
     // ... Add any additional sales model points here
   ];
   
-  const PricingPage = () => {
+  const ClientPricingPage = () => {
     // State to manage which tab is selected
     const [tabIndex, setTabIndex] = useState(0);
   
@@ -190,4 +189,4 @@ import {
     );
   };
   
-  export default PricingPage;
+  export default ClientPricingPage;

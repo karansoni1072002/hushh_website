@@ -1,5 +1,5 @@
 import React from "react";
-import PricingPage from "../clientside/PricingPlan-1";
+import ClientPricingPage from "../clientside/PricingPlan-1";
 export const metadata = {
   title: "Hushh | Pricing Plans -2.0 - explore our all premium plans",
   description:
@@ -11,7 +11,7 @@ export const metadata = {
 export default function PricingPlans2() {
   return (
     <>
-      <PricingPage />
+      <ClientPricingPage />
     </>
   );
 }

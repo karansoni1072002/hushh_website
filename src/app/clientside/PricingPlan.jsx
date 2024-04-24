@@ -36,7 +36,7 @@ const planData = [
     category: "Vibe Search",
     plans: [
       {
-        name: "EVERYDAY CONSUMERS",
+        name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
         brands: "Upto 10 brands",
@@ -85,7 +85,7 @@ const planData = [
     category: "Wallet App",
     plans: [
       {
-        name: "EVERYDAY CONSUMERS",
+        name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
         brands: "Upto 5 cards",
@@ -143,7 +143,7 @@ const planData = [
     category: "Valet Chat",
     plans: [
       {
-        name: "EVERYDAY CONSUMERS",
+        name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
         brands: "Reciept Import",
@@ -188,7 +188,7 @@ const planData = [
     category: "Concierge App",
     plans: [
       {
-        name: "EVERYDAY CONSUMERS",
+        name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
         brands: "Request Format",
@@ -240,7 +240,7 @@ const planData = [
     category: "Browser Companion",
     plans: [
       {
-        name: "EVERYDAY CONSUMERS",
+        name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
         brands: "Request Format",
@@ -295,7 +295,7 @@ const workspacePlansData = [
     category: "Luxury App Agent",
     plans: [
       {
-        name: "EVERYDAY CONSUMERS",
+        name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
         brands: "Basic Data Access",
@@ -324,7 +324,7 @@ const workspacePlansData = [
     category: "Vibe Search API",
     plans: [
       {
-        name: "EVERYDAY CONSUMERS",
+        name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
         brands: "Basic Integration",
@@ -379,7 +379,7 @@ const workspacePlansData = [
     category: "Agent Concierge App",
     plans: [
       {
-        name: "EVERYDAY CONSUMERS",
+        name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
         brands: "Maximum Service Categories",

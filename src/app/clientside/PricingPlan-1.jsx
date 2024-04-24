@@ -543,7 +543,16 @@ const ClientPricingPage = () => {
             Find the right plan for your needs
           </Heading>
         </VStack>
+
+       <VStack mt={{md:'2rem', base:'1rem'}} mr={{ md: "30%", base: "0" }}  ml={{ base: "1rem", md: "5.5rem" }} gap={{md:'1rem', base:'0.5rem'}}>
+        <Text color={'white'} fontSize={{md:'1rem', base:'0.75rem'}} lineHeight={'30px'} fontWeight={'500'}>
+           Join Hushh on a journey of personal data empowerment. From free access to basic services to the ultimate luxury experiences, Hushh crafts tailored solutions for every facet of your digital life.
+        </Text>
+        <Text textAlign={'left'} display={'flex'} color={'#474747'} fontSize={'1rem'} fontWeight={'400'} lineHeight={'21px'}>- Basic Tier: Suitable for new users exploring the platform</Text>
+      </VStack>
       </Box>
+
+     
 
       <Box
         minW={"100%"}
@@ -568,7 +577,7 @@ const ClientPricingPage = () => {
             minH={{ md: "4.125rem", base: "auto" }}
             w={{ md: "100%", base: "auto" }}
             justifyContent={{ md: "center", base: "flex-start" }}
-            flexWrap={{ base: "wrap" }}
+            flexWrap={{ base: "wrap" , md:'normal'}}
           >
             {(activePlanCategory === "site"
               ? planData

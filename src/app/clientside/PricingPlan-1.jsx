@@ -579,7 +579,7 @@ const ClientPricingPage = () => {
             border={"1px solid #222222"}
             minH={{ md: "4.125rem", base: "auto" }}
             w={{ md: "auto", base: "auto" }}
-            justifyContent={{ md: "center", base: "flex-start" }}
+            justifyContent={{ md: "center", base:"space-evenly" }}
             flexWrap={{ base: "wrap" , md:'normal'}}
           >
             {(activePlanCategory === "site"
@@ -596,7 +596,7 @@ const ClientPricingPage = () => {
                 color={"#898989"}
                 lineHeight={{ md: "22px", base: "14px" }}
                 fontWeight={"600"}
-                fontSize={{ md: "15px", base: "10px" }}
+                fontSize={{ md: "15px", base: "8px" }}
                 mr={{ base: "2", md: "0" }}
               >
                 {category.category}

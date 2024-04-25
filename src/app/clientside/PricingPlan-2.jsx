@@ -336,11 +336,11 @@ const planData = [
       ],
   },
   {
-    category: "Operational Strategy for AI and Human-Driven Platform",
+    category: "Operational Strategy for AI Platform",
     plans: [
       {
         name: "Marketing Guru",
-        price: "",
+        price: "Coming Soon!",
         advetisment: "",
         brands: "",
         perMonth: "",
@@ -354,7 +354,7 @@ const planData = [
       },
       {
         name: "Business Guru",
-        price: "",
+        price: "Coming Soon!",
         advetisment: "",
         brands: "",
         perMonth: "",
@@ -367,7 +367,7 @@ const planData = [
       },
       {
         name: "Engineers",
-        price: "",
+        price: "Coming Soon!",
         advetisment: "",
         brands: "",
         perMonth: "",
@@ -412,7 +412,7 @@ const planData = [
         },
         {
           name: "Training & Tools",
-          price: "",
+          price: "Traning Models",
           advetisment: "",
           brands: "",
           perMonth: "",
@@ -426,8 +426,8 @@ const planData = [
     category: "AI-Driven Engagement",
     plans: [
         {
-          name: "",
-          price: "",
+          name: "Human Driven AI",
+          price: "Coming Soon!",
           advetisment: "",
           brands: "",
           perMonth: "",
@@ -444,7 +444,7 @@ const planData = [
     plans: [
         {
           name: "Content Platforms",
-          price: "",
+          price: "Coming Soon!",
           advetisment: "",
           brands: "",
           perMonth: "",
@@ -576,7 +576,7 @@ const ClientPricingPage2 = () => {
             border={"1px solid #222222"}
             minH={{ md: "4.125rem", base: "auto" }}
             w={{ md: "auto", base: "auto" }}
-            justifyContent={{ md: "center", base:"space-evenly" }}
+            justifyContent={{ md: "center", base:"flex-start" }}
             flexWrap={{ base: "wrap" , md:'normal'}}
           >
             {(activePlanCategory === "site"
@@ -747,6 +747,7 @@ const ClientPricingPage2 = () => {
           alignItems={"center"}
           textAlign={"center"}
           alignSelf={"center"}
+          mx={{md:'15%', base:'5%'}}
         >
           <Text
             color={"white"}
@@ -754,8 +755,7 @@ const ClientPricingPage2 = () => {
             fontSize={{ md: "1rem", base: "0.75rem" }}
             lineHeight={{ md: "36px", base: "20px" }}
           >
-            All prices are in USD and charged per site with applicable taxes
-            added at checkout
+            This strategy aims to set a new standard in luxury and professional product offerings and innovates the building and maintenance of affiliate sales forces in the tech industry. It focuses on high engagement and significant earnings potential for affiliates.
           </Text>
           <Button
             fontSize={{ md: "1rem", base: "0.8rem" }}

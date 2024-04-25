@@ -511,6 +511,7 @@ const ClientPricingPlan = () => {
             fontSize={{ md: "1rem", base: "0.7rem" }}
             lineHeight={"19.5px"}
             letterSpacing={"1.5px"}
+            w={'100%'}
           >
             USER PLANS
           </Text>

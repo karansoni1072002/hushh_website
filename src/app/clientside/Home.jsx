@@ -159,7 +159,7 @@ const ClientHome = () => {
                       "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                     border: "none",
                   }}
-                  onClick={() => router.push("/demoBookingPage")}
+                  onClick={() => window.open("https://testflight.apple.com/join/u6FFaw2B", "_blank")}                
                   w={{ md:'16rem', base:'12rem'}}
                 >
                   DOWNLOAD THE APP

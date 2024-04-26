@@ -183,7 +183,7 @@ const ClientHome = () => {
                   onClick={() => router.push("/demoBookingPage")}
                   w={{ md:'16rem', base:'12rem'}}
                 >
-                  Schedule call
+                  SCHEDULE CALL
                 </Button>
               </Box>
                 

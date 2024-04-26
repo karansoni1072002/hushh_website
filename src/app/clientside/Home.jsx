@@ -41,6 +41,10 @@ import HfsLogo from "../_components/svg/hfsLogo";
 import HomeBg from "../_components/svg/homeBG.svg";
 import Image from "next/image";
 import Head from "next/head";
+import HomeBanner from "../_components/svg/homepageBanner.svg"
+import PinkShadow from "../_components/svg/pinkShadow1.svg";
+import CircleHomeBg from "../_components/svg/circleHomeBg.svg";
+import RightCircleEclipse from "../_components/svg/rightCircleEclipse.svg"; 
 
 const ClientHome = () => {
   const router = useRouter();
@@ -80,10 +84,10 @@ const ClientHome = () => {
 
       <div className="relative">
         <Image
-          src={HomeBg}
-          alt="HomeBg"
-          objectFit="cover"
-          className="z-0 w-full"
+          src={PinkShadow}
+          alt="PinkShadow"
+          // objectFit="cover"
+          // className="z-0 w-full"
           placeholder="blur"
           //  priority
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
@@ -93,11 +97,13 @@ const ClientHome = () => {
             {showPopup && (
               <NotificationPopup message="Welcome! How can I help you today?" />
             )}
-            <Box pt={20} display={"flex"} px={{ base: "0.5rem", md: "32px" }}>
+            <Box  display={"flex"} flexDirection={'row'} px={{ base: "0.5rem", md: "32px" }}>
               <VStack
                 align={"flex-start"}
                 w={"full"}
-                mr={{ md: "60%", base: "10%" }}
+                flex={1}
+                pt={20}
+                // mr={{ md: "60%", base: "10%" }}
                 display={"flex"}
                 gap={"1.5rem"}
                 mt={{ md: "5rem", base: "1rem" }}
@@ -136,24 +142,68 @@ const ClientHome = () => {
                   We're the Data API Business, helping you collect, manage, and
                   monetize data
                 </Text>
-
-                <Button
+              <Box mt={{md:'2rem',base:'1rem'}} display={'flex'} gap={{md:'2rem',base:'1rem'}} flexDirection={{md:'row', base:'column'}}>
+              <Button
                   border={"3px solid #606060"}
                   borderRadius={"2px"}
-                  w={{ md: "16rem", base: "10rem" }}
                   color={theme.colors._white}
                   lineHeight={"28px"}
                   background={"transparent"}
-                  letterSpacing={{ md: "0.4rem", base: "0.1rem" }}
+                  px={'21px'}
+                  py={'15px'}
+                  fontSize={{md:'1rem',base:'0.75rem'}}
+                  fontWeight={'400'}
+                  letterSpacing={{ md: "0.29rem", base: "0.1rem" }}
                   _hover={{
                     background:
                       "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                     border: "none",
                   }}
                   onClick={() => router.push("/demoBookingPage")}
+                  w={{ md:'16rem', base:'12rem'}}
+                >
+                  DOWNLOAD THE APP
+                </Button>
+                <Button
+                  border={"3px solid #606060"}
+                  borderRadius={"2px"}
+                  color={theme.colors._white}
+                  lineHeight={"28px"}
+                  fontSize={{md:'1rem',base:'0.75rem'}}
+                  px={'21px'}
+                  py={'15px'}
+                  background={"transparent"}
+                  fontWeight={'400'}
+                  letterSpacing={{ md: "0.29rem", base: "0.1rem" }}
+                  _hover={{
+                    background:
+                      "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                    border: "none",
+                  }}
+                  onClick={() => router.push("/demoBookingPage")}
+                  w={{ md:'16rem', base:'12rem'}}
                 >
                   Schedule call
                 </Button>
+              </Box>
+                
+              </VStack>
+              <VStack display={{md:'block', base:'none'}} position={'relative'} flex={1}>
+              
+                <Image style={{top:'-65px', position:'absolute',zIndex:'1'}} src={HomeBanner} alt="HomeBanner" />
+                <Image
+          src={CircleHomeBg}
+          alt="CircleHomeBg"
+          style={{bottom:'0px', position:"absolute",zIndex:'0.9'}}
+        />
+              </VStack>
+              <VStack display={{md:'none', base:'block'}} position={'relative'} flex={1}>
+                {/* <Image style={{bottom:'0px', position:'absolute',zIndex:'1'}} src={HomeBanner} alt="HomeBanner" /> */}
+                <Image
+          src={CircleHomeBg}
+          alt="CircleHomeBg"
+          style={{bottom:'0px', height:"2rem",width:'2rem',zIndex:'0.9'}}
+        />
               </VStack>
             </Box>
 
@@ -194,7 +244,7 @@ const ClientHome = () => {
             </HStack>
 
             <BrandSlider />
-
+{/* From below box there is an issue arising of full width on the mobile screens */}
             <Box
               display="flex"
               h={"full"}
@@ -253,7 +303,7 @@ const ClientHome = () => {
               {/* Right side box */}
               <VStack
                 alignItems={{ md: "left", base: "" }}
-                mr={{ md: "2rem" }}
+                mr={{ md: "2rem", base:'0' }}
                 textAlign={{ md: "left", base: "center" }}
                 flex="1"
               >
@@ -289,7 +339,7 @@ const ClientHome = () => {
                 </Text>
 
                 <Box
-                  mx={{ base: "1rem" }}
+                  mx={{ base: "0", md:'0' }}  //from here that full width issue was arising 
                   pt={{ md: "40px", base: "20px" }}
                   width={"100%"}
                   pr={{ base: "1.25rem" }}
@@ -564,6 +614,11 @@ const ClientHome = () => {
             <ContactForm />
           </div>
         </main>
+        <Image
+          src={RightCircleEclipse}
+          alt="RightCircleEclipse"
+          style={{top:'0%',right:'0px', position:"absolute",zIndex:'0.9'}}
+        />
       </div>
     </>
   );

@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
       <head></head>
 
       <body
-        style={{ backgroundColor: "black" }}
+        style={{ backgroundColor: "black",padding:'0 !important', paddingInlineStart:'0px !important', paddingInlineEnd:'0px !important' }}
         className={`${mulish.variable} font-sans`}
       >
         <link rel="icon" href="./favicon.ico" />
@@ -97,8 +97,8 @@ export default function RootLayout({ children }) {
             zIndex={1600}
             showAtBottom={false}
           />{" "}
-          <div className="">
-            <Providers>{children}</Providers>
+          <div className="w-full">
+            <Providers >{children}</Providers>
           </div>
         </ResponsiveSizeProvider>
       </body>

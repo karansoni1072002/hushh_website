@@ -3,9 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import HushhHeaderLogo from "./svg/hushhHeaderLogo";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
-
 import { Button, Container } from "@chakra-ui/react";
-import theme from "../theme";
 import { useResponsiveSizes } from "../context/responsive";
 import { Bars3Icon } from "./svg/icons/hamburgerMenuIcon";
 import { CloseMenuIcon } from "./svg/icons/closeMenuIcon";
@@ -16,20 +14,20 @@ import HushhButtonIcon from "./svg/hushhButton";
 import VibeSearchIcon from "./svg/vibeSearch";
 import ChromeExtentionLogo from "./svg/ChromeExtensionLogo";
 import ConciergeApp from "./svg/conciergeApp";
+import { usePathname } from 'next/navigation'
 import ValetChat from "./svg/valetChat";
 import VibeSearchApi from "./svg/vibeSearchApi";
 import { headerAssets } from "./svg/icons/HeaderIcons/headerAssets";
 import { animateScroll as scroll } from "react-scroll";
-import { useToast } from "@chakra-ui/react";
 
 const Header = () => {
-  const toast = useToast();
   const { isMobile } = useResponsiveSizes();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsSubmenu, setProductsSubmenu] = useState(false);
   const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [headerBackground, setHeaderBackground] = useState("transparent");
+  const pathname = usePathname()
 
   const scrollToContactForm = () => {
     window.scrollTo({
@@ -89,14 +87,6 @@ const Header = () => {
   };
 
   const handleLoginClick = () => {
-    // toast({
-    //   title: 'Coming Soon',
-    //   description: 'Login functionality will be available soon.',
-    //   status: 'info',
-    //   duration: 3000,
-    //   isClosable: true,
-    //   position: "top-right",
-    // });
     window.open("https://hushh-button.vercel.app/user/login", "_blank");
   };
 
@@ -122,6 +112,7 @@ const Header = () => {
             <div className="text-white flex justify-between gap-12 px-7 ">
               <Link
                 href="/"
+                className={`link ${pathname === '/' ? 'gradient-text' : ''}`}
                 style={{ zIndex: "1000" }}
                 onMouseEnter={() => setProductsSubmenu(false)}
               >
@@ -130,6 +121,7 @@ const Header = () => {
               <Link
                 href="/about"
                 style={{ zIndex: "1000" }}
+                className={`link ${pathname === '/about' ? 'gradient-text' : ''}`}
                 onMouseEnter={() => setProductsSubmenu(false)}
               >
                 ABOUT US
@@ -151,6 +143,7 @@ const Header = () => {
               <Link
                 href="/pricingPlans"
                 onMouseEnter={() => setProductsSubmenu(false)}
+                className={`link ${pathname === '/pricingPlans' ? 'gradient-text' : ''}`}
               >
                 PRICING
               </Link>

@@ -60,6 +60,7 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
           rel="stylesheet"
         />
+        <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
         <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
         <script
           src="https://mediafiles.botpress.cloud/fbf5d1e1-066c-4f35-a420-7128eae2130c/webchat/config.js"

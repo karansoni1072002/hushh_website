@@ -13,7 +13,7 @@ import { useState } from "react";
 import AttachingCards from "../_components/userGuide/attachingCards";
 import BrandCardPreferences from "../_components/userGuide/brandCardPreferences";
 import ExpandingHushh from "../_components/userGuide/expandingHushh";
-
+import EnhancingHushh from "../_components/userGuide/enhancingHushh";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 
 const guideContent = [
@@ -31,7 +31,7 @@ const guideContent = [
       {
         title:
           "Enhancing the Core of Hushh — The Convergence of Luxury and Technology",
-        component: <AttachingCards />,
+        component: <EnhancingHushh />,
       },
       {
         title: "Create a Hushh Account",

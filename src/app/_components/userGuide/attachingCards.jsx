@@ -1,4 +1,4 @@
-import { Box, Heading, Text, List, ListItem, ListIcon, OrderedList, VStack } from '@chakra-ui/react';
+import { Box, Heading, Text, List, ListItem, ListIcon, OrderedList, VStack, Divider } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import React from 'react';
 
@@ -35,6 +35,7 @@ const AttachingCards = () => {
             General Preferences Card: For lifestyle and general interests.
           </ListItem>
         </List>
+        <Divider borderColor="gray.400" opacity={0.3} my={{ md: 4, base: 2 }} />
 
         <Heading as="h2" fontSize={{ md: '2xl', base: 'md' }} className='color-gradient'>
           Data Attachment and Sharing
@@ -58,8 +59,9 @@ const AttachingCards = () => {
             Data is securely shared with intended recipients using state-of-the-art encryption.
           </ListItem>
         </List>
+        <Divider borderColor="gray.400" opacity={0.3} my={{ md: 4, base: 2 }} />
 
-        <Text fontSize={{ md: 'xl', base: 'sm' }} fontWeight={'500'} className='gradient'>
+        <Text fontSize={{ md: '2xl', base: 'sm' }} fontWeight={'600'} className='gradient'>
           Hushh’s "wallet as a service" is a comprehensive solution integrating core data functionalities, including:
         </Text>
 

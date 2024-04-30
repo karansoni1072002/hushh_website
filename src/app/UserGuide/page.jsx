@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import AttachingCards from "../_components/userGuide/attachingCards";
+import BrandCardPreferences from "../_components/userGuide/brandCardPreferences";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 
 const guideContent = [
@@ -23,7 +24,7 @@ const guideContent = [
       },
       {
         title: "Expanding the Hushh Ecosystem — The Innovation Beyond",
-        component: <AttachingCards />,
+        component: '',
       },
       {
         title:
@@ -55,7 +56,7 @@ const guideContent = [
       {
         title:
           "Attaching Cards for Enhanced Experiences - Link Your Preferences and Brands for Unforgettable Interactions",
-        component: <AttachingCards />,
+        component: <BrandCardPreferences />,
       },
       {
         title: "Receipt Radar - Effortlessly Organize Your Transactions",

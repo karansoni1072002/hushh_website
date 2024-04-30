@@ -11,24 +11,20 @@ const AttachingCards = () => {
           Powering Hushh - The On-Device Wallet Behind Your Privacy-Focused Data Sharing
         </Heading>
 
-        {/* Introductory text */}
         <Text fontSize={{ md: 'lg', base: 'sm' }}>
           We often receive inquiries about how Hushh ensures the privacy and security of our users' data. 
           Here is a detailed look at how the Hushh on-device wallet operates:
         </Text>
 
-        {/* Section heading */}
         <Heading as="h2" fontSize={{ md: '2xl', base: 'lg' }} className='color-gradient'>
           Storing and Sharing Data
         </Heading>
 
-        {/* Ordered list for numbered items */}
         <OrderedList spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
           <ListItem>Hushh ID Card: A digital identity card representing the user within the Hushh ecosystem.</ListItem>
           <ListItem>Demographic Card: Contains demographic details that a user may choose to share with select parties.</ListItem>
         </OrderedList>
 
-        {/* Unordered list for bullet points */}
         <List spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
           <ListItem>
             <ListIcon as={CheckCircleIcon}  />
@@ -40,12 +36,10 @@ const AttachingCards = () => {
           </ListItem>
         </List>
 
-        {/* Section heading */}
         <Heading as="h2" fontSize={{ md: '2xl', base: 'md' }} className='color-gradient'>
           Data Attachment and Sharing
         </Heading>
 
-        {/* Bullet points for additional content */}
         <List spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
           <ListItem>
             <ListIcon as={CheckCircleIcon}/>
@@ -65,12 +59,10 @@ const AttachingCards = () => {
           </ListItem>
         </List>
 
-        {/* More content */}
         <Text fontSize={{ md: 'xl', base: 'sm' }} fontWeight={'500'} className='gradient'>
           Hushh’s "wallet as a service" is a comprehensive solution integrating core data functionalities, including:
         </Text>
 
-        {/* Ordered list for additional information */}
         <OrderedList spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
           <ListItem>Data Analytics: Understanding and utilizing your data patterns.</ListItem>
           <ListItem>Search: To navigate through your data with ease.</ListItem>

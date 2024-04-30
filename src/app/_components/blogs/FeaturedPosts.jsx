@@ -1,4 +1,4 @@
-import { sortBlogs } from "../../utils";
+import { sortBlogs } from "../../utils/page";
 import React from "react";
 import BlogLayoutOne from "../Blog/BlogLayoutOne";
 import BlogLayoutTwo from "../Blog/BlogLayoutTwo";

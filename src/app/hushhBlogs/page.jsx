@@ -10,8 +10,6 @@ export default function hushhBlogs() {
       <HomeCoverSection blogs={allBlogs} />
       <FeaturedPosts blogs={allBlogs} />
       <RecentPosts blogs={allBlogs} />
-
-
     </main>
   )
 }

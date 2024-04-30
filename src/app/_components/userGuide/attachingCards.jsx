@@ -6,7 +6,6 @@ const AttachingCards = () => {
   return (
     <Box p={{ md: '2rem', base: '0.25rem' }} color={'white'}>
       <VStack spacing={6} align="start">
-        {/* Main heading */}
         <Heading as="h1" fontSize={{ md: '3xl', base: 'lg' }} className='gradient'>
           Powering Hushh - The On-Device Wallet Behind Your Privacy-Focused Data Sharing
         </Heading>

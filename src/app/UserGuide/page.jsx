@@ -1,66 +1,68 @@
 'use client'
-import { Box, Divider, Heading, Stack, Text, VStack } from '@chakra-ui/react';
+import React from 'react';
+import { Box, Divider, Heading, Stack, Text, VStack, Button } from '@chakra-ui/react';
 import { useState } from 'react';
+import AttachingCards from '../_components/userGuide/attachingCards'
+import { ArrowBackIcon } from '@chakra-ui/icons';
 
-// Example content with headings, subheadings, and content
 const guideContent = [
   {
     subheadings: [
       {
         title: 'Powering Hushh - The On-Device Wallet Behind Your Privacy-Focused Data Sharing',
-        content: 'Here is the content for the Installation process.',
+        component: <AttachingCards/>,
       },
       {
         title: 'Expanding the Hushh Ecosystem — The Innovation Beyond',
-        content: 'Here is how you can set up your account.',
+        component: <AttachingCards/>,
       },
       {
         title: 'Enhancing the Core of Hushh — The Convergence of Luxury and Technology',
-        content: 'Here is the content for the Installation process.',
+        component: <AttachingCards/>,
       },
       {
         title: 'Create a Hushh Account',
-        content: 'Here is how you can set up your account.',
+        component: <AttachingCards/>,
       },
       {
         title: 'Brand Cards - Tailor Your Luxury Experiences',
-        content: 'Here is the content for the Installation process.',
+        component: <AttachingCards/>,
       },
       {
         title: 'General Cards - Customize Your Everyday Interactions',
-        content: 'Here is how you can set up your account.',
+        component: <AttachingCards/>,
       },
       {
         title: 'Card Features: Share Your Vibe and Manage Your Card - Optimize Your Hushh Card Experience',
-        content: 'Here is the content for the Installation process.',
+        component: <AttachingCards/>,
       },
       {
         title: 'Adding Brand and General Preferences Cards - Enhance Your Profile with Personalized Cards',
-        content: 'Here is how you can set up your account.',
+        component: <AttachingCards/>,
       },
       {
         title: 'Attaching Cards for Enhanced Experiences - Link Your Preferences and Brands for Unforgettable Interactions',
-        content: 'Here is the content for the Installation process.',
+        component: <AttachingCards/>,
       },
       {
         title: 'Receipt Radar - Effortlessly Organize Your Transactions',
-        content: 'Here is how you can set up your account.',
+        component: <AttachingCards/>,
       },
       {
         title: 'Hushh Bot - Your Personal Data and Understanding Valet',
-        content: 'Here is how you can set up your account.',
+        component: <AttachingCards/>,
       },
       {
         title: 'Discovery Settings - Adjust Your Visibility and Connectivity',
-        content: 'Here is how you can set up your account.',
+        component: <AttachingCards/>,
       },
       {
         title: 'Profile and Account Settings - Manage Your Hushh Experience',
-        content: 'Here is how you can set up your account.',
+        component: <AttachingCards/>,
       },
       {
         title: 'Send feedback',
-        content: 'Here is how you can set up your account.',
+        component: <AttachingCards/>,
       },
     ],
   },
@@ -68,15 +70,20 @@ const guideContent = [
 
 const UserGuide = () => {
   const [selectedContent, setSelectedContent] = useState(null);
+  const [selectedComponent, setSelectedComponent] = useState(null);
+  const handleSubheadingClick = (component) => {
+    // setSelectedContent(content);
+    setSelectedComponent(component);
+  };
 
-  const handleSubheadingClick = (content) => {
-    setSelectedContent(content); // Change the displayed content
+  const handleBackClick = () => {
+    setSelectedComponent(''); // Reset to show the list of titles
   };
 
   return (
     <Box p={6} w={'100%'}>
-     <Stack  px={{md:'6rem',base:'0'}} mt={{md:'9rem',base:'4rem'}}>
-     <Heading as="h1" mb={6} fontWeight={'700'} fontSize={{md:'5rem',base:'2.25rem'}} lineHeight={{md:'76px',base:'40px'}} className='gradient'>
+    {!selectedComponent ? ( <Stack  px={{md:'6rem',base:'0'}} mt={{md:'9rem',base:'4rem'}}>
+      <Heading as="h1" mb={6} fontWeight={'700'} fontSize={{md:'5rem',base:'2.25rem'}} lineHeight={{md:'76px',base:'40px'}} className='gradient'>
         A Guide To Our Hushh 
       </Heading>
       <VStack
@@ -95,7 +102,7 @@ const UserGuide = () => {
                 fontSize={{ md: '1.25rem', base: '0.8rem' }}
                 fontWeight={'400'}
                 py={{md:3,base:1}} // Padding below the text
-                onClick={() => handleSubheadingClick(sub.content)} // Event handler for clicks
+                onClick={() => handleSubheadingClick(sub.component)} // Event handler for clicks
                 _hover={{
                   background: 'linear-gradient(263.99deg, #e54d60 71.61%, #a342ff 99.22%)',
                   color: 'transparent',
@@ -126,7 +133,38 @@ const UserGuide = () => {
         )}
       </Box>
       </Stack> 
-      
+      )
+    :(
+      <>
+        {selectedComponent && (
+        <Box  onClick={handleBackClick} // Reset to previous state
+          leftIcon={<ArrowBackIcon />}
+                  mt={{ md: "6rem", base: "3rem" }}
+                  p={{ md: "0.5rem", base: "0.25rem" }}
+                  align={"center"}
+                  border={"1px solid #606060"}
+                  borderRadius={"5px"}
+                  w={{ md: "13rem", base: "6rem" }}
+                  fontWeight={"400"}
+                  fontSize={{ md: "1.15rem", base: "0.75rem" }}
+                  className="color-gradient"
+                  lineHeight={{ md: "32.4px", base: "20px" }}
+                  letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
+                  _hover={{
+                    background:
+                      "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                    color: "white",
+                  }}
+                  cursor={"pointer"}
+                >
+                <ArrowBackIcon stroke={'white'}/>  GO BACK
+        
+        </Box>
+        
+      )}
+        {selectedComponent}
+      </>
+    )}
     </Box>
   );
 };

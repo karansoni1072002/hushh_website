@@ -138,7 +138,7 @@ const ClientVibeSearch = () => {
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               border: "none",
             }}
-            onClick={learnMoreScroll}
+            onClick={() => window.open("https://vibesearch-vercel.vercel.app/", "_blank")}                
           >
             LEARN MORE
           </Button>
@@ -414,11 +414,7 @@ const ClientVibeSearch = () => {
                 bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 border: "none",
               }}
-              onClick={() =>
-                router.push(
-                  "https://sites.google.com/hush1one.com/drops/mlds#h.tzh0jcbjtatx",
-                )
-              }
+              onClick={() => window.open("https://vibesearch-vercel.vercel.app/", "_blank")}                
             >
               Explore
             </Button>
@@ -516,9 +512,7 @@ const ClientVibeSearch = () => {
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 border: "none",
               }}
-              onClick={() =>
-                router.push("https://testflight.apple.com/join/CDYPEfJ5")
-              }
+              onClick={() => window.open("https://testflight.apple.com/join/CDYPEfJ5", "_blank")}
             >
               REQUEST ACCESS
             </Button>
@@ -587,9 +581,7 @@ const ClientVibeSearch = () => {
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 border: "none",
               }}
-              onClick={() =>
-                router.push("https://testflight.apple.com/join/CDYPEfJ5")
-              }
+              onClick={() => window.open("https://testflight.apple.com/join/CDYPEfJ5", "_blank")}
             >
               Download App
             </Button>

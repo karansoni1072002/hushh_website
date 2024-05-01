@@ -17,6 +17,7 @@ import EnhancingHushh from "../_components/userGuide/enhancingHushh";
 import HushhAccount from "../_components/userGuide/hushhAccount";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import BrandCards from "../_components/userGuide/brandCards";
+import GeneralCards from "../_components/userGuide/generalCards";
 
 const guideContent = [
   {
@@ -45,7 +46,7 @@ const guideContent = [
       },
       {
         title: "General Cards - Customize Your Everyday Interactions",
-        component: <AttachingCards />,
+        component: <GeneralCards />,
       },
       {
         title:
@@ -101,21 +102,21 @@ const UserGuide = () => {
   return (
     <Box p={6} w={"100%"}>
       {!selectedComponent ? (
-        <Stack px={{ md: "6rem", base: "0" }} mt={{ md: "9rem", base: "4rem" }}>
+        <Stack px={{ md: "2rem", base: "0" }} mt={{ md: "9rem", base: "4rem" }}>
           <Heading
             as="h1"
-            mb={6}
+            mb={{md:6,base:0}}
             fontWeight={"700"}
             fontSize={{ md: "5rem", base: "2.25rem" }}
             lineHeight={{ md: "76px", base: "40px" }}
             className="gradient"
           >
-            A Guide To Our Hushh
+            A Guide To Our {" "}<span className="new-gradient">Hushh</span> 
           </Heading>
           <VStack
             align="start"
             spacing={6} // Increase spacing between elements
-            p={4} // Padding for the VStack
+            p={{md:4,base:0}} // Padding for the VStack
           >
             {guideContent.map((section, index) => (
               <Box key={index} p={4}>
@@ -140,13 +141,11 @@ const UserGuide = () => {
                     >
                       {sub.title}
                     </Text>
-                    {(subIndex + 1) % 4 === 0 && (
                       <Divider
                         borderColor="gray.400"
                         opacity={0.3}
                         my={{ md: 4, base: 2 }}
                       />
-                    )}
                   </>
                 ))}
               </Box>

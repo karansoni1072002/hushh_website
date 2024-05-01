@@ -17,7 +17,7 @@ const BrandCards = () => {
     <Box mt={{ md: '0', base: '1rem' }} p={{ md: '4rem', base: '0.25rem' }} color="white">
       <VStack align="start" spacing={6}>
         {/* Main Heading */}
-        <Heading as="h1" fontSize={{ md: '4xl', base: 'xl' }} className="gradient">
+        <Heading as="h1" fontSize={{ md: '4xl', base: '2xl' }} className="gradient">
           Brand Cards
         </Heading>
 
@@ -117,7 +117,7 @@ const BrandCards = () => {
           </ListItem>
         </OrderedList>
 
-        <Text fontSize={{ md: 'lg', base: 'md' }}>
+        <Text fontStyle={'italic'} fontSize={{ md: 'lg', base: 'md' }}>
           Note: The more you personalize and engage with your Brand Cards, the richer the experiences and the greater the rewards.
         </Text>
       </VStack>

@@ -23,6 +23,8 @@ import HushhBot from "../_components/userGuide/hushhBot";
 import ProfileSettings from "../_components/userGuide/profileSettings";
 import DiscoverySettings from "../_components/userGuide/discoverySettings";
 import SendFeedback from "../_components/userGuide/sendFeedback";
+import ContactForm from "../_components/features/contactForm";
+import AboutFaq from "../_components/features/faq/aboutFaq";
 
 const guideContent = [
   {
@@ -129,6 +131,7 @@ const UserGuide = () => {
   };
 
   return (
+  <>  
     <Box p={6} w={"100%"}>
       {!selectedComponent ? (
         <Stack px={{ md: "2rem", base: "0" }} mt={{ md: "9rem", base: "4rem" }}>
@@ -212,6 +215,9 @@ const UserGuide = () => {
         </>
       )}
     </Box>
+    <AboutFaq/>
+    <ContactForm/>
+  </>  
   );
 };
 

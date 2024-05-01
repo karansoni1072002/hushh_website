@@ -14,6 +14,7 @@ import AttachingCards from "../_components/userGuide/attachingCards";
 import BrandCardPreferences from "../_components/userGuide/brandCardPreferences";
 import ExpandingHushh from "../_components/userGuide/expandingHushh";
 import EnhancingHushh from "../_components/userGuide/enhancingHushh";
+import HushhAccount from "../_components/userGuide/hushhAccount";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 
 const guideContent = [
@@ -35,7 +36,7 @@ const guideContent = [
       },
       {
         title: "Create a Hushh Account",
-        component: <AttachingCards />,
+        component: <HushhAccount />,
       },
       {
         title: "Brand Cards - Tailor Your Luxury Experiences",

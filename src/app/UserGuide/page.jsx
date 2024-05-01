@@ -187,8 +187,8 @@ const UserGuide = () => {
             <Box
               onClick={handleBackClick}
               leftIcon={<ArrowBackIcon />}
-              mt={{ md: "6rem", base: "3rem" }}
-              p={{ md: "0.5rem", base: "0.25rem" }}
+              mt={{ md: "4rem", base: "3rem" }}
+              p={{ md: "0.25rem", base: "0.15rem" }}
               align={"center"}
               border={"1px solid #606060"}
               borderRadius={"5px"}

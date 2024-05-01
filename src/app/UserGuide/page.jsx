@@ -21,7 +21,7 @@ import GeneralCards from "../_components/userGuide/generalCards";
 import CardFeatures from "../_components/userGuide/cardFeatures";
 import ReceiptRadar from "../_components/userGuide/receiptRadar";
 import HushhBot from "../_components/userGuide/hushhBot";
-
+import ProfileSettings from "../_components/userGuide/profileSettings";
 const guideContent = [
   {
     subheadings: [
@@ -80,7 +80,7 @@ const guideContent = [
       },
       {
         title: "Profile and Account Settings - Manage Your Hushh Experience",
-        component: <AttachingCards />,
+        component: <ProfileSettings />,
       },
       {
         title: "Send feedback",

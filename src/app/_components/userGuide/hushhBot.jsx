@@ -7,6 +7,7 @@ import {
   List,
   ListItem,
   ListIcon,
+  Divider
 } from "@chakra-ui/react";
 import {
   InfoIcon,
@@ -75,6 +76,8 @@ const HushhBot = () => {
           </ListItem>
         </List>
 
+        <Divider borderColor="gray.400" opacity={0.3} my={{ md: 4, base: 2 }} />
+
         <Heading
           as="h2"
           fontSize={{ md: "2xl", base: "lg" }}
@@ -102,6 +105,8 @@ const HushhBot = () => {
             or data point, or explaining the content of your documents.
           </ListItem>
         </List>
+
+        <Divider borderColor="gray.400" opacity={0.3} my={{ md: 4, base: 2 }} />
 
         <Heading
           as="h2"

@@ -23,6 +23,7 @@ import ReceiptRadar from "../_components/userGuide/receiptRadar";
 import HushhBot from "../_components/userGuide/hushhBot";
 import ProfileSettings from "../_components/userGuide/profileSettings";
 import DiscoverySettings from "../_components/userGuide/discoverySettings";
+import SendFeedback from "../_components/userGuide/sendFeedback";
 
 const guideContent = [
   {
@@ -86,7 +87,7 @@ const guideContent = [
       },
       {
         title: "Send feedback",
-        component: <AttachingCards />,
+        component: <SendFeedback />,
       },
     ],
   },

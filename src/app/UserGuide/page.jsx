@@ -20,6 +20,7 @@ import BrandCards from "../_components/userGuide/brandCards";
 import GeneralCards from "../_components/userGuide/generalCards";
 import CardFeatures from "../_components/userGuide/cardFeatures";
 import ReceiptRadar from "../_components/userGuide/receiptRadar";
+import HushhBot from "../_components/userGuide/hushhBot";
 
 const guideContent = [
   {
@@ -71,7 +72,7 @@ const guideContent = [
       },
       {
         title: "Hushh Bot - Your Personal Data and Understanding Valet",
-        component: <AttachingCards />,
+        component: <HushhBot />,
       },
       {
         title: "Discovery Settings - Adjust Your Visibility and Connectivity",

@@ -22,6 +22,8 @@ import CardFeatures from "../_components/userGuide/cardFeatures";
 import ReceiptRadar from "../_components/userGuide/receiptRadar";
 import HushhBot from "../_components/userGuide/hushhBot";
 import ProfileSettings from "../_components/userGuide/profileSettings";
+import DiscoverySettings from "../_components/userGuide/discoverySettings";
+
 const guideContent = [
   {
     subheadings: [
@@ -76,7 +78,7 @@ const guideContent = [
       },
       {
         title: "Discovery Settings - Adjust Your Visibility and Connectivity",
-        component: <AttachingCards />,
+        component: <DiscoverySettings />,
       },
       {
         title: "Profile and Account Settings - Manage Your Hushh Experience",

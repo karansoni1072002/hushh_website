@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Divider,
@@ -7,7 +7,6 @@ import {
   Stack,
   Text,
   VStack,
-  Button,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import AttachingCards from "../_components/userGuide/attachingCards";
@@ -100,6 +99,30 @@ const UserGuide = () => {
     // setSelectedContent(content);
     setSelectedComponent(component);
   };
+  
+  useEffect(() => {
+    if (selectedComponent) {
+      // Push state only if a component is selected
+      window.history.pushState({ selectedComponent: true }, '');
+    }
+
+    // Event listener to handle browser navigation
+    const handlePopState = (event) => {
+      if (event.state?.selectedComponent) {
+        // If the popstate event was triggered by our pushState, reset the selectedComponent
+        setSelectedComponent("");
+      }
+    };
+
+    // Add event listener on mount
+    window.addEventListener('popstate', handlePopState);
+
+    // Clean up event listener on unmount
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [selectedComponent]);
+
 
   const handleBackClick = () => {
     setSelectedComponent(""); // Reset to show the list of titles

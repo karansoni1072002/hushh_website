@@ -415,6 +415,8 @@ body {
   color: #080808;
 }
 
+/* Blog Page CSS Starts from below */
+
 h1>a>.icon.icon-link:before,
 h2>a>.icon.icon-link:before,
 h3>a>.icon.icon-link:before{
@@ -488,3 +490,15 @@ code {
     font-size: 1rem;
     color: #747474;
   }
+
+.blogLayoutOneTitle {
+  background: left / 0% 100% no-repeat linear-gradient(#e54d60, #a342ff);
+  transition: 200ms;
+}
+
+.blogLayoutOneTitle:hover {
+  background: left / 0% 100% no-repeat linear-gradient(#e54d60, #a342ff);
+  cursor: pointer;
+  transition: .6s;
+}
+

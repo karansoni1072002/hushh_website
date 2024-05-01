@@ -60,10 +60,8 @@ const GeneralCards = () => {
           </ListItem>
         </List>
 
-        {/* Divider */}
         <Divider borderColor="gray.400" opacity={0.3} my={{ md: 4, base: 2 }} />
 
-        {/* QR Code Functionality */}
         <Heading as="h3" fontSize={{ md: 'xl', base: 'lg' }} className="color-gradient">
           QR Code Functionality
         </Heading>

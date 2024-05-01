@@ -19,6 +19,7 @@ import { ArrowBackIcon } from "@chakra-ui/icons";
 import BrandCards from "../_components/userGuide/brandCards";
 import GeneralCards from "../_components/userGuide/generalCards";
 import CardFeatures from "../_components/userGuide/cardFeatures";
+import ReceiptRadar from "../_components/userGuide/receiptRadar";
 
 const guideContent = [
   {
@@ -66,7 +67,7 @@ const guideContent = [
       },
       {
         title: "Receipt Radar - Effortlessly Organize Your Transactions",
-        component: <AttachingCards />,
+        component: <ReceiptRadar />,
       },
       {
         title: "Hushh Bot - Your Personal Data and Understanding Valet",

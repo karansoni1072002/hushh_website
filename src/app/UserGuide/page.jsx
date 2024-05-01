@@ -152,7 +152,6 @@ const UserGuide = () => {
             ))}
           </VStack>
 
-          {/* Display the selected content */}
           <Box mt={6}>
             {selectedContent ? (
               <Text>{selectedContent}</Text>

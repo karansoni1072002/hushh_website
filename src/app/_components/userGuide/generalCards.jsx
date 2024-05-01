@@ -14,35 +14,32 @@ import { CheckCircleIcon } from '@chakra-ui/icons';
 
 const GeneralCards = () => {
   return (
-    <Box mt={{ md: '8rem', base: '3rem' }} p={{ md: '4rem', base: '1rem' }} color="white">
+    <Box mt={{ md: '0', base: '1rem' }} p={{ md: '4rem', base: '0.25rem' }} color="white">
       <VStack align="start" spacing={6}>
-        {/* Main Heading */}
-        <Heading as="h1" fontSize={{ md: '3xl', base: 'xl' }} className="gradient">
+
+        <Heading as="h1" fontSize={{ md: '3xl', base: '2xl' }} className="gradient">
           General Cards
         </Heading>
 
-        {/* Subheading */}
         <Heading as="h2" fontSize={{ md: '2xl', base: 'lg' }} className="color-gradient">
           Customize Your Everyday Interactions
         </Heading>
 
-        {/* Description */}
-        <Text fontSize={{ md: 'lg', base: 'md' }}>
+        <Text fontSize={{ md: 'lg', base: 'sm' }}>
           General Cards are the building blocks for a personalized lifestyle experience in the Hushh ecosystem, catering to your daily preferences and needs.
         </Text>
 
-        {/* Diverse Daily Use Cases */}
         <Heading as="h3" fontSize={{ md: 'xl', base: 'lg' }} className="color-gradient">
           Diverse Daily Use Cases
         </Heading>
 
-        <List spacing={3} fontSize={{ md: 'lg', base: 'md' }}>
+        <List spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
           <ListItem>
-            <ListIcon as={CheckCircleIcon} color="teal.400" />
+            <ListIcon as={CheckCircleIcon} />
             Versatile Marketplace: Our Card Market hosts various General Cards covering everyday categories like Coffee Preferences, Allergy Information, Cuisine Likes, and more.
           </ListItem>
           <ListItem>
-            <ListIcon as={CheckCircleIcon} color="teal.400" />
+            <ListIcon as={CheckCircleIcon} />
             Practical Application: These cards streamline your daily interactions and transactions.
           </ListItem>
         </List>
@@ -52,13 +49,13 @@ const GeneralCards = () => {
           Personalization and Convenience
         </Heading>
 
-        <List spacing={3} fontSize={{ md: 'lg', base: 'md' }}>
+        <List spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
           <ListItem>
-            <ListIcon as={CheckCircleIcon} color="teal.400" />
+            <ListIcon as={CheckCircleIcon} />
             Tailored Experiences: Fill out General Cards with your preferences to guide brands and agents.
           </ListItem>
           <ListItem>
-            <ListIcon as={CheckCircleIcon} color="teal.400" />
+            <ListIcon as={CheckCircleIcon} />
             Memorable Services: Every interaction becomes an opportunity for a memorable experience.
           </ListItem>
         </List>
@@ -71,13 +68,13 @@ const GeneralCards = () => {
           QR Code Functionality
         </Heading>
 
-        <List spacing={3} fontSize={{ md: 'lg', base: 'md' }}>
+        <List spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
           <ListItem>
-            <ListIcon as={CheckCircleIcon} color="teal.400" />
+            <ListIcon as={CheckCircleIcon} />
             Instant Sharing: Each General Card comes with a unique QR code, allowing for instantaneous sharing.
           </ListItem>
           <ListItem>
-            <ListIcon as={CheckCircleIcon} color="teal.400" />
+            <ListIcon as={CheckCircleIcon} />
             Selective Transparency: You control what data is accessible through your General Card.
           </ListItem>
         </List>
@@ -87,13 +84,13 @@ const GeneralCards = () => {
           Rewards for Engagement
         </Heading>
 
-        <List spacing={3} fontSize={{ md: 'lg', base: 'md' }}>
+        <List spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
           <ListItem>
-            <ListIcon as={CheckCircleIcon} color="teal.400" />
+            <ListIcon as={CheckCircleIcon} />
             Value Your Input: Adding information to your General Cards earns you Hushh Coins.
           </ListItem>
           <ListItem>
-            <ListIcon as={CheckCircleIcon} color="teal.400" />
+            <ListIcon as={CheckCircleIcon} />
             Incentivized Sharing: Sharing your General Card with a brand or agent earns additional Hushh Coins.
           </ListItem>
         </List>
@@ -103,7 +100,7 @@ const GeneralCards = () => {
           Utilizing General Cards
         </Heading>
 
-        <OrderedList spacing={3} fontSize={{ md: 'lg', base: 'md' }}>
+        <OrderedList spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
           <ListItem>
             Launch the Hushh app and visit the Card Market.
           </ListItem>
@@ -118,7 +115,7 @@ const GeneralCards = () => {
           </ListItem>
         </OrderedList>
 
-        <Text fontStyle={'italic'} fontSize={{ md: 'lg', base: 'md' }}>
+        <Text fontStyle={'italic'} fontSize={{ md: 'lg', base: 'sm' }}>
           Note: As with Brand Cards, your interaction with General Cards accumulates Hushh Coins, which can be redeemed for unique experiences or benefits.
         </Text>
       </VStack>

@@ -157,14 +157,6 @@ const UserGuide = () => {
               </Box>
             ))}
           </VStack>
-
-          <Box mt={6}>
-            {selectedContent ? (
-              <Text>{selectedContent}</Text>
-            ) : (
-              <Text>Select a subheading to view the content.</Text>
-            )}
-          </Box>
         </Stack>
       ) : (
         <>
@@ -177,7 +169,7 @@ const UserGuide = () => {
               align={"center"}
               border={"1px solid #606060"}
               borderRadius={"5px"}
-              w={{ md: "13rem", base: "6rem" }}
+              w={{ md: "13rem", base: "8rem" }}
               fontWeight={"400"}
               fontSize={{ md: "1.15rem", base: "0.75rem" }}
               className="color-gradient"

@@ -24,7 +24,7 @@ const BrandCardPreferences = () => {
           Link Your Preferences and Brands for Unforgettable Interactions
         </Heading>
 
-        <Text fontSize={{ md: 'lg', base: 'sm' }}>
+        <Text fontSize={{ md: 'lg', base: 'md' }}>
           In Hushh, the ability to attach Brand and Preference Cards to any of your existing cards
           is a feature designed to amplify your personalized experiences. This functionality
           enables you to seamlessly combine different aspects of your profile to share more
@@ -75,7 +75,7 @@ const BrandCardPreferences = () => {
           Benefits of Attaching Cards
         </Text>
 
-        <List spacing={3} fontSize={{ md: 'lg', base: 'md' }}>
+        <List spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
           <ListItem>
             <ListIcon as={CheckCircleIcon} />
             Enhanced Personalization: Create a more detailed profile by linking cards.
@@ -89,12 +89,13 @@ const BrandCardPreferences = () => {
             Memorable Experiences: This feature ensures every interaction is as relevant and personalized as possible.
           </ListItem>
         </List>
+        <Divider borderColor="gray.400" opacity={0.3} my={{ md: 4, base: 2 }} />
 
         <Text fontWeight={'bold'} as={"h3"} fontSize={{ md: 'xl', base: 'lg' }} className='color-gradient'>
           Getting the Most Out of Card Attachments:
         </Text>
 
-        <List spacing={3} fontSize={{ md: 'lg', base: 'md' }}>
+        <List spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
           <ListItem>
             <ListIcon as={CheckCircleIcon} />
             Regularly Update Your Preferences: Update the attached cards to keep your experiences fresh and relevant.

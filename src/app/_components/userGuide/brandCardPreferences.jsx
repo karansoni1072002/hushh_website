@@ -16,7 +16,7 @@ const BrandCardPreferences = () => {
   return (
     <Box mt={{md:'0',base:'1rem'}}  p={{ md: '4rem', base: '0.25rem' }} color="white">
       <VStack align="start" spacing={6}>
-        <Heading as="h1" textAlign={'center'} fontSize={{ md: '3xl', base: 'xl' }} className="gradient">
+        <Heading as="h1" textAlign={'center'} fontSize={{ md: '4xl', base: 'xl' }} className="gradient">
           Attaching Cards for Enhanced Experiences
         </Heading>
 

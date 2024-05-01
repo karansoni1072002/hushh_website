@@ -497,7 +497,13 @@ const Header = () => {
               >
                 Pricing
               </Link>
-
+              <Link
+                href="/UserGuide"
+                onClick={() => setIsMenuOpen(false)}
+                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
+              >
+                GUIDE
+              </Link>
               <Link
                 href="https://hushh-labs.github.io/hushh-labs-blog/"
                 className="py-2 w-1/2 border border-myBorder bg-black border-t-0"

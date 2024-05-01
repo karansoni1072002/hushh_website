@@ -18,6 +18,7 @@ import HushhAccount from "../_components/userGuide/hushhAccount";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import BrandCards from "../_components/userGuide/brandCards";
 import GeneralCards from "../_components/userGuide/generalCards";
+import CardFeatures from "../_components/userGuide/cardFeatures";
 
 const guideContent = [
   {
@@ -51,7 +52,7 @@ const guideContent = [
       {
         title:
           "Card Features: Share Your Vibe and Manage Your Card - Optimize Your Hushh Card Experience",
-        component: <AttachingCards />,
+        component: <CardFeatures/>,
       },
       {
         title:

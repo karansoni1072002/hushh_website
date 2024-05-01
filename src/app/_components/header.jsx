@@ -147,6 +147,13 @@ const Header = () => {
               >
                 PRICING
               </Link>
+              <Link
+                href="/UserGuide"
+                onMouseEnter={() => setProductsSubmenu(false)}
+                className={`link ${pathname === '/UserGuide' ? 'gradient-text' : ''}`}
+              >
+                GUIDE
+              </Link>
               <ScrollLink
                 to="contact-form"
                 smooth={true}

@@ -9,27 +9,26 @@ import {
   ListItem,
   ListIcon,
   Divider,
+  UnorderedList,
 } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 
 const EnhancingHushh = () => {
   return (
-    <Box mt={{ md: '8rem', base: '3rem' }} p={{ md: '4rem', base: '1rem' }} color="white">
+    <Box mt={{ md: '0', base: '1rem' }} p={{ md: '4rem', base: '0' }} color="white">
       <VStack align="start" spacing={6}>
-        {/* Main heading */}
         <Heading as="h1" fontSize={{ md: '3xl', base: 'xl' }} className="gradient">
           Enhancing the Core of Hushh — The Convergence of Luxury and Technology
         </Heading>
 
-        <Text fontSize={{ md: 'lg', base: 'md' }}>
+        <Text fontSize={{ md: 'xl', base: 'lg' }}>
           At the heart of Hushh lies a suite of core product experiences, meticulously crafted to provide unmatched data management and personalization:
         </Text>
 
-        {/* Ordered list for structured points */}
-        <OrderedList spacing={3} fontSize={{ md: 'lg', base: 'md' }}>
-          <ListItem>
-            <Text as="b">1-Click Data Operations:</Text>
-            <List>
+        <UnorderedList listStyleType={'none'}  spacing={{ base:3, md:'2rem'}} fontSize={{ md: 'lg', base: 'sm' }}>
+          <ListItem >
+            <Text as="b" className='new-gradient'>1-Click Data Operations:</Text>
+            <List spacing={{base:3,md:'1.25rem'}}>
               <ListItem>
                 <ListIcon as={CheckCircleIcon} />
                 $haring & $elling: Our platform enables users to share or monetize their data with a single click, exerting full control over who has access and at what price.
@@ -46,8 +45,8 @@ const EnhancingHushh = () => {
           </ListItem>
 
           <ListItem>
-            <Text as="b">Hushh Private On-Device Cloud:</Text>
-            <List>
+            <Text as="b" className='new-gradient'>Hushh Private On-Device Cloud:</Text>
+            <List spacing={{base:3,md:'1.25rem'}}>
               <ListItem>
                 <ListIcon as={CheckCircleIcon} />
                 The backbone of our service, the hushh private on-device cloud, guarantees secure and seamless data sharing and consent management.
@@ -60,8 +59,8 @@ const EnhancingHushh = () => {
           </ListItem>
 
           <ListItem>
-            <Text as="b">Co-Branded Luxury Experience:</Text>
-            <List>
+            <Text as="b" className='new-gradient'>Co-Branded Luxury Experience:</Text>
+            <List spacing={{base:3,md:'1.25rem'}}>
               <ListItem>
                 <ListIcon as={CheckCircleIcon} />
                 We've partnered with luxury brands to offer a co-branded digital magazine, combining the latest in lifestyle trends with personalized data insights.
@@ -74,8 +73,8 @@ const EnhancingHushh = () => {
           </ListItem>
 
           <ListItem>
-            <Text as="b">A Vision of Empowerment:</Text>
-            <List>
+            <Text as="b" className='new-gradient'>A Vision of Empowerment:</Text>
+            <List spacing={{base:3,md:'1.25rem'}}>
               <ListItem>
                 <ListIcon as={CheckCircleIcon} />
                 Hushh is redefining what it means to be a service—it's a commitment to an elevated digital life, where data isn’t just a commodity, but a statement of individuality and empowerment.
@@ -86,7 +85,7 @@ const EnhancingHushh = () => {
               </ListItem>
             </List>
           </ListItem>
-        </OrderedList>
+        </UnorderedList>
 
       </VStack>
     </Box>

@@ -37,9 +37,6 @@ const RenderMdx = ({blog}) => {
 
     first-letter:text-3xl
     sm:first-letter:text-5xl
-    
-
-
     '> 
         <MDXContent components={mdxComponents}/>
     </div>

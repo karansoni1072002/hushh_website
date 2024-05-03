@@ -7,6 +7,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       backgroundImage: {
@@ -36,9 +37,21 @@ module.exports = {
         gradientColor3: "#7A7A7E",
         fontColor4: "#ABABAB",
         faqBG: "#060606",
+        dark: "#1b1b1b",
+        light: "#fff",
+        accent: "#7B00D3",
+        accentDark: "#ffdb4d",
+        gray: "#747474",
       },
       animation: {
         "fade-in": "fadeIn 1s ease-in-out",
+        roll: "roll 24s linear infinite",
+      },
+      keyframes:{
+        roll:{
+          "0%": {transform: "translateX(100%)"},
+          "100%": {transform: "translateX(-100%)"}
+        }
       },
     },
   },

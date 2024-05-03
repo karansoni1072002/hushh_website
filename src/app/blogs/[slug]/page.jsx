@@ -2,7 +2,7 @@ import BlogDetails from "../../_components/Blog/BlogDetails";
 import RenderMdx from "../../_components/Blog/RenderMdx";
 import Tag from "../../_components/Elements/Tag";
 import siteMetadata from "../../utils/sitemetadata";
-import { allBlogs } from "../../../../.contentlayer/generated";
+import { allBlogs } from "../../../../.contentlayer";
 import { slug } from "github-slugger";
 import Image from "next/image";
 import { notFound } from "next/navigation";

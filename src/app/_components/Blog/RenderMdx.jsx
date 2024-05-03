@@ -2,10 +2,17 @@
 import React from 'react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image'
-
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { Button } from '@chakra-ui/react'
+import { ServiceCard } from '../primitives/serviceCard'
+import HushhWalletIcon from '../svg/hushhWalletIcon'
 
 const mdxComponents = {
-    Image
+    Image,
+    SyntaxHighlighter,
+    Button,
+    ServiceCard,
+    HushhWalletIcon
 }
 
 const RenderMdx = ({blog}) => {

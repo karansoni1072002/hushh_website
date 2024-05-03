@@ -8,7 +8,13 @@ const nextConfig = {
     },
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 };
-const withMDX = require('@next/mdx')()
-module.exports = withMDX()
+const withMDX = require('@next/mdx')({
+    extension: /\.mdx?$/,
+  });
+  
+module.exports = withMDX({
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+});
+
 module.exports = withContentlayer({ ...nextConfig });
 

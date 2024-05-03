@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 import Bg from "./src/app/_components/svg/background";
 
 module.exports = {
@@ -6,6 +7,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{html,js,jsx,ts,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -42,5 +44,12 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/container-queries'),
+    `gatsby-plugin-mdx`,
+
+  ]
 };

@@ -24,7 +24,13 @@ This post winds up being a long sequence of steps. You can follow along with the
 - CICD : Workflows and artifact configuration for testing and building
 - PyPi : Configuration for secure publishing
 
-
+<Mermaid chart={`
+flowchart TD
+  Start --> Decision{Decision?}
+  Decision -->|Yes| GoAhead
+  Decision -->|No| Stop
+`} />
+    
 We’ll go from left to right and start with local development.
 
 ## Flowchart Example with Mermaid 

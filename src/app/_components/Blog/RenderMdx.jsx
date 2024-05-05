@@ -6,13 +6,14 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 import { Button } from '@chakra-ui/react'
 import { ServiceCard } from '../primitives/serviceCard'
 import HushhWalletIcon from '../svg/hushhWalletIcon'
+// import Mermaid from 'mdx-mermaid/lib/Mermaid'
 
 const mdxComponents = {
     Image,
     SyntaxHighlighter,
     Button,
     ServiceCard,
-    HushhWalletIcon
+    HushhWalletIcon,
 }
 
 const RenderMdx = ({blog}) => {
@@ -20,6 +21,7 @@ const RenderMdx = ({blog}) => {
     const MDXContent = useMDXComponent(blog.body.code)
 
   return (
+    <>
     <div className='col-span-12  lg:col-span-8 font-in prose sm:prose-base md:prose-lg max-w-max
     prose-blockquote:bg-accent/20 
     prose-blockquote:p-2
@@ -40,6 +42,7 @@ const RenderMdx = ({blog}) => {
     '> 
         <MDXContent components={mdxComponents}/>
     </div>
+</>
   )
 }
 

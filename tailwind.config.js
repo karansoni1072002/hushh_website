@@ -11,6 +11,29 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              color: '#1e90ff', // Dodger blue
+              '&:hover': {
+                color: '#ff6347', // Tomato red
+              },
+            },
+            // Apply custom styles to markdown tables
+            'table': {
+              'borderCollapse': 'collapse',
+            },
+            'th': {
+              'backgroundColor': '#f8f8f8',
+              'borderWidth': '1px',
+            },
+            'td': {
+              'borderWidth': '1px',
+            },
+          },
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

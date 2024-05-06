@@ -17,7 +17,7 @@ const mdxComponents = {
     Button,
     ServiceCard,
     HushhWalletIcon,
-    Mermaid
+    Mermaid,
 }
 
 const RenderMdx = ({blog}) => {

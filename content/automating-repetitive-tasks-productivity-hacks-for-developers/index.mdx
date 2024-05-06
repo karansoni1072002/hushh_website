@@ -27,10 +27,13 @@ This post winds up being a long sequence of steps. You can follow along with the
 <Mermaid chart={`
 flowchart LR
     subgraph Local
+        style Local fill:#d3d3ff, stroke:#333, stroke-width:2px
         A[Local Development]
+        style B stroke:#999, fill:#eee
     end
 
     subgraph CICD
+        style CICD fill:#FFFFF, stroke:#999
         B[build] ---> C[test] ---> D[deployment]
         style B stroke:#999, fill:#eee
         style C stroke:#999, fill:#eee
@@ -39,14 +42,10 @@ flowchart LR
 
     subgraph PyPI
         E[Hosting]
+        style E stroke:#999, fill:#eee
     end
 
     A --> B --> C --> D --> E
-
-    classDef purple fill:#d3d3ff,stroke:#333,stroke-width:2px;
-    classDef white fill:#ffffff,stroke:#333,stroke-width:2px;
-    class one purple;
-    class two,three white;
 `} />
  
 We’ll go from left to right and start with local development.
@@ -54,6 +53,7 @@ We’ll go from left to right and start with local development.
 
 ## Local Development
 ### Stable AI/ML libraries with Conda
+---
 
 Many state of the art AI libraries are available in Python. However, Python is not typically used to write the core logic of these libraries. Instead, Python is simply a convenient wrapper around a series of low level C libraries that handle the tensor operations that constitute a neural network routine.
 
@@ -67,6 +67,7 @@ At Hushh we rely heavily on the work of [Anaconda](https://www.anaconda.com/), i
 ```
 
 ### Environment Management with direnv
+---
 
 At Hushh, we have many different projects and Conda environments going at once. The projects may require different versions of libraries, or require other specific configuration. This can be a source of confusion when switching between them for development work. Luckily, a tool called [direnv](https://direnv.net/) exists that enables us to switch between project environments as easily as switching between working directories.
 
@@ -80,6 +81,7 @@ conda activate hushh-vibe-catalog
 When we enter the directory, we execute a simple conda shell.zsh hook to load the conda commands, and then we activate the Vibe Catalog conda environment. When we exit the directory, the environment is unloaded.
 
 ### PEP vs. Poetry
+---
 
 Within the Python ecosystem, there’s a host of frameworks that make it “easy” to do a number of different automated tasks. Tools like [poetry](https://python-poetry.org/) make it easy to configure and publish libraries.
 
@@ -90,6 +92,7 @@ At this point, it’s clear to us that Python is a constantly evolving standard,
 So, our recommendation is to stick with basic vanilla Python-standards for packaging these days, and just try to keep your versions up to date :)
 
 ### The Case for Good Makefiles
+---
 
 The Hushh Vibe Catalog uses a [Make](https://en.wikipedia.org/wiki/Make_(software)) to handle a lot of additional functionality useful during development. The [Makefile](https://github.com/hushh-labs/hushh-vibe-catalog/blob/main/Makefile) lists some common routines for creating, cleaning, and testing the package. Make is a common tool that’s readily available in most CICD contexts, and its nice to organize and run development jobs the same way on a local machine as they are run in CICD. There’s a number of different varieties of Make out there, but Python really is just fine with vanilla <span className="highlightMdx">make</span>
 
@@ -111,19 +114,21 @@ That command should always run the basic integration tests that can be expected 
 flowchart LR
     subgraph Local
         A[Local Development]
+        style A stroke:#999, fill:#eee
     end
 
     subgraph CICD
        style CICD fill:#d3d3ff, stroke:#333, stroke-width:2px
         B[build] ---> C[test] ---> D[deployment]
-        style B stroke:#999, fill:#eee
-        style C stroke:#999, fill:#eee
-        style D stroke:#999, fill:#eee
-
+        style B  stroke:white, fill:white
+        style C  stroke:white, fill:white
+        style D  stroke:white, fill:white
     end
 
     subgraph PyPI
         E[Hosting]
+        style E stroke:#999, fill:#eee
+
     end
 
     A --> B --> C --> D --> E
@@ -135,6 +140,7 @@ flowchart LR
 `} />
 
 ### Testing And Building Python Libraries
+---
 
 We’re testing checkins using Github’s builtin CICD system, called Github Actions. This is turned on through some configuration that defines a workflow for builds and tests. You can see the Hushh Vibe Catalog’s CICD configuration here
 
@@ -200,6 +206,7 @@ if: github.event_name == 'push' && contains(github.ref, 'refs/tags/v')
 This conditional statement means that the job only runs if the commit has a tag associated with it prefixed by “v”
 
 ### Tagged, Versioned, and Released
+---
 
 The release job in the CICD config has a conditional command that causes it to only trigger when the github event is a push that contains a git tag (and the git tag should start with the letter “v”)
 
@@ -218,7 +225,36 @@ git push --tags
 And the version tag will pass into the CICD system, get picked up by the release job, and build and publish the new version for us.
 
 ### PyPi and Trusted Deployments
-Here will be flow diagram
+---
+
+<Mermaid chart={`
+flowchart LR
+    subgraph Local
+        A[Local Development]
+        style A stroke:#999, fill:#eee
+    end
+
+    subgraph CICD
+        B[build] ---> C[test] ---> D[deployment]
+        style B  stroke:#999, fill:#eee
+        style C  stroke:#999, fill:#eee
+        style D  stroke:#999, fill:#eee
+    end
+
+    subgraph PyPI
+    style PyPI fill:#d3d3ff, stroke:#333, stroke-width:2px
+        E[Hosting]
+        style E stroke:white, fill:white
+
+    end
+
+    A --> B --> C --> D --> E
+
+    classDef purple fill:#d3d3ff,stroke:#333,stroke-width:2px;
+    classDef white fill:#ffffff,stroke:#333,stroke-width:2px;
+    class one purple;
+    class two,three white;
+`} />
 
 Currently, the library is published to Pypi using a twine command.
 ```js
@@ -233,6 +269,8 @@ Currently, the library is published to Pypi using a twine command.
 The twine command uses Github secrets to populate Pypi/Twine API token information into the username/password environment variables. These are used by twine to authenticate with the Pypi server and upload the Python wheel files. By using secrets for our API tokens, we ensure they’re never accidentally included in any code that we upload to Github, and keep the library safe from leaked credentials.
 
 ### Handling Security Vulnerabilities with pip-compile and dependabot
+---
+
 One feature that Vanilla Python lacks currently is a way to easily track dependencies. As projects get more complicated, they tend to acquire different dependencies. The more dependencies a project gathers, the more likely it is that a security vulnerability will crop up, threatening the security of the overall system.
 
 Typically, Python dependencies are listed in a “requirements.txt” file, which list the library and version depdencies used in the service. You can see the requirements file [here](https://github.com/hushh-labs/hushh-vibe-catalog/blob/main/requirements.txt).
@@ -251,6 +289,8 @@ $> pip-compile .
 ```
 
 ## Conclusion
+---
+
 Trusted Python development involves a number of steps that don’t fit neatly in “one size fits all” solution frameworks. We have listed here what we consider our “best in breed” approaches towards supporting rapid development with straightforward tools while adhering to best-practice Python PEP standards, combined with best-practice trust and security protocols. There’s a number of hoops to jump through for Python development, but luckily none of them are terribly difficult on their own.
 
 If you have an interest in trusted Python development, or have questions/comments about any of the tools/techniques that we’ve described here, we’d love to [talk to you on Discord!](https://discord.com/invite/hpFweqj5).

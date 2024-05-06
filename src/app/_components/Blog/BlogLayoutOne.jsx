@@ -4,7 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { slug } from "github-slugger";
 
+const truncateDescription = (description) => {
+  const words = description.split(" ");
+  if (words.length > 10) {
+    return words.slice(0, 10).join(" ") + '...';
+  }
+  return description;
+}
+
 const BlogLayoutOne = ({ blog }) => {
+
   return (
     <div className="group inline-block overflow-hidden rounded-xl relative">
       <div style={{ '--tw-gradient-to': 'rgba(27, 27, 27, .9)'}}  
@@ -32,6 +41,12 @@ const BlogLayoutOne = ({ blog }) => {
             >
               {blog.title}
             </span>
+           <br></br>
+            <p
+              className="font-light text-lg sm:text-md xs:text-xs"
+            >
+              {truncateDescription(blog.description)}
+            </p>
           </h2>
         </Link>
       </div>

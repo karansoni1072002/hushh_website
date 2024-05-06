@@ -451,7 +451,7 @@ const ClientHome = () => {
               </VStack>
             </Box>
 
-            <ReviewSlider />
+            {/* <ReviewSlider /> */}
 
             {/* Product Showcase section below */}
             <HStack

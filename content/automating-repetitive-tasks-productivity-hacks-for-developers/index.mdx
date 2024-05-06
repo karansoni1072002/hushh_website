@@ -25,31 +25,32 @@ This post winds up being a long sequence of steps. You can follow along with the
 - PyPi : Configuration for secure publishing
 
 <Mermaid chart={`
-flowchart TD
-  Start --> Decision{Decision?}
-  Decision -->|Yes| GoAhead
-  Decision -->|No| Stop
+flowchart LR
+    subgraph Local
+        A[Local Development]
+    end
+
+    subgraph CICD
+        B[build] ---> C[test] ---> D[deployment]
+        style B stroke:#999, fill:#eee
+        style C stroke:#999, fill:#eee
+        style D stroke:#999, fill:#eee
+    end
+
+    subgraph PyPI
+        E[Hosting]
+    end
+
+    A --> B --> C --> D --> E
+
+    classDef purple fill:#d3d3ff,stroke:#333,stroke-width:2px;
+    classDef white fill:#ffffff,stroke:#333,stroke-width:2px;
+    class one purple;
+    class two,three white;
 `} />
-    
+ 
 We’ll go from left to right and start with local development.
 
-## Flowchart Example with Mermaid 
-
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
- 
-```mermaid
-flowchart LR
-  A[Start] --> B{Is it working?}
-  B -- Yes --> C[Keep Doing]
-  B -- No --> D[Fix it]
-  D --> B
-```
 
 ## Local Development
 ### Stable AI/ML libraries with Conda
@@ -106,7 +107,32 @@ That command should always run the basic integration tests that can be expected 
 
 ## Content Integration/Content Deployment
 
-Flochart Diagram here 
+<Mermaid chart={`
+flowchart LR
+    subgraph Local
+        A[Local Development]
+    end
+
+    subgraph CICD
+       style CICD fill:#d3d3ff, stroke:#333, stroke-width:2px
+        B[build] ---> C[test] ---> D[deployment]
+        style B stroke:#999, fill:#eee
+        style C stroke:#999, fill:#eee
+        style D stroke:#999, fill:#eee
+
+    end
+
+    subgraph PyPI
+        E[Hosting]
+    end
+
+    A --> B --> C --> D --> E
+
+    classDef purple fill:#d3d3ff,stroke:#333,stroke-width:2px;
+    classDef white fill:#ffffff,stroke:#333,stroke-width:2px;
+    class one purple;
+    class two,three white;
+`} />
 
 ### Testing And Building Python Libraries
 

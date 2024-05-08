@@ -59,37 +59,37 @@ const guideContent = [
         title: "Hushh Bot - Your Personal Data and Understanding Valet",
         component: <HushhBot />,
       },
-
-
-
-
-      {
-        title: "Expanding the Hushh Ecosystem — The Innovation Beyond",
-        component: <ExpandingHushh/>,
-      },
-      {
-        title:
-          "Enhancing the Core of Hushh — The Convergence of Luxury and Technology",
-        component: <EnhancingHushh />,
-      },
-      
-      {
-        title:
-          "Attaching Cards for Enhanced Experiences - Link Your Preferences and Brands for Unforgettable Interactions",
-        component: <BrandCardPreferences />,
-      },
-      {
-        title: "Discovery Settings - Adjust Your Visibility and Connectivity",
-        component: <DiscoverySettings />,
-      },
       {
         title: "Profile and Account Settings - Manage Your Hushh Experience",
         component: <ProfileSettings />,
       },
-      {
-        title: "Send feedback",
-        component: <SendFeedback />,
-      },
+
+
+
+
+      // {
+      //   title: "Expanding the Hushh Ecosystem — The Innovation Beyond",
+      //   component: <ExpandingHushh/>,
+      // },
+      // {
+      //   title:
+      //     "Enhancing the Core of Hushh — The Convergence of Luxury and Technology",
+      //   component: <EnhancingHushh />,
+      // },
+      
+      // {
+      //   title:
+      //     "Attaching Cards for Enhanced Experiences - Link Your Preferences and Brands for Unforgettable Interactions",
+      //   component: <BrandCardPreferences />,
+      // },
+      // {
+      //   title: "Discovery Settings - Adjust Your Visibility and Connectivity",
+      //   component: <DiscoverySettings />,
+      // },
+      // {
+      //   title: "Send feedback",
+      //   component: <SendFeedback />,
+      // },
     ],
   },
 ];
@@ -156,6 +156,7 @@ const UserGuide = () => {
                 {/* Add padding to each section */}
                 {section.subheadings.map((sub, subIndex) => (
                   <>
+                  
                     <Text
                       key={subIndex}
                       cursor="pointer"

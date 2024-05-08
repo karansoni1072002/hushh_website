@@ -24,14 +24,6 @@ const HushhBot = () => {
           Interacting with Hushh Bot
         </Heading>
 
-        <Heading
-          as="h2"
-          fontSize={{ md: "2xl", base: "lg" }}
-          className="color-gradient"
-        >
-          Geting Started with Hushh Bot:
-        </Heading>
-
         <OrderedList spacing={4} fontSize={{ md: "lg", base: "sm" }}>
           <ListItem>
             Open the Hushh app and tap on the Hushh Bot icon in the chat section to start your interaction. 

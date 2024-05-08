@@ -38,6 +38,10 @@ const guideContent = [
         component: <BrandCards />,
       },
       {
+        title: "General Cards - Customize Your Everyday Interactions",
+        component: <GeneralCards />,
+      },
+      {
         title:
           "Powering Hushh - The On-Device Wallet Behind Your Privacy-Focused Data Sharing",
         component: <AttachingCards />,
@@ -50,12 +54,6 @@ const guideContent = [
         title:
           "Enhancing the Core of Hushh — The Convergence of Luxury and Technology",
         component: <EnhancingHushh />,
-      },
-      
-      
-      {
-        title: "General Cards - Customize Your Everyday Interactions",
-        component: <GeneralCards />,
       },
       {
         title:

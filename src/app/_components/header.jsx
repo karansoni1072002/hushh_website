@@ -23,6 +23,7 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { FiUser, FiYoutube } from 'react-icons/fi';
 // import { cookies } from "next/headers";
 // import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { useMediaQuery } from "react-responsive";
 
 export default function Header() {
   const { isMobile } = useResponsiveSizes();
@@ -36,13 +37,15 @@ export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // For the dropdown
   const supabase = createClientComponentClient(); 
   const [userEmail, setUserEmail] = useState('');
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
 
   useEffect(() => {
     const checkLoginStatus = async () => {
       const { data } = await supabase.auth.getSession(); // Get the session data
 
       console.log('data:',data);
-      console.log('user email: ',data.session.user.email);
+      console.log('user email: ',data?.session?.user?.email);
 
       if (data.session) {
         setIsLoggedIn(true); 
@@ -342,63 +345,61 @@ export default function Header() {
           </div>
         )}
  <div className="flex items-center gap-4 relative">
-          {isLoggedIn ? ( // If the user is logged in
-            <div className="relative">
-              <FiUser
-                className="w-6 h-6 text-white cursor-pointer"
-                onClick={handleDropdownClick} // Open the dropdown
-              />
-              {isDropdownOpen && ( 
-                 <Box position="absolute" bg="white" w="200px" mt='2' shadow='md' color="black" zIndex='dropdown'>
-                 <Flex flexDirection="column">
-                   <Link href="/profile" p="3" _hover={{ bg: "gray.100" }}>
-                     <Text>{userEmail}</Text>
-                   </Link>
-                   <Link href="/settings" p="3" _hover={{ bg: "gray.100" }}>
-                     Settings
-                   </Link>
-                   <Link href="#" p="3" _hover={{ bg: "gray.100" }} onClick={() => {
-                       supabase.auth.signOut();
-                     }}>
-                     Log Out
-                   </Link>
-                   <Flex align="center" p="3" _hover={{ bg: "gray.100" }}>
-                     <FiYoutube color="red" />
-                     <Link href="#" ml="2">
-                       Watch Demo
-                     </Link>
-                   </Flex>
-                 </Flex>
-               </Box>
-                // <Box position={'absolute'} bg={'white'} w={'full'} color={'black'} display={'flex'} flexDirection={'column'}>
-                //   <Link href="/profile" className="p-3 hover:bg-gray-100">Profile</Link>
-                //   <Link href="/settings" className="p-3 hover:bg-gray-100">Settings</Link>
-                //   <a
-                //     href="#"
-                //     className="p-3 hover:bg-gray-100"
-                //     onClick={() => {
-                //       supabase.auth.signOut(); 
-                //       setIsLoggedIn(false); 
-                //     }}
-                //   >
-                //     Log Out
-                //   </a>
-                // </Box>
-              )}
-            </div>
-          ) : (
-            <Button
-            border={"1px solid #606060"}
-            borderRadius={"5px"}
-            w={"10.75rem"}
-            h={"3.125rem"}
-            // color={theme.colors._white}
+      {isLoggedIn ? (
+        <div className="relative">
+          <FiUser
+            className="w-6 h-6 text-white cursor-pointer"
+            onClick={handleDropdownClick} // Open the dropdown
+          />
+          {isDropdownOpen && (
+            <Box
+              position="absolute"
+              bg="white"
+              w="200px"
+              mt="2"
+              shadow="md"
+              color="black"
+              zIndex="dropdown"
+            >
+              <Flex flexDirection="column">
+                <Link href="/profile" p="3" _hover={{ bg: "gray.100" }}>
+                  <Text>{userEmail}</Text>
+                </Link>
+                <Link href="/settings" p="3" _hover={{ bg: "gray.100" }}>
+                  Settings
+                </Link>
+                <Link
+                  href="#"
+                  p="3"
+                  _hover={{ bg: "gray.100" }}
+                  onClick={() => {
+                    supabase.auth.signOut();
+                  }}
+                >
+                  Log Out
+                </Link>
+                <Flex align="center" p="3" _hover={{ bg: "gray.100" }}>
+                  <FiYoutube color="red" />
+                  <Link href="#" ml="2">
+                    Watch Demo
+                  </Link>
+                </Flex>
+              </Flex>
+            </Box>
+          )}
+        </div>
+      ) : (
+        !isTabletOrMobile && (
+          <Button
+            border="1px solid #606060"
+            borderRadius="5px"
+            w="10.75rem"
+            h="3.125rem"
             className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text"
-            lineHeight={"50px"}
-            letterSpacing={"0.5rem"}
+            lineHeight="50px"
+            letterSpacing="0.5rem"
             _hover={{
-              background:
-                "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              background: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               color: "white",
               border: "none",
             }}
@@ -406,8 +407,9 @@ export default function Header() {
           >
             LOGIN
           </Button>
-          )}
-        </div>
+        )
+      )}
+    </div>
         {/* <div className="z-100">
           {!isMobile && (
             <div className="login">

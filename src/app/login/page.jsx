@@ -16,6 +16,7 @@ import {
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import DeveloperBg from "../_components/svg/developerApi/developerApiLoginBg.svg";
 import BgLeftCircle from "../_components/svg/developerApi/developerLoginLCircle.svg";
 import BgTopRightCircle from "../_components/svg/developerApi/developerLoginTRCircle.svg";
@@ -107,10 +108,6 @@ export default function LoginPage() {
     if (!formData.password) {
       newErrors.password = "Password is required";
       valid = false;
-    } else if (!/^[a-zA-Z0-9]{6,}$/.test(formData.password)) {
-      newErrors.password =
-        "Password must be at least 6 characters long and alphanumeric";
-      valid = false;
     } else {
       newErrors.password = "";
     }
@@ -156,30 +153,49 @@ export default function LoginPage() {
     }
   };
 
-  const handleSignIn = async () => {
+  const handleSignIn = async (e) => {
+    e.preventDefault();
     if (validateForm()) {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: formData.email,
-        password: formData.password,
-      });
-
-      if (error) {
+    //   const { data, error } = await supabase.auth.signInWithPassword({
+    //     email: formData.email,
+    //     password: formData.password,
+    //     name:formData.name
+    //   });
+      try {
+        const response = await axios.post('https://hushhdevenv.hushh.ai/dev/v1/api/sign_up', formData,
+        {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+        }
+    );
+        if (response.data.status === 200) {
+          toast({
+            title: "Signup Successful",
+            description: response.data.data,
+            status: "success",
+            duration: 9000,
+            isClosable: true
+          });
+          router.push('/');
+        } else {
+          toast({
+            title: "Signup Failed",
+            description: response.data.message,
+            status: "error",
+            duration: 9000,
+            isClosable: true
+          });
+        }
+        console.log('Response:',response)
+      } catch (error) {
         toast({
-          title: "Sign-in Error",
+          title: "An error occurred.",
           description: error.message,
           status: "error",
-          duration: 3000,
-          isClosable: true,
+          duration: 9000,
+          isClosable: true
         });
-      } else {
-        toast({
-          title: "Welcome back!",
-          description: "Successfully logged in.",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-        });
-        router.push("/dashboard"); // Redirect after successful login
       }
     }
   };
@@ -190,7 +206,7 @@ export default function LoginPage() {
     setUser(null);
   };
 
-  console.log({ loading, user });
+//   console.log({ loading, user });
 
   if (loading) {
     return (
@@ -225,18 +241,15 @@ export default function LoginPage() {
       <Image
         src={BgLeftCircle}
         alt="BgLeftCircle"
-        // objectFit="cover"
-        // className="z-0 w-full"
         style={{ position: "absolute" }}
         placeholder="blur"
-        //  priority
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
       />
       <Image
         src={BgRightCircle}
         alt="BgRightCircle"
         objectFit="cover"
-        style={{ position: "absolute", width: "60%", height: "100%", right: 0 }} // Positioned at the bottom-left
+        style={{ position: "absolute", width: "60%", height: "100%", right: 0 }}
         width={200}
         height={200}
       />

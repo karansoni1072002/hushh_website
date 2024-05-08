@@ -75,6 +75,9 @@ const FooterComponent = () => {
                 Resources
               </p>
               <div className="flex flex-col text-lg gap-5 leading-5">
+              <Link href="/UserGuide">
+                  User Guide Book
+                </Link>
                 <Link href="https://sites.google.com/hush1one.com/drops/home/journey">
                   Documentation
                 </Link>
@@ -169,6 +172,9 @@ const FooterComponent = () => {
                 Resources
               </p>
               <div className="flex flex-col text-base gap-2 leading-5">
+              <Link href="/UserGuide">
+                  User Guide Book
+                </Link>
                 <Link href="https://sites.google.com/hush1one.com/drops/home/journey">
                   Documentation
                 </Link>

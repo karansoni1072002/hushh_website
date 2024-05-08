@@ -86,14 +86,14 @@ const TechnologySection = () => {
           /> */}
         </Grid>
       </Container>
-      <Box w={"100%"} display={"flex"} justifyContent="center">
+      <Box w={"100%"} gap={{md:'5rem', base:'2rem'}} display={"flex"} justifyContent="center">
         <Box
           mt={{ md: "4rem", base: "2rem" }}
-          p={{ md: "0.5rem", base: "0.5rem" }}
+          p={{ md: "0.5rem", base: "0.25rem" }}
           align={"center"}
           border={"1px solid #606060"}
           borderRadius={"5px"}
-          w={{ md: "16rem", base: "10rem" }}
+          w={{ md: "18rem", base: "12rem" }}
           fontWeight={"400"}
           fontSize={{ md: "1.15rem", base: "0.75rem" }}
           className="color-gradient"
@@ -109,6 +109,30 @@ const TechnologySection = () => {
         >
           Book A Call
         </Box>
+
+        <Box
+                  // leftIcon={<A />}
+                  mt={{ md: "4rem", base: "2rem" }}
+                  p={{ md: "0.5rem", base: "0.25rem" }}
+                  align={"center"}
+                  border={"1px solid #606060"}
+                  borderRadius={"5px"}
+                  w={{ md: "18rem", base: "12rem" }}
+                  fontWeight={"400"}
+                  fontSize={{ md: "1.15rem", base: "0.75rem" }}
+                  className="color-gradient"
+                  lineHeight={{ md: "32.4px", base: "20px" }}
+                  letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
+                  _hover={{
+                    background:
+                      "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                    color: "white",
+                  }}
+                  cursor={"pointer"}
+                  onClick={()=> router.push('/UserGuide')}
+                >
+                  View User Guide
+                </Box>
       </Box>
     </>
   );

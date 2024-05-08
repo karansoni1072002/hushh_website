@@ -43,6 +43,13 @@ const guideContent = [
       },
       {
         title:
+          "Card Features: Share Your Vibe and Manage Your Card - Optimize Your Hushh Card Experience",
+        component: <CardFeatures/>,
+      },
+
+
+      {
+        title:
           "Powering Hushh - The On-Device Wallet Behind Your Privacy-Focused Data Sharing",
         component: <AttachingCards />,
       },
@@ -55,11 +62,7 @@ const guideContent = [
           "Enhancing the Core of Hushh — The Convergence of Luxury and Technology",
         component: <EnhancingHushh />,
       },
-      {
-        title:
-          "Card Features: Share Your Vibe and Manage Your Card - Optimize Your Hushh Card Experience",
-        component: <CardFeatures/>,
-      },
+      
       {
         title:
           "Adding Brand and General Preferences Cards - Enhance Your Profile with Personalized Cards",

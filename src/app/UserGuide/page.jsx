@@ -30,6 +30,14 @@ const guideContent = [
   {
     subheadings: [
       {
+        title: "Create a Hushh Account",
+        component: <HushhAccount />,
+      },
+      {
+        title: "Brand Cards - Tailor Your Luxury Experiences",
+        component: <BrandCards />,
+      },
+      {
         title:
           "Powering Hushh - The On-Device Wallet Behind Your Privacy-Focused Data Sharing",
         component: <AttachingCards />,
@@ -43,14 +51,8 @@ const guideContent = [
           "Enhancing the Core of Hushh — The Convergence of Luxury and Technology",
         component: <EnhancingHushh />,
       },
-      {
-        title: "Create a Hushh Account",
-        component: <HushhAccount />,
-      },
-      {
-        title: "Brand Cards - Tailor Your Luxury Experiences",
-        component: <BrandCards />,
-      },
+      
+      
       {
         title: "General Cards - Customize Your Everyday Interactions",
         component: <GeneralCards />,

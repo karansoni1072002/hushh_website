@@ -33,15 +33,11 @@ const HushhAccount = () => {
             <Text as="b" className='new-gradient'>1. Download Hushh:</Text>
             <List spacing={2}>
               <ListItem>
-                <ListIcon as={CheckCircleIcon} />
-                Access the App: Download the Hushh app to your device. Available on iOS and Android.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={CheckCircleIcon} />
-                Links:
+                {/* <ListIcon as={CheckCircleIcon} /> */}
+                Download the Hushh app to your device. Available on iOS and Android.
                 <br /> - <a href="https://bit.ly/hushhAndroid" target="_blank" rel="noopener noreferrer">Android : </a> {"   "}<a href="https://bit.ly/hushhAndroid" target="_blank" rel="noopener noreferrer" style={{color:'white', textDecoration:'underline'}}>https://bit.ly/hushhAndroid</a>
                 <br /> - <a href="https://bit.ly/HushhIos" target="_blank" rel="noopener noreferrer">iOS :</a>  {"   "}<a href="https://bit.ly/HushhIos" target="_blank" rel="noopener noreferrer" style={{color:'white', textDecoration:'underline'}}>https://bit.ly/HushhIos</a>
-              </ListItem>
+                </ListItem>
             </List>
           </ListItem>
 
@@ -49,8 +45,7 @@ const HushhAccount = () => {
             <Text as="b" className='new-gradient'>2. Sign Up:</Text>
             <List spacing={2}>
               <ListItem>
-                <ListIcon as={CheckCircleIcon} />
-                Create a New Account: Open the Hushh app and tap "Sign Up." Fill in the required fields.
+                Open the Hushh app and tap on "Sign Up" to begin the account creation process
               </ListItem>
             </List>
           </ListItem>
@@ -59,13 +54,12 @@ const HushhAccount = () => {
             <Text as="b" className='new-gradient'>3. Verify Your Account:</Text>
             <List spacing={2}>
               <ListItem>
-                <ListIcon as={CheckCircleIcon} />
-                OTP Verification: An OTP will be sent to your registered phone number or email. Enter the OTP to verify your account.
+                An OTP will be sent to your registered phone number or email. Enter the OTP to verify your account.
               </ListItem>
             </List>
           </ListItem>
 
-          <ListItem>
+          {/* <ListItem>
             <Text as="b" className='new-gradient'>4. Connect Your Accounts:</Text>
             <List spacing={2}>
               <ListItem>
@@ -73,24 +67,22 @@ const HushhAccount = () => {
                 Link Apple and Google Accounts: This step is crucial for seamless integration and synchronization.
               </ListItem>
             </List>
-          </ListItem>
+          </ListItem> */}
 
           <ListItem>
-            <Text as="b" className='new-gradient'>5. Set Up Your Profile:</Text>
+            <Text as="b" className='new-gradient'>4. Set Up Your Profile:</Text>
             <List spacing={2}>
               <ListItem>
-                <ListIcon as={CheckCircleIcon} />
-                Complete Profile Setup: Fill out your profile, add personal information, and set up your Hushh ID.
+                Fill out your profile, add personal information, and set up your Hushh ID.
               </ListItem>
             </List>
           </ListItem>
 
           <ListItem>
-            <Text as="b" className='new-gradient'>6. Grant Permissions:</Text>
+            <Text as="b" className='new-gradient'>5. Grant Permissions:</Text>
             <List spacing={2}>
               <ListItem>
-                <ListIcon as={CheckCircleIcon} />
-                Enable Necessary Permissions: Allow Hushh to access data for its operation, such as location and contacts.
+                Allow Hushh access to all required permissions.
               </ListItem>
             </List>
           </ListItem>

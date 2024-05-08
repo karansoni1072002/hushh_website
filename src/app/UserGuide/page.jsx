@@ -46,13 +46,23 @@ const guideContent = [
           "Card Features: Share Your Vibe and Manage Your Card - Optimize Your Hushh Card Experience",
         component: <CardFeatures/>,
       },
-
-
       {
         title:
           "Attaching Cards for Enhanced Experiences - Link Your Preference and Brand cards",
         component: <AttachingCards />,
       },
+      {
+        title: "Receipt Radar - Effortlessly Organize Your Transactions",
+        component: <ReceiptRadar />,
+      },
+      {
+        title: "Hushh Bot - Your Personal Data and Understanding Valet",
+        component: <HushhBot />,
+      },
+
+
+
+
       {
         title: "Expanding the Hushh Ecosystem — The Innovation Beyond",
         component: <ExpandingHushh/>,
@@ -65,21 +75,8 @@ const guideContent = [
       
       {
         title:
-          "Adding Brand and General Preferences Cards - Enhance Your Profile with Personalized Cards",
-        component: <AttachingCards />,
-      },
-      {
-        title:
           "Attaching Cards for Enhanced Experiences - Link Your Preferences and Brands for Unforgettable Interactions",
         component: <BrandCardPreferences />,
-      },
-      {
-        title: "Receipt Radar - Effortlessly Organize Your Transactions",
-        component: <ReceiptRadar />,
-      },
-      {
-        title: "Hushh Bot - Your Personal Data and Understanding Valet",
-        component: <HushhBot />,
       },
       {
         title: "Discovery Settings - Adjust Your Visibility and Connectivity",

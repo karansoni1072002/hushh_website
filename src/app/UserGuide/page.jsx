@@ -50,7 +50,7 @@ const guideContent = [
 
       {
         title:
-          "Powering Hushh - The On-Device Wallet Behind Your Privacy-Focused Data Sharing",
+          "Attaching Cards for Enhanced Experiences - Link Your Preference and Brand cards",
         component: <AttachingCards />,
       },
       {

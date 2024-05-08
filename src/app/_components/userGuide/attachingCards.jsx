@@ -7,69 +7,25 @@ const AttachingCards = () => {
     <Box p={{ md: '2rem', base: '0.25rem' }} color={'white'}>
       <VStack spacing={6} align="start">
         <Heading as="h1" fontSize={{ md: '3xl', base: 'lg' }} className='gradient'>
-          Powering Hushh - The On-Device Wallet Behind Your Privacy-Focused Data Sharing
-        </Heading>
-
-        <Text fontSize={{ md: 'lg', base: 'sm' }}>
-          We often receive inquiries about how Hushh ensures the privacy and security of our users' data. 
-          Here is a detailed look at how the Hushh on-device wallet operates:
-        </Text>
-
-        <Heading as="h2" fontSize={{ md: '2xl', base: 'lg' }} className='color-gradient'>
-          Storing and Sharing Data
+           Attaching Cards for Enhanced Experiences - Link Your Preference and Brand cards 
         </Heading>
 
         <OrderedList spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
-          <ListItem>Hushh ID Card: A digital identity card representing the user within the Hushh ecosystem.</ListItem>
-          <ListItem>Demographic Card: Contains demographic details that a user may choose to share with select parties.</ListItem>
+          <ListItem> Open the Hushh app and go to your Wallet screen where your cards are stored.</ListItem>
+          <ListItem>Choose the primary card from your wallet that you want to enhance with additional Brand or Preference Cards.</ListItem>
+          <ListItem>
+          Tap on "Add Brand Card" or "Add Preferences Card" on the primary card.
+          </ListItem>
+          <ListItem>
+          Select Brand or Preference Cards from the list that complement the primary card. 
+          </ListItem>
+          <ListItem>
+          Confirm the attachment to link the cards together by clicking on “Update”.
+          </ListItem>
         </OrderedList>
 
-        <List spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
-          <ListItem>
-            <ListIcon as={CheckCircleIcon}  />
-            Brands Card: For affiliations and brand preferences.
-          </ListItem>
-          <ListItem>
-            <ListIcon as={CheckCircleIcon}  />
-            General Preferences Card: For lifestyle and general interests.
-          </ListItem>
-        </List>
         <Divider borderColor="gray.400" opacity={0.3} my={{ md: 4, base: 2 }} />
-
-        <Heading as="h2" fontSize={{ md: '2xl', base: 'md' }} className='color-gradient'>
-          Data Attachment and Sharing
-        </Heading>
-
-        <List spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
-          <ListItem>
-            <ListIcon as={CheckCircleIcon}/>
-            Users can attach any piece of information to these cards for detailed data management.
-          </ListItem>
-          <ListItem>
-            <ListIcon as={CheckCircleIcon}/>
-            All data input is stored locally on the user's device to ensure privacy.
-          </ListItem>
-          <ListItem>
-            <ListIcon as={CheckCircleIcon}/>
-            When sharing is initiated, data moves to the user's personal cloud.
-          </ListItem>
-          <ListItem>
-            <ListIcon as={CheckCircleIcon}/>
-            Data is securely shared with intended recipients using state-of-the-art encryption.
-          </ListItem>
-        </List>
-        <Divider borderColor="gray.400" opacity={0.3} my={{ md: 4, base: 2 }} />
-
-        <Text fontSize={{ md: '2xl', base: 'sm' }} fontWeight={'600'} className='gradient'>
-          Hushh’s "wallet as a service" is a comprehensive solution integrating core data functionalities, including:
-        </Text>
-
-        <OrderedList spacing={3} fontSize={{ md: 'lg', base: 'sm' }}>
-          <ListItem>Data Analytics: Understanding and utilizing your data patterns.</ListItem>
-          <ListItem>Search: To navigate through your data with ease.</ListItem>
-          <ListItem>Chatbot Capabilities: For interactive, AI-powered assistance.</ListItem>
-          <ListItem>Data Management: Comprehensive tools for data storage, categorization, and sharing.</ListItem>
-        </OrderedList>
+  
       </VStack>
     </Box>
   );

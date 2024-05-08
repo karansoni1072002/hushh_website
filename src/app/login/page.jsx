@@ -1,20 +1,34 @@
 "use client";
 
-import { Box, Button, HStack, Text, Toast, Tooltip, useToast } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  HStack,
+  Icon,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Text,
+  Toast,
+  Tooltip,
+  useToast,
+} from "@chakra-ui/react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import DeveloperBg from '../_components/svg/developerApi/developerApiLoginBg.svg';
-import BgLeftCircle from '../_components/svg/developerApi/developerLoginLCircle.svg';
-import BgTopRightCircle from '../_components/svg/developerApi/developerLoginTRCircle.svg';
-import BgRightCircle from '../_components/svg/developerApi/developerLoginRCircle.svg';
+import DeveloperBg from "../_components/svg/developerApi/developerApiLoginBg.svg";
+import BgLeftCircle from "../_components/svg/developerApi/developerLoginLCircle.svg";
+import BgTopRightCircle from "../_components/svg/developerApi/developerLoginTRCircle.svg";
+import BgRightCircle from "../_components/svg/developerApi/developerLoginRCircle.svg";
 import Image from "next/image";
+import { EmailIcon } from "@chakra-ui/icons";
+import { FiLock, FiUser } from "react-icons/fi";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-//   const [phoneNumber, setPhoneNumber] = useState("");
+  //   const [phoneNumber, setPhoneNumber] = useState("");
   const router = useRouter();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -134,7 +148,7 @@ export default function LoginPage() {
         setFormData({
           name: "",
           email: "",
-        //   phoneNumber: "",
+          //   phoneNumber: "",
           password: "",
         });
         router.push("/login"); // Redirect after successful sign-up
@@ -207,76 +221,100 @@ export default function LoginPage() {
   }
 
   return (
-   <div className="relative" style={{overflow:'hidden',height: "100vh"}}>
-     <Image
-          src={BgLeftCircle}
-          alt="BgLeftCircle"
-          // objectFit="cover"
-          // className="z-0 w-full"
-          style={{position:'absolute'}}
-          placeholder="blur"
-          //  priority
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
-    />
-     <Image
+    <div className="relative" style={{ overflow: "hidden", height: "100vh" }}>
+      <Image
+        src={BgLeftCircle}
+        alt="BgLeftCircle"
+        // objectFit="cover"
+        // className="z-0 w-full"
+        style={{ position: "absolute" }}
+        placeholder="blur"
+        //  priority
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
+      />
+      <Image
         src={BgRightCircle}
         alt="BgRightCircle"
         objectFit="cover"
-        style={{ position: "absolute",width:'60%',height:"100%", right: 0 }} // Positioned at the bottom-left
+        style={{ position: "absolute", width: "60%", height: "100%", right: 0 }} // Positioned at the bottom-left
         width={200}
         height={200}
       />
-    <Image 
-       src={DeveloperBg}
-       alt="DeveloperBg"
-       style={{ position:'absolute'}}
-    />
-   
-    <main className=" flex items-center justify-center z-10 p-6">
-      <Box zIndex={'10'} w={{md:'35%',base:'100%'}} borderRadius={'1.61rem'} background={'#1E1E1E'} p={{ md:'2.68rem',base:'1.34rem'}} mt={{md:'9rem',base:'4rem'}} textAlign={'center'}>
-        <Text
-          color={"#CBCBCB"}
-          fontSize={{ md: "1.65rem", base: "1.15rem" }}
-          fontWeight={"700"}
-          mb={{md:'1.25rem',base:'1rem'}}
+      <Image
+        src={DeveloperBg}
+        alt="DeveloperBg"
+        style={{ position: "absolute" }}
+      />
+
+      <main className=" flex items-center justify-center z-10 p-6">
+        <Box
+          zIndex={"10"}
+          w={{ md: "35%", base: "100%" }}
+          borderRadius={"1.61rem"}
+          background={"#1E1E1E"}
+          p={{ md: "2.68rem", base: "1.34rem" }}
+          mt={{ md: "9rem", base: "4rem" }}
+          textAlign={"center"}
         >
-          {" "}
-          Get your account ready for Hushh{" "}
-        </Text>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleInputChange}
-          style={{borderRadius:'3.35rem'}}
-          placeholder="Full Name"
-          className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
-        />
-        {errors.name && <div class="valid-tooltip">{errors.message}</div>}
+          <Text
+            color={"#CBCBCB"}
+            fontSize={{ md: "1.65rem", base: "1.15rem" }}
+            fontWeight={"700"}
+            mb={{ md: "1.25rem", base: "1rem" }}
+          >
+            {" "}
+            Get your account ready for Hushh{" "}
+          </Text>
+          <InputGroup>
+            <InputLeftElement pointerEvents="none">
+              <Icon as={FiUser} color="gray.400" />
+            </InputLeftElement>
+            <Input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              borderRadius="3.35rem"
+              placeholder="Full Name"
+              className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
+            />
+          </InputGroup>
+          {errors.name && <div class="valid-tooltip">{errors.message}</div>}
 
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          style={{borderRadius:'3.35rem'}}
-          placeholder="Email"
-          className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
-        />
-        {errors.email && <Text color="red.500">{errors.email}</Text>}
+          <InputGroup>
+            <InputLeftElement pointerEvents="none">
+              <Icon as={EmailIcon} color="gray.400" />
+            </InputLeftElement>
+            <Input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              borderRadius="3.35rem"
+              placeholder="Email"
+              className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
+            />
+          </InputGroup>
+          {errors.email && <Text color="red.500">{errors.email}</Text>}
 
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
-          style={{borderRadius:'3.35rem'}}
-          placeholder="Password"
-          className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
-        />
-        {errors.password && <Text color="red.500">{errors.password}</Text>}
+          <InputGroup>
+            <InputLeftElement pointerEvents="none">
+              <Icon as={FiLock} color="gray.400" />{" "}
+              {/* Lock icon for password */}
+            </InputLeftElement>
+            <Input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              borderRadius="3.35rem"
+              placeholder="Password"
+              className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
+            />
+          </InputGroup>
+          {errors.password && <Text color="red.500">{errors.password}</Text>}
 
-        {/* <input
+          {/* <input
           type="tel"
           name="phoneNumber"
           value={formData.phoneNumber}
@@ -288,26 +326,43 @@ export default function LoginPage() {
           <Text color="red.500">{errors.phoneNumber}</Text>
         )} */}
 
-        {/* <Button
+          {/* <Button
           onClick={handleSignUp}
           style={{borderRadius:'3.35rem'}}
           className="w-full mb-2 p-3 rounded-md bg-blue-600 text-white hover:bg-blue-700 focus:outline-none"
         >
           Sign Up
         </Button> */}
-        <Button
-          style={{borderRadius:'3.35rem'}}
-          onClick={handleSignIn}
-          w={'100%'}
-          background ='linear-gradient(270.53deg, #E54D60 2.44%, #A342FF 97.51%)'
-          mb={{md:'1.25rem', base:'0.75rem'}}
-        >
-          Get Started
-        </Button>
+          <Button
+            style={{ borderRadius: "3.35rem" }}
+            onClick={handleSignIn}
+            w={"100%"}
+            background="linear-gradient(270.53deg, #E54D60 2.44%, #A342FF 97.51%)"
+            mb={{ md: "1.25rem", base: "0.75rem" }}
+          >
+            Get Started
+          </Button>
 
-        <Text fontWeight={'400'} lineHeight={'18px'} fontSize={{md:'sm',base:'xs'}} color={'white'}>By continuing, you're agreeing to our <a href="/legal/termsofuse" style={{textDecoration:'underline'}}>Terms</a> and <a href="/legal/privacypolicy" style={{textDecoration:'underline'}}>Privacy Policy</a></Text>
+          <Text
+            fontWeight={"400"}
+            lineHeight={"18px"}
+            fontSize={{ md: "sm", base: "xs" }}
+            color={"white"}
+          >
+            By continuing, you're agreeing to our{" "}
+            <a href="/legal/termsofuse" style={{ textDecoration: "underline" }}>
+              Terms
+            </a>{" "}
+            and{" "}
+            <a
+              href="/legal/privacypolicy"
+              style={{ textDecoration: "underline" }}
+            >
+              Privacy Policy
+            </a>
+          </Text>
 
-        {/* <Text color="white" textAlign="center" mt="4">
+          {/* <Text color="white" textAlign="center" mt="4">
           Already have an account?{" "}
           <span
             className="text-blue-500 underline cursor-pointer"
@@ -317,7 +372,7 @@ export default function LoginPage() {
           </span>
         </Text> */}
 
-        {/* <Text color="white" textAlign="center" mt="4">
+          {/* <Text color="white" textAlign="center" mt="4">
           Don't have an account?{" "}
           <span
             className="text-blue-500 underline cursor-pointer"
@@ -326,14 +381,13 @@ export default function LoginPage() {
             Sign Up
           </span>
         </Text> */}
-      </Box>
-    </main>
-    {/* <Image
+        </Box>
+      </main>
+      {/* <Image
           src={BgRightCircle}
           alt="BgRightCircle"
           style={{position:"absolute",zIndex:'111'}}
     /> */}
-</div> 
-
+    </div>
   );
 }

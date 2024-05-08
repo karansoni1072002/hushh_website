@@ -33,6 +33,8 @@
     "next-images": "^1.8.5",
     "next-sitemap": "^4.2.3",
     "nextjs-toploader": "^1.6.11",
+    "nextra": "^2.13.4",
+    "nextra-theme-docs": "^2.13.4",
     "react": "^18",
     "react-calendly": "^4.3.0",
     "react-dom": "^18",

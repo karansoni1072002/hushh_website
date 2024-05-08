@@ -22,7 +22,7 @@ import BgTopRightCircle from "../_components/svg/developerApi/developerLoginTRCi
 import BgRightCircle from "../_components/svg/developerApi/developerLoginRCircle.svg";
 import Image from "next/image";
 import { EmailIcon } from "@chakra-ui/icons";
-import { FiLock, FiUser } from "react-icons/fi";
+import { FiAlertCircle, FiLock, FiUser } from "react-icons/fi";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -250,11 +250,15 @@ export default function LoginPage() {
         <Box
           zIndex={"10"}
           w={{ md: "35%", base: "100%" }}
+          minH={"25rem"}
           borderRadius={"1.61rem"}
           background={"#1E1E1E"}
           p={{ md: "2.68rem", base: "1.34rem" }}
           mt={{ md: "9rem", base: "4rem" }}
           textAlign={"center"}
+          display={"flex"}
+          flexDirection={"column"}
+          alignContent={"space-between"}
         >
           <Text
             color={"#CBCBCB"}
@@ -265,54 +269,115 @@ export default function LoginPage() {
             {" "}
             Get your account ready for Hushh{" "}
           </Text>
-          <InputGroup>
-            <InputLeftElement pointerEvents="none">
-              <Icon as={FiUser} color="gray.400" />
-            </InputLeftElement>
-            <Input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              borderRadius="3.35rem"
-              placeholder="Full Name"
-              className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
-            />
-          </InputGroup>
-          {errors.name && <div class="valid-tooltip">{errors.message}</div>}
+          <Tooltip
+            label={
+              <>
+                <Icon
+                  as={FiAlertCircle}
+                  color="yellow.400"
+                  mb={"0.20rem"}
+                  mr={"0.3rem"}
+                />
+                {errors.name}
+              </>
+            }
+            isOpen={!!errors.name}
+            hasArrow
+            bg={"white"}
+            color={"black"}
+            borderRadius={"0.5rem"}
+            fontSize={"1rem"}
+            placement="right"
+          >
+            <InputGroup>
+              <InputLeftElement pointerEvents="none">
+                <Icon as={FiUser} color="gray.400" />
+              </InputLeftElement>
+              <Input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                borderRadius="3.35rem"
+                placeholder="Full Name"
+                className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
+              />
+            </InputGroup>
+          </Tooltip>
 
-          <InputGroup>
-            <InputLeftElement pointerEvents="none">
-              <Icon as={EmailIcon} color="gray.400" />
-            </InputLeftElement>
-            <Input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              borderRadius="3.35rem"
-              placeholder="Email"
-              className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
-            />
-          </InputGroup>
-          {errors.email && <Text color="red.500">{errors.email}</Text>}
+          <Tooltip
+            label={
+              <>
+                <Icon
+                  as={FiAlertCircle}
+                  color="yellow.400"
+                  mb={"0.20rem"}
+                  mr={"0.3rem"}
+                />
+                {errors.email}
+              </>
+            }
+            isOpen={!!errors.email}
+            hasArrow
+            bg={"white"}
+            color={"black"}
+            borderRadius={"0.5rem"}
+            fontSize={"1rem"}
+            placement="right"
+          >
+            <InputGroup>
+              <InputLeftElement pointerEvents="none">
+                <Icon as={EmailIcon} color="gray.400" />
+              </InputLeftElement>
+              <Input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                borderRadius="3.35rem"
+                placeholder="Email"
+                className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
+              />
+            </InputGroup>
+          </Tooltip>
 
-          <InputGroup>
-            <InputLeftElement pointerEvents="none">
-              <Icon as={FiLock} color="gray.400" />{" "}
-              {/* Lock icon for password */}
-            </InputLeftElement>
-            <Input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleInputChange}
-              borderRadius="3.35rem"
-              placeholder="Password"
-              className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
-            />
-          </InputGroup>
-          {errors.password && <Text color="red.500">{errors.password}</Text>}
+          <Tooltip
+            label={
+              <>
+                <Icon
+                  as={FiAlertCircle}
+                  color="yellow.400"
+                  mb={"0.20rem"}
+                  mr={"0.3rem"}
+                />
+                {errors.password}
+              </>
+            }
+            isOpen={!!errors.password}
+            hasArrow
+            bg={"white"}
+            color={"black"}
+            borderRadius={"0.5rem"}
+            fontSize={"1rem"}
+            placement="right"
+            icon={<FiAlertCircle />}
+          >
+            <InputGroup>
+              <InputLeftElement pointerEvents="none">
+                <Icon as={FiLock} color="gray.400" />{" "}
+                {/* Lock icon for password */}
+              </InputLeftElement>
+              <Input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleInputChange}
+                borderRadius="3.35rem"
+                placeholder="Password"
+                className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
+              />
+            </InputGroup>
+          </Tooltip>
 
           {/* <input
           type="tel"

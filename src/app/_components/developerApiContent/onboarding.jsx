@@ -1,0 +1,55 @@
+import React from "react";
+
+const Onboarding = () => {
+  return (
+    <div
+      class="border shadow-sm bg-[#252529] text-white p-6 rounded-lg"
+      data-v0-t="card"
+    >
+      <h2 class="text-xl font-bold">Onboarding</h2>
+      <p class="text-gray-300">
+        This API provides endpoints for accepting payments in your applications.
+        Below, you'll find detailed information on how to integrate and use the
+        API.
+      </p>
+      <h3 class="mt-6 text-lg font-semibold">Authentication</h3>
+      <p class="text-gray-300">
+        You need an API key. You can obtain your API key by signing up for an
+        account on our platform. Use this API key in the Authorization header of
+        your HTTP requests.
+      </p>
+      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 px-4 py-2 bg-[#bd1e59] hover:bg-[#a11648] mt-4">
+        Generate API
+      </button>
+      <div
+        class="border text-card-foreground shadow-sm bg-[#1C1C1E] mt-4 p-4 flex items-center justify-between rounded"
+        data-v0-t="card"
+      >
+        <input
+          class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent border-none text-white placeholder-gray-400"
+          placeholder="Authorization: Bearer YOUR_API_KEY"
+        />
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 border-none bg-[#313134] text-gray-300 ml-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-4 h-4"
+          >
+            <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          </svg>
+          copy
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Onboarding;

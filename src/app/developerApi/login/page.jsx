@@ -3,6 +3,7 @@
 import {
   Box,
   Button,
+  Divider,
   HStack,
   Icon,
   Input,
@@ -17,29 +18,42 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import DeveloperBg from "../_components/svg/developerApi/developerApiLoginBg.svg";
-import BgLeftCircle from "../_components/svg/developerApi/developerLoginLCircle.svg";
-import BgTopRightCircle from "../_components/svg/developerApi/developerLoginTRCircle.svg";
-import BgRightCircle from "../_components/svg/developerApi/developerLoginRCircle.svg";
+import DeveloperBg from "../../_components/svg/developerApi/developerApiLoginBg.svg";
+import BgLeftCircle from "../../_components/svg/developerApi/developerLoginLCircle.svg";
+import BgTopRightCircle from "../../_components/svg/developerApi/developerLoginTRCircle.svg";
+import BgRightCircle from "../../_components/svg/developerApi/developerLoginRCircle.svg";
 import Image from "next/image";
 import { EmailIcon } from "@chakra-ui/icons";
 import { FiAlertCircle, FiLock, FiUser } from "react-icons/fi";
+import { useSession, signIn, signOut } from "next-auth/react";
+import GoogelIcon from "../../_components/svg/icons/googleIcon.svg";
+import GithubIcon from "../../_components/svg/icons/githubIcon.svg";
+import Loading from "../../_components/features/loading";
 
 export default function LoginPage() {
+  const { data: session, status } = useSession()
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  //   const [phoneNumber, setPhoneNumber] = useState("");
+  const [first_name, setFirstName] = useState("");
   const router = useRouter();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const toast = useToast();
   const [formData, setFormData] = useState({
-    name: "",
+    first_name: "",
     email: "",
-    phoneNumber: "",
     password: "",
   });
+
+  const handleGoogleLogin = () => {
+    signIn("google");
+  };
+
+  const handleGithubLogin = () => {
+    signIn("github");
+    console.log("Session", session);
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -52,7 +66,6 @@ export default function LoginPage() {
   const [errors, setErrors] = useState({
     name: "",
     email: "",
-    // phoneNumber: "",
     password: "",
   });
 
@@ -73,8 +86,6 @@ export default function LoginPage() {
   const validateForm = () => {
     let valid = true;
     const newErrors = { ...errors };
-
-    // Validate name
     if (!formData.name) {
       newErrors.name = "Name is required";
       valid = false;
@@ -82,7 +93,6 @@ export default function LoginPage() {
       newErrors.name = "";
     }
 
-    // Validate email
     if (!formData.email) {
       newErrors.email = "Email is required";
       valid = false;
@@ -92,19 +102,6 @@ export default function LoginPage() {
     } else {
       newErrors.email = "";
     }
-
-    // Validate phone number
-    // if (!formData.phoneNumber) {
-    //   newErrors.phoneNumber = "Phone number is required";
-    //   valid = false;
-    // } else if (!/^\+?\d{8,15}$/.test(formData.phoneNumber)) {
-    //   newErrors.phoneNumber = "Invalid phone number";
-    //   valid = false;
-    // } else {
-    //   newErrors.phoneNumber = "";
-    // }
-
-    // Validate password (alphanumeric)
     if (!formData.password) {
       newErrors.password = "Password is required";
       valid = false;
@@ -152,50 +149,58 @@ export default function LoginPage() {
       }
     }
   };
+  
+  const backendSendingData = {
+    first_name: formData.name, // Rename "name" to "first_name"
+    email: formData.email,
+    password: formData.password,
+  };
 
   const handleSignIn = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-    //   const { data, error } = await supabase.auth.signInWithPassword({
-    //     email: formData.email,
-    //     password: formData.password,
-    //     name:formData.name
-    //   });
+      setLoading(true);
       try {
-        const response = await axios.post('https://hushhdevenv.hushh.ai/dev/v1/api/sign_up', formData,
-        {
+        const response = await axios.post(
+          "https://hushhdevenv.hushh.ai/dev/v1/api/sign_up",
+          backendSendingData,
+          // testFormData,
+          {
             headers: {
               "Content-Type": "application/x-www-form-urlencoded",
             },
-        }
-    );
+          }
+        );
+        console.log('Backend Sending:',backendSendingData)
+        console.log("Response:", response.data);
         if (response.data.status === 200) {
           toast({
             title: "Signup Successful",
             description: response.data.data,
             status: "success",
             duration: 9000,
-            isClosable: true
+            isClosable: true,
           });
-          router.push('/');
+          router.push("/on-boarding");
         } else {
           toast({
             title: "Signup Failed",
             description: response.data.message,
             status: "error",
             duration: 9000,
-            isClosable: true
+            isClosable: true,
           });
         }
-        console.log('Response:',response)
       } catch (error) {
         toast({
           title: "An error occurred.",
           description: error.message,
           status: "error",
           duration: 9000,
-          isClosable: true
+          isClosable: true,
         });
+      } finally {
+        setLoading(false); // End loading animation
       }
     }
   };
@@ -205,36 +210,6 @@ export default function LoginPage() {
     router.refresh();
     setUser(null);
   };
-
-//   console.log({ loading, user });
-
-  if (loading) {
-    return (
-      <Box>
-        <HStack mt={"5rem"}>
-          <Text>loading..</Text>
-        </HStack>
-      </Box>
-    );
-  }
-
-  if (user) {
-    return (
-      <div className="h-screen flex flex-col justify-center items-center bg-gray-100">
-        <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md w-96 text-center">
-          <h1 className="mb-4 text-xl font-bold text-gray-700 dark:text-gray-300">
-            You're already logged in
-          </h1>
-          <button
-            onClick={handleLogout}
-            className="w-full p-3 rounded-md bg-red-500 text-white hover:bg-red-600 focus:outline-none"
-          >
-            Logout
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="relative" style={{ overflow: "hidden", height: "100vh" }}>
@@ -258,7 +233,7 @@ export default function LoginPage() {
         alt="DeveloperBg"
         style={{ position: "absolute" }}
       />
-
+      {loading && <Loading />}
       <main className=" flex items-center justify-center z-10 p-6">
         <Box
           zIndex={"10"}
@@ -267,7 +242,7 @@ export default function LoginPage() {
           borderRadius={"1.61rem"}
           background={"#1E1E1E"}
           p={{ md: "2.68rem", base: "1.34rem" }}
-          mt={{ md: "9rem", base: "4rem" }}
+          mt={{ md: "6rem", base: "6rem" }}
           textAlign={"center"}
           display={"flex"}
           flexDirection={"column"}
@@ -282,6 +257,75 @@ export default function LoginPage() {
             {" "}
             Get your account ready for Hushh{" "}
           </Text>
+
+          <Button
+            style={{ borderRadius: "3.35rem" }}
+            onClick={() =>
+              signIn(
+                "goolge",
+                { callbackUrl: "/developer-Api/On-Boarding" },
+                console.log("Github session data :", session)
+              )
+            }
+            w={"100%"}
+            background="#686F7D0F"
+            mb={{ md: "1.25rem", base: "0.75rem" }}
+            color={"#CBCBCB"}
+            fontWeight={"400"}
+            fontSize={"1rem"}
+            lineHeight={"17.5px"}
+            textAlign={"center"}
+            gap={{ md: "0.75rem", base: "0.45rem" }}
+            _hover={{
+              color: "white",
+              background:
+                "linear-gradient(270.53deg, #E54D60 2.44%, #A342FF 97.51%)",
+            }}
+          >
+            <Image src={GoogelIcon} alt="GoogelIcon" />
+            Continue with Google
+          </Button>
+
+          <Button
+            style={{ borderRadius: "3.35rem" }}
+            // onClick={handleGithubLogin}
+            onClick={() =>
+              signIn(
+                "github",
+                { callbackUrl: "/developer-Api/On-Boarding" },
+                console.log("Github session data :", session)
+              )
+            }
+            w={"100%"}
+            background="#686F7D0F"
+            mb={{ md: "1.25rem", base: "0.75rem" }}
+            color={"#CBCBCB"}
+            fontWeight={"400"}
+            fontSize={"1rem"}
+            lineHeight={"17.5px"}
+            textAlign={"center"}
+            gap={{ md: "0.75rem", base: "0.45rem" }}
+            _hover={{
+              color: "white",
+              background:
+                "linear-gradient(270.53deg, #E54D60 2.44%, #A342FF 97.51%)",
+            }}
+          >
+            <Image src={GithubIcon} alt="GithubIcon" />
+            Continue with Github
+          </Button>
+          <HStack my={{ md: "1rem", base: "0.5rem" }}>
+            <Divider />
+            <Text
+              color={"#3F434A"}
+              fontWeight={"400"}
+              fontSize={{ md: "0.87rem", base: "0.6rem" }}
+            >
+              Or
+            </Text>
+            <Divider />
+          </HStack>
+
           <Tooltip
             label={
               <>
@@ -378,7 +422,6 @@ export default function LoginPage() {
             <InputGroup>
               <InputLeftElement pointerEvents="none">
                 <Icon as={FiLock} color="gray.400" />{" "}
-                {/* Lock icon for password */}
               </InputLeftElement>
               <Input
                 type="password"
@@ -392,25 +435,6 @@ export default function LoginPage() {
             </InputGroup>
           </Tooltip>
 
-          {/* <input
-          type="tel"
-          name="phoneNumber"
-          value={formData.phoneNumber}
-          onChange={handleInputChange}
-          placeholder="Phone Number"
-          className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
-        />
-        {errors.phoneNumber && (
-          <Text color="red.500">{errors.phoneNumber}</Text>
-        )} */}
-
-          {/* <Button
-          onClick={handleSignUp}
-          style={{borderRadius:'3.35rem'}}
-          className="w-full mb-2 p-3 rounded-md bg-blue-600 text-white hover:bg-blue-700 focus:outline-none"
-        >
-          Sign Up
-        </Button> */}
           <Button
             style={{ borderRadius: "3.35rem" }}
             onClick={handleSignIn}
@@ -439,33 +463,8 @@ export default function LoginPage() {
               Privacy Policy
             </a>
           </Text>
-
-          {/* <Text color="white" textAlign="center" mt="4">
-          Already have an account?{" "}
-          <span
-            className="text-blue-500 underline cursor-pointer"
-            onClick={handleSignIn}
-          >
-            Sign In
-          </span>
-        </Text> */}
-
-          {/* <Text color="white" textAlign="center" mt="4">
-          Don't have an account?{" "}
-          <span
-            className="text-blue-500 underline cursor-pointer"
-            onClick={handleSignUp}
-          >
-            Sign Up
-          </span>
-        </Text> */}
         </Box>
       </main>
-      {/* <Image
-          src={BgRightCircle}
-          alt="BgRightCircle"
-          style={{position:"absolute",zIndex:'111'}}
-    /> */}
     </div>
   );
 }

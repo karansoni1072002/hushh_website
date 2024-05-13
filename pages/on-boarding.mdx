@@ -1,3 +1,32 @@
+import Onboarding from "../src/app/_components/developerApiContent/onboarding";
+
+<Onboarding/>
+
+```json
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.example.com/data",
+    "headers": {
+      "Authorization": "Bearer YOUR_API_KEY"
+    }
+  }
+}
+```
+```json
+{
+  "response": {
+    "data": [
+      {
+        "id": 1,
+        "name": "Sample Item"
+      }
+    ],
+    "status": "success"
+  }
+}
+```
+
 ### On-boarding
 
 This API provides endpoints for accepting payments in your applications. Below, you'll find detailed information on how to integrate and use the API.
@@ -5,6 +34,8 @@ This API provides endpoints for accepting payments in your applications. Below, 
 ### Authentication
 
 You need an API key. You can obtain your API key by signing up for an account on our platform. Use this API key in the Authorization header of your HTTP requests.
+
+
 
 ```html
 <button>

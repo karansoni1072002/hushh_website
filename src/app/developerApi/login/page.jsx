@@ -29,9 +29,12 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import GoogelIcon from "../../_components/svg/icons/googleIcon.svg";
 import GithubIcon from "../../_components/svg/icons/githubIcon.svg";
 import Loading from "../../_components/features/loading";
+import { useApiKey } from "../../context/apiKeyContext";
+import AppleIcon from "../../_components/svg/icons/appleIconLogo.svg";
 
 export default function LoginPage() {
   const { data: session, status } = useSession()
+  const { setApiKey } = useApiKey();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -173,7 +176,11 @@ export default function LoginPage() {
         );
         console.log('Backend Sending:',backendSendingData)
         console.log("Response:", response.data);
+        console.log('Api Key:',response.data.API_key)
         if (response.data.status === 200) {
+          // Saving API key for new users 
+          const apiKey = response.data.API_key;
+          setApiKey(apiKey);
           toast({
             title: "Signup Successful",
             description: response.data.data,
@@ -181,7 +188,7 @@ export default function LoginPage() {
             duration: 9000,
             isClosable: true,
           });
-          router.push("/on-boarding");
+          router.push("/onboarding");
         } else {
           toast({
             title: "Signup Failed",
@@ -263,7 +270,7 @@ export default function LoginPage() {
             onClick={() =>
               signIn(
                 "goolge",
-                { callbackUrl: "/developer-Api/On-Boarding" },
+                { callbackUrl: "/on-boarding" },
                 console.log("Github session data :", session)
               )
             }
@@ -292,7 +299,7 @@ export default function LoginPage() {
             onClick={() =>
               signIn(
                 "github",
-                { callbackUrl: "/developer-Api/On-Boarding" },
+                { callbackUrl: "/on-boarding" },
                 console.log("Github session data :", session)
               )
             }
@@ -314,6 +321,36 @@ export default function LoginPage() {
             <Image src={GithubIcon} alt="GithubIcon" />
             Continue with Github
           </Button>
+
+          <Button
+            style={{ borderRadius: "3.35rem" }}
+            // onClick={handleGithubLogin}
+            onClick={() =>
+              signIn(
+                "github",
+                { callbackUrl: "/on-boarding" },
+                console.log("Github session data :", session)
+              )
+            }
+            w={"100%"}
+            background="#686F7D0F"
+            mb={{ md: "1.25rem", base: "0.75rem" }}
+            color={"#CBCBCB"}
+            fontWeight={"400"}
+            fontSize={"1rem"}
+            lineHeight={"17.5px"}
+            textAlign={"center"}
+            gap={{ md: "0.75rem", base: "0.45rem" }}
+            _hover={{
+              color: "white",
+              background:
+                "linear-gradient(270.53deg, #E54D60 2.44%, #A342FF 97.51%)",
+            }}
+          >
+            <Image src={AppleIcon} alt="AppleIcon" />
+            Continue with Apple
+          </Button>
+
           <HStack my={{ md: "1rem", base: "0.5rem" }}>
             <Divider />
             <Text

@@ -35,36 +35,36 @@ export default function Header() {
   const pathname = usePathname()
   const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // For the dropdown
-  const supabase = createClientComponentClient(); 
+  // const supabase = createClientComponentClient(); 
   const [userEmail, setUserEmail] = useState('');
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
 
-  useEffect(() => {
-    const checkLoginStatus = async () => {
-      const { data } = await supabase.auth.getSession(); // Get the session data
+  // useEffect(() => {
+  //   const checkLoginStatus = async () => {
+  //     const { data } = await supabase.auth.getSession(); // Get the session data
 
-      console.log('data:',data);
-      console.log('user email: ',data?.session?.user?.email);
+  //     console.log('data:',data);
+  //     console.log('user email: ',data?.session?.user?.email);
 
-      if (data.session) {
-        setIsLoggedIn(true); 
-        const { data: userIdentities } = await supabase.auth.getUserIdentities(); // Get user identities
-        if (userIdentities) {
-          const userIdentity = userIdentities.identities[0]; // Assuming a single identity
-          const email = userIdentity.email; 
-          setUserEmail(email); 
-        }
-      } else {
-        setIsLoggedIn(false); 
-      }
-     console.log('Is LoggedIn: ',isLoggedIn)
-    };
-    checkLoginStatus(); // Check login status on component mount
-  }, [supabase]);
+  //     if (data.session) {
+  //       setIsLoggedIn(true); 
+  //       const { data: userIdentities } = await supabase.auth.getUserIdentities();
+  //       if (userIdentities) {
+  //         const userIdentity = userIdentities.identities[0]; 
+  //         const email = userIdentity.email; 
+  //         setUserEmail(email); 
+  //       }
+  //     } else {
+  //       setIsLoggedIn(false); 
+  //     }
+  //    console.log('Is LoggedIn: ',isLoggedIn)
+  //   };
+  //   checkLoginStatus(); 
+  // }, [supabase]);
 
   const handleDropdownClick = () => {
-    setIsDropdownOpen(!isDropdownOpen); // Toggle dropdown
+    setIsDropdownOpen(!isDropdownOpen); 
   };
 
   const scrollToContactForm = () => {
@@ -372,9 +372,9 @@ export default function Header() {
                   href="#"
                   p="3"
                   _hover={{ bg: "gray.100" }}
-                  onClick={() => {
-                    supabase.auth.signOut();
-                  }}
+                  // onClick={() => {
+                  //   supabase.auth.signOut();
+                  // }}
                 >
                   Log Out
                 </Link>

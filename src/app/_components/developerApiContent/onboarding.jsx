@@ -1,9 +1,50 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
+import { useApiKey } from "../../context/apiKeyContext";
+import axios from "axios";
+import { useSession, signIn, signOut } from "next-auth/react";
 
-const Onboarding = () => {
+export default function Onboarding() {
+  // const { apiKey } = useApiKey();
+  const [apiKey, setApiKey] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const { data: session, status } = useSession()
+
+  console.log('session data:',session);
+  const generateApiKey = async (e) => {
+    console.log('button clicked upr wala')
+    e.preventDefault();
+      try {
+        const response = await axios.post(
+          "https://hushhdevenv.hushh.ai/dev/v1/api/sign_up",
+          {
+            email: "testdev@yopmail.com",
+            first_name: "developer",
+            password:'1234567'
+          },          
+          {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          }
+        );
+        console.log("Response:", response.data);
+        if (response.data.status === 200) {
+          // Saving API key for new users 
+          const apiKey = response.data.API_key;
+          console.log('Api Key:',response.data.API_key)
+          setApiKey(apiKey);
+          
+        } 
+      } catch (error) {
+        console.log('error:',error);
+      }
+  };
+
   return (
     <div
-      class="border shadow-sm bg-[#252529] text-white p-6 rounded-lg"
+      class=" shadow-sm text-white mt-8 onBoarding"
       data-v0-t="card"
     >
       <h2 class="text-xl font-bold">Onboarding</h2>
@@ -18,9 +59,13 @@ const Onboarding = () => {
         account on our platform. Use this API key in the Authorization header of
         your HTTP requests.
       </p>
-      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 px-4 py-2 bg-[#bd1e59] hover:bg-[#a11648] mt-4">
-        Generate API
+      <button
+        onClick={generateApiKey}
+        className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 px-4 py-2 bg-[#bd1e59] hover:bg-[#a11648] mt-4"
+      >
+        {isLoading ? "Generating..." : "Generate API Key"} {/* Show loading text */}
       </button>
+      {error && <div className="text-red-500">{error}</div>}
       <div
         class="border text-card-foreground shadow-sm bg-[#1C1C1E] mt-4 p-4 flex items-center justify-between rounded"
         data-v0-t="card"
@@ -28,8 +73,14 @@ const Onboarding = () => {
         <input
           class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent border-none text-white placeholder-gray-400"
           placeholder="Authorization: Bearer YOUR_API_KEY"
+          value={apiKey}
+          readOnly
         />
-        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 border-none bg-[#313134] text-gray-300 ml-3">
+        <button 
+          onClick={() => {
+            navigator.clipboard.writeText(apiKey); 
+          }}
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 border-none bg-[#313134] text-gray-300 ml-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -52,4 +103,4 @@ const Onboarding = () => {
   );
 };
 
-export default Onboarding;
+// export default Onboarding;

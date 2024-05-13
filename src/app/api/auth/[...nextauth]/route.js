@@ -18,24 +18,24 @@ const authOptions = {
         clientId: process.env.APPLE_CLIENT_ID, // Ensure you use the correct environment variables
         clientSecret: process.env.APPLE_CLIENT_SECRET,
       }),
-      CredentialsProvider({
-        credentials: {
-          email: { label: "Email", type: "email" },
-          password: { label: "Password", type: "password" },
-        },
-        authorize: async (credentials, req) => {
+    //   CredentialsProvider({
+    //     credentials: {
+    //       email: { label: "Email", type: "email" },
+    //       password: { label: "Password", type: "password" },
+    //     },
+    //     authorize: async (credentials, req) => {
         
-          if(credentials.email === "example@example.com" && credentials.password === "password123"){
-            return {
-              id: 1,
-              name: credentials.name,
-              email: credentials.email,
-            };
-          } else {
-            return null;  
-          }
-        }
-      })
+    //       if(credentials.email === "example@example.com" && credentials.password === "password123"){
+    //         return {
+    //           id: 1,
+    //           name: credentials.name,
+    //           email: credentials.email,
+    //         };
+    //       } else {
+    //         return null;  
+    //       }
+    //     }
+    //   })
     ],
     cookies: {
       pkceCodeVerifier: {

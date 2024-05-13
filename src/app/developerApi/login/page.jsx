@@ -14,7 +14,7 @@ import {
   Tooltip,
   useToast,
 } from "@chakra-ui/react";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+// import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -72,13 +72,11 @@ export default function LoginPage() {
     password: "",
   });
 
-  const supabase = createClientComponentClient();
+  // const supabase = createClientComponentClient();
 
   useEffect(() => {
     async function getUser() {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
+      
       setUser(user);
       setLoading(false);
     }
@@ -116,42 +114,42 @@ export default function LoginPage() {
     return valid; // Return true if valid, false otherwise
   };
 
-  const handleSignUp = async () => {
-    if (validateForm()) {
-      const { data, error } = await supabase.auth.signUp({
-        email: formData.email,
-        password: formData.password,
-        options: {
-          emailRedirectTo: `${location.origin}/auth/callback`,
-        },
-      });
+  // const handleSignUp = async () => {
+  //   if (validateForm()) {
+  //     const { data, error } = await supabase.auth.signUp({
+  //       email: formData.email,
+  //       password: formData.password,
+  //       options: {
+  //         emailRedirectTo: `${location.origin}/auth/callback`,
+  //       },
+  //     });
 
-      if (error) {
-        toast({
-          title: "Sign-up Error",
-          description: error.message,
-          status: "error",
-          duration: 3000,
-          isClosable: true,
-        });
-      } else {
-        toast({
-          title: "Sign-up Successful",
-          description: "Please log in to continue.",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-        });
-        setFormData({
-          name: "",
-          email: "",
-          //   phoneNumber: "",
-          password: "",
-        });
-        router.push("/login"); // Redirect after successful sign-up
-      }
-    }
-  };
+  //     if (error) {
+  //       toast({
+  //         title: "Sign-up Error",
+  //         description: error.message,
+  //         status: "error",
+  //         duration: 3000,
+  //         isClosable: true,
+  //       });
+  //     } else {
+  //       toast({
+  //         title: "Sign-up Successful",
+  //         description: "Please log in to continue.",
+  //         status: "success",
+  //         duration: 3000,
+  //         isClosable: true,
+  //       });
+  //       setFormData({
+  //         name: "",
+  //         email: "",
+  //         //   phoneNumber: "",
+  //         password: "",
+  //       });
+  //       router.push("/login"); // Redirect after successful sign-up
+  //     }
+  //   }
+  // };
   
   const backendSendingData = {
     first_name: formData.name, // Rename "name" to "first_name"

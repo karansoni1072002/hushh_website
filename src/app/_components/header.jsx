@@ -19,7 +19,7 @@ import ValetChat from "./svg/valetChat";
 import VibeSearchApi from "./svg/vibeSearchApi";
 import { headerAssets } from "./svg/icons/HeaderIcons/headerAssets";
 import { animateScroll as scroll } from "react-scroll";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+// import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { FiUser, FiYoutube } from 'react-icons/fi';
 // import { cookies } from "next/headers";
 // import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";

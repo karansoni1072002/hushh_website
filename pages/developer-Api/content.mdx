@@ -42,6 +42,15 @@ Users retain ownership and control in both categories of data. We make use of mu
 We just don’t collect, we curate! Because it’s not just about coding; it’s about creating a future where applications are as unique as the individuals who use them.
 
 ## Why hushh?
+import TypingGif from '../../public/Gif/typing.gif' 
+import Image from 'next/image'
+
+<Image
+  src={TypingGif}
+  width="100%"
+  height="404"
+  sizes="100vw"
+/>
 
 We cater to developers who want to spruce up their applications designed mainly for end-users, sales agents, and influencers. hushh is for you if:
 
@@ -60,58 +69,14 @@ import { Tabs } from 'nextra/components'
 
 
 
-## Client Libraries
-<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 mt-10">
-  <div className="rounded-lg border text-card-foreground shadow-sm bg-gray-100">
-    <div className="flex flex-col space-y-1.5 p-6">
-      <h3 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Ruby</h3>
-    </div>
-    <div className="p-6">
-        A dynamic, open source programming language with a focus on simplicity and productivity.
-    </div>
-  </div>
-  <div className="rounded-lg border text-card-foreground shadow-sm bg-gray-100">
-    <div className="flex flex-col space-y-1.5 p-6">
-      <h3 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Ruby</h3>
-    </div>
-    <div className="p-6">
-        A dynamic, open source programming language with a focus on simplicity and productivity.
-    </div>
-  </div>
-  <div className="rounded-lg border text-card-foreground shadow-sm bg-gray-100">
-    <div className="flex flex-col space-y-1.5 p-6">
-      <h3 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Ruby</h3>
-    </div>
-    <div className="p-6">
-        A dynamic, open source programming language with a focus on simplicity and productivity.
-    </div>
-  </div>
-  <div className="rounded-lg border text-card-foreground shadow-sm bg-gray-100">
-    <div className="flex flex-col space-y-1.5 p-6">
-      <h3 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Ruby</h3>
-    </div>
-    <div className="p-6">
-        A dynamic, open source programming language with a focus on simplicity and productivity.
-    </div>
-  </div>
-  <div className="rounded-lg border text-card-foreground shadow-sm bg-gray-100">
-    <div className="flex flex-col space-y-1.5 p-6">
-      <h3 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Python</h3>
-    </div>
-    <div className="p-6">
-        A dynamic, open source programming language with a focus on simplicity and productivity.
-    </div>
-  </div>
+## Browse our APIs
+import 'tailwindcss/tailwind.css';
+import LibrariesUIBox from '../../src/app/_components/developerApiContent/librariesUIBox';
 
-  <div className="rounded-lg border text-card-foreground shadow-sm bg-gray-100">
-    <div className="flex flex-col space-y-1.5 p-6">
-      <h3 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Node.js</h3>
-    </div>
-    <div className="p-6">
-        A dynamic, open source programming language with a focus on simplicity and productivity.
-    </div>
-  </div>
-</div> 
+<LibrariesUIBox/>
+
+
+
 
 
 ```jsx                                                  
@@ -119,23 +84,8 @@ function HelloCodeTitle(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 ```
-import { Steps } from 'nextra/components'
- 
-<Steps>
-### Step 1
- 
-Contents for step 1.
- 
-### Step 2
- 
-Contents for step 2.
-</Steps>
 
 
-
-
-
-## Our current main customers include: 
 
 
 

@@ -270,7 +270,7 @@ export default function LoginPage() {
             onClick={() =>
               signIn(
                 "goolge",
-                { callbackUrl: "/on-boarding" },
+                { callbackUrl: "/developer-api/on-boarding" },
                 console.log("Github session data :", session)
               )
             }
@@ -299,7 +299,7 @@ export default function LoginPage() {
             onClick={() =>
               signIn(
                 "github",
-                { callbackUrl: "/on-boarding" },
+                { callbackUrl: "/developer-api/on-boarding" },
                 console.log("Github session data :", session)
               )
             }
@@ -328,7 +328,7 @@ export default function LoginPage() {
             onClick={() =>
               signIn(
                 "github",
-                { callbackUrl: "/on-boarding" },
+                { callbackUrl: "/developer-api/on-boarding" },
                 console.log("Github session data :", session)
               )
             }

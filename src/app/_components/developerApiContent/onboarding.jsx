@@ -47,18 +47,6 @@ export default function Onboarding() {
       class=" shadow-sm text-white mt-8 onBoarding"
       data-v0-t="card"
     >
-      <h2 class="text-xl font-bold">Onboarding</h2>
-      <p class="text-gray-300">
-        This API provides endpoints for accepting payments in your applications.
-        Below, you'll find detailed information on how to integrate and use the
-        API.
-      </p>
-      <h3 class="mt-6 text-lg font-semibold">Authentication</h3>
-      <p class="text-gray-300">
-        You need an API key. You can obtain your API key by signing up for an
-        account on our platform. Use this API key in the Authorization header of
-        your HTTP requests.
-      </p>
       <button
         onClick={generateApiKey}
         className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 px-4 py-2 bg-[#bd1e59] hover:bg-[#a11648] mt-4"

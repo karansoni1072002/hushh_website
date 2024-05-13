@@ -4,6 +4,18 @@ const nextConfig = {
         appDir: true,
     },
 };
+module.exports = {
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'assets.example.com',
+          port: '',
+          pathname: '/account123/**',
+        },
+      ],
+    },
+  }
 const withNextra = require('nextra')({
     theme: 'nextra-theme-docs',
     themeConfig: './theme.config.jsx',

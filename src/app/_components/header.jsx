@@ -26,7 +26,7 @@ import { FiUser, FiYoutube } from 'react-icons/fi';
 import { useMediaQuery } from "react-responsive";
 
 export default function Header() {
-  const { isMobile } = useResponsiveSizes();
+  const { isMobile } = useMediaQuery({ query: '(max-width: 1224px)' });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsSubmenu, setProductsSubmenu] = useState(false);
   const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false);

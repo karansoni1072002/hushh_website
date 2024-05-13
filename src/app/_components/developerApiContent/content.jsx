@@ -11,14 +11,14 @@ const ApiContent = () => {
             Step into the future of retail excellence with Hush APIs- a game changer for high-end luxury giants as well as e-commerce businesses.
             </Text>
             <UnorderedList>
-                <ListItem>
-               <b>Precision Marketing: </b>Imagine a world where marketing strategies are not just targeted but finely tuned to match individual customer preferences
+            <ListItem fontSize="sm" mb="3" color="#00000099">
+               <b style={{color:"#000000"}}>Precision Marketing: </b>Imagine a world where marketing strategies are not just targeted but finely tuned to match individual customer preferences
                 </ListItem>
-                <ListItem>
-                <b>Another Layer of luxury: </b>Add another layer of luxury to your customers’ experience by serving them with exactly what they need by understanding individual preferences.
+                <ListItem fontSize="sm" mb="3" color="#00000099">
+                <b style={{color:"#000000"}}>Another Layer of luxury: </b>Add another layer of luxury to your customers’ experience by serving them with exactly what they need by understanding individual preferences.
                 </ListItem>
             </UnorderedList>
-            <Text>Because it’s not just about selling, it’s about crafting an unforgettable journey for customers. </Text>
+            <Text color="#00000099" mt={"4"}>Because it’s not just about selling, it’s about crafting an unforgettable journey for customers. </Text>
           </Box>
           <Box color={'white'}>&n</Box>
           <Box ml={{md:'1rem',base:'0.5rem'}} flex={1} direction={'column'} bg="#F3F3F3" padding={'2rem'} borderRadius={'1rem'}  mb="6" align="left" justify="space-between">

@@ -6,6 +6,7 @@ import Onboarding from './onboarding';
 const MDXComponents = {
   pre: CustomPre,
   OnBoarding:Onboarding,
+  
   // Map other tags to custom components
 };
 

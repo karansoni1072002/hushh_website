@@ -3,6 +3,9 @@ const nextConfig = {
     experimental: {
         appDir: true,
     },
+    markdown: {
+        remarkPlugins: 'remark-gfm',
+      },
 };
 module.exports = {
     images: {
@@ -23,5 +26,7 @@ const withNextra = require('nextra')({
   })
    
 module.exports = withNextra(nextConfig)
+
+
   
 

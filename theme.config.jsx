@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Image from 'next/image'
 import { useSession } from "next-auth/react";
 import MDXComponents from './src/app/_components/developerApiContent/page'
 import HushhLogo from './src/app/_components/svg/hushhLogoS.svg'
 import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react';
 import Header from './src/app/_components/header';
+import remarkGfm from 'remark-gfm';
+import FooterComponent from './src/app/_components/features/FooterComponent';
 
 const MyLogo = () => {
   const { data: session } = useSession();
@@ -36,6 +38,10 @@ export default {
         <MyLogo/>
       )
     },
+    footer:{
+       text:null,
+       Component:null,
+    },
     feedback:{ content: "To know more about hushh develoeper API", label:'To know more about hushh develoeper API'}, 
     editLink: { text: null },
     head: (
@@ -64,6 +70,9 @@ export default {
     },
     content: {
       components: MDXComponents,
+    },
+    markdown: {
+      remarkPlugins: [remarkGfm],
     },
 }
 

@@ -3,16 +3,17 @@ import React, { useState } from "react";
 import { useApiKey } from "../../context/apiKeyContext";
 import axios from "axios";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { getSession } from 'next-auth/react'
+// import { getSession } from 'next-auth/react'
 
-const Onboarding = ({session}) => {
+const Onboarding = () => {
   // const { apiKey } = useApiKey();
   const [apiKey, setApiKey] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  // const { data: session, status } = useSession()
+  const { data: session, status } = useSession()
   console.log('Session from GetSession Client', session?.user?.email);
   const generateApiKey = async (e) => {
+    setIsLoading(true)
     console.log('button clicked upr wala')
     e.preventDefault();
       try {
@@ -35,6 +36,7 @@ const Onboarding = ({session}) => {
           const apiKey = response?.data?.data?.userdata?.apiKey;
           console.log('Api Key:',response?.data?.userdata?.apiKey)
           setApiKey(apiKey);
+          setIsLoading(false);
         } 
       } catch (error) {
         console.log('error:',error);

@@ -212,11 +212,11 @@ export default function LoginPage() {
     }
   };
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    router.refresh();
-    setUser(null);
-  };
+  // const handleLogout = async () => {
+  //   await supabase.auth.signOut();
+  //   router.refresh();
+  //   setUser(null);
+  // };
 
   return (
     <div className="relative" style={{ overflow: "hidden", height: "100vh" }}>

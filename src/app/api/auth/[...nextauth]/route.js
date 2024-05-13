@@ -4,7 +4,7 @@ import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import AppleProvider from "next-auth/providers/apple";
 
-export const authOptions = {
+const authOptions = {
     providers: [
       GithubProvider({
         clientId: process.env.GITHUB_ID,
@@ -24,8 +24,7 @@ export const authOptions = {
           password: { label: "Password", type: "password" },
         },
         authorize: async (credentials, req) => {
-          // Here, you should add your database checking logic
-          // Simulating a user found
+        
           if(credentials.email === "example@example.com" && credentials.password === "password123"){
             return {
               id: 1,
@@ -33,7 +32,7 @@ export const authOptions = {
               email: credentials.email,
             };
           } else {
-            return null;  // login failed
+            return null;  
           }
         }
       })

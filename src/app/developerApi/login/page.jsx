@@ -114,42 +114,35 @@ export default function LoginPage() {
     return valid; // Return true if valid, false otherwise
   };
 
-  // const handleSignUp = async () => {
-  //   if (validateForm()) {
-  //     const { data, error } = await supabase.auth.signUp({
-  //       email: formData.email,
-  //       password: formData.password,
-  //       options: {
-  //         emailRedirectTo: `${location.origin}/auth/callback`,
-  //       },
-  //     });
+  const handleSignUp = async () => {
+    if (validateForm()) {
 
-  //     if (error) {
-  //       toast({
-  //         title: "Sign-up Error",
-  //         description: error.message,
-  //         status: "error",
-  //         duration: 3000,
-  //         isClosable: true,
-  //       });
-  //     } else {
-  //       toast({
-  //         title: "Sign-up Successful",
-  //         description: "Please log in to continue.",
-  //         status: "success",
-  //         duration: 3000,
-  //         isClosable: true,
-  //       });
-  //       setFormData({
-  //         name: "",
-  //         email: "",
-  //         //   phoneNumber: "",
-  //         password: "",
-  //       });
-  //       router.push("/login"); // Redirect after successful sign-up
-  //     }
-  //   }
-  // };
+      if (error) {
+        toast({
+          title: "Sign-up Error",
+          description: error.message,
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: "Sign-up Successful",
+          description: "Please log in to continue.",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+        setFormData({
+          name: "",
+          email: "",
+          //   phoneNumber: "",
+          password: "",
+        });
+        router.push("/login"); // Redirect after successful sign-up
+      }
+    }
+  };
   
   const backendSendingData = {
     first_name: formData.name, // Rename "name" to "first_name"

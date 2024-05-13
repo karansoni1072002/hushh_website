@@ -3,21 +3,21 @@ import React, { useState } from "react";
 import { useApiKey } from "../../context/apiKeyContext";
 import axios from "axios";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { getSession } from 'next-auth/react'
 
-export default function Onboarding() {
+const Onboarding = ({session}) => {
   // const { apiKey } = useApiKey();
   const [apiKey, setApiKey] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const { data: session, status } = useSession()
-
-  console.log('session data:',session);
+  // const { data: session, status } = useSession()
+  console.log('Session from GetSession Client', session?.user?.email);
   const generateApiKey = async (e) => {
     console.log('button clicked upr wala')
     e.preventDefault();
       try {
         const response = await axios.post(
-          "https://hushhdevenv.hushh.ai/dev/v1/api/sign_up",
+          "https://hushhdevenv.hushh.ai/dev/v1/api/sign_in",
           {
             email: "testdev@yopmail.com",
             first_name: "developer",
@@ -29,13 +29,12 @@ export default function Onboarding() {
             },
           }
         );
-        console.log("Response:", response.data);
-        if (response.data.status === 200) {
+        console.log("API Key Generated:", response?.data?.data?.userdata?.apiKey);
+        if (response.data.message === 'Success') {
           // Saving API key for new users 
-          const apiKey = response.data.API_key;
-          console.log('Api Key:',response.data.API_key)
+          const apiKey = response?.data?.data?.userdata?.apiKey;
+          console.log('Api Key:',response?.data?.userdata?.apiKey)
           setApiKey(apiKey);
-          
         } 
       } catch (error) {
         console.log('error:',error);
@@ -91,4 +90,12 @@ export default function Onboarding() {
   );
 };
 
-// export default Onboarding;
+Onboarding.getInitialProps = async (context) => {
+  const session = await getSession(context);
+
+  return {
+    session
+  }
+}
+
+export default Onboarding

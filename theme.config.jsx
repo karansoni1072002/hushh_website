@@ -1,7 +1,7 @@
 'use client'
 import React, {  } from 'react'
 import MDXComponents from './src/app/_components/developerApiContent/page'
-import Header from './src/app/_components/header';
+import Header from './src/app/_components/header'
 import remarkGfm from 'remark-gfm';
 import MyLogo from './src/app/developerApi/userLogo';
 import LogoutButton from './src/app/_components/developerApiContent/logout';
@@ -28,14 +28,13 @@ export default {
       </>
     ),
     banner: {
-      // key: '2.0-release',
+      dismissible:false,
+      key: '2.0-release',
       text: (
-        <>
-        <div style={{height:'100%'}}>
-          <Header/>
-        </div>
-        </>
-      ),
+      <a href="/" target="_blank">
+        🤫 Back to Hushh Main website
+      </a>
+    )
     },
     docsRepositoryBase: 'https://hushh.gitbook.io/hushh-docs',
     // logo:<Image src={HushhLogo} />,

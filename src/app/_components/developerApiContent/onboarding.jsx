@@ -11,7 +11,8 @@ const Onboarding = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const { data: session, status } = useSession()
-  console.log('Session from GetSession Client', session?.user?.email);
+  console.log('Session from GetSession Client', session?.session?.user?.email);
+  console.log('Whole Session Data: ',session)
   const generateApiKey = async (e) => {
     setIsLoading(true)
     console.log('button clicked upr wala')

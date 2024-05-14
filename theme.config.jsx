@@ -1,13 +1,10 @@
 'use client'
-import React, { Component, useEffect, useState } from 'react'
-import Image from 'next/image'
-import { useSession } from "next-auth/react";
+import React, {  } from 'react'
 import MDXComponents from './src/app/_components/developerApiContent/page'
-import HushhLogo from './src/app/_components/svg/hushhLogoS.svg'
-import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react';
 import Header from './src/app/_components/header';
 import remarkGfm from 'remark-gfm';
 import MyLogo from './src/app/developerApi/userLogo';
+import LogoutButton from './src/app/_components/developerApiContent/logout';
 
 export default {
     logo: <span>Hushh Developer API </span>,
@@ -15,7 +12,7 @@ export default {
       link:'/developer-api/on-boarding',
       icon: (
         <MyLogo/>
-      )
+      ),
     },
     footer:{
        text:null,

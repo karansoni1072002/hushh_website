@@ -49,6 +49,12 @@ export default function LoginPage() {
     password: "",
   });
 
+  // useEffect(() => {
+  //   if (session?.user) {
+  //     router.push("/developer-api/on-boarding");
+  //   }
+  // }, [status, session]);
+
   const handleGoogleLogin = () => {
     signIn("google");
   };

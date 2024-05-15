@@ -37,7 +37,7 @@ const MyLogo = () => {
             border={"1px solid #606060"}
             borderRadius="2px"
             background="transparent"
-            p={10}
+            p={4}
             onClick={handleLogout}
             _hover={{
               background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
@@ -52,7 +52,7 @@ const MyLogo = () => {
           <Button
             border={"1px solid #606060"}
             borderRadius="2px"
-            p={10}
+            p={4}
             background="transparent"
             onClick={handleLogin}
             _hover={{

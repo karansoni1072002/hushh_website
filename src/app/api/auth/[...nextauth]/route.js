@@ -16,7 +16,12 @@ const authOptions = {
     }),
     AppleProvider({
       clientId: process.env.APPLE_CLIENT_ID,
-      clientSecret: process.env.APPLE_CLIENT_SECRET,
+      clientSecret: {
+        appleId: process.env.APPLE_CLIENT_ID,
+        teamId: process.env.APPLE_TEAM_ID,
+        privateKey: process.env.APPLE_PRIVATE_KEY,
+        keyId: process.env.APPLE_KEY_ID,
+      }
     }),
     CredentialsProvider({
       credentials: {
@@ -55,7 +60,10 @@ const authOptions = {
     async session(session, token, user) {
       if (session.user && session.user.email) {
         session.accessToken = token.accessToken;
-        session.user.id = token.id;
+        // session.user.id = token.id;
+        session.id = token.id
+        session.userName = token.userName;
+
         try {
           // Make a POST request to your backend API to get the API token key
           const response = await axios.post(
@@ -85,7 +93,19 @@ const authOptions = {
       }
       return session;
     },
-    
+    async jwt({token, user}) {
+      // User Id is unique identifier id === uid
+      if (user?.id) {
+          token.uid = user.id
+      }
+      if (user?.userName) {
+          token.userName = user.userName;
+      }
+      return token
+   },
+  },
+  session: {
+    strategy: 'jwt',
   },
 };
 

@@ -266,9 +266,8 @@ export default function LoginPage() {
             style={{ borderRadius: "3.35rem" }}
             onClick={() =>
               signIn(
-                "goolge",
+                "google",
                 { callbackUrl: "/developer-api/on-boarding" },
-                console.log("Github session data :", session)
               )
             }
             w={"100%"}
@@ -321,10 +320,9 @@ export default function LoginPage() {
 
           <Button
             style={{ borderRadius: "3.35rem" }}
-            // onClick={handleGithubLogin}
             onClick={() =>
               signIn(
-                "github",
+                "apple",
                 { callbackUrl: "/developer-api/on-boarding" },
                 console.log("Github session data :", session)
               )
@@ -360,7 +358,7 @@ export default function LoginPage() {
             <Divider />
           </HStack>
 
-          <Tooltip
+          {/* <Tooltip
             label={
               <>
                 <Icon
@@ -394,7 +392,7 @@ export default function LoginPage() {
                 className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
               />
             </InputGroup>
-          </Tooltip>
+          </Tooltip> */}
 
           <Tooltip
             label={

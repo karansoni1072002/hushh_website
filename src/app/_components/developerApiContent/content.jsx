@@ -4,8 +4,8 @@ import React from 'react'
 const ApiContent = () => {
     return (
         <>
-      <Box direction="row" display={'flex'} mt={{md:'4rem',base:'2rem'}} justifyContent={'space-between'} gap={{md:'4rem',base:'2rem'}}>
-          <Box mr={{md:'1rem',base:'0.5rem'}} flex={1} direction={'column'} bg="#F3F3F3" padding={'2rem'} borderRadius={'1rem'} mb="6" align="left" justify="space-between">
+      <Box direction="row" display={'flex'} mt={{md:'2rem',base:'1rem'}} justifyContent={'space-between'} gap={{md:'2rem',base:'1rem'}}>
+          <Box  flex={1} direction={'column'} bg="#F3F3F3" padding={'2rem'} borderRadius={'1rem'} mb="6" align="left" justify="space-between">
             <Text fontWeight="600" mb="3" fontSize={{md:'1.25rem',base:'0.9rem'}} color="#000000">Retail businesses</Text>
             <Text fontSize="sm" mb="3" color="#00000099">
             Step into the future of retail excellence with Hush APIs- a game changer for high-end luxury giants as well as e-commerce businesses.
@@ -20,8 +20,7 @@ const ApiContent = () => {
             </UnorderedList>
             <Text color="#00000099" mt={"4"}>Because it’s not just about selling, it’s about crafting an unforgettable journey for customers. </Text>
           </Box>
-          <Box color={'white'}>&n</Box>
-          <Box ml={{md:'1rem',base:'0.5rem'}} flex={1} direction={'column'} bg="#F3F3F3" padding={'2rem'} borderRadius={'1rem'}  mb="6" align="left" justify="space-between">
+          <Box flex={1} direction={'column'} bg="#F3F3F3" padding={'2rem'} borderRadius={'1rem'}  mb="6" align="left" justify="space-between">
             <Text fontWeight="600" mb="3" fontSize={{md:'1.25rem',base:'0.9rem'}} color="#000000">Application Developers</Text>
             <UnorderedList>
             <ListItem fontSize="sm" mb="3" color="#00000099">

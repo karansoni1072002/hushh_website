@@ -1,3 +1,4 @@
+import { Button } from "@chakra-ui/react";
 import { useSession, signOut, signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -15,9 +16,9 @@ const LogoutButton = () => {
   return (
     <div>
       {session ? (
-        <Button onClick={handleLogout}>Logout</Button>
+        <button onClick={handleLogout}>Logout</button>
       ) : (
-        <Button
+        <button
           onClick={() =>
             signIn(
               "goolge",
@@ -27,7 +28,7 @@ const LogoutButton = () => {
           }
         >
           LogIn
-        </Button>
+        </button>
       )}
     </div>
   );

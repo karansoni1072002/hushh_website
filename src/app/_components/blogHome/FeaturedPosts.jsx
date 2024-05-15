@@ -13,14 +13,17 @@ const FeaturedPosts = ({ blogs }) => {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 sm:mt-16">
         <article className="relative col-span-1 sm:col-span-1">
-          <BlogLayoutOne blog={sortedBlogs[1]}/>
+          <BlogLayoutOne blog={sortedBlogs[2]}/>
         </article>
         <div className="flex flex-col gap-6">
           <article className="relative">
-            <BlogLayoutTwo blog={sortedBlogs[2]}/>
+            <BlogLayoutTwo blog={sortedBlogs[1]}/>
           </article>
           <article className="relative">
             <BlogLayoutTwo blog={sortedBlogs[3]}/>
+          </article>
+          <article className="relative">
+            <BlogLayoutTwo blog={sortedBlogs[4]} />
           </article>
         </div>
       </div>
@@ -28,6 +31,9 @@ const FeaturedPosts = ({ blogs }) => {
         <div className="flex flex-col gap-6">
           <article className="relative">
             <BlogLayoutTwo blog={sortedBlogs[5]} />
+          </article>
+          <article className="relative">
+            <BlogLayoutTwo blog={sortedBlogs[6]} />
           </article>
           <article className="relative">
             <BlogLayoutTwo blog={sortedBlogs[6]} />

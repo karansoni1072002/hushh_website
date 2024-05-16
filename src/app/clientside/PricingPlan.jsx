@@ -39,13 +39,14 @@ const planData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Upto 10 brands",
         perMonth: "/mo",
         features: [["Basic Search"], ["Search History", "Share your vibe"]],
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Upto 50 brands",
         perMonth: "/mo",
@@ -63,7 +64,7 @@ const planData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Unlimited brands",
         perMonth: "/mo",
@@ -88,6 +89,7 @@ const planData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Upto 5 cards",
         perMonth: "/mo",
         features: [
@@ -102,7 +104,7 @@ const planData = [
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Upto 25 cards",
         perMonth: "/mo",
@@ -118,7 +120,7 @@ const planData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Upto 25 cards",
         perMonth: "/mo",
@@ -146,13 +148,14 @@ const planData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Reciept Import",
         perMonth: "/mo",
         features: [["Categorization", "Conversational AI"]],
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Reciept Import",
         perMonth: "/mo",
@@ -167,7 +170,7 @@ const planData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Reciept Import",
         perMonth: "/mo",
@@ -191,6 +194,7 @@ const planData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Request Format",
         perMonth: "/mo",
         features: [
@@ -204,7 +208,7 @@ const planData = [
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Request Format",
         perMonth: "/mo",
@@ -220,7 +224,7 @@ const planData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Request Format",
         perMonth: "/mo",
@@ -243,6 +247,7 @@ const planData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Request Format",
         perMonth: "/mo",
         features: [
@@ -256,7 +261,7 @@ const planData = [
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Request Format",
         perMonth: "/mo",
@@ -272,7 +277,7 @@ const planData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Request Format",
         perMonth: "/mo",
@@ -298,13 +303,14 @@ const workspacePlansData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Basic Data Access",
         perMonth: "/mo",
         features: [["Advanced Data Insights"], ["User Targeting Options", "Data Card Sharing","Commision Structure"],["Brand Reputation Tools","Campaign Management"]],
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "Ads included",
         brands: "Basic Data Access",
         perMonth: "/mo",
@@ -312,7 +318,7 @@ const workspacePlansData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "Ads Free",
         brands: "Basic Data Access",
         perMonth: "/mo",
@@ -327,6 +333,7 @@ const workspacePlansData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Basic Integration",
         perMonth: "/mo",
         features: [
@@ -340,7 +347,7 @@ const workspacePlansData = [
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Basic Integration",
         perMonth: "/mo",
@@ -356,7 +363,7 @@ const workspacePlansData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Advanced Integration",
         perMonth: "/mo",
@@ -382,13 +389,14 @@ const workspacePlansData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Maximum Service Categories",
         perMonth: "/mo",
         features: [["Client Matching"],["Lead Volume","Hushh Coin Commision","Recommendation Types"]],
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Maximum Service Categories",
         perMonth: "/mo",
@@ -396,7 +404,7 @@ const workspacePlansData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Reciept Import",
         perMonth: "/mo",
@@ -434,8 +442,8 @@ const ClientPricingPlan = () => {
 
     const priceNum = parseFloat(price.replace("$", ""));
     const yearlyPrice = isYearly ? priceNum * 12 : priceNum;
-    const discountedPrice = isYearly ? yearlyPrice * 0.78 : priceNum; // Applying 22% discount if it's yearly, else use original price
-    const total = Math.floor(discountedPrice); // Remove decimal part
+    const discountedPrice = isYearly ? yearlyPrice * 0.78 : priceNum.toFixed(2); // Applying 22% discount if it's yearly, else use original price
+    const total = isYearly ? Math.floor(discountedPrice) : discountedPrice ; // Remove decimal part
 
     // Change perMonth text based on yearly toggle
     const durationText = isYearly ? "/yr" : perMonth;
@@ -817,6 +825,15 @@ const ClientPricingPlan = () => {
                                 {plan.perMonth && (isYearly ? " /yr" : " /mo")}
                               </span>
                             )}
+                          </Text>
+                            <Text
+                            color={"white"}
+                            lineHeight={"25.6px"}
+                            fontWeight={"500"}
+                            fontSize={{ md: "1rem", base: "0.65rem" }}
+                            // className="planAdvertisment"
+                          >
+                            {plan?.freeTrial}
                           </Text>
                           <Text
                             color={"#535353"}

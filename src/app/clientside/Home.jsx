@@ -630,7 +630,7 @@ const ClientHome = () => {
                     onClick={() => router.push("/developer-api/about-developer-api")}
                   />
                   <ServiceCard
-                    icon={<VibeSearchApi />}
+                    icon={<ApiVibeSearch />}
                     title="VIBE Search APIs​"
                     alignItems={"center"}
                     textAlign={"center"}

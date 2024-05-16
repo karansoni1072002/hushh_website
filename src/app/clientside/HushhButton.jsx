@@ -128,15 +128,17 @@ const ClientHushhButton = () => {
             your preferences/choices/needs/likes and your favourite brands with
             GenAI
           </Text>
-          <Button
+        <Box display={'flex'} gap={{md:'4rem',base:'1rem'}}>
+        <Button
             border={"1px solid #606060"}
             borderRadius={"2px"}
-            w={{ md: "16.25rem", base: "10rem" }}
+            w={{ md: "16.25rem", base: "auto" }}
             h={{ md: "3.75rem", base: "2.5rem" }}
             color={extendedTheme.colors._white}
             lineHeight={{ md: "28px", base: "14px" }}
             background={"transparent"}
-            letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
+            fontSize={{base:'0.75rem'}}
+            letterSpacing={{ md: "0.5rem", base: "0.1rem" }}
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
@@ -150,6 +152,29 @@ const ClientHushhButton = () => {
           >
             LEARN MORE
           </Button>
+          <Button
+            as="a" // Render the Button component as an anchor tag
+            href="https://www.npmjs.com/package/hushh-button" // Specify the URL
+            target="_blank" // Open link in a new tab
+            rel="noopener noreferrer" // Add necessary security attributes
+            border={"1px solid #606060"}
+            borderRadius={"2px"}
+            w={{ md: "16.25rem", base: "auto" }}
+            h={{ md: "3.75rem", base: "2.5rem" }}
+            color={extendedTheme.colors._white}
+            fontSize={{base:'0.75rem'}}
+            lineHeight={{ md: "28px", base: "14px" }}
+            background= "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)"         
+            letterSpacing={{ md: "0.5rem", base: "0.1rem" }}
+            _hover={{
+              background:'transparent',
+              color:'white'
+            }}
+          >
+            HUSHH SDK  
+          </Button>
+        </Box>  
+         
         </Box>
         <HStack
           mt={"2rem"}

@@ -5,7 +5,7 @@ const ApiKeyContext = createContext(null);
 
 // Provider component to manage API key state
 export const ApiKeyProvider = ({ children }) => {
-  const [apiKey, setApiKey] = useState(null);
+  const [apiKey, setApiKey] = useState("");
 
   return (
     <ApiKeyContext.Provider value={{ apiKey, setApiKey }}>

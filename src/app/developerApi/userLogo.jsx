@@ -13,7 +13,7 @@ const MyLogo = () => {
 
   const handleLogout = async () => {
     await signOut({ redirect: false });
-    router.push("/developer-api/content");
+    router.push("/developer-api/about-developer-api");
   };
 
   const handleLogin = async () => {
@@ -37,6 +37,7 @@ const MyLogo = () => {
             border={"1px solid #606060"}
             borderRadius="2px"
             background="transparent"
+            style={{ color: "var(--button-text-color)" }}
             p={4}
             onClick={handleLogout}
             _hover={{
@@ -53,6 +54,7 @@ const MyLogo = () => {
             border={"1px solid #606060"}
             borderRadius="2px"
             p={4}
+            style={{ color: "var(--button-text-color)" }}
             background="transparent"
             onClick={handleLogin}
             _hover={{

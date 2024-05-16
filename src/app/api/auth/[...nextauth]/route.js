@@ -63,16 +63,15 @@ const authOptions = {
         // session.user.id = token.id;
         session.id = token.id
         session.userName = token.userName;
-
+        console.log('Session from Post request:', session)
         try {
           // Make a POST request to your backend API to get the API token key
           const response = await axios.post(
-            "https://hushhdevenv.hushh.ai/dev/v1/api/sign_up",
+            "https://hushhdevenv.hushh.ai/dev/v1/api/sign_in",
             {
               email: session.user.email,
-              name: session.user.name,
-              id: session.user.id,
-              image: session.user.image,
+              first_name: session.user.name,
+              password: session.token.sub,
             },
             {
               headers: {
@@ -83,10 +82,11 @@ const authOptions = {
 
           // If the request is successful, extract the API key from the response
           const apiKey = response.data.data.API_key;
-
+          console.log('Response after sending User data', response)
           // Add the API key to the session
           session.API_key = apiKey;
-          console.log("API", apiKey);
+          // console.log("API", apiKey);
+          return response;
         } catch (error) {
           console.error("Error fetching API key:", error);
         }

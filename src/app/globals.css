@@ -420,3 +420,16 @@ body {
   color:'white';
   background: #080808;
 }
+
+
+
+/* Developer API feedback form CSS */
+.feedbackForm {
+  text-align: center;
+  height: 40vmin;
+}
+
+.feedbackForm-link {
+  color: #fba461;
+}
+

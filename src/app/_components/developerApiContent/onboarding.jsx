@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import { useApiKey } from "../../context/apiKeyContext";
 import axios from "axios";
@@ -10,7 +10,7 @@ const Onboarding = () => {
   const [apiKey, setApiKey] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const { data: session, status } = useSession()
+  const { data: session, token } = useSession()
   console.log('Session from GetSession Client', session?.session?.user?.email);
   console.log('Whole Session Data: ',session)
   const generateApiKey = async (e) => {
@@ -21,9 +21,9 @@ const Onboarding = () => {
         const response = await axios.post(
           "https://hushhdevenv.hushh.ai/dev/v1/api/sign_in",
           {
-            email: "testdev@yopmail.com",
-            first_name: "developer",
-            password:'1234567'
+            email: session?.token?.email,
+            first_name: session?.token?.name,
+            password: session?.token?.sub
           },          
           {
             headers: {
@@ -31,10 +31,10 @@ const Onboarding = () => {
             },
           }
         );
-        console.log("API Key Generated:", response?.data?.data?.userdata?.apiKey);
+        console.log("API Key Generated:", response);
         if (response.data.message === 'Success') {
           // Saving API key for new users 
-          const apiKey = response?.data?.data?.userdata?.apiKey;
+          const apiKey = response?.data?.data?.apiKey;
           console.log('Api Key:',response?.data?.userdata?.apiKey)
           setApiKey(apiKey);
           setIsLoading(false);

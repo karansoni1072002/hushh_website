@@ -9,7 +9,7 @@ const LogoutButton = () => {
 
   const handleLogout = async () => {
     await signOut({ redirect: false }).then(() => {
-        router.push("/developer-api/content"); 
+        router.push("/developer-api/about-developer-api"); 
     });
   };
 

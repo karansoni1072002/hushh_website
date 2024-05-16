@@ -1,13 +1,14 @@
 'use client'
-import React, { useState } from "react";
-// import { useApiKey } from "../../context/apiKeyContext";
+import React, { useState, useContext } from "react";
+import { useApiKey } from "../../context/apiKeyContext";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 // import { getSession } from 'next-auth/react'
 import { useToast } from "@chakra-ui/react";
+import ApiKeyContext from '../../context/apiKeyContext';
 
 const AccessToken = () => {
-  // const { apiKey } = useApiKey();
+  const { apiKey } = useApiKey();
   const [accessToken, setAccessToken] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -15,6 +16,7 @@ const AccessToken = () => {
   const { data: session, status } = useSession()
   console.log('Session from GetSession Client', session?.session?.user?.email);
   console.log('Whole Session Data: ',session)
+  console.log('Api Key: ', apiKey)
 
   
   const generateToken = async (e) => {
@@ -23,10 +25,11 @@ const AccessToken = () => {
     e.preventDefault();
       try {
         const response = await axios.post(
-          "https://hushhdevenv.hushh.ai/dev/v1/api/get_token",
+          "https://hushhdevenv.hushh.ai/dev/v1/api/sign_in",
           {
-            email: "testdev@yopmail.com",
-            api_key:"b707e4d8d3b50e0f",
+            email: session?.token?.email,
+            first_name: session?.token?.name,
+            password: session?.token?.sub
           },          
           {
             headers: {
@@ -34,10 +37,8 @@ const AccessToken = () => {
             },
           }
         );
-        console.log("Access Token Generated:", response);
-        console.log("Response Status from backend:",response.data.status)
-        console.log("Is User data availabe :", response.data.data);
-        console.log("Status ", response.data.status);
+        setAccessToken(response.data.data.access_token)
+        console.log("Access Token Generated:", response.data.data.access_token);
 
         if(response?.data?.status === 2){
           toast({
@@ -53,8 +54,8 @@ const AccessToken = () => {
 
         if (response?.data?.status === 1) {
           // Saving API key for new users 
-          const accessToken = response?.data?.access_token;
-          console.log('Access Token:',response?.data?.access_token)
+          const accessToken = response?.data?.data?.access_token;
+          console.log('Access Token:',response?.data?.data?.access_token)
           setAccessToken(accessToken);
           setIsLoading(false);
           toast({

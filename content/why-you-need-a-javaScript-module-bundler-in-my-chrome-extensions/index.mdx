@@ -1,5 +1,5 @@
 ---
-title: "Mdx - 3 The Power of JavaScript Frameworks: Angular vs. React vs. Vue.js"
+title: "Why do I need a JavaScript Module Bundler in my Chrome extensions 🤷🏻‍♂️"
 description: "Get a detailed comparison of three popular JavaScript frameworks - Angular, React, and Vue.js. Understand the strengths, weaknesses, and use cases for each framework to make an informed decision for your next web development project."
 image: "../../public/blogs/paul-esch-laurent-oZMUrWFHOB4-unsplash.jpg"
 publishedAt: "2022-11-12"
@@ -11,9 +11,13 @@ tags:
 - web development
 ---
 
-# MDX file - 3
+## JavaScript Module Bundler in my Chrome extensions 
 
-Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.
+As of now Chrome Extensions inherently are built for the Vanilla Web Projects i.e The Pure HTML, CSS & JS builds. While working on the [hushh.ai]('https://www.linkedin.com/company/hushh-ai/') Chrome Extension, Me and the team wanted to take benefit of the React Library for quick and dynamic development of the frontend, however the Browser will not accept a Node Project (The Create-React-App project) directly as an extension.
+To solve this problem I had to find a way to convert the Node Project into a Vanilla Web Project, this is exactly where Javascript Bundlers like Webpack come in handy!
+Let me share with you what I learnt while integrating a JS bundler like Webpack in chrome extension:
+
+
 
 By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you _really are_ just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.
 ***italic and bold***

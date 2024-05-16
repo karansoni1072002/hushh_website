@@ -21,7 +21,7 @@ import { headerAssets } from "./svg/icons/HeaderIcons/headerAssets";
 import { animateScroll as scroll } from "react-scroll";
 
 const Header = () => {
-  const { isTablet, isMobile } = useResponsiveSizes();
+  const { isTablet, isMobile, isDesktop } = useResponsiveSizes();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsSubmenu, setProductsSubmenu] = useState(false);
   const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false);
@@ -98,7 +98,7 @@ const Header = () => {
             <HushhHeaderLogo />
           </Link>
         </div>
-        {isTablet || isMobile ? (
+        {!isDesktop ? (
           <div className="w-full flex py-2 justify-end">
             <Container display={"flex"} gap={"1rem"}>
               <SearchBar />
@@ -315,7 +315,7 @@ const Header = () => {
         )}
 
         <div className="z-100">
-          {!isTablet || !isMobile && (
+          { isDesktop && (
             <div className="login">
               <SearchBar />
               <Button

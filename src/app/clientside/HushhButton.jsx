@@ -137,7 +137,8 @@ const ClientHushhButton = () => {
             color={extendedTheme.colors._white}
             lineHeight={{ md: "28px", base: "14px" }}
             background={"transparent"}
-            fontSize={{base:'0.75rem'}}
+            fontWeight={'400'}
+            fontSize={{base:'0.75rem', md:'1rem'}}
             letterSpacing={{ md: "0.5rem", base: "0.1rem" }}
             _hover={{
               background:
@@ -159,10 +160,11 @@ const ClientHushhButton = () => {
             rel="noopener noreferrer" // Add necessary security attributes
             border={"1px solid #606060"}
             borderRadius={"2px"}
+            fontWeight={'400'}
             w={{ md: "16.25rem", base: "auto" }}
             h={{ md: "3.75rem", base: "2.5rem" }}
             color={extendedTheme.colors._white}
-            fontSize={{base:'0.75rem'}}
+            fontSize={{base:'0.75rem', md:'1rem'}}
             lineHeight={{ md: "28px", base: "14px" }}
             background= "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)"         
             letterSpacing={{ md: "0.5rem", base: "0.1rem" }}

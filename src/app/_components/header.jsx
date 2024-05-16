@@ -19,6 +19,7 @@ import ValetChat from "./svg/valetChat";
 import VibeSearchApi from "./svg/vibeSearchApi";
 import { headerAssets } from "./svg/icons/HeaderIcons/headerAssets";
 import { animateScroll as scroll } from "react-scroll";
+import SmallVibeSearch from "./svg/smallVibeSearch.svg";
 
 const Header = () => {
   const { isTablet, isMobile, isDesktop } = useResponsiveSizes();
@@ -206,6 +207,21 @@ const Header = () => {
                         </h1>
                         <p className="text-sm font-medium text-fontColor3">
                           Enhanced recommendations &<br /> impactful marketing.
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      href={"/developer-api/about-developer-api"}
+                      onClick={() => setProductsSubmenu(false)}
+                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                    >
+                      <div className="">
+                        <VibeSearchApi className="w-6 h-6" />
+                      </div>
+                      <div className="">
+                        <h1 className="font-semibold">Developer API</h1>
+                        <p className="text-sm font-medium text-fontColor3">
+                           Secure, trusted & incentivized way of <br/> relaying valuable personal information.
                         </p>
                       </div>
                     </Link>

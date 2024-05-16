@@ -21,7 +21,7 @@ import { headerAssets } from "./svg/icons/HeaderIcons/headerAssets";
 import { animateScroll as scroll } from "react-scroll";
 
 const Header = () => {
-  const { isMobile } = useResponsiveSizes();
+  const { isTablet, isMobile } = useResponsiveSizes();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsSubmenu, setProductsSubmenu] = useState(false);
   const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false);
@@ -98,7 +98,7 @@ const Header = () => {
             <HushhHeaderLogo />
           </Link>
         </div>
-        {isMobile ? (
+        {isTablet || isMobile ? (
           <div className="w-full flex py-2 justify-end">
             <Container display={"flex"} gap={"1rem"}>
               <SearchBar />
@@ -109,7 +109,7 @@ const Header = () => {
           </div>
         ) : (
           <div className="w-max">
-            <div className="text-white flex justify-between gap-12 px-7 ">
+            <div className="text-white flex justify-between gap-12 px-7 md:gap-10">
               <Link
                 href="/"
                 className={`link ${pathname === '/' ? 'gradient-text' : ''}`}
@@ -315,7 +315,7 @@ const Header = () => {
         )}
 
         <div className="z-100">
-          {!isMobile && (
+          {!isTablet || !isMobile && (
             <div className="login">
               <SearchBar />
               <Button
@@ -343,7 +343,7 @@ const Header = () => {
       </div>
 
       <div className="w-full justify-end flex px-6 z-1000">
-        {isMenuOpen && isMobile ? (
+        {isMenuOpen && (isTablet || isMobile )? (
           <div className={`w-full flex flex-col gap-1`} ref={menuRef}>
             <div className="text-white w-full flex items-end flex-col text-center">
               <Link

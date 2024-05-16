@@ -651,13 +651,13 @@ const ClientPricingPlan = () => {
         >
           {activePlanCategory === "site" ? "USER PLANS" : "PROFESSIONAL PLANS"}
         </Text>
-        <VStack gap={{ md: "20rem", base: "4rem" }}>
+        <VStack mx={'0.2rem'} gap={{ md: "20rem", base: "4rem" }}>
           <Text
             w={"100%"}
-            lineHeight={{ md: "30px", base: "20px" }}
+            lineHeight={{ md: "30px", base: "13px" }}
             color={"#FFFFFF"}
             fontWeight={"500"}
-            fontSize={{ md: "1rem", base: "0.8rem" }}
+            fontSize={{ md: "1rem", base: "0.5rem" }}
           >
             {activePlanCategory === "site"
               ? "Our user plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer"
@@ -696,7 +696,7 @@ const ClientPricingPlan = () => {
         minW={"100%"}
         display={"flex"}
         textAlign={"left"}
-        alignItems={{ md: "flex-start", base: "center" }}
+        alignItems={{ md: "center", base: "center" }}
         flexDirection={"column"}
       >
         <Tabs
@@ -767,7 +767,7 @@ const ClientPricingPlan = () => {
                           textAlign={"center"}
                           alignItems={"center"}
                           flexDirection={"column"}
-                          minW={{ md: "20rem", base: "100%" }}
+                          minW={isTabletOrMobile ? '100%' : '20rem'}
                           gap={{ md: "1rem", base: "0.5rem" }}
                           justifyContent={"flex-start"}
                           borderRadius={"2rem"}
@@ -795,7 +795,7 @@ const ClientPricingPlan = () => {
                           </Box>
                           <Text
                             fontWeight="600"
-                            fontSize={{ base: "1.75rem", md: "4.125rem" }}
+                            fontSize={{ base: "2xl", md: "4xl",lg:"5xl" }}
                             lineHeight={{ md: "79.2px", base: "40px" }}
                             mt={{ md: "1rem", base: "0.5rem" }}
                             className="planPrice"
@@ -862,7 +862,7 @@ const ClientPricingPlan = () => {
                                   flexDirection={"row"}
                                   alignItems={"flex-start"}
                                   w={"100%"}
-                                  justifyContent={"space-between"}
+                                  justifyContent={{ base:"space-between"}}
                                   textAlign={"left"}
                                 >
                                   <Text
@@ -894,7 +894,7 @@ const ClientPricingPlan = () => {
                           alignItems={"flex-end"}
                         >
                           <Button
-                            minW={"15rem"}
+                            minW={isTabletOrMobile ? "full" : "15rem"}
                             bg={"#146EF5"}
                             color={"white"}
                             borderRadius={"4px"}

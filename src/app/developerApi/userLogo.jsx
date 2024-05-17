@@ -12,8 +12,7 @@ const MyLogo = () => {
   const router = useRouter();
 
   const handleLogout = async () => {
-    await signOut({ redirect: false });
-    router.push("/developer-Api/about-developer-api");
+    await signOut({ callbackUrl: "/developer-Api/about-developer-api" });
   };
 
   const handleLogin = async () => {

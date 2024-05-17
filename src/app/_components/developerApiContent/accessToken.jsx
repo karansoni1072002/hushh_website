@@ -35,6 +35,19 @@ const AccessToken = () => {
     setIsLoading(true)
     console.log('button clicked upr wala')
     e.preventDefault();
+
+    if(!session?.session?.user){
+      toast({
+        title: "Please Login First",
+        description:
+          "To get started with Acess Token you need to first login/signup",
+        status: "info",
+        duration: 3000,
+        isClosable: true,
+      });
+      setIsLoading(false)
+    }
+
       try {
         const response = await axios.post(
           "https://hushhdevenv.hushh.ai/dev/v1/api/sign_in",

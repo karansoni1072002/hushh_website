@@ -14,12 +14,25 @@ const Onboarding = () => {
   const { data: session, token } = useSession()
   const [copySuccess, setCopySuccess] = useState('Copy');
   const textAreaRef = useRef(null);
- 
+  const toast = useToast();
+  
   console.log('Session from GetSession Client', session?.session?.user?.email);
   console.log('Whole Session Data: ',session)
   const generateApiKey = async (e) => {
     setIsLoading(true)
     console.log('button clicked upr wala')
+    if(!session?.session?.user){
+      toast({
+        title: "Please Login First",
+        description:
+          "To get started with API key you need to first login/signup",
+        status: "info",
+        duration: 3000,
+        isClosable: true,
+      });
+      setIsLoading(false)
+    }
+
     e.preventDefault();
       try {
         const response = await axios.post(

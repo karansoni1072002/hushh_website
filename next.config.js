@@ -1,12 +1,29 @@
 /** @type {import('next').NextConfig} */
+
+const {withContentlayer} = require("next-contentlayer")
+
 const nextConfig = {
-    experimental: {
-        appDir: true,
+    compiler:{
+        removeConsole: true,
     },
-    markdown: {
-        remarkPlugins: 'remark-gfm',
-      },
+    pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+    experimental: {
+      appDir: true,
+  },
+  markdown: {
+      remarkPlugins: 'remark-gfm',
+    },
 };
+const withMDX = require('@next/mdx')({
+    extension: /\.mdx?$/,
+  });
+  
+module.exports = withMDX({
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+});
+
+module.exports = withContentlayer({ ...nextConfig });
+
 module.exports = {
     images: {
       remotePatterns: [

@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 import Bg from "./src/app/_components/svg/background";
 
 module.exports = {
@@ -6,9 +7,33 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{html,js,jsx,ts,tsx,mdx}",
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              color: '#1e90ff', // Dodger blue
+              '&:hover': {
+                color: '#ff6347', // Tomato red
+              },
+            },
+            // Apply custom styles to markdown tables
+            'table': {
+              'borderCollapse': 'collapse',
+            },
+            'th': {
+              'backgroundColor': '#f8f8f8',
+              'borderWidth': '1px',
+            },
+            'td': {
+              'borderWidth': '1px',
+            },
+          },
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -29,6 +54,11 @@ module.exports = {
         lineGradient3: "#262626",
         fontColor5: "#E5E5E5",
         footerBG: "#363636",
+        dark: "#1b1b1b",
+        light: "#fff",
+        accent: "#7B00D3",
+        accentDark: "#ffdb4d",
+        gray: "#747474",
         gradientColor1: "#E54D60",
         gradientColor2: "#A342FF",
         fontColor2: "#97A3B7",
@@ -42,5 +72,12 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/container-queries'),
+    `gatsby-plugin-mdx`,
+
+  ]
 };

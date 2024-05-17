@@ -411,6 +411,13 @@ body {
   color: #080808;
 }
 
+
+/* Blog page mdx CSS */
+.highlightMdx {
+  background-color: rgb(36, 41, 46);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
 /* Develoepr API dovumentation CSS */
 .onBoarding {
   font-family: "Inter" !important;

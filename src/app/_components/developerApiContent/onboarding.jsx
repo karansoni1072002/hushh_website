@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useContext, useRef } from "react";
 import { useApiKey } from "../../context/apiKeyContext";
 import axios from "axios";
 import { useSession, signIn, signOut } from "next-auth/react";
 // import { getSession } from 'next-auth/react'
+import { useToast } from "@chakra-ui/react";
 
 const Onboarding = () => {
   // const { apiKey } = useApiKey();
@@ -11,6 +12,9 @@ const Onboarding = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const { data: session, token } = useSession()
+  const [copySuccess, setCopySuccess] = useState('Copy');
+  const textAreaRef = useRef(null);
+ 
   console.log('Session from GetSession Client', session?.session?.user?.email);
   console.log('Whole Session Data: ',session)
   const generateApiKey = async (e) => {
@@ -37,11 +41,36 @@ const Onboarding = () => {
           const apiKey = response?.data?.data?.apiKey;
           console.log('Api Key:',response?.data?.userdata?.apiKey)
           setApiKey(apiKey);
+          toast({
+            title: "API Key Generated",
+            description:
+              "You have successfully accessed api key",
+            status: "success",
+            duration: 3000,
+            isClosable: true,
+          });
           setIsLoading(false);
         } 
       } catch (error) {
+        toast({
+          title: "Something went wrong",
+          description:
+            "Please log in or try again later",
+          status: "warning",
+          duration: 3000,
+          isClosable: true,
+        });
         console.log('error:',error);
       }
+  };
+
+  function copyToClipboard(e) {
+    textAreaRef.current.select();
+    document.execCommand('copy');
+    // This is just personal preference.
+    // I prefer to not show the whole text area selected.
+    e.target.focus();
+    setCopySuccess('Copied!');
   };
 
   return (
@@ -67,10 +96,8 @@ const Onboarding = () => {
           readOnly
         />
         <button 
-          onClick={() => {
-            navigator.clipboard.writeText(apiKey); 
-          }}
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 border-none bg-[#313134] text-gray-300 ml-3">
+          onClick={copyToClipboard}
+          class="inline-flex items-center gap-2 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 border-none bg-[#313134] text-gray-300 ml-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -86,7 +113,7 @@ const Onboarding = () => {
             <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
             <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
           </svg>
-          copy
+          {copySuccess}
         </button>
       </div>
     </div>

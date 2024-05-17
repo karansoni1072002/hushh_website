@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import { useApiKey } from "../../context/apiKeyContext";
 import axios from "axios";
 import { useSession } from "next-auth/react";
@@ -13,12 +13,24 @@ const AccessToken = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const toast =  useToast();
+  const [copySuccess, setCopySuccess] = useState('Copy');
+  const textAreaRef = useRef(null);
+ 
   const { data: session, status } = useSession()
   console.log('Session from GetSession Client', session?.session?.user?.email);
   console.log('Whole Session Data: ',session)
   console.log('Api Key: ', apiKey)
 
-  
+  function copyToClipboard(e) {
+    textAreaRef.current.select();
+    document.execCommand('copy');
+    // This is just personal preference.
+    // I prefer to not show the whole text area selected.
+    e.target.focus();
+    setCopySuccess('Copied!');
+  };
+
+
   const generateToken = async (e) => {
     setIsLoading(true)
     console.log('button clicked upr wala')
@@ -100,12 +112,11 @@ const AccessToken = () => {
           placeholder="Authorization: Bearer YOUR_API_KEY"
           value={accessToken}
           readOnly
+          ref={textAreaRef} 
         />
         <button 
-          onClick={() => {
-            navigator.clipboard.writeText(apiKey); 
-          }}
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 border-none bg-[#313134] text-gray-300 ml-3">
+          onClick={copyToClipboard}
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 border-none bg-[#313134] text-gray-300 ml-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -121,8 +132,9 @@ const AccessToken = () => {
             <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
             <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
           </svg>
-          copy
+          {copySuccess}
         </button>
+          
       </div>
     </div>
   );

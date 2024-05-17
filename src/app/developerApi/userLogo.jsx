@@ -12,7 +12,7 @@ const MyLogo = () => {
   const router = useRouter();
 
   const handleLogout = async () => {
-    await signOut({ callbackUrl: "/developer-Api/about-developer-api" });
+    await signOut();
   };
 
   const handleLogin = async () => {

@@ -627,7 +627,7 @@ const ClientHome = () => {
                     alignItems={"center"}
                     textAlign={"center"}
                     description=" Secure, trusted, and incentivized way of relaying valuable personal information"
-                    onClick={() => router.push("/developer-api/about-developer-api")}
+                    onClick={() => router.push("/developer-Api/about-developer-api")}
                   />
                   <ServiceCard
                     icon={<ApiVibeSearch />}

@@ -59,7 +59,7 @@ export default function LoginPage() {
 
   // useEffect(() => {
   //   if (session?.user) {
-  //     router.push("/developer-api/on-boarding");
+  //     router.push("/developer-Api/on-boarding");
   //   }
   // }, [status, session]);
 
@@ -288,7 +288,7 @@ export default function LoginPage() {
             onClick={() =>
               signIn(
                 "google",
-                { callbackUrl: "/developer-api/on-boarding" },
+                { callbackUrl: "/developer-Api/on-boarding" },
               )
             }
             w={"100%"}
@@ -316,7 +316,7 @@ export default function LoginPage() {
             onClick={() =>
               signIn(
                 "github",
-                { callbackUrl: "/developer-api/on-boarding" },
+                { callbackUrl: "/developer-Api/on-boarding" },
                 console.log("Github session data :", session)
               )
             }
@@ -344,7 +344,7 @@ export default function LoginPage() {
             onClick={() =>
               signIn(
                 "apple",
-                { callbackUrl: "/developer-api/on-boarding" },
+                { callbackUrl: "/developer-Api/on-boarding" },
                 console.log("Github session data :", session)
               )
             }

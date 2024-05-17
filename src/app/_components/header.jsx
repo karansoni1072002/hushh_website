@@ -246,7 +246,7 @@ export default function Header() {
                       </div>
                     </Link>
                     <Link
-                      href={"/developer-api/about-developer-api"}
+                      href={"/developer-Api/about-developer-api"}
                       onClick={() => setProductsSubmenu(false)}
                       className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
                     >

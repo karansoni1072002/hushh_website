@@ -13,7 +13,7 @@ const MyLogo = () => {
 
   const handleLogout = async () => {
     await signOut({ redirect: false });
-    router.push("/developer-api/about-developer-api");
+    router.push("/developer-Api/about-developer-api");
   };
 
   const handleLogin = async () => {

@@ -12,7 +12,7 @@ import { ArrowBackIcon, ArrowLeftIcon } from '@chakra-ui/icons';
 export default {
     logo: <span>Hushh Developer API </span>,
     project: {
-      link:'/developer-api/on-boarding',
+      link:'/developer-Api/on-boarding',
       icon: (
         <MyLogo/>
       ),

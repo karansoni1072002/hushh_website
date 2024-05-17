@@ -9,7 +9,7 @@ const LogoutButton = () => {
 
   const handleLogout = async () => {
     await signOut({ redirect: false }).then(() => {
-        router.push("/developer-api/about-developer-api"); 
+        router.push("/developer-Api/about-developer-api"); 
     });
   };
 
@@ -22,7 +22,7 @@ const LogoutButton = () => {
           onClick={() =>
             signIn(
               "goolge",
-              { callbackUrl: "/developer-api/on-boarding" },
+              { callbackUrl: "/developer-Api/on-boarding" },
               console.log("Github session data :", session)
             )
           }

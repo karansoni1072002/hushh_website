@@ -19,8 +19,8 @@ const Onboarding = () => {
   console.log('Session from GetSession Client', session?.session?.user?.email);
   console.log('Whole Session Data: ',session)
   const generateApiKey = async (e) => {
-    setIsLoading(true)
     console.log('button clicked upr wala')
+    setIsLoading(true)
     if(!session?.session?.user){
       toast({
         title: "Please Login First",
@@ -35,6 +35,7 @@ const Onboarding = () => {
 
     e.preventDefault();
       try {
+        console.log(response);
         const response = await axios.post(
           "https://hushhdevenv.hushh.ai/dev/v1/api/sign_in",
           {
@@ -48,12 +49,16 @@ const Onboarding = () => {
             },
           }
         );
+        console.log(response);
         console.log("API Key Generated:", response);
-        if (response.data.message === 'Success') {
+        if (response?.data?.message === 'Success') {
+          console.log("API Key Generated:", response);
+
           // Saving API key for new users 
           const apiKey = response?.data?.data?.apiKey;
           console.log('Api Key:',response?.data?.userdata?.apiKey)
           setApiKey(apiKey);
+          console.log('Api key:',apiKey);
           toast({
             title: "API Key Generated",
             description:
@@ -65,6 +70,7 @@ const Onboarding = () => {
           setIsLoading(false);
         } 
       } catch (error) {
+        console.log("API Key Generated:", response);
         toast({
           title: "Something went wrong",
           description:
@@ -74,7 +80,9 @@ const Onboarding = () => {
           isClosable: true,
         });
         console.log('error:',error);
+        console.log('Api Key:',response?.data?.userdata?.apiKey)
       }
+      
   };
 
   function copyToClipboard(e) {

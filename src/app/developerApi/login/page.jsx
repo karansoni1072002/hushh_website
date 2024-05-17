@@ -4,11 +4,15 @@ import {
   Box,
   Button,
   Divider,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
   HStack,
   Icon,
   Input,
   InputGroup,
   InputLeftElement,
+  InputRightElement,
   Text,
   Toast,
   Tooltip,
@@ -31,6 +35,9 @@ import GithubIcon from "../../_components/svg/icons/githubIcon.svg";
 import Loading from "../../_components/features/loading";
 import { useApiKey } from "../../context/apiKeyContext";
 import AppleIcon from "../../_components/svg/icons/appleIconLogo.svg";
+import PhoneInput from "react-phone-number-input";
+import 'react-phone-number-input/style.css'
+import { getCountryCallingCode } from "react-phone-number-input";
 
 export default function LoginPage() {
   const { data: session, status } = useSession()
@@ -39,6 +46,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [first_name, setFirstName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const router = useRouter();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -93,78 +101,91 @@ export default function LoginPage() {
   const validateForm = () => {
     let valid = true;
     const newErrors = { ...errors };
-    if (!formData.name) {
-      newErrors.name = "Name is required";
+    // if (!formData.name) {
+    //   newErrors.name = "Name is required";
+    //   valid = false;
+    // } else {
+    //   newErrors.name = "";
+    // }
+
+    if (!phoneNumber) {
+      newErrors.phoneNumber = "Phone number is required";
+      valid = false;
+    } else if (!/^\+?\d{8,15}$/.test(phoneNumber)) {
+      newErrors.phoneNumber = "Invalid phone number";
       valid = false;
     } else {
-      newErrors.name = "";
+      newErrors.phoneNumber = "";
     }
 
-    if (!formData.email) {
-      newErrors.email = "Email is required";
-      valid = false;
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Invalid email format";
-      valid = false;
-    } else {
-      newErrors.email = "";
-    }
-    if (!formData.password) {
-      newErrors.password = "Password is required";
-      valid = false;
-    } else {
-      newErrors.password = "";
-    }
+    // if (!formData.email) {
+    //   newErrors.email = "Email is required";
+    //   valid = false;
+    // } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    //   newErrors.email = "Invalid email format";
+    //   valid = false;
+    // } else {
+    //   newErrors.email = "";
+    // }
+    // if (!formData.password) {
+    //   newErrors.password = "Password is required";
+    //   valid = false;
+    // } else {
+    //   newErrors.password = "";
+    // }
 
     setErrors(newErrors);
     return valid; // Return true if valid, false otherwise
   };
 
-  const handleSignUp = async () => {
-    if (validateForm()) {
+  // const handleSignUp = async () => {
+  //   if (validateForm()) {
 
-      if (error) {
-        toast({
-          title: "Sign-up Error",
-          description: error.message,
-          status: "error",
-          duration: 3000,
-          isClosable: true,
-        });
-      } else {
-        toast({
-          title: "Sign-up Successful",
-          description: "Please log in to continue.",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-        });
-        setFormData({
-          name: "",
-          email: "",
-          //   phoneNumber: "",
-          password: "",
-        });
-        router.push("/login"); // Redirect after successful sign-up
-      }
-    }
-  };
+  //     if (error) {
+  //       toast({
+  //         title: "Sign-up Error",
+  //         description: error.message,
+  //         status: "error",
+  //         duration: 3000,
+  //         isClosable: true,
+  //       });
+  //     } else {
+  //       toast({
+  //         title: "Sign-up Successful",
+  //         description: "Please log in to continue.",
+  //         status: "success",
+  //         duration: 3000,
+  //         isClosable: true,
+  //       });
+  //       setFormData({
+  //         name: "",
+  //         email: "",
+  //         //   phoneNumber: "",
+  //         password: "",
+  //       });
+  //       router.push("/login"); // Redirect after successful sign-up
+  //     }
+  //   }
+  // };
   
-  const backendSendingData = {
-    first_name: formData.name, // Rename "name" to "first_name"
-    email: formData.email,
-    password: formData.password,
-  };
+  // const backendSendingData = {
+  //   number:phoneNumber,
+  //   code:phoneCode,
+  // };
 
   const handleSignIn = async (e) => {
     e.preventDefault();
     if (validateForm()) {
       setLoading(true);
       try {
+      const countryCode = getCountryCallingCode(phoneNumber);
+      const phoneNumberWithoutCountryCode = phoneNumber.slice(countryCode.length);
         const response = await axios.post(
-          "https://hushhdevenv.hushh.ai/dev/v1/api/sign_up",
-          backendSendingData,
-          // testFormData,
+          "https://hushhdevenv.hushh.ai/dev/v1/api/sign_in",
+          {
+            number: phoneNumberWithoutCountryCode,
+            code: countryCode,
+          },
           {
             headers: {
               "Content-Type": "application/x-www-form-urlencoded",
@@ -191,7 +212,7 @@ export default function LoginPage() {
             title: "Signup Failed",
             description: response.data.message,
             status: "error",
-            duration: 9000,
+            duration: 6000,
             isClosable: true,
           });
         }
@@ -200,7 +221,7 @@ export default function LoginPage() {
           title: "An error occurred.",
           description: error.message,
           status: "error",
-          duration: 9000,
+          duration: 6000,
           isClosable: true,
         });
       } finally {
@@ -241,7 +262,7 @@ export default function LoginPage() {
       <main className=" flex items-center justify-center z-10 p-6">
         <Box
           zIndex={"10"}
-          w={{ md: "35%", base: "100%" }}
+          w={{ md: "lg", base: "100%" }}
           minH={"25rem"}
           borderRadius={"1.61rem"}
           background={"#1E1E1E"}
@@ -358,43 +379,20 @@ export default function LoginPage() {
             <Divider />
           </HStack>
 
-          {/* <Tooltip
-            label={
-              <>
-                <Icon
-                  as={FiAlertCircle}
-                  color="yellow.400"
-                  mb={"0.20rem"}
-                  mr={"0.3rem"}
-                />
-                {errors.name}
-              </>
-            }
-            isOpen={!!errors.name}
-            hasArrow
-            bg={"white"}
-            color={"black"}
-            borderRadius={"0.5rem"}
-            fontSize={"1rem"}
-            placement="right"
-          >
-            <InputGroup>
-              <InputLeftElement pointerEvents="none">
-                <Icon as={FiUser} color="gray.400" />
-              </InputLeftElement>
-              <Input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                borderRadius="3.35rem"
-                placeholder="Full Name"
-                className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
-              />
-            </InputGroup>
-          </Tooltip> */}
+          <FormControl isInvalid={errors.phoneNumber} mb={4}>
+                  <Box borderRadius={"5px"}>
+                    <PhoneInput
+                      defaultCountry="US"
+                      color={"#FFFFFF"}
+                      placeholder="Enter phone number"
+                      value={phoneNumber}
+                      onChange={setPhoneNumber}
+                    />
+                  </Box>
+                  <FormErrorMessage>{errors.phoneNumber}</FormErrorMessage>
+          </FormControl>
 
-          <Tooltip
+          {/* <Tooltip
             label={
               <>
                 <Icon
@@ -414,23 +412,28 @@ export default function LoginPage() {
             fontSize={"1rem"}
             placement="right"
           >
+            
             <InputGroup>
               <InputLeftElement pointerEvents="none">
-                <Icon as={EmailIcon} color="gray.400" />
+                <Input type="number" 
+                 className="w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
+                />
               </InputLeftElement>
+              <InputRightElement>
               <Input
-                type="email"
-                name="email"
-                value={formData.email}
+                type="number"
+                name="phone number"
+                value={formData.phoneNumber}
                 onChange={handleInputChange}
                 borderRadius="3.35rem"
                 placeholder="Email"
                 className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
               />
+              </InputRightElement>
             </InputGroup>
-          </Tooltip>
+          </Tooltip> */}
 
-          <Tooltip
+          {/* <Tooltip
             label={
               <>
                 <Icon
@@ -439,10 +442,10 @@ export default function LoginPage() {
                   mb={"0.20rem"}
                   mr={"0.3rem"}
                 />
-                {errors.password}
+                {errors.phoneNumber}
               </>
             }
-            isOpen={!!errors.password}
+            isOpen={!!errors.phoneNumber}
             hasArrow
             bg={"white"}
             color={"black"}
@@ -455,17 +458,17 @@ export default function LoginPage() {
               <InputLeftElement pointerEvents="none">
                 <Icon as={FiLock} color="gray.400" />{" "}
               </InputLeftElement>
-              <Input
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleInputChange}
-                borderRadius="3.35rem"
-                placeholder="Password"
-                className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
+              <PhoneInput
+                      className="phoneInput"
+                      style={{width:'100%',backgroundColor:'transparent'}}
+                      defaultCountry="US"
+                      color={"#FFFFFF"}
+                      placeholder="Enter phone number"
+                      value={phoneNumber}
+                      onChange={setPhoneNumber}
               />
             </InputGroup>
-          </Tooltip>
+          </Tooltip> */}
 
           <Button
             style={{ borderRadius: "3.35rem" }}

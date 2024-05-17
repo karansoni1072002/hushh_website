@@ -46,6 +46,7 @@ import PinkShadow from "../_components/svg/pinkShadow1.svg";
 import CircleHomeBg from "../_components/svg/circleHomeBg.svg";
 import RightCircleEclipse from "../_components/svg/rightCircleEclipse.svg";
 import ApiVibeSearch from "../_components/svg/apiVibeSearch";
+import { HushhBlogsHome } from "../_components/HushhBlogsHome";
 
 const ClientHome = () => {
   const router = useRouter();
@@ -671,6 +672,8 @@ const ClientHome = () => {
             <BrandWalletSection />
 
             <HushhCoinUiBox />
+
+            <HushhBlogsHome/>
 
             <ContactForm />
           </div>

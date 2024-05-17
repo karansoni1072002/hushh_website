@@ -21,9 +21,11 @@ import { headerAssets } from "./svg/icons/HeaderIcons/headerAssets";
 import { animateScroll as scroll } from "react-scroll";
 import { FiUser, FiYoutube } from 'react-icons/fi';
 import { useMediaQuery } from "react-responsive";
+import SmallVibeSearch from "./svg/smallVibeSearch.svg";
 
 export default function Header() {
-  const { isMobile } = useMediaQuery({ query: '(max-width: 1224px)' });
+
+  const { isTablet, isMobile, isDesktop } = useResponsiveSizes();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsSubmenu, setProductsSubmenu] = useState(false);
   const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false);
@@ -132,7 +134,7 @@ export default function Header() {
             <HushhHeaderLogo />
           </Link>
         </div>
-        {isMobile ? (
+        {!isDesktop ? (
           <div className="w-full flex py-2 justify-end">
             <Container display={"flex"} gap={"1rem"}>
               <SearchBar />
@@ -143,7 +145,7 @@ export default function Header() {
           </div>
         ) : (
           <div className="w-max">
-            <div className="text-white flex justify-between gap-12 px-7 ">
+            <div className="text-white flex justify-between gap-12 px-7 md:gap-10">
               <Link
                 href="/"
                 className={`link ${pathname === '/' ? 'gradient-text' : ''}`}
@@ -240,6 +242,21 @@ export default function Header() {
                         </h1>
                         <p className="text-sm font-medium text-fontColor3">
                           Enhanced recommendations &<br /> impactful marketing.
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      href={"/developer-api/about-developer-api"}
+                      onClick={() => setProductsSubmenu(false)}
+                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                    >
+                      <div className="">
+                        <VibeSearchApi className="w-6 h-6" />
+                      </div>
+                      <div className="">
+                        <h1 className="font-semibold">Developer API</h1>
+                        <p className="text-sm font-medium text-fontColor3">
+                           Secure, trusted & incentivized way of <br/> relaying valuable personal information.
                         </p>
                       </div>
                     </Link>
@@ -347,74 +364,9 @@ export default function Header() {
             )}
           </div>
         )}
- <div className="flex items-center gap-4 relative">
-      {isLoggedIn ? (
-        <div className="relative">
-          <FiUser
-            className="w-6 h-6 text-white cursor-pointer"
-            onClick={handleDropdownClick} // Open the dropdown
-          />
-          {isDropdownOpen && (
-            <Box
-              position="absolute"
-              bg="white"
-              w="200px"
-              mt="2"
-              shadow="md"
-              color="black"
-              zIndex="dropdown"
-            >
-              <Flex flexDirection="column">
-                <Link href="/profile" p="3" _hover={{ bg: "gray.100" }}>
-                  <Text>{userEmail}</Text>
-                </Link>
-                <Link href="/settings" p="3" _hover={{ bg: "gray.100" }}>
-                  Settings
-                </Link>
-                <Link
-                  href="#"
-                  p="3"
-                  _hover={{ bg: "gray.100" }}
-                  // onClick={() => {
-                  //   supabase.auth.signOut();
-                  // }}
-                >
-                  Log Out
-                </Link>
-                <Flex align="center" p="3" _hover={{ bg: "gray.100" }}>
-                  <FiYoutube color="red" />
-                  <Link href="#" ml="2">
-                    Watch Demo
-                  </Link>
-                </Flex>
-              </Flex>
-            </Box>
-          )}
-        </div>
-      ) : (
-        !isTabletOrMobile && (
-          <Button
-            border="1px solid #606060"
-            borderRadius="5px"
-            w="10.75rem"
-            h="3.125rem"
-            className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text"
-            lineHeight="50px"
-            letterSpacing="0.5rem"
-            _hover={{
-              background: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-              color: "white",
-              border: "none",
-            }}
-            onClick={handleLoginClick}
-          >
-            LOGIN
-          </Button>
-        )
-      )}
-    </div>
-        {/* <div className="z-100">
-          {!isMobile && (
+
+        <div className="z-100">
+          { isDesktop && (
             <div className="login">
               <SearchBar />
               <Button
@@ -438,11 +390,11 @@ export default function Header() {
               </Button>
             </div>
           )}
-        </div> */}
+        </div> 
       </div>
 
       <div className="w-full justify-end flex px-6 z-1000">
-        {isMenuOpen && isMobile ? (
+        {isMenuOpen && (isTablet || isMobile )? (
           <div className={`w-full flex flex-col gap-1`} ref={menuRef}>
             <div className="text-white w-full flex items-end flex-col text-center">
               <Link

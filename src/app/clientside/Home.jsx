@@ -45,6 +45,7 @@ import HomeBanner from "../_components/svg/homepageBanner.svg";
 import PinkShadow from "../_components/svg/pinkShadow1.svg";
 import CircleHomeBg from "../_components/svg/circleHomeBg.svg";
 import RightCircleEclipse from "../_components/svg/rightCircleEclipse.svg";
+import ApiVibeSearch from "../_components/svg/apiVibeSearch";
 
 const ClientHome = () => {
   const router = useRouter();
@@ -566,7 +567,7 @@ const ClientHome = () => {
                 <Grid
                   templateColumns={{
                     base: "repeat(2, 1fr)",
-                    md: "repeat(4, 1fr)",
+                    md: "repeat(3, 1fr)",
                   }}
                   gap={{ md: 20, base: 5 }}
                   justifyContent="center"
@@ -620,8 +621,16 @@ const ClientHome = () => {
                     description="AI finance assistant & insights (ditch receipts, manage finances)"
                     onClick={() => router.push("/products/hushhValetChat")}
                   />
-                  <ServiceCard
+                   <ServiceCard
                     icon={<VibeSearchApi />}
+                    title="Developer API's​"
+                    alignItems={"center"}
+                    textAlign={"center"}
+                    description=" Secure, trusted, and incentivized way of relaying valuable personal information"
+                    onClick={() => router.push("/developer-api/about-developer-api")}
+                  />
+                  <ServiceCard
+                    icon={<ApiVibeSearch />}
                     title="VIBE Search APIs​"
                     alignItems={"center"}
                     textAlign={"center"}

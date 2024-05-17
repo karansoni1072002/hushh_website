@@ -896,7 +896,7 @@ const ClientPricingPage2 = () => {
                   fontSize={{ md: "1rem", base: "0.65rem" }}
                   lineHeight={{ md: "30px", base: "20px" }}
                 >
-                  Beyond the tools and platforms, Hushhh fosters a community for
+                  Beyond the tools and platforms, Hushh fosters a community for
                   support, learning, and collaboration, enhancing the value of
                   every subscription.
                 </Text>
@@ -957,13 +957,13 @@ const ClientPricingPage2 = () => {
               color={"#ABABAB"}
               lineHeight={{ md: "36px", base: "25px" }}
             >
-              Hushhh’s diverse pricing strategy aims to democratize access to
+              Hushh’s diverse pricing strategy aims to democratize access to
               powerful data and AI tools, making them accessible to a wide
               audience. Whether you’re a consumer trusting us with your data, a
               developer building the next big app, a sales agent aiming for your
-              next target, or a creator curating unique experiences, Hushhh
+              next target, or a creator curating unique experiences, Hushh
               provides the tools, support, and platform to achieve your goals.
-              With Hushhh, embrace a smarter, more secure, and personalized
+              With Hushh, embrace a smarter, more secure, and personalized
               digital future.
             </Text>
           </Box>
@@ -981,7 +981,7 @@ const ClientPricingPage2 = () => {
             color={"#ABABAB"}
             lineHeight={{ md: "36px", base: "18px" }}
           >
-            This summary aims to convey Hushhh’s commitment to delivering value
+            This summary aims to convey Hushh’s commitment to delivering value
             through innovative, user-centric products and services, ensuring
             clear communication of pricing and offerings to foster trust and
             loyalty across all user segments.

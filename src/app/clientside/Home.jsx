@@ -41,10 +41,11 @@ import HfsLogo from "../_components/svg/hfsLogo";
 import HomeBg from "../_components/svg/homeBG.svg";
 import Image from "next/image";
 import Head from "next/head";
-import HomeBanner from "../_components/svg/homepageBanner.svg"
+import HomeBanner from "../_components/svg/homepageBanner.svg";
 import PinkShadow from "../_components/svg/pinkShadow1.svg";
 import CircleHomeBg from "../_components/svg/circleHomeBg.svg";
-import RightCircleEclipse from "../_components/svg/rightCircleEclipse.svg"; 
+import RightCircleEclipse from "../_components/svg/rightCircleEclipse.svg";
+import ApiVibeSearch from "../_components/svg/apiVibeSearch";
 
 const ClientHome = () => {
   const router = useRouter();
@@ -97,7 +98,11 @@ const ClientHome = () => {
             {showPopup && (
               <NotificationPopup message="Welcome! How can I help you today?" />
             )}
-            <Box  display={"flex"} flexDirection={'row'} px={{ base: "0.5rem", md: "32px" }}>
+            <Box
+              display={"flex"}
+              flexDirection={"row"}
+              px={{ base: "0.5rem", md: "32px" }}
+            >
               <VStack
                 align={"flex-start"}
                 w={"full"}
@@ -142,68 +147,93 @@ const ClientHome = () => {
                   We're the Data API Business, helping you collect, manage, and
                   monetize data
                 </Text>
-              <Box mt={{md:'2rem',base:'1rem'}} display={'flex'} gap={{md:'2rem',base:'1rem'}} flexDirection={{md:'row', base:'column'}}>
-              <Button
-                  border={"3px solid #606060"}
-                  borderRadius={"2px"}
-                  color={theme.colors._white}
-                  lineHeight={"28px"}
-                  background={"transparent"}
-                  px={'21px'}
-                  py={'15px'}
-                  fontSize={{md:'1rem',base:'0.75rem'}}
-                  fontWeight={'400'}
-                  letterSpacing={{ md: "0.29rem", base: "0.1rem" }}
-                  _hover={{
-                    background:
-                      "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                    border: "none",
-                  }}
-                  onClick={() => window.open("https://testflight.apple.com/join/u6FFaw2B", "_blank")}                
-                  w={{ md:'16rem', base:'12rem'}}
+                <Box
+                  mt={{ md: "2rem", base: "1rem" }}
+                  display={"flex"}
+                  gap={{ md: "2rem", base: "1rem" }}
+                  flexDirection={{ md: "row", base: "column" }}
                 >
-                  DOWNLOAD THE APP
-                </Button>
-                <Button
-                  border={"3px solid #606060"}
-                  borderRadius={"2px"}
-                  color={theme.colors._white}
-                  lineHeight={"28px"}
-                  fontSize={{md:'1rem',base:'0.75rem'}}
-                  px={'21px'}
-                  py={'15px'}
-                  background={"transparent"}
-                  fontWeight={'400'}
-                  letterSpacing={{ md: "0.29rem", base: "0.1rem" }}
-                  _hover={{
-                    background:
-                      "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                    border: "none",
-                  }}
-                  onClick={() => router.push("/demoBookingPage")}
-                  w={{ md:'16rem', base:'12rem'}}
-                >
-                  SCHEDULE CALL
-                </Button>
-              </Box>
-                
+                  <Button
+                    border={"3px solid #606060"}
+                    borderRadius={"2px"}
+                    color={theme.colors._white}
+                    lineHeight={"28px"}
+                    background={"transparent"}
+                    px={"21px"}
+                    py={"15px"}
+                    fontSize={{ md: "1rem", base: "0.75rem" }}
+                    fontWeight={"400"}
+                    letterSpacing={{ md: "0.29rem", base: "0.1rem" }}
+                    _hover={{
+                      background:
+                        "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                      border: "none",
+                    }}
+                    onClick={() =>
+                      window.open(
+                        "https://testflight.apple.com/join/u6FFaw2B",
+                        "_blank"
+                      )
+                    }
+                    w={{ md: "16rem", base: "12rem" }}
+                  >
+                    DOWNLOAD THE APP
+                  </Button>
+                  <Button
+                    border={"3px solid #606060"}
+                    borderRadius={"2px"}
+                    color={theme.colors._white}
+                    lineHeight={"28px"}
+                    fontSize={{ md: "1rem", base: "0.75rem" }}
+                    px={"21px"}
+                    py={"15px"}
+                    background={"transparent"}
+                    fontWeight={"400"}
+                    letterSpacing={{ md: "0.29rem", base: "0.1rem" }}
+                    _hover={{
+                      background:
+                        "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                      border: "none",
+                    }}
+                    onClick={() => router.push("/demoBookingPage")}
+                    w={{ md: "16rem", base: "12rem" }}
+                  >
+                    SCHEDULE CALL
+                  </Button>
+                </Box>
               </VStack>
-              <VStack display={{md:'block', base:'none'}} position={'relative'} flex={1}>
-              
-                <Image style={{top:'-65px', position:'absolute',zIndex:'1'}} src={HomeBanner} alt="HomeBanner" />
+              <VStack
+                display={{ md: "block", base: "none" }}
+                position={"relative"}
+                flex={1}
+              >
                 <Image
-          src={CircleHomeBg}
-          alt="CircleHomeBg"
-          style={{bottom:'0px', position:"absolute",zIndex:'0.9'}}
-        />
+                  style={{ top: "-65px", position: "absolute", zIndex: "1" }}
+                  src={HomeBanner}
+                  alt="HomeBanner"
+                />
+                <Image
+                  src={CircleHomeBg}
+                  alt="CircleHomeBg"
+                  style={{ bottom: "0px", position: "absolute", zIndex: "0.9" }}
+                />
               </VStack>
-              <VStack display={{md:'none', base:'block'}} position={'relative'} flex={1}>
+              <VStack
+                display={{ md: "none", base: "block" }}
+                position={"relative"}
+                flex={1}
+              >
                 {/* <Image style={{bottom:'0px', position:'absolute',zIndex:'1'}} src={HomeBanner} alt="HomeBanner" /> */}
                 <Image
-          src={CircleHomeBg}
-          alt="CircleHomeBg"
-          style={{bottom:'0px', height:"2rem",width:'2rem',zIndex:'0.9'}}
-        />
+                  src={CircleHomeBg}
+                  alt="CircleHomeBg"
+                  style={{
+                    bottom: "0px",
+                    height: "2rem",
+                    width: "2rem",
+                    zIndex: "0.9",
+                  }}
+                />
               </VStack>
             </Box>
 
@@ -244,7 +274,7 @@ const ClientHome = () => {
             </HStack>
 
             <BrandSlider />
-{/* From below box there is an issue arising of full width on the mobile screens */}
+            {/* From below box there is an issue arising of full width on the mobile screens */}
             <Box
               display="flex"
               h={"full"}
@@ -303,7 +333,7 @@ const ClientHome = () => {
               {/* Right side box */}
               <VStack
                 alignItems={{ md: "left", base: "" }}
-                mr={{ md: "2rem", base:'0' }}
+                mr={{ md: "2rem", base: "0" }}
                 textAlign={{ md: "left", base: "center" }}
                 flex="1"
               >
@@ -339,7 +369,7 @@ const ClientHome = () => {
                 </Text>
 
                 <Box
-                  mx={{ base: "0", md:'0' }}  //from here that full width issue was arising 
+                  mx={{ base: "0", md: "0" }} //from here that full width issue was arising
                   pt={{ md: "40px", base: "20px" }}
                   width={"100%"}
                   pr={{ base: "1.25rem" }}
@@ -448,10 +478,33 @@ const ClientHome = () => {
                     Creating a fair and equitable environment for data sharing.
                   </Text>
                 </VStack>
+                <Box
+                  // leftIcon={<A />}
+                  mt={{ md: "4rem", base: "3rem" }}
+                  p={{ md: "0.5rem", base: "0.25rem" }}
+                  align={"center"}
+                  border={"1px solid #606060"}
+                  borderRadius={"5px"}
+                  w={{ md: "18rem", base: "12rem" }}
+                  fontWeight={"400"}
+                  fontSize={{ md: "1.15rem", base: "0.75rem" }}
+                  className="color-gradient"
+                  lineHeight={{ md: "32.4px", base: "20px" }}
+                  letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
+                  _hover={{
+                    background:
+                      "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                    color: "white",
+                  }}
+                  cursor={"pointer"}
+                  onClick={()=> router.push('/UserGuide')}
+                >
+                  View User Guide
+                </Box>
               </VStack>
             </Box>
 
-            <ReviewSlider />
+            {/* <ReviewSlider /> */}
 
             {/* Product Showcase section below */}
             <HStack
@@ -514,7 +567,7 @@ const ClientHome = () => {
                 <Grid
                   templateColumns={{
                     base: "repeat(2, 1fr)",
-                    md: "repeat(4, 1fr)",
+                    md: "repeat(3, 1fr)",
                   }}
                   gap={{ md: 20, base: 5 }}
                   justifyContent="center"
@@ -568,8 +621,16 @@ const ClientHome = () => {
                     description="AI finance assistant & insights (ditch receipts, manage finances)"
                     onClick={() => router.push("/products/hushhValetChat")}
                   />
-                  <ServiceCard
+                   <ServiceCard
                     icon={<VibeSearchApi />}
+                    title="Developer API's​"
+                    alignItems={"center"}
+                    textAlign={"center"}
+                    description=" Secure, trusted, and incentivized way of relaying valuable personal information"
+                    onClick={() => router.push("/developer-Api/about-developer-api")}
+                  />
+                  <ServiceCard
+                    icon={<ApiVibeSearch />}
                     title="VIBE Search APIs​"
                     alignItems={"center"}
                     textAlign={"center"}
@@ -617,7 +678,12 @@ const ClientHome = () => {
         <Image
           src={RightCircleEclipse}
           alt="RightCircleEclipse"
-          style={{top:'0%',right:'0px', position:"absolute",zIndex:'0.9'}}
+          style={{
+            top: "0%",
+            right: "0px",
+            position: "absolute",
+            zIndex: "0.9",
+          }}
         />
       </div>
     </>

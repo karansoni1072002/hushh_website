@@ -25,7 +25,7 @@ export const metadata = {
   keywords: {
     template: "%s",
     default:
-      "Hushh, Hush, User Data API business,Hushh Button, Hushh Wallet App, Hushh Browser Companion, Hushh For Students, Hushh Valet Chat, Valet Chat, Vibe Search, Concierge App",
+      "Hushh, Hushh, User Data API business,Hushh Button, Hushh Wallet App, Hushh Browser Companion, Hushh For Students, Hushh Valet Chat, Valet Chat, Vibe Search, Concierge App",
   },
 };
 

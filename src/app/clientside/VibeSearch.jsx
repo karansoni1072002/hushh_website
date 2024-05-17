@@ -140,7 +140,7 @@ const ClientVibeSearch = () => {
             }}
             onClick={() => window.open("https://vibesearch-vercel.vercel.app/", "_blank")}                
           >
-            LEARN MORE
+            Try Vibe Search
           </Button>
         </Box>
         <HStack
@@ -416,7 +416,7 @@ const ClientVibeSearch = () => {
               }}
               onClick={() => window.open("https://vibesearch-vercel.vercel.app/", "_blank")}                
             >
-              Explore
+              Checkout Vibe Search
             </Button>
           </Box>
         </HStack>

@@ -39,13 +39,14 @@ const planData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Upto 10 brands",
         perMonth: "/mo",
         features: [["Basic Search"], ["Search History", "Share your vibe"]],
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Upto 50 brands",
         perMonth: "/mo",
@@ -63,7 +64,7 @@ const planData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Unlimited brands",
         perMonth: "/mo",
@@ -88,6 +89,7 @@ const planData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Upto 5 cards",
         perMonth: "/mo",
         features: [
@@ -102,7 +104,7 @@ const planData = [
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Upto 25 cards",
         perMonth: "/mo",
@@ -118,7 +120,7 @@ const planData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Upto 25 cards",
         perMonth: "/mo",
@@ -146,13 +148,14 @@ const planData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Reciept Import",
         perMonth: "/mo",
         features: [["Categorization", "Conversational AI"]],
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Reciept Import",
         perMonth: "/mo",
@@ -167,7 +170,7 @@ const planData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Reciept Import",
         perMonth: "/mo",
@@ -191,6 +194,7 @@ const planData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Request Format",
         perMonth: "/mo",
         features: [
@@ -204,7 +208,7 @@ const planData = [
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Request Format",
         perMonth: "/mo",
@@ -220,7 +224,7 @@ const planData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Request Format",
         perMonth: "/mo",
@@ -243,6 +247,7 @@ const planData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Request Format",
         perMonth: "/mo",
         features: [
@@ -256,7 +261,7 @@ const planData = [
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Request Format",
         perMonth: "/mo",
@@ -272,7 +277,7 @@ const planData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Request Format",
         perMonth: "/mo",
@@ -298,13 +303,14 @@ const workspacePlansData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Basic Data Access",
         perMonth: "/mo",
         features: [["Advanced Data Insights"], ["User Targeting Options", "Data Card Sharing","Commision Structure"],["Brand Reputation Tools","Campaign Management"]],
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "Ads included",
         brands: "Basic Data Access",
         perMonth: "/mo",
@@ -312,7 +318,7 @@ const workspacePlansData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "Ads Free",
         brands: "Basic Data Access",
         perMonth: "/mo",
@@ -327,6 +333,7 @@ const workspacePlansData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Basic Integration",
         perMonth: "/mo",
         features: [
@@ -340,7 +347,7 @@ const workspacePlansData = [
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Basic Integration",
         perMonth: "/mo",
@@ -356,7 +363,7 @@ const workspacePlansData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Advanced Integration",
         perMonth: "/mo",
@@ -382,13 +389,14 @@ const workspacePlansData = [
         name: "BASIC",
         price: "Free",
         advetisment: "Ads included",
+        freeTrial:"(Free trial for 90 days)",
         brands: "Maximum Service Categories",
         perMonth: "/mo",
         features: [["Client Matching"],["Lead Volume","Hushh Coin Commision","Recommendation Types"]],
       },
       {
         name: "PRO",
-        price: "$14",
+        price: "$9.99",
         advetisment: "No Ads",
         brands: "Maximum Service Categories",
         perMonth: "/mo",
@@ -396,7 +404,7 @@ const workspacePlansData = [
       },
       {
         name: "PREMIUM",
-        price: "$23",
+        price: "$19.99",
         advetisment: "No Ads",
         brands: "Reciept Import",
         perMonth: "/mo",
@@ -434,8 +442,8 @@ const ClientPricingPlan = () => {
 
     const priceNum = parseFloat(price.replace("$", ""));
     const yearlyPrice = isYearly ? priceNum * 12 : priceNum;
-    const discountedPrice = isYearly ? yearlyPrice * 0.78 : priceNum; // Applying 22% discount if it's yearly, else use original price
-    const total = Math.floor(discountedPrice); // Remove decimal part
+    const discountedPrice = isYearly ? yearlyPrice * 0.78 : priceNum.toFixed(2); // Applying 22% discount if it's yearly, else use original price
+    const total = isYearly ? Math.floor(discountedPrice) : discountedPrice ; // Remove decimal part
 
     // Change perMonth text based on yearly toggle
     const durationText = isYearly ? "/yr" : perMonth;
@@ -643,13 +651,13 @@ const ClientPricingPlan = () => {
         >
           {activePlanCategory === "site" ? "USER PLANS" : "PROFESSIONAL PLANS"}
         </Text>
-        <VStack gap={{ md: "20rem", base: "4rem" }}>
+        <VStack mx={'0.2rem'} gap={{ md: "20rem", base: "4rem" }}>
           <Text
             w={"100%"}
-            lineHeight={{ md: "30px", base: "20px" }}
+            lineHeight={{ md: "30px", base: "13px" }}
             color={"#FFFFFF"}
             fontWeight={"500"}
-            fontSize={{ md: "1rem", base: "0.8rem" }}
+            fontSize={{ md: "1rem", base: "0.5rem" }}
           >
             {activePlanCategory === "site"
               ? "Our user plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer"
@@ -688,7 +696,7 @@ const ClientPricingPlan = () => {
         minW={"100%"}
         display={"flex"}
         textAlign={"left"}
-        alignItems={{ md: "flex-start", base: "center" }}
+        alignItems={{ md: "center", base: "center" }}
         flexDirection={"column"}
       >
         <Tabs
@@ -759,7 +767,7 @@ const ClientPricingPlan = () => {
                           textAlign={"center"}
                           alignItems={"center"}
                           flexDirection={"column"}
-                          minW={{ md: "20rem", base: "100%" }}
+                          minW={isTabletOrMobile ? '100%' : '20rem'}
                           gap={{ md: "1rem", base: "0.5rem" }}
                           justifyContent={"flex-start"}
                           borderRadius={"2rem"}
@@ -787,7 +795,7 @@ const ClientPricingPlan = () => {
                           </Box>
                           <Text
                             fontWeight="600"
-                            fontSize={{ base: "1.75rem", md: "4.125rem" }}
+                            fontSize={{ base: "2xl", md: "4xl",lg:"5xl" }}
                             lineHeight={{ md: "79.2px", base: "40px" }}
                             mt={{ md: "1rem", base: "0.5rem" }}
                             className="planPrice"
@@ -818,6 +826,15 @@ const ClientPricingPlan = () => {
                               </span>
                             )}
                           </Text>
+                            <Text
+                            color={"white"}
+                            lineHeight={"25.6px"}
+                            fontWeight={"500"}
+                            fontSize={{ md: "1rem", base: "0.65rem" }}
+                            // className="planAdvertisment"
+                          >
+                            {plan?.freeTrial}
+                          </Text>
                           <Text
                             color={"#535353"}
                             lineHeight={"25.6px"}
@@ -845,7 +862,7 @@ const ClientPricingPlan = () => {
                                   flexDirection={"row"}
                                   alignItems={"flex-start"}
                                   w={"100%"}
-                                  justifyContent={"space-between"}
+                                  justifyContent={{ base:"space-between"}}
                                   textAlign={"left"}
                                 >
                                   <Text
@@ -877,7 +894,7 @@ const ClientPricingPlan = () => {
                           alignItems={"flex-end"}
                         >
                           <Button
-                            minW={"15rem"}
+                            minW={isTabletOrMobile ? "full" : "15rem"}
                             bg={"#146EF5"}
                             color={"white"}
                             borderRadius={"4px"}
@@ -1059,7 +1076,7 @@ const ClientPricingPlan = () => {
                   fontSize={{ md: "1rem", base: "0.65rem" }}
                   lineHeight={{ md: "30px", base: "20px" }}
                 >
-                  Beyond the tools and platforms, Hushhh fosters a community for
+                  Beyond the tools and platforms, Hushh fosters a community for
                   support, learning, and collaboration, enhancing the value of
                   every subscription.
                 </Text>
@@ -1120,13 +1137,13 @@ const ClientPricingPlan = () => {
               color={"#ABABAB"}
               lineHeight={{ md: "36px", base: "25px" }}
             >
-              Hushhh’s diverse pricing strategy aims to democratize access to
+              Hushh’s diverse pricing strategy aims to democratize access to
               powerful data and AI tools, making them accessible to a wide
               audience. Whether you’re a consumer trusting us with your data, a
               developer building the next big app, a sales agent aiming for your
-              next target, or a creator curating unique experiences, Hushhh
+              next target, or a creator curating unique experiences, Hushh
               provides the tools, support, and platform to achieve your goals.
-              With Hushhh, embrace a smarter, more secure, and personalized
+              With Hushh, embrace a smarter, more secure, and personalized
               digital future.
             </Text>
           </Box>
@@ -1144,7 +1161,7 @@ const ClientPricingPlan = () => {
             color={"#ABABAB"}
             lineHeight={{ md: "36px", base: "18px" }}
           >
-            This summary aims to convey Hushhh’s commitment to delivering value
+            This summary aims to convey Hushh’s commitment to delivering value
             through innovative, user-centric products and services, ensuring
             clear communication of pricing and offerings to foster trust and
             loyalty across all user segments.

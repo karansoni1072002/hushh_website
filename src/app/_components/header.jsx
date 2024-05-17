@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import HushhHeaderLogo from "./svg/hushhHeaderLogo";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
-import { Button, Container } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Text } from "@chakra-ui/react";
 import { useResponsiveSizes } from "../context/responsive";
 import { Bars3Icon } from "./svg/icons/hamburgerMenuIcon";
 import { CloseMenuIcon } from "./svg/icons/closeMenuIcon";
@@ -19,15 +19,51 @@ import ValetChat from "./svg/valetChat";
 import VibeSearchApi from "./svg/vibeSearchApi";
 import { headerAssets } from "./svg/icons/HeaderIcons/headerAssets";
 import { animateScroll as scroll } from "react-scroll";
+import { FiUser, FiYoutube } from 'react-icons/fi';
+import { useMediaQuery } from "react-responsive";
+import SmallVibeSearch from "./svg/smallVibeSearch.svg";
 
-const Header = () => {
-  const { isMobile } = useResponsiveSizes();
+export default function Header() {
+
+  const { isTablet, isMobile, isDesktop } = useResponsiveSizes();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsSubmenu, setProductsSubmenu] = useState(false);
   const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [headerBackground, setHeaderBackground] = useState("transparent");
   const pathname = usePathname()
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // For the dropdown
+  const [userEmail, setUserEmail] = useState('');
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
+
+  // useEffect(() => {
+  //   const checkLoginStatus = async () => {
+  //     const { data } = await supabase.auth.getSession(); // Get the session data
+
+  //     console.log('data:',data);
+  //     console.log('user email: ',data?.session?.user?.email);
+
+  //     if (data.session) {
+  //       setIsLoggedIn(true); 
+  //       const { data: userIdentities } = await supabase.auth.getUserIdentities();
+  //       if (userIdentities) {
+  //         const userIdentity = userIdentities.identities[0]; 
+  //         const email = userIdentity.email; 
+  //         setUserEmail(email); 
+  //       }
+  //     } else {
+  //       setIsLoggedIn(false); 
+  //     }
+  //    console.log('Is LoggedIn: ',isLoggedIn)
+  //   };
+  //   checkLoginStatus(); 
+  // }, [supabase]);
+
+  const handleDropdownClick = () => {
+    setIsDropdownOpen(!isDropdownOpen); 
+  };
 
   const scrollToContactForm = () => {
     window.scrollTo({
@@ -98,7 +134,7 @@ const Header = () => {
             <HushhHeaderLogo />
           </Link>
         </div>
-        {isMobile ? (
+        {!isDesktop ? (
           <div className="w-full flex py-2 justify-end">
             <Container display={"flex"} gap={"1rem"}>
               <SearchBar />
@@ -109,7 +145,7 @@ const Header = () => {
           </div>
         ) : (
           <div className="w-max">
-            <div className="text-white flex justify-between gap-12 px-7 ">
+            <div className="text-white flex justify-between gap-12 px-7 md:gap-10">
               <Link
                 href="/"
                 className={`link ${pathname === '/' ? 'gradient-text' : ''}`}
@@ -146,6 +182,13 @@ const Header = () => {
                 className={`link ${pathname === '/pricingPlans' ? 'gradient-text' : ''}`}
               >
                 PRICING
+              </Link>
+              <Link
+                href="/UserGuide"
+                onMouseEnter={() => setProductsSubmenu(false)}
+                className={`link ${pathname === '/UserGuide' ? 'gradient-text' : ''}`}
+              >
+                GUIDE
               </Link>
               <ScrollLink
                 to="contact-form"
@@ -199,6 +242,21 @@ const Header = () => {
                         </h1>
                         <p className="text-sm font-medium text-fontColor3">
                           Enhanced recommendations &<br /> impactful marketing.
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      href={"/developer-Api/about-developer-api"}
+                      onClick={() => setProductsSubmenu(false)}
+                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                    >
+                      <div className="">
+                        <VibeSearchApi className="w-6 h-6" />
+                      </div>
+                      <div className="">
+                        <h1 className="font-semibold">Developer API</h1>
+                        <p className="text-sm font-medium text-fontColor3">
+                           Secure, trusted & incentivized way of <br/> relaying valuable personal information.
                         </p>
                       </div>
                     </Link>
@@ -308,7 +366,7 @@ const Header = () => {
         )}
 
         <div className="z-100">
-          {!isMobile && (
+          { isDesktop && (
             <div className="login">
               <SearchBar />
               <Button
@@ -332,11 +390,11 @@ const Header = () => {
               </Button>
             </div>
           )}
-        </div>
+        </div> 
       </div>
 
       <div className="w-full justify-end flex px-6 z-1000">
-        {isMenuOpen && isMobile ? (
+        {isMenuOpen && (isTablet || isMobile )? (
           <div className={`w-full flex flex-col gap-1`} ref={menuRef}>
             <div className="text-white w-full flex items-end flex-col text-center">
               <Link
@@ -490,7 +548,13 @@ const Header = () => {
               >
                 Pricing
               </Link>
-
+              <Link
+                href="/UserGuide"
+                onClick={() => setIsMenuOpen(false)}
+                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
+              >
+                GUIDE
+              </Link>
               <Link
                 href="https://hushh-labs.github.io/hushh-labs-blog/"
                 className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
@@ -529,4 +593,3 @@ const Header = () => {
   );
 };
 
-export default Header;

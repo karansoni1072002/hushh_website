@@ -9,7 +9,7 @@ import HushhMobileFooterLogo from "../svg/hushhMobileFooterLogo";
 import { animateScroll as scroll } from "react-scroll";
 
 const FooterComponent = () => {
-  const isMobile = useResponsiveSizes();
+  // const isMobile = useResponsiveSizes();
 
   const scrollTo = () => {
     scroll.scrollTo(4250);

@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import HushhHeaderLogo from "./svg/hushhHeaderLogo";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
-import { Button, Container } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Text } from "@chakra-ui/react";
 import { useResponsiveSizes } from "../context/responsive";
 import { Bars3Icon } from "./svg/icons/hamburgerMenuIcon";
 import { CloseMenuIcon } from "./svg/icons/closeMenuIcon";
@@ -19,15 +19,49 @@ import ValetChat from "./svg/valetChat";
 import VibeSearchApi from "./svg/vibeSearchApi";
 import { headerAssets } from "./svg/icons/HeaderIcons/headerAssets";
 import { animateScroll as scroll } from "react-scroll";
+import { FiUser, FiYoutube } from 'react-icons/fi';
+import { useMediaQuery } from "react-responsive";
 
-const Header = () => {
-  const { isMobile } = useResponsiveSizes();
+export default function Header() {
+  const { isMobile } = useMediaQuery({ query: '(max-width: 1224px)' });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsSubmenu, setProductsSubmenu] = useState(false);
   const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [headerBackground, setHeaderBackground] = useState("transparent");
   const pathname = usePathname()
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // For the dropdown
+  const [userEmail, setUserEmail] = useState('');
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
+
+  // useEffect(() => {
+  //   const checkLoginStatus = async () => {
+  //     const { data } = await supabase.auth.getSession(); // Get the session data
+
+  //     console.log('data:',data);
+  //     console.log('user email: ',data?.session?.user?.email);
+
+  //     if (data.session) {
+  //       setIsLoggedIn(true); 
+  //       const { data: userIdentities } = await supabase.auth.getUserIdentities();
+  //       if (userIdentities) {
+  //         const userIdentity = userIdentities.identities[0]; 
+  //         const email = userIdentity.email; 
+  //         setUserEmail(email); 
+  //       }
+  //     } else {
+  //       setIsLoggedIn(false); 
+  //     }
+  //    console.log('Is LoggedIn: ',isLoggedIn)
+  //   };
+  //   checkLoginStatus(); 
+  // }, [supabase]);
+
+  const handleDropdownClick = () => {
+    setIsDropdownOpen(!isDropdownOpen); 
+  };
 
   const scrollToContactForm = () => {
     window.scrollTo({
@@ -313,8 +347,73 @@ const Header = () => {
             )}
           </div>
         )}
-
-        <div className="z-100">
+ <div className="flex items-center gap-4 relative">
+      {isLoggedIn ? (
+        <div className="relative">
+          <FiUser
+            className="w-6 h-6 text-white cursor-pointer"
+            onClick={handleDropdownClick} // Open the dropdown
+          />
+          {isDropdownOpen && (
+            <Box
+              position="absolute"
+              bg="white"
+              w="200px"
+              mt="2"
+              shadow="md"
+              color="black"
+              zIndex="dropdown"
+            >
+              <Flex flexDirection="column">
+                <Link href="/profile" p="3" _hover={{ bg: "gray.100" }}>
+                  <Text>{userEmail}</Text>
+                </Link>
+                <Link href="/settings" p="3" _hover={{ bg: "gray.100" }}>
+                  Settings
+                </Link>
+                <Link
+                  href="#"
+                  p="3"
+                  _hover={{ bg: "gray.100" }}
+                  // onClick={() => {
+                  //   supabase.auth.signOut();
+                  // }}
+                >
+                  Log Out
+                </Link>
+                <Flex align="center" p="3" _hover={{ bg: "gray.100" }}>
+                  <FiYoutube color="red" />
+                  <Link href="#" ml="2">
+                    Watch Demo
+                  </Link>
+                </Flex>
+              </Flex>
+            </Box>
+          )}
+        </div>
+      ) : (
+        !isTabletOrMobile && (
+          <Button
+            border="1px solid #606060"
+            borderRadius="5px"
+            w="10.75rem"
+            h="3.125rem"
+            className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text"
+            lineHeight="50px"
+            letterSpacing="0.5rem"
+            _hover={{
+              background: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              color: "white",
+              border: "none",
+            }}
+            onClick={handleLoginClick}
+          >
+            LOGIN
+          </Button>
+        )
+      )}
+    </div>
+        {/* <div className="z-100">
           {!isMobile && (
             <div className="login">
               <SearchBar />
@@ -339,7 +438,7 @@ const Header = () => {
               </Button>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
 
       <div className="w-full justify-end flex px-6 z-1000">
@@ -542,4 +641,3 @@ const Header = () => {
   );
 };
 
-export default Header;

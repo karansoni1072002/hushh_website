@@ -147,7 +147,7 @@ const ClientHushhButton = () => {
             }}
             onClick={() =>
               router.push(
-                "https://sites.google.com/hush1one.com/drops/products/hushh-button",
+                "https://hushh-button.vercel.app/",
               )
             }
           >

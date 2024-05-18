@@ -17,26 +17,26 @@ const FeaturedPosts = ({ blogs }) => {
         </article>
         <div className="flex flex-col gap-6">
           <article className="relative">
-            <BlogLayoutTwo blog={sortedBlogs[1]}/>
-          </article>
-          <article className="relative">
             <BlogLayoutTwo blog={sortedBlogs[3]}/>
           </article>
           <article className="relative">
-            <BlogLayoutTwo blog={sortedBlogs[4]} />
+            <BlogLayoutTwo blog={sortedBlogs[4]}/>
+          </article>
+          <article className="relative">
+            <BlogLayoutTwo blog={sortedBlogs[5]} />
           </article>
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-50 sm:mt-16">
         <div className="flex flex-col gap-6">
           <article className="relative">
-            <BlogLayoutTwo blog={sortedBlogs[5]} />
-          </article>
-          <article className="relative">
             <BlogLayoutTwo blog={sortedBlogs[6]} />
           </article>
           <article className="relative">
-            <BlogLayoutTwo blog={sortedBlogs[6]} />
+            <BlogLayoutTwo blog={sortedBlogs[7]} />
+          </article>
+          <article className="relative">
+            <BlogLayoutTwo blog={sortedBlogs[8]} />
           </article>
         </div>
         <article className="relative col-span-1 sm:col-span-1">

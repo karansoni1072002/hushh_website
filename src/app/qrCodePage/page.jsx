@@ -35,7 +35,7 @@ const qrCodePage = () => {
 
   return (
     <>
-    <Box bg="black" minH="100vh" p={4} color="white" position={'relative'} mt={'1rem'} zIndex={'999999999'}>
+    <Box fontFamily={'Poppins'} bg="black" minH="100vh" p={4} color="white" position={'relative'} mt={'1rem'} zIndex={'999999999'}>
       <VStack spacing={4} mt={'6rem'}>
         <Box bg={'#1B1B1B'} p={'2rem'} textAlign={'center'} display={'flex'} flexDirection={'column'}>
         {/* <QRCode size='40' fgColor='#FFFFFF' logoOpacity={'0.5'} bgColor='transparent'	 quietZone={'0'} logoPaddingStyle='square' logoPadding='0' value="https://github.com/gcoro/react-qrcode-logo"/> */}

@@ -80,6 +80,7 @@ export default function vivaConnect() {
       position={"relative"}
       mt={"1rem"}
       zIndex={"999999999"}
+      fontFamily={'Poppins'}
     >
       <VStack
         spacing={4}
@@ -91,7 +92,6 @@ export default function vivaConnect() {
         <Flex justifyContent="space-between" mb={4} w="100%">
           <Text
             color={"#FFFFFF"}
-            fontFamily={"Gilroy-Heavy"}
             fontWeight={"400"}
             fontSize={"1.5rem"}
             letterSpacing={"-0.27px"}
@@ -151,7 +151,6 @@ export default function vivaConnect() {
           </Box>
           <Text
             fontWeight={"400"}
-            fontFamily={"Gilroy-Heavy"}
             fontSize={"1.15rem"}
             lineHeight={"22.95px"}
           >

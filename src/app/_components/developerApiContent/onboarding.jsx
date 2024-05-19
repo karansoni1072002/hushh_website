@@ -49,14 +49,15 @@ const Onboarding = () => {
             },
           }
         );
+        const apiKey = response?.data?.API_key
+
         console.log(response);
         console.log("API Key Generated:", response);
         if (response?.data?.message === 'Success') {
           console.log("API Key Generated:", response);
 
           // Saving API key for new users 
-          const apiKey = response?.data?.data?.apiKey;
-          console.log('Api Key:',response?.data?.userdata?.apiKey)
+          const apiKey = response?.data?.API_key
           setApiKey(apiKey);
           console.log('Api key:',apiKey);
           toast({

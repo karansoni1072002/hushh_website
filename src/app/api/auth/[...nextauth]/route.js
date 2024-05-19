@@ -54,6 +54,16 @@ const authOptions = {
         secure: true,
       },
     },
+    sessionToken: {
+      name: "next-auth.session-token",
+      options: {
+        domain:".hushh1one.com",
+        path: "/",
+        httpOnly: true,
+        sameSite: "lax",
+        secure: true
+      }
+    }
   },
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
@@ -69,9 +79,9 @@ const authOptions = {
           const response = await axios.post(
             "https://hushhdevenv.hushh.ai/dev/v1/api/sign_in",
             {
-              email: session.user.email,
-              first_name: session.user.name,
-              password: session.token.sub,
+              email: session?.user?.email,
+              first_name: session?.user?.name,
+              password: token?.sub,
             },
             {
               headers: {
@@ -93,13 +103,16 @@ const authOptions = {
       }
       return session;
     },
-    async jwt({token, user}) {
+    async jwt({token, user, account}) {
       // User Id is unique identifier id === uid
       if (user?.id) {
           token.uid = user.id
       }
       if (user?.userName) {
           token.userName = user.userName;
+      }
+      if (account && account.provider === "google") {
+        token.sub = user.sub;  // Assuming 'user.sub' is populated from Google's ID token
       }
       return token
    },

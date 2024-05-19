@@ -22,7 +22,6 @@ const MyLogo = () => {
   return (
     <>
       <Box gap={"1.5rem"} display={"flex"} flexDirection={"row"}>
-        
         {session ? (
           <>
           <Image
@@ -38,7 +37,7 @@ const MyLogo = () => {
             background="transparent"
             style={{ color: "var(--button-text-color)" }}
             p={4}
-            onClick={handleLogout}
+            onClick={() => signOut() }
             _hover={{
               background: 'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'
             }}

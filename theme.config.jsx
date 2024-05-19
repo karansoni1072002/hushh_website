@@ -1,23 +1,27 @@
 'use client'
 import React, {  } from 'react'
+import MDXComponents from './src/app/_components/developerApiContent/page'
+import Header from './src/app/_components/header'
 import remarkGfm from 'remark-gfm';
 import MyLogo from './src/app/developerApi/userLogo';
+import LogoutButton from './src/app/_components/developerApiContent/logout';
+import FeedbackPopup from './src/app/_components/developerApiContent/feedbackPopup';
 import { Box } from '@chakra-ui/react';
 import { ArrowBackIcon, ArrowLeftIcon } from '@chakra-ui/icons';
 
 export default {
     logo: <span>Hushh Developer API </span>,
     project: {
-      link:'#',
+      link:'/developer-Api/on-boarding',
       icon: (
         <MyLogo/>
       ),
     },
-    // footer:{
-    //    text:null,
-    //    Component:null,
-    // },
-    // feedback:{ content: "To know more about hushh develoeper API", label:'To know more about hushh develoeper API', link:"https://hushh.gitbook.io/hushh-docs/api-reference/overview"}, 
+    footer:{
+       text:null,
+       Component:null,
+    },
+    feedback:{ content: "To know more about hushh develoeper API", label:'To know more about hushh develoeper API', link:"https://hushh.gitbook.io/hushh-docs/api-reference/overview"}, 
   //   toc: {
   //     extraContent: () =>
   //         <FeedbackPopup/>
@@ -50,11 +54,11 @@ export default {
         titleTemplate: '%s – Developer API'
       }
     },
-    // content: {
-    //   components: MDXComponents,
-    // },
-    // markdown: {
-    //   remarkPlugins: [remarkGfm],
-    // },
+    content: {
+      components: MDXComponents,
+    },
+    markdown: {
+      remarkPlugins: [remarkGfm],
+    },
 }
 

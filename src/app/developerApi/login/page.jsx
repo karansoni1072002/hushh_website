@@ -101,6 +101,12 @@ export default function LoginPage() {
   const validateForm = () => {
     let valid = true;
     const newErrors = { ...errors };
+    // if (!formData.name) {
+    //   newErrors.name = "Name is required";
+    //   valid = false;
+    // } else {
+    //   newErrors.name = "";
+    // }
 
     if (!phoneNumber) {
       newErrors.phoneNumber = "Phone number is required";
@@ -112,10 +118,60 @@ export default function LoginPage() {
       newErrors.phoneNumber = "";
     }
 
+    // if (!formData.email) {
+    //   newErrors.email = "Email is required";
+    //   valid = false;
+    // } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    //   newErrors.email = "Invalid email format";
+    //   valid = false;
+    // } else {
+    //   newErrors.email = "";
+    // }
+    // if (!formData.password) {
+    //   newErrors.password = "Password is required";
+    //   valid = false;
+    // } else {
+    //   newErrors.password = "";
+    // }
+
     setErrors(newErrors);
-    return valid; 
+    return valid; // Return true if valid, false otherwise
   };
 
+  // const handleSignUp = async () => {
+  //   if (validateForm()) {
+
+  //     if (error) {
+  //       toast({
+  //         title: "Sign-up Error",
+  //         description: error.message,
+  //         status: "error",
+  //         duration: 3000,
+  //         isClosable: true,
+  //       });
+  //     } else {
+  //       toast({
+  //         title: "Sign-up Successful",
+  //         description: "Please log in to continue.",
+  //         status: "success",
+  //         duration: 3000,
+  //         isClosable: true,
+  //       });
+  //       setFormData({
+  //         name: "",
+  //         email: "",
+  //         //   phoneNumber: "",
+  //         password: "",
+  //       });
+  //       router.push("/login"); // Redirect after successful sign-up
+  //     }
+  //   }
+  // };
+  
+  // const backendSendingData = {
+  //   number:phoneNumber,
+  //   code:phoneCode,
+  // };
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -123,7 +179,7 @@ export default function LoginPage() {
       setLoading(true);
       try {
       const countryCode = getCountryCallingCode(phoneNumber);
-      const phoneNumberWithoutCountryCode = phoneNumber.replace(`+${countryCode}`, '');
+      const phoneNumberWithoutCountryCode = phoneNumber.slice(countryCode.length);
         const response = await axios.post(
           "https://hushhdevenv.hushh.ai/dev/v1/api/sign_in",
           {
@@ -132,9 +188,7 @@ export default function LoginPage() {
           },
           {
             headers: {
-              // "Content-Type": "application/x-www-form-urlencoded",
-              "Content-Type": "application/json",
-
+              "Content-Type": "application/x-www-form-urlencoded",
             },
           }
         );
@@ -176,6 +230,11 @@ export default function LoginPage() {
     }
   };
 
+  // const handleLogout = async () => {
+  //   await supabase.auth.signOut();
+  //   router.refresh();
+  //   setUser(null);
+  // };
 
   return (
     <div className="relative" style={{ overflow: "hidden", height: "100vh" }}>
@@ -332,6 +391,84 @@ export default function LoginPage() {
                   </Box>
                   <FormErrorMessage>{errors.phoneNumber}</FormErrorMessage>
           </FormControl>
+
+          {/* <Tooltip
+            label={
+              <>
+                <Icon
+                  as={FiAlertCircle}
+                  color="yellow.400"
+                  mb={"0.20rem"}
+                  mr={"0.3rem"}
+                />
+                {errors.email}
+              </>
+            }
+            isOpen={!!errors.email}
+            hasArrow
+            bg={"white"}
+            color={"black"}
+            borderRadius={"0.5rem"}
+            fontSize={"1rem"}
+            placement="right"
+          >
+            
+            <InputGroup>
+              <InputLeftElement pointerEvents="none">
+                <Input type="number" 
+                 className="w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
+                />
+              </InputLeftElement>
+              <InputRightElement>
+              <Input
+                type="number"
+                name="phone number"
+                value={formData.phoneNumber}
+                onChange={handleInputChange}
+                borderRadius="3.35rem"
+                placeholder="Email"
+                className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-transparent text-white"
+              />
+              </InputRightElement>
+            </InputGroup>
+          </Tooltip> */}
+
+          {/* <Tooltip
+            label={
+              <>
+                <Icon
+                  as={FiAlertCircle}
+                  color="yellow.400"
+                  mb={"0.20rem"}
+                  mr={"0.3rem"}
+                />
+                {errors.phoneNumber}
+              </>
+            }
+            isOpen={!!errors.phoneNumber}
+            hasArrow
+            bg={"white"}
+            color={"black"}
+            borderRadius={"0.5rem"}
+            fontSize={"1rem"}
+            placement="right"
+            icon={<FiAlertCircle />}
+          >
+            <InputGroup>
+              <InputLeftElement pointerEvents="none">
+                <Icon as={FiLock} color="gray.400" />{" "}
+              </InputLeftElement>
+              <PhoneInput
+                      className="phoneInput"
+                      style={{width:'100%',backgroundColor:'transparent'}}
+                      defaultCountry="US"
+                      color={"#FFFFFF"}
+                      placeholder="Enter phone number"
+                      value={phoneNumber}
+                      onChange={setPhoneNumber}
+              />
+            </InputGroup>
+          </Tooltip> */}
 
           <Button
             style={{ borderRadius: "3.35rem" }}

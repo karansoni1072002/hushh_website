@@ -160,7 +160,7 @@ export default function vivaConnect() {
         </Box>
 
         <Button
-          // leftIcon={}
+          boxShadow={'4px 4px 0px 0px #BFBFBF'}
           borderRadius={"8px"}
           border={"1px solid #000000"}
           display={'flex'}
@@ -176,11 +176,11 @@ export default function vivaConnect() {
           }
         >
           <Icon as={HushhButton} />
-         <Text ml={'20%'}>Hushh Button</Text> 
+          <Text ml={'20%'} color={'#484848'} fontWeight={'400'} fontSize={'1rem'} lineHeight={'14.56px'}>Hushh Button</Text> 
         </Button>
 
         <Button
-          // leftIcon={}
+          boxShadow={'4px 4px 0px 0px #BFBFBF'}
           p={'0.1rem'}
           borderRadius={"8px"}
           border={"1px solid #000000"}
@@ -196,11 +196,11 @@ export default function vivaConnect() {
           }
         >
           <Icon as={ChromeExtension} />
-          <Text ml={'20%'}>Chrome Extension</Text>
+          <Text ml={'20%'} color={'#484848'} fontWeight={'400'} fontSize={'1rem'} lineHeight={'14.56px'}>Chrome Extension</Text>
         </Button>
 
         <Button
-          // leftIcon={}
+          boxShadow={'4px 4px 0px 0px #BFBFBF'}
           p={'0.1rem'}
           borderRadius={"8px"}
           border={"1px solid #000000"}
@@ -216,10 +216,11 @@ export default function vivaConnect() {
           }
         >
           <Icon as={HushhWalletApp} />
-          <Text ml={'20%'}>Hushh App</Text> 
+          <Text ml={'20%'} color={'#484848'} fontWeight={'400'} fontSize={'1rem'} lineHeight={'14.56px'}>Hushh App</Text> 
         </Button>
 
         <Button
+          boxShadow={'4px 4px 0px 0px #BFBFBF'}
           onClick={() =>
             router.push(
               "https://vibesearch-vercel.vercel.app"
@@ -235,9 +236,10 @@ export default function vivaConnect() {
           color={"#484848"}
         >
           <Icon as={VibeSearchApp} boxSize='xxs' />
-         <Text ml={'20%'}>Vibe Search</Text> 
+          <Text ml={'20%'} color={'#484848'} fontWeight={'400'} fontSize={'1rem'} lineHeight={'14.56px'}>Vibe Search</Text> 
         </Button>
         <Button
+          boxShadow={'4px 4px 0px 0px #BFBFBF'}
           p={'0.1rem'}
           borderRadius={"8px"}
           display={'flex'}
@@ -253,7 +255,7 @@ export default function vivaConnect() {
           }
         >
           <Icon as={VibeSearchAPIs} boxSize='xxs' />
-          <Text ml={'20%'}>Developer API</Text>
+          <Text ml={'20%'} color={'#484848'} fontWeight={'400'} fontSize={'1rem'} lineHeight={'14.56px'}>Developer API</Text>
         </Button>
 
         {/* <Button onClick={() => saveAsBookmark} leftIcon={<Icon as={FaSave} />} fontFamily={'Gilroy-SemiBold'} borderRadius={'12px'} bg={'#3045FF'} color={'#FFFFFF'} letterSpacing={'-0.4px'} fontSize={'1rem'} fontWeight={'400'} w="full" mt={10}>

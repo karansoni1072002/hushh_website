@@ -5,5 +5,5 @@ import { ApiKeyProvider } from "./context/apiKeyContext";
 import { SessionProvider } from "next-auth/react";
 
 export function Providers({ children }) {
-  return <ChakraProvider theme={extendedTheme}><SessionProvider><ApiKeyProvider>{children}</ApiKeyProvider></SessionProvider></ChakraProvider>;
+  return <ChakraProvider theme={extendedTheme}><ApiKeyProvider><SessionProvider>{children}</SessionProvider></ApiKeyProvider></ChakraProvider>;
 }

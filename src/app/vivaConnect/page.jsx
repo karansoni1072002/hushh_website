@@ -427,7 +427,7 @@ export default function vivaConnect() {
             download="HushhIntro"
             borderRadius={"12px"}
             bg={"#3045FF"}
-            h={'4rem'}
+            h={'3rem'}
             color={"#FFFFFF"}
             letterSpacing={"-0.4px"}
             fontSize={"1rem"}

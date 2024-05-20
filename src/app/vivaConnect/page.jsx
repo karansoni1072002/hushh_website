@@ -153,10 +153,11 @@ export default function vivaConnect() {
             fontWeight={"400"}
             fontSize={"1.15rem"}
             lineHeight={"22.95px"}
+            color={'#FFFFFF'}
           >
             Team Hushh 🤫
           </Text>
-          <Text fontSize="sm">Hushh: unlock the power of your data</Text>
+          <Text fontSize="sm" color={'#A2A1A1'}>Hushh: unlock the power of your data</Text>
         </Box>
 
         <Button

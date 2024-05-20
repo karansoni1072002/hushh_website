@@ -178,7 +178,7 @@ export default function vivaConnect() {
               textAlign={"left"}
               flex={1}
             >
-              <Text color={"#484848"} fontWeight={"400"} fontSize={"1rem"}>
+              <Text color={"#484848"} fontWeight={"400"} fontSize={"0.75rem"}>
                 Hushh Button
               </Text>
               <Text
@@ -235,7 +235,7 @@ export default function vivaConnect() {
               textAlign={"left"}
               flex={1}
             >
-              <Text color={"#484848"} fontWeight={"400"} fontSize={"1rem"}>
+              <Text color={"#484848"} fontWeight={"400"} fontSize={"0.75rem"}>
                 Hushh Chrome Extension
               </Text>
               <Text
@@ -287,7 +287,7 @@ export default function vivaConnect() {
               textAlign={"left"}
               flex={1}
             >
-              <Text color={"#484848"} fontWeight={"400"} fontSize={"1rem"}>
+              <Text color={"#484848"} fontWeight={"400"} fontSize={"0.75rem"}>
                 Hushh App
               </Text>
               <Text
@@ -345,7 +345,7 @@ export default function vivaConnect() {
               textAlign={"left"}
               flex={1}
             >
-              <Text color={"#484848"} fontWeight={"400"} fontSize={"1rem"}>
+              <Text color={"#484848"} fontWeight={"400"} fontSize={"0.75rem"}>
                 Hushh Vibe Search
               </Text>
               <Text
@@ -402,7 +402,7 @@ export default function vivaConnect() {
               textAlign={"left"}
               flex={1}
             >
-              <Text color={"#484848"} fontWeight={"400"} fontSize={"1rem"}>
+              <Text color={"#484848"} fontWeight={"400"} fontSize={"0.75rem"}>
                 Hushh Developer API
               </Text>
               <Text

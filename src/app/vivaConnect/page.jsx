@@ -80,7 +80,7 @@ export default function vivaConnect() {
       position={"relative"}
       mt={"1rem"}
       zIndex={"999999999"}
-      fontFamily={'Poppins'}
+      fontFamily={"Poppins"}
     >
       <VStack
         spacing={4}
@@ -100,9 +100,9 @@ export default function vivaConnect() {
             Hushh
           </Text>
           <Image
-            style={{cursor:'pointer'}}
+            style={{ cursor: "pointer" }}
             target="_blank"
-            onClick={()=> router.push('https://calendly.com/hushh/30min')}
+            onClick={() => router.push("https://calendly.com/hushh/30min")}
             src={CalendlyIcon}
             alt="calendlyIcon"
             width="30px"
@@ -153,41 +153,47 @@ export default function vivaConnect() {
             fontWeight={"400"}
             fontSize={"1.15rem"}
             lineHeight={"22.95px"}
-            color={'#FFFFFF'}
+            color={"#FFFFFF"}
           >
             Team Hushh 🤫
           </Text>
-          <Text fontSize="sm" color={'#A2A1A1'}>Hushh: unlock the power of your data</Text>
+          <Text fontSize="sm" color={"#A2A1A1"}>
+            Hushh: unlock the power of your data
+          </Text>
         </Box>
 
         <Button
-          boxShadow={'4px 4px 0px 0px #BFBFBF'}
+          boxShadow={"4px 4px 0px 0px #BFBFBF"}
           borderRadius={"8px"}
           border={"1px solid #000000"}
-          display={'flex'}
-          flexDirection={'row'}
-          justifyContent={'flex-start'}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"flex-start"}
           bg={"white"}
           color={"#484848"}
-          p={'0.1rem'}
-          onClick={() =>
-            router.push(
-              "https://hushh-button.vercel.app/"
-            )
-          }
+          p={"0.1rem"}
+          onClick={() => router.push("https://hushh-button.vercel.app/")}
         >
           <Icon as={HushhButton} />
-          <Text ml={'20%'} color={'#484848'} fontWeight={'400'} fontSize={'1rem'} lineHeight={'14.56px'}>Hushh Button</Text> 
+          <Text
+            ml={"20%"}
+            color={"#484848"}
+            fontWeight={"400"}
+            fontSize={"1rem"}
+            lineHeight={"14.56px"}
+          >
+            Hushh Button
+          </Text>
         </Button>
 
         <Button
-          boxShadow={'4px 4px 0px 0px #BFBFBF'}
-          p={'0.1rem'}
+          boxShadow={"4px 4px 0px 0px #BFBFBF"}
+          p={"0.1rem"}
           borderRadius={"8px"}
           border={"1px solid #000000"}
-          display={'flex'}
-          flexDirection={'row'}
-          justifyContent={'flex-start'}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"flex-start"}
           bg={"white"}
           color={"#484848"}
           onClick={() =>
@@ -197,55 +203,71 @@ export default function vivaConnect() {
           }
         >
           <Icon as={ChromeExtension} />
-          <Text ml={'20%'} color={'#484848'} fontWeight={'400'} fontSize={'1rem'} lineHeight={'14.56px'}>Chrome Extension</Text>
+          <Text
+            ml={"20%"}
+            color={"#484848"}
+            fontWeight={"400"}
+            fontSize={"1rem"}
+            lineHeight={"14.56px"}
+          >
+            Chrome Extension
+          </Text>
         </Button>
 
         <Button
-          boxShadow={'4px 4px 0px 0px #BFBFBF'}
-          p={'0.1rem'}
+          boxShadow={"4px 4px 0px 0px #BFBFBF"}
+          p={"0.1rem"}
           borderRadius={"8px"}
           border={"1px solid #000000"}
-          display={'flex'}
-          flexDirection={'row'}
-          justifyContent={'flex-start'}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"flex-start"}
           bg={"white"}
           color={"#484848"}
-          onClick={() =>
-            router.push(
-              "https://bit.ly/hushh-app-ios"
-            )
-          }
+          onClick={() => router.push("https://bit.ly/hushh-app-ios")}
         >
           <Icon as={HushhWalletApp} />
-          <Text ml={'20%'} color={'#484848'} fontWeight={'400'} fontSize={'1rem'} lineHeight={'14.56px'}>Hushh App</Text> 
+          <Text
+            ml={"20%"}
+            color={"#484848"}
+            fontWeight={"400"}
+            fontSize={"1rem"}
+            lineHeight={"14.56px"}
+          >
+            Hushh App
+          </Text>
         </Button>
 
         <Button
-          boxShadow={'4px 4px 0px 0px #BFBFBF'}
-          onClick={() =>
-            router.push(
-              "https://vibesearch-vercel.vercel.app"
-            )
-          }
-          p={'0.1rem'}
-          display={'flex'}
-          flexDirection={'row'}
-          justifyContent={'flex-start'}
+          boxShadow={"4px 4px 0px 0px #BFBFBF"}
+          onClick={() => router.push("https://vibesearch-vercel.vercel.app")}
+          p={"0.1rem"}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"flex-start"}
           borderRadius={"8px"}
           border={"1px solid #000000"}
           bg={"white"}
           color={"#484848"}
         >
-          <Icon as={VibeSearchApp} boxSize='xxs' />
-          <Text ml={'20%'} color={'#484848'} fontWeight={'400'} fontSize={'1rem'} lineHeight={'14.56px'}>Vibe Search</Text> 
+          <Icon as={VibeSearchApp} boxSize="xxs" />
+          <Text
+            ml={"20%"}
+            color={"#484848"}
+            fontWeight={"400"}
+            fontSize={"1rem"}
+            lineHeight={"14.56px"}
+          >
+            Vibe Search
+          </Text>
         </Button>
         <Button
-          boxShadow={'4px 4px 0px 0px #BFBFBF'}
-          p={'0.1rem'}
+          boxShadow={"4px 4px 0px 0px #BFBFBF"}
+          p={"0.1rem"}
           borderRadius={"8px"}
-          display={'flex'}
-          flexDirection={'row'}
-          justifyContent={'flex-start'}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"flex-start"}
           border={"1px solid #000000"}
           bg={"white"}
           color={"#484848"}
@@ -255,13 +277,39 @@ export default function vivaConnect() {
             )
           }
         >
-          <Icon as={VibeSearchAPIs} boxSize='xxs' />
-          <Text ml={'20%'} color={'#484848'} fontWeight={'400'} fontSize={'1rem'} lineHeight={'14.56px'}>Developer API</Text>
+          <Icon as={VibeSearchAPIs} boxSize="xxs" />
+          <Text
+            ml={"20%"}
+            color={"#484848"}
+            fontWeight={"400"}
+            fontSize={"1rem"}
+            lineHeight={"14.56px"}
+          >
+            Developer API
+          </Text>
         </Button>
 
-        {/* <Button onClick={() => saveAsBookmark} leftIcon={<Icon as={FaSave} />} fontFamily={'Gilroy-SemiBold'} borderRadius={'12px'} bg={'#3045FF'} color={'#FFFFFF'} letterSpacing={'-0.4px'} fontSize={'1rem'} fontWeight={'400'} w="full" mt={10}>
-          Save Page
-        </Button> */}
+        <a
+          href="/HushhInto.pdf"
+          download="HushhInto"
+        >
+          <Button 
+          borderRadius={"12px"}
+          bg={"#3045FF"}
+          color={"#FFFFFF"}
+          letterSpacing={"-0.4px"}
+          fontSize={"1rem"}
+          fontWeight={"400"}
+          w="full"
+          mt={10}
+          _hover={{
+            color:'white',
+            bg:'#1B1B1B'
+          }}
+          >
+            Download Intro
+          </Button>
+        </a>
       </VStack>
     </Box>
   );

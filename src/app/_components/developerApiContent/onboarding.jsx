@@ -5,6 +5,7 @@ import axios from "axios";
 import { useSession, signIn, signOut } from "next-auth/react";
 // import { getSession } from 'next-auth/react'
 import { useToast } from "@chakra-ui/react";
+import '../../../../pages/fonts.css'
 
 const Onboarding = () => {
   // const { apiKey } = useApiKey();
@@ -49,7 +50,7 @@ const Onboarding = () => {
             },
           }
         );
-        const apiKey = response?.data?.API_key
+        const apiKey = response?.data?.data?.API_key
 
         console.log(response);
         console.log("API Key Generated:", response);
@@ -57,7 +58,7 @@ const Onboarding = () => {
           console.log("API Key Generated:", response);
 
           // Saving API key for new users 
-          const apiKey = response?.data?.API_key
+          const apiKey = response?.data?.data?.API_key
           setApiKey(apiKey);
           console.log('Api key:',apiKey);
           toast({

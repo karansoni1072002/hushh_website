@@ -14,7 +14,7 @@ import HushhButtonIcon from "./svg/hushhButton";
 import VibeSearchIcon from "./svg/vibeSearch";
 import ChromeExtentionLogo from "./svg/ChromeExtensionLogo";
 import ConciergeApp from "./svg/conciergeApp";
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import ValetChat from "./svg/valetChat";
 import VibeSearchApi from "./svg/vibeSearchApi";
 import { headerAssets } from "./svg/icons/HeaderIcons/headerAssets";
@@ -36,7 +36,9 @@ export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // For the dropdown
   const [userEmail, setUserEmail] = useState('');
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
-
+  const router = useRouter();
+  
+  const shouldShowHeader = pathname !== '/vivaConnect';
 
   // useEffect(() => {
   //   const checkLoginStatus = async () => {
@@ -127,6 +129,8 @@ export default function Header() {
   };
 
   return (
+    <>
+  {shouldShowHeader &&
     <div className={`w-full z-1000`} style={{ background: headerBackground }}>
       <div className=" flex items-center justify-between w-full px-6 py-2 z-1000 md:px-32 md:py-5">
         <div className="">
@@ -497,6 +501,18 @@ export default function Header() {
                         </div>
                       </Link>
                       <Link
+                        href={"/developer-Api/about-developer-api"}
+                        onClick={handleSubmenuClick}
+                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
+                      >
+                        <div className="">
+                          <VibeSearchApi className="w-6 h-6" />
+                        </div>
+                        <div className="">
+                          <h1 className="font-semibold">Developer API</h1>
+                        </div>
+                      </Link>
+                      <Link
                         href={"/products/hushhValetChat"}
                         onClick={handleSubmenuClick}
                         className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
@@ -519,7 +535,6 @@ export default function Header() {
                         </div>
                         <div className="">
                           <h1 className="font-semibold">VIBE Search APIs</h1>
-                          {/* <p className='text-sm font-medium text-fontColor3'>List products on Vibe Search with <br /> management and analytics.</p> */}
                         </div>
                       </Link>
                       <Link
@@ -590,6 +605,8 @@ export default function Header() {
         )}
       </div>
     </div>
+  }  
+    </>
   );
 };
 

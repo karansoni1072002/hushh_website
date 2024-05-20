@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Box, Heading, Text, Button } from "@chakra-ui/react";
 import 'tailwindcss/tailwind.css';
 import { FiArrowRight } from "react-icons/fi";
+import '../../../../pages/fonts.css'
 
 const LibrariesUIBox = () => {
   return (

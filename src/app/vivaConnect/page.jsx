@@ -92,6 +92,7 @@ export default function vivaConnect() {
             onClick={() =>
               window.open("https://calendly.com/hushh/30min", "_blank")
             }
+            cursor={'pointer'}
             src={CalendlyIcon}
             alt="calendlyIcon"
           />
@@ -99,6 +100,7 @@ export default function vivaConnect() {
         <Box
           bg={"transparent"}
           borderRadius={"8px"}
+          cursor={'pointer'}
           onClick={() => router.push("/qrCodePage")}
         >
           <Stack
@@ -147,6 +149,7 @@ export default function vivaConnect() {
           borderRadius={"8px"}
           border={"1px solid #000000"}
           boxShadow={"4px 4px 0px 0px #BFBFBF"}
+          cursor={'pointer'}
           onClick={() =>
             window.open("https://hushh-button.vercel.app/", "_blank")
           }
@@ -201,6 +204,7 @@ export default function vivaConnect() {
           borderRadius={"8px"}
           border={"1px solid #000000"}
           boxShadow={"4px 4px 0px 0px #BFBFBF"}
+          cursor={'pointer'}
           onClick={() =>
             window.open(
               "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?hl=en&authuser=0",
@@ -257,6 +261,7 @@ export default function vivaConnect() {
           bg={"white"}
           borderRadius={"8px"}
           border={"1px solid #000000"}
+          cursor={'pointer'}
           boxShadow={"4px 4px 0px 0px #BFBFBF"}
           onClick={() => window.open("https://bit.ly/hushh-app-ios", "_blank")}
         >
@@ -306,6 +311,7 @@ export default function vivaConnect() {
         </Box>
 
         <Box
+          cursor={'pointer'}
           bg={"white"}
           borderRadius={"8px"}
           border={"1px solid #000000"}
@@ -364,6 +370,7 @@ export default function vivaConnect() {
         </Box>
 
         <Box
+          cursor={'pointer'}
           bg={"white"}
           borderRadius={"8px"}
           border={"1px solid #000000"}
@@ -428,6 +435,7 @@ export default function vivaConnect() {
             borderRadius={"12px"}
             bg={"#3045FF"}
             h={'3rem'}
+            cursor={'pointer'}
             color={"#FFFFFF"}
             letterSpacing={"-0.4px"}
             fontSize={"1rem"}
@@ -435,11 +443,12 @@ export default function vivaConnect() {
             w="100%"
             mt={10}
             _hover={{
+              cursor:'pointer',
               color: "white",
               bg: "#1B1B1B",
             }}
           >
-           <Text my={'2rem'}>Download Intro</Text> 
+           <Text my={'2rem'} cursor={'pointer'}>Download Intro</Text> 
           </Button>
         </Box>
           

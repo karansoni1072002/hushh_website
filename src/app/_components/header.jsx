@@ -501,6 +501,18 @@ export default function Header() {
                         </div>
                       </Link>
                       <Link
+                        href={"/developer-Api/about-developer-api"}
+                        onClick={handleSubmenuClick}
+                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
+                      >
+                        <div className="">
+                          <VibeSearchApi className="w-6 h-6" />
+                        </div>
+                        <div className="">
+                          <h1 className="font-semibold">Developer API</h1>
+                        </div>
+                      </Link>
+                      <Link
                         href={"/products/hushhValetChat"}
                         onClick={handleSubmenuClick}
                         className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
@@ -523,7 +535,6 @@ export default function Header() {
                         </div>
                         <div className="">
                           <h1 className="font-semibold">VIBE Search APIs</h1>
-                          {/* <p className='text-sm font-medium text-fontColor3'>List products on Vibe Search with <br /> management and analytics.</p> */}
                         </div>
                       </Link>
                       <Link

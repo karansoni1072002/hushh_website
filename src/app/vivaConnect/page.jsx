@@ -290,7 +290,7 @@ export default function vivaConnect() {
         </Button>
 
         <a
-          href="/HushhInto.pdf"
+          href="/hushh-intro.pdf"
           download="HushhInto"
         >
           <Button 

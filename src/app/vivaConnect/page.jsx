@@ -9,6 +9,7 @@ import {
   Icon,
   Flex,
   useToast,
+  useBreakpointValue
 } from "@chakra-ui/react";
 import {
   FaCalendarAlt,
@@ -55,45 +56,31 @@ const buttonStyles = {
 export default function vivaConnect() {
   const router = useRouter();
   const toast = useToast();
-  const [isBookmarked, setIsBookmarked] = useState(false);
-
-  const saveAsBookmark = () => {
-    window.bookmark(location.href);
-
-    if (document.execCommand) {
-      const pageTitle = document.title;
-      const pageURL = window.location.href;
-      document.execCommand("addBookmark", false, pageURL, pageTitle);
-    } else {
-      alert(
-        "Your browser does not support bookmarking directly. Please use your browser's bookmarking feature to save this page."
-      );
-    }
-  };
+  const iconSize = useBreakpointValue({ base: "xs", md: "sm" });
+  const buttonPadding = useBreakpointValue({ base: "0.2rem 0.8rem", md: "0.4rem 1.2rem" });
+  const textSize = useBreakpointValue({ base: "0.8rem", md: "1rem" });
 
   return (
     <Box
       bg="black"
-      minH="100vh"
       p={4}
       color="white"
-      position={"relative"}
-      mt={"1rem"}
-      zIndex={"999999999"}
+      // position={"relative"}
+      mt={"2rem"}
+      // zIndex={"9999999999999999"}
       fontFamily={"Poppins"}
     >
       <VStack
         spacing={4}
         px={"2rem"}
         align="stretch"
-        position={"relative"}
-        zIndex={"99999"}
+
       >
-        <Flex justifyContent="space-between" mb={4} w="100%">
+        <Flex justifyContent="space-between" alignItems="center" mb={4} w="100%">
           <Text
             color={"#FFFFFF"}
             fontWeight={"400"}
-            fontSize={"1.5rem"}
+            fontSize={{ base:"1.5rem",md:'3rem'}}
             letterSpacing={"-0.27px"}
             lineHeight={"30px"}
           >
@@ -110,41 +97,26 @@ export default function vivaConnect() {
             }
             src={CalendlyIcon}
             alt="calendlyIcon"
-            width="30px"
-            height="30px"
+            // width="30px"
+            // height="30px"
           />
         </Flex>
-        <Box
+        <Flex
+          direction="column" 
+          alignItems="center"
           cursor={"pointer"}
           onClick={() => router.push("/qrCodePage")}
-          position={"relative"}
-          textAlign="center"
-          alignItems={"center"}
-          alignSelf={"center"}
-          display={"flex"}
-          flexDirection={"column"}
         >
-          {/* <Image src={CalendlyIcon} alt='calendlyIcon' width='30px' zIndex={'99999'} height='30px'/> */}
           <Image
-            width="120px"
-            height="120px"
             src={TeamHushhThumb}
             alt="Team Hushh"
-            style={{
-              width: "120px",
-              height: "120px",
-              align: "center",
-              alignItems: "center",
-              justifyItems: "center",
-              opacity: "0.5",
-              alignSelf: "center",
-              filter: "grayscale(100%)",
-              zIndex: "-2",
-            }}
+            boxSize="120px"
+            opacity={0.5}
+            filter="grayscale(100%)"
           />
           <Box mt={"-1rem"} zIndex={"9"} mb={"1rem"}>
             <QRCode
-              size="40"
+              size={"40"}
               fgColor="#FFFFFF"
               logoOpacity={"0.5"}
               bgColor="transparent"
@@ -156,22 +128,23 @@ export default function vivaConnect() {
           </Box>
           <Text
             fontWeight={"400"}
-            fontSize={"1.15rem"}
+            fontSize={{ base:"1.15rem",md:'1.75rem',lg:"2rem"}}
             lineHeight={"22.95px"}
             color={"#FFFFFF"}
           >
             Team Hushh 🤫
           </Text>
-          <Text fontSize="sm" color={"#A2A1A1"}>
+          <Text fontSize={{base:"12px",md:"18px",lg:"24px"}} color={"#A2A1A1"}>
             Hushh: unlock the power of your data
           </Text>
-        </Box>
+        </Flex>
 
         <Button
           boxShadow={"4px 4px 0px 0px #BFBFBF"}
           borderRadius={"8px"}
           border={"1px solid #000000"}
           display={"flex"}
+          w={'full'}
           flexDirection={"row"}
           justifyContent={"flex-start"}
           bg={"white"}
@@ -189,8 +162,8 @@ export default function vivaConnect() {
             ml={"20%"}
             color={"#484848"}
             fontWeight={"400"}
-            fontSize={"1rem"}
-            lineHeight={"14.56px"}
+            fontSize={{base:"1rem",md:"1.5rem"}}
+            lineHeight={{base:"14.56px",md:"30px"}}
           >
             Hushh Button
           </Text>
@@ -218,8 +191,8 @@ export default function vivaConnect() {
             ml={"20%"}
             color={"#484848"}
             fontWeight={"400"}
-            fontSize={"1rem"}
-            lineHeight={"14.56px"}
+            fontSize={{base:"1rem",md:"1.5rem"}}
+            lineHeight={{base:"14.56px",md:"30px"}}
           >
             Chrome Extension
           </Text>
@@ -247,8 +220,8 @@ export default function vivaConnect() {
             ml={"20%"}
             color={"#484848"}
             fontWeight={"400"}
-            fontSize={"1rem"}
-            lineHeight={"14.56px"}
+            fontSize={{base:"1rem",md:"1.5rem"}}
+            lineHeight={{base:"14.56px",md:"30px"}}
           >
             Hushh App
           </Text>
@@ -276,8 +249,8 @@ export default function vivaConnect() {
             ml={"20%"}
             color={"#484848"}
             fontWeight={"400"}
-            fontSize={"1rem"}
-            lineHeight={"14.56px"}
+            fontSize={{base:"1rem",md:"1.5rem"}}
+            lineHeight={{base:"14.56px",md:"30px"}}
           >
             Vibe Search
           </Text>
@@ -304,8 +277,8 @@ export default function vivaConnect() {
             ml={"20%"}
             color={"#484848"}
             fontWeight={"400"}
-            fontSize={"1rem"}
-            lineHeight={"14.56px"}
+            fontSize={{base:"1rem",md:"1.5rem"}}
+            lineHeight={{base:"14.56px",md:"30px"}}
           >
             Developer API
           </Text>

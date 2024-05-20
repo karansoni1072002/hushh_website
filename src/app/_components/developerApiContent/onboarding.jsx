@@ -49,7 +49,7 @@ const Onboarding = () => {
             },
           }
         );
-        const apiKey = response?.data?.API_key
+        const apiKey = response?.data?.data?.API_key
 
         console.log(response);
         console.log("API Key Generated:", response);
@@ -57,7 +57,7 @@ const Onboarding = () => {
           console.log("API Key Generated:", response);
 
           // Saving API key for new users 
-          const apiKey = response?.data?.API_key
+          const apiKey = response?.data?.data?.API_key
           setApiKey(apiKey);
           console.log('Api key:',apiKey);
           toast({

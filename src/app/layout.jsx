@@ -42,13 +42,27 @@ export default function RootLayout({ children }) {
         content="2yMPgnyqy54zZFkGkUxbtKD_9R60gWhe5Hk-DTYff9M"
       />
       <head>
-      <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
       </head>
 
       <body
-        style={{ backgroundColor: "black",padding:'0 !important', paddingInlineStart:'0px !important', paddingInlineEnd:'0px !important' }}
+        style={{
+          backgroundColor: "black",
+          padding: "0 !important",
+          paddingInlineStart: "0px !important",
+          paddingInlineEnd: "0px !important",
+        }}
         className={`${mulish.variable} font-sans`}
       >
         <link rel="icon" href="./favicon.ico" />
@@ -103,7 +117,7 @@ export default function RootLayout({ children }) {
             showAtBottom={false}
           />{" "}
           <div className="w-full">
-            <Providers >{children}</Providers>
+            <Providers>{children}</Providers>
           </div>
         </ResponsiveSizeProvider>
       </body>

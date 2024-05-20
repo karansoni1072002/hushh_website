@@ -9,7 +9,8 @@ export default function MyApp({ Component, pageProps }) {
     return <ClientSideLayout>
         <SessionProvider>
             <ApiKeyProvider>
-        <Component {...pageProps} />
+            
+        <Component {...pageProps}/>
         </ApiKeyProvider>
         </SessionProvider>
         </ClientSideLayout>

@@ -12,14 +12,6 @@ import {
   useBreakpointValue,
   Stack,
 } from "@chakra-ui/react";
-import {
-  FaCalendarAlt,
-  FaChrome,
-  FaSave,
-  FaMobileAlt,
-  FaSearch,
-  FaCloud,
-} from "react-icons/fa";
 import HushhButtonIcon from "../_components/svg/hushhButton";
 import ChromeExtentionLogo from "../_components/svg/ChromeExtensionLogo";
 import WalletIcon from "../_components/svg/icons/walletIcon";
@@ -66,48 +58,46 @@ const buttonStyles = {
 export default function vivaConnect() {
   const router = useRouter();
   const toast = useToast();
-  const iconSize = useBreakpointValue({ base: "xs", md: "sm" });
-  const buttonPadding = useBreakpointValue({
-    base: "0.2rem 0.8rem",
-    md: "0.4rem 1.2rem",
-  });
-  const textSize = useBreakpointValue({ base: "0.8rem", md: "1rem" });
 
   return (
     <Box bg="black" p={4} color="white" mt={"1rem"} fontFamily={"Poppins"}>
       <VStack fontFamily={"Poppins"} spacing={4} w="100%" maxW="400px">
-      <Flex
+        <Flex
           justifyContent="space-between"
           alignItems="center"
           // mb={2}
           w="100%"
         >
-          <Image
-            src={hushhLogo}
-            alt="hushhLogo"
-          />
-          <Image
-            style={{ cursor: "pointer" }}
-            target="_blank"
-            onClick={() =>
-              window.open("https://calendly.com/hushh/30min", "_blank")
-            }
-            cursor={'pointer'}
-            src={CalendlyIcon}
-            alt="calendlyIcon"
-          />
+          <Image src={hushhLogo} alt="hushhLogo" />
+          <Box
+              onClick={() =>
+                window.open(
+                  "https://calendly.com/hushh/30min", "_blank"
+                )
+              }
+            cursor={"pointer"}
+          >
+            <Image
+              style={{ cursor: "pointer" }}
+              src={CalendlyIcon}
+              alt="calendlyIcon"
+              onClick={() =>
+                window.open(
+                  "https://calendly.com/hushh/30min", "_blank"
+                )
+              }
+              width="30px"
+              height="30px"
+            />
+          </Box>
         </Flex>
         <Box
           bg={"transparent"}
           borderRadius={"8px"}
-          cursor={'pointer'}
+          cursor={"pointer"}
           onClick={() => router.push("/qrCodePage")}
         >
-          <Stack
-            gap={"0.5rem"}
-            display={"flex"}
-            flexDirection={"row"}
-          >
+          <Stack gap={"0.5rem"} display={"flex"} flexDirection={"row"}>
             <Box
               w={"100%"}
               h={"100%"}
@@ -118,6 +108,8 @@ export default function vivaConnect() {
               alignSelf={"center"}
               justifyItems={"center"}
               justifySelf={"center"}
+              cursor={"pointer"}
+          onClick={() => router.push("/qrCodePage")}
             >
               <Image src={hushhTeam} alt="hushhTeam" objectFit="fill" />
             </Box>
@@ -129,7 +121,12 @@ export default function vivaConnect() {
               flex={1}
               p={2}
             >
-              <Text color={"#FFFFFF"} fontWeight={"400"} lineHeight={'22.95px'} fontSize={"1.15rem"}>
+              <Text
+                color={"#FFFFFF"}
+                fontWeight={"400"}
+                lineHeight={"22.95px"}
+                fontSize={"1.15rem"}
+              >
                 Team Hushh
               </Text>
               <Text
@@ -138,7 +135,9 @@ export default function vivaConnect() {
                 lineHeight={"12px"}
                 color={"#A2A1A1"}
               >
-                Hushh helps you Collect, Organize, Manage, Share, Monetize, Value your data Take ownership. Build connections. Unlock your data's potential.
+                Hushh helps you Collect, Organize, Manage, Share, Monetize,
+                Value your data Take ownership. Build connections. Unlock your
+                data's potential.
               </Text>
             </VStack>
           </Stack>
@@ -149,7 +148,7 @@ export default function vivaConnect() {
           borderRadius={"8px"}
           border={"1px solid #000000"}
           boxShadow={"4px 4px 0px 0px #BFBFBF"}
-          cursor={'pointer'}
+          cursor={"pointer"}
           onClick={() =>
             window.open("https://hushh-button.vercel.app/", "_blank")
           }
@@ -204,7 +203,7 @@ export default function vivaConnect() {
           borderRadius={"8px"}
           border={"1px solid #000000"}
           boxShadow={"4px 4px 0px 0px #BFBFBF"}
-          cursor={'pointer'}
+          cursor={"pointer"}
           onClick={() =>
             window.open(
               "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?hl=en&authuser=0",
@@ -261,7 +260,7 @@ export default function vivaConnect() {
           bg={"white"}
           borderRadius={"8px"}
           border={"1px solid #000000"}
-          cursor={'pointer'}
+          cursor={"pointer"}
           boxShadow={"4px 4px 0px 0px #BFBFBF"}
           onClick={() => window.open("https://bit.ly/hushh-app-ios", "_blank")}
         >
@@ -311,7 +310,7 @@ export default function vivaConnect() {
         </Box>
 
         <Box
-          cursor={'pointer'}
+          cursor={"pointer"}
           bg={"white"}
           borderRadius={"8px"}
           border={"1px solid #000000"}
@@ -370,7 +369,7 @@ export default function vivaConnect() {
         </Box>
 
         <Box
-          cursor={'pointer'}
+          cursor={"pointer"}
           bg={"white"}
           borderRadius={"8px"}
           border={"1px solid #000000"}
@@ -426,16 +425,16 @@ export default function vivaConnect() {
             </VStack>
           </Stack>
         </Box>
-        
-        <Box px={'15%'} h={'100%'} width={'100%'}>
-           <Button
-            as="a" 
-            href="/hushh-intro.pdf" 
+
+        <Box px={"15%"} h={"100%"} width={"100%"}>
+          <Button
+            as="a"
+            href="/hushh-intro.pdf"
             download="HushhIntro"
             borderRadius={"12px"}
             bg={"#3045FF"}
-            h={'3rem'}
-            cursor={'pointer'}
+            h={"3rem"}
+            cursor={"pointer"}
             color={"#FFFFFF"}
             letterSpacing={"-0.4px"}
             fontSize={"1rem"}
@@ -443,16 +442,16 @@ export default function vivaConnect() {
             w="100%"
             mt={10}
             _hover={{
-              cursor:'pointer',
+              cursor: "pointer",
               color: "white",
               bg: "#1B1B1B",
             }}
           >
-           <Text my={'2rem'} cursor={'pointer'}>Download Intro</Text> 
+            <Text my={"2rem"} cursor={"pointer"}>
+              Download Intro
+            </Text>
           </Button>
         </Box>
-          
-
       </VStack>
     </Box>
   );

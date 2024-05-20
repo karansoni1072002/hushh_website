@@ -133,8 +133,9 @@ const ClientBrowserCompanion = () => {
               border: "none",
             }}
             onClick={() =>
-              router.push(
-                "https://sites.google.com/hush1one.com/drops/products/chrome-extension"
+              window.open(
+                "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?hl=en&authuser=0n",
+                '_blank'
               )
             }
           >
@@ -414,8 +415,9 @@ const ClientBrowserCompanion = () => {
                 border: "none",
               }}
               onClick={() =>
-                router.push(
-                  "https://sites.google.com/hush1one.com/drops/products/chrome-extension"
+                window.open(
+                  "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?hl=en&authuser=0n",
+                  '_blank'
                 )
               }
             >
@@ -532,8 +534,9 @@ const ClientBrowserCompanion = () => {
                 border: "none",
               }}
               onClick={() =>
-                router.push(
-                  "https://sites.google.com/hush1one.com/drops/products/chrome-extension"
+                window.open(
+                  "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?hl=en&authuser=0n",
+                  '_blank'
                 )
               }
             >

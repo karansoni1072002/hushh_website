@@ -28,7 +28,7 @@ import { VibeSearchAPIs } from "../_components/svg/icons/HeaderIcons/VibeSearchA
 import { HushhButton } from "../_components/svg/icons/HeaderIcons/HushhButton";
 import CalendlyIcon from "../_components/svg/icons/calendlyIcon.svg";
 import Image from "next/image";
-import TeamHushhThumb from "../_components/svg/teamHushhThumb.svg";
+import TeamHushhThumb from "../_components/svg/vivaConnectThumb.svg";
 import { QRCode } from "react-qrcode-logo";
 import { useRouter } from "next/navigation";
 import { ChromeExtension } from "../_components/svg/icons/HeaderIcons/ChromeExtension";
@@ -102,7 +102,12 @@ export default function vivaConnect() {
           <Image
             style={{ cursor: "pointer" }}
             target="_blank"
-            onClick={() => router.push("https://calendly.com/hushh/30min")}
+            onClick={() =>
+              window.open(
+                "https://calendly.com/hushh/30min",
+                '_blank'
+              )
+            }
             src={CalendlyIcon}
             alt="calendlyIcon"
             width="30px"
@@ -172,7 +177,12 @@ export default function vivaConnect() {
           bg={"white"}
           color={"#484848"}
           p={"0.1rem"}
-          onClick={() => router.push("https://hushh-button.vercel.app/")}
+          onClick={() =>
+            window.open(
+              "https://hushh-button.vercel.app/",
+              '_blank'
+            )
+          }
         >
           <Icon as={HushhButton} />
           <Text
@@ -197,8 +207,9 @@ export default function vivaConnect() {
           bg={"white"}
           color={"#484848"}
           onClick={() =>
-            router.push(
-              "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?hl=en&authuser=0"
+            window.open(
+              "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?hl=en&authuser=0",
+              '_blank'
             )
           }
         >
@@ -224,7 +235,12 @@ export default function vivaConnect() {
           justifyContent={"flex-start"}
           bg={"white"}
           color={"#484848"}
-          onClick={() => router.push("https://bit.ly/hushh-app-ios")}
+          onClick={() =>
+            window.open(
+              "https://bit.ly/hushh-app-ios",
+              '_blank'
+            )
+          }
         >
           <Icon as={HushhWalletApp} />
           <Text
@@ -240,7 +256,12 @@ export default function vivaConnect() {
 
         <Button
           boxShadow={"4px 4px 0px 0px #BFBFBF"}
-          onClick={() => router.push("https://vibesearch-vercel.vercel.app")}
+          onClick={() =>
+            window.open(
+              "https://vibesearch-vercel.vercel.app",
+              '_blank'
+            )
+          }
           p={"0.1rem"}
           display={"flex"}
           flexDirection={"row"}
@@ -272,8 +293,9 @@ export default function vivaConnect() {
           bg={"white"}
           color={"#484848"}
           onClick={() =>
-            router.push(
-              "https://www.hush1one.com/developer-Api/about-developer-api"
+            window.open(
+              "https://www.hush1one.com/developer-Api/about-developer-api",
+              '_blank'
             )
           }
         >

@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 // import { getSession } from 'next-auth/react'
 import { useToast } from "@chakra-ui/react";
 import ApiKeyContext from '../../context/apiKeyContext';
+import '../../../../pages/fonts.css'
 
 const AccessToken = () => {
   const { apiKey } = useApiKey();

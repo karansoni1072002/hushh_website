@@ -5,6 +5,7 @@ import axios from "axios";
 import { useSession, signIn, signOut } from "next-auth/react";
 // import { getSession } from 'next-auth/react'
 import { useToast } from "@chakra-ui/react";
+import '../../../../pages/fonts.css'
 
 const Onboarding = () => {
   // const { apiKey } = useApiKey();

@@ -2,6 +2,7 @@ import { Button } from "@chakra-ui/react";
 import { useSession, signOut, signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React from "react";
+import '../../../../pages/fonts.css'
 
 const LogoutButton = () => {
   const { data: session } = useSession();

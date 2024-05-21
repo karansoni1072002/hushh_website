@@ -60,36 +60,25 @@ export default function vivaConnect() {
   const toast = useToast();
 
   return (
-    <Box bg="black" p={4} color="white" mt={"1rem"} fontFamily={"Poppins"}>
+    <Box
+      bg="black"
+      p={4}
+      color="white"
+      display={"flex"}
+      flexDirection={"column"}
+      alignItems={"center"}
+      fontFamily={"Poppins"}
+    >
       <VStack fontFamily={"Poppins"} spacing={4} w="100%" maxW="400px">
-        <Flex
-          justifyContent="space-between"
-          alignItems="center"
-          // mb={2}
-          w="100%"
-        >
+        <Flex justifyContent="space-between" alignItems="center" w="100%">
           <Image src={hushhLogo} alt="hushhLogo" />
-          <Box
-              onClick={() =>
-                window.open(
-                  "https://calendly.com/hushh/30min", "_blank"
-                )
-              }
-            cursor={"pointer"}
+          <a
+            href="https://calendly.com/hushh/30min"
+            style={{ cursor: "pointer", zIndex: "99999999999" }}
+            target="_blank"
           >
-            <Image
-              style={{ cursor: "pointer" }}
-              src={CalendlyIcon}
-              alt="calendlyIcon"
-              onClick={() =>
-                window.open(
-                  "https://calendly.com/hushh/30min", "_blank"
-                )
-              }
-              width="30px"
-              height="30px"
-            />
-          </Box>
+            <Image src={CalendlyIcon} alt="calendlyIcon" />
+          </a>
         </Flex>
         <Box
           bg={"transparent"}
@@ -109,7 +98,7 @@ export default function vivaConnect() {
               justifyItems={"center"}
               justifySelf={"center"}
               cursor={"pointer"}
-          onClick={() => router.push("/qrCodePage")}
+              onClick={() => router.push("/qrCodePage")}
             >
               <Image src={hushhTeam} alt="hushhTeam" objectFit="fill" />
             </Box>
@@ -120,6 +109,8 @@ export default function vivaConnect() {
               textAlign={"left"}
               flex={1}
               p={2}
+              cursor={"pointer"}
+              onClick={() => router.push("/qrCodePage")}
             >
               <Text
                 color={"#FFFFFF"}

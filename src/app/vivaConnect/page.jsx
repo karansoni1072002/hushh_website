@@ -64,7 +64,7 @@ export default function vivaConnect() {
       </Box>
     </Flex>
 
-        <VStack textAlign={"left"} alignItems={"flex-start"}>
+        <VStack textAlign={"left"} w={'100%'} alignItems={"flex-start"}>
           <Image src={hushhLogo} alt="hushhLogo" />
           <Text
             p={"0"}
@@ -95,7 +95,7 @@ export default function vivaConnect() {
           cursor={"pointer"}
           onClick={() => window.open("https://bit.ly/hushh-app-ios", "_blank")}
         >
-          <Stack gap={"0.5rem"} display={"flex"} flexDirection={"row"}>
+          <Stack w={'100%'} display={"flex"} flexDirection={"row"}>
             <Box
               w={"100%"}
               h={"100%"}
@@ -146,7 +146,7 @@ export default function vivaConnect() {
             window.open("https://hushh-button.vercel.app/", "_blank")
           }
         >
-          <Stack gap={"0.5rem"} display={"flex"} flexDirection={"row"}>
+          <Stack w={'100%'} display={"flex"} flexDirection={"row"}>
             <Box
               w={"100%"}
               h={"100%"}
@@ -198,7 +198,7 @@ export default function vivaConnect() {
             window.open("https://vibesearch-vercel.vercel.app", "_blank")
           }
         >
-          <Stack gap={"0.5rem"} display={"flex"} flexDirection={"row"}>
+          <Stack w={'100%'} display={"flex"} flexDirection={"row"}>
             <Box
               w={"100%"}
               h={"100%"}
@@ -256,7 +256,7 @@ export default function vivaConnect() {
             )
           }
         >
-          <Stack gap={"0.5rem"} display={"flex"} flexDirection={"row"}>
+          <Stack w={'100%'} display={"flex"} flexDirection={"row"}>
             <Box
               w={"100%"}
               h={"100%"}
@@ -311,7 +311,7 @@ export default function vivaConnect() {
             )
           }
         >
-          <Stack gap={"0.5rem"} display={"flex"} flexDirection={"row"}>
+          <Stack w={'100%'} display={"flex"} flexDirection={"row"}>
             <Box
               w={"100%"}
               h={"100%"}
@@ -355,7 +355,7 @@ export default function vivaConnect() {
           </Stack>
         </Box>
 
-        <VStack mt={6} gap={"1.65rem"} w={"100%"}>
+        <VStack mt={10} gap={"1.65rem"} w={"100%"}>
           <Button
             as="a"
             href="/hushh-intro.pdf"

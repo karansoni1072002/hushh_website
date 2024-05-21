@@ -74,7 +74,7 @@ export default function vivaConnect() {
             fontSize={{ base: "1.53rem", md: "2.25rem" }}
             className="gradient"
           >
-            Technology For <span style={{ fontWeight: "700" }}>Everyone!</span>{" "}
+            "Your" Data "Your" Business!
           </Text>
           <Text
             p={"0"}
@@ -84,9 +84,7 @@ export default function vivaConnect() {
             fontSize={{ base: "0.5rem", md: "0.8rem" }}
             fontWeight={"500"}
           >
-            We have seamless data capturing capabilities, robust security with
-            trust measures in place and in-depth insights and transparency
-            around the value of your data.
+            Take control of your data with hushh- We help you collect, organize and extract meaninful value from your data.
           </Text>
         </VStack>
         <Box
@@ -132,63 +130,12 @@ export default function vivaConnect() {
                 color={"#484848"}
                 fontFamily={'Roboto'}
               >
-                Customer User Flow + Client Advisor User Flow
+                Your Personal Data, Your Powerhouse
               </Text>
             </VStack>
           </Stack>
         </Box>
-        <Box
-          w={"100%"}
-          display={"flex"}
-          bg={"transparent"}
-          cursor={"pointer"}
-          onClick={() =>
-            window.open("https://hushh-button.vercel.app/", "_blank")
-          }
-        >
-          <Stack w={'100%'} display={"flex"} flexDirection={"row"}>
-            <Box
-              w={"100%"}
-              h={"100%"}
-              flex={0.2}
-              display={"flex"}
-              alignItems={"center"}
-              alignContent={"center"}
-              alignSelf={"center"}
-              justifyItems={"center"}
-              justifySelf={"center"}
-            >
-              <Image src={ButtonIcon} alt="hushhButtonIcon" objectFit="fill" />
-            </Box>
-            <VStack
-              gap={"0px"}
-              display={"flex"}
-              alignItems={"flex-start"}
-              textAlign={"left"}
-              flex={1}
-            >
-              <Text
-                color={"#FFFFFF"}
-                fontWeight={"700"}
-                fontSize={"1rem"}
-                lineHeight={"24.2px"}
-                fontFamily={'Figtree'}
-              >
-                Hushh Button
-              </Text>
-              <Text
-                fontWeight={"300"}
-                fontSize={"0.75rem"}
-                lineHeight={"16px"}
-                color={"#484848"}
-                fontFamily={'Roboto'}
-              >
-                Seamless Data Sharing for Personalized Experiences and
-                recommendations.
-              </Text>
-            </VStack>
-          </Stack>
-        </Box>
+        
 
         <Box
           w={"100%"}
@@ -284,7 +231,7 @@ export default function vivaConnect() {
                 lineHeight={"24.2px"}
                 fontFamily={'Figtree'}
               >
-                Chrome Extension
+                Browser Companion
               </Text>
               <Text
                 fontWeight={"300"}
@@ -293,8 +240,7 @@ export default function vivaConnect() {
                 color={"#484848"}
                 fontFamily={'Roboto'}
               >
-                Improved product recommendations & effective marketing
-                campaigns.
+                Take the power back in your hands. Control and track your digital footprint.
               </Text>
             </VStack>
           </Stack>
@@ -348,8 +294,60 @@ export default function vivaConnect() {
                 color={"#484848"}
                 fontFamily={'Roboto'}
               >
-                Find perfect items to express your individuality in just one
-                click.
+                Enabling a secure, trusted, and incentivized way of relaying valuable personal information from customers.
+              </Text>
+            </VStack>
+          </Stack>
+        </Box>
+
+        <Box
+          w={"100%"}
+          display={"flex"}
+          bg={"transparent"}
+          cursor={"pointer"}
+          onClick={() =>
+            window.open("https://hushh-button.vercel.app/", "_blank")
+          }
+        >
+          <Stack w={'100%'} display={"flex"} flexDirection={"row"}>
+            <Box
+              w={"100%"}
+              h={"100%"}
+              flex={0.2}
+              display={"flex"}
+              alignItems={"center"}
+              alignContent={"center"}
+              alignSelf={"center"}
+              justifyItems={"center"}
+              justifySelf={"center"}
+            >
+              <Image src={ButtonIcon} alt="hushhButtonIcon" objectFit="fill" />
+            </Box>
+            <VStack
+              gap={"0px"}
+              display={"flex"}
+              alignItems={"flex-start"}
+              textAlign={"left"}
+              flex={1}
+            >
+              <Text
+                color={"#FFFFFF"}
+                fontWeight={"700"}
+                fontSize={"1rem"}
+                lineHeight={"24.2px"}
+                fontFamily={'Figtree'}
+              >
+                Hushh Button
+              </Text>
+              <Text
+                fontWeight={"300"}
+                fontSize={"0.75rem"}
+                lineHeight={"16px"}
+                color={"#484848"}
+                fontFamily={'Roboto'}
+              >
+                Seamless Data Sharing for Personalized Experiences and
+                recommendations.
               </Text>
             </VStack>
           </Stack>
@@ -379,7 +377,7 @@ export default function vivaConnect() {
             }
           >
             <Text fontWeight={'400'} fontSize={'1rem'} lineHeight={'22px'} letterSpacing={'-0.4px'} my={"2rem"} cursor={"pointer"}>
-              Schedule a Meet
+              Schedule a Meet with our CEO
             </Text>
           </Button>
 
@@ -404,7 +402,7 @@ export default function vivaConnect() {
             }}
           >
             <Text fontWeight={'400'} fontSize={'1rem'} lineHeight={'22px'} letterSpacing={'-0.4px'} my={"2rem"} cursor={"pointer"}>
-              Download Intro
+              Download our Brochure
             </Text>
           </Button>
         </VStack>

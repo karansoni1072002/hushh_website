@@ -108,7 +108,7 @@ const ClientBrowserCompanion = () => {
           </Heading>
           <Text
             px={{ md: "17.8rem" }}
-            mb={{ base: "1rem", md: "4rem" }}
+            mb={{ base: "2rem", md: "4rem" }}
             textAlign={"center"}
             color={"#ABABAB"}
             fontSize={{ md: "1rem", base: "0.75rem" }}
@@ -118,62 +118,72 @@ const ClientBrowserCompanion = () => {
             organizations for targeted advertising. With Hushh, the power is
             back in your hands
           </Text>
-        <Box display={'flex'} gap={{md:'4rem',base:'1.5rem'}} flexDirection={{md:'row',base:'column'}}>
-        <Button
-            border={"1px solid #606060"}
-            borderRadius={"2px"}
-            w={{ md: "16.25rem", base: "10rem" }}
-            h={{ md: "3.75rem", base: "2.5rem" }}
-            color={extendedTheme.colors._white}
-            lineHeight={{ md: "28px", base: "14px" }}
-            background={"transparent"}
-            letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
-            _hover={{
-              background:
-                "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-              border: "none",
-            }}
-            onClick={() =>
-              window.open(
-                "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?hl=en&authuser=0n",
-                '_blank'
-              )
-            }
-          >
-            Add to your browser
-          </Button>
-          <Button
-            border={"1px solid #606060"}
-            borderRadius={"2px"}
-            w={{ md: "16.25rem", base: "10rem" }}
-            h={{ md: "3.75rem", base: "2.5rem" }}
-            color={extendedTheme.colors._white}
-            lineHeight={{ md: "28px", base: "14px" }}
-            background={"transparent"}
-            letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
-            _hover={{
-              background:
-                "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-              border: "none",
-            }}
-            onClick={() =>
-              window.open(
-                "https://drive.google.com/file/d/1xjH0oGVvrYpSfZJK-5_Kte3Ft4nF4a9n/view?usp=sharing",
-                '_blank'
-              )
-            }
-          >
-            DOWNLOAD ZIP
-          </Button>
-        </Box>
+          <Box
+  mt={{ md: '4rem', base: '2rem' }}
+  display={{ base:'flex',md:'flex'}}
+  flexDirection={{ md: 'row', base: 'row' }}
+  justifyContent={'space-between'}
+  wrap={'wrap'}
+  gap={{ md: '4rem', base: '1.5rem' }}
+>
+  <Button
+    border={"1px solid #606060"}
+    borderRadius={"4rem"}
+    p={{ md: '1rem', base: '0.5rem' }}
+    w={{ md: "100%", base: "10rem" }}
+    h={{ md: "3.75rem", base: "2.5rem" }}
+    color={extendedTheme.colors._white}
+    lineHeight={{ md: "28px", base: "14px" }}
+    fontSize={{ base: '0.75rem', md: '1.25rem' }}
+    background={"transparent"}
+    letterSpacing={{ md: "0.3rem", base: "0rem" }}
+    _hover={{
+      background:
+        "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+      border: "none",
+    }}
+    onClick={() =>
+      window.open(
+        "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?hl=en&authuser=0n",
+        '_blank'
+      )
+    }
+    flex={{ md: '1', base: 'none' }}
+  >
+    Add to your browser
+  </Button>
+  <Button
+    display={{ md: "none", base: "block" }}
+    border={"1px solid #606060"}
+    borderRadius={"4rem"}
+    w={{ md: "15rem", base: "10rem" }}
+    color={extendedTheme.colors._white}
+    lineHeight={"28px"}
+    fontSize={'0.75rem'}
+    background={"transparent"}
+    letterSpacing={"0rem"}
+    onClick={scrollTo}
+    _hover={{
+      background:
+        "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+      border: "none",
+    }}
+    p={{ md: '1rem', base: '0.5rem' }}
+    h={{ md: "3.75rem", base: "2.5rem" }}
+    flex={{ md: '1', base: 'none' }}
+  >
+    PLAY DEMO
+  </Button>
+</Box>
+
           
         </Box>
         <HStack
           mt={"2rem"}
           gap={"3rem"}
           px={"4rem"}
-          display={"flex"}
-          flexDirection={{ base: "row", md: "row" }}
+          display={{ md:"flex",base:'none'}}
+          flexDirection={{ base: "none", md: "row" }}
           justifyContent="flex-end"
           mr={"3rem"}
         >
@@ -198,7 +208,7 @@ const ClientBrowserCompanion = () => {
             PLAY DEMO
           </Button>
         </HStack>
-        <Box
+        {/* <Box
           display={{ base: "flex", md: "none" }}
           mt={"2rem"}
           justifyContent={"center"}
@@ -223,7 +233,7 @@ const ClientBrowserCompanion = () => {
           >
             PLAY DEMO
           </Button>
-        </Box>
+        </Box> */}
 
         <HStack
           position={"relative"}

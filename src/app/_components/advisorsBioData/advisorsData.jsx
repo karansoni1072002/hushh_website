@@ -48,15 +48,6 @@ export const advisorsData = [
     avatar: teamImages.DeveshParagiri,
   },
   {
-    name: "Shirley Pellicer",
-    position: "GTM Business Developer - Luxury Markets",
-    linkedin: "https://www.linkedin.com/in/shirleypellicer/",
-    imageSrc: advisoryImages.shirley,
-    currentLocation: "Greater Paris Metropolitan Region",
-    currentWork: "Luxury: Tech & Media",
-    avatar: teamImages.KavyaChauhan,
-  },
-  {
     name: "Stéphane Spinella",
     position: "GTM Advisor - EMEA Sales and Business Development",
     linkedin: "https://www.linkedin.com/in/stephanespinella/",
@@ -91,15 +82,6 @@ export const advisorsData = [
     currentLocation: "Bellevue, Washington, United States",
     currentWork: "Operating Executive - Data Science @ Silver Lake",
     avatar: teamImages.OmkarKailasMalpure,
-  },
-  {
-    name: "Sid Gavandi",
-    position: "User Experience Advisor - Products",
-    linkedin: "https://www.linkedin.com/in/sid-gavandi/",
-    imageSrc: advisoryImages.sid,
-    currentLocation: "Bellevue, Washington, United States",
-    currentWork: "Principal- Experience Strategy + Design at Slalom",
-    avatar: teamImages.RohanSidankar,
   },
   {
     name: "Sudhir Hasbe",

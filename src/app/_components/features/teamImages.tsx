@@ -69,8 +69,6 @@ export const advisoryImages = {
   nilanshu,
   rishi,
   samant,
-  shirley,
-  sid,
   stephane,
   sudhir,
   suresh,

@@ -140,7 +140,7 @@ const ClientBrowserCompanion = () => {
               )
             }
           >
-            LEARN MORE
+            Add to your browser
           </Button>
           <Button
             border={"1px solid #606060"}

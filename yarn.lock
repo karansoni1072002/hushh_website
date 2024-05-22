@@ -5671,10 +5671,10 @@ https-proxy-agent@5.0.1:
     agent-base "6"
     debug "4"
 
-hushh-button@0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/hushh-button/-/hushh-button-0.1.5.tgz#08f850f1aad16b951ff3a3770869b13a98455fcd"
-  integrity sha512-fuwlHFgoYOUP2qgxkQdZy3/0CkZGWlHj2PvYT3n5MyX7Jj7dfsbXq6+xY9aqD7w6CYE6Se6F9dXI7c/kfQ72cw==
+hushh-button@0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/hushh-button/-/hushh-button-0.1.6.tgz#8c6ab4183282512dcd3bce853598e3fedd0c1e9d"
+  integrity sha512-6mGNN50AM9laja35ZpYtF60LbQG8p8Nxwh160poHuNib9Ky4MqVOrxA8N1YYtj7lDaFUvAcoMLr0bKCfTw/Pog==
   dependencies:
     "@supabase/supabase-js" "^2.43.2"
     axios "^1.6.8"

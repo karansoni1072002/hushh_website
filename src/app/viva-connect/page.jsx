@@ -59,7 +59,7 @@ export default function vivaConnect2() {
           quietZone={0}
           logoPaddingStyle="square"
           logoPadding={0}
-          value="https://www.hush1one.com/vivaConnect"
+          value="https://www.hush1one.com/viva-connect"
         />
       </Box>
     </Flex>

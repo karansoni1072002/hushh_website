@@ -306,7 +306,7 @@ export default function vivaConnect() {
           bg={"transparent"}
           cursor={"pointer"}
           onClick={() =>
-            window.open("https://hushh-button.vercel.app/", "_blank")
+            window.open("https://www.hush1one.com/products/hushhButton", "_blank")
           }
         >
           <Stack w={'100%'} display={"flex"} flexDirection={"row"}>

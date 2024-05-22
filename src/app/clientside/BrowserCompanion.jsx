@@ -250,6 +250,7 @@ const ClientBrowserCompanion = () => {
             color={"#0D0D25"}
             fontWeight={"700"}
             fontSize={{ md: "3.5rem", base: "1.5rem" }}
+            lineHeight={{base:'30px',md:'70px'}}
           >
             Introducing Hushh Browser Companion, a product that helps you keep
             track of your digital footprint with Gen AI

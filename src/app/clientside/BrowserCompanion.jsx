@@ -118,7 +118,8 @@ const ClientBrowserCompanion = () => {
             organizations for targeted advertising. With Hushh, the power is
             back in your hands
           </Text>
-          <Button
+        <Box display={'flex'} gap={{md:'4rem',base:'1.5rem'}} flexDirection={{md:'row',base:'column'}}>
+        <Button
             border={"1px solid #606060"}
             borderRadius={"2px"}
             w={{ md: "16.25rem", base: "10rem" }}
@@ -141,6 +142,31 @@ const ClientBrowserCompanion = () => {
           >
             LEARN MORE
           </Button>
+          <Button
+            border={"1px solid #606060"}
+            borderRadius={"2px"}
+            w={{ md: "16.25rem", base: "10rem" }}
+            h={{ md: "3.75rem", base: "2.5rem" }}
+            color={extendedTheme.colors._white}
+            lineHeight={{ md: "28px", base: "14px" }}
+            background={"transparent"}
+            letterSpacing={{ md: "0.5rem", base: "0.25rem" }}
+            _hover={{
+              background:
+                "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border: "none",
+            }}
+            onClick={() =>
+              window.open(
+                "https://drive.google.com/file/d/1xjH0oGVvrYpSfZJK-5_Kte3Ft4nF4a9n/view?usp=sharing",
+                '_blank'
+              )
+            }
+          >
+            DOWNLOAD ZIP
+          </Button>
+        </Box>
+          
         </Box>
         <HStack
           mt={"2rem"}

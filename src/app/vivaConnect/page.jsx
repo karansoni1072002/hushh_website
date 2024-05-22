@@ -383,8 +383,8 @@ export default function vivaConnect() {
 
           <Button
             as="a"
-            href="/hushh-intro.pdf"
-            download="HushhIntro"
+            href="/brochure.pdf"
+            download="Hushh-brochure"
             borderRadius={"12px"}
             bg={"transparent"}
             h={"3rem"}

@@ -12,8 +12,7 @@ import emailjs from "@emailjs/browser";
 import NextTopLoader from "nextjs-toploader";
 import Head from "next/head";
 import { GoogleTagManager } from "@next/third-parties/google";
-import { HushhButton, questionsArray } from './_utilities/HushhButton'
-
+import HushhButtonFromLib from './_utilities/HushhButton'
 export const metadata = {
   title: {
     default: "HUSHH",
@@ -98,7 +97,7 @@ export default function RootLayout({ children }) {
             <HeaderComponent />
           </header>
           <div className="relative z-50">
-            <HushhButton questions={questionsArray} />
+            <HushhButtonFromLib />
           </div>
           <NextTopLoader
             color="red"

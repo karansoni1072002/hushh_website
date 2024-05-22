@@ -46,6 +46,7 @@ import BrandWalletMobile from "../../../public/Images/BrandWalletMobile.png";
 import WalletFaq from "../_components/features/faq/walletAppFaq";
 import ContactForm from "../_components/features/contactForm";
 import WhiteShadow from "../_components/svg/whiteShadow.svg";
+import { AndroidIcon } from "../_components/svg/icons/androidIcon";
 
 const BrandContainer = styled.div`
   display: flex;
@@ -85,7 +86,7 @@ const ClientHushhWallet = () => {
             lineHeight={{ md: "87.46px", base: "43px" }}
             textAlign={"center"}
             fontSize={{ md: "5.4rem", base: "2rem" }}
-            pt={{ md: "8rem", base: "3rem" }}
+            pt={{ md: "4rem", base: "3rem" }}
             color={"#FFFFFF"}
             mb={{ base: "0.5rem" }}
             as={"h1"}
@@ -104,20 +105,46 @@ const ClientHushhWallet = () => {
             Higher perk adoption, instant expense management, simple benefits
             access and much more
           </Text>
+
+          <Box w={"max-content"} zIndex={'9999999'} display={'flex'} bg={'transparent'} flexDirection={{md:'row',base:'column'}} gap={{md:'5rem',base:'2rem'}}>
           <Button
+            leftIcon={<AppleIcon/>}
+             zIndex={'9999999'}
             borderRadius={"3.3rem"}
-            w={"fit-content"}
+            border={'1px solid'}
+            
             p={"1rem 2rem"}
+            bg={'black'}
+            color={'white'}
             _hover={{
               border: "none",
               color: "white",
               bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
             onClick={() => window.open("https://testflight.apple.com/join/u6FFaw2B", "_blank")}                
-            zIndex={"6"}
           >
-            Explore
+            Donwload For App Store
           </Button>
+          <Button
+           leftIcon={<AndroidIcon/>}
+           zIndex={'999'}
+           border={'1px solid'}
+           borderRadius={"3.3rem"}
+            
+            p={"1rem 2rem"}
+            bg={'black'}
+            color={'white'}
+            _hover={{
+              border: "none",
+              color: "white",
+              bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+            }}
+            onClick={() => window.open("https://drive.google.com/file/d/17iUtrlKcr8fs6CLdEUME_EvMr95IA83u/view", "_blank")}                
+          >
+            Download For Android
+          </Button>
+          </Box>
+
           <Box
             zIndex={"3"}
             position={"absolute"}

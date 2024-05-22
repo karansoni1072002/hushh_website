@@ -129,7 +129,7 @@ const ClientHushhButton = () => {
             GenAI
           </Text>
         <Box display={'flex'} gap={{md:'4rem',base:'1rem'}}>
-        <Button
+        {/* <Button
             border={"1px solid #606060"}
             borderRadius={"2px"}
             w={{ md: "16.25rem", base: "auto" }}
@@ -152,7 +152,7 @@ const ClientHushhButton = () => {
             }
           >
             LEARN MORE
-          </Button>
+          </Button> */}
           <Button
             as="a" // Render the Button component as an anchor tag
             href="https://www.npmjs.com/package/hushh-button" // Specify the URL

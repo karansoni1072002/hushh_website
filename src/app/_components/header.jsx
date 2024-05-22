@@ -37,8 +37,10 @@ export default function Header() {
   const [userEmail, setUserEmail] = useState('');
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
   const router = useRouter();
-  
-  const shouldShowHeader = pathname !== '/vivaConnect';
+
+  const noHeaderPaths = ['/vivaConnect', '/viva-connect', '/viva-connect/qrPage', '/qrCodePage'];
+
+  const shouldShowHeader = !noHeaderPaths.includes(pathname);
 
   // useEffect(() => {
   //   const checkLoginStatus = async () => {

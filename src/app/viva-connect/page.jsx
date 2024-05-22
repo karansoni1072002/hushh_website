@@ -23,7 +23,7 @@ import HushhAppIcon from "../_components/svg/productIcons/hushhAppIcon.svg";
 import hushhLogo from "../_components/svg/productIcons/hushhLogo.svg";
 
 
-export default function vivaConnect() {
+export default function vivaConnect2() {
   const router = useRouter();
   const toast = useToast();
 
@@ -50,7 +50,7 @@ export default function vivaConnect() {
       >
         PRODUCT SHOWCASE
       </Text>
-      <Box mt="1rem" zIndex="9" onClick={()=> router.push('/qrCodePage')}>
+      <Box mt="1rem" zIndex="9" onClick={()=> router.push('/viva-connect/qrPage')}>
         <QRCode
           size={29}
           fgColor="#FFFFFF"
@@ -59,7 +59,7 @@ export default function vivaConnect() {
           quietZone={0}
           logoPaddingStyle="square"
           logoPadding={0}
-          value="https://www.hush1one.com/vivaConnect"
+          value="https://www.hush1one.com/viva-connect"
         />
       </Box>
     </Flex>
@@ -301,6 +301,7 @@ export default function vivaConnect() {
         </Box>
 
         <Box
+          mb={10}
           w={"100%"}
           display={"flex"}
           bg={"transparent"}
@@ -353,34 +354,6 @@ export default function vivaConnect() {
           </Stack>
         </Box>
 
-        <VStack mt={10} gap={"1.65rem"} w={"100%"}>
-          <Button
-            as="a"
-            href="/hushh-intro.pdf"
-            download="HushhIntro"
-            borderRadius={"12px"}
-            bg={"#3045FF"}
-            h={"3rem"}
-            cursor={"pointer"}
-            color={"#FFFFFF"}
-            letterSpacing={"-0.4px"}
-            fontSize={"1rem"}
-            fontWeight={"400"}
-            w="100%"
-            _hover={{
-              cursor: "pointer",
-              color: "white",
-              bg: "#1B1B1B",
-            }}
-            onClick={() =>
-              window.open("https://calendly.com/hushh/30min", "_blank")
-            }
-          >
-            <Text fontWeight={'400'} fontSize={'1rem'} lineHeight={'22px'} letterSpacing={'-0.4px'} my={"2rem"} cursor={"pointer"}>
-              Schedule a Meet with our CEO
-            </Text>
-          </Button>
-
           <Button
             as="a"
             href="/brochure.pdf"
@@ -405,7 +378,6 @@ export default function vivaConnect() {
               Download our Brochure
             </Text>
           </Button>
-        </VStack>
       </VStack>
     </Box>
   );

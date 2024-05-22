@@ -1,5 +1,8 @@
 'use client';
-export { HushhButton } from 'hushh-button'
+import React from 'react'
+import { HushhButton } from 'hushh-button'
+import { usePathname, useRouter } from 'next/navigation'
+
 
 export const questionsArray = [
     {
@@ -38,3 +41,17 @@ export const questionsArray = [
         answer: ""
     }
 ]
+const HushhButtonFromLib = () => {
+
+    const pathname = usePathname()
+    const router = useRouter();
+    const noHeaderPaths = ['/vivaConnect', '/viva-connect', '/viva-connect/qrPage', '/qrCodePage'];
+    const shouldShowHeader = !noHeaderPaths.includes(pathname);
+    return (
+        <div>
+            {shouldShowHeader && <HushhButton questions={questionsArray} />}
+        </div>
+    )
+}
+
+export default HushhButtonFromLib

@@ -1,14 +1,14 @@
 // please update required information
 const siteMetadata = {
-  title: 'Hushh Blogs',
+  title: 'Hushh.ai',
   author: 'Manish Sainani',
-  headerTitle: 'Hushh Blogs',
+  headerTitle: 'Hushh',
   description: 'Your Data Your Business - with Hushh',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://www.hushh1one.com/hushhBlogs', // your website URL
-  siteLogo: '/logo.png',
-  socialBanner: '/social-banner.png', // add social banner in the public folder
+  siteLogo: '/Logo.png',
+  socialBanner: '/Logo.png', // add social banner in the public folder
   email: 'info@hushh1one.com', 
   github: '',
   twitter: 'https://x.com/hushh_ai',

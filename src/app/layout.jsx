@@ -91,14 +91,13 @@ export default function RootLayout({ children }) {
           type="text/javascript"
           src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
         ></script>
-
+        <div className="relative z-50">
+          <HushhButtonFromLib />
+        </div>
         <ResponsiveSizeProvider>
           <header className="h-[90px] w-full absolute z-50">
             <HeaderComponent />
           </header>
-          <div className="relative z-50">
-            <HushhButtonFromLib />
-          </div>
           <NextTopLoader
             color="red"
             initialPosition={0.08}

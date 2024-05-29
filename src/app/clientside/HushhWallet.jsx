@@ -175,7 +175,7 @@ const ClientHushhWallet = () => {
           letterSpacing={"0.255rem"}
           mb={{ md: "2rem", base: "1rem" }}
         >
-          OUR PARTNERS
+          Brands we want to work with
         </Text>
         <Divider
           border={"2px solid"}

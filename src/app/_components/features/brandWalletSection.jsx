@@ -212,7 +212,7 @@ const BrandWalletSection = () => {
             </Text>
             <Text color={extendedTheme.colors._white}>
               Share your data, earn points, and unlock rewards like discounts,
-              gift cards, and cashback offers from our partner brands!
+              gift cards, and cashback offers from Brands we want to work with
             </Text>
           </HStack>
           <HStack

@@ -196,17 +196,13 @@ export default function Header() {
               >
                 GUIDE
               </Link>
-              <ScrollLink
-                to="contact-form"
-                smooth={true}
-                spy={true}
-                duration={7000}
+              <Link
+                href="/contact-us"
                 onMouseEnter={() => setProductsSubmenu(false)}
-                onClick={scrollToContactForm}
-                style={{ cursor: "pointer" }}
+                className={`link ${pathname === '/contact-us' ? 'gradient-text' : ''}`}
               >
                 CONTACT US
-              </ScrollLink>
+              </Link>
             </div>
             {productsSubmenu && (
               <div
@@ -579,7 +575,14 @@ export default function Header() {
               >
                 LABS
               </Link>
-              <ScrollLink
+              <Link
+                href="/contact-us"
+                onClick={() => setIsMenuOpen(false)}
+                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
+              >
+                CONTACT US
+              </Link>
+              {/* <ScrollLink
                 to="contact-form"
                 spy={true}
                 smooth={true}
@@ -591,7 +594,7 @@ export default function Header() {
                 className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
               >
                 CONTACT US
-              </ScrollLink>
+              </ScrollLink> */}
               <Link
                 href="/"
                 className="py-2 w-1/2 border border-myBorder border-t-0 bg-black rounded-b"

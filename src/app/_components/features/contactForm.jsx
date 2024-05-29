@@ -265,6 +265,8 @@ export default function ContactForm() {
                       variant="unstyled"
                       size={"sm"}
                       w={"12rem"}
+                      p={2}
+                      border={'none'}
                       placeholder="First Name"
                       borderBottom="1px solid white"
                       value={firstName}
@@ -292,6 +294,8 @@ export default function ContactForm() {
                       variant="unstyled"
                       size={"sm"}
                       w={"12rem"}
+                      border={'none'}
+                      p={2}
                       borderBottom="1px solid white"
                       placeholder="Last Name"
                       value={lastName}
@@ -326,6 +330,8 @@ export default function ContactForm() {
                       variant="unstyled"
                       size={"sm"}
                       w={"12rem"}
+                      p={2}
+                      border={'none'}
                       borderBottom="1px solid white"
                       placeholder="harry@gmail.com"
                       value={email}
@@ -352,6 +358,8 @@ export default function ContactForm() {
                       variant="unstyled"
                       size={"sm"}
                       w={"12rem"}
+                      p={2}
+                      border={'none'}
                       borderBottom="1px solid white"
                       placeholder="number"
                       value={number}

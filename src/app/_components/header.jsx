@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import HushhHeaderLogo from "./svg/hushhHeaderLogo";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
-import { Box, Button, Container, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Text, Badge } from "@chakra-ui/react";
 import { useResponsiveSizes } from "../context/responsive";
 import { Bars3Icon } from "./svg/icons/hamburgerMenuIcon";
 import { CloseMenuIcon } from "./svg/icons/closeMenuIcon";
@@ -341,15 +341,19 @@ export default function Header() {
                       <div className="">
                         <VibeSearchApi className="w-6 h-6" />
                       </div>
-                      <div className="">
-                        <h1 className="font-semibold">VIBE Search APIs</h1>
+                      <div className="flex-col">
+                        <h1 className="font-semibold flex-row">
+                          VIBE Search APIs
+                        <Badge className="gradient-bg p-1" ml={4} borderRadius={'0.6rem'} fontSize={'0.6rem'} color={'white'}>Coming Soon !</Badge>
+                        </h1>
+                        
                         <p className="text-sm font-medium text-fontColor3">
                           List products on Vibe Search with <br /> management
                           and analytics.
                         </p>
                       </div>
                     </Link>
-                    <ToastContainer />  
+                    <ToastContainer/>  
                     <Link
                       href={"#"} 
                       onClick={notify}
@@ -359,9 +363,10 @@ export default function Header() {
                       <div className="">
                         <headerAssets.VibeSearchMarketplace className="w-6 h-6" />
                       </div>
-                      <div className="">
-                        <h1 className="font-semibold">
+                      <div className="flex-col">
+                        <h1 className="font-semibold flex-row">
                           VIBE Search Marketplace
+                          <Badge className="gradient-bg p-1" ml={4} borderRadius={'0.6rem'} fontSize={'0.6rem'} color={'white'}>Coming Soon !</Badge>
                         </h1>
                         <p className="text-sm font-medium text-fontColor3">
                           News and updates
@@ -544,6 +549,7 @@ export default function Header() {
                         </div>
                         <div className="">
                           <h1 className="font-semibold">VIBE Search APIs</h1>
+                          <Badge colorScheme='purple'>New</Badge>
                         </div>
                       </Link>
                       <ToastContainer/>

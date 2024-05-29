@@ -22,6 +22,8 @@ import { animateScroll as scroll } from "react-scroll";
 import { FiUser, FiYoutube } from 'react-icons/fi';
 import { useMediaQuery } from "react-responsive";
 import SmallVibeSearch from "./svg/smallVibeSearch.svg";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Header() {
 
@@ -41,6 +43,7 @@ export default function Header() {
   const noHeaderPaths = ['/vivaConnect', '/viva-connect', '/viva-connect/qrPage', '/qrCodePage'];
 
   const shouldShowHeader = !noHeaderPaths.includes(pathname);
+  const notify = () => toast("This Product is Coming Soon!");
 
   // useEffect(() => {
   //   const checkLoginStatus = async () => {
@@ -327,11 +330,14 @@ export default function Header() {
                         </p>
                       </div>
                     </Link>
+                    <ToastContainer />  
                     <Link
                       href={"#"}
-                      onClick={() => setProductsSubmenu(false)}
+                      onClick={notify}
+                      // onClick={() => setProductsSubmenu(false)}
                       className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
                     >
+                    
                       <div className="">
                         <VibeSearchApi className="w-6 h-6" />
                       </div>
@@ -343,9 +349,11 @@ export default function Header() {
                         </p>
                       </div>
                     </Link>
+                    <ToastContainer />  
                     <Link
-                      href={"#"}
-                      onClick={() => setProductsSubmenu(false)}
+                      href={"#"} 
+                      onClick={notify}
+                      // onClick={() => setProductsSubmenu(false)}
                       className="flex gap-4 group hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
                     >
                       <div className="">
@@ -523,11 +531,14 @@ export default function Header() {
                           {/* <p className='text-sm font-medium text-fontColor3'>Valet Chat: Ditch receipts, unlock <br /> insights.</p> */}
                         </div>
                       </Link>
+                      <ToastContainer/>
                       <Link
-                        href={"/"}
-                        onClick={handleSubmenuClick}
+                        href={"#"}
+                        onClick={notify}
+                        // onClick={handleSubmenuClick}
                         className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
                       >
+                        
                         <div className="">
                           <VibeSearchApi className="w-6 h-6" />
                         </div>
@@ -535,9 +546,10 @@ export default function Header() {
                           <h1 className="font-semibold">VIBE Search APIs</h1>
                         </div>
                       </Link>
+                      <ToastContainer/>
                       <Link
                         href={"/"}
-                        onClick={handleSubmenuClick}
+                        onClick={notify}
                         className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
                       >
                         <div className="">

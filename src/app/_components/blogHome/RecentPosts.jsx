@@ -2,6 +2,9 @@ import { sortBlogs } from "../../utils";
 import Link from "next/link";
 import React from "react";
 import BlogLayoutThree from "../Blog/BlogLayoutThree";
+import { Box, Text } from "@chakra-ui/react";
+import ArrowIcon from '../../_components/svg/icons/yellowArrow.svg'
+import Image from "next/image";
 
 const RecentPosts = ({ blogs }) => {
   const sortedBlogs = sortBlogs(blogs);
@@ -11,12 +14,17 @@ const RecentPosts = ({ blogs }) => {
         <h2 className="w-fit gradient inline-block font-bold capitalize text-2xl md:text-4xl text-dark dark:text-light">
           Recent Posts
         </h2>
-        <Link
+        <Box
           href="/categories/all"
-          className="inline-block font-medium text-accent dark:text-accentDark underline underline-offset-2      text-base md:text-lg"
+          p={'15px'}
+          background={'#262626'}
+          border='1px solid #262626'
+          padding='15px'
+          borderRadius={'10px'}
+          cursor={'pointer'}
         >
-          view all
-        </Link>
+          <Text href='/categories/all' color="#98989A" gap={'2'} display={'flex'}>View All Blogs <Image src={ArrowIcon} alt="ArrowYellowIcon"/> </Text>
+        </Box>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-16 mt-16">

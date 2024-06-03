@@ -8,6 +8,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Box, Container, Divider, Flex, Heading, Link, Text, useColorModeValue, VStack } from "@chakra-ui/react";
 import ContactForm from "src/app/_components/features/contactForm";
+import BlogLayoutOne from "src/app/_components/Blog/BlogLayoutOne";
+import RecentPosts from "src/app/_components/blogHome/RecentPosts";
 
 
 export async function generateStaticParams() {
@@ -222,6 +224,13 @@ export default function BlogPage({ params }) {
               </details>
             </Box>
           </Flex>
+        </Container>
+        <Container minW="100%" mt={"4"} px={{ base: 7, md: 14 }}>
+          {/* <Box>
+             <Box bg={'#262626'} borderRadius={'10px'} color={'#98989A'}>View All News</Box>  
+             <Text color={'#CCCCCC'} fontWeight={'500'} lineHeight={'30.33px'}>Similar Blogs</Text>
+          </Box> */}
+          <RecentPosts blogs={allBlogs} />
         </Container>
       </Box>
       <ContactForm/>

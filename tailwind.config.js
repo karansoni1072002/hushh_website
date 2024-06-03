@@ -20,7 +20,6 @@ module.exports = {
                 color: '#ff6347', // Tomato red
               },
             },
-            // Apply custom styles to markdown tables
             'table': {
               'borderCollapse': 'collapse',
             },
@@ -30,6 +29,15 @@ module.exports = {
             },
             'td': {
               'borderWidth': '1px',
+            },
+            ul: {
+              // 'list-style-type': 'disc',
+              // 'list-style-position': 'inside',
+              // 'list-style-image': 'none',
+              'color': 'white', // List icon color
+              '> li::marker': {
+                color: 'white', // Ensuring the marker color is white
+              },
             },
           },
         },

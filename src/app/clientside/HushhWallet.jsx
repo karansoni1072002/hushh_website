@@ -121,7 +121,7 @@ const ClientHushhWallet = () => {
               color: "white",
               bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
-            onClick={() => window.open("https://testflight.apple.com/join/u6FFaw2B", "_blank")}                
+            onClick={() => window.open(" https://bit.ly/hushh-app-ios", "_blank")}                
           >
             Donwload For App Store
           </Button>
@@ -139,7 +139,7 @@ const ClientHushhWallet = () => {
               color: "white",
               bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
-            onClick={() => window.open("https://drive.google.com/file/d/17iUtrlKcr8fs6CLdEUME_EvMr95IA83u/view", "_blank")}                
+            onClick={() => window.open("https://drive.google.com/file/d/1cVMd3xPkNyG7gTobAnn6ju6boNtTWea7/view", "_blank")}                
           >
             Download For Android
           </Button>
@@ -664,12 +664,13 @@ const ClientHushhWallet = () => {
                 leftIcon={<AppleIcon />}
                 border={"1px solid #FFFFFF"}
                 borderRadius={"80px"}
+                cursor={'pointer'}
                 _hover={{
                   border: "none",
                   background:
                     "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 }}
-                onClick={() => window.open("https://testflight.apple.com/join/u6FFaw2B", "_blank")}                
+                onClick={() => window.open(" https://bit.ly/hushh-app-ios", "_blank")}                
                 >
                 APP STORE
               </Button>
@@ -679,6 +680,7 @@ const ClientHushhWallet = () => {
                 w={{ md: "12rem" }}
                 bg={"#000000"}
                 color={"white"}
+                cursor={'pointer'}
                 leftIcon={<PlayStoreIcon />}
                 border={"1px solid #FFFFFF"}
                 borderRadius={"80px"}
@@ -687,7 +689,7 @@ const ClientHushhWallet = () => {
                   background:
                     "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 }}
-                onClick={() => window.open("https://testflight.apple.com/join/u6FFaw2B", "_blank")}                
+                onClick={() => window.open("https://drive.google.com/file/d/1cVMd3xPkNyG7gTobAnn6ju6boNtTWea7/view?usp=drive_link", "_blank")}                
                 >
                 PLAY STORE
               </Button>
@@ -736,11 +738,13 @@ const ClientHushhWallet = () => {
             leftIcon={<AppleIcon />}
             border={"1px solid #FFFFFF"}
             borderRadius={"80px"}
+            cursor={'pointer'}
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               border: "none",
             }}
+            onClick={() => window.open(" https://bit.ly/hushh-app-ios", "_blank")}                
           >
             APP STORE
           </Button>
@@ -750,6 +754,7 @@ const ClientHushhWallet = () => {
             w={"12rem"}
             bg={"#000000"}
             color={"white"}
+            cursor={'pointer'}
             leftIcon={<PlayStoreIcon />}
             border={"1px solid #FFFFFF"}
             borderRadius={"80px"}
@@ -758,6 +763,7 @@ const ClientHushhWallet = () => {
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               border: "none",
             }}
+            onClick={() => window.open("https://drive.google.com/file/d/1cVMd3xPkNyG7gTobAnn6ju6boNtTWea7/view?usp=drive_link", "_blank")}                
           >
             PLAY STORE
           </Button>

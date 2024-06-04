@@ -172,7 +172,7 @@ const ClientHome = () => {
                     }}
                     onClick={() =>
                       window.open(
-                        "https://testflight.apple.com/join/u6FFaw2B",
+                        "https://bit.ly/hushh-app-ios",
                         "_blank"
                       )
                     }

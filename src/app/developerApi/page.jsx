@@ -5,6 +5,8 @@ import {
   Button,
   HStack,
   Heading,
+  ListItem,
+  OrderedList,
   Stack,
   Text,
   VStack,
@@ -27,9 +29,12 @@ import BgAnimation from "../../../public/Gif/bgAnimation.gif";
 import VibeSearchGif from "../../../public/Gif/vibeSearchGIf.gif";
 import CodeIcon from "../_components/svg/icons/codeIcon.svg";
 import BusinessIcon from "../_components/svg/icons/retailBusiness.svg";
+import DeveloperImg from "../_components/svg/developerApi/developerImage.svg";
+import OwnedData from '../_components/svg/developerApi/userOwnedData.svg';
+import CollectedData from '../_components/svg/developerApi/collectedData.svg';
 
 const devloperApi = () => {
-    const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
+  const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
 
   const scrollTo = () => {
@@ -40,14 +45,14 @@ const devloperApi = () => {
     scroll.scrollTo(450);
   };
   return (
-<>
-    <Box
+    <>
+      <Box
         maxW={"100"}
         minW={"100%"}
         display={"flex"}
         flexDirection={"column"}
         position={"relative"}
-    >
+      >
         <Box display={{ base: "none", md: "block" }}>
           <Image
             src={VibeSearchGif}
@@ -107,8 +112,14 @@ const devloperApi = () => {
             mb={{ base: "1rem", md: "4rem" }}
             textAlign={"center"}
             color={"#656565"}
+            lineHeight={{ md: "36px", base: "20px" }}
+            fontSize={{ md: "1rem", base: "0.75rem" }}
           >
-            Enabling a secure, trusted, and incentivized way of relaying valuable personal information from customers You can use the API-DOC in test mode, which doesn't affect your live data or interact with the banking networks. The API key you use to authenticate the request determines whether the request is live mode or test mode.
+            Enabling a secure, trusted, and incentivized way of relaying
+            valuable personal information from customers You can use the API-DOC
+            in test mode, which doesn't affect your live data or interact with
+            the banking networks. The API key you use to authenticate the
+            request determines whether the request is live mode or test mode.
           </Text>
           <Button
             border={"1px solid #606060"}
@@ -117,13 +128,14 @@ const devloperApi = () => {
             color={extendedTheme.colors._white}
             lineHeight={{ md: "28px", base: "14px" }}
             background={"transparent"}
+            fontSize={{ md: "1rem", base: "0.75rem" }}
             letterSpacing={{ md: "0.29rem", base: "0.145rem" }}
             _hover={{
               background:
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               border: "none",
             }}
-            onClick={() => window.open("https://vibesearch-vercel.vercel.app/", "_blank")}                
+            onClick={() => window.open("/developer-Api/on-boarding", "_blank")}
           >
             API DOCUMENTATION
           </Button>
@@ -133,7 +145,7 @@ const devloperApi = () => {
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
           display={{ base: "flex" }}
-          gap={{md:'4rem', base:'2rem'}}
+          gap={{ md: "4rem", base: "2rem" }}
           flexDirection={{ base: "column", md: "row" }}
         >
           <Box display={"flex"} flexDirection={"column"} gap={"1rem"} flex={1}>
@@ -152,95 +164,229 @@ const devloperApi = () => {
               fontWeight={"400"}
               lineHeight={{ md: "63.3px", base: "41.2px" }}
             >
-              Hushh {" "} <br></br>Developer APIs
+              Hushh <br></br>Developer APIs
             </Text>
-       
+
             <Box
               fontSize={{ md: "1rem", base: "0.5rem" }}
               display={"flex"}
               flexDirection={"column"}
               fontWeight={"500"}
-              lineHeight={"36px"}
+              lineHeight={{ md: "36px", base: "25px" }}
               color={"#ABACB0"}
-              gap={{ md: "1rem", base: "0rem" }}
+              gap={{ md: "1rem", base: "1rem" }}
             >
-              <Text>Enabling a secure, trusted, and incentivized way of relaying valuable personal information from customers You can use the API-DOC in test mode, which doesn't affect your live data or interact with the banking networks. The API key you use to authenticate the request determines whether the request is live mode or test mode. </Text>
+              <Text>
+                Enabling a secure, trusted, and incentivized way of relaying
+                valuable personal information from customers You can use the
+                API-DOC in test mode, which doesn't affect your live data or
+                interact with the banking networks. The API key you use to
+                authenticate the request determines whether the request is live
+                mode or test mode.{" "}
+              </Text>
               <Button
-            border={"1px solid #606060"}
-            borderRadius={"2px"}
-            w={{ md: "18rem", base: "11rem" }}
-            color={extendedTheme.colors._white}
-            lineHeight={{ md: "28px", base: "14px" }}
-            background={"transparent"}
-            letterSpacing={{ md: "0.29rem", base: "0.145rem" }}
-            _hover={{
-              background:
-                "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-              border: "none",
-            }}
-            onClick={() => window.open("https://vibesearch-vercel.vercel.app/", "_blank")}                
-          >
-            API DOCUMENTATION
-          </Button>
+                border={"1px solid #606060"}
+                borderRadius={"2px"}
+                w={{ md: "18rem", base: "11rem" }}
+                color={extendedTheme.colors._white}
+                lineHeight={{ md: "28px", base: "14px" }}
+                background={"transparent"}
+                fontSize={{ md: "1rem", base: "0.75rem" }}
+                letterSpacing={{ md: "0.29rem", base: "0.145rem" }}
+                _hover={{
+                  background:
+                    "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                  border: "none",
+                }}
+                onClick={() =>
+                  window.open("/developer-Api/on-boarding", "_blank")
+                }
+              >
+                API DOCUMENTATION
+              </Button>
             </Box>
           </Box>
+
           <Box display={"flex"} flexDirection={"column"} flex={1} gap={"1rem"}>
             <Image src={FindYourStyleBox} alt="FindYourStyleBox" />
             <Text
               fontSize={{ md: "1rem", base: "0.75rem" }}
               color={"#ABABAB"}
-              fontWeight={'500'}
+              fontWeight={"500"}
               lineHeight={{ md: "36px", base: "18px" }}
             >
-              Revolutionize your data game with Hushh Developer APIs! Tailored for businesses and organizations of all stripes, our APIs empower YOUR developers to seamlessly integrate customers’ data into CRM systems and applications. Picture this: a new era of data driven excellence, where developers get consent driven, first-hand customer data and let personalized services take the center stage for their brand.{" "}
+              Revolutionize your data game with Hushh Developer APIs! Tailored
+              for businesses and organizations of all stripes, our APIs empower
+              YOUR developers to seamlessly integrate customers’ data into CRM
+              systems and applications. Picture this: a new era of data driven
+              excellence, where developers get consent driven, first-hand
+              customer data and let personalized services take the center stage
+              for their brand.{" "}
             </Text>
-           <Text 
+            <Text
               fontSize={{ md: "1rem", base: "0.75rem" }}
               color={"#ABABAB"}
-              fontWeight={'500'}
-              lineHeight={{ md: "36px", base: "18px" }}>
-            Because in the world of luxury retail, the future is personalized, and your customers deserve nothing less!</Text>
+              fontWeight={"500"}
+              lineHeight={{ md: "36px", base: "22px" }}
+            >
+              Because in the world of luxury retail, the future is personalized,
+              and your customers deserve nothing less!
+            </Text>
           </Box>
         </HStack>
-        
-        <VStack display={'flex'} px={{ md: "7rem", base: "1.25rem" }}>
-            <Text  align={'center'} textAlign={'center'} color={'#FFFFFF'} letterSpacing={'0.04rem'} fontWeight={'500'} fontSize={{md:'20px',base:'10px'}} lineHeight={{md:'32px',base:'20px'}} >HUSHH</Text>
-            <Text  align={'center'} textAlign={'center'} mb={{md:'2rem',base:'1rem'}} className="gradient" fontWeight={'700'} fontSize={{md:'4.625rem',base:'2.3rem'}} lineHeight={{md:'90.28px',base:'52.14px'}}>Our current main customers include</Text>
-            <HStack minH={'max-content'} display={'flex'} gap={{md:'4rem',base:'1rem'}}>
-                
-                <Box  minH={'33rem'} h={'100%'} flex={1} borderRadius={'10px'} p={{md:'2rem',base:'1rem'}}  display={'flex'} flexDirection={'column'} bg={'#1A1A1A'}>
-                    <HStack>
-                      <Image src={BusinessIcon} alt="businessIcon" title="business"/>
-                      <Text color={'#FFFFFF'} fontWeight={'600'} fontSize={{md:'1.5rem',base:'0.75rem'}} lineHeight={{md:'36px',base:'20px'}}>Retail businesses</Text>
-                    </HStack>
-                    <VStack  minHeight={0} mt={{md:'1.5rem',base:'0.75rem'}} display={'flex'} textAlign={'left'} alignItems={'flex-start'} gap={{md:'2rem',base:'1rem'}} color={'#FFFFFF'} fontWeight={'400'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={{md:'24px',base:'16px'}}>
-                       <Text>Step into the future of retail excellence with Hush APIs- a game changer for high-end luxury giants as well as e-commerce businesses.</Text>
-                       <Text><b>Precision Marketing:</b> Imagine a world where marketing strategies are not just targeted but finely tuned to match individual customer preferences</Text>
-                       <Text><b>Another Layer of luxury:</b> Add another layer of luxury to your customers’ experience by serving them with exactly what they need by understanding individual preferences.</Text>
-                       <Text>Because it’s not just about selling, it’s about crafting an unforgettable journey for customers.</Text>
-                    </VStack>
-                </Box>
 
-                <Box minH={'33rem'}  h={'100%'} flex={1} borderRadius={'10px'} p={{md:'2rem',base:'1rem'}}  display={'flex'} flexDirection={'column'} bg={'#1A1A1A'}>
-                    <HStack>
-                      <Image src={CodeIcon} alt="CodeIcon" title="CodeIcon"/>
-                      <Text color={'#FFFFFF'} fontWeight={'600'} fontSize={{md:'1.5rem',base:'0.75rem'}} lineHeight={{md:'36px',base:'20px'}}>Application Developers</Text>
-                    </HStack>
-                    <VStack  minHeight={0} mt={{md:'1.5rem',base:'0.75rem'}} display={'flex'} textAlign={'left'} alignItems={'flex-start'} gap={{md:'2rem',base:'1rem'}} color={'#FFFFFF'} fontWeight={'400'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={{md:'24px',base:'16px'}}>
-                       <Text>Enabling a world, where your applications not only meet but exceed user expectations, all thanks to the power of Hushh.</Text>
-                       <Text>It’s your key to unlocking first-hand consent driven customer data without worrying about privacy laws and regulations.</Text>
-                       <Text>Whether you’re crafting the next groundbreaking app or enhancing your CRM system, we’ve got it covered.</Text>
-                       <Text>With Hushh, developers become architects of bespoke interactions, aligning applications with user preferences and consent.</Text>
-                       <Text>Set a new standard for excellence and help your brand build a meaningful connection with the customers.</Text>
-                    </VStack>
-                </Box>
-            </HStack>
+        <VStack display={"flex"} px={{ md: "7rem", base: "1.25rem" }}>
+          <Text
+            align={"center"}
+            textAlign={"center"}
+            color={"#FFFFFF"}
+            letterSpacing={"0.04rem"}
+            fontWeight={"500"}
+            fontSize={{ md: "20px", base: "10px" }}
+            lineHeight={{ md: "32px", base: "20px" }}
+          >
+            HUSHH
+          </Text>
+          <Text
+            align={"center"}
+            textAlign={"center"}
+            mb={{ md: "2rem", base: "1rem" }}
+            className="gradient"
+            fontWeight={"700"}
+            fontSize={{ md: "4.625rem", base: "2rem" }}
+            lineHeight={{ md: "90.28px", base: "42.14px" }}
+          >
+            Our current main customers include
+          </Text>
+          <HStack
+            minH={"max-content"}
+            display={"flex"}
+            gap={{ md: "4rem", base: "1rem" }}
+          >
+            <Box
+              minH={{ md: "33rem", base: "29rem" }}
+              h={"100%"}
+              flex={1}
+              borderRadius={"10px"}
+              p={{ md: "2rem", base: "1rem" }}
+              display={"flex"}
+              flexDirection={"column"}
+              bg={"#1A1A1A"}
+            >
+              <HStack
+                display={"flex"}
+                flexDirection={{ md: "row", base: "column" }}
+              >
+                <Image src={BusinessIcon} alt="businessIcon" title="business" />
+                <Text
+                  color={"#FFFFFF"}
+                  fontWeight={"600"}
+                  fontSize={{ md: "1.5rem", base: "0.75rem" }}
+                  lineHeight={{ md: "36px", base: "20px" }}
+                >
+                  Retail businesses
+                </Text>
+              </HStack>
+              <VStack
+                minHeight={0}
+                mt={{ md: "1.5rem", base: "0.75rem" }}
+                display={"flex"}
+                textAlign={"left"}
+                alignItems={"flex-start"}
+                gap={{ md: "2rem", base: "1rem" }}
+                color={"#FFFFFF"}
+                fontWeight={"400"}
+                fontSize={{ md: "1rem", base: "0.5rem" }}
+                lineHeight={{ md: "24px", base: "16px" }}
+              >
+                <Text>
+                  Step into the future of retail excellence with Hush APIs- a
+                  game changer for high-end luxury giants as well as e-commerce
+                  businesses.
+                </Text>
+                <Text>
+                  <b>Precision Marketing:</b> Imagine a world where marketing
+                  strategies are not just targeted but finely tuned to match
+                  individual customer preferences
+                </Text>
+                <Text>
+                  <b>Another Layer of luxury:</b> Add another layer of luxury to
+                  your customers’ experience by serving them with exactly what
+                  they need by understanding individual preferences.
+                </Text>
+                <Text>
+                  Because it’s not just about selling, it’s about crafting an
+                  unforgettable journey for customers.
+                </Text>
+              </VStack>
+            </Box>
+
+            <Box
+              minH={{ md: "33rem", base: "29rem" }}
+              h={"100%"}
+              flex={1}
+              borderRadius={"10px"}
+              p={{ md: "2rem", base: "1rem" }}
+              display={"flex"}
+              flexDirection={"column"}
+              bg={"#1A1A1A"}
+            >
+              <HStack
+                display={"flex"}
+                flexDirection={{ md: "row", base: "column" }}
+              >
+                <Image src={CodeIcon} alt="CodeIcon" title="CodeIcon" />
+                <Text
+                  color={"#FFFFFF"}
+                  fontWeight={"600"}
+                  fontSize={{ md: "1.5rem", base: "0.75rem" }}
+                  lineHeight={{ md: "36px", base: "20px" }}
+                >
+                  Application Developers
+                </Text>
+              </HStack>
+              <VStack
+                minHeight={0}
+                mt={{ md: "1.5rem", base: "0.75rem" }}
+                display={"flex"}
+                textAlign={"left"}
+                alignItems={"flex-start"}
+                gap={{ md: "2rem", base: "1rem" }}
+                color={"#FFFFFF"}
+                fontWeight={"400"}
+                fontSize={{ md: "1rem", base: "0.5rem" }}
+                lineHeight={{ md: "24px", base: "16px" }}
+              >
+                <Text>
+                  Enabling a world, where your applications not only meet but
+                  exceed user expectations, all thanks to the power of Hushh.
+                </Text>
+                <Text>
+                  It’s your key to unlocking first-hand consent driven customer
+                  data without worrying about privacy laws and regulations.
+                </Text>
+                <Text>
+                  Whether you’re crafting the next groundbreaking app or
+                  enhancing your CRM system, we’ve got it covered.
+                </Text>
+                <Text>
+                  With Hushh, developers become architects of bespoke
+                  interactions, aligning applications with user preferences and
+                  consent.
+                </Text>
+                <Text>
+                  Set a new standard for excellence and help your brand build a
+                  meaningful connection with the customers.
+                </Text>
+              </VStack>
+            </Box>
+          </HStack>
         </VStack>
-       
+
         <HStack
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}
-          gap={{ md: "2rem", base: "0.25rem" }}
+          gap={{ md: "2rem", base: "0.5rem" }}
           display={"flex"}
           flexDirection={{ md: "row", base: "column" }}
         >
@@ -250,69 +396,54 @@ const devloperApi = () => {
             flex={1}
             gap={{ md: "2rem", base: "1rem" }}
           >
-            <Image
-              src={VibeSearchIntegrationBox}
-              alt="VibeSearchIntegrationBox"
-            />
+            <Image src={DeveloperImg} alt="DeveloperImg" />
             {/* <Text fontSize={{ md:'1rem', base:'0.75rem'}} color={'#ABABAB'} lineHeight={{md:'36px', base:'18px'}}>See exactly what data is being collected about you, including search queries, brand interactions, interests, preferences, likes, and clicks. Gain insights into your online behavior and understand what shapes your digital footprint</Text> */}
           </Box>
 
-          <Box display={"flex"} flexDirection={"column"} gap={"2rem"} flex={1}>
+          <Box
+            display={"flex"}
+            flexDirection={"column"}
+            gap={{ md: "2rem", base: "1rem" }}
+            flex={1}
+          >
             <Text
-              className="default-gradient"
+              className="new-gradient"
               letterSpacing={"0.255rem"}
-              lineHeight={"1rem"}
+              lineHeight={{ md: "1rem", base: "0.75rem" }}
               fontWeight={"600"}
               fontSize={"1rem"}
+              mt={{ base: "1rem" }}
             >
-              Convenient
+              DEVELOPER API
             </Text>
             <Text
               className="gradient"
               fontSize={{ md: "3.75rem", base: "1.75rem" }}
-              fontWeight={"400"}
-              lineHeight={{ md: "83.3px", base: "41.2px" }}
+              fontWeight={"500"}
+              lineHeight={{ md: "63.3px", base: "31.2px" }}
             >
-              Vibe Search Integration
+              Where do we get our <br></br> data from
             </Text>
             <Box
-              position="relative"
-              fontSize={{ base: "1.25rem", md: "1.75rem" }}
-              fontWeight="700"
-              css={{
-                "&::before": {
-                  content: '"–"',
-                  display: "inline-block",
-                  width: "22px",
-                  height: "1em",
-                  background: gradient,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  border: "0 solid",
-                  borderImageSource: gradient,
-                  borderImageSlice: 1,
-                },
-                background: gradient,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              Integrate You Vibe with Vibe Search
-            </Box>
-            <Box
-              fontSize={"1rem"}
+              fontSize={{ md: "1rem", base: "0.75rem" }}
               display={"flex"}
               flexDirection={"column"}
               fontWeight={"500"}
-              lineHeight={"36px"}
+              lineHeight={{ md: "36px", base: "24px" }}
               color={"#ABABAB"}
               gap={"1rem"}
             >
-              <Text>
-                Hushh vibe search also enables users to share your style
-                preferences in their Hushh Wallet. This makes it easy to share
-                and access important information, such as Your Size, FIt, Brands
-                , Budget and Purchase history.
+              <Text fontSize={{ md: "1rem", base: "0.75rem" }}>
+                Wondering where we get our data from ? It’s simple- the owners
+                are in control! Your data, your terms, and absolutely no cloud
+                syncing without your consent.
+              </Text>
+              <Text fontSize={{ md: "1rem", base: "0.75rem" }}>
+                Now let’s talk sources- the vital components that fuel the Hushh
+                engine, right there on your device! Users have full authority
+                over the data they choose to share. Data syncing to the cloud
+                only occurs with the user’s explicit consent. Our API’s adhere
+                to GDPR compliance standards.
               </Text>
             </Box>
             <Button
@@ -328,12 +459,75 @@ const devloperApi = () => {
                   "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 border: "none",
               }}
-              onClick={() => window.open("https://testflight.apple.com/join/CDYPEfJ5", "_blank")}
+              onClick={() =>
+                window.open("/developer-Api/on-boarding", "_blank")
+              }
             >
-              REQUEST ACCESS
+              GET STARTED
             </Button>
           </Box>
         </HStack>
+
+        <VStack px={{ md: "12rem", base: "1.25rem" }}>
+          <Text className="hushh-gradient" fontWeight={'600'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={'16px'} letterSpacing={'0.255rem'}>CORE VALUE COMPANY</Text>
+          <Text className="gradient" fontWeight={'400'} fontSize={{md:'3.75rem',base:'1.75rem'}} lineHeight={{base:'40px',md:'63.3px'}}>Data Categories in Hushh</Text>
+          <Text color={"#E5E5E5"} fontWeight={'400'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={{md:'28px',base:'20px'}}>
+            Building a world where data works for you, not against you.
+          </Text>
+          <HStack display={'flex'}  gap={{ md: "4rem", base: "1rem" }}>
+            <VStack flex={1} alignSelf={'flex-start'}>
+              <Image src={OwnedData} alt="OwnedData" title="user owned data" />
+              <Text
+                color={"#E5E5E5"}
+                fontWeight={"700"}
+                fontSize={{ md: "1.375rem", base: "0.75rem" }}
+                lineHeight={{ md: "26.4px", base: "16px" }}
+              >
+                User-Owned Data
+              </Text>
+              <OrderedList lineHeight={{md:'36px',base:'18px'}} color={'#ABABAB'} spacing={3} fontSize={{ md: "1rem", base: "0.5rem" }}>
+                <ListItem>
+                User’s GMAIL
+                </ListItem>
+                <ListItem>
+                Photos access (selective)
+                </ListItem>
+                <ListItem>
+                Folders access (selective)
+                </ListItem>
+                <ListItem>
+                Apple Health data
+                </ListItem>
+                <ListItem>
+                Financial data
+                </ListItem>
+              </OrderedList>
+            </VStack>
+
+            <VStack flex={1} alignSelf={'flex-start'}>
+              <Image src={CollectedData} alt="CollectedData" title="Collected Data" />
+              <Text
+                color={"#E5E5E5"}
+                fontWeight={"700"}
+                fontSize={{ md: "1.375rem", base: "0.75rem" }}
+                lineHeight={{ md: "26.4px", base: "16px" }}
+              >
+                Hushh-collected Data
+              </Text>
+              <OrderedList lineHeight={{md:'36px',base:'18px'}} color={'#ABABAB'} spacing={3} fontSize={{ md: "1rem", base: "0.5rem" }}>
+                <ListItem>
+                Hushh-Button Interactions
+                </ListItem>
+                <ListItem>
+                Hushh Chrome Extension
+                </ListItem>
+                <ListItem>
+                User surveys via Hushh app
+                </ListItem>
+              </OrderedList>
+            </VStack>
+          </HStack>
+        </VStack>
 
         <Stack margin={{ md: "10rem", base: "3.5rem" }} position={"relative"}>
           <Box display={{ base: "none", md: "block" }}>
@@ -370,8 +564,8 @@ const devloperApi = () => {
         <VibeSearchFaq />
       </Box>
       <ContactForm />
-</>
-)
-}
+    </>
+  );
+};
 
-export default devloperApi
+export default devloperApi;

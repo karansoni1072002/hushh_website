@@ -25,6 +25,8 @@ import ContactForm from "../_components/features/contactForm";
 import Head from "next/head";
 import BgAnimation from "../../../public/Gif/bgAnimation.gif";
 import VibeSearchGif from "../../../public/Gif/vibeSearchGIf.gif";
+import CodeIcon from "../_components/svg/icons/codeIcon.svg";
+import BusinessIcon from "../_components/svg/icons/retailBusiness.svg";
 
 const devloperApi = () => {
     const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -148,18 +150,11 @@ const devloperApi = () => {
               className="gradient"
               fontSize={{ md: "3.75rem", base: "1.75rem" }}
               fontWeight={"400"}
-              lineHeight={{ md: "83.3px", base: "41.2px" }}
+              lineHeight={{ md: "63.3px", base: "41.2px" }}
             >
-              Hushh {" "}
+              Hushh {" "} <br></br>Developer APIs
             </Text>
-            <Text
-              className="gradient"
-              fontSize={{ md: "3.75rem", base: "1.75rem" }}
-              fontWeight={"400"}
-              lineHeight={{ md: "83.3px", base: "41.2px" }}
-            >
-              Developer APIs
-            </Text>
+       
             <Box
               fontSize={{ md: "1rem", base: "0.5rem" }}
               display={"flex"}
@@ -207,7 +202,41 @@ const devloperApi = () => {
             Because in the world of luxury retail, the future is personalized, and your customers deserve nothing less!</Text>
           </Box>
         </HStack>
+        
+        <VStack display={'flex'} px={{ md: "7rem", base: "1.25rem" }}>
+            <Text  align={'center'} textAlign={'center'} color={'#FFFFFF'} letterSpacing={'0.04rem'} fontWeight={'500'} fontSize={{md:'20px',base:'10px'}} lineHeight={{md:'32px',base:'20px'}} >HUSHH</Text>
+            <Text  align={'center'} textAlign={'center'} mb={{md:'2rem',base:'1rem'}} className="gradient" fontWeight={'700'} fontSize={{md:'4.625rem',base:'2.3rem'}} lineHeight={{md:'90.28px',base:'52.14px'}}>Our current main customers include</Text>
+            <HStack minH={'max-content'} display={'flex'} gap={{md:'4rem',base:'1rem'}}>
+                
+                <Box  minH={'33rem'} h={'100%'} flex={1} borderRadius={'10px'} p={{md:'2rem',base:'1rem'}}  display={'flex'} flexDirection={'column'} bg={'#1A1A1A'}>
+                    <HStack>
+                      <Image src={BusinessIcon} alt="businessIcon" title="business"/>
+                      <Text color={'#FFFFFF'} fontWeight={'600'} fontSize={{md:'1.5rem',base:'0.75rem'}} lineHeight={{md:'36px',base:'20px'}}>Retail businesses</Text>
+                    </HStack>
+                    <VStack  minHeight={0} mt={{md:'1.5rem',base:'0.75rem'}} display={'flex'} textAlign={'left'} alignItems={'flex-start'} gap={{md:'2rem',base:'1rem'}} color={'#FFFFFF'} fontWeight={'400'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={{md:'24px',base:'16px'}}>
+                       <Text>Step into the future of retail excellence with Hush APIs- a game changer for high-end luxury giants as well as e-commerce businesses.</Text>
+                       <Text><b>Precision Marketing:</b> Imagine a world where marketing strategies are not just targeted but finely tuned to match individual customer preferences</Text>
+                       <Text><b>Another Layer of luxury:</b> Add another layer of luxury to your customers’ experience by serving them with exactly what they need by understanding individual preferences.</Text>
+                       <Text>Because it’s not just about selling, it’s about crafting an unforgettable journey for customers.</Text>
+                    </VStack>
+                </Box>
 
+                <Box minH={'33rem'}  h={'100%'} flex={1} borderRadius={'10px'} p={{md:'2rem',base:'1rem'}}  display={'flex'} flexDirection={'column'} bg={'#1A1A1A'}>
+                    <HStack>
+                      <Image src={CodeIcon} alt="CodeIcon" title="CodeIcon"/>
+                      <Text color={'#FFFFFF'} fontWeight={'600'} fontSize={{md:'1.5rem',base:'0.75rem'}} lineHeight={{md:'36px',base:'20px'}}>Application Developers</Text>
+                    </HStack>
+                    <VStack  minHeight={0} mt={{md:'1.5rem',base:'0.75rem'}} display={'flex'} textAlign={'left'} alignItems={'flex-start'} gap={{md:'2rem',base:'1rem'}} color={'#FFFFFF'} fontWeight={'400'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={{md:'24px',base:'16px'}}>
+                       <Text>Enabling a world, where your applications not only meet but exceed user expectations, all thanks to the power of Hushh.</Text>
+                       <Text>It’s your key to unlocking first-hand consent driven customer data without worrying about privacy laws and regulations.</Text>
+                       <Text>Whether you’re crafting the next groundbreaking app or enhancing your CRM system, we’ve got it covered.</Text>
+                       <Text>With Hushh, developers become architects of bespoke interactions, aligning applications with user preferences and consent.</Text>
+                       <Text>Set a new standard for excellence and help your brand build a meaningful connection with the customers.</Text>
+                    </VStack>
+                </Box>
+            </HStack>
+        </VStack>
+       
         <HStack
           my={{ md: "8rem", base: "3rem" }}
           px={{ md: "7rem", base: "1.25rem" }}

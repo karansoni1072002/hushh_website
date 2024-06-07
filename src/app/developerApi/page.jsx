@@ -32,6 +32,7 @@ import BusinessIcon from "../_components/svg/icons/retailBusiness.svg";
 import DeveloperImg from "../_components/svg/developerApi/developerImage.svg";
 import OwnedData from '../_components/svg/developerApi/userOwnedData.svg';
 import CollectedData from '../_components/svg/developerApi/collectedData.svg';
+import DeveloperCommunity from '../_components/svg/developerApi/developerCommunity.svg';
 
 const devloperApi = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -261,6 +262,7 @@ const devloperApi = () => {
           <HStack
             minH={"max-content"}
             display={"flex"}
+            mt={{md:'1.5rem',base:'0.75rem'}}
             gap={{ md: "4rem", base: "1rem" }}
           >
             <Box
@@ -468,9 +470,9 @@ const devloperApi = () => {
           </Box>
         </HStack>
 
-        <VStack px={{ md: "12rem", base: "1.25rem" }}>
+        <VStack px={{ md: "12rem", base: "1.25rem" }} py={{md:'4rem',base:'2rem'}}>
           <Text className="hushh-gradient" fontWeight={'600'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={'16px'} letterSpacing={'0.255rem'}>CORE VALUE COMPANY</Text>
-          <Text className="gradient" fontWeight={'400'} fontSize={{md:'3.75rem',base:'1.75rem'}} lineHeight={{base:'40px',md:'63.3px'}}>Data Categories in Hushh</Text>
+          <Text className="gradient" textAlign={'center'} fontWeight={'400'} fontSize={{md:'3.75rem',base:'1.75rem'}} lineHeight={{base:'40px',md:'63.3px'}}>Data Categories in Hushh</Text>
           <Text color={"#E5E5E5"} fontWeight={'400'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={{md:'28px',base:'20px'}}>
             Building a world where data works for you, not against you.
           </Text>
@@ -530,38 +532,96 @@ const devloperApi = () => {
           </HStack>
         </VStack>
 
-        <Stack margin={{ md: "10rem", base: "3.5rem" }} position={"relative"}>
-          <Box display={{ base: "none", md: "block" }}>
+       <VStack mx={{ md: "7rem", base: "1.25rem" }} gap={{ md: "2rem", base: "0.5rem" }} bg={'#1A1A1A'} borderRadius={'10px'} padding={{md:'50px',base:'25px'}} textAlign={'center'} alignContent={'center'} alignItems={'center'}>
+           <Text color={'#FFFFFF'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={{md:'24px',base:'18px'}} fontWeight={'400'}>Users retain ownership and control in both categories of data. We make use of multiple AI-based models as well as state-of-the-art techniques to efficiently and securely extract relevant information from all these diverse data sources.</Text>
+           <Text color={'#FFFFFF'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={{md:'24px',base:'18px'}} fontWeight={'400'}>We just don’t collect, we curate! Because it’s not just about coding; it’s about creating a future where applications are as unique as the individuals who use them.</Text>
+       </VStack> 
+
+       <Box
+        mx={{ md: "6rem", base: "0" }}
+        mb={"1rem"}
+        bg={"#131414"}
+        gap={{ md: "5rem", base: "1.25rem" }}
+        minW={{ md: "85%", base: "100%" }}
+        mt={{ md: "6rem", base: "4rem" }}
+        display={"flex"}
+        flexDirection={"row"}
+      >
+        <VStack
+          ml={{ md: "2rem", base: "0" }}
+          mx={{ base: "1rem" }}
+          gap={{ md: "2.5rem", base: "1rem" }}
+          textAlign={"left"}
+          alignItems={"flex-start"}
+          my={{ md: "4rem", base: "2rem" }}
+        >
+          <Text
+            className="color-gradient"
+            fontWeight={"600"}
+            fontSize={{ md: "1rem", base: "1rem" }}
+            lineHeight={"1rem"}
+            letterSpacing={"0.255"}
+          >
+            HUSHH
+          </Text>
+          <Text
+            className="gradient"
+            fontSize={{ md: "3.75rem", base: "2rem" }}
+            fontWeight={"600"}
+            lineHeight={{ md: "63.65px", base: "45px" }}
+          >
+            Why hushh?
+          </Text>
+          <VStack
+            display={{ md: "none", base: "block" }}
+            alignItems={"center"}
+            justify={"center"}
+            align={"center"}
+            alignSelf={"center"}
+          >
             <Image
-              src={BgAnimation}
-              alt="BgAnimation"
-              style={{
-                position: "absolute",
-                top: "-15px",
-                zIndex: "-10",
-                width: "100%",
-                height: "40rem",
-                filter: "grayscale(100%)",
-              }}
-              unoptimized
+              src={DeveloperCommunity}
+              alt="DeveloperCommunity"
+              style={{ width: "100%", height: "100%" }}
             />
-          </Box>
-          <Box display={{ base: "block", md: "none" }}>
-            <Image
-              src={BgAnimation}
-              alt="BgAnimation"
-              style={{
-                position: "absolute",
-                top: "-15px",
-                zIndex: "-10",
-                width: "100%",
-                height: "13rem",
-                filter: "grayscale(100%)",
-              }}
-              unoptimized
-            />
-          </Box>
-        </Stack>
+          </VStack>
+          <Text color={'#FFFFFF'} fontWeight={'400'} fontSize={{md:'1rem',base:'0.60rem'}} lineHeight={{ md:'24px',base:'18px'}} spacing={{md:'2rem',base:'1rem'}}>We cater to developers who want to spruce up their applications designed mainly for end-users, sales agents, and influencers. hushh is for you if:</Text>
+          <OrderedList color={'#FFFFFF'} fontWeight={'400'} fontSize={{md:'1rem',base:'0.60rem'}} lineHeight={{ md:'24px',base:'18px'}} spacing={{md:'2rem',base:'1rem'}}>
+            <ListItem>Need direct access to granular personal user data for applications.</ListItem>
+            <ListItem>Use cross-functional data points that you can't collect on your own.</ListItem>
+            <ListItem>Only use consent-driven, privacy-respecting, transparent data compliant with regulations.</ListItem>
+          </OrderedList>
+          <Button
+            border={"1px solid #606060"}
+            borderRadius={"2px"}
+            w={{ md: "18rem", base: "11rem" }}
+            color={extendedTheme.colors._white}
+            lineHeight={{ md: "28px", base: "14px" }}
+            background={"transparent"}
+            fontSize={{ md: "1rem", base: "0.75rem" }}
+            letterSpacing={{ md: "0.29rem", base: "0.145rem" }}
+            _hover={{
+              background:
+                "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+              border: "none",
+            }}
+            onClick={() => window.open("/developer-Api/on-boarding", "_blank")}
+          >
+            API DOCUMENTATION
+          </Button>
+        </VStack>
+        <VStack
+          display={{ md: "flex", base: "none" }}
+          alignContent={"flex-end"}
+          alignItems={"flex-end"}
+          alignSelf={"flex-end"}
+          w={"100%"}
+          h={"80%"}
+        >
+          <Image src={DeveloperCommunity} alt="DeveloperCommunity" />
+        </VStack>
+      </Box>
+
         <VibeSearchFaq />
       </Box>
       <ContactForm />

@@ -3,6 +3,8 @@ import React from "react";
 import {
   Box,
   Button,
+  Container,
+  Grid,
   HStack,
   Heading,
   ListItem,
@@ -33,6 +35,15 @@ import DeveloperImg from "../_components/svg/developerApi/developerImage.svg";
 import OwnedData from '../_components/svg/developerApi/userOwnedData.svg';
 import CollectedData from '../_components/svg/developerApi/collectedData.svg';
 import DeveloperCommunity from '../_components/svg/developerApi/developerCommunity.svg';
+import { ServiceCard } from "../_components/primitives/serviceCard";
+// Upcoming API's for Developers
+import FashionApi from "../_components/svg/developerApi/fashionApi";
+import FitnessApi from "../_components/svg/developerApi/fitnessApi";
+import PiiApi from "../_components/svg/developerApi/PiiAPI";
+import SocialApi from "../_components/svg/developerApi/socialAPI";
+import TransactionApi from "../_components/svg/developerApi/transactionApi";
+import TravelApi from "../_components/svg/developerApi/travelAPI";
+
 
 const devloperApi = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
@@ -621,6 +632,136 @@ const devloperApi = () => {
           <Image src={DeveloperCommunity} alt="DeveloperCommunity" />
         </VStack>
       </Box>
+
+
+      <HStack
+              pt={{ md: "8rem", base: "5rem" }}
+              justify={"center"}
+              display={"flex"}
+              flexDirection={"column"}
+            >
+              <Text
+                className="color-gradient"
+                fontWeight={600}
+                letterSpacing={"0.25rem"}
+                fontSize={"1rem"}
+                lineHeight={"1rem"}
+              >
+                API SHOWCASE
+              </Text>
+              <Box
+                align={"center"}
+                lineHeight={{ md: "63.3px" }}
+                pl={{ md: "16rem" }}
+                pr={{ md: "16rem" }}
+                className="gradient"
+                fontWeight={"300"}
+                display={"flex"}
+                flexDirection={"row"}
+                fontSize={{ md: "3.75rem", base: "1.5rem" }}
+              >
+                Browse our APIs
+                {/* <Text
+                  fontWeight="700"
+                  display="flex"
+                  marginLeft={{ md: "1rem" }}
+                >
+                  {" "}
+                  Everyone!
+                </Text> */}
+              </Box>
+              <Text
+                className="description"
+                textAlign={"center"}
+                w={"full"}
+                px={{ md: "24rem", base: "2rem" }}
+                color={'#ABABAB'}
+                fontSize={{ base: "0.75rem", md: "1rem" }}
+              >
+                We have seamless data capturing capabilities, robust security with trust measures in place and in-depth insights and transparency around the value of your data.
+              </Text>
+              <Container
+                display={"flex"}
+                mb={{ md: "4rem", base: "1.75rem" }}
+                pt={{ md: "2rem", base: "1rem" }}
+                px={{ md: "10rem", base: "0.5rem" }}
+                justifyContent={"center"}
+                textAlign={"center"}
+                minW={{ md: "100%", base: "100%" }}
+              >
+                <Grid
+                  templateColumns={{
+                    base: "repeat(2, 1fr)",
+                    md: "repeat(3, 1fr)",
+                  }}
+                  gap={{ md: 20, base: 5 }}
+                  justifyContent="center"
+                >
+                  <ServiceCard
+                    icon={<PiiApi />}
+                    title="PII​"
+                    alignItems={"center"}
+                    textAlign={"center"}
+                    description="Extract, protect, and process sensitive consumer data with hushh Data Privacy Vault.​"
+                    onClick={() =>
+                        window.open(
+                          "https://hushh.gitbook.io/hushh-docs/api-reference/pii-api",
+                          '_blank'
+                        )
+                      }
+                  />
+                  <ServiceCard
+                    icon={<FashionApi/>}
+                    title="Fashion API​​​"
+                    textAlign={"center"}
+                    alignItems={"center"}
+                    description="Think Legos for fashion websites & apps. Add features like product data or virtual try-on.​"
+                    onClick={() =>
+                        window.open(
+                          "https://hushh.gitbook.io/hushh-docs/api-reference/fashion-api",
+                          '_blank'
+                        )
+                      }                  />
+                  <ServiceCard
+                    icon={<TransactionApi />}
+                    title="Transactions API​"
+                    textAlign={"center"}
+                    alignItems={"center"}
+                    description="Think pipes for your finances. They move money data between apps and services."
+                    onClick={() =>
+                        window.open(
+                          "https://hushh.gitbook.io/hushh-docs/api-reference/transactions-api",
+                          '_blank'
+                        )
+                      }                       />
+                  {/* 2nd row */}
+                  <ServiceCard
+                    icon={<TravelApi />}
+                    title="Travel"
+                    alignItems={"center"}
+                    textAlign={"center"}
+                    description="Travel APIs act like travel agents for your app or website."
+                    onClick={() => router.push("/products/hushhValetChat")}
+                  />
+                   <ServiceCard
+                    icon={<SocialApi/>}
+                    title="Social Media​"
+                    alignItems={"center"}
+                    textAlign={"center"}
+                    description="Chat with social media platforms.  Lets your app post, get feeds, and more."
+                    onClick={() => router.push("/developer-Api/about-developer-api")}
+                  />
+                  <ServiceCard
+                    icon={<FitnessApi/>}
+                    title="Fitness​"
+                    alignItems={"center"}
+                    textAlign={"center"}
+                    description="Wearable device apps use APIs to collect user health data from phones and wearables."
+                    onClick={() => router.push("/products/vibeSearch")}
+                  />
+                </Grid>
+              </Container>
+            </HStack>
 
         <VibeSearchFaq />
       </Box>

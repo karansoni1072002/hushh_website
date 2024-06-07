@@ -474,8 +474,9 @@ const devloperApi = () => {
           <Text color={"#E5E5E5"} fontWeight={'400'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={{md:'28px',base:'20px'}}>
             Building a world where data works for you, not against you.
           </Text>
-          <HStack display={'flex'}  gap={{ md: "4rem", base: "1rem" }}>
-            <VStack flex={1} alignSelf={'flex-start'}>
+          <HStack mt={{md:'3rem',base:'1.25rem'}} display={'flex'} align={'center'} gap={{ md: "4rem", base: "1rem" }}>
+
+            <VStack gap={{md:'1.25rem',base:'0.75rem'}} flex={1} align={'flex-start'} display={'flex'} textAlign={'left'} alignItems={'flex-start'}>
               <Image src={OwnedData} alt="OwnedData" title="user owned data" />
               <Text
                 color={"#E5E5E5"}
@@ -504,7 +505,7 @@ const devloperApi = () => {
               </OrderedList>
             </VStack>
 
-            <VStack flex={1} alignSelf={'flex-start'}>
+            <VStack flex={1} gap={{md:'1.25rem',base:'0.75rem'}} alignSelf={'flex-start'} alignItems={'flex-start'}>
               <Image src={CollectedData} alt="CollectedData" title="Collected Data" />
               <Text
                 color={"#E5E5E5"}

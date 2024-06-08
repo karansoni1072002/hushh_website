@@ -43,11 +43,14 @@ import PiiApi from "../_components/svg/developerApi/PiiAPI";
 import SocialApi from "../_components/svg/developerApi/socialAPI";
 import TransactionApi from "../_components/svg/developerApi/transactionApi";
 import TravelApi from "../_components/svg/developerApi/travelAPI";
+import { useToast } from "@chakra-ui/react";
+
 
 
 const devloperApi = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
+  const toast = useToast();
 
   const scrollTo = () => {
     scroll.scrollTo(850);
@@ -743,7 +746,12 @@ const devloperApi = () => {
                     alignItems={"center"}
                     textAlign={"center"}
                     description="Travel APIs act like travel agents for your app or website."
-                    onClick={() => router.push("/products/hushhValetChat")}
+                    onClick={() => toast({
+                        title: "Coming Soon",
+                        status: "info",
+                        duration: 3000,
+                        isClosable: true,
+                      })}
                   />
                    <ServiceCard
                     icon={<SocialApi/>}
@@ -751,15 +759,25 @@ const devloperApi = () => {
                     alignItems={"center"}
                     textAlign={"center"}
                     description="Chat with social media platforms.  Lets your app post, get feeds, and more."
-                    onClick={() => router.push("/developer-Api/about-developer-api")}
-                  />
+                    onClick={() => toast({
+                        title: "Coming Soon",
+                        status: "info",
+                        duration: 3000,
+                        isClosable: true,
+                      })}                  
+                    />
                   <ServiceCard
                     icon={<FitnessApi/>}
                     title="Fitness​"
                     alignItems={"center"}
                     textAlign={"center"}
                     description="Wearable device apps use APIs to collect user health data from phones and wearables."
-                    onClick={() => router.push("/products/vibeSearch")}
+                    onClick={() => toast({
+                        title: "Coming Soon",
+                        status: "info",
+                        duration: 3000,
+                        isClosable: true,
+                      })}
                   />
                 </Grid>
               </Container>

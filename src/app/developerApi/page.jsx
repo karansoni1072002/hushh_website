@@ -45,8 +45,6 @@ import TransactionApi from "../_components/svg/developerApi/transactionAPI"
 import TravelApi from "../_components/svg/developerApi/travelAPI";
 import { useToast } from "@chakra-ui/react";
 
-
-
 const devloperApi = () => {
   const gradient = "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)";
   const router = useRouter();
@@ -85,7 +83,9 @@ const devloperApi = () => {
             unoptimized
           />
         </Box>
-        <Box display={{ base: "block", md: "none" }}>
+
+        {/* Added display none to fix the full width of the page on mobile screen as this is affecting on most of the pages  */}
+        <Box display={{ base: "none", md: "none" }} pos={'relative'} minW={'100%'}>
           <Image
             src={VibeSearchGif}
             alt="VibeSearchGif"
@@ -609,6 +609,7 @@ const devloperApi = () => {
             <ListItem>Only use consent-driven, privacy-respecting, transparent data compliant with regulations.</ListItem>
           </OrderedList>
           <Button
+            mt={{md:'4rem',base:'1rem'}}
             border={"1px solid #606060"}
             borderRadius={"2px"}
             w={{ md: "18rem", base: "11rem" }}
@@ -782,7 +783,7 @@ const devloperApi = () => {
                   />
                 </Grid>
               </Container>
-            </HStack>
+      </HStack>
 
         <VibeSearchFaq />
       </Box>

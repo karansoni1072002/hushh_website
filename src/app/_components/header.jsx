@@ -251,7 +251,7 @@ export default function Header() {
                       </div>
                     </Link>
                     <Link
-                      href={"/developer-Api/about-developer-api"}
+                      href={"/developerApi"}
                       onClick={() => setProductsSubmenu(false)}
                       className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
                     >
@@ -512,7 +512,7 @@ export default function Header() {
                         </div>
                       </Link>
                       <Link
-                        href={"/developer-Api/about-developer-api"}
+                        href={"/developerApi"}
                         onClick={handleSubmenuClick}
                         className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
                       >

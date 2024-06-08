@@ -1,3 +1,4 @@
+'use client'
 import { sortBlogs } from "../../utils";
 import Link from "next/link";
 import React from "react";
@@ -5,9 +6,11 @@ import BlogLayoutThree from "../Blog/BlogLayoutThree";
 import { Box, Text } from "@chakra-ui/react";
 import ArrowIcon from '../../_components/svg/icons/yellowArrow.svg'
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const RecentPosts = ({ blogs }) => {
   const sortedBlogs = sortBlogs(blogs);
+  const router =  useRouter();
   return (
     <section className="w-full  mt-16 sm:mt-24  md:mt-32 px-5 sm:px-10 md:px-24  sxl:px-32 flex flex-col items-center justify-center">
       <div className="w-full flex  justify-between">
@@ -23,7 +26,7 @@ const RecentPosts = ({ blogs }) => {
           borderRadius={'10px'}
           cursor={'pointer'}
         >
-          <Text href='/categories/all' color="#98989A" gap={'2'} display={'flex'}>View All Blogs <Image src={ArrowIcon} alt="ArrowYellowIcon"/> </Text>
+          <Text onClick={()=> router.push('/categories/all')} color="#98989A" gap={'2'} display={'flex'}>View All Blogs <Image src={ArrowIcon} alt="ArrowYellowIcon"/> </Text>
         </Box>
       </div>
 

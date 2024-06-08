@@ -278,7 +278,7 @@ export default function vivaConnect2() {
             cursor={"pointer"}
             onClick={() =>
               window.open(
-                "https://www.hush1one.com/developer-Api/about-developer-api",
+                "/developerApi",
                 "_blank"
               )
             }

@@ -192,7 +192,7 @@ export default function BlogPage({ params }) {
                 <summary className="text-lg text-#98989A font-400 capitalize cursor-pointer">
                   Table Of Content
                 </summary>
-                <VStack as="ul" mt="4" fontSize="base" align="stretch">
+                <VStack as="ul" mt="4" fontSize="base" bg={'#1A1A1A'} borderRadius={'10px'} p={{md:'1rem',base:'0.5rem'}} align="stretch">
                   {blog.toc.map((heading) => (
                     <Box as="li" py="1" key={`#${heading.slug}`}>
                       <Link
@@ -210,10 +210,19 @@ export default function BlogPage({ params }) {
                             w="1"
                             h="1"
                             borderRadius="full"
-                            bg="gray.800"
+                            bg="white"
                             mr="2"
                           />
                         )}
+                        {/* {heading.level === "two" && (
+                          <Box
+                            w="4"
+                            h="0.5"
+                            borderRadius="full"
+                            bg="white"
+                            mr="2"
+                          />
+                        )} */}
                         <Text _hover={{ textDecoration: "underline" }}>
                           {heading.text}
                         </Text>

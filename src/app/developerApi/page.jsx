@@ -41,7 +41,7 @@ import FashionApi from "../_components/svg/developerApi/fashionApi";
 import FitnessApi from "../_components/svg/developerApi/fitnessApi";
 import PiiApi from "../_components/svg/developerApi/PiiAPI";
 import SocialApi from "../_components/svg/developerApi/socialAPI";
-import TransactionApi from "../_components/svg/developerApi/transactionApi";
+import TransactionApi from "../_components/svg/developerApi/transactionAPI"
 import TravelApi from "../_components/svg/developerApi/travelAPI";
 import { useToast } from "@chakra-ui/react";
 
@@ -200,6 +200,7 @@ const devloperApi = () => {
                 mode or test mode.{" "}
               </Text>
               <Button
+                mt={{md:'3rem',base:'1.5rem'}}
                 border={"1px solid #606060"}
                 borderRadius={"2px"}
                 w={{ md: "18rem", base: "11rem" }}

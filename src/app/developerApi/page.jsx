@@ -289,6 +289,7 @@ const devloperApi = () => {
               <HStack
                 display={"flex"}
                 flexDirection={{ md: "row", base: "column" }}
+                gap={{md:'2rem',base:'1rem'}}
               >
                 <Image src={BusinessIcon} alt="businessIcon" title="business" />
                 <Text
@@ -347,6 +348,7 @@ const devloperApi = () => {
               <HStack
                 display={"flex"}
                 flexDirection={{ md: "row", base: "column" }}
+                gap={{md:'2rem',base:'1rem'}}
               >
                 <Image src={CodeIcon} alt="CodeIcon" title="CodeIcon" />
                 <Text

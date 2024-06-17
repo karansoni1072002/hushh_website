@@ -19,6 +19,7 @@ import ChartIcon from "../_components/svg/outBoundService/chartLogoIcon.svg";
 import ConsultationIcon from "../_components/svg/outBoundService/consultationIcon.svg";
 import DualDirection from "../_components/svg/outBoundService/dualDirection.svg";
 import FeedbackIcon from "../_components/svg/outBoundService/feedbackoundIcon.svg";
+import ContactForm from "../_components/features/contactForm";
 
 const OutBoundService = () => {
   return (
@@ -447,6 +448,7 @@ const OutBoundService = () => {
           </Container>
         </VStack>
       </Box>
+      <ContactForm />
     </>
   );
 };

@@ -174,7 +174,7 @@ const OutBoundService = () => {
               // icon={<TrustedAIIcon />}
               alignItems={""}
               onClick={"#"}
-              title="Connect with brands and sales agents you trust​"
+              title="Telemarketing​"
               textAlign={"left"}
               description="Share your curated data cards with businesses you choose, enabling them to offer personalized experiences and recommendations tailored to your unique preferences.​"
             />
@@ -182,7 +182,7 @@ const OutBoundService = () => {
               // icon={<TechIntegrationIcon />}
               alignItems={""}
               onClick={"#"}
-              title="Get rewarded for sharing data​​​"
+              title="Cold Calling​​​"
               textAlign={"left"}
               description="Earn rewards for the valuable information you contribute, be it discounts, exclusive offers, or early access to products.​​"
             />
@@ -190,50 +190,53 @@ const OutBoundService = () => {
               // icon={<ControlOver />}
               alignItems={""}
               onClick={"#"}
-              title="Sell your data​"
+              title="Email Outreach​"
               textAlign={"left"}
               description="You can sell your data directly to brands and agencies, receiving fair compensation for its value."
             />
             <ServiceCard
               // icon={<RedifiningIcon />}
-              title="Transparency and Control​​​"
+              title="SMS Campaigns​​​"
               onClick={"#"}
               alignItems={""}
               textAlign={"left"}
               description="Hushh prioritizes your privacy and control. You have full transparency over who has access to your data and what they can see. You can easily revoke access or modify your data cards at any time.​​"
             />
-             <Box
+
+            
+          <Box
             className="gradient-bg serviceBox"
             minW={"20rem"}
             display={{ md: "block", base: "none" }}
-            borderLeftRadius={"50px"}
+            borderLeftRadius={"10px"}
             // position={"absolute"}
             p={{ md: "2rem", base: "0.75rem" }}
             bottom={0}
-            top={"60%"}
-            h={"70%"}
+            // top={"60%"}
+            // h={"70%"}
+            flex={1.5}
             right={0}
           >
             <Text
               mb={{ md: "1rem", base: "0.5rem" }}
-              color={"#0D0D25"}
-              fontSize={{ md: "3.75rem", base: "1.25rem" }}
-              lineHeight={{ md: "70px", base: "35px" }}
-              fontWeight={"400"}
-              mr={"40%"}
+              color={"#FFFFFF"}
+              fontSize={{ md: "2rem", base: "1rem" }}
+              lineHeight={{ md: "46.5px", base: "25px" }}
+              fontWeight={"600"}
             >
-              Enter a world made for you
+              We growing up your business with personal AI manager.
             </Text>
-            <Text
-              mb={{ md: "2rem", base: "1rem" }}
-              color={"#0D0D25"}
-              fontSize={{ md: "1.25rem", base: "0.75rem" }}
-              lineHeight={"24.6px"}
-              mr={"50%"}
+            <Button 
+             bg={'#FFFFFF'}
+             borderRadius={'65px'}
+             fontWeight={'400'}
+             letterSpacing={'0.464rem'}
+             fontSize={{md:'1rem',base:'0.5rem'}}
+             lineHeight={{md:'28.8px',base:'20px'}}
             >
-              Download Hushh Wallet today and unlock the power of your personal
-              data.
-            </Text>
+            Get Started
+            </Button>
+
           </Box>
           </Grid>
          

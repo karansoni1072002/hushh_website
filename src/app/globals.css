@@ -451,3 +451,10 @@ body {
 }
 
 /* 3-D Button Viva Connect */
+
+
+/* Hushh Outbound Services CSS */
+.serviceBox {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}

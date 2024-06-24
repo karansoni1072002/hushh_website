@@ -42,6 +42,13 @@ import Shadow from "../_components/svg/outBoundService/shadowOutBound.svg";
 const OutBoundService = () => {
   const router = useRouter();
 
+  const scrollToStart = () => {
+    window.scrollTo({
+      top: document.getElementById("howItworks").offsetTop,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <Box
@@ -98,7 +105,7 @@ const OutBoundService = () => {
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               border: "none",
             }}
-            onClick={() => window.open("/developer-Api/on-boarding", "_blank")}
+            onClick={scrollToStart}
           >
             GET STARTED
           </Button>
@@ -306,6 +313,8 @@ const OutBoundService = () => {
         <VStack
           px={{ md: "5rem", base: "1.25rem" }}
           py={{ md: "8rem", base: "3rem" }}
+          className="howItworks"
+          id="howItworks"
         >
           <Text
             className="hushh-gradient"

@@ -37,6 +37,7 @@ import TwitterIcon from "../_components/svg/icons/twitterIcon.svg";
 import SkypeIcon from "../_components/svg/icons/skypeIcon.svg";
 import LinkedInIcon from "../_components/svg/icons/linkedinIcon.svg";
 import { useRouter } from "next/navigation";
+import Shadow from "../_components/svg/outBoundService/shadowOutBound.svg";
 
 const OutBoundService = () => {
   const router = useRouter();
@@ -480,7 +481,13 @@ const OutBoundService = () => {
           </Container>
         </VStack>
 
-        <Box>
+        <Box position={"relative"}>
+        <Image
+            style={{ position: "absolute", zIndex:"-1", left: "-600px",top:'100px', width:'100%' }}
+            src={Shadow}
+            alt="shadow"
+             
+          />
           <VStack
             px={{ md: "3.5rem", base: "1.15rem" }}
             py={{ md: "6rem", base: "2rem" }}
@@ -512,11 +519,13 @@ const OutBoundService = () => {
               Building a world where data works for you, not against you.
             </Text>
           </VStack>
+          
           <Stack
             gap={{ md: "3rem" }}
             px={{ md: "5rem", base: "1.15rem" }}
             display={"flex"}
-            flexDirection={"row"}
+            w={"100%"}
+            flexDirection={{ md: "row", base: "column" }}
           >
             <Image alt="manish" src={Manish} title="manish sainani" />
             <VStack
@@ -574,25 +583,30 @@ const OutBoundService = () => {
                   color={"white"}
                   borderRadius={"4px"}
                   padding={"5px 20px 5px 20px"}
+                  _hover={{
+                    color: "white",
+                    bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                  }}
                 >
                   Book an Appointment
                 </Button>
-                <Image src={SkypeIcon} alt="SkypeIcon" title="manish Skype" 
-                onClick={() =>
-                  window.open(
-                    "https://www.linkedin.com/in/manishsainani/",
-                    '_blank'
-                  )
-                }
+                <Image
+                  src={SkypeIcon}
+                  alt="SkypeIcon"
+                  title="manish Skype"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/manishsainani/",
+                      "_blank"
+                    )
+                  }
                 />
                 <Image
                   src={TwitterIcon}
                   alt="TwitterIcon"
-                  title="manish twitter"onClick={() =>
-                    window.open(
-                      "https://x.com/manishsainani",
-                      '_blank'
-                    )
+                  title="manish twitter"
+                  onClick={() =>
+                    window.open("https://x.com/manishsainani", "_blank")
                   }
                 />
                 <Image
@@ -602,7 +616,7 @@ const OutBoundService = () => {
                   onClick={() =>
                     window.open(
                       "https://www.linkedin.com/in/manishsainani/",
-                      '_blank'
+                      "_blank"
                     )
                   }
                 />
@@ -610,11 +624,12 @@ const OutBoundService = () => {
             </VStack>
           </Stack>
           <Stack
-            py={{md:'5rem',base:'2rem'}}
+            w={"100%"}
+            py={{ md: "5rem", base: "2rem" }}
             gap={{ md: "3rem" }}
             px={{ md: "5rem", base: "1.15rem" }}
             display={"flex"}
-            flexDirection={"row"}
+            flexDirection={{ md: "row", base: "column-reverse" }}
           >
             <VStack
               gap={{ md: "1rem", base: "0.5rem" }}
@@ -671,16 +686,24 @@ const OutBoundService = () => {
                   color={"white"}
                   borderRadius={"4px"}
                   padding={"5px 20px 5px 20px"}
+                  _hover={{
+                    color: "white",
+                    bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                  }}
                 >
                   Book an Appointment
                 </Button>
-                <Image src={SkypeIcon} alt="SkypeIcon" title="manish Skype" 
-                 onClick={() =>
-                  window.open(
-                    "https://www.linkedin.com/in/jjustindonaldson/",
-                    '_blank'
-                  )
-                }/>
+                <Image
+                  src={SkypeIcon}
+                  alt="SkypeIcon"
+                  title="manish Skype"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/jjustindonaldson/",
+                      "_blank"
+                    )
+                  }
+                />
                 <Image
                   src={TwitterIcon}
                   alt="TwitterIcon"
@@ -688,7 +711,7 @@ const OutBoundService = () => {
                   onClick={() =>
                     window.open(
                       "https://www.linkedin.com/in/jjustindonaldson/",
-                      '_blank'
+                      "_blank"
                     )
                   }
                 />
@@ -699,14 +722,13 @@ const OutBoundService = () => {
                   onClick={() =>
                     window.open(
                       "https://www.linkedin.com/in/jjustindonaldson/",
-                      '_blank'
+                      "_blank"
                     )
                   }
                 />
               </HStack>
             </VStack>
             <Image alt="Justin" src={Justin} title="Justin Donaldson" />
-            
           </Stack>
         </Box>
       </Box>

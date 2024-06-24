@@ -22,16 +22,20 @@ import ConsultationIcon from "../_components/svg/outBoundService/consultationIco
 import DualDirection from "../_components/svg/outBoundService/dualDirection.svg";
 import FeedbackIcon from "../_components/svg/outBoundService/feedbackoundIcon.svg";
 import ContactForm from "../_components/features/contactForm";
-import One from '../_components/svg/outBoundService/one.svg';
-import Two from '../_components/svg/outBoundService/two.svg';
-import Three from '../_components/svg/outBoundService/three.svg';
-import Four from '../_components/svg/outBoundService/four.svg';
+import One from "../_components/svg/outBoundService/one.svg";
+import Two from "../_components/svg/outBoundService/two.svg";
+import Three from "../_components/svg/outBoundService/three.svg";
+import Four from "../_components/svg/outBoundService/four.svg";
 import TrustedAIIcon from "../_components/svg/trustedAI";
 import ControlOver from "../_components/svg/controlOver";
 import TechIntegrationIcon from "../_components/svg/techIntegration";
 import RedifiningIcon from "../_components/svg/redifiningIcon";
 import TransparentSecureIcon from "../_components/svg/tranparentSecure";
-import { teamImages } from "../_components/features/teamImages";
+import Manish from "../../../public/Images/manish.png";
+import Justin from "../../../public/Images/justin.png";
+import TwitterIcon from "../_components/svg/icons/twitterIcon.svg";
+import SkypeIcon from "../_components/svg/icons/skypeIcon.svg";
+import LinkedInIcon from "../_components/svg/icons/linkedinIcon.svg";
 
 const OutBoundService = () => {
   return (
@@ -190,7 +194,7 @@ const OutBoundService = () => {
           flexDir={{ base: "column", md: "row" }} // Stack the elements vertically on base, and horizontally on md
           minW={{ md: "100%", base: "100%" }}
           position={"relative"}
-          mt={{md:'2rem',basse:'0.5rem'}}
+          mt={{ md: "2rem", basse: "0.5rem" }}
         >
           <Grid
             position={"relative"}
@@ -246,14 +250,14 @@ const OutBoundService = () => {
               alignSelf={"flex-start"}
               flex={1.5}
               right={0}
-              gap={{ md:'5rem'}}
+              gap={{ md: "5rem" }}
             >
               <Box
                 p={{ md: "2rem", base: "0.75rem" }}
                 display={"flex"}
                 flex={1.5}
                 flexDirection={"column"}
-                gap={{md:'2rem'}}
+                gap={{ md: "2rem" }}
               >
                 <Text
                   mb={{ md: "1rem", base: "0.5rem" }}
@@ -298,7 +302,6 @@ const OutBoundService = () => {
         <VStack
           px={{ md: "5rem", base: "1.25rem" }}
           py={{ md: "8rem", base: "3rem" }}
-          
         >
           <Text
             className="hushh-gradient"
@@ -327,7 +330,7 @@ const OutBoundService = () => {
             Building a world where data works for you, not against you.
           </Text>
           <Container
-            mt={{md:'3rem',base:'1.25rem'}}
+            mt={{ md: "3rem", base: "1.25rem" }}
             minW={"100%"}
             display={"grid"}
             gridColumn={{ md: "1", base: "2" }}
@@ -342,7 +345,7 @@ const OutBoundService = () => {
               // px={{ md: "2rem", base: "0rem" }}
             >
               {/* <Box> */}
-                
+
               {/* <Image src={One} alt="one" title="step one" style={{position:'absolute',top:'0',zIndex:'3', width:'5rem', height:'full'}} />   */}
               <Box
                 bg={"#1C1C1C"}
@@ -375,11 +378,12 @@ const OutBoundService = () => {
                   fontSize={{ md: "1rem", base: "0.6rem" }}
                   lineHeight={{ md: "36px", base: "20px" }}
                 >
-                  We understand your business goals and develop a tailored outbound strategy.
+                  We understand your business goals and develop a tailored
+                  outbound strategy.
                 </Text>
               </Box>
               {/* </Box> */}
-              
+
               <Box
                 bg={"#1C1C1C"}
                 p={{ md: "1rem", base: "0.5rem" }}
@@ -407,7 +411,8 @@ const OutBoundService = () => {
                   fontSize={{ md: "1rem", base: "0.6rem" }}
                   lineHeight={{ md: "36px", base: "20px" }}
                 >
-                  We execute campaigns across various channels, ensuring consistent messaging and effective outreach.
+                  We execute campaigns across various channels, ensuring
+                  consistent messaging and effective outreach.
                 </Text>
               </Box>
               <Box
@@ -418,11 +423,7 @@ const OutBoundService = () => {
                 flexDirection={"column"}
                 gap={{ md: "1rem", base: "0.5rem" }}
               >
-                <Image
-                  src={ChartIcon}
-                  alt="ChartIcon"
-                  title="ChartIcon"
-                />
+                <Image src={ChartIcon} alt="ChartIcon" title="ChartIcon" />
                 <Text
                   fontWeight={"700"}
                   color={"#FFFFFF"}
@@ -437,7 +438,8 @@ const OutBoundService = () => {
                   fontSize={{ md: "1rem", base: "0.6rem" }}
                   lineHeight={{ md: "36px", base: "20px" }}
                 >
-                  We continuously monitor performance and make adjustments to optimize results.
+                  We continuously monitor performance and make adjustments to
+                  optimize results.
                 </Text>
               </Box>
               <Box
@@ -467,7 +469,8 @@ const OutBoundService = () => {
                   fontSize={{ md: "1rem", base: "0.6rem" }}
                   lineHeight={{ md: "36px", base: "20px" }}
                 >
-                  We provide detailed reports and gather feedback to measure success and identify areas for improvement.
+                  We provide detailed reports and gather feedback to measure
+                  success and identify areas for improvement.
                 </Text>
               </Box>
             </Grid>
@@ -479,35 +482,111 @@ const OutBoundService = () => {
             px={{ md: "3.5rem", base: "1.15rem" }}
             py={{ md: "6rem", base: "2rem" }}
           >
-          <Text
-            className="hushh-gradient"
-            fontWeight={"600"}
-            fontSize={{ md: "1rem", base: "0.5rem" }}
-            lineHeight={"16px"}
-            letterSpacing={"0.255rem"}
-          >
-            MEET THE FOUNDERS
-          </Text>
-          <Text
-            className="gradient"
-            textAlign={"center"}
-            fontWeight={"400"}
-            fontSize={{ md: "3.75rem", base: "1.75rem" }}
-            lineHeight={{ base: "40px", md: "63.3px" }}
-          >
-            Ready to Boost Your Business?
-          </Text>
-          <Text
-            color={"#E5E5E5"}
-            fontWeight={"400"}
-            fontSize={{ md: "1rem", base: "0.5rem" }}
-            lineHeight={{ md: "28px", base: "20px" }}
-          >
-            Building a world where data works for you, not against you.
-          </Text>
+            <Text
+              className="hushh-gradient"
+              fontWeight={"600"}
+              fontSize={{ md: "1rem", base: "0.5rem" }}
+              lineHeight={"16px"}
+              letterSpacing={"0.255rem"}
+            >
+              MEET THE FOUNDERS
+            </Text>
+            <Text
+              className="gradient"
+              textAlign={"center"}
+              fontWeight={"400"}
+              fontSize={{ md: "3.75rem", base: "1.75rem" }}
+              lineHeight={{ base: "40px", md: "63.3px" }}
+            >
+              Ready to Boost Your Business?
+            </Text>
+            <Text
+              color={"#E5E5E5"}
+              fontWeight={"400"}
+              fontSize={{ md: "1rem", base: "0.5rem" }}
+              lineHeight={{ md: "28px", base: "20px" }}
+            >
+              Building a world where data works for you, not against you.
+            </Text>
           </VStack>
-          <Stack>
-            <Image alt="manish" src={teamImages.Manish} title="manish sainani" />
+          <Stack
+            gap={{ md: "3rem" }}
+            px={{ md: "5rem", base: "1.15rem" }}
+            display={"flex"}
+            flexDirection={"row"}
+          >
+            <Image alt="manish" src={Manish} title="manish sainani" />
+            <VStack
+              gap={{ md: "1rem", base: "0.5rem" }}
+              textAlign={"left"}
+              alignItems={"flex-start"}
+            >
+              <Text
+                fontWeight={"700"}
+                lineHeight={{ md: "32.13px", base: "20px" }}
+                fontSize={{ md: "1.67rem", base: "1rem" }}
+                color={"white"}
+              >
+                Manish Sainani
+              </Text>
+              <Text
+                fontWeight={"400"}
+                lineHeight={{ md: "21.42px", base: "14px" }}
+                fontSize={{ md: "1.1rem", base: "0.5rem" }}
+                color={"white"}
+              >
+                Executive Director
+              </Text>
+              <Text
+                fontWeight={"500"}
+                fontSize={{ md: "1rem", base: "0.75rem" }}
+                lineHeight={{ md: "45px", base: "30px" }}
+                color={"#ABABAB"}
+              >
+                I’m passionate about building products and teams with delightful
+                experiences bringing human, AI & design to life. My focus lately
+                has been democratizing userdata & scaling developer experience &
+                productivity with AI such as Recommendation systems, LLMs across
+                our developer, human and userid ecosystems.Nov 2021 Onwards:
+                Product Dir in Google - Developer, x-Google Engineering,
+                Languages, Tooling and SDKs and Hybrid GoogleOS w/ GCP)
+              </Text>
+              <Text
+                fontWeight={"500"}
+                fontSize={{ md: "1rem", base: "0.75rem" }}
+                lineHeight={{ md: "45px", base: "30px" }}
+                color={"#ABABAB"}
+              >
+                Portfolio with customers xGoogle, with a team of ~30 PMs & 5k+
+                engineering team supporting Google Cloud, Ads, Search, Cloud,
+                Geo, Bets, DeepMind and Core as primary GTM customers for Core
+                and TI/Cloud. Reported to SVP/Google Fellow, Core & xGE (Luiz
+                André Barasso) and later to VP, Core Developer (Asim Husain).
+              </Text>
+              <HStack display={"flex"} gap={{ md: "2rem", base: "0.5rem" }}>
+                <Button
+                  zIndex={"44444"}
+                  onClick={""}
+                  backgroundColor={"#0565FF"}
+                  color={"white"}
+                  borderRadius={"4px"}
+                  padding={"5px 20px 5px 20px"}
+                >
+                  Book An Appointment
+                </Button>
+                <Image src={SkypeIcon} alt="SkypeIcon" title="manish Skype" />
+                <Image
+                  src={TwitterIcon}
+                  alt="TwitterIcon"
+                  title="manish twitter"
+                />
+                <Image
+                  src={LinkedInIcon}
+                  alt="LinkedInIcon"
+                  title="Manish LinkedIn"
+                />
+              </HStack>
+            </VStack>
           </Stack>
         </Box>
       </Box>

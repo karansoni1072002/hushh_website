@@ -481,7 +481,7 @@ const OutBoundService = () => {
           </Container>
         </VStack>
 
-        <Box position={"relative"}>
+        <Box position={"relative"} minW={'100%'}>
         <Image
             style={{ position: "absolute", zIndex:"-1", left: "-600px",top:'100px', width:'100%' }}
             src={Shadow}
@@ -582,6 +582,7 @@ const OutBoundService = () => {
                   backgroundColor={"#0565FF"}
                   color={"white"}
                   borderRadius={"4px"}
+                  cursor={'pointer'}
                   padding={"5px 20px 5px 20px"}
                   _hover={{
                     color: "white",
@@ -594,6 +595,7 @@ const OutBoundService = () => {
                   src={SkypeIcon}
                   alt="SkypeIcon"
                   title="manish Skype"
+                  style={{cursor:'pointer'}}
                   onClick={() =>
                     window.open(
                       "https://www.linkedin.com/in/manishsainani/",
@@ -605,6 +607,7 @@ const OutBoundService = () => {
                   src={TwitterIcon}
                   alt="TwitterIcon"
                   title="manish twitter"
+                  style={{cursor:'pointer'}}
                   onClick={() =>
                     window.open("https://x.com/manishsainani", "_blank")
                   }
@@ -613,6 +616,7 @@ const OutBoundService = () => {
                   src={LinkedInIcon}
                   alt="LinkedInIcon"
                   title="Manish LinkedIn"
+                  style={{cursor:'pointer'}}
                   onClick={() =>
                     window.open(
                       "https://www.linkedin.com/in/manishsainani/",
@@ -623,6 +627,7 @@ const OutBoundService = () => {
               </HStack>
             </VStack>
           </Stack>
+         
           <Stack
             w={"100%"}
             py={{ md: "5rem", base: "2rem" }}
@@ -630,7 +635,9 @@ const OutBoundService = () => {
             px={{ md: "5rem", base: "1.15rem" }}
             display={"flex"}
             flexDirection={{ md: "row", base: "column-reverse" }}
+            position={'relative'}
           >
+            
             <VStack
               gap={{ md: "1rem", base: "0.5rem" }}
               textAlign={"right"}
@@ -684,6 +691,7 @@ const OutBoundService = () => {
                   onClick={""}
                   backgroundColor={"#0565FF"}
                   color={"white"}
+                  cursor={'pointer'}
                   borderRadius={"4px"}
                   padding={"5px 20px 5px 20px"}
                   _hover={{
@@ -697,6 +705,7 @@ const OutBoundService = () => {
                   src={SkypeIcon}
                   alt="SkypeIcon"
                   title="manish Skype"
+                  style={{cursor:'pointer'}}
                   onClick={() =>
                     window.open(
                       "https://www.linkedin.com/in/jjustindonaldson/",
@@ -707,6 +716,7 @@ const OutBoundService = () => {
                 <Image
                   src={TwitterIcon}
                   alt="TwitterIcon"
+                  style={{cursor:'pointer'}}
                   title="manish twitter"
                   onClick={() =>
                     window.open(
@@ -718,6 +728,7 @@ const OutBoundService = () => {
                 <Image
                   src={LinkedInIcon}
                   alt="LinkedInIcon"
+                  style={{cursor:'pointer'}}
                   title="Manish LinkedIn"
                   onClick={() =>
                     window.open(
@@ -730,6 +741,11 @@ const OutBoundService = () => {
             </VStack>
             <Image alt="Justin" src={Justin} title="Justin Donaldson" />
           </Stack>
+          <Image
+            style={{ position: "absolute", zIndex:"-1", right: "0px",overflow:'hidden',top:'900px', width:'100%' }}
+            src={Shadow}
+            alt="shadow"
+          />
         </Box>
       </Box>
       <ContactForm />

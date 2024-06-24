@@ -578,7 +578,6 @@ const OutBoundService = () => {
               <HStack display={"flex"} gap={{ md: "2rem", base: "0.5rem" }}>
                 <Button
                   zIndex={"44444"}
-                  onClick={""}
                   backgroundColor={"#0565FF"}
                   color={"white"}
                   borderRadius={"4px"}
@@ -588,6 +587,12 @@ const OutBoundService = () => {
                     color: "white",
                     bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
                   }}
+                  onClick={() =>
+                    window.open(
+                      "https://calendly.com/hushh/30min",
+                      "_blank"
+                    )
+                  }
                 >
                   Book an Appointment
                 </Button>
@@ -688,7 +693,6 @@ const OutBoundService = () => {
               <HStack display={"flex"} gap={{ md: "2rem", base: "0.5rem" }}>
                 <Button
                   zIndex={"44444"}
-                  onClick={""}
                   backgroundColor={"#0565FF"}
                   color={"white"}
                   cursor={'pointer'}
@@ -698,6 +702,12 @@ const OutBoundService = () => {
                     color: "white",
                     bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
                   }}
+                  onClick={() =>
+                    window.open(
+                      "https://cal.com/jdonaldson/30min",
+                      "_blank"
+                    )
+                  }
                 >
                   Book an Appointment
                 </Button>

@@ -6,8 +6,10 @@ import {
   Grid,
   HStack,
   Heading,
+  Stack,
   Text,
   VStack,
+  border,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
@@ -20,6 +22,16 @@ import ConsultationIcon from "../_components/svg/outBoundService/consultationIco
 import DualDirection from "../_components/svg/outBoundService/dualDirection.svg";
 import FeedbackIcon from "../_components/svg/outBoundService/feedbackoundIcon.svg";
 import ContactForm from "../_components/features/contactForm";
+import One from '../_components/svg/outBoundService/one.svg';
+import Two from '../_components/svg/outBoundService/two.svg';
+import Three from '../_components/svg/outBoundService/three.svg';
+import Four from '../_components/svg/outBoundService/four.svg';
+import TrustedAIIcon from "../_components/svg/trustedAI";
+import ControlOver from "../_components/svg/controlOver";
+import TechIntegrationIcon from "../_components/svg/techIntegration";
+import RedifiningIcon from "../_components/svg/redifiningIcon";
+import TransparentSecureIcon from "../_components/svg/tranparentSecure";
+import { teamImages } from "../_components/features/teamImages";
 
 const OutBoundService = () => {
   return (
@@ -178,6 +190,7 @@ const OutBoundService = () => {
           flexDir={{ base: "column", md: "row" }} // Stack the elements vertically on base, and horizontally on md
           minW={{ md: "100%", base: "100%" }}
           position={"relative"}
+          mt={{md:'2rem',basse:'0.5rem'}}
         >
           <Grid
             position={"relative"}
@@ -187,7 +200,7 @@ const OutBoundService = () => {
             px={{ md: "5rem", base: "0rem" }}
           >
             <ServiceCard
-              // icon={<TrustedAIIcon />}
+              icon={<TrustedAIIcon />}
               alignItems={""}
               onClick={"#"}
               title="Telemarketing​"
@@ -195,7 +208,7 @@ const OutBoundService = () => {
               description="Share your curated data cards with businesses you choose, enabling them to offer personalized experiences and recommendations tailored to your unique preferences.​"
             />
             <ServiceCard
-              // icon={<TechIntegrationIcon />}
+              icon={<TechIntegrationIcon />}
               alignItems={""}
               onClick={"#"}
               title="Cold Calling​​​"
@@ -203,7 +216,7 @@ const OutBoundService = () => {
               description="Earn rewards for the valuable information you contribute, be it discounts, exclusive offers, or early access to products.​​"
             />
             <ServiceCard
-              // icon={<ControlOver />}
+              icon={<ControlOver />}
               alignItems={""}
               onClick={"#"}
               title="Email Outreach​"
@@ -211,7 +224,7 @@ const OutBoundService = () => {
               description="You can sell your data directly to brands and agencies, receiving fair compensation for its value."
             />
             <ServiceCard
-              // icon={<RedifiningIcon />}
+              icon={<RedifiningIcon />}
               title="SMS Campaigns​​​"
               onClick={"#"}
               alignItems={""}
@@ -229,16 +242,18 @@ const OutBoundService = () => {
 
               bottom={0}
               // top={"60%"}
-              h={"70%"}
+              h={"100%"}
               alignSelf={"flex-start"}
               flex={1.5}
               right={0}
+              gap={{ md:'5rem'}}
             >
               <Box
                 p={{ md: "2rem", base: "0.75rem" }}
                 display={"flex"}
                 flex={1.5}
                 flexDirection={"column"}
+                gap={{md:'2rem'}}
               >
                 <Text
                   mb={{ md: "1rem", base: "0.5rem" }}
@@ -255,7 +270,7 @@ const OutBoundService = () => {
                   borderRadius={"65px"}
                   fontWeight={"400"}
                   zIndex={"2"}
-                  color={"black"}
+                  color={"white"}
                   letterSpacing={"0.364rem"}
                   fontSize={{ md: "1rem", base: "0.5rem" }}
                   lineHeight={{ md: "28.8px", base: "20px" }}
@@ -282,7 +297,8 @@ const OutBoundService = () => {
 
         <VStack
           px={{ md: "5rem", base: "1.25rem" }}
-          py={{ md: "4rem", base: "2rem" }}
+          py={{ md: "8rem", base: "3rem" }}
+          
         >
           <Text
             className="hushh-gradient"
@@ -311,6 +327,7 @@ const OutBoundService = () => {
             Building a world where data works for you, not against you.
           </Text>
           <Container
+            mt={{md:'3rem',base:'1.25rem'}}
             minW={"100%"}
             display={"grid"}
             gridColumn={{ md: "1", base: "2" }}
@@ -324,6 +341,9 @@ const OutBoundService = () => {
               flexWrap="wrap"
               // px={{ md: "2rem", base: "0rem" }}
             >
+              {/* <Box> */}
+                
+              {/* <Image src={One} alt="one" title="step one" style={{position:'absolute',top:'0',zIndex:'3', width:'5rem', height:'full'}} />   */}
               <Box
                 bg={"#1C1C1C"}
                 p={{ md: "1rem", base: "0.5rem" }}
@@ -331,6 +351,10 @@ const OutBoundService = () => {
                 display={"flex"}
                 flexDirection={"column"}
                 gap={{ md: "1rem", base: "0.5rem" }}
+
+                // position={'relative'}
+                // zIndex={2}
+                // mt={{md:'6rem',base:'3rem'}}
               >
                 <Image
                   src={ConsultationIcon}
@@ -354,6 +378,8 @@ const OutBoundService = () => {
                   We understand your business goals and develop a tailored outbound strategy.
                 </Text>
               </Box>
+              {/* </Box> */}
+              
               <Box
                 bg={"#1C1C1C"}
                 p={{ md: "1rem", base: "0.5rem" }}
@@ -447,6 +473,43 @@ const OutBoundService = () => {
             </Grid>
           </Container>
         </VStack>
+
+        <Box>
+          <VStack
+            px={{ md: "3.5rem", base: "1.15rem" }}
+            py={{ md: "6rem", base: "2rem" }}
+          >
+          <Text
+            className="hushh-gradient"
+            fontWeight={"600"}
+            fontSize={{ md: "1rem", base: "0.5rem" }}
+            lineHeight={"16px"}
+            letterSpacing={"0.255rem"}
+          >
+            MEET THE FOUNDERS
+          </Text>
+          <Text
+            className="gradient"
+            textAlign={"center"}
+            fontWeight={"400"}
+            fontSize={{ md: "3.75rem", base: "1.75rem" }}
+            lineHeight={{ base: "40px", md: "63.3px" }}
+          >
+            Ready to Boost Your Business?
+          </Text>
+          <Text
+            color={"#E5E5E5"}
+            fontWeight={"400"}
+            fontSize={{ md: "1rem", base: "0.5rem" }}
+            lineHeight={{ md: "28px", base: "20px" }}
+          >
+            Building a world where data works for you, not against you.
+          </Text>
+          </VStack>
+          <Stack>
+            <Image alt="manish" src={teamImages.Manish} title="manish sainani" />
+          </Stack>
+        </Box>
       </Box>
       <ContactForm />
     </>

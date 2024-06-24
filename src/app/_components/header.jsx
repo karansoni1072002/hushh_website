@@ -155,14 +155,14 @@ export default function Header() {
         ) : (
           <div className="w-max">
             <div className="text-white flex justify-between gap-12 px-7 md:gap-10">
-              <Link
+              {/* <Link
                 href="/"
                 className={`link ${pathname === '/' ? 'gradient-text' : ''}`}
                 style={{ zIndex: "1000" }}
                 onMouseEnter={() => setProductsSubmenu(false)}
               >
                 HOME
-              </Link>
+              </Link> */}
               <Link
                 href="/about"
                 style={{ zIndex: "1000" }}
@@ -191,6 +191,13 @@ export default function Header() {
                 className={`link ${pathname === '/pricingPlans' ? 'gradient-text' : ''}`}
               >
                 PRICING
+              </Link>
+              <Link
+                href="/outbound-services"
+                onMouseEnter={() => setProductsSubmenu(false)}
+                className={`link ${pathname === '/outbound-services' ? 'gradient-text' : ''}`}
+              >
+                SERVICES
               </Link>
               <Link
                 href="/UserGuide"

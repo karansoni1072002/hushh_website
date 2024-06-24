@@ -36,8 +36,11 @@ import Justin from "../../../public/Images/justin.png";
 import TwitterIcon from "../_components/svg/icons/twitterIcon.svg";
 import SkypeIcon from "../_components/svg/icons/skypeIcon.svg";
 import LinkedInIcon from "../_components/svg/icons/linkedinIcon.svg";
+import { useRouter } from "next/navigation";
 
 const OutBoundService = () => {
+  const router = useRouter();
+
   return (
     <>
       <Box
@@ -572,21 +575,138 @@ const OutBoundService = () => {
                   borderRadius={"4px"}
                   padding={"5px 20px 5px 20px"}
                 >
-                  Book An Appointment
+                  Book an Appointment
                 </Button>
-                <Image src={SkypeIcon} alt="SkypeIcon" title="manish Skype" />
+                <Image src={SkypeIcon} alt="SkypeIcon" title="manish Skype" 
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/manishsainani/",
+                    '_blank'
+                  )
+                }
+                />
                 <Image
                   src={TwitterIcon}
                   alt="TwitterIcon"
-                  title="manish twitter"
+                  title="manish twitter"onClick={() =>
+                    window.open(
+                      "https://x.com/manishsainani",
+                      '_blank'
+                    )
+                  }
                 />
                 <Image
                   src={LinkedInIcon}
                   alt="LinkedInIcon"
                   title="Manish LinkedIn"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/manishsainani/",
+                      '_blank'
+                    )
+                  }
                 />
               </HStack>
             </VStack>
+          </Stack>
+          <Stack
+            py={{md:'5rem',base:'2rem'}}
+            gap={{ md: "3rem" }}
+            px={{ md: "5rem", base: "1.15rem" }}
+            display={"flex"}
+            flexDirection={"row"}
+          >
+            <VStack
+              gap={{ md: "1rem", base: "0.5rem" }}
+              textAlign={"right"}
+              alignItems={"flex-end"}
+            >
+              <Text
+                fontWeight={"700"}
+                lineHeight={{ md: "32.13px", base: "20px" }}
+                fontSize={{ md: "1.67rem", base: "1rem" }}
+                color={"white"}
+              >
+                Justin Donaldson
+              </Text>
+              <Text
+                fontWeight={"400"}
+                lineHeight={{ md: "21.42px", base: "14px" }}
+                fontSize={{ md: "1.1rem", base: "0.5rem" }}
+                color={"white"}
+              >
+                Co-founder and Chief Data Scientist
+              </Text>
+              <Text
+                fontWeight={"500"}
+                fontSize={{ md: "1rem", base: "0.75rem" }}
+                lineHeight={{ md: "45px", base: "30px" }}
+                color={"#ABABAB"}
+              >
+                I’m passionate about building products and teams with delightful
+                experiences bringing human, AI & design to life. My focus lately
+                has been democratizing userdata & scaling developer experience &
+                productivity with AI such as Recommendation systems, LLMs across
+                our developer, human and userid ecosystems.Nov 2021 Onwards:
+                Product Dir in Google - Developer, x-Google Engineering,
+                Languages, Tooling and SDKs and Hybrid GoogleOS w/ GCP)
+              </Text>
+              <Text
+                fontWeight={"500"}
+                fontSize={{ md: "1rem", base: "0.75rem" }}
+                lineHeight={{ md: "45px", base: "30px" }}
+                color={"#ABABAB"}
+              >
+                Portfolio with customers xGoogle, with a team of ~30 PMs & 5k+
+                engineering team supporting Google Cloud, Ads, Search, Cloud,
+                Geo, Bets, DeepMind and Core as primary GTM customers for Core
+                and TI/Cloud. Reported to SVP/Google Fellow, Core & xGE (Luiz
+                André Barasso) and later to VP, Core Developer (Asim Husain).
+              </Text>
+              <HStack display={"flex"} gap={{ md: "2rem", base: "0.5rem" }}>
+                <Button
+                  zIndex={"44444"}
+                  onClick={""}
+                  backgroundColor={"#0565FF"}
+                  color={"white"}
+                  borderRadius={"4px"}
+                  padding={"5px 20px 5px 20px"}
+                >
+                  Book an Appointment
+                </Button>
+                <Image src={SkypeIcon} alt="SkypeIcon" title="manish Skype" 
+                 onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/jjustindonaldson/",
+                    '_blank'
+                  )
+                }/>
+                <Image
+                  src={TwitterIcon}
+                  alt="TwitterIcon"
+                  title="manish twitter"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/jjustindonaldson/",
+                      '_blank'
+                    )
+                  }
+                />
+                <Image
+                  src={LinkedInIcon}
+                  alt="LinkedInIcon"
+                  title="Manish LinkedIn"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/jjustindonaldson/",
+                      '_blank'
+                    )
+                  }
+                />
+              </HStack>
+            </VStack>
+            <Image alt="Justin" src={Justin} title="Justin Donaldson" />
+            
           </Stack>
         </Box>
       </Box>

@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Container,
+  Divider,
   Grid,
   HStack,
   Heading,
@@ -536,7 +537,12 @@ const OutBoundService = () => {
             w={"100%"}
             flexDirection={{ md: "row", base: "column" }}
           >
-            <Image alt="manish" src={Manish} title="manish sainani" width={isTabletOrMobile ? '200' : '355'} height={isTabletOrMobile ? '220' : '489'}/>
+            <Box w={'100%'} h={'100%'} display={{md:'block',base:'none'}} >
+               <Image alt="manish" src={Manish} title="manish sainani"  width={'355'} height={'489'}/>
+            </Box>
+            <Box w={'100%'} h={'100%'} display={{md:'none',base:'flex'}}>
+               <Image alt="manish" src={Manish} title="manish sainani"  width={'200'} height={'220'}/>
+            </Box>
             <VStack
               gap={{ md: "1rem", base: "1rem" }}
               textAlign={"left"}
@@ -587,12 +593,12 @@ const OutBoundService = () => {
               </Text>
               <HStack display={"flex"} gap={{ md: "2rem", base: "0.5rem" }}>
                 <Button
-                  zIndex={"44444"}
                   backgroundColor={"#0565FF"}
                   color={"white"}
                   borderRadius={"4px"}
                   cursor={'pointer'}
-                  padding={"5px 20px 5px 20px"}
+                  padding={{md:"5px 20px 5px 20px",base:"5px 10px 5px 10px"}}
+                  fontSize={{md:'1rem',base:'0.75rem'}}
                   _hover={{
                     color: "white",
                     bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
@@ -604,7 +610,7 @@ const OutBoundService = () => {
                     )
                   }
                 >
-                  Book an Appointment
+                  Book a call with Manish
                 </Button>
                 <Image
                   src={SkypeIcon}
@@ -642,7 +648,10 @@ const OutBoundService = () => {
               </HStack>
             </VStack>
           </Stack>
-         
+        <Box w={'100%'} py={{base:'2rem'}} alignItems={'center'} display={{base:'flex',md:'none'}} px={{base:'1.75rem'}}>
+           <Divider w={'100%'} />
+        </Box>  
+        
           <Stack
             w={"100%"}
             py={{ md: "5rem", base: "2rem" }}
@@ -708,7 +717,8 @@ const OutBoundService = () => {
                   color={"white"}
                   cursor={'pointer'}
                   borderRadius={"4px"}
-                  padding={"5px 20px 5px 20px"}
+                  fontSize={{md:'1rem',base:'0.75rem'}}
+                  padding={{md:"5px 20px 5px 20px",base:"5px 10px 5px 10px"}}
                   _hover={{
                     color: "white",
                     bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
@@ -720,7 +730,7 @@ const OutBoundService = () => {
                     )
                   }
                 >
-                  Book an Appointment
+                  Book a call with Justin
                 </Button>
                 <Image
                   src={SkypeIcon}
@@ -760,7 +770,12 @@ const OutBoundService = () => {
                 />
               </HStack>
             </VStack>
-            <Image alt="Justin" src={Justin} title="Justin Donaldson" width={isTabletOrMobile ? '200' : '355'} height={isTabletOrMobile ? '220' : '489'}/>
+            <Box w={'100%'} h={'100%'} display={{md:'block',base:'none'}} >
+               <Image alt="Justin" src={Justin} title="Justin Donaldson"  width={'355'} height={'489'}/>
+            </Box>
+            <Box w={'100%'} h={'100%'} display={{md:'none',base:'flex'}}>
+               <Image alt="Justin" src={Justin} title="Justin Donaldson"  width={'200'} height={'220'}/>
+            </Box>
           </Stack>
           <Image
             style={{ position: "absolute", zIndex:"-1", right: "0px",overflow:'hidden',top:'900px', width:'100%' }}

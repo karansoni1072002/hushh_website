@@ -38,9 +38,11 @@ import SkypeIcon from "../_components/svg/icons/skypeIcon.svg";
 import LinkedInIcon from "../_components/svg/icons/linkedinIcon.svg";
 import { useRouter } from "next/navigation";
 import Shadow from "../_components/svg/outBoundService/shadowOutBound.svg";
+import { useMediaQuery } from 'react-responsive'
 
 const OutBoundService = () => {
   const router = useRouter();
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
   const scrollToStart = () => {
     window.scrollTo({
@@ -70,7 +72,7 @@ const OutBoundService = () => {
             fontWeight={"700"}
             lineHeight={{ md: "90.28px", base: "48px" }}
             textAlign={"center"}
-            fontSize={{ md: "4.625rem", base: "2.3rem" }}
+            fontSize={{ md: "4.625rem", base: "2rem" }}
             pt={{ md: "10rem", base: "3rem" }}
             className="gradient"
             px={{ base: "0.5rem", md: "6rem" }}
@@ -87,7 +89,7 @@ const OutBoundService = () => {
             color={"#FFFFFF"}
             letterSpacing={"-0.4px"}
             lineHeight={{ md: "30px", base: "18px" }}
-            fontSize={{ md: "1.25rem", base: "0.5rem" }}
+            fontSize={{ md: "1.25rem", base: "0.75rem" }}
           >
             Professional and Efficient Solutions for Your Business Needs
           </Text>
@@ -124,7 +126,7 @@ const OutBoundService = () => {
             flex={1}
             gap={{ md: "2rem", base: "1rem" }}
           >
-            <Image src={OutBoundServiceImg} alt="OutBoundServiceImg" />
+            <Image src={OutBoundServiceImg} alt="OutBoundServiceImg" layout="responsive" />
           </Box>
 
           <Box
@@ -304,6 +306,7 @@ const OutBoundService = () => {
                   src={PaperPlane}
                   alt="PaperPlane"
                   title="Out Bound Service"
+                  layout="responsive"
                 />
               </Box>
             </Box>
@@ -320,7 +323,7 @@ const OutBoundService = () => {
             className="hushh-gradient"
             fontWeight={"600"}
             fontSize={{ md: "1rem", base: "0.5rem" }}
-            lineHeight={"16px"}
+            lineHeight={{md:"16px"}}
             letterSpacing={"0.255rem"}
           >
             CORE VALUE COMPANY
@@ -330,14 +333,14 @@ const OutBoundService = () => {
             textAlign={"center"}
             fontWeight={"700"}
             fontSize={{ md: "3.75rem", base: "1.75rem" }}
-            lineHeight={{ base: "90px", md: "48.3px" }}
+            lineHeight={{ md: "90px", base: "28.3px" }}
           >
             How It Works
           </Text>
           <Text
             color={"#E5E5E5"}
             fontWeight={"400"}
-            fontSize={{ md: "1rem", base: "0.5rem" }}
+            fontSize={{ md: "1rem", base: "0.75rem" }}
             lineHeight={{ md: "28px", base: "20px" }}
           >
             Building a world where data works for you, not against you.
@@ -367,15 +370,12 @@ const OutBoundService = () => {
                 display={"flex"}
                 flexDirection={"column"}
                 gap={{ md: "1rem", base: "0.5rem" }}
-
-                // position={'relative'}
-                // zIndex={2}
-                // mt={{md:'6rem',base:'3rem'}}
               >
                 <Image
                   src={ConsultationIcon}
                   alt="ConsultationIcon"
                   title="ConsultationIcon"
+                  // layout="responsive"
                 />
                 <Text
                   fontWeight={"700"}
@@ -409,6 +409,7 @@ const OutBoundService = () => {
                   src={DualDirection}
                   alt="DualDirection"
                   title="DualDirection"
+                  // layout="responsive"
                 />
                 <Text
                   fontWeight={"700"}
@@ -495,7 +496,6 @@ const OutBoundService = () => {
             style={{ position: "absolute", zIndex:"-1", left: "-600px",top:'100px', width:'100%' }}
             src={Shadow}
             alt="shadow"
-             
           />
           <VStack
             px={{ md: "3.5rem", base: "1.15rem" }}
@@ -522,7 +522,7 @@ const OutBoundService = () => {
             <Text
               color={"#E5E5E5"}
               fontWeight={"400"}
-              fontSize={{ md: "1rem", base: "0.5rem" }}
+              fontSize={{ md: "1rem", base: "0.75rem" }}
               lineHeight={{ md: "28px", base: "20px" }}
             >
               Building a world where data works for you, not against you.
@@ -536,24 +536,25 @@ const OutBoundService = () => {
             w={"100%"}
             flexDirection={{ md: "row", base: "column" }}
           >
-            <Image alt="manish" src={Manish} title="manish sainani" />
+            <Image alt="manish" src={Manish} title="manish sainani" width={isTabletOrMobile ? '200' : '355'} height={isTabletOrMobile ? '220' : '489'}/>
             <VStack
-              gap={{ md: "1rem", base: "0.5rem" }}
+              gap={{ md: "1rem", base: "1rem" }}
               textAlign={"left"}
               alignItems={"flex-start"}
             >
               <Text
                 fontWeight={"700"}
                 lineHeight={{ md: "32.13px", base: "20px" }}
-                fontSize={{ md: "1.67rem", base: "1rem" }}
+                fontSize={{ md: "1.67rem", base: "1.15rem" }}
                 color={"white"}
+                mt={{base:'1rem'}}
               >
                 Manish Sainani
               </Text>
               <Text
                 fontWeight={"400"}
                 lineHeight={{ md: "21.42px", base: "14px" }}
-                fontSize={{ md: "1.1rem", base: "0.5rem" }}
+                fontSize={{ md: "1.1rem", base: "0.75rem" }}
                 color={"white"}
               >
                 Executive Director
@@ -561,7 +562,7 @@ const OutBoundService = () => {
               <Text
                 fontWeight={"500"}
                 fontSize={{ md: "1rem", base: "0.75rem" }}
-                lineHeight={{ md: "45px", base: "30px" }}
+                lineHeight={{ md: "45px", base: "20px" }}
                 color={"#ABABAB"}
               >
                 I’m passionate about building products and teams with delightful
@@ -575,7 +576,7 @@ const OutBoundService = () => {
               <Text
                 fontWeight={"500"}
                 fontSize={{ md: "1rem", base: "0.75rem" }}
-                lineHeight={{ md: "45px", base: "30px" }}
+                lineHeight={{ md: "45px", base: "20px" }}
                 color={"#ABABAB"}
               >
                 Portfolio with customers xGoogle, with a team of ~30 PMs & 5k+
@@ -654,21 +655,22 @@ const OutBoundService = () => {
             
             <VStack
               gap={{ md: "1rem", base: "0.5rem" }}
-              textAlign={"right"}
-              alignItems={"flex-end"}
+              textAlign={{md:"right",base:'left'}}
+              alignItems={{md:"flex-end",base:'flex-start'}}
             >
               <Text
                 fontWeight={"700"}
                 lineHeight={{ md: "32.13px", base: "20px" }}
                 fontSize={{ md: "1.67rem", base: "1rem" }}
                 color={"white"}
+                mt={{base:'1rem'}}
               >
                 Justin Donaldson
               </Text>
               <Text
                 fontWeight={"400"}
                 lineHeight={{ md: "21.42px", base: "14px" }}
-                fontSize={{ md: "1.1rem", base: "0.5rem" }}
+                fontSize={{ md: "1.1rem", base: "0.75rem" }}
                 color={"white"}
               >
                 Co-founder and Chief Data Scientist
@@ -676,7 +678,7 @@ const OutBoundService = () => {
               <Text
                 fontWeight={"500"}
                 fontSize={{ md: "1rem", base: "0.75rem" }}
-                lineHeight={{ md: "45px", base: "30px" }}
+                lineHeight={{ md: "45px", base: "20px" }}
                 color={"#ABABAB"}
               >
                 I’m passionate about building products and teams with delightful
@@ -690,7 +692,7 @@ const OutBoundService = () => {
               <Text
                 fontWeight={"500"}
                 fontSize={{ md: "1rem", base: "0.75rem" }}
-                lineHeight={{ md: "45px", base: "30px" }}
+                lineHeight={{ md: "45px", base: "20px" }}
                 color={"#ABABAB"}
               >
                 Portfolio with customers xGoogle, with a team of ~30 PMs & 5k+
@@ -758,7 +760,7 @@ const OutBoundService = () => {
                 />
               </HStack>
             </VStack>
-            <Image alt="Justin" src={Justin} title="Justin Donaldson" />
+            <Image alt="Justin" src={Justin} title="Justin Donaldson" width={isTabletOrMobile ? '200' : '355'} height={isTabletOrMobile ? '220' : '489'}/>
           </Stack>
           <Image
             style={{ position: "absolute", zIndex:"-1", right: "0px",overflow:'hidden',top:'900px', width:'100%' }}

@@ -32,10 +32,18 @@ import BgAnimation from "../../../public/Gif/bgAnimation.gif";
 import DataRetrievalMade from "../../../public/Gif/dataRetrievalMade.gif";
 import Slogo from "../../../public/Gif/slogo.gif";
 import VibeSearchGif from "../../../public/Gif/vibeSearchGIf.gif";
+import { setCookie, getCookie } from '../utils/cookies';
 
 const ClientHushhButton = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
+
+  const trackSdkCookies = () => {
+    const activity = getCookie('userActivity') || [];
+    const timestamp = new Date().toISOString();
+    const updatedActivity = [...activity, { event: 'SDK Visit', timestamp }];
+    setCookie('hushhSDK', JSON.stringify(updatedActivity), { expires: 7 });
+  };
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -172,6 +180,7 @@ const ClientHushhButton = () => {
               background:'transparent',
               color:'white'
             }}
+            onClick={trackSdkCookies}
           >
             HUSHH SDK  
           </Button>

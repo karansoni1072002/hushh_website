@@ -14,6 +14,10 @@ import Head from "next/head";
 import { GoogleTagManager } from "@next/third-parties/google";
 import HushhButtonFromLib from './_utilities/HushhButton'
 import siteMetadata  from "./sitemetadata";
+import { cookies } from "next/headers";
+import GoogleAnalytics from "./_components/GoogleAnalytics";
+import CookieBanner from './_components/cookieBanner';
+
 export const metadata = {
   title: {
     default: "HUSHH",
@@ -64,8 +68,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const cookieStore = cookies()
+  const allCookieData = cookieStore.getAll()
+  console.log(cookieStore)
+
   return (
     <html lang="en">
+      <GoogleAnalytics GA_MEASUREMENT_ID='G-1PDGMHH7CL'/>
       <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-1PDGMHH7CL"
@@ -157,6 +166,7 @@ export default function RootLayout({ children }) {
           />{" "}
           <div className="w-full">
             <Providers>{children}</Providers>
+            <CookieBanner/>
           </div>
         </ResponsiveSizeProvider>
       </body>

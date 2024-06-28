@@ -48,10 +48,42 @@ import RightCircleEclipse from "../_components/svg/rightCircleEclipse.svg";
 import ApiVibeSearch from "../_components/svg/apiVibeSearch";
 import { HushhBlogsHome } from "../_components/HushhBlogsHome";
 
+// Cookies
+import { setCookie, getCookie } from '../utils/cookies';
+import Cookies from 'js-cookie';
+
+const trackUserActivity = () => {
+  const activity = getCookie('userActivity') || [];
+  const timestamp = new Date().toISOString();
+  const updatedActivity = [...activity, { event: 'visit', timestamp }];
+  setCookie('userActivity', JSON.stringify(updatedActivity), { expires: 7 });
+};
+
 const ClientHome = () => {
   const router = useRouter();
   const [showPopup, setShowPopup] = useState(false);
   const [loading, setLoading] = useState(true);
+ 
+  // Setting and storing cookies 
+  useEffect(() => {
+    // Ensure router is available before setting up events
+    if (router.isReady) {
+      trackUserActivity();
+
+      const handleRouteChange = (url) => {
+        const activity = getCookie('userActivity') || [];
+        const timestamp = new Date().toISOString();
+        const updatedActivity = [...activity, { event: 'routeChange', url, timestamp }];
+        setCookie('userActivity', JSON.stringify(updatedActivity), { expires: 7 });
+      };
+
+      router.events.on('routeChangeComplete', handleRouteChange);
+
+      return () => {
+        router.events.off('routeChangeComplete', handleRouteChange);
+      };
+    }
+  }, [router]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {

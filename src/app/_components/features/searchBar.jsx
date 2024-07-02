@@ -48,8 +48,23 @@ const SearchBar = () => {
 
   const handleChange = (event) => {
     setSearchQuery(event.target.value);
+    if (
+      (inputRef.current &&
+      !inputRef.current.contains(event.target) )
+    ) {
+      setIsClicked(false);
+      setShowRecommendations(false);
+    }  
   };
-
+  const handleClick = (event) => {
+    if (
+      (inputRef.current && !inputRef.current.contains(event.target)) || (recommendationsRef.current && !recommendationsRef.current.contains(event.target))
+    ) {
+      setIsClicked(false);
+      setShowRecommendations(false);
+    }
+  };
+  
   const highlightMatchedText = (text, query) => {
     const index = text.toLowerCase().indexOf(query.toLowerCase());
     if (index !== -1) {
@@ -77,19 +92,20 @@ const SearchBar = () => {
     return <Text>{text}</Text>;
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        inputRef.current &&
-        !inputRef.current.contains(event.target) &&
-        recommendationsRef.current &&
-        !recommendationsRef.current.contains(event.target)
-      ) {
-        setIsClicked(false);
-        setShowRecommendations(false);
-      }
-    };
+  const handleClickOutside = (event) => {
+    if (
+      inputRef.current &&
+      !inputRef.current.contains(event.target) &&
+      recommendationsRef.current &&
+      !recommendationsRef.current.contains(event.target)
+    ) {
+      setIsClicked(false);
+      setShowRecommendations(false);
+    }
+  };
 
+
+  useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
@@ -99,6 +115,7 @@ const SearchBar = () => {
 
   return (
     <>
+    <div onClick={handleClick}>
       {!isClicked ? (
         <IconButton
           icon={<SearchIcon color={"#606060"} boxSize={isMobile ? 20 : 32} />}
@@ -113,11 +130,11 @@ const SearchBar = () => {
             position="fixed"
             top="0"
             left="0"
-            width="100%"
+            width={{md:"100%", base:'60%'}}
             height="100%"
             backgroundColor="rgba(0, 0, 0, 0.5)"
             backdropFilter="blur(5px)"
-            // zIndex="999"
+            zIndex="999"
             onClick={() => {
               setIsClicked(false);
               setShowRecommendations(false);
@@ -125,7 +142,7 @@ const SearchBar = () => {
           />
           <Box
             position="fixed"
-            top="50%"
+            top="75%"
             left="50%"
             transform="translate(-50%, -50%)"
             zIndex="1000"
@@ -134,7 +151,6 @@ const SearchBar = () => {
             bg="white"
             borderRadius="md"
             boxShadow="lg"
-            
           >
             <VStack bg="#FFFFFF" spacing={4} align="stretch">
               <Flex width="100%" position="fixed">
@@ -144,13 +160,16 @@ const SearchBar = () => {
                   value={searchQuery}
                   onChange={handleChange}
                   // variant="filled"
+                  onPointerCancel={() => setIsClicked(false)}
                   borderRadius="none"
                   width={"100%"}
                   size="md"
-                  color={'black'}
-                  _hover={{ background: "white" }}
-                  border={"3px solid #606060"}
-                  _focus={{ color: "black",bg:'#FFFFFF', border: "1px solid #FFFFFF" }}
+                  // onPointerLeave={() => setIsClicked(false)}
+                  color={'white'}
+                  bg={'transparent'}
+                  _hover={{ background: "transparent" }}
+                  border={"1px solid #606060"}
+                  _focus={{ color: "white",bg:'transparent', border: "1px solid #FFFFFF" }}
                   _placeholder={{ color: "gray.400" }}
                   px="4"
                   py="2"
@@ -238,6 +257,7 @@ const SearchBar = () => {
           </Box>
         </>
       )}
+      </div>
     </>
   );
 };

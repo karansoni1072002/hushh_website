@@ -5,6 +5,9 @@ import { ChromeExtension } from "../svg/icons/HeaderIcons/ChromeExtension";
 import { ValetChat } from "../svg/icons/HeaderIcons/ValetChat";
 import { VibeSearchApp } from "../svg/icons/HeaderIcons/VibeSearchApp";
 import HfsLogo from "../svg/hfsLogo";
+import HushhHeaderLogo from "../svg/hushhHeaderLogo";
+import { FcOnlineSupport } from "react-icons/fc";
+import { TbWorldDollar } from "react-icons/tb";
 
 const contentMap = [
   {
@@ -141,6 +144,42 @@ const contentMap = [
     showRecommentationContentDescription:
       "Enhanced Recommendations and impactful marketing which helps you keep track of your digital footprint by tracking your own browsing activity",
     icon: <ChromeExtension />,
+  },
+  {
+    keywords: [
+      "Pricing Plans",
+      "Pricing",
+      "Hushh Pricing",
+      "Aa-la-cart plans",
+      "Add ons",
+      "Customized Plans",
+      "Pricing details",
+      "Price Structure",
+      "Digital footprint",
+      "Gen AI",
+    ],
+    url: "/pricingPlans",
+    content:
+      "Find the right plan for your needs, USER PLANS, PROFESSIONAL PLANS, Build, publish, and host with ease, Add a team and stage multiple sites, Our user plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer, Billed Monthly, Yearly Billings, Monthly Plans, Yearly Plans, Save upto 22% , Vibe Search Plans, Wallet App Plans, Valet Chat Plans, Concierge App plans, Browser Companion Plans, Basic Plans, Pro Plan, Premium Plans, Unlimited Brands, All prices are in USD and charged per site with applicable taxes added at checkout, View All Plan features, View Plans, Luxury App agents, Vibe Search API plans, Agent Concierge App plans, Free trial, 90 days plan, Data Access, Hushh Plans, Hushh pricing, Hushh Data Plans, Hushh Addons, Hushh ADD-ons, $9.99/month, $9.99, $19.99 per month, Start for free, Hushh’s diverse pricing strategy aims to democratize access to powerful data and AI tools, making them accessible to a wide audience. Whether you’re a consumer trusting us with your data, a developer building the next big app, a sales agent aiming for your next target, or a creator curating unique experiences, Hushh provides the tools, support, and platform to achieve your goals. With Hushh, embrace a smarter, more secure, and personalized digital future, This summary aims to convey Hushh’s commitment to delivering value through innovative, user-centric products and services, ensuring clear communication of pricing and offerings to foster trust and loyalty across all user segments , Beyond the tools and platforms, Hushh fosters a community for support, learning, and collaboration, enhancing the value of every subscription., From free basic access to premium options, services are built to scale with the growth of individuals & businesses, ensuring long-term support, Scalable Solutions, Pricing is designed to be straightforward across all services, ensuring users can easily select the tools that best fit their needs without encountering hidden fees, Advanced Data Insights, User Targeting Options, Data Card Sharing, Commision Sharing, Brand Reputation tool, Campaign Management, Brand Interaction Analytics, Customizable Reporting, Advanced Integration, Maximum Products Indexed, Response Time, Recommendation Types, Customer Data Integration, Customizable Search Filters, Enchanced Search Analytics, Free trial for 90 days, maximum service categories,client matching, lead volumne, hushh coin commision, client match radius, featured agent listing, advanced AI capabilities, No advetisment, White lable products, receipt import, basic, pro, premium, Basic Search, Search history, share your vibe, advance search filters, unlimited searches, saved searches, add site plans, get plans, get pricing, pricing menu, customizable UI, Unlimited card, customized cards, Limited sources data aggregation, data card creation, selective data sharing, customized data sharing, security data sharing, security standard encryption, basic rewards, anonymization, advanced rewards, data backup, Customizable Privacy Settings, No ads, Receipt Import, Categorization, Conversational AI, Multimedia Sharing, Export Options, Customizable Themes, Chat Backup, Request Format,  Service Provider Choice, Basic Assistance, Request Anonymity Level, Advanced AI Capabilities, Hushh Browser Companion plans,  Valet chat plans, Hushh wallet app plans, Hushh Vibe Search plans , Gen AI plans, pricing plans, contact for pricing ",
+    showRecommentationContentHeading: "Hushh Pricing Plans",
+    showRecommentationContentDescription:
+      "Pricing is designed to be straightforward across all services, ensuring users can easily select the tools that best fit their needs without encountering hidden fees",
+    icon: <TbWorldDollar size={'1.5rem'} />,
+  },
+  {
+    keywords: [
+      "Contact Us",
+      "Get Support",
+      "Reach Out to us",
+      "Know more about our products",
+    ],
+    url: "/contact-us",
+    content:
+      "Tell us your query, we will help you out, contact us, reach out to hushh, meet with our team for demo's and product showcase",
+    showRecommentationContentHeading: "Contact Us",
+    showRecommentationContentDescription:
+      "Contact us and Tell us your query, we will help you out and get you onboard with hushh with ease",
+    icon:<FcOnlineSupport size={'1.5rem'}/>,
   },
 ];
 

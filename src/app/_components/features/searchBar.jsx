@@ -152,8 +152,8 @@ const SearchBar = () => {
             borderRadius="md"
             boxShadow="lg"
           >
-            <VStack bg="#FFFFFF" spacing={4} align="stretch">
-              <Flex width="100%" position="fixed">
+            <VStack bg="#FFFFFF" spacing={4}  align="stretch">
+              <Flex width="100%" position="fixed" p={'1rem'}>
                 <Input
                   ref={inputRef}
                   placeholder="Search into our website"
@@ -187,9 +187,9 @@ const SearchBar = () => {
                   maxH="300px"
                   minH={'100px'}
                   overflowY="auto"
-                  p={3}
+                  p={8}
                   width="100%"
-                  mt={30} // Changed from mt={3} to mt={0} to ensure it appears right below the input
+                  mt={50} // Changed from mt={3} to mt={0} to ensure it appears right below the input
                 >
                   {recommendations.length === 0 ? (
                     <Box

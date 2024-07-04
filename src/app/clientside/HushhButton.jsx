@@ -169,8 +169,8 @@ const ClientHushhButton = () => {
             background= "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)"         
             letterSpacing={{ md: "0.5rem", base: "0.1rem" }}
             _hover={{
-              background:'transparent',
-              color:'white'
+              background:'white',
+              color:'black'
             }}
           >
             HUSHH SDK  

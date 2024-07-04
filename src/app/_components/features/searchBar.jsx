@@ -20,7 +20,7 @@ const SearchBar = () => {
   const [isClicked, setIsClicked] = useState(false);
   const router = useRouter();
   const isMobile = useResponsiveSizes();
-  const isDesktop = useMediaQuery({ query: "(min-width: 1824px)" });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1224px)" });
   const inputRef = useRef(null);
   const recommendationsRef = useRef(null);
 
@@ -118,7 +118,8 @@ const SearchBar = () => {
     <div onClick={handleClick}>
       {!isClicked ? (
         <IconButton
-          icon={<SearchIcon color={"#606060"} boxSize={isMobile ? 20 : 32} />}
+          style={{marginTop: isDesktop ? '0.5rem':'0.5rem', marginRight: isDesktop ? '2rem':'0.1rem'}}
+          icon={<SearchIcon color={"#606060"} boxSize={isDesktop ? 32 : 22} />}
           aria-label="Search"
           className="search-icon"
           onClick={() => setIsClicked(true)}

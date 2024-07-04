@@ -158,14 +158,14 @@ export default function Header() {
               {/* <Link
                 href="/"
                 className={`link ${pathname === '/' ? 'gradient-text' : ''}`}
-                style={{ zIndex: "1000" }}
+                // style={{ zIndex: "1000" }}
                 onMouseEnter={() => setProductsSubmenu(false)}
               >
                 HOME
               </Link> */}
               <Link
                 href="/about"
-                style={{ zIndex: "1000" }}
+                // style={{ zIndex: "1000" }}
                 className={`link ${pathname === '/about' ? 'gradient-text' : ''}`}
                 onMouseEnter={() => setProductsSubmenu(false)}
               >
@@ -387,7 +387,7 @@ export default function Header() {
           </div>
         )}
 
-        <div className="z-100">
+        <div className="">
           { isDesktop && (
             <div className="login">
               <SearchBar />
@@ -445,7 +445,7 @@ export default function Header() {
                   />
                 </div>
               </Link>
-              <div className="w-full">
+              <div className="w-full z-10000">
                 {productsSubmenuMobile && (
                   <div className=" flex flex-col w-full items-end">
                     {/* <p className="text-xs text-fontColor2 font-semibold">HUSHH PRODUCTS</p> */}

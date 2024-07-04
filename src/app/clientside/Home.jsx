@@ -94,8 +94,8 @@ const ClientHome = () => {
           //  priority
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
         />
-        <main className="bg-myBG  font-Figtree z-10">
-          <div className="absolute top-0 w-full z-10">
+        <main className="bg-myBG  font-Figtree">
+          <div className="absolute top-0 w-full">
             {showPopup && (
               <NotificationPopup message="Welcome! How can I help you today?" />
             )}
@@ -209,14 +209,14 @@ const ClientHome = () => {
                 flex={1}
               >
                 <Image
-                  style={{ top: "-65px", position: "absolute", zIndex: "1" }}
+                  style={{ top: "-65px", position: "absolute" }}
                   src={HomeBanner}
                   alt="HomeBanner"
                 />
                 <Image
                   src={CircleHomeBg}
                   alt="CircleHomeBg"
-                  style={{ bottom: "0px", position: "absolute", zIndex: "0.9" }}
+                  style={{ bottom: "0px", position: "absolute" }}
                 />
               </VStack>
               <VStack
@@ -232,7 +232,7 @@ const ClientHome = () => {
                     bottom: "0px",
                     height: "2rem",
                     width: "2rem",
-                    zIndex: "0.9",
+                    // zIndex: "0.9",
                   }}
                 />
               </VStack>
@@ -299,7 +299,7 @@ const ClientHome = () => {
                   width={350.62}
                   height={363.19}
                   style={{
-                    zIndex: "1",
+                    // zIndex: "1",
                     position: "relative",
                     top: "25px",
                     left: "100px",
@@ -310,7 +310,7 @@ const ClientHome = () => {
                     position: "relative",
                     top: "-90.67px",
                     left: "319px",
-                    zIndex: "2",
+                    // zIndex: "2",
                   }}
                   src={SephoraCard}
                   alt="Sephora Card"
@@ -322,7 +322,7 @@ const ClientHome = () => {
                     position: "absolute",
                     top: "200.67px",
                     left: "100px",
-                    zIndex: "1",
+                    // zIndex: "1",
                     rotate: "10.02",
                   }}
                   src={FendiCard}
@@ -685,7 +685,7 @@ const ClientHome = () => {
             top: "0%",
             right: "0px",
             position: "absolute",
-            zIndex: "0.9",
+            // zIndex: "0.9",
           }}
         />
       </div>

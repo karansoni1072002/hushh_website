@@ -6,7 +6,9 @@ import {
   Input,
   Text,
   VStack,
+  useDisclosure,
 } from "@chakra-ui/react";
+import Modal from "../primitives/Modal";
 import { SearchIcon } from "@chakra-ui/icons";
 import { useResponsiveSizes } from "../../context/responsive";
 import contentMap from "../productData/contentMap";
@@ -17,10 +19,10 @@ const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [showRecommendations, setShowRecommendations] = useState(false);
   const [recommendations, setRecommendations] = useState([]);
-  const [isClicked, setIsClicked] = useState(false);
   const router = useRouter();
   const isMobile = useResponsiveSizes();
   const isDesktop = useMediaQuery({ query: "(min-width: 1824px)" });
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const inputRef = useRef(null);
   const recommendationsRef = useRef(null);
 
@@ -48,23 +50,8 @@ const SearchBar = () => {
 
   const handleChange = (event) => {
     setSearchQuery(event.target.value);
-    if (
-      (inputRef.current &&
-      !inputRef.current.contains(event.target) )
-    ) {
-      setIsClicked(false);
-      setShowRecommendations(false);
-    }  
   };
-  const handleClick = (event) => {
-    if (
-      (inputRef.current && !inputRef.current.contains(event.target)) || (recommendationsRef.current && !recommendationsRef.current.contains(event.target))
-    ) {
-      setIsClicked(false);
-      setShowRecommendations(false);
-    }
-  };
-  
+
   const highlightMatchedText = (text, query) => {
     const index = text.toLowerCase().indexOf(query.toLowerCase());
     if (index !== -1) {
@@ -92,20 +79,19 @@ const SearchBar = () => {
     return <Text>{text}</Text>;
   };
 
-  const handleClickOutside = (event) => {
-    if (
-      inputRef.current &&
-      !inputRef.current.contains(event.target) &&
-      recommendationsRef.current &&
-      !recommendationsRef.current.contains(event.target)
-    ) {
-      setIsClicked(false);
-      setShowRecommendations(false);
-    }
-  };
-
-
   useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        inputRef.current &&
+        !inputRef.current.contains(event.target) &&
+        recommendationsRef.current &&
+        !recommendationsRef.current.contains(event.target)
+      ) {
+        onClose();
+        setShowRecommendations(false);
+      }
+    };
+
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
@@ -115,61 +101,55 @@ const SearchBar = () => {
 
   return (
     <>
-    <div onClick={handleClick}>
-      {!isClicked ? (
+      <Box maxH={"50vh"} maxW={"50vh"}>
         <IconButton
           icon={<SearchIcon color={"#606060"} boxSize={isMobile ? 20 : 32} />}
           aria-label="Search"
           className="search-icon"
-          onClick={() => setIsClicked(true)}
+          onClick={onOpen}
           colorScheme="#606060"
         />
-      ) : (
-        <>
-          <Box
-            position="fixed"
-            top="0"
-            left="0"
-            width={{md:"100%", base:'60%'}}
-            height="100%"
-            backgroundColor="rgba(0, 0, 0, 0.5)"
-            backdropFilter="blur(5px)"
-            zIndex="999"
-            onClick={() => {
-              setIsClicked(false);
-              setShowRecommendations(false);
+        <Box
+          maxH={"50vh"}
+          maxW={"50vh"}
+          bgColor={"_lightestgray"}
+          borderRadius={"3xl"}
+          p={"30%"}
+          mb={2}
+        >
+          <Modal
+            modalContentStyle={{
+              // mx: "4",
+              borderRadius: "3xl",
             }}
-          />
-          <Box
-            position="fixed"
-            top="75%"
-            left="50%"
-            transform="translate(-50%, -50%)"
-            zIndex="1000"
-            width="100%"
-            maxWidth="600px"
-            bg="white"
-            borderRadius="md"
-            boxShadow="lg"
+            modalBodyStyle={{
+               bgColor:'blue',
+               borderRadius: "3xl",
+            }}
+            modalHeaderStyles={{ textAlign: "center" }}
+            // position="fixed"
+            id="searchModal"
+            isOpen={isOpen}
+            onClose={onClose}
+            isCentered={true}
           >
-            <VStack bg="#FFFFFF" spacing={4}  align="stretch">
-              <Flex width="100%" position="fixed" p={'1rem'}>
+            <VStack spacing={4}>
+              <Flex width="100%">
                 <Input
                   ref={inputRef}
-                  placeholder="Search into our website"
+                  placeholder="Search..."
                   value={searchQuery}
                   onChange={handleChange}
-                  // variant="filled"
-                  onPointerCancel={() => setIsClicked(false)}
+                  variant="filled"
                   borderRadius="none"
-                  width={"100%"}
+                  minWidth={"100%"}
+                  zIndex={"1000"}
                   size="md"
-                  // onPointerLeave={() => setIsClicked(false)}
-                  color={'white'}
-                  bg={'transparent'}
-                  _hover={{ background: "transparent" }}
-                  border={"1px solid #606060"}
-                  _focus={{ color: "white",bg:'transparent', border: "1px solid #FFFFFF" }}
+                  bg="black"
+                  color={"white"}
+                  _hover={{ background: "none" }}
+                  border={"3px solid #606060"}
+                  _focus={{ color: "#FFFFFF", border: "1px solid #FFFFFF" }}
                   _placeholder={{ color: "gray.400" }}
                   px="4"
                   py="2"
@@ -177,19 +157,17 @@ const SearchBar = () => {
               </Flex>
               {showRecommendations && (
                 <VStack
-                  pos={'fixed'}
                   align="stretch"
+                  position="absolute"
                   zIndex="10"
-                  // borderRadius={"16px"}
+                  borderRadius={"16px"}
                   ref={recommendationsRef}
                   bg="white"
                   shadow="md"
                   maxH="300px"
-                  minH={'100px'}
                   overflowY="auto"
-                  p={8}
-                  width="100%"
-                  mt={50} // Changed from mt={3} to mt={0} to ensure it appears right below the input
+                  p={15}
+                  maxW={"25rem"}
                 >
                   {recommendations.length === 0 ? (
                     <Box
@@ -215,9 +193,9 @@ const SearchBar = () => {
                         onClick={() => {
                           router.push(rec.url);
                           setShowRecommendations(false);
-                          setIsClicked(false);
+                          onClose();
                         }}
-                        _hover={{ bg: "grey",color:'white',textColor:'white', cursor: "pointer" }}
+                        _hover={{ bg: "gray.100", cursor: "pointer" }}
                         p={3}
                         minW={{ base: "90%", md: "20rem" }}
                         borderBottom="1px solid"
@@ -226,12 +204,11 @@ const SearchBar = () => {
                         gap={"1rem"}
                       >
                         <Box>{rec.icon}</Box>
-                        <Box display={"flex"} _hover={{ bg: "grey",color:'white',textColor:'white', cursor: "pointer" }} flexDirection={"column"}>
+                        <Box display={"flex"} flexDirection={"column"}>
                           <Text
                             color={"#111B29"}
                             fontSize={"1rem"}
                             fontWeight={"600"}
-                            
                           >
                             {highlightMatchedText(
                               rec.showRecommentationContentHeading,
@@ -254,10 +231,9 @@ const SearchBar = () => {
                 </VStack>
               )}
             </VStack>
-          </Box>
-        </>
-      )}
-      </div>
+          </Modal>
+        </Box>
+      </Box>
     </>
   );
 };

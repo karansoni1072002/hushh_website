@@ -106,10 +106,10 @@ const ClientHushhWallet = () => {
             access and much more
           </Text>
 
-          <Box w={"max-content"} zIndex={'9999999'} display={'flex'} bg={'transparent'} flexDirection={{md:'row',base:'column'}} gap={{md:'5rem',base:'2rem'}}>
+          <Box w={"max-content"} display={'flex'} bg={'transparent'} flexDirection={{md:'row',base:'column'}} gap={{md:'5rem',base:'2rem'}}>
           <Button
             leftIcon={<AppleIcon/>}
-             zIndex={'9999999'}
+            //  zIndex={'100'}
             borderRadius={"3.3rem"}
             border={'1px solid'}
             
@@ -127,7 +127,7 @@ const ClientHushhWallet = () => {
           </Button>
           <Button
            leftIcon={<AndroidIcon/>}
-           zIndex={'999'}
+          //  zIndex={'100'}
            border={'1px solid'}
            borderRadius={"3.3rem"}
             
@@ -146,14 +146,14 @@ const ClientHushhWallet = () => {
           </Box>
 
           <Box
-            zIndex={"3"}
+            // zIndex={"3"}
             position={"absolute"}
             mt={{ md: "5rem", base: "17rem" }}
           >
             <Image src={BoxBgWallet} alt="BoxBgWallet" />
           </Box>
           <Box
-            zIndex={"5"}
+            // zIndex={"5"}
             position={"absolute"}
             display={{ md: "block", base: "none" }}
             mt={{ md: "5rem", base: "17rem" }}

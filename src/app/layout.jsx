@@ -125,7 +125,7 @@ export default function RootLayout({ children }) {
           type="text/javascript"
           src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
         ></script>
-        <div className="relative z-50">
+        <div className="relative">
           <HushhButtonFromLib />
         </div>
         <ResponsiveSizeProvider>
@@ -146,7 +146,7 @@ export default function RootLayout({ children }) {
                       <div class="bar" role="bar">
                         <div class="peg">
                         </div>
-                      </div> 
+                      </div>
                       <div class="spinner" role="spinner">
                         <div class="spinner-icon">
                         </div>

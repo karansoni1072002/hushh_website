@@ -605,7 +605,7 @@ const OutBoundService = () => {
                   }}
                   onClick={() =>
                     window.open(
-                      "https://calendly.com/hushh/30min",
+                      "https://calendly.com/hushh/advisory-meet-with-our-leadership-team",
                       "_blank"
                     )
                   }

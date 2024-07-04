@@ -5,6 +5,7 @@ const hushhJourney = () => {
   return (
  <> 
    <Flipbook/>
+   
  </>
 )
 }

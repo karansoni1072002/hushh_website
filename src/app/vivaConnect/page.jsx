@@ -225,7 +225,12 @@ export default function vivaConnect() {
             w={"100%"}
             bg={"transparent"}
             cursor={"pointer"}
-            onClick={onCompanionOpen}
+            onClick={() =>
+              window.open(
+                "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?hl=en&authuser=0n",
+                "_blank"
+              )
+            }
           >
             <Stack w={"100%"} display={"flex"} flexDirection={"row"}>
               <Box
@@ -390,7 +395,7 @@ export default function vivaConnect() {
             </Stack>
           </Box>
 
-          <VStack mt={10} gap={"1.65rem"} w={"100%"}>
+          {/* <VStack mt={10} gap={"1.65rem"} w={"100%"}>
             <Button
               as="a"
               href="/hushh-intro.pdf"
@@ -456,7 +461,8 @@ export default function vivaConnect() {
                 Download our Brochure
               </Text>
             </Button>
-          </VStack>
+          </VStack> */}
+
         </VStack>
 
         <Modal
@@ -509,10 +515,11 @@ export default function vivaConnect() {
                   }}
                   bg={"black"}
                   onClick={() =>
-                    window.open("https://bit.ly/hushh-app-android", "_blank")
+                    // window.open("https://bit.ly/hushh-app-android", "_blank")
+                    window.open("https://drive.google.com/file/d/1yuinnVcBv2bICFyaacAJrft2W6iEp1MV/view","_blank")
                   }
                   w={{ base: "100%", md: "auto" }}
-                >
+             
                   Android
                 </Button>
               </Box>
@@ -520,7 +527,7 @@ export default function vivaConnect() {
           </ModalContent>
         </Modal>
 
-        <Modal
+        {/* <Modal
           isOpen={isCompanionOpen}
           onClose={onCompanionClose}
           size={modalSize}
@@ -587,7 +594,7 @@ export default function vivaConnect() {
               </Box>
             </ModalBody>
           </ModalContent>
-        </Modal>
+        </Modal> */}
       </Box>
     </>
   );

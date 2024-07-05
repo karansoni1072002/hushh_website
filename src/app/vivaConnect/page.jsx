@@ -515,7 +515,7 @@ export default function vivaConnect() {
                   }}
                   bg={"black"}
                   onClick={() =>
-                    window.open("https://drive.google.com/file/d/1yuinnVcBv2bICFyaacAJrft2W6iEp1MV/view","_blank")
+                    window.open("https://drive.google.com/file/d/1Qos5_EEj4Eys82EYug4zAx9iZQWrT6_r/view","_blank")
                   }
                   w={{ base: "100%", md: "auto" }}
                 >

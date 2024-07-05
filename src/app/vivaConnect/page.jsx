@@ -515,11 +515,10 @@ export default function vivaConnect() {
                   }}
                   bg={"black"}
                   onClick={() =>
-                    // window.open("https://bit.ly/hushh-app-android", "_blank")
                     window.open("https://drive.google.com/file/d/1yuinnVcBv2bICFyaacAJrft2W6iEp1MV/view","_blank")
                   }
                   w={{ base: "100%", md: "auto" }}
-             
+                >
                   Android
                 </Button>
               </Box>

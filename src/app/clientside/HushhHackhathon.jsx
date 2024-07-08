@@ -21,8 +21,8 @@ import LinkedInIcon from "../_components/svg/hackathon/linkedInIcon.svg";
 import YoutubeIcon from "../_components/svg/hackathon/youtubeIcon.svg";
 import WhatsappIcon from "../_components/svg/hackathon/whatsappIcon.svg";
 import DiscordIcon from "../_components/svg/hackathon/discordIcon.svg";
-import GroupSVG from '../_components/svg/hackathon/Group1597881654.svg'
-import HushhLogoS from '../_components/svg/hackathon/hushhLogo.svg';
+import GroupSVG from "../_components/svg/hackathon/Group1597881654.svg";
+import HushhLogoS from "../_components/svg/hackathon/hushhLogo.svg";
 
 const items = [
   { title: "AUGMENTED REALITY (AR)", icon: ARIcon },
@@ -100,7 +100,7 @@ const HushhHackhathon = () => {
               className="hackathon-gradient"
               my={{ md: "1rem", base: "0.5rem" }}
             >
-              Hushh Hackhathon 1.0
+              Hushh Data Nexus
             </Text>
             <Text
               fontWeight={"400"}
@@ -230,7 +230,7 @@ const HushhHackhathon = () => {
           mx={{ md: "20%", base: "5%" }}
           mt={{ md: "8rem", base: "2.5rem" }}
           bg={"transparent"}
-          border={{ md:"13px solid #B5B5B5", base:"6px solid #B5B5B5"}}
+          border={{ md: "13px solid #B5B5B5", base: "6px solid #B5B5B5" }}
           borderRadius={"52px"}
         >
           <VStack
@@ -242,16 +242,20 @@ const HushhHackhathon = () => {
             alignItems={"center"}
           >
             <Box
-              display={'flex'}
-              flexDirection={'row'}
-              gap={{md:'0.5rem',base:'0.25rem'}}
+              display={"flex"}
+              flexDirection={"row"}
+              gap={{ md: "0.5rem", base: "0.25rem" }}
             >
-              <Image src={HushhLogoS} alt="HushhLogoS" title="hushh logo"/>
-              <Text className="gradient"
-              fontSize={{ md: "2.89rem", base: "1.44rem" }}
-              fontWeight={"700"}
-              alignSelf={'center'}
-              lineHeight={"48.83px"}>Hushh Data Nexus</Text> 
+              <Image src={HushhLogoS} alt="HushhLogoS" title="hushh logo" />
+              <Text
+                className="gradient"
+                fontSize={{ md: "2.89rem", base: "1.44rem" }}
+                fontWeight={"700"}
+                alignSelf={"center"}
+                lineHeight={"48.83px"}
+              >
+                Hushh Data Nexus
+              </Text>
             </Box>
             <Text
               className="hackathon-gradient"
@@ -357,14 +361,18 @@ const HushhHackhathon = () => {
             Our Themes
           </Text>
           {/* <Image src={GroupSVG} alt="GroupSVG" title="GroupSVG" /> */}
-          <Box bg="black" color="white" minH="100vh" p={{md:8,base:2}}>
+          <Box bg="black" color="white" minH="100vh" p={{ md: 8, base: 2 }}>
             <Box mb={8}>
               <Text fontSize="xl" fontWeight="bold">
                 EXTENDED REALITY (XR)
               </Text>
               <Text>SPATIAL COMPUTING</Text>
             </Box>
-            <SimpleGrid columns={[2, 2, 3, 4]} gap={{md:"4rem",base:'2rem'}} spacing={{ md:35}}>
+            <SimpleGrid
+              columns={[2, 2, 3, 4]}
+              gap={{ md: "4rem", base: "2rem" }}
+              spacing={{ md: 35 }}
+            >
               {items.map((item, index) => (
                 <VStack
                   gap={{ md: "2.15rem", base: "1rem" }}
@@ -378,7 +386,7 @@ const HushhHackhathon = () => {
                     fontWeight={"600"}
                     fontSize={{ md: "1.25rem", base: "0.8rem" }}
                     letterSpacing={"0.1rem"}
-                    lineHeight={{md:"32px"}}
+                    lineHeight={{ md: "32px" }}
                     textAlign="center"
                   >
                     {item.title}
@@ -429,10 +437,10 @@ const HushhHackhathon = () => {
             Keep in Mind
           </Text>
           <Text
-            mr={{md:"40%",base:'0'}}
+            mr={{ md: "40%", base: "0" }}
             color={"#FFFFFF"}
             fontWeight={"500"}
-            lineHeight={{md:"28px",base:'20px'}}
+            lineHeight={{ md: "28px", base: "20px" }}
             fontSize={{ md: "1.18rem", base: "0.75rem" }}
           >
             Documents you upload should have the name of the app you worked on
@@ -442,7 +450,7 @@ const HushhHackhathon = () => {
           <Button
             mt={{ md: "2rem", base: "1rem" }}
             border={"2px solid white"}
-            mb={{md:'2rem',base:'1rem'}}
+            mb={{ md: "2rem", base: "1rem" }}
             w={"100%"}
             color={"white"}
             bg={"transparent"}
@@ -458,7 +466,7 @@ const HushhHackhathon = () => {
             color={"#E4E4E4"}
             fontWeight={"500"}
             fontSize={{ md: "1.25rem", base: "0.8rem" }}
-            lineHeight={{md:"32px",base:'20px'}}
+            lineHeight={{ md: "32px", base: "20px" }}
             letterSpacing={"0.075rem"}
           >
             ** the final selected teams will have a 1-1 round to explain there
@@ -483,21 +491,65 @@ const HushhHackhathon = () => {
           >
             Join our community
           </Text>
-          <Box w={'100%'} gap={'1rem'} display={'flex'} alignSelf={'flex-start'} justifyContent={'flex-start'} justifyItems={'flex-start'} textAlign={'left'} flexDirection={'row'} alignItems={'flex-start'}>
-            <Image src={WhatsappIcon} alt="WhatsappIcon" title="Join Whatsapp Community"/>
-            <Image src={DiscordIcon} alt="DiscordIcon" title="Join Discord Community"/>
-            <Image src={LinkedInIcon} alt="LinkedInIcon" title="Follow Us On LinkedIn"/>
-            <Image src={YoutubeIcon} alt="YoutubeIcon" title="Subscribe Our YT Channel"/>
+          <Box
+            w={"100%"}
+            gap={"1rem"}
+            display={"flex"}
+            alignSelf={"flex-start"}
+            justifyContent={"flex-start"}
+            justifyItems={"flex-start"}
+            textAlign={"left"}
+            flexDirection={"row"}
+            alignItems={"flex-start"}
+          >
+            <Image
+              src={WhatsappIcon}
+              alt="WhatsappIcon"
+              title="Join Whatsapp Community"
+            />
+            <Image
+              src={DiscordIcon}
+              alt="DiscordIcon"
+              title="Join Discord Community"
+              onClick={() =>
+                window.open(
+                  " https://discord.gg/Vznzv5k7",
+                  '_blank'
+                )
+              }
+            />
+            <Image
+              src={LinkedInIcon}
+              alt="LinkedInIcon"
+              title="Follow Us On LinkedIn"
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/company/hushh-ai/",
+                  '_blank'
+                )
+              }
+            />
+            <Image
+              src={YoutubeIcon}
+              alt="YoutubeIcon"
+              title="Subscribe Our YT Channel"
+              onClick={() =>
+                window.open(
+                  "https://www.youtube.com/@hushhai",
+                  '_blank'
+                )
+              }
+            />
           </Box>
           <Text
-            mr={{md:"40%",base:'0'}}
+            mr={{ md: "40%", base: "0" }}
             color={"#E4E4E4"}
             fontWeight={"500"}
-            lineHeight={"28px"}
-            fontSize={{ md: "1.18rem", base: "0.6rem" }}
+            lineHeight={{ md: "28px", base: "16px" }}
+            fontSize={{ md: "1.18rem", base: "0.8rem" }}
           >
             Join our live communities to learn more about Hushh and interact
-            with the team to learn more on what we are building !
+            with the team to learn more on what we are building
           </Text>
         </VStack>
       </Box>

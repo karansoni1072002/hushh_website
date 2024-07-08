@@ -64,6 +64,12 @@ body {
   color: transparent;
 }
 
+.hackathon-gradient {
+  background: linear-gradient(256.5deg, #e0055f 6.97%, #2020ed 92.26%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .default-gradient {
   background: linear-gradient(#e54d60 8.81%, #a342ff 94.26%);
   -webkit-background-clip: text;

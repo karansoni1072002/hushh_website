@@ -2,6 +2,7 @@
 import {
   Box,
   Button,
+  Container,
   Flex,
   HStack,
   Icon,
@@ -12,10 +13,15 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { FaReact } from "react-icons/fa"; // Dummy icon
-import ARIcon from '../_components/svg/hackathon/ARIcon.svg';
-import EdgeIcon from '../_components/svg/hackathon/EdgeIcon.svg';
+import ARIcon from "../_components/svg/hackathon/ARIcon.svg";
+import EdgeIcon from "../_components/svg/hackathon/EdgeIcon.svg";
 import Image from "next/image";
 import FooterComponent from "../_components/features/FooterComponent";
+import LinkedInIcon from "../_components/svg/hackathon/linkedInIcon.svg";
+import YoutubeIcon from "../_components/svg/hackathon/youtubeIcon.svg";
+import WhatsappIcon from "../_components/svg/hackathon/whatsappIcon.svg";
+import DiscordIcon from "../_components/svg/hackathon/discordIcon.svg";
+import GroupSVG from '../_components/svg/hackathon/Group1597881654.svg'
 
 const items = [
   { title: "AUGMENTED REALITY (AR)", icon: ARIcon },
@@ -220,7 +226,7 @@ const HushhHackhathon = () => {
         </Stack>
 
         <Box
-          mx={{ md: "20%",base:'5%' }}
+          mx={{ md: "20%", base: "5%" }}
           mt={{ md: "8rem", base: "2.5rem" }}
           bg={"transparent"}
           border={"13px solid #B5B5B5"}
@@ -336,7 +342,7 @@ const HushhHackhathon = () => {
           </Box>
         </VStack>
 
-        <VStack mx={{ md: "2rem",base:'1rem' }} >
+        <VStack mx={{ md: "2rem", base: "0" }}>
           <Text
             color={"#E4E4E4"}
             fontSize={{ md: "3.8rem", base: "1.9rem" }}
@@ -345,51 +351,151 @@ const HushhHackhathon = () => {
           >
             Our Themes
           </Text>
-          <Box bg="black" color="white" minH="100vh" p={8}>
+          {/* <Image src={GroupSVG} alt="GroupSVG" title="GroupSVG" /> */}
+          <Box bg="black" color="white" minH="100vh" p={{md:8,base:2}}>
             <Box mb={8}>
               <Text fontSize="xl" fontWeight="bold">
                 EXTENDED REALITY (XR)
               </Text>
               <Text>SPATIAL COMPUTING</Text>
             </Box>
-            <SimpleGrid columns={[2, 2, 3, 4]} gap={'4rem'} spacing={35}>
+            <SimpleGrid columns={[2, 2, 3, 4]} gap={{md:"4rem",base:'2rem'}} spacing={{ md:35}}>
               {items.map((item, index) => (
                 <VStack
-                  gap={{md:'2.15rem',base:'1rem'}}
+                  gap={{ md: "2.15rem", base: "1rem" }}
                   key={index}
                   // border="1px solid white"
                   p={4}
                   borderRadius="md"
                 >
-                  <Image src={item.icon}/>
-                  <Text fontWeight={'600'} fontSize={{md:'1.25rem',base:'0.8rem'}} letterSpacing={'0.1rem'} lineHeight={'32px'} textAlign="center">{item.title}</Text>
+                  <Image src={item.icon} />
+                  <Text
+                    fontWeight={"600"}
+                    fontSize={{ md: "1.25rem", base: "0.8rem" }}
+                    letterSpacing={"0.1rem"}
+                    lineHeight={{md:"32px"}}
+                    textAlign="center"
+                  >
+                    {item.title}
+                  </Text>
                 </VStack>
               ))}
             </SimpleGrid>
-            <Text mt={{md:'3rem',base:'1.5rem'}} textAlign={'left'} letterSpacing={'7.5%'} color={'#E4E4E4'} fontWeight={'500'} fontSize={{md:'1.25rem',base:'0.75rem'}} lineHeight={{md:'32px',base:'20px'}}>
-              In terms of technologies, Hushh Hackathon 1.0  will leverage the emerging technologies and technologies of tomorrow, specifically in the realm of Metaverse and AI. These themes and technologies provide a broad scope for participants to explore and develop innovative solutions that address real-world challenges in various domains.
+            <Text
+              mt={{ md: "3rem", base: "1.5rem" }}
+              textAlign={"left"}
+              letterSpacing={"7.5%"}
+              color={"#E4E4E4"}
+              fontWeight={"500"}
+              fontSize={{ md: "1.25rem", base: "0.75rem" }}
+              lineHeight={{ md: "32px", base: "20px" }}
+            >
+              In terms of technologies, Hushh Hackathon 1.0 will leverage the
+              emerging technologies and technologies of tomorrow, specifically
+              in the realm of Metaverse and AI. These themes and technologies
+              provide a broad scope for participants to explore and develop
+              innovative solutions that address real-world challenges in various
+              domains.
             </Text>
           </Box>
         </VStack>
 
-        <VStack my={{md:'4rem',base:'2rem'}} mx={{ md: "2rem",base:'1rem' }} textAlign={'left'} gap={{md:'1.25rem',base:'0.7rem'}} alignItems={'flex-start'}>
-          <Text color={'#E4E4E4'} fontWeight={'700'} fontSize={{md:'3.8rem',base:'1.9rem'}} lineHeight={{md:'73.2px',base:'42px'}}>Submit Your Projects!</Text>
-          <Text color={'#FFFFFF'} fontWeight={'500'} lineHeight={'28px'} fontSize={{md:'1.18rem',base:'0.6rem'}}>Keep in Mind</Text>
-          <Text mr={'40%'} color={'#FFFFFF'} fontWeight={'500'} lineHeight={'28px'} fontSize={{md:'1.18rem',base:'0.6rem'}}>Documents you upload should have the name of the app you worked on and the names of the participant who worked on it or else the submission wil not be considered </Text>
-          <Button mt={{md:'2rem',base:'1rem'}} border={'2px solid white'} w={'100%'} color={'white'} bg={'transparent'} _hover={{border:'none',bg:'linear-gradient(256.5deg, #e0055f 6.97%, #2020ed 92.26%)', color:'white'}}>
+        <VStack
+          my={{ md: "4rem", base: "2rem" }}
+          mx={{ md: "2rem", base: "1rem" }}
+          textAlign={"left"}
+          gap={{ md: "1.25rem", base: "0.7rem" }}
+          alignItems={"flex-start"}
+        >
+          <Text
+            color={"#E4E4E4"}
+            fontWeight={"700"}
+            fontSize={{ md: "3.8rem", base: "1.9rem" }}
+            lineHeight={{ md: "73.2px", base: "42px" }}
+          >
+            Submit Your Projects!
+          </Text>
+          <Text
+            color={"#FFFFFF"}
+            fontWeight={"500"}
+            lineHeight={"28px"}
+            fontSize={{ md: "1.18rem", base: "0.6rem" }}
+          >
+            Keep in Mind
+          </Text>
+          <Text
+            mr={"40%"}
+            color={"#FFFFFF"}
+            fontWeight={"500"}
+            lineHeight={"28px"}
+            fontSize={{ md: "1.18rem", base: "0.6rem" }}
+          >
+            Documents you upload should have the name of the app you worked on
+            and the names of the participant who worked on it or else the
+            submission wil not be considered{" "}
+          </Text>
+          <Button
+            mt={{ md: "2rem", base: "1rem" }}
+            border={"2px solid white"}
+            w={"100%"}
+            color={"white"}
+            bg={"transparent"}
+            _hover={{
+              border: "none",
+              bg: "linear-gradient(256.5deg, #e0055f 6.97%, #2020ed 92.26%)",
+              color: "white",
+            }}
+          >
             + Click for project submission
           </Button>
-          <Text color={'#E4E4E4'} fontWeight={'500'} fontSize={{md:'1.25rem',base:'0.8rem'}} lineHeight={'32px'} letterSpacing={'0.075rem'}>** the final selected teams will have a 1-1 round to explain there ideas and also provide feedback on there chosen applications user experience based on their understanding and feedback winners will be seleted</Text>        
+          <Text
+            color={"#E4E4E4"}
+            fontWeight={"500"}
+            fontSize={{ md: "1.25rem", base: "0.8rem" }}
+            lineHeight={"32px"}
+            letterSpacing={"0.075rem"}
+          >
+            ** the final selected teams will have a 1-1 round to explain there
+            ideas and also provide feedback on there chosen applications user
+            experience based on their understanding and feedback winners will be
+            seleted
+          </Text>
         </VStack>
 
-        <VStack my={{md:'4rem',base:'2rem'}} mx={{ md: "2rem",base:'1rem' }} textAlign={'left'} gap={{md:'1.25rem',base:'0.7rem'}} alignItems={'flex-start'}>
-        <Text color={'#E4E4E4'} fontWeight={'700'} fontSize={{md:'3.8rem',base:'1.9rem'}} lineHeight={{md:'73.2px',base:'42px'}}>Join our community</Text>
-        
-        <Text mr={'40%'} color={'#E4E4E4'} fontWeight={'500'} lineHeight={'28px'} fontSize={{md:'1.18rem',base:'0.6rem'}}>Documents you upload should have the name of the app you worked on and the names of the participant who worked on it or else the submission wil not be considered </Text>
+        <VStack
+          my={{ md: "4rem", base: "2rem" }}
+          mx={{ md: "2rem", base: "1rem" }}
+          textAlign={"left"}
+          gap={{ md: "1.25rem", base: "0.7rem" }}
+          alignItems={"flex-start"}
+        >
+          <Text
+            color={"#E4E4E4"}
+            fontWeight={"700"}
+            fontSize={{ md: "3.8rem", base: "1.9rem" }}
+            lineHeight={{ md: "73.2px", base: "42px" }}
+          >
+            Join our community
+          </Text>
+          <Box w={'100%'} gap={'1rem'} display={'flex'} alignSelf={'flex-start'} justifyContent={'flex-start'} justifyItems={'flex-start'} textAlign={'left'} flexDirection={'row'} alignItems={'flex-start'}>
+            <Image src={WhatsappIcon} alt="WhatsappIcon" title="Join Whatsapp Community"/>
+            <Image src={DiscordIcon} alt="DiscordIcon" title="Join Discord Community"/>
+            <Image src={LinkedInIcon} alt="LinkedInIcon" title="Follow Us On LinkedIn"/>
+            <Image src={YoutubeIcon} alt="YoutubeIcon" title="Subscribe Our YT Channel"/>
+          </Box>
+          <Text
+            mr={"40%"}
+            color={"#E4E4E4"}
+            fontWeight={"500"}
+            lineHeight={"28px"}
+            fontSize={{ md: "1.18rem", base: "0.6rem" }}
+          >
+            Join our live communities to learn more about Hushh and interact
+            with the team to learn more on what we are building !
+          </Text>
         </VStack>
-
       </Box>
-      <FooterComponent/>
+      <FooterComponent />
     </>
   );
 };

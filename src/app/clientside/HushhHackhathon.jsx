@@ -22,6 +22,7 @@ import YoutubeIcon from "../_components/svg/hackathon/youtubeIcon.svg";
 import WhatsappIcon from "../_components/svg/hackathon/whatsappIcon.svg";
 import DiscordIcon from "../_components/svg/hackathon/discordIcon.svg";
 import GroupSVG from '../_components/svg/hackathon/Group1597881654.svg'
+import HushhLogoS from '../_components/svg/hackathon/hushhLogo.svg';
 
 const items = [
   { title: "AUGMENTED REALITY (AR)", icon: ARIcon },
@@ -66,7 +67,7 @@ const HushhHackhathon = () => {
         <Stack
           display={"flex"}
           flexDirection={{ md: "row", base: "column" }}
-          gap={{ md: "4rem", base: "1rem" }}
+          gap={{ md: "4rem", base: "4rem" }}
         >
           <VStack
             flex={1}
@@ -229,25 +230,29 @@ const HushhHackhathon = () => {
           mx={{ md: "20%", base: "5%" }}
           mt={{ md: "8rem", base: "2.5rem" }}
           bg={"transparent"}
-          border={"13px solid #B5B5B5"}
+          border={{ md:"13px solid #B5B5B5", base:"6px solid #B5B5B5"}}
           borderRadius={"52px"}
         >
           <VStack
             my={{ md: "3rem", base: "1.5rem" }}
             gap={{ md: "2rem", base: "0.75rem" }}
             mx={{ md: "5rem", base: "1.75rem" }}
-            p={{ md: "5rem", base: "2rem" }}
+            p={{ md: "4.75rem", base: "2rem" }}
             textAlign={"center"}
             alignItems={"center"}
           >
-            <Text
-              className="gradient"
+            <Box
+              display={'flex'}
+              flexDirection={'row'}
+              gap={{md:'0.5rem',base:'0.25rem'}}
+            >
+              <Image src={HushhLogoS} alt="HushhLogoS" title="hushh logo"/>
+              <Text className="gradient"
               fontSize={{ md: "2.89rem", base: "1.44rem" }}
               fontWeight={"700"}
-              lineHeight={"48.83px"}
-            >
-              Hushh Hackathon
-            </Text>
+              alignSelf={'center'}
+              lineHeight={"48.83px"}>Hushh Data Nexus</Text> 
+            </Box>
             <Text
               className="hackathon-gradient"
               fontSize={{ md: "3.2rem", base: "1.6rem" }}
@@ -404,11 +409,11 @@ const HushhHackhathon = () => {
           my={{ md: "4rem", base: "2rem" }}
           mx={{ md: "2rem", base: "1rem" }}
           textAlign={"left"}
-          gap={{ md: "1.25rem", base: "0.7rem" }}
+          gap={{ md: "1.25rem", base: "0.5rem" }}
           alignItems={"flex-start"}
         >
           <Text
-            color={"#E4E4E4"}
+            className="hushh-gradient"
             fontWeight={"700"}
             fontSize={{ md: "3.8rem", base: "1.9rem" }}
             lineHeight={{ md: "73.2px", base: "42px" }}
@@ -419,16 +424,16 @@ const HushhHackhathon = () => {
             color={"#FFFFFF"}
             fontWeight={"500"}
             lineHeight={"28px"}
-            fontSize={{ md: "1.18rem", base: "0.6rem" }}
+            fontSize={{ md: "1.18rem", base: "0.9rem" }}
           >
             Keep in Mind
           </Text>
           <Text
-            mr={"40%"}
+            mr={{md:"40%",base:'0'}}
             color={"#FFFFFF"}
             fontWeight={"500"}
-            lineHeight={"28px"}
-            fontSize={{ md: "1.18rem", base: "0.6rem" }}
+            lineHeight={{md:"28px",base:'20px'}}
+            fontSize={{ md: "1.18rem", base: "0.75rem" }}
           >
             Documents you upload should have the name of the app you worked on
             and the names of the participant who worked on it or else the
@@ -437,6 +442,7 @@ const HushhHackhathon = () => {
           <Button
             mt={{ md: "2rem", base: "1rem" }}
             border={"2px solid white"}
+            mb={{md:'2rem',base:'1rem'}}
             w={"100%"}
             color={"white"}
             bg={"transparent"}
@@ -452,7 +458,7 @@ const HushhHackhathon = () => {
             color={"#E4E4E4"}
             fontWeight={"500"}
             fontSize={{ md: "1.25rem", base: "0.8rem" }}
-            lineHeight={"32px"}
+            lineHeight={{md:"32px",base:'20px'}}
             letterSpacing={"0.075rem"}
           >
             ** the final selected teams will have a 1-1 round to explain there
@@ -484,7 +490,7 @@ const HushhHackhathon = () => {
             <Image src={YoutubeIcon} alt="YoutubeIcon" title="Subscribe Our YT Channel"/>
           </Box>
           <Text
-            mr={"40%"}
+            mr={{md:"40%",base:'0'}}
             color={"#E4E4E4"}
             fontWeight={"500"}
             lineHeight={"28px"}

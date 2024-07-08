@@ -155,14 +155,14 @@ export default function Header() {
         ) : (
           <div className="w-max">
             <div className="text-white flex justify-between gap-12 px-7 md:gap-10">
-              <Link
+              {/* <Link
                 href="/"
                 className={`link ${pathname === '/' ? 'gradient-text' : ''}`}
-                // style={{ zIndex: "1000" }}
+                style={{ zIndex: "1000" }}
                 onMouseEnter={() => setProductsSubmenu(false)}
               >
                 HOME
-              </Link>
+              </Link> */}
               <Link
                 href="/about"
                 // style={{ zIndex: "1000" }}
@@ -412,13 +412,13 @@ export default function Header() {
         {isMenuOpen && (isTablet || isMobile )? (
           <div className={`w-full flex flex-col gap-1`} ref={menuRef}>
             <div className="text-white w-full flex items-end flex-col text-center">
-              <Link
+              {/* <Link
                 href="/"
                 className="py-2 border border-myBorder bg-black rounded-t w-1/2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 HOME
-              </Link>
+              </Link> */}
               <Link
                 href="/about"
                 className="py-2 w-1/2 border border-myBorder border-t-0 bg-black"

@@ -5,7 +5,7 @@ const siteMetadata = {
   description: 'Your Data Your Business - with Hushh',
   language: 'en-us',
   theme: 'system', 
-  siteUrl: 'https://www.hushh1one.com/hushhBlogs', 
+  siteUrl: 'https://www.hushh1one.com', 
   siteLogo: '/Logo.png',
   socialBanner: '/Logo.png',
   email: 'info@hushh1one.com', 

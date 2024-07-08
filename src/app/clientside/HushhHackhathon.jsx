@@ -525,6 +525,7 @@ const HushhHackhathon = () => {
             <Image
               src={WhatsappIcon}
               alt="WhatsappIcon"
+              style={{cursor:'pointer'}}
               title="Whatsapp Community for Hackathon Participants"
               onClick={() =>
                 window.open(
@@ -536,6 +537,7 @@ const HushhHackhathon = () => {
             <Image
               src={DiscordIcon}
               alt="DiscordIcon"
+              style={{cursor:'pointer'}}
               title="Discord Community for Hackathon Participants"
               onClick={() =>
                 window.open(
@@ -547,6 +549,7 @@ const HushhHackhathon = () => {
             <Image
               src={LinkedInIcon}
               alt="LinkedInIcon"
+              style={{cursor:'pointer'}}
               title="Follow Us On LinkedIn"
               onClick={() =>
                 window.open(
@@ -558,6 +561,7 @@ const HushhHackhathon = () => {
             <Image
               src={YoutubeIcon}
               alt="YoutubeIcon"
+              style={{cursor:'pointer'}}
               title="Subscribe Our YT Channel"
               onClick={() =>
                 window.open(

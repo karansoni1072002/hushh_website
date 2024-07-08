@@ -15,19 +15,20 @@ import { FaReact } from "react-icons/fa"; // Dummy icon
 import ARIcon from '../_components/svg/hackathon/ARIcon.svg';
 import EdgeIcon from '../_components/svg/hackathon/EdgeIcon.svg';
 import Image from "next/image";
+import FooterComponent from "../_components/features/FooterComponent";
 
 const items = [
   { title: "AUGMENTED REALITY (AR)", icon: ARIcon },
-  { title: "ARTIFICIAL INTELLIGENCE", icon: <FaReact size="40px"/> },
-  { title: "INTERNET OF THINGS", icon: <FaReact size="40px"/> },
-  { title: "BLOCKCHAIN", icon: <FaReact size="40px"/> },
-  { title: "VIRTUAL REALITY", icon: <FaReact size="40px"/> },
-  { title: "3D MODELLING", icon: <FaReact size="40px"/> },
-  { title: "BRAIN COMPUTER INTERFACE", icon: <FaReact size="40px"/> },
+  { title: "ARTIFICIAL INTELLIGENCE", icon: ARIcon },
+  { title: "INTERNET OF THINGS", icon: ARIcon },
+  { title: "BLOCKCHAIN", icon: ARIcon },
+  { title: "VIRTUAL REALITY", icon: ARIcon },
+  { title: "3D MODELLING", icon: ARIcon },
+  { title: "BRAIN COMPUTER INTERFACE", icon: ARIcon },
   { title: "EDGE / CLOUD COMPUTING", icon: EdgeIcon },
 ];
 const HushhHackhathon = () => {
-  const targetDate = "2024-12-31T23:59:59";
+  const targetDate = "2024-07-09T23:59:59";
   const calculateTimeLeft = () => {
     const difference = +new Date(targetDate) - +new Date();
     let timeLeft = {};
@@ -351,23 +352,36 @@ const HushhHackhathon = () => {
               </Text>
               <Text>SPATIAL COMPUTING</Text>
             </Box>
-            <SimpleGrid columns={[2, 2, 3, 4]} spacing={10}>
+            <SimpleGrid columns={[2, 2, 3, 4]} gap={'4rem'} spacing={35}>
               {items.map((item, index) => (
                 <VStack
+                  gap={{md:'2.15rem',base:'1rem'}}
                   key={index}
-                  border="1px solid white"
+                  // border="1px solid white"
                   p={4}
                   borderRadius="md"
                 >
                   <Image src={item.icon}/>
-                  <Text textAlign="center">{item.title}</Text>
+                  <Text fontWeight={'600'} fontSize={{md:'1.25rem',base:'0.8rem'}} letterSpacing={'0.1rem'} lineHeight={'32px'} textAlign="center">{item.title}</Text>
                 </VStack>
               ))}
             </SimpleGrid>
-            <Text mt={{md:'3rem',base:'1.5rem'}} textAlign={'left'} letterSpacing={'7.5%'} color={'#E4E4E4'} fontWeight={'500'} fontSize={{md:'1.25rem',base:'0.75rem'}} lineHeight={{md:'32px',base:'20px'}}>In terms of technologies, Hushh Hackathon 1.0  will leverage the emerging technologies and technologies of tomorrow, specifically in the realm of Metaverse and AI. These themes and technologies provide a broad scope for participants to explore and develop innovative solutions that address real-world challenges in various domains.</Text>
+            <Text mt={{md:'3rem',base:'1.5rem'}} textAlign={'left'} letterSpacing={'7.5%'} color={'#E4E4E4'} fontWeight={'500'} fontSize={{md:'1.25rem',base:'0.75rem'}} lineHeight={{md:'32px',base:'20px'}}>
+              In terms of technologies, Hushh Hackathon 1.0  will leverage the emerging technologies and technologies of tomorrow, specifically in the realm of Metaverse and AI. These themes and technologies provide a broad scope for participants to explore and develop innovative solutions that address real-world challenges in various domains.
+            </Text>
           </Box>
         </VStack>
+
+        <VStack my={{md:'4rem',base:'2rem'}} mx={{ md: "2rem",base:'1rem' }} textAlign={'left'} gap={{md:'1.25rem',base:'0.7rem'}} alignItems={'flex-start'}>
+          <Text color={'#E4E4E4'} fontWeight={'700'} fontSize={{md:'3.8rem',base:'1.9rem'}} lineHeight={{md:'73.2px',base:'42px'}}>Submit Your Projects!</Text>
+          <Text color={'#FFFFFF'} fontWeight={'500'} lineHeight={'28px'} fontSize={{md:'1.18rem',base:'0.6rem'}}>Keep in Mind</Text>
+          <Text mr={'40%'} color={'#FFFFFF'} fontWeight={'500'} lineHeight={'28px'} fontSize={{md:'1.18rem',base:'0.6rem'}}>Documents you upload should have the name of the app you worked on and the names of the participant who worked on it or else the submission wil not be considered </Text>
+          <Button border={'2px solid white'} w={'100%'} color={'white'} bg={'transparent'} _hover={{border:'none',bg:'linear-gradient(256.5deg, #e0055f 6.97%, #2020ed 92.26%)', color:'white'}}>
+            + Click for project submission
+          </Button>
+        </VStack>
       </Box>
+      <FooterComponent/>
     </>
   );
 };

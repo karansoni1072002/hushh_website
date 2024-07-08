@@ -21,17 +21,23 @@ import LinkedInIcon from "../_components/svg/hackathon/linkedInIcon.svg";
 import YoutubeIcon from "../_components/svg/hackathon/youtubeIcon.svg";
 import WhatsappIcon from "../_components/svg/hackathon/whatsappIcon.svg";
 import DiscordIcon from "../_components/svg/hackathon/discordIcon.svg";
-import GroupSVG from "../_components/svg/hackathon/Group1597881654.svg";
 import HushhLogoS from "../_components/svg/hackathon/hushhLogo.svg";
+
+import Modelling from "../../../public/Images/3DModelling.png";
+import Ai from "../../../public/Images/AI.png";
+import BlockChain from "../../../public/Images/blockChain.png";
+import BrainCompt from "../../../public/Images/brainComputer.png";
+import IOT from "../../../public/Images/InternetOfThings.png";
+import VirtualVR from "../../../public/Images/VirtualVR.png";
 
 const items = [
   { title: "AUGMENTED REALITY (AR)", icon: ARIcon },
-  { title: "ARTIFICIAL INTELLIGENCE", icon: ARIcon },
-  { title: "INTERNET OF THINGS", icon: ARIcon },
-  { title: "BLOCKCHAIN", icon: ARIcon },
-  { title: "VIRTUAL REALITY", icon: ARIcon },
-  { title: "3D MODELLING", icon: ARIcon },
-  { title: "BRAIN COMPUTER INTERFACE", icon: ARIcon },
+  { title: "ARTIFICIAL INTELLIGENCE", icon: Ai },
+  { title: "INTERNET OF THINGS", icon: IOT },
+  { title: "BLOCKCHAIN", icon: BlockChain },
+  { title: "VIRTUAL REALITY", icon: VirtualVR },
+  { title: "3D MODELLING", icon: Modelling },
+  { title: "BRAIN COMPUTER INTERFACE", icon: BrainCompt },
   { title: "EDGE / CLOUD COMPUTING", icon: EdgeIcon },
 ];
 const HushhHackhathon = () => {
@@ -94,6 +100,7 @@ const HushhHackhathon = () => {
               PRESENTS
             </Text>
             <Text
+              as={'h1'}
               fontWeight={"700"}
               fontSize={{ md: "4rem", base: "2rem" }}
               lineHeight={{ md: "76.8px", base: "40px" }}
@@ -116,6 +123,7 @@ const HushhHackhathon = () => {
               lineHeight={{ md: "32px", base: "20px" }}
               color={"#E4E4E4"}
               mb={{ md: "1rem", base: "0.25rem" }}
+              as={'h2'}
             >
               Hushh Hackhathon 1.0 welcome you!
             </Text>
@@ -127,6 +135,11 @@ const HushhHackhathon = () => {
               fontWeight={"400"}
               lineHeight={{ md: "28.8px", base: "15px" }}
               color={"white"}
+              _hover={{
+                color:'white',
+                background:'linear-gradient(256.5deg, #e0055f 6.97%, #2020ed 92.26%)',
+                border:'none'
+              }}
             >
               GUIDELINES DOCUMENTATION
             </Button>
@@ -159,7 +172,7 @@ const HushhHackhathon = () => {
                   Days
                 </Text>
               </VStack>
-              <Text mx={2} my={3}>
+              <Text fontSize={{md:'2rem',base:'1rem'}} mx={2} my={{base:3, md:5}}>
                 :
               </Text>
               <VStack>
@@ -180,7 +193,7 @@ const HushhHackhathon = () => {
                   Hours
                 </Text>
               </VStack>
-              <Text mx={2} my={3}>
+              <Text fontSize={{md:'2rem',base:'1rem'}} mx={2} my={{base:3, md:5}}>
                 :
               </Text>
               <VStack>
@@ -201,7 +214,7 @@ const HushhHackhathon = () => {
                   Minutes
                 </Text>
               </VStack>
-              <Text mx={2} my={3}>
+              <Text fontSize={{md:'2rem',base:'1rem'}} mx={2} my={{base:3, md:5}}>
                 :
               </Text>
               <VStack>
@@ -362,12 +375,12 @@ const HushhHackhathon = () => {
           </Text>
           {/* <Image src={GroupSVG} alt="GroupSVG" title="GroupSVG" /> */}
           <Box bg="black" color="white" minH="100vh" p={{ md: 8, base: 2 }}>
-            <Box mb={8}>
+            {/* <Box mb={8} display={{md:'block',base:'none'}}>
               <Text fontSize="xl" fontWeight="bold">
                 EXTENDED REALITY (XR)
               </Text>
-              <Text>SPATIAL COMPUTING</Text>
-            </Box>
+              <Text>(SPATIAL COMPUTING)</Text>
+            </Box> */}
             <SimpleGrid
               columns={[2, 2, 3, 4]}
               gap={{ md: "4rem", base: "2rem" }}
@@ -381,7 +394,7 @@ const HushhHackhathon = () => {
                   p={4}
                   borderRadius="md"
                 >
-                  <Image src={item.icon} />
+                  <Image src={item.icon} style={{width:'100px'}} alt={item.title} title={item.title} width={'100px'} height={'100px'} />
                   <Text
                     fontWeight={"600"}
                     fontSize={{ md: "1.25rem", base: "0.8rem" }}
@@ -425,6 +438,7 @@ const HushhHackhathon = () => {
             fontWeight={"700"}
             fontSize={{ md: "3.8rem", base: "1.9rem" }}
             lineHeight={{ md: "73.2px", base: "42px" }}
+
           >
             Submit Your Projects!
           </Text>
@@ -459,6 +473,12 @@ const HushhHackhathon = () => {
               bg: "linear-gradient(256.5deg, #e0055f 6.97%, #2020ed 92.26%)",
               color: "white",
             }}
+            onClick={() =>
+              window.open(
+                "https://docs.google.com/forms/d/e/1FAIpQLScFQNDtSQ9ZuiBbeE4YVLQcuVv6zaPtNpHNm9wKENJX6vJ4QA/viewform?usp=sf_link",
+                '_blank'
+              )
+            }
           >
             + Click for project submission
           </Button>
@@ -505,12 +525,18 @@ const HushhHackhathon = () => {
             <Image
               src={WhatsappIcon}
               alt="WhatsappIcon"
-              title="Join Whatsapp Community"
+              title="Whatsapp Community for Hackathon Participants"
+              onClick={() =>
+                window.open(
+                  "https://chat.whatsapp.com/CTa7ULornjfHEzVyvNN9gB",
+                  '_blank'
+                )
+              }
             />
             <Image
               src={DiscordIcon}
               alt="DiscordIcon"
-              title="Join Discord Community"
+              title="Discord Community for Hackathon Participants"
               onClick={() =>
                 window.open(
                   " https://discord.gg/Vznzv5k7",

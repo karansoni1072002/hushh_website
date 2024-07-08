@@ -376,10 +376,18 @@ const HushhHackhathon = () => {
           <Text color={'#E4E4E4'} fontWeight={'700'} fontSize={{md:'3.8rem',base:'1.9rem'}} lineHeight={{md:'73.2px',base:'42px'}}>Submit Your Projects!</Text>
           <Text color={'#FFFFFF'} fontWeight={'500'} lineHeight={'28px'} fontSize={{md:'1.18rem',base:'0.6rem'}}>Keep in Mind</Text>
           <Text mr={'40%'} color={'#FFFFFF'} fontWeight={'500'} lineHeight={'28px'} fontSize={{md:'1.18rem',base:'0.6rem'}}>Documents you upload should have the name of the app you worked on and the names of the participant who worked on it or else the submission wil not be considered </Text>
-          <Button border={'2px solid white'} w={'100%'} color={'white'} bg={'transparent'} _hover={{border:'none',bg:'linear-gradient(256.5deg, #e0055f 6.97%, #2020ed 92.26%)', color:'white'}}>
+          <Button mt={{md:'2rem',base:'1rem'}} border={'2px solid white'} w={'100%'} color={'white'} bg={'transparent'} _hover={{border:'none',bg:'linear-gradient(256.5deg, #e0055f 6.97%, #2020ed 92.26%)', color:'white'}}>
             + Click for project submission
           </Button>
+          <Text color={'#E4E4E4'} fontWeight={'500'} fontSize={{md:'1.25rem',base:'0.8rem'}} lineHeight={'32px'} letterSpacing={'0.075rem'}>** the final selected teams will have a 1-1 round to explain there ideas and also provide feedback on there chosen applications user experience based on their understanding and feedback winners will be seleted</Text>        
         </VStack>
+
+        <VStack my={{md:'4rem',base:'2rem'}} mx={{ md: "2rem",base:'1rem' }} textAlign={'left'} gap={{md:'1.25rem',base:'0.7rem'}} alignItems={'flex-start'}>
+        <Text color={'#E4E4E4'} fontWeight={'700'} fontSize={{md:'3.8rem',base:'1.9rem'}} lineHeight={{md:'73.2px',base:'42px'}}>Join our community</Text>
+        
+        <Text mr={'40%'} color={'#E4E4E4'} fontWeight={'500'} lineHeight={'28px'} fontSize={{md:'1.18rem',base:'0.6rem'}}>Documents you upload should have the name of the app you worked on and the names of the participant who worked on it or else the submission wil not be considered </Text>
+        </VStack>
+
       </Box>
       <FooterComponent/>
     </>

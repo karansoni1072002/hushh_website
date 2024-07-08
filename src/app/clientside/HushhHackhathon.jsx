@@ -140,6 +140,12 @@ const HushhHackhathon = () => {
                 background:'linear-gradient(256.5deg, #e0055f 6.97%, #2020ed 92.26%)',
                 border:'none'
               }}
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/document/d/1hI8JkBZEBHnZ48_5M8bnWjRtTvisEN_uGolC0V9Shy4/edit",
+                  '_blank'
+                )
+              }
             >
               GUIDELINES DOCUMENTATION
             </Button>

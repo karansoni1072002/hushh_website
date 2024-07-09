@@ -133,6 +133,7 @@ const HushhHackhathon = () => {
               letterSpacing={"0.29rem"}
               border={"1px solid #606060"}
               fontWeight={"400"}
+              bg={'transparent'}
               lineHeight={{ md: "28.8px", base: "15px" }}
               color={"white"}
               _hover={{

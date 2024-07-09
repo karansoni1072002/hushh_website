@@ -152,7 +152,7 @@ export default function RootLayout({ children }) {
           <HushhButtonFromLib />
         </div>
         <ResponsiveSizeProvider>
-          <header className="h-[90px] w-full realtive z-50">
+          <header className="h-[90px] w-full absolute z-50">
             <HeaderComponent />
           </header>
           {" "}

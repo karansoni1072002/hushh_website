@@ -137,7 +137,7 @@ export default function Header() {
     <>
   {shouldShowHeader &&
     <div className={`w-full z-1000`} style={{ background: headerBackground }}>
-      <div className=" flex items-center justify-between w-full px-6 py-2 z-1000 md:px-32 md:py-5">
+      <div className=" flex items-center justify-between w-full px-3 py-2 z-1000 md:px-16 md:py-5">
         <div className="">
           <Link href="/">
             <HushhHeaderLogo />
@@ -153,8 +153,8 @@ export default function Header() {
             </Container>
           </div>
         ) : (
-          <div className="w-max">
-            <div className="text-white flex justify-between gap-12 px-7 md:gap-10">
+          <div className="w-full px-3">
+            <div className="text-white flex gap-12 px-7 md:gap-10 text-md">
               {/* <Link
                 href="/"
                 className={`link ${pathname === '/' ? 'gradient-text' : ''}`}

@@ -41,7 +41,7 @@ const items = [
   { title: "EDGE / CLOUD COMPUTING", icon: EdgeIcon },
 ];
 const HushhHackhathon = () => {
-  const targetDate = "2024-07-09T23:59:59";
+  const targetDate = "2024-07-10T22:00:00";
   const calculateTimeLeft = () => {
     const difference = +new Date(targetDate) - +new Date();
     let timeLeft = {};

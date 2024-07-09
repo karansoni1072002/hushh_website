@@ -193,6 +193,13 @@ export default function Header() {
                 PRICING
               </Link>
               <Link
+                href="/outbound-services"
+                onMouseEnter={() => setProductsSubmenu(false)}
+                className={`link ${pathname === '/outbound-services' ? 'gradient-text' : ''}`}
+              >
+                SERVICES
+              </Link>
+              <Link
                 href="/UserGuide"
                 onMouseEnter={() => setProductsSubmenu(false)}
                 className={`link ${pathname === '/UserGuide' ? 'gradient-text' : ''}`}

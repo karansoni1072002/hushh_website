@@ -94,7 +94,8 @@ export default function vivaConnect2() {
           </Flex>
 
           <VStack textAlign={"left"} w={"100%"} alignItems={"flex-start"}>
-            <Image src={hushhLogo} alt="hushhLogo" />
+            <Image src={hushhLogo} loading="eager"
+        title="Hushh Viva Connect" alt="Hushh Viva Connect" />
             <Text
               p={"0"}
               m={"0"}
@@ -136,7 +137,8 @@ export default function vivaConnect2() {
                 justifyItems={"center"}
                 justifySelf={"center"}
               >
-                <Image src={HushhAppIcon} alt="HushhAppIcon" objectFit="fill" />
+                <Image loading="eager"
+        title="Hushh Wallet App" src={HushhAppIcon} alt="HushhAppIcon" objectFit="fill" />
               </Box>
               <VStack
                 gap={"0px"}
@@ -191,6 +193,8 @@ export default function vivaConnect2() {
                   src={VibeSearchNew}
                   alt="VibeSearchNew"
                   objectFit="cover"
+                  loading="eager"
+                  title="Vibe Search"
                 />
               </Box>
               <VStack
@@ -240,7 +244,8 @@ export default function vivaConnect2() {
                 justifyItems={"center"}
                 justifySelf={"center"}
               >
-                <Image src={ChromeIcon} alt="ChromeIcon" objectFit="fill" />
+                <Image src={ChromeIcon} loading="eager"
+        title="Hushh Browser Companion" alt="ChromeIcon" objectFit="fill" />
               </Box>
               <VStack
                 gap={"0px"}
@@ -299,6 +304,8 @@ export default function vivaConnect2() {
                   src={DeveloperIcon}
                   alt="DeveloperIcon"
                   objectFit="fill"
+                  loading="eager"
+                  title="Hushh Developer API"
                 />
               </Box>
               <VStack
@@ -359,6 +366,8 @@ export default function vivaConnect2() {
                   src={ButtonIcon}
                   alt="hushhButtonIcon"
                   objectFit="fill"
+                  loading="eager"
+                  title="Hushh Products"
                 />
               </Box>
               <VStack

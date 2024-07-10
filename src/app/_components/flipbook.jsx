@@ -6,7 +6,7 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 import ContactForm from './features/contactForm';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, HStack, Text } from '@chakra-ui/react';
 
 // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -30,8 +30,14 @@ function Flipbook() {
     }
     return (
         <>
-          <Box width={'100%'} position={'relative'} height={'100%'} mt={'0.5rem'}>
-            <Text color={'white'} fontSize={{md:'4rem',base:'1.75rem'}}>Hushh Journey Book</Text>
+          <Box  maxW={"100%"}
+        minW={"100%"}
+        display={"flex"}
+        flexDirection={"column"}
+        pos={"relative"}>
+            <HStack  justifyContent={'center'} mt={'4rem'}>
+                <Text className='hushh-gradient' fontSize={{md:'4rem',base:'1.75rem'}}>Hushh Journey Book</Text>
+            </HStack>
             <Box position={'relative'}>
             <iframe src="https://online.publuu.com/570829/1281762/page/1?embed&transparent" width="100%" height="800"  scrolling="no" frameborder="0" allowfullscreen="" allow="clipboard-write" class="publuuflip"></iframe>
 

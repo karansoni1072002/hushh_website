@@ -243,12 +243,16 @@ export default function LoginPage() {
         alt="BgLeftCircle"
         style={{ position: "absolute" }}
         placeholder="blur"
+        loading="eager"
+        title="Developer API Background Left"
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
       />
       <Image
         src={BgRightCircle}
         alt="BgRightCircle"
         objectFit="cover"
+        loading="eager"
+        title="Developer API Background Right"
         style={{ position: "absolute", width: "60%", height: "100%", right: 0 }}
         width={200}
         height={200}
@@ -257,6 +261,8 @@ export default function LoginPage() {
         src={DeveloperBg}
         alt="DeveloperBg"
         style={{ position: "absolute" }}
+        loading="eager"
+        title="Developer API Background"
       />
       {loading && <Loading />}
       <main className=" flex items-center justify-center z-10 p-6">
@@ -306,7 +312,7 @@ export default function LoginPage() {
                 "linear-gradient(270.53deg, #E54D60 2.44%, #A342FF 97.51%)",
             }}
           >
-            <Image src={GoogelIcon} alt="GoogelIcon" />
+            <Image src={GoogelIcon} alt="GoogelIcon" loading="eager" title="Developer API Google Login" />
             Continue with Google
           </Button>
 
@@ -335,7 +341,7 @@ export default function LoginPage() {
                 "linear-gradient(270.53deg, #E54D60 2.44%, #A342FF 97.51%)",
             }}
           >
-            <Image src={GithubIcon} alt="GithubIcon" />
+            <Image src={GithubIcon} loading="eager" title="Developer API Github Login" alt="GithubIcon" />
             Continue with Github
           </Button>
 
@@ -363,7 +369,7 @@ export default function LoginPage() {
                 "linear-gradient(270.53deg, #E54D60 2.44%, #A342FF 97.51%)",
             }}
           >
-            <Image src={AppleIcon} alt="AppleIcon" />
+            <Image src={AppleIcon} loading="eager" title="Developer API Apple Login" alt="AppleIcon" />
             Continue with Apple
           </Button>
 

@@ -44,6 +44,7 @@ import Shadow from "../_components/svg/outBoundService/shadowOutBound.svg";
 import { useMediaQuery } from "react-responsive";
 import SeasonedSvg from '../_components/svg/outBoundService/seasonedProfessional.svg';
 import BgShadow  from '../_components/svg/outBoundService/bgShadow.svg';
+import DivideLine from '../_components/svg/outBoundService/Line 233.svg';
 
 const OutBoundService = () => {
   const router = useRouter();
@@ -295,108 +296,6 @@ const OutBoundService = () => {
         >
           <Image src={SeasonedSvg} alt="Hushh outbound Services" title="Hushh Outbound Service Description" />
           <Text display={'flex'} mt={{md:'2rem',base:'1rem'}} textAlign={'center'} alignItems={'center'} px={{md:'4rem'}} color={'#ABABAB'} fontWeight={'500'} fontSize={{md:'1rem',base:'0.75rem'}} lineHeight={{md:'36px',base:'24px'}}>Whether you need a quick consultation or ongoing support, our team is ready to provide the expertise you need to navigate the complex landscape of AI and data technologies.”</Text>
-          {/* <Grid
-            position={"relative"}
-            templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
-            gap={{ md: 10, base: 5 }}
-            flexWrap="wrap"
-            
-          >
-            <ServiceCard
-              icon={<TrustedAIIcon />}
-              alignItems={""}
-              onClick={"#"}
-              title="Telemarketing​"
-              textAlign={"left"}
-              description="Share your curated data cards with businesses you choose, enabling them to offer personalized experiences and recommendations tailored to your unique preferences.​"
-            />
-            <ServiceCard
-              icon={<TechIntegrationIcon />}
-              alignItems={""}
-              onClick={"#"}
-              title="Cold Calling​​​"
-              textAlign={"left"}
-              description="Earn rewards for the valuable information you contribute, be it discounts, exclusive offers, or early access to products.​​"
-            />
-            <ServiceCard
-              icon={<ControlOver />}
-              alignItems={""}
-              onClick={"#"}
-              title="Email Outreach​"
-              textAlign={"left"}
-              description="You can sell your data directly to brands and agencies, receiving fair compensation for its value."
-            />
-            <ServiceCard
-              icon={<RedifiningIcon />}
-              title="SMS Campaigns​​​"
-              onClick={"#"}
-              alignItems={""}
-              textAlign={"left"}
-              description="Hushh prioritizes your privacy and control. You have full transparency over who has access to your data and what they can see. You can easily revoke access or modify your data cards at any time.​​"
-            />
-
-            <Box
-              className="gradient-bg serviceBox"
-              minW={"20rem"}
-              display={{ md: "flex", base: "none" }}
-              borderLeftRadius={"10px"}
-              flexDirection={"row"}
-              // position={"absolute"}
-
-              bottom={0}
-              // top={"60%"}
-              h={"100%"}
-              alignSelf={"flex-start"}
-              flex={1.5}
-              right={0}
-              gap={{ md: "5rem" }}
-            >
-              <Box
-                p={{ md: "2rem", base: "0.75rem" }}
-                display={"flex"}
-                flex={1.5}
-                flexDirection={"column"}
-                gap={{ md: "2rem" }}
-              >
-                <Text
-                  mb={{ md: "1rem", base: "0.5rem" }}
-                  color={"#FFFFFF"}
-                  fontSize={{ md: "2rem", base: "1rem" }}
-                  lineHeight={{ md: "46.5px", base: "25px" }}
-                  fontWeight={"600"}
-                >
-                  We growing up your business with personal AI manager.
-                </Text>
-                <Button
-                  w={{ md: "14rem", base: "10rem" }}
-                  bg={"transparent"}
-                  borderRadius={"65px"}
-                  fontWeight={"400"}
-                  zIndex={"2"}
-                  color={"white"}
-                  letterSpacing={"0.364rem"}
-                  fontSize={{ md: "1rem", base: "0.5rem" }}
-                  lineHeight={{ md: "28.8px", base: "20px" }}
-                  border={"1px solid"}
-                  _hover={{
-                    border: "none",
-                    color: "black",
-                    bg: "#FFFFFF",
-                  }}
-                >
-                  Get Started
-                </Button>
-              </Box>
-              <Box display={"flex"} flex={0.75}>
-                <Image
-                  src={PaperPlane}
-                  alt="PaperPlane"
-                  title="Out Bound Service"
-                  layout="responsive"
-                />
-              </Box>
-            </Box>
-          </Grid> */}
         </Box>
 
         <VStack
@@ -404,6 +303,7 @@ const OutBoundService = () => {
           py={{ md: "8rem", base: "3rem" }}
           className="howItworks"
           id="howItworks"
+          position={'relative'}
         >
           <Text
             className="hushh-gradient"
@@ -423,21 +323,41 @@ const OutBoundService = () => {
           >
             Our Expertise
           </Text>
-          <Box   display={'flex'} flexDirection={{md:'row',base:'column'}}>
+          <Box display={'flex'} flexDirection={{md:'row',base:'column'}}>
              <VStack textAlign={'left'} alignContent={'flex-start'} alignItems={'flex-start'} flex={1}>
               <Text color={'#E5E5E5'} fontWeight='300' fontSize={{md:'3rem',base:'1.5rem'}} lineHeight={{md:'57.6px',base:'32px'}}>AI Infrastructure</Text>
               <Divider/>
-              <Box gap={{md:'1rem',base:'0.5rem'}} color={'#E5E5E5'} lineHeight={{md:'31.2px',base:'18px'}} fontWeight={'300'} fontSize={{md:'1.625rem',base:'0.813rem'}} display={'flex'} flexDirection={'column'}>
+              {/* <Image src={BgShadow} style={{position:'absolute'}}/> */}
+              <Image
+            style={{
+              position: "absolute",
+              zIndex: "2",
+              left: "-50px",
+              top: "60px",
+              width: "100%",
+              // filter: "grayscale(100%)",
+              opacity:'100%'
+            }}
+            src={BgShadow}
+            alt="shadow"
+          />
+              <Box opacity={'20%'} gap={{md:'1rem',base:'0.5rem'}} mt={{md:'1.5rem',base:'0.75rem'}} color={'#E5E5E5'} lineHeight={{md:'31.2px',base:'18px'}} fontWeight={'300'} fontSize={{md:'1.625rem',base:'0.813rem'}} display={'flex'} flexDirection={'column'}>
                 <Text >Machine Learning and Deep Learning</Text>
+                <Image src={DivideLine}/>
                 <Text >Data Architecture</Text>
+                <Image src={DivideLine}/>
                 <Text >Data Science</Text>
+                <Image src={DivideLine}/>
                 <Text >AI Hardware Selection</Text>
+                <Image src={DivideLine}/>
                 <Text >Product Leadership in AI/ML</Text>
+                <Image src={DivideLine}/>
                 <Text >Large Language Models (LLMs) and Small Language Models (SLMs)</Text>
+                <Image src={DivideLine}/>
               </Box>
              </VStack>
-             <VStack flex={1} p={'4rem'}>
-                  <UnorderedList color={'#ABABAB'} fontWeight={'500'} lineHeight={{md:'69px',base:'30px'}} gap={{md:'1.5rem',base:'0.25rem'}}>
+             <VStack flex={1} justifyContent={'center'} justifyItems={'center'} p={'4rem'}>
+                  <UnorderedList color={'#ABABAB'} fontWeight={'500'} lineHeight={{md:'69px',base:'30px'}} gap={{md:'1rem',base:'0.25rem'}}>
                     <ListItem>Designing scalable AI systems</ListItem>
                     <ListItem>Optimizing AI processing pipelines</ListItem>
                     <ListItem>Selecting and implementing AI hardware solutions</ListItem>

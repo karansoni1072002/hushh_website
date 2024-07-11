@@ -482,7 +482,7 @@ const HushhHackhathon = () => {
             }}
             onClick={() =>
               window.open(
-                "https://docs.google.com/forms/d/e/1FAIpQLScFQNDtSQ9ZuiBbeE4YVLQcuVv6zaPtNpHNm9wKENJX6vJ4QA/viewform?usp=sf_link",
+                "https://forms.gle/vB1jY93nFXaPKN339",
                 '_blank'
               )
             }

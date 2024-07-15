@@ -1,5 +1,10 @@
 "use client";
 import {
+  Accordion,
+  AccordionButton,
+  AccordionItem,
+  AccordionIcon,
+  AccordionPanel,
   Box,
   Button,
   Container,
@@ -42,9 +47,9 @@ import LinkedInIcon from "../_components/svg/icons/linkedinIcon.svg";
 import { useRouter } from "next/navigation";
 import Shadow from "../_components/svg/outBoundService/shadowOutBound.svg";
 import { useMediaQuery } from "react-responsive";
-import SeasonedSvg from '../_components/svg/outBoundService/seasonedProfessional.svg';
-import BgShadow  from '../_components/svg/outBoundService/bgShadow.svg';
-import DivideLine from '../_components/svg/outBoundService/Line 233.svg';
+import SeasonedSvg from "../_components/svg/outBoundService/seasonedProfessional.svg";
+import BgShadow from "../_components/svg/outBoundService/bgShadow.svg";
+import DivideLine from "../_components/svg/outBoundService/Line 233.svg";
 
 const OutBoundService = () => {
   const router = useRouter();
@@ -227,7 +232,8 @@ const OutBoundService = () => {
                   fontWeight={"500"}
                   fontSize={{ md: "1rem", base: "0.75rem" }}
                 >
-                  Temporary integration of our specialists into your team for focused problem-solving.
+                  Temporary integration of our specialists into your team for
+                  focused problem-solving.
                 </Text>
               </VStack>
               <VStack
@@ -249,7 +255,8 @@ const OutBoundService = () => {
                   fontWeight={"500"}
                   fontSize={{ md: "1rem", base: "0.75rem" }}
                 >
-                  Help in developing roadmaps for AI adoption and data infrastructure improvements.
+                  Help in developing roadmaps for AI adoption and data
+                  infrastructure improvements.
                 </Text>
               </VStack>
             </Box>
@@ -270,9 +277,11 @@ const OutBoundService = () => {
             display={{ md: "flex", base: "none" }}
             fontWeight={"700"}
             lineHeight={{ md: "51px", base: "30px" }}
-            px={{md:'15%',base:'0.5rem'}}
+            px={{ md: "15%", base: "0.5rem" }}
           >
-            Our seasoned professionals bring their extensive experience to bear on your unique challenges, offering insights and solutions in areas such as:
+            Our seasoned professionals bring their extensive experience to bear
+            on your unique challenges, offering insights and solutions in areas
+            such as:
           </Text>
           <Text
             className="gradient"
@@ -288,14 +297,32 @@ const OutBoundService = () => {
           display={"flex"}
           pt={{ md: "2rem" }}
           justifyContent={"center"}
-          flexDir={'column'} // Stack the elements vertically on base, and horizontally on md
+          flexDir={"column"} // Stack the elements vertically on base, and horizontally on md
           minW={{ md: "100%", base: "100%" }}
           position={"relative"}
           mt={{ md: "2rem", basse: "0.5rem" }}
           px={{ md: "5rem", base: "0rem" }}
         >
-          <Image src={SeasonedSvg} alt="Hushh outbound Services" title="Hushh Outbound Service Description" />
-          <Text display={'flex'} mt={{md:'2rem',base:'1rem'}} textAlign={'center'} alignItems={'center'} px={{md:'4rem'}} color={'#ABABAB'} fontWeight={'500'} fontSize={{md:'1rem',base:'0.75rem'}} lineHeight={{md:'36px',base:'24px'}}>Whether you need a quick consultation or ongoing support, our team is ready to provide the expertise you need to navigate the complex landscape of AI and data technologies.”</Text>
+          <Image
+            src={SeasonedSvg}
+            alt="Hushh outbound Services"
+            title="Hushh Outbound Service Description"
+          />
+          <Text
+            display={"flex"}
+            mt={{ md: "2rem", base: "1rem" }}
+            textAlign={"center"}
+            alignItems={"center"}
+            px={{ md: "4rem" }}
+            color={"#ABABAB"}
+            fontWeight={"500"}
+            fontSize={{ md: "1rem", base: "0.75rem" }}
+            lineHeight={{ md: "36px", base: "24px" }}
+          >
+            Whether you need a quick consultation or ongoing support, our team
+            is ready to provide the expertise you need to navigate the complex
+            landscape of AI and data technologies.”
+          </Text>
         </Box>
 
         <VStack
@@ -303,7 +330,7 @@ const OutBoundService = () => {
           py={{ md: "8rem", base: "3rem" }}
           className="howItworks"
           id="howItworks"
-          position={'relative'}
+          position={"relative"}
         >
           <Text
             className="hushh-gradient"
@@ -323,187 +350,83 @@ const OutBoundService = () => {
           >
             Our Expertise
           </Text>
-          <Box display={'flex'} flexDirection={{md:'row',base:'column'}}>
-             <VStack textAlign={'left'} alignContent={'flex-start'} alignItems={'flex-start'} flex={1}>
-              <Text color={'#E5E5E5'} fontWeight='300' fontSize={{md:'3rem',base:'1.5rem'}} lineHeight={{md:'57.6px',base:'32px'}}>AI Infrastructure</Text>
-              <Divider/>
+          <Box display={"flex"} flexDirection={{ md: "row", base: "column" }}>
+            <VStack
+              textAlign={"left"}
+              alignContent={"flex-start"}
+              alignItems={"flex-start"}
+              flex={1}
+            >
+              <Text
+                color={"#E5E5E5"}
+                fontWeight="300"
+                fontSize={{ md: "3rem", base: "1.5rem" }}
+                lineHeight={{ md: "57.6px", base: "32px" }}
+              >
+                AI Infrastructure
+              </Text>
+              <Divider />
               {/* <Image src={BgShadow} style={{position:'absolute'}}/> */}
               <Image
-            style={{
-              position: "absolute",
-              zIndex: "2",
-              left: "-50px",
-              top: "60px",
-              width: "100%",
-              // filter: "grayscale(100%)",
-              opacity:'100%'
-            }}
-            src={BgShadow}
-            alt="shadow"
-          />
-              <Box opacity={'20%'} gap={{md:'1rem',base:'0.5rem'}} mt={{md:'1.5rem',base:'0.75rem'}} color={'#E5E5E5'} lineHeight={{md:'31.2px',base:'18px'}} fontWeight={'300'} fontSize={{md:'1.625rem',base:'0.813rem'}} display={'flex'} flexDirection={'column'}>
-                <Text >Machine Learning and Deep Learning</Text>
-                <Image src={DivideLine}/>
-                <Text >Data Architecture</Text>
-                <Image src={DivideLine}/>
-                <Text >Data Science</Text>
-                <Image src={DivideLine}/>
-                <Text >AI Hardware Selection</Text>
-                <Image src={DivideLine}/>
-                <Text >Product Leadership in AI/ML</Text>
-                <Image src={DivideLine}/>
-                <Text >Large Language Models (LLMs) and Small Language Models (SLMs)</Text>
-                <Image src={DivideLine}/>
+                style={{
+                  position: "absolute",
+                  zIndex: "2",
+                  left: "-50px",
+                  top: "60px",
+                  width: "100%",
+                  // filter: "grayscale(100%)",
+                  opacity: "100%",
+                }}
+                src={BgShadow}
+                alt="shadow"
+              />
+              <Box
+                opacity={"20%"}
+                gap={{ md: "1rem", base: "0.5rem" }}
+                mt={{ md: "1.5rem", base: "0.75rem" }}
+                color={"#E5E5E5"}
+                lineHeight={{ md: "31.2px", base: "18px" }}
+                fontWeight={"300"}
+                fontSize={{ md: "1.625rem", base: "0.813rem" }}
+                display={"flex"}
+                flexDirection={"column"}
+              >
+                <Text>Machine Learning and Deep Learning</Text>
+                <Image src={DivideLine} />
+                <Text>Data Architecture</Text>
+                <Image src={DivideLine} />
+                <Text>Data Science</Text>
+                <Image src={DivideLine} />
+                <Text>AI Hardware Selection</Text>
+                <Image src={DivideLine} />
+                <Text>Product Leadership in AI/ML</Text>
+                <Image src={DivideLine} />
+                <Text>
+                  Large Language Models (LLMs) and Small Language Models (SLMs)
+                </Text>
+                <Image src={DivideLine} />
               </Box>
-             </VStack>
-             <VStack flex={1} justifyContent={'center'} justifyItems={'center'} p={'4rem'}>
-                  <UnorderedList color={'#ABABAB'} fontWeight={'500'} lineHeight={{md:'69px',base:'30px'}} gap={{md:'1rem',base:'0.25rem'}}>
-                    <ListItem>Designing scalable AI systems</ListItem>
-                    <ListItem>Optimizing AI processing pipelines</ListItem>
-                    <ListItem>Selecting and implementing AI hardware solutions</ListItem>
-                  </UnorderedList>
-             </VStack>
-          </Box>
-          
-          {/* <Container
-            mt={{ md: "3rem", base: "1.25rem" }}
-            minW={"100%"}
-            display={"grid"}
-            gridColumn={{ md: "1", base: "2" }}
-            gridRow={{ md: "4", base: "2" }}
-          >
-            <Grid
-              position={"relative"}
-              minW={"100%"}
-              templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
-              gap={{ md: 10, base: 5 }}
-              flexWrap="wrap"
+            </VStack>
+            <VStack
+              flex={1}
+              justifyContent={"center"}
+              justifyItems={"center"}
+              p={"4rem"}
             >
-
-              <Box
-                bg={"#1C1C1C"}
-                p={{ md: "1rem", base: "0.5rem" }}
-                borderRadius={"31.02px"}
-                display={"flex"}
-                flexDirection={"column"}
-                gap={{ md: "1rem", base: "0.5rem" }}
+              <UnorderedList
+                color={"#ABABAB"}
+                fontWeight={"500"}
+                lineHeight={{ md: "69px", base: "30px" }}
+                gap={{ md: "1rem", base: "0.25rem" }}
               >
-                <Image
-                  src={ConsultationIcon}
-                  alt="ConsultationIcon"
-                  title="ConsultationIcon"
-                />
-                <Text
-                  fontWeight={"700"}
-                  color={"#FFFFFF"}
-                  fontSize={{ md: "1.15rem", base: "0.8rem" }}
-                  lineHeight={{ md: "24.2px", base: "16px" }}
-                >
-                  CONSULTATION AND STRATEGY DEVELOPEMENT
-                </Text>
-                <Text
-                  fontWeight={"500"}
-                  color={"#ABABAB"}
-                  fontSize={{ md: "1rem", base: "0.6rem" }}
-                  lineHeight={{ md: "36px", base: "20px" }}
-                >
-                  We understand your business goals and develop a tailored
-                  outbound strategy.
-                </Text>
-              </Box>
-
-              <Box
-                bg={"#1C1C1C"}
-                p={{ md: "1rem", base: "0.5rem" }}
-                borderRadius={"31.02px"}
-                display={"flex"}
-                flexDirection={"column"}
-                gap={{ md: "1rem", base: "0.5rem" }}
-              >
-                <Image
-                  src={DualDirection}
-                  alt="DualDirection"
-                  title="DualDirection"
-                  // layout="responsive"
-                />
-                <Text
-                  fontWeight={"700"}
-                  color={"#FFFFFF"}
-                  fontSize={{ md: "1.15rem", base: "0.8rem" }}
-                  lineHeight={{ md: "24.2px", base: "16px" }}
-                >
-                  IMPLEMENTATION OF OUTBOUND CAMPIAGNS
-                </Text>
-                <Text
-                  fontWeight={"500"}
-                  color={"#ABABAB"}
-                  fontSize={{ md: "1rem", base: "0.6rem" }}
-                  lineHeight={{ md: "36px", base: "20px" }}
-                >
-                  We execute campaigns across various channels, ensuring
-                  consistent messaging and effective outreach.
-                </Text>
-              </Box>
-              <Box
-                bg={"#1C1C1C"}
-                p={{ md: "1rem", base: "0.5rem" }}
-                borderRadius={"31.02px"}
-                display={"flex"}
-                flexDirection={"column"}
-                gap={{ md: "1rem", base: "0.5rem" }}
-              >
-                <Image src={ChartIcon} alt="ChartIcon" title="ChartIcon" />
-                <Text
-                  fontWeight={"700"}
-                  color={"#FFFFFF"}
-                  fontSize={{ md: "1.15rem", base: "0.8rem" }}
-                  lineHeight={{ md: "24.2px", base: "16px" }}
-                >
-                  MONITORING AND OPTIMIZATION
-                </Text>
-                <Text
-                  fontWeight={"500"}
-                  color={"#ABABAB"}
-                  fontSize={{ md: "1rem", base: "0.6rem" }}
-                  lineHeight={{ md: "36px", base: "20px" }}
-                >
-                  We continuously monitor performance and make adjustments to
-                  optimize results.
-                </Text>
-              </Box>
-              <Box
-                bg={"#1C1C1C"}
-                p={{ md: "1rem", base: "0.5rem" }}
-                borderRadius={"31.02px"}
-                display={"flex"}
-                flexDirection={"column"}
-                gap={{ md: "1rem", base: "0.5rem" }}
-              >
-                <Image
-                  src={FeedbackIcon}
-                  alt="FeedbackIcon"
-                  title="FeedbackIcon"
-                />
-                <Text
-                  fontWeight={"700"}
-                  color={"#FFFFFF"}
-                  fontSize={{ md: "1.15rem", base: "0.8rem" }}
-                  lineHeight={{ md: "24.2px", base: "16px" }}
-                >
-                  REPORTING AND FEEDBACK
-                </Text>
-                <Text
-                  fontWeight={"500"}
-                  color={"#ABABAB"}
-                  fontSize={{ md: "1rem", base: "0.6rem" }}
-                  lineHeight={{ md: "36px", base: "20px" }}
-                >
-                  We provide detailed reports and gather feedback to measure
-                  success and identify areas for improvement.
-                </Text>
-              </Box>
-            </Grid>
-          </Container> */}
+                <ListItem>Designing scalable AI systems</ListItem>
+                <ListItem>Optimizing AI processing pipelines</ListItem>
+                <ListItem>
+                  Selecting and implementing AI hardware solutions
+                </ListItem>
+              </UnorderedList>
+            </VStack>
+          </Box>
         </VStack>
 
         <Box position={"relative"} minW={"100%"}>
@@ -538,7 +461,7 @@ const OutBoundService = () => {
               fontSize={{ md: "3.75rem", base: "1.75rem" }}
               lineHeight={{ base: "40px", md: "63.3px" }}
             >
-              Ready to Boost Your Business?
+              Our Team
             </Text>
             <Text
               color={"#E5E5E5"}
@@ -546,7 +469,8 @@ const OutBoundService = () => {
               fontSize={{ md: "1rem", base: "0.75rem" }}
               lineHeight={{ md: "28px", base: "20px" }}
             >
-              Building a world where data works for you, not against you.
+              Leadership isn't a title, it's an action. Thank you for leading by
+              example.
             </Text>
           </VStack>
 
@@ -557,13 +481,19 @@ const OutBoundService = () => {
             w={"100%"}
             flexDirection={{ md: "row", base: "column" }}
           >
-            <Box w={"100%"} h={"100%"} display={{ md: "block", base: "none" }}>
+            <Box
+              flex={1}
+              w={"100%"}
+              h={"100%"}
+              display={{ md: "flex", base: "none" }}
+            >
               <Image
                 alt="manish"
                 src={Manish}
                 title="manish sainani"
                 width={"355"}
                 height={"489"}
+                style={{ border: "10px solid white", borderRadius: "21.16px" }}
               />
             </Box>
             <Box w={"100%"} h={"100%"} display={{ md: "none", base: "flex" }}>
@@ -576,113 +506,214 @@ const OutBoundService = () => {
               />
             </Box>
             <VStack
+              flex={2}
               gap={{ md: "1rem", base: "1rem" }}
               textAlign={"left"}
               alignItems={"flex-start"}
             >
-              <Text
-                fontWeight={"700"}
-                lineHeight={{ md: "32.13px", base: "20px" }}
-                fontSize={{ md: "1.67rem", base: "1.15rem" }}
-                color={"white"}
-                mt={{ base: "1rem" }}
-              >
-                Manish Sainani
-              </Text>
-              <Text
-                fontWeight={"400"}
-                lineHeight={{ md: "21.42px", base: "14px" }}
-                fontSize={{ md: "1.1rem", base: "0.75rem" }}
-                color={"white"}
-              >
-                Executive Director
-              </Text>
-              <Text
-                fontWeight={"500"}
-                fontSize={{ md: "1rem", base: "0.75rem" }}
-                lineHeight={{ md: "45px", base: "20px" }}
-                color={"#ABABAB"}
-              >
-                I’m passionate about building products and teams with delightful
-                experiences bringing human, AI & design to life. My focus lately
-                has been democratizing userdata & scaling developer experience &
-                productivity with AI such as Recommendation systems, LLMs across
-                our developer, human and userid ecosystems.Nov 2021 Onwards:
-                Product Dir in Google - Developer, x-Google Engineering,
-                Languages, Tooling and SDKs and Hybrid GoogleOS w/ GCP)
-              </Text>
-              <Text
-                fontWeight={"500"}
-                fontSize={{ md: "1rem", base: "0.75rem" }}
-                lineHeight={{ md: "45px", base: "20px" }}
-                color={"#ABABAB"}
-              >
-                Portfolio with customers xGoogle, with a team of ~30 PMs & 5k+
-                engineering team supporting Google Cloud, Ads, Search, Cloud,
-                Geo, Bets, DeepMind and Core as primary GTM customers for Core
-                and TI/Cloud. Reported to SVP/Google Fellow, Core & xGE (Luiz
-                André Barasso) and later to VP, Core Developer (Asim Husain).
-              </Text>
-              <HStack display={"flex"} gap={{ md: "2rem", base: "0.5rem" }}>
-                <Button
-                  backgroundColor={"#0565FF"}
-                  color={"white"}
-                  borderRadius={"4px"}
-                  cursor={"pointer"}
-                  padding={{
-                    md: "5px 20px 5px 20px",
-                    base: "5px 10px 5px 10px",
-                  }}
-                  fontSize={{ md: "1rem", base: "0.75rem" }}
-                  _hover={{
-                    color: "white",
-                    bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
-                  }}
-                  onClick={() =>
-                    window.open(
-                      "https://calendly.com/hushh/advisory-meet-with-our-leadership-team",
-                      "_blank"
-                    )
-                  }
-                >
-                  Book a call with Manish
-                </Button>
-                <Image
-                  src={SkypeIcon}
-                  alt="SkypeIcon"
-                  title="manish Skype"
-                  style={{ cursor: "pointer" }}
-                  onClick={() =>
-                    window.open(
-                      "https://www.linkedin.com/in/manishsainani/",
-                      "_blank"
-                    )
-                  }
-                />
-                <Image
-                  src={TwitterIcon}
-                  alt="TwitterIcon"
-                  title="manish twitter"
-                  style={{ cursor: "pointer" }}
-                  onClick={() =>
-                    window.open("https://x.com/manishsainani", "_blank")
-                  }
-                />
-                <Image
-                  src={LinkedInIcon}
-                  alt="LinkedInIcon"
-                  title="Manish LinkedIn"
-                  style={{ cursor: "pointer" }}
-                  onClick={() =>
-                    window.open(
-                      "https://www.linkedin.com/in/manishsainani/",
-                      "_blank"
-                    )
-                  }
-                />
+              <HStack w={"100%"} justifyContent={"space-between"}>
+                <Box display={"flex"} flexDirection={"column"}>
+                  <Text
+                    fontWeight={"700"}
+                    lineHeight={{ md: "32.13px", base: "20px" }}
+                    fontSize={{ md: "1.67rem", base: "1.15rem" }}
+                    className="hushh-gradient"
+                    mt={{ base: "1rem" }}
+                  >
+                    Manish Sainani
+                  </Text>
+                  <Text
+                    fontWeight={"400"}
+                    lineHeight={{ md: "21.42px", base: "14px" }}
+                    fontSize={{ md: "1.1rem", base: "0.75rem" }}
+                    className="gradient"
+                  >
+                    CEO, CPO and Founder
+                  </Text>
+                </Box>
+
+                <Box display={"flex"} flexDirection={"row"}>
+                  <HStack
+                    display={"flex"}
+                    gap={{ md: "1rem", base: "0.25rem" }}
+                  >
+                    <Button
+                      backgroundColor={"#0565FF"}
+                      color={"white"}
+                      borderRadius={"4px"}
+                      cursor={"pointer"}
+                      padding={{
+                        md: "5px 20px 5px 20px",
+                        base: "5px 10px 5px 10px",
+                      }}
+                      fontSize={{ md: "1rem", base: "0.75rem" }}
+                      _hover={{
+                        color: "white",
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                      }}
+                      onClick={() =>
+                        window.open(
+                          "https://calendly.com/hushh/advisory-meet-with-our-leadership-team",
+                          "_blank"
+                        )
+                      }
+                    >
+                      Book a call with Manish
+                    </Button>
+                    <Image
+                      src={TwitterIcon}
+                      alt="TwitterIcon"
+                      title="manish twitter"
+                      style={{ cursor: "pointer" }}
+                      onClick={() =>
+                        window.open("https://x.com/manishsainani", "_blank")
+                      }
+                    />
+                    <Image
+                      src={LinkedInIcon}
+                      alt="LinkedInIcon"
+                      title="Manish LinkedIn"
+                      style={{ cursor: "pointer" }}
+                      onClick={() =>
+                        window.open(
+                          "https://www.linkedin.com/in/manishsainani/",
+                          "_blank"
+                        )
+                      }
+                    />
+                  </HStack>
+                </Box>
               </HStack>
+              <Text
+                fontWeight={"500"}
+                fontSize={{ md: "1rem", base: "0.75rem" }}
+                lineHeight={{ md: "36px", base: "20px" }}
+                color={"#ABABAB"}
+                opacity={"80%"}
+              >
+                As CEO and Chief Product Officer, Manish leads Hushh's overall
+                strategy and product vision. He leverages his extensive
+                experience in AI infrastructure and product management to guide
+                clients through complex AI implementation challenges.
+              </Text>
+              <Accordion
+                mt={{ md: "2rem", base: "1rem" }}
+                defaultIndex={[0]}
+                allowToggle
+                w={"100%"}
+              >
+                <AccordionItem>
+                  <AccordionButton>
+                    <Text
+                      color={"#FFFFFF"}
+                      fontWeight={"700"}
+                      lineHeight={"24px"}
+                      fontSize={{ md: "1.25rem", base: "0.625rem" }}
+                      flex="1"
+                      textAlign="left"
+                    >
+                      AI Infrastructure
+                    </Text>
+                    <AccordionIcon color={"white"} />
+                  </AccordionButton>
+                  <AccordionPanel pb={4}>
+                    <UnorderedList
+                      color={"#ABABAB"}
+                      fontWeight={"500"}
+                      fontSize={{ md: "1rem", base: "0.5" }}
+                      lineHeight={{ md: "36px", base: "22px" }}
+                    >
+                      <ListItem>
+                        Expert in selecting optimal AI processing hardware
+                        (GPUs, TPUs, AWS Inferentia, AWS Trainium)
+                      </ListItem>
+                      <ListItem>
+                        Deep knowledge of AI chip architecture and performance
+                        characteristics
+                      </ListItem>
+                      <ListItem>
+                        Experience in scaling AI infrastructure for
+                        enterprise-level applications
+                      </ListItem>
+                    </UnorderedList>
+                  </AccordionPanel>
+                </AccordionItem>
+
+                <AccordionItem>
+                  <AccordionButton>
+                    <Text
+                      color={"#FFFFFF"}
+                      fontWeight={"700"}
+                      lineHeight={"24px"}
+                      fontSize={{ md: "1.25rem", base: "0.625rem" }}
+                      flex="1"
+                      textAlign="left"
+                    >
+                      Large Language Models (LLMs) and Small Language Models
+                      (SLMs)
+                    </Text>
+                    <AccordionIcon color={"white"} />
+                  </AccordionButton>
+                  <AccordionPanel pb={4}>
+                    <UnorderedList
+                      color={"#ABABAB"}
+                      fontWeight={"500"}
+                      fontSize={{ md: "1rem", base: "0.5" }}
+                      lineHeight={{ md: "36px", base: "22px" }}
+                    >
+                      <ListItem>
+                        Strategies for integrating language models into existing
+                        systems
+                      </ListItem>
+                      <ListItem>
+                        Optimizing LLM/SLM performance for specific use casess
+                      </ListItem>
+                      <ListItem>
+                        Evaluating and selecting appropriate language models for
+                        various applications
+                      </ListItem>
+                    </UnorderedList>
+                  </AccordionPanel>
+                </AccordionItem>
+
+                <AccordionItem>
+                  <AccordionButton>
+                    <Text
+                      color={"#FFFFFF"}
+                      fontWeight={"700"}
+                      lineHeight={"24px"}
+                      fontSize={{ md: "1.25rem", base: "0.625rem" }}
+                      flex="1"
+                      textAlign="left"
+                    >
+                      AI Product Strategy
+                    </Text>
+                    <AccordionIcon color={"white"} />
+                  </AccordionButton>
+                  <AccordionPanel pb={4}>
+                    <UnorderedList
+                      color={"#ABABAB"}
+                      fontWeight={"500"}
+                      fontSize={{ md: "1rem", base: "0.5" }}
+                      lineHeight={{ md: "36px", base: "22px" }}
+                    >
+                      <ListItem>
+                        Developing roadmaps for AI product development
+                      </ListItem>
+                      <ListItem>
+                        Aligning AI capabilities with business objectives
+                      </ListItem>
+                      <ListItem>
+                        Managing AI product lifecycles from conception to
+                        deployment
+                      </ListItem>
+                    </UnorderedList>
+                  </AccordionPanel>
+                </AccordionItem>
+              </Accordion>
             </VStack>
           </Stack>
+
           <Box
             w={"100%"}
             py={{ base: "2rem" }}
@@ -702,121 +733,214 @@ const OutBoundService = () => {
             flexDirection={{ md: "row", base: "column-reverse" }}
             position={"relative"}
           >
-            <VStack
-              gap={{ md: "1rem", base: "0.5rem" }}
-              textAlign={{ md: "right", base: "left" }}
-              alignItems={{ md: "flex-end", base: "flex-start" }}
-            >
-              <Text
-                fontWeight={"700"}
-                lineHeight={{ md: "32.13px", base: "20px" }}
-                fontSize={{ md: "1.67rem", base: "1rem" }}
-                color={"white"}
-                mt={{ base: "1rem" }}
+            <Box flex={2} display={"flex"} flexDirection={"column"}>
+              <HStack
+                gap={{ md: "1rem", base: "0.5rem" }}
+                // textAlign={{ md: "left", base: "left" }}
+                alignItems={{ md: "flex-start", base: "flex-start" }}
+                flexDirection={"row"}
+                w={"100%"}
+                justifyContent={"space-between"}
               >
-                Justin Donaldson
-              </Text>
-              <Text
-                fontWeight={"400"}
-                lineHeight={{ md: "21.42px", base: "14px" }}
-                fontSize={{ md: "1.1rem", base: "0.75rem" }}
-                color={"white"}
-              >
-                Co-founder and Chief Data Scientist
-              </Text>
-              <Text
-                fontWeight={"500"}
-                fontSize={{ md: "1rem", base: "0.75rem" }}
-                lineHeight={{ md: "45px", base: "20px" }}
-                color={"#ABABAB"}
-              >
-                I’m passionate about building products and teams with delightful
-                experiences bringing human, AI & design to life. My focus lately
-                has been democratizing userdata & scaling developer experience &
-                productivity with AI such as Recommendation systems, LLMs across
-                our developer, human and userid ecosystems.Nov 2021 Onwards:
-                Product Dir in Google - Developer, x-Google Engineering,
-                Languages, Tooling and SDKs and Hybrid GoogleOS w/ GCP)
-              </Text>
-              <Text
-                fontWeight={"500"}
-                fontSize={{ md: "1rem", base: "0.75rem" }}
-                lineHeight={{ md: "45px", base: "20px" }}
-                color={"#ABABAB"}
-              >
-                Portfolio with customers xGoogle, with a team of ~30 PMs & 5k+
-                engineering team supporting Google Cloud, Ads, Search, Cloud,
-                Geo, Bets, DeepMind and Core as primary GTM customers for Core
-                and TI/Cloud. Reported to SVP/Google Fellow, Core & xGE (Luiz
-                André Barasso) and later to VP, Core Developer (Asim Husain).
-              </Text>
-              <HStack display={"flex"} gap={{ md: "2rem", base: "0.5rem" }}>
-                <Button
-                  zIndex={"44444"}
-                  backgroundColor={"#0565FF"}
-                  color={"white"}
-                  cursor={"pointer"}
-                  borderRadius={"4px"}
-                  fontSize={{ md: "1rem", base: "0.75rem" }}
-                  padding={{
-                    md: "5px 20px 5px 20px",
-                    base: "5px 10px 5px 10px",
-                  }}
-                  _hover={{
-                    color: "white",
-                    bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
-                  }}
-                  onClick={() =>
-                    window.open("https://cal.com/jdonaldson/30min", "_blank")
-                  }
-                >
-                  Book a call with Justin
-                </Button>
-                <Image
-                  src={SkypeIcon}
-                  alt="SkypeIcon"
-                  title="manish Skype"
-                  style={{ cursor: "pointer" }}
-                  onClick={() =>
-                    window.open(
-                      "https://www.linkedin.com/in/jjustindonaldson/",
-                      "_blank"
-                    )
-                  }
-                />
-                <Image
-                  src={TwitterIcon}
-                  alt="TwitterIcon"
-                  style={{ cursor: "pointer" }}
-                  title="manish twitter"
-                  onClick={() =>
-                    window.open(
-                      "https://www.linkedin.com/in/jjustindonaldson/",
-                      "_blank"
-                    )
-                  }
-                />
-                <Image
-                  src={LinkedInIcon}
-                  alt="LinkedInIcon"
-                  style={{ cursor: "pointer" }}
-                  title="Manish LinkedIn"
-                  onClick={() =>
-                    window.open(
-                      "https://www.linkedin.com/in/jjustindonaldson/",
-                      "_blank"
-                    )
-                  }
-                />
+                <Box display={"flex"} flexDirection={"column"}>
+                  <Text
+                    fontWeight={"700"}
+                    lineHeight={{ md: "32.13px", base: "20px" }}
+                    fontSize={{ md: "1.67rem", base: "1rem" }}
+                    className="hushh-gradient"
+                    mt={{ base: "1rem", md: "0rem" }}
+                    textAlign={"left"}
+                  >
+                    Justin Donaldson
+                  </Text>
+                  <Text
+                    fontWeight={"400"}
+                    lineHeight={{ md: "21.42px", base: "14px" }}
+                    fontSize={{ md: "1.1rem", base: "0.75rem" }}
+                    className="gradient"
+                  >
+                    CTO and Co-Founder
+                  </Text>
+                </Box>
+                <HStack display={"flex"} gap={{ md: "1rem", base: "0.25rem" }}>
+                  <Button
+                    backgroundColor={"#0565FF"}
+                    color={"white"}
+                    borderRadius={"4px"}
+                    cursor={"pointer"}
+                    padding={{
+                      md: "5px 20px 5px 20px",
+                      base: "5px 10px 5px 10px",
+                    }}
+                    fontSize={{ md: "1rem", base: "0.75rem" }}
+                    _hover={{
+                      color: "white",
+                      bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                    }}
+                    onClick={() =>
+                      window.open(
+                        "https://calendly.com/hushh/advisory-meet-with-our-leadership-team",
+                        "_blank"
+                      )
+                    }
+                  >
+                    Book a call with Justin
+                  </Button>
+                  <Image
+                    src={TwitterIcon}
+                    alt="TwitterIcon"
+                    title="Justin twitter"
+                    style={{ cursor: "pointer" }}
+                    onClick={() =>
+                      window.open("https://x.com/omgjjd", "_blank")
+                    }
+                  />
+                  <Image
+                    src={LinkedInIcon}
+                    alt="LinkedInIcon"
+                    title="Justin LinkedIn"
+                    style={{ cursor: "pointer" }}
+                    onClick={() =>
+                      window.open(
+                        "https://www.linkedin.com/in/jjustindonaldson/",
+                        "_blank"
+                      )
+                    }
+                  />
+                </HStack>
               </HStack>
-            </VStack>
-            <Box w={"100%"} h={"100%"} display={{ md: "block", base: "none" }}>
+              <Text
+                fontWeight={"500"}
+                fontSize={{ md: "1rem", base: "0.75rem" }}
+                lineHeight={{ md: "36px", base: "20px" }}
+                color={"#ABABAB"}
+                opacity={"80%"}
+                mt={{md:'2rem',base:'1rem'}}
+              >
+                As Chief Technology Officer, Justin oversees the technical direction of Hushh and provides expert guidance on data infrastructure and data science initiatives. He brings a wealth of experience in designing and implementing robust data solutions.
+              </Text>
+              <Accordion
+                mt={{ md: "2rem", base: "1rem" }}
+                defaultIndex={[0]}
+                allowToggle
+                w={"100%"}
+              >
+                <AccordionItem>
+                  <AccordionButton>
+                    <Text
+                      color={"#FFFFFF"}
+                      fontWeight={"700"}
+                      lineHeight={"24px"}
+                      fontSize={{ md: "1.25rem", base: "0.625rem" }}
+                      flex="1"
+                      textAlign="left"
+                    >
+                      Data Infrastructure
+                    </Text>
+                    <AccordionIcon color={"white"} />
+                  </AccordionButton>
+                  <AccordionPanel pb={4}>
+                    <UnorderedList
+                      color={"#ABABAB"}
+                      fontWeight={"500"}
+                      fontSize={{ md: "1rem", base: "0.5rem" }}
+                      lineHeight={{ md: "36px", base: "22px" }}
+                    >
+                      <ListItem>
+                      Designing scalable and efficient data architectures
+                      </ListItem>
+                      <ListItem>
+                      Implementing data lakes, data warehouses, and data marts
+                      </ListItem>
+                      <ListItem>
+                      Optimizing data pipelines for performance and reliability
+                      </ListItem>
+                    </UnorderedList>
+                  </AccordionPanel>
+                </AccordionItem>
+
+                <AccordionItem>
+                  <AccordionButton>
+                    <Text
+                      color={"#FFFFFF"}
+                      fontWeight={"700"}
+                      lineHeight={"24px"}
+                      fontSize={{ md: "1.25rem", base: "0.625rem" }}
+                      flex="1"
+                      textAlign="left"
+                    >
+                      Data Science
+                    </Text>
+                    <AccordionIcon color={"white"} />
+                  </AccordionButton>
+                  <AccordionPanel pb={4}>
+                    <UnorderedList
+                      color={"#ABABAB"}
+                      fontWeight={"500"}
+                      fontSize={{ md: "1rem", base: "0.5rem" }}
+                      lineHeight={{ md: "36px", base: "22px" }}
+                    >
+                      <ListItem>
+                      Developing advanced analytics solutions
+                      </ListItem>
+                      <ListItem>
+                      Implementing machine learning models for predictive analytics
+                      </ListItem>
+                      <ListItem>
+                      Creating data visualization strategies for complex datasets
+                      </ListItem>
+                    </UnorderedList>
+                  </AccordionPanel>
+                </AccordionItem>
+
+                <AccordionItem>
+                  <AccordionButton>
+                    <Text
+                      color={"#FFFFFF"}
+                      fontWeight={"700"}
+                      lineHeight={"24px"}
+                      fontSize={{ md: "1.25rem", base: "0.625rem" }}
+                      flex="1"
+                      textAlign="left"
+                    >
+                      Big Data Technologies
+                    </Text>
+                    <AccordionIcon color={"white"} />
+                  </AccordionButton>
+                  <AccordionPanel pb={4}>
+                    <UnorderedList
+                      color={"#ABABAB"}
+                      fontWeight={"500"}
+                      fontSize={{ md: "1rem", base: "0.5rem" }}
+                      lineHeight={{ md: "36px", base: "22px" }}
+                    >
+                      <ListItem>
+                      Expertise in distributed computing frameworks 
+                      </ListItem>
+                      <ListItem>
+                      Implementing NoSQL databases for large-scale data processing
+                      </ListItem>
+                      <ListItem>
+                      Optimizing big data workflows for efficiency and cost-effectiveness
+                      </ListItem>
+                    </UnorderedList>
+                  </AccordionPanel>
+                </AccordionItem>
+              </Accordion>
+            </Box>
+            <Box
+              flex={1}
+              w={"100%"}
+              h={"100%"}
+              display={{ md: "flex", base: "none" }}
+            >
               <Image
                 alt="Justin"
                 src={Justin}
                 title="Justin Donaldson"
                 width={"355"}
                 height={"489"}
+                style={{ border: "10px solid white", borderRadius: "21.16px" }}
               />
             </Box>
             <Box w={"100%"} h={"100%"} display={{ md: "none", base: "flex" }}>

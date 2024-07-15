@@ -63,13 +63,13 @@ import OutboundFaq from '../_components/features/faq/outboundFaq';
 const OutBoundService = () => {
   const router = useRouter();
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
-  const {
-    isOpen: isWalletOpen,
-    onOpen: onWalletOpen,
-    onClose: onWalletClose,
-  } = useDisclosure();
+  // const {
+  //   isOpen: isWalletOpen,
+  //   onOpen: onWalletOpen,
+  //   onClose: onWalletClose,
+  // } = useDisclosure();
 
-  const modalSize = useBreakpointValue({ base: "sm", md: "md" });
+  // const modalSize = useBreakpointValue({ base: "sm", md: "md" });
 
   const scrollToStart = () => {
     window.scrollTo({
@@ -972,66 +972,7 @@ const OutBoundService = () => {
       </Box>
       <OutboundFaq/>
       <ContactForm />
-      <Modal
-          isOpen={isWalletOpen}
-          onClose={onWalletClose}
-          size={modalSize}
-        >
-          <ModalOverlay />
-          <ModalContent background={"#1E1E1E"}>
-            <ModalHeader textAlign={"center"} color={"white"} m={"0"} p={"1"}>
-              Platform Choice
-            </ModalHeader>
-            <ModalCloseButton color={"white"} />
-            <ModalBody
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              py={8}
-            >
-              <Text mb={4} color={"white"}>
-                Are you an Apple or Android user?
-              </Text>
-              <Box
-                display="flex"
-                flexDirection={{ base: "column", md: "row" }}
-                gap={{ base: 4, md: 8 }}
-              >
-                <Button
-                  border={"2px solid white"}
-                  color="white"
-                  _hover={{
-                    color: "white",
-                    bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                  }}
-                  bg={"black"}
-                  onClick={() =>
-                    window.open("https://bit.ly/hushh-app-ios", "_blank")
-                  }
-                  w={{ base: "100%", md: "auto" }}
-                >
-                  Apple
-                </Button>
-                <Button
-                  border={"2px solid white"}
-                  color="white"
-                  _hover={{
-                    color: "white",
-                    bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                  }}
-                  bg={"black"}
-                  onClick={() =>
-                    window.open("https://bit.ly/hushh-app-android", "_blank")
-                  }
-                  w={{ base: "100%", md: "auto" }}
-                >
-                  Android
-                </Button>
-              </Box>
-            </ModalBody>
-          </ModalContent>
-        </Modal>
+  
     </>
   );
 };

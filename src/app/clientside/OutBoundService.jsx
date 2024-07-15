@@ -166,6 +166,7 @@ const OutBoundService = () => {
             flexDirection={"column"}
             gap={{ md: "1rem", base: "1rem" }}
             flex={1}
+            mt={{md:'0',base:'1rem'}}
           >
             <Text
               className="new-gradient"
@@ -290,22 +291,15 @@ const OutBoundService = () => {
           <Text
             className="gradient"
             fontSize={{ md: "2.15rem", base: "1rem" }}
-            display={{ md: "flex", base: "none" }}
+            display={'flex'}
             fontWeight={"700"}
             lineHeight={{ md: "51px", base: "30px" }}
-            px={{ md: "15%", base: "0.5rem" }}
+            px={{ md: "15%", base: "5%" }}
+            mb={{md:'0',base:'1rem'}}
           >
             Our seasoned professionals bring their extensive experience to bear
             on your unique challenges, offering insights and solutions in areas
             such as:
-          </Text>
-          <Text
-            className="gradient"
-            fontSize={{ md: "3.75rem", base: "1.5rem" }}
-            display={{ md: "none", base: "flex" }}
-            fontWeight={400}
-          >
-            Here's how Hushh elevates your experience
           </Text>
         </HStack>
 
@@ -317,7 +311,7 @@ const OutBoundService = () => {
           minW={{ md: "100%", base: "100%" }}
           position={"relative"}
           mt={{ md: "2rem", basse: "0.5rem" }}
-          px={{ md: "5rem", base: "0rem" }}
+          px={{ md: "5rem", base: "2rem" }}
         >
           <Image
             src={SeasonedSvg}
@@ -425,9 +419,10 @@ const OutBoundService = () => {
             </VStack>
             <VStack
               flex={1}
-              justifyContent={"center"}
-              justifyItems={"center"}
-              p={"4rem"}
+              justifyContent={{md:"center",base:'flex-start'}}
+              justifyItems={{md:"center",base:'flex-start'}}
+              p={{md:"4rem",base:'0'}}
+              mt={{md:'0',base:'1rem'}}
             >
               <UnorderedList
                 color={"#ABABAB"}
@@ -512,7 +507,7 @@ const OutBoundService = () => {
                 style={{ border: "10px solid white", borderRadius: "21.16px" }}
               />
             </Box>
-            <Box w={"100%"} h={"100%"} display={{ md: "none", base: "flex" }}>
+            <Box w={"100%"} h={"100%"} display={{ md: "none", base: "flex" }} justifyContent={'center'} alignItems={'center'}>
               <Image
                 alt="manish"
                 src={Manish}
@@ -527,7 +522,7 @@ const OutBoundService = () => {
               textAlign={"left"}
               alignItems={"flex-start"}
             >
-              <HStack w={"100%"} justifyContent={"space-between"}>
+              <HStack w={"100%"} flexDirection={{base:'column',md:'row'}} justifyContent={"space-between"}>
                 <Box display={"flex"} flexDirection={"column"}>
                   <Text
                     fontWeight={"700"}
@@ -551,7 +546,7 @@ const OutBoundService = () => {
                 <Box display={"flex"} flexDirection={"row"}>
                   <HStack
                     display={"flex"}
-                    gap={{ md: "1rem", base: "0.25rem" }}
+                    gap={{ md: "1rem", base: "0.5rem" }}
                   >
                     <Button
                       backgroundColor={"#0565FF"}
@@ -624,7 +619,7 @@ const OutBoundService = () => {
                       color={"#FFFFFF"}
                       fontWeight={"700"}
                       lineHeight={"24px"}
-                      fontSize={{ md: "1.25rem", base: "0.625rem" }}
+                      fontSize={{ md: "1.25rem", base: "0.75rem" }}
                       flex="1"
                       textAlign="left"
                     >
@@ -636,7 +631,7 @@ const OutBoundService = () => {
                     <UnorderedList
                       color={"#ABABAB"}
                       fontWeight={"500"}
-                      fontSize={{ md: "1rem", base: "0.5" }}
+                      fontSize={{ md: "1rem", base: "0.5rem" }}
                       lineHeight={{ md: "36px", base: "22px" }}
                     >
                       <ListItem>
@@ -661,7 +656,7 @@ const OutBoundService = () => {
                       color={"#FFFFFF"}
                       fontWeight={"700"}
                       lineHeight={"24px"}
-                      fontSize={{ md: "1.25rem", base: "0.625rem" }}
+                      fontSize={{ md: "1.25rem", base: "0.75rem" }}
                       flex="1"
                       textAlign="left"
                     >
@@ -674,7 +669,7 @@ const OutBoundService = () => {
                     <UnorderedList
                       color={"#ABABAB"}
                       fontWeight={"500"}
-                      fontSize={{ md: "1rem", base: "0.5" }}
+                      fontSize={{ md: "1rem", base: "0.5rem" }}
                       lineHeight={{ md: "36px", base: "22px" }}
                     >
                       <ListItem>
@@ -698,7 +693,7 @@ const OutBoundService = () => {
                       color={"#FFFFFF"}
                       fontWeight={"700"}
                       lineHeight={"24px"}
-                      fontSize={{ md: "1.25rem", base: "0.625rem" }}
+                      fontSize={{ md: "1.25rem", base: "0.75rem" }}
                       flex="1"
                       textAlign="left"
                     >
@@ -706,11 +701,11 @@ const OutBoundService = () => {
                     </Text>
                     <AccordionIcon color={"white"} />
                   </AccordionButton>
-                  <AccordionPanel pb={4}>
+                  <AccordionPanel pb={{md:4,base:0}}>
                     <UnorderedList
                       color={"#ABABAB"}
                       fontWeight={"500"}
-                      fontSize={{ md: "1rem", base: "0.5" }}
+                      fontSize={{ md: "1rem", base: "0.5rem" }}
                       lineHeight={{ md: "36px", base: "22px" }}
                     >
                       <ListItem>
@@ -730,15 +725,7 @@ const OutBoundService = () => {
             </VStack>
           </Stack>
 
-          <Box
-            w={"100%"}
-            py={{ base: "2rem" }}
-            alignItems={"center"}
-            display={{ base: "flex", md: "none" }}
-            px={{ base: "1.75rem" }}
-          >
-            <Divider w={"100%"} />
-          </Box>
+         
 
           <Stack
             w={"100%"}

@@ -631,7 +631,7 @@ const OutBoundService = () => {
                     <UnorderedList
                       color={"#ABABAB"}
                       fontWeight={"500"}
-                      fontSize={{ md: "1rem", base: "0.5rem" }}
+                      fontSize={{ md: "1rem", base: "0.75rem" }}
                       lineHeight={{ md: "36px", base: "22px" }}
                     >
                       <ListItem>
@@ -669,7 +669,7 @@ const OutBoundService = () => {
                     <UnorderedList
                       color={"#ABABAB"}
                       fontWeight={"500"}
-                      fontSize={{ md: "1rem", base: "0.5rem" }}
+                      fontSize={{ md: "1rem", base: "0.75rem" }}
                       lineHeight={{ md: "36px", base: "22px" }}
                     >
                       <ListItem>
@@ -705,7 +705,7 @@ const OutBoundService = () => {
                     <UnorderedList
                       color={"#ABABAB"}
                       fontWeight={"500"}
-                      fontSize={{ md: "1rem", base: "0.5rem" }}
+                      fontSize={{ md: "1rem", base: "0.75rem" }}
                       lineHeight={{ md: "36px", base: "22px" }}
                     >
                       <ListItem>
@@ -740,8 +740,8 @@ const OutBoundService = () => {
               <HStack
                 gap={{ md: "1rem", base: "0.5rem" }}
                 // textAlign={{ md: "left", base: "left" }}
-                alignItems={{ md: "flex-start", base: "flex-start" }}
-                flexDirection={"row"}
+                alignItems={{ md: "flex-start", base: "center" }}
+                flexDirection={{md:"row",base:'column'}}
                 w={"100%"}
                 justifyContent={"space-between"}
               >
@@ -765,7 +765,7 @@ const OutBoundService = () => {
                     CTO and Co-Founder
                   </Text>
                 </Box>
-                <HStack display={"flex"} gap={{ md: "1rem", base: "0.25rem" }}>
+                <HStack display={"flex"} gap={{ md: "1rem", base: "0.5rem" }}>
                   <Button
                     backgroundColor={"#0565FF"}
                     color={"white"}
@@ -834,7 +834,7 @@ const OutBoundService = () => {
                       color={"#FFFFFF"}
                       fontWeight={"700"}
                       lineHeight={"24px"}
-                      fontSize={{ md: "1.25rem", base: "0.625rem" }}
+                      fontSize={{ md: "1.25rem", base: "0.75rem" }}
                       flex="1"
                       textAlign="left"
                     >
@@ -846,7 +846,7 @@ const OutBoundService = () => {
                     <UnorderedList
                       color={"#ABABAB"}
                       fontWeight={"500"}
-                      fontSize={{ md: "1rem", base: "0.5rem" }}
+                      fontSize={{ md: "1rem", base: "0.75rem" }}
                       lineHeight={{ md: "36px", base: "22px" }}
                     >
                       <ListItem>
@@ -868,7 +868,7 @@ const OutBoundService = () => {
                       color={"#FFFFFF"}
                       fontWeight={"700"}
                       lineHeight={"24px"}
-                      fontSize={{ md: "1.25rem", base: "0.625rem" }}
+                      fontSize={{ md: "1.25rem", base: "0.75rem" }}
                       flex="1"
                       textAlign="left"
                     >
@@ -880,7 +880,7 @@ const OutBoundService = () => {
                     <UnorderedList
                       color={"#ABABAB"}
                       fontWeight={"500"}
-                      fontSize={{ md: "1rem", base: "0.5rem" }}
+                      fontSize={{ md: "1rem", base: "0.75rem" }}
                       lineHeight={{ md: "36px", base: "22px" }}
                     >
                       <ListItem>
@@ -902,7 +902,7 @@ const OutBoundService = () => {
                       color={"#FFFFFF"}
                       fontWeight={"700"}
                       lineHeight={"24px"}
-                      fontSize={{ md: "1.25rem", base: "0.625rem" }}
+                      fontSize={{ md: "1.25rem", base: "0.75rem" }}
                       flex="1"
                       textAlign="left"
                     >
@@ -914,7 +914,7 @@ const OutBoundService = () => {
                     <UnorderedList
                       color={"#ABABAB"}
                       fontWeight={"500"}
-                      fontSize={{ md: "1rem", base: "0.5rem" }}
+                      fontSize={{ md: "1rem", base: "0.75rem" }}
                       lineHeight={{ md: "36px", base: "22px" }}
                     >
                       <ListItem>
@@ -946,7 +946,7 @@ const OutBoundService = () => {
                 style={{ border: "10px solid white", borderRadius: "21.16px" }}
               />
             </Box>
-            <Box w={"100%"} h={"100%"} display={{ md: "none", base: "flex" }}>
+            <Box w={"100%"} h={"100%"} alignItems={'center'} justifyContent={'center'} display={{ md: "none", base: "flex" }}>
               <Image
                 alt="Justin"
                 src={Justin}

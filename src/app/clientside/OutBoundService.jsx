@@ -58,6 +58,7 @@ import { useMediaQuery } from "react-responsive";
 import SeasonedSvg from "../_components/svg/outBoundService/seasonedProfessional.svg";
 import BgShadow from "../_components/svg/outBoundService/bgShadow.svg";
 import DivideLine from "../_components/svg/outBoundService/Line 233.svg";
+import OutboundFaq from '../_components/features/faq/outboundFaq';
 
 const OutBoundService = () => {
   const router = useRouter();
@@ -982,6 +983,7 @@ const OutBoundService = () => {
           />
         </Box>
       </Box>
+      <OutboundFaq/>
       <ContactForm />
       <Modal
           isOpen={isWalletOpen}

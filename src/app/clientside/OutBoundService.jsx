@@ -337,7 +337,7 @@ const OutBoundService = () => {
 
         <VStack
           px={{ md: "5rem", base: "1.25rem" }}
-          py={{ md: "8rem", base: "3rem" }}
+          py={{ md: "8rem", base: "4rem" }}
           className="howItworks"
           id="howItworks"
           position={"relative"}

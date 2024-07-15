@@ -337,7 +337,7 @@ const OutBoundService = () => {
           >
             Whether you need a quick consultation or ongoing support, our team
             is ready to provide the expertise you need to navigate the complex
-            landscape of AI and data technologies.”
+            landscape of AI and data technologies.
           </Text>
         </Box>
 

@@ -28,7 +28,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import OutBoundServiceImg from "../_components/svg/outBoundService/outboundServiceImg.svg";
 import { ServiceCard } from "../_components/primitives/serviceCard";
 import PaperPlane from "../_components/svg/conciergeApp/paperPlanImage.svg";
@@ -60,7 +60,46 @@ import BgShadow from "../_components/svg/outBoundService/bgShadow.svg";
 import DivideLine from "../_components/svg/outBoundService/Line 233.svg";
 import OutboundFaq from '../_components/features/faq/outboundFaq';
 
+const categories = {
+  "AI Infrastructure": [
+    "Designing scalable AI systems",
+    "Optimizing AI processing pipelines",
+    "Selecting and implementing AI hardware solutions"
+  ],
+  "Machine Learning and Deep Learning": [
+    "Developing custom ML/DL models",
+    "Implementing transfer learning techniques",
+    "Fine-tuning pre-trained models for specific use cases"
+  ],
+  "Large Language Models (LLMs) and Small Language Models (SLMs)": [
+    "Integrating LLMs/SLMs into existing systems",
+    "Customizing language models for domain-specific applications",
+    "Optimizing inference performance"
+  ],
+  "Data Architecture": [
+    "Designing robust data pipeliness",
+    "Implementing data lakes and data warehouses",
+    "Ensuring data quality and governance"
+  ],
+  "Data Science": [
+    "Developing data-driven strategies",
+    "Implementing advanced analytics solutions",
+    "Creating insightful data visualizations"
+  ],
+  "AI Hardware Selection": [
+    "Evaluating GPUs, TPUs, and specialized AI chips",
+    "Optimizing hardware configurations for specific AI workloads",
+    "Cost-benefit analysis of different AI hardware options"
+  ],
+  "Product Leadership in AI/ML": [
+    "Developing AI-driven product strategies",
+    "Managing AI product life cycles",
+    "Aligning AI capabilities with business objectives"
+  ]
+};
+
 const OutBoundService = () => {
+  const [activeCategory, setActiveCategory] = useState("AI Infrastructure");
   const router = useRouter();
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   // const {
@@ -336,109 +375,88 @@ const OutBoundService = () => {
         </Box>
 
         <VStack
-          px={{ md: "5rem", base: "1.25rem" }}
-          py={{ md: "8rem", base: "4rem" }}
-          className="howItworks"
-          id="howItworks"
-          position={"relative"}
+      px={{ md: "5rem", base: "1.25rem" }}
+      py={{ md: "8rem", base: "4rem" }}
+      className="howItworks"
+      id="howItworks"
+      position={"relative"}
+    >
+      <Text
+        className="hushh-gradient"
+        fontWeight={"600"}
+        fontSize={{ md: "1rem", base: "0.5rem" }}
+        lineHeight={{ md: "16px" }}
+        letterSpacing={"0.255rem"}
+      >
+        CORE VALUE COMPANY
+      </Text>
+      <Text
+        className="gradient"
+        textAlign={"center"}
+        fontWeight={"700"}
+        fontSize={{ md: "3.75rem", base: "1.75rem" }}
+        lineHeight={{ md: "90px", base: "28.3px" }}
+      >
+        Our Expertise
+      </Text>
+      <Box display={"flex"} flexDirection={{ md: "row", base: "column" }}>
+        <VStack
+          textAlign={"left"}
+          alignContent={"flex-start"}
+          alignItems={"flex-start"}
+          flex={1}
         >
-          <Text
-            className="hushh-gradient"
-            fontWeight={"600"}
-            fontSize={{ md: "1rem", base: "0.5rem" }}
-            lineHeight={{ md: "16px" }}
-            letterSpacing={"0.255rem"}
-          >
-            CORE VALUE COMPANY
-          </Text>
-          <Text
-            className="gradient"
-            textAlign={"center"}
-            fontWeight={"700"}
-            fontSize={{ md: "3.75rem", base: "1.75rem" }}
-            lineHeight={{ md: "90px", base: "28.3px" }}
-          >
-            Our Expertise
-          </Text>
-          <Box display={"flex"} flexDirection={{ md: "row", base: "column" }}>
-            <VStack
-              textAlign={"left"}
-              alignContent={"flex-start"}
-              alignItems={"flex-start"}
-              flex={1}
-            >
+          {Object.keys(categories).map((category) => (
+            <React.Fragment key={category}>
               <Text
-                color={"#E5E5E5"}
-                fontWeight="300"
-                fontSize={{ md: "3rem", base: "1.5rem" }}
-                lineHeight={{ md: "57.6px", base: "32px" }}
+                w={'100%'} 
+                zIndex={3}
+                opacity={'100%'}
+                color={activeCategory === category ? "#FFFFFF" : "#E5E5E5"}
+                fontWeight={activeCategory === category ? "700" : "300"}
+                fontSize={{ md: activeCategory === category ? "2.5rem" : "2rem", base: activeCategory === category ? "1.5rem" : "1rem" }}
+                lineHeight={{ md: activeCategory === category ? "50.6px" : "32px", base: activeCategory === category ? "32px" : "24px" }}
+                onClick={() => setActiveCategory(category)}
+                style={{ cursor: 'pointer' }}
               >
-                AI Infrastructure
+                {category}
               </Text>
               <Divider />
-              {/* <Image src={BgShadow} style={{position:'absolute'}}/> */}
-              <Image
-                style={{
-                  position: "absolute",
-                  zIndex: "2",
-                  left: "-50px",
-                  top: "60px",
-                  width: "100%",
-                  // filter: "grayscale(100%)",
-                  opacity: "100%",
-                }}
-                src={BgShadow}
-                alt="shadow"
-              />
-              <Box
-                opacity={"20%"}
-                gap={{ md: "1rem", base: "0.5rem" }}
-                mt={{ md: "1.5rem", base: "0.75rem" }}
-                color={"#E5E5E5"}
-                lineHeight={{ md: "31.2px", base: "18px" }}
-                fontWeight={"300"}
-                fontSize={{ md: "1.625rem", base: "0.813rem" }}
-                display={"flex"}
-                flexDirection={"column"}
-              >
-                <Text>Machine Learning and Deep Learning</Text>
-                <Image src={DivideLine} />
-                <Text>Data Architecture</Text>
-                <Image src={DivideLine} />
-                <Text>Data Science</Text>
-                <Image src={DivideLine} />
-                <Text>AI Hardware Selection</Text>
-                <Image src={DivideLine} />
-                <Text>Product Leadership in AI/ML</Text>
-                <Image src={DivideLine} />
-                <Text>
-                  Large Language Models (LLMs) and Small Language Models (SLMs)
-                </Text>
-                <Image src={DivideLine} />
-              </Box>
-            </VStack>
-            <VStack
-              flex={1}
-              justifyContent={{md:"center",base:'flex-start'}}
-              justifyItems={{md:"center",base:'flex-start'}}
-              p={{md:"4rem",base:'0'}}
-              mt={{md:'0',base:'1rem'}}
-            >
-              <UnorderedList
-                color={"#ABABAB"}
-                fontWeight={"500"}
-                lineHeight={{ md: "69px", base: "30px" }}
-                gap={{ md: "1rem", base: "0.25rem" }}
-              >
-                <ListItem>Designing scalable AI systems</ListItem>
-                <ListItem>Optimizing AI processing pipelines</ListItem>
-                <ListItem>
-                  Selecting and implementing AI hardware solutions
-                </ListItem>
-              </UnorderedList>
-            </VStack>
-          </Box>
+            </React.Fragment>
+          ))}
+          <Image
+            style={{
+              position: "absolute",
+              zIndex: "2",
+              left: "-50px",
+              top: "60px",
+              width: "100%",
+              opacity: "80%",
+            }}
+            src={BgShadow}
+            alt="shadow"
+          />
         </VStack>
+        <VStack
+          flex={1}
+          justifyContent={{ md: "center", base: 'flex-start' }}
+          justifyItems={{ md: "center", base: 'flex-start' }}
+          p={{ md: "4rem", base: '0' }}
+          mt={{ md: '0', base: '1rem' }}
+        >
+          <UnorderedList
+            color={"#ABABAB"}
+            fontWeight={"500"}
+            lineHeight={{ md: "69px", base: "30px" }}
+            gap={{ md: "1rem", base: "0.25rem" }}
+          >
+            {categories[activeCategory].map((item, index) => (
+              <ListItem key={index}>{item}</ListItem>
+            ))}
+          </UnorderedList>
+        </VStack>
+      </Box>
+    </VStack>
 
         <Box position={"relative"} minW={"100%"}>
           <Image

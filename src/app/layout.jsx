@@ -148,7 +148,7 @@ export default function RootLayout({ children }) {
           type="text/javascript"
           src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
         ></script>
-        <div className="relative">
+        <div className="relative z-50">
           <HushhButtonFromLib />
         </div>
         <ResponsiveSizeProvider>

@@ -96,9 +96,9 @@ const ClientHome = () => {
         />
         <main className="bg-myBG  font-Figtree">
           <div className="absolute top-0 w-full">
-            {showPopup && (
+            {/* {showPopup && (
               <NotificationPopup message="Welcome! How can I help you today?" />
-            )}
+            )} */}
             <Box
               display={"flex"}
               flexDirection={"row"}
@@ -498,7 +498,7 @@ const ClientHome = () => {
                     color: "white",
                   }}
                   cursor={"pointer"}
-                  onClick={()=> router.push('/UserGuide')}
+                  onClick={() => router.push('/UserGuide')}
                 >
                   View User Guide
                 </Box>
@@ -622,7 +622,7 @@ const ClientHome = () => {
                     description="AI finance assistant & insights (ditch receipts, manage finances)"
                     onClick={() => router.push("/products/hushhValetChat")}
                   />
-                   <ServiceCard
+                  <ServiceCard
                     icon={<VibeSearchApi />}
                     title="Developer API's​"
                     alignItems={"center"}
@@ -673,7 +673,7 @@ const ClientHome = () => {
 
             <HushhCoinUiBox />
 
-            <HushhBlogsHome/>
+            <HushhBlogsHome />
 
             <ContactForm />
           </div>

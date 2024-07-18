@@ -227,7 +227,7 @@ const TeamSection = () => {
                     Keerthi Sree Marrapu
                   </Text>
                   <Text lineHeight={"18.75px"} color={"#ABABAB"}>
-                    Product Manager - AI/ML
+                    Product Engineer
                   </Text>
                 </div>
                 <Link href={"https://www.linkedin.com/in/mksree/"}>

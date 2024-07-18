@@ -225,6 +225,21 @@ export default function Header() {
                 </p>
                 <div className="flex gap-2">
                   <div className="flex-1 flex flex-col gap-2">
+                  <Link
+                      href={"/products/hushhWalletApp"}
+                      onClick={() => setProductsSubmenu(false)}
+                      className="flex gap-4 items-start hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                    >
+                      <div className="">
+                        <HushhWalletIcon className="w-6 h-6" />
+                      </div>
+                      <div className="">
+                        <h1 className="font-semibold">Hushh Wallet App</h1>
+                        <p className="text-sm font-medium text-fontColor3">
+                          Customer User Flow + Client Advisor User Flow
+                        </p>
+                      </div>
+                    </Link>
                     <Link
                       href={"/products/hushhButton"}
                       onClick={() => setProductsSubmenu(false)}
@@ -288,7 +303,11 @@ export default function Header() {
                         </p>
                       </div>
                     </Link>
-                    <Link
+                    
+                  </div>
+
+                  <div className="flex-1 flex flex-col gap-2 w-full">
+                  <Link
                       href={"/products/vibeSearch"}
                       onClick={() => setProductsSubmenu(false)}
                       className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
@@ -304,24 +323,7 @@ export default function Header() {
                         </p>
                       </div>
                     </Link>
-                  </div>
-
-                  <div className="flex-1 flex flex-col gap-2 w-full">
-                    <Link
-                      href={"/products/hushhWalletApp"}
-                      onClick={() => setProductsSubmenu(false)}
-                      className="flex gap-4 items-start hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
-                    >
-                      <div className="">
-                        <HushhWalletIcon className="w-6 h-6" />
-                      </div>
-                      <div className="">
-                        <h1 className="font-semibold">Hushh Wallet App</h1>
-                        <p className="text-sm font-medium text-fontColor3">
-                          Customer User Flow + Client Advisor User Flow
-                        </p>
-                      </div>
-                    </Link>
+                
                     <Link
                       href={"/products/hushhValetChat"}
                       onClick={() => setProductsSubmenu(false)}

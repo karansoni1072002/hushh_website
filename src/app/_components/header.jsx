@@ -180,10 +180,10 @@ export default function Header() {
                 <ChevronArrowIcon className="group-hover:rotate-0 rotate-180 transition-all duration-300" />
               </Link>
               <Link
-                href="https://hushh-labs.github.io/hushh-labs-blog/"
+                href="/hushhBlogs"
                 onMouseEnter={() => setProductsSubmenu(false)}
               >
-                LABS
+                BLOGS
               </Link>
               <Link
                 href="/pricingPlans"
@@ -596,11 +596,11 @@ export default function Header() {
                 GUIDE
               </Link>
               <Link
-                href="https://hushh-labs.github.io/hushh-labs-blog/"
+                href="/hushhBlogs"
                 className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
                 onClick={() => setIsMenuOpen(false)}
               >
-                LABS
+                Blogs
               </Link>
               <Link
                 href="/contact-us"

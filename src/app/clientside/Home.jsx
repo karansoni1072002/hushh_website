@@ -5,11 +5,14 @@ import {
   Button,
   Container,
   Divider,
+  Flex,
   Grid,
   HStack,
   Heading,
   Text,
   VStack,
+  useDisclosure,
+  useTheme,
 } from "@chakra-ui/react";
 import { BrandSlider } from "../_components/features/brandSlider";
 import BrandWalletSection from "../_components/features/brandWalletSection";
@@ -47,11 +50,24 @@ import CircleHomeBg from "../_components/svg/circleHomeBg.svg";
 import RightCircleEclipse from "../_components/svg/rightCircleEclipse.svg";
 import ApiVibeSearch from "../_components/svg/apiVibeSearch";
 import { HushhBlogsHome } from "../_components/HushhBlogsHome";
+import AppleIcon from "../_components/svg/icons/appleIconLogo.svg";
+import PlayStoreIcon from "../_components/svg/icons/playStoreIcon.svg";
 
 const ClientHome = () => {
   const router = useRouter();
   const [showPopup, setShowPopup] = useState(false);
   const [loading, setLoading] = useState(true);
+  // const { isOpen, onToggle } = useDisclosure();
+  const theme = useTheme();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [hasHovered, setHasHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    if (!hasHovered) {
+      onOpen();
+      setHasHovered(true);
+    }
+  };
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -88,10 +104,7 @@ const ClientHome = () => {
         <Image
           src={PinkShadow}
           alt="PinkShadow"
-          // objectFit="cover"
-          // className="z-0 w-full"
           placeholder="blur"
-          //  priority
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
         />
         <main className="bg-myBG  font-Figtree">
@@ -153,8 +166,105 @@ const ClientHome = () => {
                   display={"flex"}
                   gap={{ md: "2rem", base: "1rem" }}
                   flexDirection={{ md: "row", base: "column" }}
+                  
                 >
-                  <Button
+                  <Flex
+                    flexDirection="column"
+                    position={"relative"}
+                    alignItems="center"
+                    onMouseEnter={handleMouseEnter}
+                  >
+                    {isOpen && (
+                      <Flex
+                        zIndex={"1000"}
+                        direction="row"
+                        gap={{ md: "2rem", base: "1rem" }}
+                        position="absolute"
+                        top={{md:"-52px",base:'-30px'}}
+                        right={{base:'-45%',md:''}}
+                        mb="3rem"
+                        flexDirection={{md:'row',base:'column'}}
+                        alignItems="center"
+                      >
+                        <Box
+                          _hover={{
+                            background:
+                              "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                            border: "none",
+                            color: "white",
+                          }}
+                          borderRightRadius={"3xl"}
+                          borderLeftRadius={"3xl"}
+                          bg={"white"}
+                          color={"black"}
+                          gap={{ md: "1rem", base: "0.5rem" }}
+                          display={"flex"}
+                          flexDirection={"row"}
+                          cursor={"pointer"}
+                          onClick={() =>
+                            window.open("https://play.google.com", "_blank")
+                          }
+                          p={{ md: "2",base:'2' }}
+                        >
+                          <Image src={AppleIcon} cursor="pointer" />
+                          <Text fontSize={{ md: "0.85rem", base: "0.5rem" }}>
+                            App Store
+                          </Text>
+                        </Box>
+                        <Box
+                          _hover={{
+                            background:
+                              "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                            border: "none",
+                            color: "white",
+                          }}
+                          borderRightRadius={"3xl"}
+                          borderLeftRadius={"3xl"}
+                          bg={"grey"}
+                          color={"white"}
+                          gap={{ md: "1rem", base: "0.5rem" }}
+                          display={"flex"}
+                          flexDirection={"row"}
+                          cursor={"pointer"}
+                          onClick={() =>
+                            window.open("https://drive.google.com/file/d/1LM4dWhNwAACF_fgvbBC-t8FFUfNMVr_D/view", "_blank")
+                          }
+                          p={{ md: "2" , base:'0.35rem'}}
+                        >
+                          <Image src={PlayStoreIcon} cursor="pointer" />
+                          <Text
+                            color={"white"}
+                            fontSize={{ md: "0.85rem", base: "0.5rem" }}
+                          >
+                            Play Store
+                          </Text>
+                        </Box>
+                      </Flex>
+                    )}
+
+                    <Button
+                      border="3px solid #606060"
+                      borderRadius="2px"
+                      color={theme.colors._white}
+                      lineHeight="28px"
+                      background="transparent"
+                      onClick={onOpen}
+                      px="21px"
+                      py="15px"
+                      fontSize={{ md: "1rem", base: "0.75rem" }}
+                      fontWeight="400"
+                      letterSpacing={{ md: "0.29rem", base: "0.1rem" }}
+                      _hover={{
+                        background:
+                          "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                        border: "none",
+                      }}
+                      w={{ md: "16rem", base: "12rem" }}
+                    >
+                      DOWNLOAD THE APP
+                    </Button>
+                  </Flex>
+                  {/* <Button
                     border={"3px solid #606060"}
                     borderRadius={"2px"}
                     color={theme.colors._white}
@@ -179,7 +289,7 @@ const ClientHome = () => {
                     w={{ md: "16rem", base: "12rem" }}
                   >
                     DOWNLOAD THE APP
-                  </Button>
+                  </Button> */}
                   <Button
                     border={"3px solid #606060"}
                     borderRadius={"2px"}
@@ -498,7 +608,7 @@ const ClientHome = () => {
                     color: "white",
                   }}
                   cursor={"pointer"}
-                  onClick={() => router.push('/UserGuide')}
+                  onClick={() => router.push("/UserGuide")}
                 >
                   View User Guide
                 </Box>

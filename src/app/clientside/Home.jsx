@@ -172,7 +172,7 @@ const ClientHome = () => {
                     }}
                     onClick={() =>
                       window.open(
-                        "https://bit.ly/hushh-app-ios",
+                        "https://play.google.com/store/apps/details?id=com.hushhone.hushh",
                         "_blank"
                       )
                     }

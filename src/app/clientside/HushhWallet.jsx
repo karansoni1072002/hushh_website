@@ -139,7 +139,7 @@ const ClientHushhWallet = () => {
               color: "white",
               bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
             }}
-            onClick={() => window.open("https://drive.google.com/file/d/1euEWKlZz6kRMwl96HSoi8dNUchXNunnl/view", "_blank")}                
+            onClick={() => window.open("https://play.google.com/store/apps/details?id=com.hushhone.hushh", "_blank")}                
           >
             Download For Android
           </Button>
@@ -689,7 +689,7 @@ const ClientHushhWallet = () => {
                   background:
                     "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                 }}
-                onClick={() => window.open("https://drive.google.com/file/d/1euEWKlZz6kRMwl96HSoi8dNUchXNunnl/view", "_blank")}                
+                onClick={() => window.open("https://play.google.com/store/apps/details?id=com.hushhone.hushh", "_blank")}                
                 >
                 PLAY STORE
               </Button>
@@ -763,7 +763,7 @@ const ClientHushhWallet = () => {
                 "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
               border: "none",
             }}
-            onClick={() => window.open("https://drive.google.com/file/d/1euEWKlZz6kRMwl96HSoi8dNUchXNunnl/view", "_blank")}                
+            onClick={() => window.open("https://play.google.com/store/apps/details?id=com.hushhone.hushh", "_blank")}                
           >
             PLAY STORE
           </Button>

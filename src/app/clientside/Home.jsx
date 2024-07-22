@@ -202,7 +202,7 @@ const ClientHome = () => {
                           flexDirection={"row"}
                           cursor={"pointer"}
                           onClick={() =>
-                            window.open("https://play.google.com", "_blank")
+                            window.open("https://bit.ly/hushh-app-ios", "_blank")
                           }
                           p={{ md: "2",base:'2' }}
                         >
@@ -227,7 +227,7 @@ const ClientHome = () => {
                           flexDirection={"row"}
                           cursor={"pointer"}
                           onClick={() =>
-                            window.open("https://drive.google.com/file/d/1LM4dWhNwAACF_fgvbBC-t8FFUfNMVr_D/view", "_blank")
+                            window.open("https://play.google.com/store/apps/details?id=com.hushhone.hushh", "_blank")
                           }
                           p={{ md: "2" , base:'0.35rem'}}
                         >

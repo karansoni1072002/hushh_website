@@ -36,14 +36,15 @@ const faqData = {
       answer:
         "Our response time depends on our current workload and the nature of your project. For urgent matters, we strive to provide initial consultations within a few business days. For larger projects, we'll work with you to establish a timeline that meets your needs.",
     },
-    {
-        question: "What makes Hushh different from other AI consulting firms?",
-        answer:
-          "Hushh stands out due to our team's deep expertise in both the technical and strategic aspects of AI and data science. Our founders' experience at leading tech companies like Google, Splunk, Microsoft, Salesforce etc, combined with our hands-on approach and commitment to tailored solutions, allows us to provide uniquely valuable insights and practical guidance.",
-      },
+    
   ],
 
   'Out Bound Faq': [
+    {
+      question: "What makes Hushh different from other AI consulting firms?",
+      answer:
+        "Hushh stands out due to our team's deep expertise in both the technical and strategic aspects of AI and data science. Our founders' experience at leading tech companies like Google, Splunk, Microsoft, Salesforce etc, combined with our hands-on approach and commitment to tailored solutions, allows us to provide uniquely valuable insights and practical guidance.",
+    },
     {
       question: "What types of companies can benefit from Hushh's consulting services?",
       answer:
@@ -79,6 +80,10 @@ const faqData = {
       question: "Contact Number",
       answer: "call +14252969050",
     },
+    {
+      question:"Headquarters",
+      answer:"Kirkland, WA"
+    }
   ],
 };
 

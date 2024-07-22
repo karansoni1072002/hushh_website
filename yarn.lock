@@ -953,6 +953,47 @@
   resolved "https://registry.npmjs.org/@chakra-ui/visually-hidden/-/visually-hidden-2.2.0.tgz"
   integrity sha512-KmKDg01SrQ7VbTD3+cPWf/UfpF5MSwm3v7MWi0n5t8HnnadT13MF0MJCDSXbBWnzLv1ZKJ6zlyAOeARWX+DpjQ==
 
+"@cloudinary-util/types@1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/types/-/types-1.0.5.tgz#0325881338b3c390b4ad27f5484e95cdb0c4f9b7"
+  integrity sha512-QySi6Q138yg/qrD7f6yscH9T+/8VwUfF9AiwFPMS89uI5wnSG9nhC+93a/8iUpgk9ujTDVqE8+TqYAbxvF0BMA==
+
+"@cloudinary-util/url-loader@5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/url-loader/-/url-loader-5.3.1.tgz#2898ea4f75a968a5857046d54bd589f228d04848"
+  integrity sha512-cYgnazu7cLjRaajGmhyVfMxjrOz4EaSQsWK1/utV4K5kknUUhu8vUovGunDQJbEGmBWB/TUt7zmwpdUAQ+pe4g==
+  dependencies:
+    "@cloudinary-util/types" "1.0.5"
+    "@cloudinary-util/util" "3.0.2"
+    "@cloudinary/url-gen" "1.15.0"
+    zod "^3.22.4"
+
+"@cloudinary-util/util@3.0.2", "@cloudinary-util/util@^3.0.0":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/util/-/util-3.0.2.tgz#a86334eeec9912cf90054f5688a7d10fca9fe952"
+  integrity sha512-EMmspJLVFn9hX92DaK/yuSzSUXF/BJ88crzN8vT1qCaJMMWKapGNo2HZ6YNgG69PP/Jngdk0mTINDU+GP3A1CA==
+
+"@cloudinary/transformation-builder-sdk@^1.10.0", "@cloudinary/transformation-builder-sdk@^1.13.0":
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/@cloudinary/transformation-builder-sdk/-/transformation-builder-sdk-1.14.1.tgz#aa2a75b1c04ddba84f92d2ac3ce29d29a8c1cbca"
+  integrity sha512-z49To4r3byg7zHsOGKsw/nHef5B9W3wSBdDsGoY7JOj75kbvmSlP4MCkS0JU3Bv57EvYYw5ymalPz+bvRXmPlA==
+  dependencies:
+    "@cloudinary/url-gen" "^1.7.0"
+
+"@cloudinary/url-gen@1.15.0":
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary/url-gen/-/url-gen-1.15.0.tgz#a55c9b51cb27301e0bdc4d60e44a7e73d13db103"
+  integrity sha512-bjU67eZxLUgoRy/Plli4TQio7q6P31OYqnEgXxeN9TKXrzr6h0DeEdIUhKI9gy3HkEBWXWWJIPh7j7gkOJPnyA==
+  dependencies:
+    "@cloudinary/transformation-builder-sdk" "^1.10.0"
+
+"@cloudinary/url-gen@^1.7.0":
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary/url-gen/-/url-gen-1.19.0.tgz#da8b0ec12a33301482a71e309a19401d241b1770"
+  integrity sha512-3WSqYAMEe8lcYMFmkNPhOfv6Ql76mpf8O7YEC+CCaoIYrfBubzzeF8yENCaZK9tFJEHvMepI+uWWfilNrz48XA==
+  dependencies:
+    "@cloudinary/transformation-builder-sdk" "^1.13.0"
+
 "@contentlayer/cli@0.3.4":
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/@contentlayer/cli/-/cli-0.3.4.tgz#a3b322aa30cd2c5db09c69b530928e80aebddae4"
@@ -2899,6 +2940,11 @@
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@tokenizer/token/-/token-0.3.0.tgz#fe98a93fe789247e998c75e74e9c7c63217aa276"
   integrity sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==
+
+"@tsconfig/recommended@^1.0.3":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@tsconfig/recommended/-/recommended-1.0.7.tgz#fdd95fc2c8d643c8b4a8ca45fd68eea248512407"
+  integrity sha512-xiNMgCuoy4mCL4JTywk9XFs5xpRUcKxtWEcMR6FNMtsgewYTIgIR+nvlP4A4iRCAzRsHMnPhvTRrzp4AGcRTEA==
 
 "@types/acorn@^4.0.0":
   version "4.0.6"
@@ -8774,6 +8820,16 @@ next-auth@^4.24.7:
     preact-render-to-string "^5.1.19"
     uuid "^8.3.2"
 
+next-cloudinary@^6.6.2:
+  version "6.6.2"
+  resolved "https://registry.yarnpkg.com/next-cloudinary/-/next-cloudinary-6.6.2.tgz#ff1e75b1306c5b68cf298c82a672fc4ddeece252"
+  integrity sha512-MbI5WpSk4dj9YnRgDp1C7vjtMivqOdkoR/jcmjIGR2Zth5RqGgiTpi7ee87d9pEdrfuJxdDzv27KA4s8tAVQkQ==
+  dependencies:
+    "@cloudinary-util/types" "1.0.5"
+    "@cloudinary-util/url-loader" "5.3.1"
+    "@cloudinary-util/util" "^3.0.0"
+    "@tsconfig/recommended" "^1.0.3"
+
 next-contentlayer@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/next-contentlayer/-/next-contentlayer-0.3.4.tgz#dd88ff27bca94ec8c619d77d225a0b15f2e6ccb2"
@@ -12239,6 +12295,11 @@ zod@^3.22.3:
   version "3.23.7"
   resolved "https://registry.yarnpkg.com/zod/-/zod-3.23.7.tgz#db33c910c592b8ce13f2f449097d4fb926c84f51"
   integrity sha512-NBeIoqbtOiUMomACV/y+V3Qfs9+Okr18vR5c/5pHClPpufWOrsx8TENboDPe265lFdfewX2yBtNTLPvnmCxwog==
+
+zod@^3.22.4:
+  version "3.23.8"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.23.8.tgz#e37b957b5d52079769fb8097099b592f0ef4067d"
+  integrity sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==
 
 zwitch@^2.0.0, zwitch@^2.0.4:
   version "2.0.4"

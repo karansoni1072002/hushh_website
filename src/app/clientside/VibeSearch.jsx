@@ -77,6 +77,8 @@ const ClientVibeSearch = () => {
               filter: "grayscale(100%)",
             }}
             unoptimized
+            loading="eager"
+            title="Vibe Search Animation"
           />
         </Box>
         <Box display={{ base: "block", md: "none" }}>
@@ -93,6 +95,8 @@ const ClientVibeSearch = () => {
               height: "13rem",
               filter: "grayscale(100%)",
             }}
+            loading="eager"
+            title="Vibe Search GIF"
             unoptimized
           />
         </Box>
@@ -246,6 +250,8 @@ const ClientVibeSearch = () => {
                 bottom: "0",
               }}
               src={DirectionLine}
+              loading="eager"
+              title="Hushh Vibe Search direction line image"
             />
             <iframe
               src="https://player.cloudinary.com/embed/?public_id=https%3A%2F%2Fres.cloudinary.com%2Fdr5alaq5u%2Fvideo%2Fupload%2Fv1710776445%2FvibeSearchDemo_s1bdkh.mp4&cloud_name=dr5alaq5u&player[showJumpControls]=true"
@@ -281,12 +287,15 @@ const ClientVibeSearch = () => {
                 transform: "rotate(35deg)",
               }}
               className="hushhbuttonFrame1"
+              title="Vibe search Bar"
             />
             <Image
-              alt="hushhButtonCard2"
+              alt="vibe search frame 2"
               style={{ position: "absolute", left: "12%" }}
               src={FrameCard2}
               className="hushhbuttonFrame2"
+              loading="eager"
+              title="Vibe Search Preferences"
             />
             <Image
               alt="directionLine"
@@ -296,6 +305,8 @@ const ClientVibeSearch = () => {
                 left: "8%",
                 bottom: "0",
               }}
+              loading="eager"
+              title="Vibe Search Frame 3"
               src={DirectionLine}
             />
             <iframe
@@ -309,13 +320,16 @@ const ClientVibeSearch = () => {
                 aspectRatio: "640 / 360",
                 borderRadius: "1rem",
               }}
+              loading="eager"
               allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
               allowFullScreen
               frameBorder="0"
             ></iframe>
             <Image
               className="frameCard1"
-              alt="HushhButtonframeCard4"
+              alt="Vibe Search frameCard4"
+              loading="eager"
+              title="Vibe Search Card 4"
               src={FramCard1}
               style={{ position: "absolute", right: "16rem", bottom: "0rem" }}
             />
@@ -394,7 +408,7 @@ const ClientVibeSearch = () => {
             </Box>
           </Box>
           <Box display={"flex"} flexDirection={"column"} flex={1} gap={"1rem"}>
-            <Image src={FindYourStyleBox} alt="FindYourStyleBox" />
+            <Image src={FindYourStyleBox} loading="eager" title="Find Your Style" alt="FindYourStyleBox" />
             <Text
               fontSize={{ md: "1rem", base: "0.75rem" }}
               color={"#ABABAB"}
@@ -437,6 +451,8 @@ const ClientVibeSearch = () => {
             <Image
               src={VibeSearchIntegrationBox}
               alt="VibeSearchIntegrationBox"
+              loading="eager"
+              title="Vibe Search Integration"
             />
             {/* <Text fontSize={{ md:'1rem', base:'0.75rem'}} color={'#ABABAB'} lineHeight={{md:'36px', base:'18px'}}>See exactly what data is being collected about you, including search queries, brand interactions, interests, preferences, likes, and clicks. Gain insights into your online behavior and understand what shapes your digital footprint</Text> */}
           </Box>
@@ -566,7 +582,7 @@ const ClientVibeSearch = () => {
             tap of a button
           </Text>
           <Box>
-            <Image src={VibeSearchBg} alt="VibeSearchBg" />
+            <Image src={VibeSearchBg} loading="eager" title="Vibe Search BG" alt="VibeSearchBg" />
 
             <Button
               border={"1px solid #606060"}
@@ -593,6 +609,8 @@ const ClientVibeSearch = () => {
             <Image
               src={BgAnimation}
               alt="BgAnimation"
+              loading="eager"
+              title="Animation Vibe Search"
               style={{
                 position: "absolute",
                 top: "-15px",
@@ -616,6 +634,8 @@ const ClientVibeSearch = () => {
                 height: "13rem",
                 filter: "grayscale(100%)",
               }}
+              title="Background 2 Vibe Search"
+              loading="eager"
               unoptimized
             />
           </Box>

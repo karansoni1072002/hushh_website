@@ -91,6 +91,7 @@ const ClientHome = () => {
           // objectFit="cover"
           // className="z-0 w-full"
           placeholder="blur"
+          loading="eager"
           //  priority
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
         />
@@ -212,11 +213,15 @@ const ClientHome = () => {
                   style={{ top: "-65px", position: "absolute" }}
                   src={HomeBanner}
                   alt="HomeBanner"
+                  loading="eager"
+                  title="Hushh Banner"
                 />
                 <Image
                   src={CircleHomeBg}
                   alt="CircleHomeBg"
                   style={{ bottom: "0px", position: "absolute" }}
+                  loading="eager"
+                  title="Hushh Background Image"
                 />
               </VStack>
               <VStack
@@ -234,6 +239,8 @@ const ClientHome = () => {
                     width: "2rem",
                     // zIndex: "0.9",
                   }}
+                  loading="eager"
+                  title="Gradient Circle Background Image"
                 />
               </VStack>
             </Box>
@@ -304,6 +311,8 @@ const ClientHome = () => {
                     top: "25px",
                     left: "100px",
                   }}
+                  loading="eager"
+                  title="Louis Vuitton Card"
                 />
                 <Image
                   style={{
@@ -312,6 +321,8 @@ const ClientHome = () => {
                     left: "319px",
                     // zIndex: "2",
                   }}
+                  loading="eager"
+                  title="Sephora Card"
                   src={SephoraCard}
                   alt="Sephora Card"
                   width={420.62}
@@ -327,6 +338,8 @@ const ClientHome = () => {
                   }}
                   src={FendiCard}
                   alt="Fendi Card"
+                  loading="eager"
+                  title="Fendi Card"
                   width={570.62}
                   height={363.19}
                 />
@@ -687,6 +700,8 @@ const ClientHome = () => {
             position: "absolute",
             // zIndex: "0.9",
           }}
+          loading="eager"
+          title="Hushh Eclipse Background"
         />
       </div>
     </>

@@ -31,6 +31,8 @@ const MyLogo = () => {
           alt="User Image"
           width={44}
           height={34}
+          loading="eager"
+          title="Developer User Logo"
         />
           <Button
             border={"1px solid #606060"}
@@ -48,7 +50,7 @@ const MyLogo = () => {
           </>
         ) : (
           <>
-          <Image src={HushhLogo} alt="hushhLogo" width={34} height={34} />
+          <Image src={HushhLogo} loading="eager" title="Hushh Logo" alt="hushhLogo" width={34} height={34} />
           <Button
             border={"1px solid #606060"}
             borderRadius="2px"

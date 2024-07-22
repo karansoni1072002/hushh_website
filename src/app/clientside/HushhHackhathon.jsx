@@ -266,7 +266,7 @@ const HushhHackhathon = () => {
               flexDirection={"row"}
               gap={{ md: "0.5rem", base: "0.25rem" }}
             >
-              <Image src={HushhLogoS} alt="HushhLogoS" title="hushh logo" />
+              <Image src={HushhLogoS} alt="HushhLogoS" loading="eager" title="hushh logo" />
               <Text
                 className="gradient"
                 fontSize={{ md: "2.89rem", base: "1.44rem" }}
@@ -401,7 +401,7 @@ const HushhHackhathon = () => {
                   p={4}
                   borderRadius="md"
                 >
-                  <Image src={item.icon} style={{width:'100px'}} alt={item.title} title={item.title} width={'100px'} height={'100px'} />
+                  <Image src={item.icon} style={{width:'100px'}} loading="eager" alt={item.title} title={item.title} width={'100px'} height={'100px'} />
                   <Text
                     fontWeight={"600"}
                     fontSize={{ md: "1.25rem", base: "0.8rem" }}
@@ -540,6 +540,7 @@ const HushhHackhathon = () => {
                   '_blank'
                 )
               }
+              loading="eager"
             />
             <Image
               src={DiscordIcon}
@@ -552,6 +553,7 @@ const HushhHackhathon = () => {
                   '_blank'
                 )
               }
+              loading="eager"
             />
             <Image
               src={LinkedInIcon}
@@ -564,6 +566,7 @@ const HushhHackhathon = () => {
                   '_blank'
                 )
               }
+              loading="eager"
             />
             <Image
               src={YoutubeIcon}
@@ -576,6 +579,7 @@ const HushhHackhathon = () => {
                   '_blank'
                 )
               }
+              loading="eager"
             />
           </Box>
           <Text

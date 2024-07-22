@@ -176,7 +176,7 @@ const ClientHome = () => {
                   >
                     {isOpen && (
                       <Flex
-                        zIndex={"1000"}
+                        zIndex={"2"}
                         direction="row"
                         gap={{ md: "2rem", base: "1rem" }}
                         position="absolute"

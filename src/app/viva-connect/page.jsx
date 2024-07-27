@@ -155,8 +155,8 @@ export default function vivaConnect2() {
                 <VStack gap={{md:'1rem',base:'0.5rem'}} display={'flex'} textAlign={'left'} alignItems={'flex-start'}>
                   <Text fontSize={{md:'1.5rem',base:'1rem'}} className="gradient">Browser Companion</Text>
                   <Text fontSize={{md:'1rem',base:'0.75rem'}} color={'white'}>Your personal data vault. Organize, control, and monetize your information</Text>
-                  <HStack display={'flex'}  w={'100%'} gap={{md:'2rem',base:'1rem'}}>
-                    <Button gap={{md:'1rem',base:'0.5rem'}} border={'1px solid #606060'} _hover={{bg:'linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)',border:'none',color:'white'}} flex={1} bg={'black'} color={'white'}>
+                  <HStack display={'flex'} gap={{md:'2rem',base:'1rem'}}>
+                    <Button w={{md:'50%',base:'50%'}} gap={{md:'1rem',base:'0.5rem'}} border={'1px solid #606060'} _hover={{bg:'linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)',border:'none',color:'white'}} flex={1} bg={'black'} color={'white'}>
                        Add Extension
                     </Button>
                   </HStack>

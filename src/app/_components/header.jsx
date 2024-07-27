@@ -236,7 +236,7 @@ export default function Header() {
                       <div className="">
                         <h1 className="font-semibold">Hushh Wallet App</h1>
                         <p className="text-sm font-medium text-fontColor3">
-                          Customer User Flow + Client Advisor User Flow
+                        Your personal data vault. Organize, control,<br/> and monetize your information
                         </p>
                       </div>
                     </Link>
@@ -251,7 +251,7 @@ export default function Header() {
                       <div className="">
                         <h1 className="font-semibold">Hushh Button</h1>
                         <p className="text-sm font-medium text-fontColor3">
-                          Share data for personalized <br /> recommendations.
+                        Seamlessly share your preferences with  <br /> brands for personalized experiences
                         </p>
                       </div>
                     </Link>
@@ -268,7 +268,7 @@ export default function Header() {
                           Hushh Browser Companion
                         </h1>
                         <p className="text-sm font-medium text-fontColor3">
-                          Enhanced recommendations &<br /> impactful marketing.
+                        Track and manage your online browsing data <br/>, building a complete digital profile
                         </p>
                       </div>
                     </Link>
@@ -283,7 +283,7 @@ export default function Header() {
                       <div className="">
                         <h1 className="font-semibold">Developer API</h1>
                         <p className="text-sm font-medium text-fontColor3">
-                           Secure, trusted & incentivized way of <br/> relaying valuable personal information.
+                        Tools for businesses to integrate <br/> Hushh data into their applications
                         </p>
                       </div>
                     </Link>
@@ -298,8 +298,7 @@ export default function Header() {
                       <div className="">
                         <h1 className="font-semibold">Hushh Concierge App</h1>
                         <p className="text-sm font-medium text-fontColor3">
-                          Speak your wish, get luxury <br /> redefined: Hushh
-                          Concierge
+                        Elevate your lifestyle with personalized <br /> recommendations and services  
                         </p>
                       </div>
                     </Link>
@@ -318,8 +317,8 @@ export default function Header() {
                       <div className="">
                         <h1 className="font-semibold">VIBE Search App</h1>
                         <p className="text-sm font-medium text-fontColor3">
-                          Find perfect items to express your <br />{" "}
-                          individuality in just one click.
+                        Discover products you love with <br />{" "}
+                        image-based search and AI recommendations
                         </p>
                       </div>
                     </Link>
@@ -335,7 +334,7 @@ export default function Header() {
                       <div className="">
                         <h1 className="font-semibold">Valet Chat</h1>
                         <p className="text-sm font-medium text-fontColor3">
-                          Valet Chat: Ditch receipts, unlock <br /> insights.
+                        Your AI-powered financial assistant <br /> for effortless expense management 
                         </p>
                       </div>
                     </Link>
@@ -357,8 +356,7 @@ export default function Header() {
                         </h1>
                         
                         <p className="text-sm font-medium text-fontColor3">
-                          List products on Vibe Search with <br /> management
-                          and analytics.
+                        Integrate image-based product <br /> search into your app or website 
                         </p>
                       </div>
                     </Link>
@@ -378,7 +376,7 @@ export default function Header() {
                           <Badge className="gradient-bg p-1" ml={4} borderRadius={'0.6rem'} fontSize={'0.6rem'} color={'white'}>Coming Soon !</Badge>
                         </h1>
                         <p className="text-sm font-medium text-fontColor3">
-                          News and updates
+                        A platform for brands to showcase their <br/> products and reach new customers
                         </p>
                       </div>
                     </Link>

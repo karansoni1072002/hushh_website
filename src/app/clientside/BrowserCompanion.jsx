@@ -179,7 +179,7 @@ const ClientBrowserCompanion = () => {
               }}
               onClick={() =>
                 window.open(
-                  "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?hl=en&authuser=0n",
+                  "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?authuser=0&hl=en",
                   "_blank"
                 )
               }
@@ -471,7 +471,7 @@ const ClientBrowserCompanion = () => {
               }}
               onClick={() =>
                 window.open(
-                  "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?hl=en&authuser=0n",
+                  "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?authuser=0&hl=en",
                   "_blank"
                 )
               }
@@ -590,7 +590,7 @@ const ClientBrowserCompanion = () => {
               }}
               onClick={() =>
                 window.open(
-                  "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?hl=en&authuser=0n",
+                  "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?authuser=0&hl=en",
                   "_blank"
                 )
               }

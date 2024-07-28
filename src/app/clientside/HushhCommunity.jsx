@@ -421,7 +421,7 @@ const HushhCommunity = () => {
               <Button
                 onClick={() =>
                   window.open(
-                    "https://www.linkedin.com/company/hushh-ai/",
+                    "https://chat.whatsapp.com/CTa7ULornjfHEzVyvNN9gB",
                     "_blank"
                   )
                 }

@@ -116,14 +116,14 @@ const HushhCommunity = () => {
               This often leads to awkward moments, mismatched recommendations,
               and missed opportunities for both agents and customers.
             </Text>
-            <Button
+            {/* <Button
               bg={"white"}
               w={{ md: "18rem", base: "100%" }}
               color={"#10081F"}
               borderRadius={"54px"}
             >
               Learn More
-            </Button>
+            </Button> */}
           </VStack>
         </HStack>
 
@@ -374,6 +374,7 @@ const HushhCommunity = () => {
           <HStack
             mt={{ md: "1.5rem", base: "0.75rem" }}
             gap={{ md: "9rem", base: "1.5rem" }}
+            zIndex={4}
           >
             <VStack
               mt={{ md: "0.25rem" }}
@@ -399,6 +400,7 @@ const HushhCommunity = () => {
                 color={"white"}
                 fontWeight={"500"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
+                _hover={{color:'black',bg:'white'}}
               >
                 Join Now
               </Button>
@@ -427,6 +429,7 @@ const HushhCommunity = () => {
                 color={"white"}
                 fontWeight={"500"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
+                _hover={{color:'black',bg:'white'}}
               >
                 Join Now
               </Button>
@@ -455,6 +458,7 @@ const HushhCommunity = () => {
                 color={"white"}
                 fontWeight={"500"}
                 fontSize={{ md: "1rem", base: "0.65rem" }}
+                _hover={{color:'black',bg:'white'}}
               >
                 Join Now
               </Button>

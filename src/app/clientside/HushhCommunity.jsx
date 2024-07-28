@@ -16,11 +16,13 @@ import LinkedIn from "../_components/svg/hushhCommunity/linkedIn.svg";
 import WhatsApp from "../_components/svg/hushhCommunity/whatsapp.svg";
 import Discord from "../_components/svg/hushhCommunity/discord.svg";
 import AboutFaq from "../_components/features/faq/aboutFaq";
+import HeaderBG from "../_components/svg/hushhCommunity/headerBG.svg";
 
 const HushhCommunity = () => {
   return (
     <>
       <Box>
+        <Image src={HeaderBG} style={{position:'absolute',zIndex:'-1'}} alt="header bg" title="header bg"/>
         <Stack display={"flex"} flexDirection={"column"}>
           <Box
             mt={{ md: "8rem", base: "4rem" }}

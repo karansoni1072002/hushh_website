@@ -11,6 +11,7 @@ import CustomerInsightsImg from "../_components/svg/hushhCommunity/customerInsig
 import DiscoveryLux from "../_components/svg/hushhCommunity/discoveryLuxury.svg";
 import EthicalData from "../_components/svg/hushhCommunity/ethicalData.svg";
 import ValueCustomer from "../_components/svg/hushhCommunity/valueCustomer.svg";
+import Ellipse from "../_components/svg/hushhCommunity/Ellipse.svg";
 
 const HushhCommunity = () => {
   return (
@@ -56,12 +57,12 @@ const HushhCommunity = () => {
             </VStack>
         </HStack>
 
-        <VStack my={{md:'4rem',base:'1.5rem'}}  mx={{md:'5rem',base:'1rem'}} textAlign={'left'} alignItems={'flex-start'}>
+        <VStack my={{md:'4rem',base:'1.5rem'}}  ml={{md:'5rem',base:'1rem'}} textAlign={'left'} alignItems={'flex-start'}>
             <Text mr={{md:'50%',base:''}} className="new-gradient" fontWeight={'600'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={'16px'} letterSpacing={'0.255rem'}>HUSHH</Text>
             <Text mr={{md:'50%',base:''}} className="gradient" fontWeight={'500'} fontSize={{md:'3.75rem',base:'1.8rem'}} lineHeight={{md:'63.3px',base:'35px'}}>Transforming the Luxury Retail Landscape</Text>
             <Text mr={{md:'50%',base:''}} color={'#ABABAB'} fontWeight={'500'} fontSize={{md:'1rem',base:'0.75rem'}} lineHeight={{md:'36px',base:'25px'}}>Hushh is a game-changing platform designed to bridge the gap between luxury sales agents and their customers. Here's how Hushh is reimagining the in-store experience:</Text>
-            <VStack>
-               <Box gap={{md:'2rem',base:'1rem'}} flex={1} display={'flex'} flexDirection={'column'}>
+            <HStack position={'relative'} mt={{md:'1.5rem',base:'0.75rem'}} gap={{md:'4rem',base:'1rem'}} w={'100%'}>
+               <Box gap={{md:'4rem',base:'1.5rem'}} flex={1} display={'flex'} flexDirection={'column'}>
                <Stack gap={{md:'2rem',base:'1rem'}} textAlign={'left'} display={'flex'} justifyContent={'flex-start'} alignItems={'flex-start'}  flexDirection={'row'}>
                     <Image style={{flex:'0.1'}} src={CustomerInsightsImg} alt="Instant Customer Insights" title="Instant Customer Insights"/>
                     <VStack flex={0.9} textAlign={'left'} alignItems={'flex-start'}>
@@ -91,10 +92,11 @@ const HushhCommunity = () => {
                     </VStack>
                 </Stack>
                 </Box> 
-                <Box flex={1}>
-                <Image src={''} title="" alt=""/>
+                <Box w={'100%'} flex={0.7} position={'relative'}>
+                <Image src={hushhLogo} style={{zIndex:'4'}} title="" alt=""/>
                 </Box>
-            </VStack>
+                <Image src={Ellipse} alt="Ellipse"  style={{position:'absolute',minWidth:'100%',opacity:'92%' ,zIndex:'3'}}  title="Ellipse"/>
+            </HStack>
         </VStack>
 
         <VStack

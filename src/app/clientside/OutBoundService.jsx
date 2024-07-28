@@ -59,6 +59,7 @@ import SeasonedSvg from "../_components/svg/outBoundService/seasonedProfessional
 import BgShadow from "../_components/svg/outBoundService/bgShadow.svg";
 import DivideLine from "../_components/svg/outBoundService/Line 233.svg";
 import OutboundFaq from '../_components/features/faq/outboundFaq';
+import HeaderBG from "../_components/svg/hushhCommunity/headerBG.svg";
 
 const categories = {
   "AI Infrastructure": [
@@ -127,6 +128,7 @@ const OutBoundService = () => {
         flexDirection={"column"}
         position={"relative"}
       >
+         <Image src={HeaderBG} style={{position:'absolute',zIndex:'-1'}} alt="header bg" title="header bg"/>
         <Box
           alignItems={"center"}
           w={"100%"}

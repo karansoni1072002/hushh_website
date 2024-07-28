@@ -17,6 +17,7 @@ import {
   useDisclosure,
   useToast,
   useBreakpointValue,
+  HStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -29,7 +30,10 @@ import VibeSearchNew from "../_components/svg/productIcons/vibeSearchIcon.svg";
 import ButtonIcon from "../_components/svg/productIcons/hushhButtonIcon.svg";
 import HushhAppIcon from "../_components/svg/productIcons/hushhAppIcon.svg";
 import hushhLogo from "../_components/svg/productIcons/hushhLogo.svg";
-
+import { CldVideoPlayer, getCldOgImageUrl } from "next-cloudinary";
+import "next-cloudinary/dist/cld-video-player.css";
+import AppleIcon from "../_components/svg/icons/appleIcon";
+import PlayStoreIcon from "../_components/svg/icons/playStoreIcon";
 
 export default function vivaConnect2() {
   const router = useRouter();
@@ -67,11 +71,11 @@ export default function vivaConnect2() {
           >
             <Text
               fontWeight="600"
-              lineHeight="8.09px"
-              fontSize="0.5rem"
+              lineHeight="24.09px"
+              fontSize={{ base: "0.5rem", md: "1rem" }}
               letterSpacing="0.1275rem"
               className="hushh-gradient"
-              mt="1rem"
+              // mt="1rem"
             >
               PRODUCT SHOWCASE
             </Text>
@@ -93,7 +97,7 @@ export default function vivaConnect2() {
             </Box>
           </Flex>
 
-          <VStack textAlign={"left"} w={"100%"} alignItems={"flex-start"}>
+          <VStack mb={{md:'2rem',base:'1rem'}} textAlign={"left"} w={"100%"} alignItems={"flex-start"}>
             <Image src={hushhLogo} alt="hushhLogo" />
             <Text
               p={"0"}
@@ -117,311 +121,337 @@ export default function vivaConnect2() {
               organize and extract meaninful value from your data.
             </Text>
           </VStack>
-          <Box
-            w={"100%"}
-            bg={"transparent"}
-            onClick={onWalletOpen}
-            cursor={"pointer"}
-            // onClick={() => window.open("https://bit.ly/hushh-app-ios", "_blank")}
-          >
-            <Stack w={"100%"} display={"flex"} flexDirection={"row"}>
-              <Box
-                w={"100%"}
-                h={"100%"}
-                flex={0.2}
-                display={"flex"}
-                alignItems={"center"}
-                alignContent={"center"}
-                alignSelf={"center"}
-                justifyItems={"center"}
-                justifySelf={"center"}
-              >
-                <Image src={HushhAppIcon} alt="HushhAppIcon" objectFit="fill" />
-              </Box>
-              <VStack
-                gap={"0px"}
-                display={"flex"}
-                alignItems={"flex-start"}
-                textAlign={"left"}
-                flex={1}
-              >
-                <Text
-                  color={"#FFFFFF"}
-                  fontWeight={"700"}
-                  fontSize={"1rem"}
-                  lineHeight={"24.2px"}
-                  fontFamily={"Figtree"}
-                >
-                  Hushh Wallet App
-                </Text>
-                <Text
-                  fontWeight={"300"}
-                  fontSize={"0.75rem"}
-                  lineHeight={"16px"}
-                  color={"#484848"}
-                  fontFamily={"Roboto"}
-                >
-                  Your Personal Data, Your Powerhouse
-                </Text>
-              </VStack>
-            </Stack>
-          </Box>
 
-          <Box
-            w={"100%"}
-            bg={"transparent"}
-            cursor={"pointer"}
-            onClick={() =>
-              window.open("https://vibesearch-vercel.vercel.app", "_blank")
-            }
-          >
-            <Stack w={"100%"} display={"flex"} flexDirection={"row"}>
+          <VStack w={"100%"} gap={{ md: "6rem", base: "2rem" }}>
+            <HStack
+              w={"100%"}
+              display={"flex"}
+              flexDirection={{ md: "column", base: "column" }}
+            >
               <Box
-                w={"100%"}
-                h={"100%"}
-                flex={0.2}
-                display={"flex"}
-                alignItems={"center"}
-                alignContent={"center"}
-                alignSelf={"center"}
-                justifyItems={"center"}
-                justifySelf={"center"}
-              >
-                <Image
-                  src={VibeSearchNew}
-                  alt="VibeSearchNew"
-                  objectFit="cover"
-                />
-              </Box>
-              <VStack
-                gap={"0px"}
-                display={"flex"}
-                alignItems={"flex-start"}
-                textAlign={"left"}
                 flex={1}
+                gap={{ md: "3rem", base: "1rem" }}
+                minW={"100%"}
+                display={"flex"}
+                flexDirection={{ md: "row", base: "column" }}
               >
-                <Text
-                  color={"#FFFFFF"}
-                  fontWeight={"700"}
-                  fontSize={"1rem"}
-                  lineHeight={"24.2px"}
-                  fontFamily={"Figtree"}
+                <VStack
+                  gap={{ md: "1rem", base: "0.5rem" }}
+                  display={"flex"}
+                  textAlign={"left"}
+                  alignItems={"flex-start"}
                 >
-                  Vibe Search
-                </Text>
-                <Text
-                  fontWeight={"300"}
-                  fontSize={"0.75rem"}
-                  lineHeight={"16px"}
-                  color={"#484848"}
-                  fontFamily={"Roboto"}
-                >
-                  Find perfect items to express your individuality in just one
-                  click.
-                </Text>
-              </VStack>
-            </Stack>
-          </Box>
-          <Box
-            w={"100%"}
-            bg={"transparent"}
-            cursor={"pointer"}
-            onClick={onCompanionOpen}
-          >
-            <Stack w={"100%"} display={"flex"} flexDirection={"row"}>
+                  <Text
+                    fontSize={{ md: "1.5rem", base: "1rem" }}
+                    className="gradient"
+                    fontWeight={'700'}
+                  >
+                    Hushh Wallet App
+                  </Text>
+                  <Text
+                    fontSize={{ md: "1rem", base: "0.75rem" }}
+                    color={"white"}
+                  >
+                    Your personal data vault. Organize, control, and monetize
+                    your information
+                  </Text>
+                  <HStack
+                    alignItems={"flex-start"}
+                    justifyContent={"flex-start"}
+                    display={"flex"}
+                    w={"100%"}
+                    flexDirection={{ md: "column", base: "row" }}
+                    gap={{ md: "2rem", base: "1rem" }}
+                  >
+                    <Button
+                      p={{ md: "0.4rem", base: "" }}
+                      border={"1px solid #606060"}
+                      w={"50%"}
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        color: "white",
+                        border: "none",
+                      }}
+                      flex={1}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                      App Store <AppleIcon />
+                    </Button>
+                    <Button
+                      p={{ md: "0.4rem", base: "" }}
+                      border={"1px solid #606060"}
+                      w={"50%"}
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        color: "white",
+                        border: "none",
+                      }}
+                      flex={1}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                      Play Store <PlayStoreIcon />
+                    </Button>
+                  </HStack>
+                </VStack>
+                <Box flex='3' maxW={"100%"} gap={{md:'2rem',base:'1rem'}} display={{md:'flex',base:'none'}} flexDirection={{md:'row',base:'column'}}>
+                  <CldVideoPlayer
+                    alt="Hushh Wallet App Apple Users Live Demo"
+                    title="Step by step live demo for wallet app for apple users"
+                    controls="true"
+                    width="480"
+                    height="650"
+                    src="walletApp-Ios-demo_isc5mt"
+                  />
+                  <CldVideoPlayer
+                    alt="Hushh Wallet App Android Live Demo"
+                    title="Step by step live demo for wallet app for adnroid users"
+                    controls="true"
+                    width="480"
+                    height="650"
+                    src="hushhWallet_Android_demo_nffycm"
+                  />
+                </Box>
+                <Box gap={{md:'2rem',base:'1rem'}} w={'100%'} display={{md:'none',base:'flex'}} flexDirection={'column'}>
+                  <CldVideoPlayer
+                    alt="Hushh Wallet App Apple Users Live Demo"
+                    title="Step by step live demo for wallet app for apple users"
+                    controls="true"
+                    width="380"
+                    height="250"
+                    // posterOptions='{ "publicId": "walletApp-Ios-demo_isc5mt", "effect": ["saturation:-100"] }'
+                    src="walletApp-Ios-demo_isc5mt"
+                  />
+                  <CldVideoPlayer
+                    alt="Hushh Wallet App Android Live Demo"
+                    title="Step by step live demo for wallet app for adnroid users"
+                    controls="true"
+                    width="380"
+                    height="250"
+                    // posterOptions='{ "publicId": "hushhWallet_Android_demo_nffycm", "effect": ["saturation:-100"] }'
+                    src="hushhWallet_Android_demo_nffycm"
+                  />
+                </Box>
+              </Box>
+            </HStack>
+            <HStack
+              w={"100%"}
+              display={"flex"}
+              flexDirection={{ md: "column", base: "column" }}
+            >
               <Box
-                w={"100%"}
-                h={"100%"}
-                flex={0.2}
-                display={"flex"}
-                alignItems={"center"}
-                alignContent={"center"}
-                alignSelf={"center"}
-                justifyItems={"center"}
-                justifySelf={"center"}
-              >
-                <Image src={ChromeIcon} alt="ChromeIcon" objectFit="fill" />
-              </Box>
-              <VStack
-                gap={"0px"}
-                display={"flex"}
-                alignItems={"flex-start"}
-                textAlign={"left"}
                 flex={1}
+                gap={{ md: "3rem", base: "1rem" }}
+                minW={"100%"}
+                display={"flex"}
+                flexDirection={{ md: "row", base: "column" }}
               >
-                <Text
-                  color={"#FFFFFF"}
-                  fontWeight={"700"}
-                  fontSize={"1rem"}
-                  lineHeight={"24.2px"}
-                  fontFamily={"Figtree"}
+                <VStack
+                  gap={{ md: "1rem", base: "0.5rem" }}
+                  display={"flex"}
+                  textAlign={"left"}
+                  alignItems={"flex-start"}
                 >
-                  Browser Companion
-                </Text>
-                <Text
-                  fontWeight={"300"}
-                  fontSize={"0.75rem"}
-                  lineHeight={"16px"}
-                  color={"#484848"}
-                  fontFamily={"Roboto"}
-                >
-                  Take the power back in your hands. Control and track your
-                  digital footprint.
-                </Text>
-              </VStack>
-            </Stack>
-          </Box>
-
-          <Box
-            w={"100%"}
-            bg={"transparent"}
-            cursor={"pointer"}
-            onClick={() =>
-              window.open(
-                "/developerApi",
-                "_blank"
-              )
-            }
-          >
-            <Stack w={"100%"} display={"flex"} flexDirection={"row"}>
+                  <Text
+                    fontSize={{ md: "1.5rem", base: "1rem" }}
+                    className="gradient"
+                    fontWeight={'700'}
+                  >
+                    Browser Companion
+                  </Text>
+                  <Text
+                    fontSize={{ md: "1rem", base: "0.75rem" }}
+                    color={"white"}
+                  >
+                    Your personal data vault. Organize, control, and monetize
+                    your information
+                  </Text>
+                  <HStack display={"flex"} gap={{ md: "2rem", base: "1rem" }}>
+                    <Button
+                      w={{ md: "50%", base: "50%" }}
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      border={"1px solid #606060"}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        border: "none",
+                        color: "white",
+                      }}
+                      flex={1}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                      Add Extension
+                    </Button>
+                  </HStack>
+                </VStack>
+                <Box flex={3} mt={{md:'2rem',base:'1rem'}} maxW={"40rem"} maxHeight={"40rem"}>
+                  <CldVideoPlayer
+                    alt="Hushh Button Guide"
+                    title="Hushh button developer walkthrough"
+                    controls="true"
+                    width="440"
+                    height="250"
+                    src="BrodwserCompanionLiveDemo1ef_cgpbre"
+                  />
+                </Box>
+              </Box>
+            </HStack>
+            <HStack
+              w={"100%"}
+              display={"flex"}
+              flexDirection={{ md: "column", base: "column" }}
+            >
               <Box
-                w={"100%"}
-                h={"100%"}
-                flex={0.2}
-                display={"flex"}
-                alignItems={"center"}
-                alignContent={"center"}
-                alignSelf={"center"}
-                justifyItems={"center"}
-                justifySelf={"center"}
-              >
-                <Image
-                  src={DeveloperIcon}
-                  alt="DeveloperIcon"
-                  objectFit="fill"
-                />
-              </Box>
-              <VStack
-                gap={"0px"}
-                display={"flex"}
-                alignItems={"flex-start"}
-                textAlign={"left"}
                 flex={1}
+                gap={{ md: "3rem", base: "1rem" }}
+                minW={"100%"}
+                display={"flex"}
+                flexDirection={{ md: "row", base: "column" }}
               >
-                <Text
-                  color={"#FFFFFF"}
-                  fontWeight={"700"}
-                  fontSize={"1rem"}
-                  lineHeight={"24.2px"}
-                  fontFamily={"Figtree"}
+                <VStack
+                  gap={{ md: "1rem", base: "0.5rem" }}
+                  display={"flex"}
+                  textAlign={"left"}
+                  alignItems={"flex-start"}
                 >
-                  Hushh Developer API
-                </Text>
-                <Text
-                  fontWeight={"300"}
-                  fontSize={"0.75rem"}
-                  lineHeight={"16px"}
-                  color={"#484848"}
-                  fontFamily={"Roboto"}
-                >
-                  Enabling a secure, trusted, and incentivized way of relaying
-                  valuable personal information from customers.
-                </Text>
-              </VStack>
-            </Stack>
-          </Box>
-
-          <Box
-            w={"100%"}
-            display={"flex"}
-            bg={"transparent"}
-            cursor={"pointer"}
-            onClick={() =>
-              window.open(
-                "https://www.hush1one.com/products/hushhButton",
-                "_blank"
-              )
-            }
-          >
-            <Stack w={"100%"} display={"flex"} flexDirection={"row"}>
+                  <Text
+                    fontSize={{ md: "1.5rem", base: "1rem" }}
+                    className="gradient"
+                    fontWeight={'700'}
+                  >
+                    Hushh Button
+                  </Text>
+                  <Text
+                    fontSize={{ md: "1rem", base: "0.75rem" }}
+                    color={"white"}
+                  >
+                    Seamlessly share your preferences with brands for personalized experiences
+                  </Text>
+                  <HStack
+                    display={"flex"}
+                    w={"100%"}
+                    gap={{ md: "2rem", base: "1rem" }}
+                  >
+                    <Button
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        color: "white",
+                      }}
+                      flex={1}
+                      border={'1px solid #606060'}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                     COMING SOON!!
+                    </Button>
+                    {/* <Button
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        color: "white",
+                      }}
+                      flex={1}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                      Play Store <PlayStoreIcon />
+                    </Button> */}
+                  </HStack>
+                </VStack>
+                {/* <Box flex={3} maxW={"40rem"} maxHeight={"40rem"}>
+                  <CldVideoPlayer
+                    alt="Hushh Button Guide"
+                    title="Hushh button developer walkthrough"
+                    controls="true"
+                    width="440"
+                    height="250"
+                    src="Hushh_button_-_developer_walkthrough_uwwiy0"
+                  />
+                </Box> */}
+              </Box>
+            </HStack>
+            <HStack
+              w={"100%"}
+              display={"flex"}
+              flexDirection={{ md: "column", base: "column" }}
+            >
               <Box
-                w={"100%"}
-                h={"100%"}
-                flex={0.2}
-                display={"flex"}
-                alignItems={"center"}
-                alignContent={"center"}
-                alignSelf={"center"}
-                justifyItems={"center"}
-                justifySelf={"center"}
-              >
-                <Image
-                  src={ButtonIcon}
-                  alt="hushhButtonIcon"
-                  objectFit="fill"
-                />
-              </Box>
-              <VStack
-                gap={"0px"}
-                display={"flex"}
-                alignItems={"flex-start"}
-                textAlign={"left"}
                 flex={1}
+                gap={{ md: "3rem", base: "1rem" }}
+                minW={"100%"}
+                display={"flex"}
+                flexDirection={{ md: "row", base: "column" }}
               >
-                <Text
-                  color={"#FFFFFF"}
-                  fontWeight={"700"}
-                  fontSize={"1rem"}
-                  lineHeight={"24.2px"}
-                  fontFamily={"Figtree"}
+                <VStack
+                  gap={{ md: "1rem", base: "0.5rem" }}
+                  display={"flex"}
+                  textAlign={"left"}
+                  alignItems={"flex-start"}
                 >
-                  Hushh Button
-                </Text>
-                <Text
-                  fontWeight={"300"}
-                  fontSize={"0.75rem"}
-                  lineHeight={"16px"}
-                  color={"#484848"}
-                  fontFamily={"Roboto"}
-                >
-                  Seamless Data Sharing for Personalized Experiences and
-                  recommendations.
-                </Text>
-              </VStack>
-            </Stack>
-          </Box>
-          
-
-          <Button
-            as="a"
-            href="/brochure.pdf"
-            download="Hushh-brochure"
-            borderRadius={"12px"}
-            bg={"transparent"}
-            h={"3rem"}
-            cursor={"pointer"}
-            border={"1px solid #3045FF"}
-            color={"#FFFFFF"}
-            letterSpacing={"-0.4px"}
-            fontSize={"1rem"}
-            fontWeight={"400"}
-            w="100%"
-            _hover={{
-              cursor: "pointer",
-              color: "white",
-              bg: "#1B1B1B",
-            }}
-          >
-            <Text fontWeight={'400'} fontSize={'1rem'} lineHeight={'22px'} letterSpacing={'-0.4px'} my={"2rem"} cursor={"pointer"}>
-              Download our Brochure
-            </Text>
-          </Button>
-      </VStack>
-      <Modal
-          isOpen={isWalletOpen}
-          onClose={onWalletClose}
-          size={modalSize}
-        >
+                  <Text
+                    fontSize={{ md: "1.5rem", base: "1rem" }}
+                    className="gradient"
+                    fontWeight={'700'}
+                  >
+                    Vibe Search App
+                  </Text>
+                  <Text
+                    fontSize={{ md: "1rem", base: "0.75rem" }}
+                    color={"white"}
+                  >
+                     Discover products you love with image-based search and AI recommendations
+                  </Text>
+                  <HStack
+                    display={"flex"}
+                    w={"100%"}
+                    gap={{ md: "2rem", base: "1rem" }}
+                  >
+                     <Button
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        color: "white",
+                      }}
+                      flex={1}
+                      border={'1px solid #606060'}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                     COMING SOON!!
+                    </Button>
+                    {/* <Button
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        color: "white",
+                      }}
+                      flex={1}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                      Play Store <PlayStoreIcon />
+                    </Button> */}
+                  </HStack>
+                </VStack>
+                {/* <Box flex={3} maxW={"40rem"} maxHeight={"40rem"}>
+                  <CldVideoPlayer
+                    alt="Hushh Wallet App Live Demo"
+                    title="Step by step live demo for wallet app"
+                    controls="true"
+                    width="440"
+                    height="250"
+                    src="walletApp-Ios-demo_isc5mt"
+                  />
+                </Box> */}
+              </Box>
+            </HStack>
+          </VStack>
+        </VStack>
+        {/* <Modal isOpen={isWalletOpen} onClose={onWalletClose} size={modalSize}>
           <ModalOverlay />
           <ModalContent background={"#1E1E1E"}>
             <ModalHeader textAlign={"center"} color={"white"} m={"0"} p={"1"}>
@@ -485,17 +515,17 @@ export default function vivaConnect2() {
         >
           <ModalOverlay />
           <ModalContent background={"#1E1E1E"}>
-          <ModalHeader textAlign={"center"} color={"white"} m={"0"} p={"1"}>
+            <ModalHeader textAlign={"center"} color={"white"} m={"0"} p={"1"}>
               Browser Companion
-              </ModalHeader>
-              <ModalCloseButton color={"white"} />
-              <ModalBody
+            </ModalHeader>
+            <ModalCloseButton color={"white"} />
+            <ModalBody
               display="flex"
               flexDirection="column"
               alignItems="center"
               justifyContent="center"
               py={8}
-            >              
+            >
               <Text mb={4} color={"white"}>
                 Do you want to download the extension zip file or access it
                 directly?
@@ -525,14 +555,14 @@ export default function vivaConnect2() {
                   Chrome Web Store
                 </Button>
                 <Button
-                border={"2px solid white"}
-                color="white"
-                _hover={{
-                  color: "white",
-                  bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                }}
-                bg={"black"}
-                w={{ base: "100%", md: "auto" }}
+                  border={"2px solid white"}
+                  color="white"
+                  _hover={{
+                    color: "white",
+                    bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                  }}
+                  bg={"black"}
+                  w={{ base: "100%", md: "auto" }}
                   onClick={() =>
                     window.open(
                       "https://drive.google.com/file/d/1xjH0oGVvrYpSfZJK-5_Kte3Ft4nF4a9n/view?usp=sharing",
@@ -545,8 +575,8 @@ export default function vivaConnect2() {
               </Box>
             </ModalBody>
           </ModalContent>
-        </Modal>
-    </Box>
+        </Modal> */}
+      </Box>
     </>
   );
 }

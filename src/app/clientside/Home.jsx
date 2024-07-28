@@ -608,9 +608,9 @@ const ClientHome = () => {
                     color: "white",
                   }}
                   cursor={"pointer"}
-                  onClick={() => router.push("/UserGuide")}
+                  onClick={() => router.push("/hushh-community")}
                 >
-                  View User Guide
+                  Join Hushh Community
                 </Box>
               </VStack>
             </Box>

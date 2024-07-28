@@ -294,7 +294,7 @@ export default function vivaConnect2() {
                     controls="true"
                     width="440"
                     height="250"
-                    src="BrodwserCompanionLiveDemo1ef_cgpbre"
+                    src="How_to_install_Browser_Companion_t4v4sj"
                   />
                 </Box>
               </Box>

@@ -106,7 +106,7 @@ const ClientHushhWallet = () => {
             access and much more
           </Text>
 
-          <Box w={"max-content"} zIndex={1000} display={'flex'} bg={'transparent'} flexDirection={{md:'row',base:'column'}} gap={{md:'5rem',base:'2rem'}}>
+          <Box w={"max-content"} zIndex={10} display={'flex'} bg={'transparent'} flexDirection={{md:'row',base:'column'}} gap={{md:'5rem',base:'2rem'}}>
           <Button
             leftIcon={<AppleIcon/>}
             //  zIndex={'100'}

@@ -223,7 +223,7 @@ export default function Header() {
                 <p className="text-xs text-fontColor2 font-semibold">
                   HUSHH PRODUCTS
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 z-1000">
                   <div className="flex-1 flex flex-col gap-2">
                   <Link
                       href={"/products/hushhWalletApp"}

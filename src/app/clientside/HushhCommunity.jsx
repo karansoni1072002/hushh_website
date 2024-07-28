@@ -33,7 +33,7 @@ const HushhCommunity = () => {
             <Text
               className="hushh-gradient"
               fontWeight={"700"}
-              fontSize={{ md: "4.635rem", base: "2.3rem" }}
+              fontSize={{ md: "4.635rem", base: "2rem" }}
               lineHeight={{ md: "90px", base: "40px" }}
             >
               Revolutionizing Luxury Sales:
@@ -41,7 +41,7 @@ const HushhCommunity = () => {
             <Text
               className="gradient"
               fontWeight={"700"}
-              fontSize={{ md: "4.635rem", base: "2.3rem" }}
+              fontSize={{ md: "4.635rem", base: "2rem" }}
               lineHeight={{ md: "90px", base: "40px" }}
             >
               Empowering Agents, Delighting Customers
@@ -49,12 +49,18 @@ const HushhCommunity = () => {
           </Box>
         </Stack>
 
-        <HStack mx={{md:'5rem',base:'1rem'}} gap={{md:'6rem',base:'2rem'}}>
-            <Image src={DisconnectedLux} alt="Luxury Experience" title="hushh disconnected luxury experience"/>
+        <HStack mx={{md:'5rem',base:'1rem'}} display={'flex'} flexDirection={{md:'row',base:'column'}} gap={{md:'6rem',base:'2rem'}}>
+            
+            <Box w={'100%'} display={{md:'flex',base:'none'}}>
+              <Image src={DisconnectedLux} alt="Luxury Experience" title="hushh disconnected luxury experience"/>
+            </Box>
+            <Box display={{md:'none',base:'flex'}} alignItems={'center'} justifyContent={'center'} alignSelf={'center'} >
+              <Image src={DisconnectedLux} style={{width:'70%',height:'40%'}} alt="Luxury Experience" title="hushh disconnected luxury experience"/>
+            </Box>
             <VStack textAlign={'left'} gap={{md:'2rem',base:'1rem'}} alignItems={'flex-start'}>
                 <Text fontWeight={'600'} className="new-gradient" fontSize={{md:'1rem',base:'0.75rem'}} letterSpacing={'0.255rem'} lineHeight={'16px'}>THE CHALLENGE</Text>
                 <Text fontWeight={'500'} className="gradient" fontSize={{md:'3.75rem',base:'1.825rem'}} lineHeight={{md:'63.3px',base:'38px'}}>A Disconnected Luxury Experience</Text>
-                <Text fontWeight={'500'} color={'#ABABAB'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={{md:'36px',base:'25px'}}>Luxury sales agents face a common hurdle: providing exceptional, personalized service to customers whose preferences are unknown. This often leads to awkward moments, mismatched recommendations, and missed opportunities for both agents and customers.</Text>
+                <Text fontWeight={'500'} color={'#ABABAB'} fontSize={{md:'1rem',base:'0.65rem'}} lineHeight={{md:'36px',base:'25px'}}>Luxury sales agents face a common hurdle: providing exceptional, personalized service to customers whose preferences are unknown. This often leads to awkward moments, mismatched recommendations, and missed opportunities for both agents and customers.</Text>
                 <Button bg={'white'} w={{md:'18rem',base:'100%'}} color={'#10081F'} borderRadius={'54px'}>
                     Learn More
                 </Button>
@@ -96,14 +102,14 @@ const HushhCommunity = () => {
                     </VStack>
                 </Stack>
                 </Box> 
-                <Box w={'100%'} flex={0.7} position={'relative'}>
+                <Box w={'100%'} flex={0.7} display={{md:'block',base:'none'}} position={'relative'}>
                 <Image src={hushhLogo} style={{zIndex:'4'}} title="Hushh Logo" alt="Hushh Logo"/>
                 </Box>
                 <Image src={Ellipse} alt="Ellipse"  style={{position:'absolute',minWidth:'100%',opacity:'92%' ,zIndex:'3'}}  title="Ellipse"/>
             </HStack>
         </VStack>
 
-        <VStack my={{md:'3rem',base:'1rem'}} display={'flex'} textAlign={'center'} alignItems={'center'}>
+        <VStack mx={{md:'0',base:'1rem'}} my={{md:'3rem',base:'1.5rem'}} display={'flex'} textAlign={'center'} alignItems={'center'}>
             <Text className="gradient" fontWeight={'400'} fontSize={{md:'3.75rem',base:'1.9rem'}} lineHeight={{md:'75px',base:'40px'}} as={'h1'} >Join the <br/> Hushh Movement</Text>
             <Text mx={{md:'9rem',base:'1.25rem'}} color={'#FFFFFF'} lineHeight={{md:'31.5px',base:'28px'}} fontSize={{md:'1.15rem',base:'0.75rem'}} fontWeight={'400'}>Whether you're a data-savvy customer, an empowered sales agent, or an innovative developer, Hushh has something for you. Let's work together to build a future where data empowers individuals and businesses alike.</Text>
             <HStack mt={{md:'1.5rem',base:'0.75rem'}} gap={{md:'9rem',base:'1.5rem'}}>

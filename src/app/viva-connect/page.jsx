@@ -97,7 +97,7 @@ export default function vivaConnect2() {
             </Box>
           </Flex>
 
-          <VStack textAlign={"left"} w={"100%"} alignItems={"flex-start"}>
+          <VStack mb={{md:'2rem',base:'1rem'}} textAlign={"left"} w={"100%"} alignItems={"flex-start"}>
             <Image src={hushhLogo} alt="hushhLogo" />
             <Text
               p={"0"}
@@ -144,6 +144,7 @@ export default function vivaConnect2() {
                   <Text
                     fontSize={{ md: "1.5rem", base: "1rem" }}
                     className="gradient"
+                    fontWeight={'700'}
                   >
                     Hushh Wallet App
                   </Text>
@@ -196,14 +197,42 @@ export default function vivaConnect2() {
                     </Button>
                   </HStack>
                 </VStack>
-                <Box flex={3} maxW={"20rem"} maxHeight={"20rem"}>
+                <Box flex='3' maxW={"100%"} gap={{md:'2rem',base:'1rem'}} display={{md:'flex',base:'none'}} flexDirection={{md:'row',base:'column'}}>
                   <CldVideoPlayer
-                    alt="Hushh Wallet App Live Demo"
-                    title="Step by step live demo for wallet app"
+                    alt="Hushh Wallet App Apple Users Live Demo"
+                    title="Step by step live demo for wallet app for apple users"
                     controls="true"
                     width="480"
                     height="650"
                     src="walletApp-Ios-demo_isc5mt"
+                  />
+                  <CldVideoPlayer
+                    alt="Hushh Wallet App Android Live Demo"
+                    title="Step by step live demo for wallet app for adnroid users"
+                    controls="true"
+                    width="480"
+                    height="650"
+                    src="hushhWallet_Android_demo_nffycm"
+                  />
+                </Box>
+                <Box gap={{md:'2rem',base:'1rem'}} w={'100%'} display={{md:'none',base:'flex'}} flexDirection={'column'}>
+                  <CldVideoPlayer
+                    alt="Hushh Wallet App Apple Users Live Demo"
+                    title="Step by step live demo for wallet app for apple users"
+                    controls="true"
+                    width="380"
+                    height="250"
+                    // posterOptions='{ "publicId": "walletApp-Ios-demo_isc5mt", "effect": ["saturation:-100"] }'
+                    src="walletApp-Ios-demo_isc5mt"
+                  />
+                  <CldVideoPlayer
+                    alt="Hushh Wallet App Android Live Demo"
+                    title="Step by step live demo for wallet app for adnroid users"
+                    controls="true"
+                    width="380"
+                    height="250"
+                    // posterOptions='{ "publicId": "hushhWallet_Android_demo_nffycm", "effect": ["saturation:-100"] }'
+                    src="hushhWallet_Android_demo_nffycm"
                   />
                 </Box>
               </Box>
@@ -229,6 +258,7 @@ export default function vivaConnect2() {
                   <Text
                     fontSize={{ md: "1.5rem", base: "1rem" }}
                     className="gradient"
+                    fontWeight={'700'}
                   >
                     Browser Companion
                   </Text>
@@ -257,7 +287,7 @@ export default function vivaConnect2() {
                     </Button>
                   </HStack>
                 </VStack>
-                <Box flex={3} maxW={"40rem"} maxHeight={"40rem"}>
+                <Box flex={3} mt={{md:'2rem',base:'1rem'}} maxW={"40rem"} maxHeight={"40rem"}>
                   <CldVideoPlayer
                     alt="Hushh Button Guide"
                     title="Hushh button developer walkthrough"
@@ -290,6 +320,7 @@ export default function vivaConnect2() {
                   <Text
                     fontSize={{ md: "1.5rem", base: "1rem" }}
                     className="gradient"
+                    fontWeight={'700'}
                   >
                     Hushh Button
                   </Text>
@@ -311,12 +342,13 @@ export default function vivaConnect2() {
                         color: "white",
                       }}
                       flex={1}
+                      border={'1px solid #606060'}
                       bg={"black"}
                       color={"white"}
                     >
-                      App Store <AppleIcon />
+                     COMING SOON!!
                     </Button>
-                    <Button
+                    {/* <Button
                       gap={{ md: "1rem", base: "0.5rem" }}
                       _hover={{
                         bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
@@ -327,10 +359,10 @@ export default function vivaConnect2() {
                       color={"white"}
                     >
                       Play Store <PlayStoreIcon />
-                    </Button>
+                    </Button> */}
                   </HStack>
                 </VStack>
-                <Box flex={3} maxW={"40rem"} maxHeight={"40rem"}>
+                {/* <Box flex={3} maxW={"40rem"} maxHeight={"40rem"}>
                   <CldVideoPlayer
                     alt="Hushh Button Guide"
                     title="Hushh button developer walkthrough"
@@ -339,7 +371,7 @@ export default function vivaConnect2() {
                     height="250"
                     src="Hushh_button_-_developer_walkthrough_uwwiy0"
                   />
-                </Box>
+                </Box> */}
               </Box>
             </HStack>
             <HStack
@@ -363,6 +395,7 @@ export default function vivaConnect2() {
                   <Text
                     fontSize={{ md: "1.5rem", base: "1rem" }}
                     className="gradient"
+                    fontWeight={'700'}
                   >
                     Vibe Search App
                   </Text>
@@ -377,19 +410,20 @@ export default function vivaConnect2() {
                     w={"100%"}
                     gap={{ md: "2rem", base: "1rem" }}
                   >
-                    <Button
+                     <Button
                       gap={{ md: "1rem", base: "0.5rem" }}
                       _hover={{
                         bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
                         color: "white",
                       }}
                       flex={1}
+                      border={'1px solid #606060'}
                       bg={"black"}
                       color={"white"}
                     >
-                      App Store <AppleIcon />
+                     COMING SOON!!
                     </Button>
-                    <Button
+                    {/* <Button
                       gap={{ md: "1rem", base: "0.5rem" }}
                       _hover={{
                         bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
@@ -400,10 +434,10 @@ export default function vivaConnect2() {
                       color={"white"}
                     >
                       Play Store <PlayStoreIcon />
-                    </Button>
+                    </Button> */}
                   </HStack>
                 </VStack>
-                <Box flex={3} maxW={"40rem"} maxHeight={"40rem"}>
+                {/* <Box flex={3} maxW={"40rem"} maxHeight={"40rem"}>
                   <CldVideoPlayer
                     alt="Hushh Wallet App Live Demo"
                     title="Step by step live demo for wallet app"
@@ -412,12 +446,12 @@ export default function vivaConnect2() {
                     height="250"
                     src="walletApp-Ios-demo_isc5mt"
                   />
-                </Box>
+                </Box> */}
               </Box>
             </HStack>
           </VStack>
         </VStack>
-        <Modal isOpen={isWalletOpen} onClose={onWalletClose} size={modalSize}>
+        {/* <Modal isOpen={isWalletOpen} onClose={onWalletClose} size={modalSize}>
           <ModalOverlay />
           <ModalContent background={"#1E1E1E"}>
             <ModalHeader textAlign={"center"} color={"white"} m={"0"} p={"1"}>
@@ -541,7 +575,7 @@ export default function vivaConnect2() {
               </Box>
             </ModalBody>
           </ModalContent>
-        </Modal>
+        </Modal> */}
       </Box>
     </>
   );

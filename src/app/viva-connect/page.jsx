@@ -72,7 +72,7 @@ export default function vivaConnect2() {
             <Text
               fontWeight="600"
               lineHeight="24.09px"
-              fontSize={{base:"0.5rem",md:'1rem'}}
+              fontSize={{ base: "0.5rem", md: "1rem" }}
               letterSpacing="0.1275rem"
               className="hushh-gradient"
               // mt="1rem"
@@ -122,119 +122,302 @@ export default function vivaConnect2() {
             </Text>
           </VStack>
 
-          <VStack w={'100%'} gap={{md:'3rem',base:'1.5rem'}}>
-            <HStack w={'100%'} display={'flex'} flexDirection={{ md:'column',base:'column'}}>
-              <Box flex={1} gap={{md:'3rem',base:'1rem'}} minW={'100%'} display={'flex'} flexDirection={{md:'row',base:'column'}}>
-                <VStack gap={{md:'1rem',base:'0.5rem'}} display={'flex'} textAlign={'left'} alignItems={'flex-start'}>
-                  <Text fontSize={{md:'1.5rem',base:'1rem'}} className="gradient">Hushh Wallet App</Text>
-                  <Text fontSize={{md:'1rem',base:'0.75rem'}} color={'white'}>Your personal data vault. Organize, control, and monetize your information</Text>
-                  <HStack display={'flex'} w={'100%'} gap={{md:'2rem',base:'1rem'}}>
-                    <Button gap={{md:'1rem',base:'0.5rem'}}  _hover={{bg:'linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)',color:'white'}} flex={1} bg={'black'} color={'white'}>
-                       App Store <AppleIcon/>
+          <VStack w={"100%"} gap={{ md: "6rem", base: "2rem" }}>
+            <HStack
+              w={"100%"}
+              display={"flex"}
+              flexDirection={{ md: "column", base: "column" }}
+            >
+              <Box
+                flex={1}
+                gap={{ md: "3rem", base: "1rem" }}
+                minW={"100%"}
+                display={"flex"}
+                flexDirection={{ md: "row", base: "column" }}
+              >
+                <VStack
+                  gap={{ md: "1rem", base: "0.5rem" }}
+                  display={"flex"}
+                  textAlign={"left"}
+                  alignItems={"flex-start"}
+                >
+                  <Text
+                    fontSize={{ md: "1.5rem", base: "1rem" }}
+                    className="gradient"
+                  >
+                    Hushh Wallet App
+                  </Text>
+                  <Text
+                    fontSize={{ md: "1rem", base: "0.75rem" }}
+                    color={"white"}
+                  >
+                    Your personal data vault. Organize, control, and monetize
+                    your information
+                  </Text>
+                  <HStack
+                    alignItems={"flex-start"}
+                    justifyContent={"flex-start"}
+                    display={"flex"}
+                    w={"100%"}
+                    flexDirection={{ md: "column", base: "row" }}
+                    gap={{ md: "2rem", base: "1rem" }}
+                  >
+                    <Button
+                      p={{ md: "0.4rem", base: "" }}
+                      border={"1px solid #606060"}
+                      w={"50%"}
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        color: "white",
+                        border: "none",
+                      }}
+                      flex={1}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                      App Store <AppleIcon />
                     </Button>
-                    <Button gap={{md:'1rem',base:'0.5rem'}} _hover={{bg:'linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)',color:'white'}} flex={1} bg={'black'} color={'white'}>
-                       Play Store <PlayStoreIcon/>
+                    <Button
+                      p={{ md: "0.4rem", base: "" }}
+                      border={"1px solid #606060"}
+                      w={"50%"}
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        color: "white",
+                        border: "none",
+                      }}
+                      flex={1}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                      Play Store <PlayStoreIcon />
                     </Button>
                   </HStack>
                 </VStack>
-              <Box flex={3} maxW={'40rem'} maxHeight={'40rem'}>
-              <CldVideoPlayer
-              alt="Hushh Button Guide"
-              title="Hushh button developer walkthrough"
-              controls="true"
-              width="440"
-              height="250"
-              src="Hushh_button_-_developer_walkthrough_uwwiy0"
-              />
-              </Box>   
-                
+                <Box flex={3} maxW={"20rem"} maxHeight={"20rem"}>
+                  <CldVideoPlayer
+                    alt="Hushh Wallet App Live Demo"
+                    title="Step by step live demo for wallet app"
+                    controls="true"
+                    width="480"
+                    height="650"
+                    src="walletApp-Ios-demo_isc5mt"
+                  />
+                </Box>
               </Box>
             </HStack>
-            <HStack w={'100%'} display={'flex'} flexDirection={{ md:'column',base:'column'}}>
-              <Box flex={1} gap={{md:'3rem',base:'1rem'}} minW={'100%'} display={'flex'} flexDirection={{md:'row',base:'column'}}>
-                <VStack gap={{md:'1rem',base:'0.5rem'}} display={'flex'} textAlign={'left'} alignItems={'flex-start'}>
-                  <Text fontSize={{md:'1.5rem',base:'1rem'}} className="gradient">Browser Companion</Text>
-                  <Text fontSize={{md:'1rem',base:'0.75rem'}} color={'white'}>Your personal data vault. Organize, control, and monetize your information</Text>
-                  <HStack display={'flex'} gap={{md:'2rem',base:'1rem'}}>
-                    <Button w={{md:'50%',base:'50%'}} gap={{md:'1rem',base:'0.5rem'}} border={'1px solid #606060'} _hover={{bg:'linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)',border:'none',color:'white'}} flex={1} bg={'black'} color={'white'}>
-                       Add Extension
+            <HStack
+              w={"100%"}
+              display={"flex"}
+              flexDirection={{ md: "column", base: "column" }}
+            >
+              <Box
+                flex={1}
+                gap={{ md: "3rem", base: "1rem" }}
+                minW={"100%"}
+                display={"flex"}
+                flexDirection={{ md: "row", base: "column" }}
+              >
+                <VStack
+                  gap={{ md: "1rem", base: "0.5rem" }}
+                  display={"flex"}
+                  textAlign={"left"}
+                  alignItems={"flex-start"}
+                >
+                  <Text
+                    fontSize={{ md: "1.5rem", base: "1rem" }}
+                    className="gradient"
+                  >
+                    Browser Companion
+                  </Text>
+                  <Text
+                    fontSize={{ md: "1rem", base: "0.75rem" }}
+                    color={"white"}
+                  >
+                    Your personal data vault. Organize, control, and monetize
+                    your information
+                  </Text>
+                  <HStack display={"flex"} gap={{ md: "2rem", base: "1rem" }}>
+                    <Button
+                      w={{ md: "50%", base: "50%" }}
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      border={"1px solid #606060"}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        border: "none",
+                        color: "white",
+                      }}
+                      flex={1}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                      Add Extension
                     </Button>
                   </HStack>
                 </VStack>
-              <Box flex={3} maxW={'40rem'} maxHeight={'40rem'}>
-              <CldVideoPlayer
-              alt="Hushh Button Guide"
-              title="Hushh button developer walkthrough"
-              controls="true"
-              width="440"
-              height="250"
-              src="BrodwserCompanionLiveDemo1ef_cgpbre"
-              />
-              </Box>   
-                
+                <Box flex={3} maxW={"40rem"} maxHeight={"40rem"}>
+                  <CldVideoPlayer
+                    alt="Hushh Button Guide"
+                    title="Hushh button developer walkthrough"
+                    controls="true"
+                    width="440"
+                    height="250"
+                    src="BrodwserCompanionLiveDemo1ef_cgpbre"
+                  />
+                </Box>
               </Box>
             </HStack>
-            <HStack w={'100%'} display={'flex'} flexDirection={{ md:'column',base:'column'}}>
-              <Box flex={1} gap={{md:'3rem',base:'1rem'}} minW={'100%'} display={'flex'} flexDirection={{md:'row',base:'column'}}>
-                <VStack gap={{md:'1rem',base:'0.5rem'}} display={'flex'} textAlign={'left'} alignItems={'flex-start'}>
-                  <Text fontSize={{md:'1.5rem',base:'1rem'}} className="gradient">Hushh Wallet App</Text>
-                  <Text fontSize={{md:'1rem',base:'0.75rem'}} color={'white'}>Your personal data vault. Organize, control, and monetize your information</Text>
-                  <HStack display={'flex'} w={'100%'} gap={{md:'2rem',base:'1rem'}}>
-                    <Button gap={{md:'1rem',base:'0.5rem'}}  _hover={{bg:'linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)',color:'white'}} flex={1} bg={'black'} color={'white'}>
-                       App Store <AppleIcon/>
+            <HStack
+              w={"100%"}
+              display={"flex"}
+              flexDirection={{ md: "column", base: "column" }}
+            >
+              <Box
+                flex={1}
+                gap={{ md: "3rem", base: "1rem" }}
+                minW={"100%"}
+                display={"flex"}
+                flexDirection={{ md: "row", base: "column" }}
+              >
+                <VStack
+                  gap={{ md: "1rem", base: "0.5rem" }}
+                  display={"flex"}
+                  textAlign={"left"}
+                  alignItems={"flex-start"}
+                >
+                  <Text
+                    fontSize={{ md: "1.5rem", base: "1rem" }}
+                    className="gradient"
+                  >
+                    Hushh Button
+                  </Text>
+                  <Text
+                    fontSize={{ md: "1rem", base: "0.75rem" }}
+                    color={"white"}
+                  >
+                    Seamlessly share your preferences with brands for personalized experiences
+                  </Text>
+                  <HStack
+                    display={"flex"}
+                    w={"100%"}
+                    gap={{ md: "2rem", base: "1rem" }}
+                  >
+                    <Button
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        color: "white",
+                      }}
+                      flex={1}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                      App Store <AppleIcon />
                     </Button>
-                    <Button gap={{md:'1rem',base:'0.5rem'}} _hover={{bg:'linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)',color:'white'}} flex={1} bg={'black'} color={'white'}>
-                       Play Store <PlayStoreIcon/>
+                    <Button
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        color: "white",
+                      }}
+                      flex={1}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                      Play Store <PlayStoreIcon />
                     </Button>
                   </HStack>
                 </VStack>
-              <Box flex={3} maxW={'40rem'} maxHeight={'40rem'}>
-              <CldVideoPlayer
-              alt="Hushh Button Guide"
-              title="Hushh button developer walkthrough"
-              controls="true"
-              width="440"
-              height="250"
-              src="Hushh_button_-_developer_walkthrough_uwwiy0"
-              />
-              </Box>   
-                
+                <Box flex={3} maxW={"40rem"} maxHeight={"40rem"}>
+                  <CldVideoPlayer
+                    alt="Hushh Button Guide"
+                    title="Hushh button developer walkthrough"
+                    controls="true"
+                    width="440"
+                    height="250"
+                    src="Hushh_button_-_developer_walkthrough_uwwiy0"
+                  />
+                </Box>
               </Box>
             </HStack>
-            <HStack w={'100%'} display={'flex'} flexDirection={{ md:'column',base:'column'}}>
-              <Box flex={1} gap={{md:'3rem',base:'1rem'}} minW={'100%'} display={'flex'} flexDirection={{md:'row',base:'column'}}>
-                <VStack gap={{md:'1rem',base:'0.5rem'}} display={'flex'} textAlign={'left'} alignItems={'flex-start'}>
-                  <Text fontSize={{md:'1.5rem',base:'1rem'}} className="gradient">Hushh Wallet App</Text>
-                  <Text fontSize={{md:'1rem',base:'0.75rem'}} color={'white'}>Your personal data vault. Organize, control, and monetize your information</Text>
-                  <HStack display={'flex'} w={'100%'} gap={{md:'2rem',base:'1rem'}}>
-                    <Button gap={{md:'1rem',base:'0.5rem'}}  _hover={{bg:'linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)',color:'white'}} flex={1} bg={'black'} color={'white'}>
-                       App Store <AppleIcon/>
+            <HStack
+              w={"100%"}
+              display={"flex"}
+              flexDirection={{ md: "column", base: "column" }}
+            >
+              <Box
+                flex={1}
+                gap={{ md: "3rem", base: "1rem" }}
+                minW={"100%"}
+                display={"flex"}
+                flexDirection={{ md: "row", base: "column" }}
+              >
+                <VStack
+                  gap={{ md: "1rem", base: "0.5rem" }}
+                  display={"flex"}
+                  textAlign={"left"}
+                  alignItems={"flex-start"}
+                >
+                  <Text
+                    fontSize={{ md: "1.5rem", base: "1rem" }}
+                    className="gradient"
+                  >
+                    Vibe Search App
+                  </Text>
+                  <Text
+                    fontSize={{ md: "1rem", base: "0.75rem" }}
+                    color={"white"}
+                  >
+                     Discover products you love with image-based search and AI recommendations
+                  </Text>
+                  <HStack
+                    display={"flex"}
+                    w={"100%"}
+                    gap={{ md: "2rem", base: "1rem" }}
+                  >
+                    <Button
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        color: "white",
+                      }}
+                      flex={1}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                      App Store <AppleIcon />
                     </Button>
-                    <Button gap={{md:'1rem',base:'0.5rem'}} _hover={{bg:'linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)',color:'white'}} flex={1} bg={'black'} color={'white'}>
-                       Play Store <PlayStoreIcon/>
+                    <Button
+                      gap={{ md: "1rem", base: "0.5rem" }}
+                      _hover={{
+                        bg: "linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)",
+                        color: "white",
+                      }}
+                      flex={1}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                      Play Store <PlayStoreIcon />
                     </Button>
                   </HStack>
                 </VStack>
-              <Box flex={3} maxW={'40rem'} maxHeight={'40rem'}>
-              <CldVideoPlayer
-              alt="Hushh Wallet App Live Demo"
-              title="Step by step live demo for wallet app"
-              controls="true"
-              width="440"
-              height="250"
-              src="walletApp-Ios-demo_isc5mt"
-              />
-              </Box>   
-                
+                <Box flex={3} maxW={"40rem"} maxHeight={"40rem"}>
+                  <CldVideoPlayer
+                    alt="Hushh Wallet App Live Demo"
+                    title="Step by step live demo for wallet app"
+                    controls="true"
+                    width="440"
+                    height="250"
+                    src="walletApp-Ios-demo_isc5mt"
+                  />
+                </Box>
               </Box>
             </HStack>
           </VStack>
-      </VStack>
-      <Modal
-          isOpen={isWalletOpen}
-          onClose={onWalletClose}
-          size={modalSize}
-        >
+        </VStack>
+        <Modal isOpen={isWalletOpen} onClose={onWalletClose} size={modalSize}>
           <ModalOverlay />
           <ModalContent background={"#1E1E1E"}>
             <ModalHeader textAlign={"center"} color={"white"} m={"0"} p={"1"}>
@@ -298,17 +481,17 @@ export default function vivaConnect2() {
         >
           <ModalOverlay />
           <ModalContent background={"#1E1E1E"}>
-          <ModalHeader textAlign={"center"} color={"white"} m={"0"} p={"1"}>
+            <ModalHeader textAlign={"center"} color={"white"} m={"0"} p={"1"}>
               Browser Companion
-              </ModalHeader>
-              <ModalCloseButton color={"white"} />
-              <ModalBody
+            </ModalHeader>
+            <ModalCloseButton color={"white"} />
+            <ModalBody
               display="flex"
               flexDirection="column"
               alignItems="center"
               justifyContent="center"
               py={8}
-            >              
+            >
               <Text mb={4} color={"white"}>
                 Do you want to download the extension zip file or access it
                 directly?
@@ -338,14 +521,14 @@ export default function vivaConnect2() {
                   Chrome Web Store
                 </Button>
                 <Button
-                border={"2px solid white"}
-                color="white"
-                _hover={{
-                  color: "white",
-                  bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                }}
-                bg={"black"}
-                w={{ base: "100%", md: "auto" }}
+                  border={"2px solid white"}
+                  color="white"
+                  _hover={{
+                    color: "white",
+                    bg: "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                  }}
+                  bg={"black"}
+                  w={{ base: "100%", md: "auto" }}
                   onClick={() =>
                     window.open(
                       "https://drive.google.com/file/d/1xjH0oGVvrYpSfZJK-5_Kte3Ft4nF4a9n/view?usp=sharing",
@@ -359,7 +542,7 @@ export default function vivaConnect2() {
             </ModalBody>
           </ModalContent>
         </Modal>
-    </Box>
+      </Box>
     </>
   );
 }

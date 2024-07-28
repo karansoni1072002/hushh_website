@@ -12,6 +12,10 @@ import DiscoveryLux from "../_components/svg/hushhCommunity/discoveryLuxury.svg"
 import EthicalData from "../_components/svg/hushhCommunity/ethicalData.svg";
 import ValueCustomer from "../_components/svg/hushhCommunity/valueCustomer.svg";
 import Ellipse from "../_components/svg/hushhCommunity/Ellipse.svg";
+import LinkedIn from "../_components/svg/hushhCommunity/linkedIn.svg";
+import WhatsApp from "../_components/svg/hushhCommunity/whatsapp.svg";
+import Discord from "../_components/svg/hushhCommunity/discord.svg";
+import AboutFaq from "../_components/features/faq/aboutFaq";
 
 const HushhCommunity = () => {
   return (
@@ -99,11 +103,28 @@ const HushhCommunity = () => {
             </HStack>
         </VStack>
 
-        <VStack display={'flex'} textAlign={'center'} alignItems={'center'}>
+        <VStack my={{md:'3rem',base:'1rem'}} display={'flex'} textAlign={'center'} alignItems={'center'}>
             <Text className="gradient" fontWeight={'400'} fontSize={{md:'3.75rem',base:'1.9rem'}} lineHeight={{md:'75px',base:'40px'}} as={'h1'} >Join the <br/> Hushh Movement</Text>
             <Text mx={{md:'9rem',base:'1.25rem'}} color={'#FFFFFF'} lineHeight={{md:'31.5px',base:'28px'}} fontSize={{md:'1.15rem',base:'0.75rem'}} fontWeight={'400'}>Whether you're a data-savvy customer, an empowered sales agent, or an innovative developer, Hushh has something for you. Let's work together to build a future where data empowers individuals and businesses alike.</Text>
+            <HStack mt={{md:'1.5rem',base:'0.75rem'}} gap={{md:'9rem',base:'1.5rem'}}>
+               <VStack mt={{md:'0.25rem'}} gap={{md:'1.25rem',base:'0.75rem'}}>
+                   <Image src={Discord} alt="Discord Channel of Hushh community" title="Hushh Community Discord Channel"/>
+                   <Text color={'#E4E4E4'} fontWeight={'600'} fontSize={{md:'1.25rem',base:'0.85rem'}}>DISCORD</Text>
+                   <Button bg={'linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)'} color={'white'} fontWeight={'500'} fontSize={{md:'1rem',base:'0.65rem'}}>Join Now</Button>
+               </VStack>
+               <VStack gap={{md:'1.25rem',base:'0.75rem'}}>
+                   <Image src={WhatsApp} alt="WhatsApp Channel of Hushh community" title="Hushh Community WhatsApp Channel"/>
+                   <Text color={'#E4E4E4'} fontWeight={'600'} fontSize={{md:'1.25rem',base:'0.85rem'}}>DISCORD</Text>
+                   <Button bg={'linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)'} color={'white'} fontWeight={'500'} fontSize={{md:'1rem',base:'0.65rem'}}>Join Now</Button>
+               </VStack>
+               <VStack gap={{md:'1.25rem',base:'0.75rem'}}>
+                   <Image src={LinkedIn} alt="LinkedIn Channel of Hushh community" title="Hushh Community LinkedIn Channel"/>
+                   <Text color={'#E4E4E4'} fontWeight={'600'} fontSize={{md:'1.25rem',base:'0.85rem'}}>DISCORD</Text>
+                   <Button bg={'linear-gradient(265.3deg, #e54d60 8.81%, #a342ff 94.26%)'} color={'white'} fontWeight={'500'} fontSize={{md:'1rem',base:'0.65rem'}}>Join Now</Button>
+               </VStack>
+            </HStack>
         </VStack>
-   
+        <AboutFaq/>
         <ContactForm />
       </Box>
     </>

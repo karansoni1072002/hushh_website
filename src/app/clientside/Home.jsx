@@ -167,7 +167,6 @@ const ClientHome = () => {
                   display={"flex"}
                   gap={{ md: "2rem", base: "1rem" }}
                   flexDirection={{ md: "row", base: "column" }}
-                  
                 >
                   <Flex
                     flexDirection="column"
@@ -181,10 +180,10 @@ const ClientHome = () => {
                         direction="row"
                         gap={{ md: "2rem", base: "1rem" }}
                         position="absolute"
-                        top={{md:"-52px",base:'-30px'}}
-                        right={{base:'-45%',md:''}}
+                        top={{ md: "-52px", base: "-30px" }}
+                        right={{ base: "-45%", md: "" }}
                         mb="3rem"
-                        flexDirection={{md:'row',base:'column'}}
+                        flexDirection={{ md: "row", base: "column" }}
                         alignItems="center"
                       >
                         <Box
@@ -203,9 +202,12 @@ const ClientHome = () => {
                           flexDirection={"row"}
                           cursor={"pointer"}
                           onClick={() =>
-                            window.open("https://bit.ly/hushh-app-ios ", "_blank")
+                            window.open(
+                              "https://bit.ly/hushh-app-ios ",
+                              "_blank"
+                            )
                           }
-                          p={{ md: "2",base:'2' }}
+                          p={{ md: "2", base: "2" }}
                         >
                           <Image src={AppleIcon} cursor="pointer" />
                           <Text fontSize={{ md: "0.85rem", base: "0.5rem" }}>
@@ -228,9 +230,12 @@ const ClientHome = () => {
                           flexDirection={"row"}
                           cursor={"pointer"}
                           onClick={() =>
-                            window.open("https://bit.ly/hushh-wallet-play-store", "_blank")
+                            window.open(
+                              "https://bit.ly/hushh-wallet-play-store",
+                              "_blank"
+                            )
                           }
-                          p={{ md: "2" , base:'0.35rem'}}
+                          p={{ md: "2", base: "0.35rem" }}
                         >
                           <Image src={PlayStoreIcon} cursor="pointer" />
                           <Text
@@ -387,38 +392,104 @@ const ClientHome = () => {
 
             <BrandSlider />
 
-            <VStack w={'100%'} zIndex={2} mt={{md:'14rem',base:'3rem'}} mb={'6rem'}  display={{md:'flex',base:'none'}} alignItems={'center'} justifyContent={'center'} textAlign={'center'} position={'relative'}>
-              <Image src={YoutubeBG} style={{position:'absolute',zIndex:'-1',width:'100%'}} alt="YoutubeBG"  title="YoutubeBG"/>
-              <Text zIndex={'5'} color={'#FFFFFF'} fontWeight={'500'} lineHeight={'32px'} fontSize={{md:'1.25rem',base:'0.9rem'}} letterSpacing={'0.05rem'}>HUSHH</Text>
-              <Text zIndex={'5'} className="gradient" fontWeight={'700'} lineHeight={{md:'90px',base:'45px'}} fontSize={{md:'4.625rem',base:'2rem'}} letterSpacing={'0.05rem'}>Glimpse into our products</Text>
-            <iframe
-  width="960"
-  height="561"
-  zIndex='6'
-  src="https://www.youtube.com/embed/DSG8ltkgbJE?si=An83buhkileq1NFA"
-  title="YouTube video player"
-  style={{zIndex:'6'}}
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
+            <VStack
+              w={"100%"}
+              zIndex={2}
+              mt={{ md: "14rem", base: "3rem" }}
+              mb={"6rem"}
+              display={{ md: "flex", base: "none" }}
+              alignItems={"center"}
+              justifyContent={"center"}
+              textAlign={"center"}
+              position={"relative"}
+            >
+              <Image
+                src={YoutubeBG}
+                style={{ position: "absolute", zIndex: "-1", width: "100%" }}
+                alt="YoutubeBG"
+                title="YoutubeBG"
+              />
+              <Text
+                zIndex={"5"}
+                color={"#FFFFFF"}
+                fontWeight={"500"}
+                lineHeight={"32px"}
+                fontSize={{ md: "1.25rem", base: "0.9rem" }}
+                letterSpacing={"0.05rem"}
+              >
+                HUSHH
+              </Text>
+              <Text
+                zIndex={"5"}
+                className="gradient"
+                fontWeight={"700"}
+                lineHeight={{ md: "90px", base: "45px" }}
+                fontSize={{ md: "4.625rem", base: "2rem" }}
+                letterSpacing={"0.05rem"}
+              >
+                Glimpse into our products
+              </Text>
+              <iframe
+                width="960"
+                height="561"
+                zIndex="6"
+                src="https://www.youtube.com/embed/DSG8ltkgbJE?si=An83buhkileq1NFA"
+                title="YouTube video player"
+                style={{ zIndex: "6" }}
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
             </VStack>
 
-            <VStack w={'100%'} zIndex={2} mt={{md:'14rem',base:'4rem'}} mb={'3rem'}  display={{md:'none',base:'flex'}} alignItems={'center'} justifyContent={'center'} textAlign={'center'} position={'relative'}>
-              <Image src={YoutubeBG} style={{position:'absolute',zIndex:'-1',width:'100%'}} alt="YoutubeBG"  title="YoutubeBG"/>
-              <Text zIndex={'5'} color={'#FFFFFF'} fontWeight={'500'} lineHeight={'32px'} fontSize={{md:'1.25rem',base:'0.9rem'}} letterSpacing={'0.05rem'}>HUSHH</Text>
-              <Text zIndex={'5'} className="gradient" fontWeight={'700'} lineHeight={{md:'90px',base:'45px'}} fontSize={{md:'4.625rem',base:'2rem'}} letterSpacing={'0.05rem'}>Glimpse into our products</Text>
-            <iframe
-  width="80%"
-  height="361"
-  zIndex='6'
-  src="https://www.youtube.com/embed/DSG8ltkgbJE?si=An83buhkileq1NFA"
-  title="YouTube video player"
-  style={{zIndex:'6'}}
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
+            <VStack
+              w={"100%"}
+              zIndex={2}
+              mt={{ md: "14rem", base: "4rem" }}
+              mb={"3rem"}
+              display={{ md: "none", base: "flex" }}
+              alignItems={"center"}
+              justifyContent={"center"}
+              textAlign={"center"}
+              position={"relative"}
+            >
+              <Image
+                src={YoutubeBG}
+                style={{ position: "absolute", zIndex: "-1", width: "100%" }}
+                alt="YoutubeBG"
+                title="YoutubeBG"
+              />
+              <Text
+                zIndex={"5"}
+                color={"#FFFFFF"}
+                fontWeight={"500"}
+                lineHeight={"32px"}
+                fontSize={{ md: "1.25rem", base: "0.9rem" }}
+                letterSpacing={"0.05rem"}
+              >
+                HUSHH
+              </Text>
+              <Text
+                zIndex={"5"}
+                className="gradient"
+                fontWeight={"700"}
+                lineHeight={{ md: "90px", base: "45px" }}
+                fontSize={{ md: "4.625rem", base: "2rem" }}
+                letterSpacing={"0.05rem"}
+              >
+                Glimpse into our products
+              </Text>
+              <iframe
+                width="80%"
+                height="361"
+                zIndex="6"
+                src="https://www.youtube.com/embed/DSG8ltkgbJE?si=An83buhkileq1NFA"
+                title="YouTube video player"
+                style={{ zIndex: "6" }}
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
             </VStack>
 
             {/* From below box there is an issue arising of full width on the mobile screens */}

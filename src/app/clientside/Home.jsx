@@ -202,7 +202,7 @@ const ClientHome = () => {
                           flexDirection={"row"}
                           cursor={"pointer"}
                           onClick={() =>
-                            window.open("https://bit.ly/hushh-wallet ", "_blank")
+                            window.open("https://bit.ly/hushh-app-ios ", "_blank")
                           }
                           p={{ md: "2",base:'2' }}
                         >

@@ -429,7 +429,7 @@ export default function ContactForm() {
                   )}
                 </HStack>
                 <HStack
-                  mb={{ md: "4rem", base: "2rem" }}
+                  mb={{ md: "2rem", base: "1rem" }}
                   alignItems={"left"}
                   flexDirection={"column"}
                 >
@@ -449,12 +449,12 @@ export default function ContactForm() {
                     </Text>
                   )}
                 </HStack>
-                <HStack justifyContent="flex-end" w={"100%"}>
+                <HStack alignItems={'flex-start'} justifyContent="flex-end" w={"100%"}>
                   <Button
                     type="submit"
                     bg={"transparent"}
                     px={"2rem"}
-                    py={"1.25rem"}
+                    // py={"1.25rem"}
                     border={"3px solid #606060"}
                     borderRadius={"2px"}
                     _hover={{

@@ -326,13 +326,13 @@ const validateEmail = () => {
               </HStack>
             </Box>
             {/* Contact Form */}
-            <Box p={{ md: "4rem", base: "1rem" }} flex={{md:1.75,base:1}} display={"flex"}>
+            <Box pb={{md:'4rem',base:'1rem'}} px={{ md: "4rem", base: "1rem" }} flex={{md:1.75,base:1}} display={"flex"}>
               <form id="form" onSubmit={sendEmail} style={{ color: "white" }}>
                 <HStack
                   display={{ base: "block", md: "flex" }}
                   flexDirection={{ base: "column", md: "row" }}
                   gap={{ md: "2rem", base: "1rem" }}
-                  mb={{ md: "2rem", base: "1rem" }}
+                  // mb={{ md: "2rem", base: "1rem" }}
                   w={'100%'}
                 >
                   <Stack
@@ -358,7 +358,7 @@ const validateEmail = () => {
                       onChange={(e) => setFirstName(e.target.value)} // Update state on change
                     />
                     {formErrors.firstName && (
-                      <Text color="red" fontSize="sm">
+                      <Text color="red" fontSize="xs">
                         {formErrors.firstName}
                       </Text>
                     )}
@@ -387,8 +387,8 @@ const validateEmail = () => {
                       onChange={(e) => setLastName(e.target.value)}
                     />
                     {formErrors.lastName && (
-                      <Text color="red" fontSize="sm">
-                        {formErrors.lastName}
+                      <Text color="red" fontSize="xs">
+                      {formErrors.lastName}
                       </Text>
                     )}
                   </Stack>
@@ -423,8 +423,8 @@ const validateEmail = () => {
                       onChange={(e) => setEmail(e.target.value)} // Update state on change
                     />
                     {formErrors.email && (
-                      <Text color="red" fontSize="sm">
-                        {formErrors.email}
+                      <Text color="red" fontSize="xs">
+                      {formErrors.email}
                       </Text>
                     )}
                   </Stack>
@@ -451,8 +451,8 @@ const validateEmail = () => {
                       onChange={(e) => setNumber(e.target.value)}
                     />
                     {formErrors.number && (
-                      <Text color="red" fontSize="sm">
-                        {formErrors.number}
+                      <Text color="red" fontSize="xs">
+                      {formErrors.number}
                       </Text>
                     )}
                   </Stack>
@@ -508,7 +508,7 @@ const validateEmail = () => {
                     </HStack>
                   </RadioGroup>
                   {formErrors.subject && (
-                    <Text color="red" fontSize="sm">
+                      <Text color="red" fontSize="xs">
                       {formErrors.subject}
                     </Text>
                   )}
@@ -529,7 +529,7 @@ const validateEmail = () => {
                     onChange={(e) => setMessage(e.target.value)}
                   />
                   {formErrors.message && (
-                    <Text color="red" fontSize="sm">
+                      <Text color="red" fontSize="xs">
                       {formErrors.message}
                     </Text>
                   )}

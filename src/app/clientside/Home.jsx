@@ -53,6 +53,7 @@ import { HushhBlogsHome } from "../_components/HushhBlogsHome";
 import AppleIcon from "../_components/svg/icons/appleIconLogo.svg";
 import PlayStoreIcon from "../_components/svg/icons/playStoreIcon.svg";
 import YoutubeBG from "../_components/svg/youtubeBgEllipse.svg";
+import ImageGrid from "../_components/features/dynamicImageGrid";
 
 const ClientHome = () => {
   const router = useRouter();
@@ -435,7 +436,7 @@ const ClientHome = () => {
                 zIndex="6"
                 src="https://www.youtube.com/embed/DSG8ltkgbJE?si=An83buhkileq1NFA"
                 title="YouTube video player"
-                style={{ zIndex: "6" , borderRadius:'28.57px'}}
+                style={{ zIndex: "6" , borderRadius:'28.57px',marginTop:'4rem'}}
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
@@ -485,7 +486,7 @@ const ClientHome = () => {
                 zIndex="6"
                 src="https://www.youtube.com/embed/DSG8ltkgbJE?si=An83buhkileq1NFA"
                 title="YouTube video player"
-                style={{ zIndex: "6" , borderRadius:'28.57px'}}
+                style={{ zIndex: "6" , borderRadius:'28.57px',marginTop:'2rem'}}
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
@@ -724,13 +725,12 @@ const ClientHome = () => {
 
             {/* <ReviewSlider /> */}
             
-            {/* <VStack>
-              <Text>HUSHH</Text>
-              <Text>#VIVATECH 2024</Text>
-              <Text>VivaTech 2024 was a record-breaking Paris tech conference with 165,000+ attendees from 120+ countries. The event highlighted AI advancements, sustainable tech, and diversity in the industry. With global participation, VivaTech fostered business connections and showcased innovations shaping the future of technology</Text>
-
-            </VStack> */}
-
+            <VStack my={{md:'10rem',base:'6rem'}} display={'flex'} textAlign={'center'} alignItems={'center'} justifyContent={'center'}>
+              <Text className="hushh-gradient" fontWeight={'600'} fontSize={{md:'1rem',base:'0.75rem'}} lineHeight={'16px'} letterSpacing={'0.255rem'}>HUSHH</Text>
+              <Text className="gradient" fontWeight={'600'} lineHeight={{md:'63.3px',base:'40px'}} fontSize={{md:'3.75rem',base:'2rem'}}>#VIVATECH 2024</Text>
+              <Text mx={{md:'20%',base:'5%'}} color={'#ABABAB'} fontWeight={'500'} fontSize={{md:'1rem',base:"0.75rem"}} lineHeight={{md:'30px',base:'24px'}}>VivaTech 2024 was a record-breaking Paris tech conference with 165,000+ attendees from 120+ countries. The event highlighted AI advancements, sustainable tech, and diversity in the industry. With global participation, VivaTech fostered business connections and showcased innovations shaping the future of technology</Text>
+            </VStack>
+            <ImageGrid/>
             {/* Product Showcase section below */}
             <HStack
               pt={{ md: "8rem", base: "5rem" }}

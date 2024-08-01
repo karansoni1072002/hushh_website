@@ -6,17 +6,14 @@ import square2 from '../svg/ImageGrid/sqaure2.svg';
 import Vertical1 from '../svg/ImageGrid/Vertical1.svg';
 import Image from 'next/image';
 
-
 const images = {
   left: [
     Vertical1,
     Vertical1,
-    // Add more left images
   ],
   right: [
     [square1, square2],
     [square2, square1],
-    // Add more pairs of right images
   ],
 };
 
@@ -35,11 +32,11 @@ export default function ImageGrid() {
 
   return (
     <Box>
-      <Grid templateColumns="1fr 1fr" gap={4}>
-        <Box>
+      <Grid templateColumns="1fr 1fr">
+        <Grid templateRows={'2fr'}>
           <Image src={images.left[currentLeftImage]} alt="Left Image" />
-        </Box>
-        <Grid templateRows="1fr 1fr" gap={4}>
+        </Grid>
+        <Grid templateRows="1fr 1fr">
           <Image src={images.right[currentRightImages][0]} alt="Right Top Image" />
           <Image src={images.right[currentRightImages][1]} alt="Right Bottom Image" />
         </Grid>

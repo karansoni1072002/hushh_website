@@ -587,7 +587,7 @@ const ClientHome = () => {
                 </Text>
 
                 <Box
-                  mx={{ base: "0", md: "0" }} //from here that full width issue was arising
+                   //from here that full width issue was arising
                   pt={{ md: "40px", base: "20px" }}
                   width={"100%"}
                   pr={{ base: "1.25rem" }}
@@ -596,6 +596,7 @@ const ClientHome = () => {
                   gap={{ md: "4rem" }}
                 >
                   <VStack
+                   mx={{ base: "2rem", md: "0" }}
                     maxW={{ md: "290px" }}
                     textAlign={"left"}
                     alignItems={"left"}
@@ -696,6 +697,7 @@ const ClientHome = () => {
                     Creating a fair and equitable environment for data sharing.
                   </Text>
                 </VStack>
+              <Box w={'100'} display={'flex'} alignItems={{ base:'center',md:'flex-start'}} justifyContent={{base:'center',md:'flex-start'}}> 
                 <Box
                   // leftIcon={<A />}
                   mt={{ md: "4rem", base: "3rem" }}
@@ -719,6 +721,7 @@ const ClientHome = () => {
                 >
                   Join Hushh Community
                 </Box>
+                </Box> 
               </VStack>
             </Box>
 

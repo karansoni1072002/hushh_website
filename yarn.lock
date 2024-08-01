@@ -6490,19 +6490,6 @@ hushh-button-sdk@^0.1.12:
     net "^1.0.2"
     tls "^0.0.1"
 
-hushh-button@^0.1.12:
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/hushh-button/-/hushh-button-0.1.12.tgz#38d4b43d60e2c0af78bf9df377f0f39d0468f755"
-  integrity sha512-q3zcJs3SnCw6JEPZxq0KmtrGyVZ366cXGVUT+uhPdbOfo2hPbbQ/C9Kf9FZzxbUpC1HLKye9mwf0rMT51L5EYA==
-  dependencies:
-    "@supabase/supabase-js" "^2.43.2"
-    antd "^5.17.4"
-    axios "^1.6.8"
-    firebase "^10.12.2"
-    lottie-react "^2.4.0"
-    net "^1.0.2"
-    tls "^0.0.1"
-
 hyphenate-style-name@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.4.tgz#691879af8e220aea5750e8827db4ef62a54e361d"

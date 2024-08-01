@@ -435,7 +435,7 @@ const ClientHome = () => {
                 zIndex="6"
                 src="https://www.youtube.com/embed/DSG8ltkgbJE?si=An83buhkileq1NFA"
                 title="YouTube video player"
-                style={{ zIndex: "6" }}
+                style={{ zIndex: "6" , borderRadius:'28.57px'}}
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
@@ -485,7 +485,7 @@ const ClientHome = () => {
                 zIndex="6"
                 src="https://www.youtube.com/embed/DSG8ltkgbJE?si=An83buhkileq1NFA"
                 title="YouTube video player"
-                style={{ zIndex: "6" }}
+                style={{ zIndex: "6" , borderRadius:'28.57px'}}
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
@@ -723,6 +723,13 @@ const ClientHome = () => {
             </Box>
 
             {/* <ReviewSlider /> */}
+            
+            {/* <VStack>
+              <Text>HUSHH</Text>
+              <Text>#VIVATECH 2024</Text>
+              <Text>VivaTech 2024 was a record-breaking Paris tech conference with 165,000+ attendees from 120+ countries. The event highlighted AI advancements, sustainable tech, and diversity in the industry. With global participation, VivaTech fostered business connections and showcased innovations shaping the future of technology</Text>
+
+            </VStack> */}
 
             {/* Product Showcase section below */}
             <HStack

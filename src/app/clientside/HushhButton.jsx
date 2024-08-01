@@ -190,7 +190,7 @@ const ClientHushhButton = () => {
           </Button> */}
             <Button
               as="a"
-              href="https://www.npmjs.com/package/hushh-button"
+              href="https://www.npmjs.com/package/hushh-button-sdk"
               target="_blank"
               rel="noopener noreferrer"
               border={"1px solid #606060"}
@@ -456,7 +456,7 @@ const ClientHushhButton = () => {
               }}
               onClick={() =>
                 router.push(
-                  "https://sites.google.com/hush1one.com/drops/products/hushh-button"
+                  "https://www.npmjs.com/package/hushh-button-sdk"
                 )
               }
             >
@@ -551,7 +551,7 @@ const ClientHushhButton = () => {
               }}
               onClick={() =>
                 router.push(
-                  "https://sites.google.com/hush1one.com/drops/products/hushh-button"
+                  "https://www.npmjs.com/package/hushh-button-sdk"
                 )
               }
             >
@@ -623,7 +623,7 @@ const ClientHushhButton = () => {
               }}
               onClick={() =>
                 router.push(
-                  "https://sites.google.com/hush1one.com/drops/products/hushh-button"
+                  "https://www.npmjs.com/package/hushh-button-sdk"
                 )
               }
             >
@@ -717,7 +717,7 @@ const ClientHushhButton = () => {
               }}
               onClick={() =>
                 router.push(
-                  "https://sites.google.com/hush1one.com/drops/products/hushh-button"
+                  "https://www.npmjs.com/package/hushh-button-sdk"
                 )
               }
             >

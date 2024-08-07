@@ -14,6 +14,8 @@ import Head from "next/head";
 import { GoogleTagManager } from "@next/third-parties/google";
 import HushhButtonFromLib from './_utilities/HushhButton'
 import siteMetadata  from "./sitemetadata";
+import CookieConsent from './_components/CookieConsent';
+
 export const metadata = {
   title: {
     default: "HUSHH",
@@ -160,6 +162,7 @@ export default function RootLayout({ children }) {
           {" "}
           <div className="w-full">
             <Providers>{children}</Providers>
+            <CookieConsent/>
           </div>
         </ResponsiveSizeProvider>
       </body>

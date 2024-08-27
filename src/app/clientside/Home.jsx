@@ -875,7 +875,7 @@ const ClientHome = () => {
                   />
                 </Grid>
               </Container>
-              <Button
+              {/* <Button
                 border={"3px solid #606060"}
                 borderRadius={"2px"}
                 w={{ md: "16rem", base: "10rem" }}
@@ -891,7 +891,7 @@ const ClientHome = () => {
                 onClick={() => router.push("/pricingPlans")}
               >
                 View Our Plans
-              </Button>
+              </Button> */}
             </HStack>
 
             <TechnologySection />

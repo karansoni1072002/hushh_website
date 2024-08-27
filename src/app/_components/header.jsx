@@ -185,13 +185,13 @@ export default function Header() {
               >
                 BLOGS
               </Link>
-              <Link
+              {/* <Link
                 href="/pricingPlans"
                 onMouseEnter={() => setProductsSubmenu(false)}
                 className={`link ${pathname === '/pricingPlans' ? 'gradient-text' : ''}`}
               >
                 PRICING
-              </Link>
+              </Link> */}
               <Link
                 href="/outbound-services"
                 onMouseEnter={() => setProductsSubmenu(false)}
@@ -579,13 +579,13 @@ export default function Header() {
                   </div>
                 )}
               </div>
-              <Link
+              {/* <Link
                 href="/pricingPlans"
                 className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Pricing
-              </Link>
+              </Link> */}
               <Link
                 href="/UserGuide"
                 onClick={() => setIsMenuOpen(false)}

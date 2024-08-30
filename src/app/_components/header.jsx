@@ -272,21 +272,7 @@ export default function Header() {
                         </p>
                       </div>
                     </Link>
-                    <Link
-                      href={"/developerApi"}
-                      onClick={() => setProductsSubmenu(false)}
-                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
-                    >
-                      <div className="">
-                        <VibeSearchApi className="w-6 h-6" />
-                      </div>
-                      <div className="">
-                        <h1 className="font-semibold">Developer API</h1>
-                        <p className="text-sm font-medium text-fontColor3">
-                        Tools for businesses to integrate <br/> Hushh data into their applications
-                        </p>
-                      </div>
-                    </Link>
+                   
                     {/* <Link
                       href={"/products/conciergeApp"}
                       onClick={() => setProductsSubmenu(false)}
@@ -322,8 +308,23 @@ export default function Header() {
                         </p>
                       </div>
                     </Link>
-                
                     <Link
+                      href={"/developerApi"}
+                      onClick={() => setProductsSubmenu(false)}
+                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                    >
+                      <div className="">
+                        <VibeSearchApi className="w-6 h-6" />
+                      </div>
+                      <div className="">
+                        <h1 className="font-semibold">Developer API</h1>
+                        <p className="text-sm font-medium text-fontColor3">
+                        Tools for businesses to integrate <br/> Hushh data into their applications
+                        </p>
+                      </div>
+                    </Link>
+                
+                    {/* <Link
                       href={"/products/hushhValetChat"}
                       onClick={() => setProductsSubmenu(false)}
                       className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
@@ -337,12 +338,11 @@ export default function Header() {
                         Your AI-powered financial assistant <br /> for effortless expense management 
                         </p>
                       </div>
-                    </Link>
-                    <ToastContainer />  
-                    <Link
+                    </Link> */}
+                    {/* <ToastContainer />   */}
+                    {/* <Link
                       href={"#"}
                       onClick={notify}
-                      // onClick={() => setProductsSubmenu(false)}
                       className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
                     >
                     
@@ -359,8 +359,8 @@ export default function Header() {
                         Integrate image-based product <br /> search into your app or website 
                         </p>
                       </div>
-                    </Link>
-                    <ToastContainer/>  
+                    </Link> */}
+                    {/* <ToastContainer/>  
                     <Link
                       href={"#"} 
                       onClick={notify}
@@ -379,7 +379,7 @@ export default function Header() {
                         A platform for brands to showcase their <br/> products and reach new customers
                         </p>
                       </div>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
@@ -518,7 +518,7 @@ export default function Header() {
                           <h1 className="font-semibold">Developer API</h1>
                         </div>
                       </Link>
-                      <Link
+                      {/* <Link
                         href={"/products/hushhValetChat"}
                         onClick={handleSubmenuClick}
                         className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
@@ -528,9 +528,10 @@ export default function Header() {
                         </div>
                         <div className="">
                           <h1 className="font-semibold">Valet Chat</h1>
-                          {/* <p className='text-sm font-medium text-fontColor3'>Valet Chat: Ditch receipts, unlock <br /> insights.</p> */}
+                          {/* <p className='text-sm font-medium text-fontColor3'>Valet Chat: Ditch receipts, unlock <br /> insights.</p> 
                         </div>
-                      </Link>
+                      </Link> 
+                      */}
                       <ToastContainer/>
                       <Link
                         href={"#"}

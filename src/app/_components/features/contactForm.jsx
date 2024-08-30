@@ -31,7 +31,6 @@ export default function ContactForm() {
     formState: { errors },
   } = useForm();
 
-  // const form = useRef();
   const [formErrors, setFormErrors] = useState({});
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -42,38 +41,38 @@ export default function ContactForm() {
 
   const toast = useToast();
   const businessEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const freeEmailProviders = [
-  'gmail.com',
-  'yahoo.com',
-  'hotmail.com',
-  'outlook.com',
-  'aol.com',
-  // Add more free email providers if needed
-];
+  const freeEmailProviders = [
+    'gmail.com',
+    'yahoo.com',
+    'hotmail.com',
+    'outlook.com',
+    'aol.com',
+    // Add more free email providers if needed
+  ];
 
-const isBusinessEmail = (email) => {
-  if (!businessEmailRegex.test(email)) {
-    return false;
-  }
-  const domain = email.split('@')[1];
-  return !freeEmailProviders.includes(domain);
-};
+  const isBusinessEmail = (email) => {
+    if (!businessEmailRegex.test(email)) {
+      return false;
+    }
+    const domain = email.split('@')[1];
+    return !freeEmailProviders.includes(domain);
+  };
 
-const validateEmail = () => {
-  const newErrors = { email: '' };
-  let isValid = true;
+  const validateEmail = () => {
+    const newErrors = { email: '' };
+    let isValid = true;
 
-  if (!email.trim()) {
-    newErrors.email = 'Email is required';
-    isValid = false;
-  } else if (!isBusinessEmail(email)) {
-    newErrors.email = 'Please use a business email address';
-    isValid = false;
-  }
+    if (!email.trim()) {
+      newErrors.email = 'Email is required';
+      isValid = false;
+    } else if (!isBusinessEmail(email)) {
+      newErrors.email = 'Please use a business email address';
+      isValid = false;
+    }
 
-  setFormErrors(newErrors);
-  return isValid;
-};
+    setFormErrors(newErrors);
+    return isValid;
+  };
 
   const validateForm = () => {
     let isValid = true;
@@ -96,7 +95,6 @@ const validateEmail = () => {
       newErrors.email = 'Please use a business email address';
       isValid = false;
     }
-  
 
     if (!email.trim()) {
       newErrors.email = "Email is required";
@@ -109,98 +107,37 @@ const validateEmail = () => {
     if (!number.trim()) {
       newErrors.number = "Phone number is required";
       isValid = false;
-    } else if (!/^\+?\d{8,15}$/.test(number)) {
-      newErrors.number = "Invalid phone number";
-      isValid = false;
-    }
-
-    if (!subject.trim()) {
-      newErrors.subject = "Subject is required";
-      isValid = false;
-    }
-
-    if (!message.trim()) {
-      newErrors.message = "Message is required";
-      isValid = false;
     }
 
     setFormErrors(newErrors);
     return isValid;
   };
 
-  const onSubmit = async (data, e) => {
-    e.preventDefault();
-    await sendEmail(data);
-    reset(); // This will reset the form fields after submission
-  };
-
-  const sendEmail = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
     if (!validateForm()) {
-      return; // Stop the function if validation fails
+      return;
     }
-    const previousSubmissionTime = localStorage.getItem(
-      `${email}_${firstName}`,
-    );
 
-    if (previousSubmissionTime) {
-      const currentTime = new Date().getTime();
-      const timeDifference =
-        (currentTime - new Date(previousSubmissionTime).getTime()) /
-        (1000 * 3600); // 시간 차이를 시간 단위로 계산합니다.
-
-      if (timeDifference < 2) {
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+      .then((result) => {
+        console.log(result.text);
         toast({
-          title: "Please try again later!",
-          description:
-            "You have already submitted the form. Please try again after 2-3 hours",
-          status: "warning",
-          duration: 3000,
+          title: "Message sent.",
+          description: "We've received your message and will get back to you shortly.",
+          status: "success",
+          duration: 5000,
           isClosable: true,
         });
-        return;
-      }
-    }
-    localStorage.setItem(`${email}_${firstName}`, new Date().toISOString());
-
-    const serviceId = "service_kwvlp08";
-    const templateId = "template_nc0x47v";
-    const user_Id = "9KjZ-7TNPYvuqx3as";
-
-    const templateParams = {
-      from_name: firstName,
-      from_lname: lastName,
-      from_email: email,
-      to_name: "Manish Sainani",
-      message: message,
-      subject: subject,
-      number: number,
-    };
-    try {
-      const response = await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        user_Id,
-      );
-
-      toast({
-        title: "Form Submitted.",
-        description: "Thank you for reaching out to us",
-        status: "success",
-        duration: 3000,
-        isClosable: true,
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setNumber("");
+        setMessage("");
+        setSubject("");
+      }, (error) => {
+        console.error("Sending mail FAILED...", error.text);
       });
-
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setNumber("");
-      setMessage("");
-      setSubject("");
-    } catch (error) {
-      console.error("Sending mail FAILED...", error.text);
-    }
   };
 
   return (
@@ -239,7 +176,7 @@ const validateEmail = () => {
                   fontSize={{ md: "3.75rem", base: "2rem" }}
                   lineHeight={{ base: "28px", md: "55px" }}
                 >
-                  Connect with hushh
+                  Connect with Hushh
                 </Text>
                 <Text color={"#C9C9C9"}>Say something to reach out to us</Text>
               </HStack>
@@ -326,33 +263,32 @@ const validateEmail = () => {
               </HStack>
             </Box>
             {/* Contact Form */}
-            <Box pb={{md:'4rem',base:'1rem'}} px={{ md: "4rem", base: "1rem" }} flex={{md:1.75,base:1}} display={"flex"}>
-              <form id="form" onSubmit={sendEmail} style={{ color: "white" }}>
+            <Box p={{md:'4rem',base:'1rem'}} px={{ md: "4rem", base: "1rem" }} flex={{md:1.75,base:1}} display={"flex"}>
+              <form id="form" onSubmit={sendEmail}  style={{ color: "white" }}>
                 <HStack
                   display={{ base: "block", md: "flex" }}
                   flexDirection={{ base: "column", md: "row" }}
                   gap={{ md: "2rem", base: "1rem" }}
-                  // mb={{ md: "2rem", base: "1rem" }}
                   w={'100%'}
                 >
                   <Stack
-                    gap={{ md: "1rem", base: "0.5rem" }}
-                    mb={{ base: "1rem" }}
+                    gap={{ md: "0rem", base: "0.5rem" }}
+                    mb={{ base: "1rem",md:'2rem' }}
                   >
                     <Text
                       fontWeight={"500"}
                       fontSize={"0.75rem"}
                       color={"white"}
                     >
-                      First Name
+                      Full Name
                     </Text>
                     <Input
                       variant="unstyled"
                       size={"sm"}
-                      w={{md:"12rem",base:'100%'}}
+                      w={{md:"22rem",base:'100%'}}
                       p={{md:2,base:0}}
                       border={'none'}
-                      placeholder="First Name"
+                      placeholder="Full Name"
                       borderBottom="1px solid white"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)} // Update state on change
@@ -364,63 +300,30 @@ const validateEmail = () => {
                     )}
                   </Stack>
 
-                  <Stack
-                    gap={{ md: "1rem", base: "0.5rem" }}
-                    mb={{ base: "1rem" }}
-                  >
-                    <Text
-                      fontWeight={"500"}
-                      fontSize={"0.75rem"}
-                      color={"white"}
-                    >
-                      Last Name
-                    </Text>
-                    <Input
-                      variant="unstyled"
-                      size={"sm"}
-                      w={{md:"12rem",base:'100%'}}
-                      border={'none'}
-                      p={{md:2,base:0}}
-                      borderBottom="1px solid white"
-                      placeholder="Last Name"
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
-                    />
-                    {formErrors.lastName && (
-                      <Text color="red" fontSize="xs">
-                      {formErrors.lastName}
-                      </Text>
-                    )}
-                  </Stack>
+                 
                 </HStack>
-
-                <HStack
-                  display={{ base: "block", md: "flex" }}
-                  flexDirection={{ base: "column", md: "row" }}
-                  gap={{ md: "2rem", base: "1rem" }}
-                  mb={{ md: "2rem", base: "1rem" }}
-                >
-                  <Stack
-                    gap={{ md: "1rem", base: "0.5rem" }}
-                    mb={{ base: "1rem" }}
+                <HStack>
+                <Stack
+                    gap={{ md: "0rem", base: "0.5rem" }}
+                    mb={{ base: "1rem",md:'2rem' }}
                   >
                     <Text
                       fontWeight={"500"}
                       fontSize={"0.75rem"}
                       color={"white"}
                     >
-                      Email
+                      Business Email
                     </Text>
                     <Input
                       variant="unstyled"
                       size={"sm"}
-                      w={{md:"12rem",base:'100%'}}
-                      p={{md:2,base:0}}
+                      w={{md:"22rem",base:'100%'}}
                       border={'none'}
+                      p={{md:2,base:0}}
                       borderBottom="1px solid white"
-                      placeholder="harry@gmail.com"
+                      placeholder="Email"
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)} // Update state on change
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                     {formErrors.email && (
                       <Text color="red" fontSize="xs">
@@ -428,36 +331,7 @@ const validateEmail = () => {
                       </Text>
                     )}
                   </Stack>
-                  <Stack
-                    gap={{ md: "1rem", base: "0.5rem" }}
-                    mb={{ base: "1rem" }}
-                  >
-                    <Text
-                      fontWeight={"500"}
-                      fontSize={"0.75rem"}
-                      color={"white"}
-                    >
-                      Phone Number
-                    </Text>
-                    <Input
-                      variant="unstyled"
-                      size={"sm"}
-                      w={{md:"12rem",base:'100%'}}
-                      p={{md:2,base:0}}
-                      border={'none'}
-                      borderBottom="1px solid white"
-                      placeholder="number"
-                      value={number}
-                      onChange={(e) => setNumber(e.target.value)}
-                    />
-                    {formErrors.number && (
-                      <Text color="red" fontSize="xs">
-                      {formErrors.number}
-                      </Text>
-                    )}
-                  </Stack>
                 </HStack>
-
                 <HStack
                   mb={"2rem"}
                   py={"1rem"}
@@ -485,14 +359,6 @@ const validateEmail = () => {
                       <Radio
                         colorScheme="white"
                         name="subject"
-                        className="radio-option"
-                        onChange={(e) => setSubject("Enhance my client")}
-                      >
-                        <Text fontSize={"0.75rem"}>Enhance my client</Text>
-                      </Radio>
-                      <Radio
-                        colorScheme="white"
-                        name="subject"
                         onChange={(e) => setSubject("Partner with Hushh")}
                       >
                         <Text fontSize={"0.75rem"}>Partner with Hushh</Text>
@@ -501,7 +367,6 @@ const validateEmail = () => {
                         colorScheme="white"
                         onChange={(e) => setSubject("Get Support")}
                         name="subject"
-                        className="radio-option"
                       >
                         <Text fontSize={"0.75rem"}>Get Support</Text>
                       </Radio>
@@ -539,7 +404,6 @@ const validateEmail = () => {
                     type="submit"
                     bg={"transparent"}
                     px={"2rem"}
-                    // py={"1.25rem"}
                     border={"3px solid #606060"}
                     borderRadius={"2px"}
                     _hover={{

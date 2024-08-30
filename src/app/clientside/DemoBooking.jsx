@@ -646,85 +646,7 @@ const ClientDemoBooking = () => {
               </Text>
             </GridItem>
           
-            <GridItem
-              borderRadius={"8px"}
-              p={"1rem"}
-              display={"flex"}
-              flexDirection={"column"}
-              border={"1px solid #4B4B4B"}
-              bg={"#121212"}
-            >
-              <Image src={ValetDemo} alt="ValetDemo" />
-              <Text
-                color={"#FFFFFF"}
-                fontWeight={"400"}
-                lineHeight={{ md: "32px", base: "20px" }}
-                fontSize={{ md: "1.5rem", base: "0.85rem" }}
-                letterSpacing={"-0.2px"}
-                my={{ md: "2.15rem", base: "0.5rem" }}
-              >
-                Valet Chat App
-              </Text>
-              <Text
-                color={"#0565FF"}
-                fontWeight={"400"}
-                letterSpacing={"-0.4px"}
-                lineHeight={"26px"}
-                fontSize={{ md: "1rem", base: "0.65rem" }}
-                my={{ md: "2.15rem", base: "0.5rem" }}
-                display={"flex"}
-                cursor={"pointer"}
-                gap={{ md: "0.4rem", base: "0.2rem" }}
-                onClick={() =>
-                  window.open(
-                    "https://youtu.be/iY9HyVvpkUs?si=kQT1qiDKNkAYvz6f",
-                    "_blank",
-                  )
-                }
-              >
-                Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
-              </Text>
-            </GridItem>
-            <GridItem
-              borderRadius={"8px"}
-              p={"1rem"}
-              display={"flex"}
-              flexDirection={"column"}
-              border={"1px solid #4B4B4B"}
-              bg={"#121212"}
-            >
-              <Image src={VibeSearchApiDemo} alt="VibeSearchApiDemo" />
-              <Text
-                color={"#FFFFFF"}
-                fontWeight={"400"}
-                lineHeight={{ md: "32px", base: "20px" }}
-                fontSize={{ md: "1.5rem", base: "0.85rem" }}
-                letterSpacing={"-0.2px"}
-                my={{ md: "2.15rem", base: "0.5rem" }}
-              >
-                Vibe Search API
-              </Text>
-              <Text
-                color={"#0565FF"}
-                fontWeight={"400"}
-                letterSpacing={"-0.4px"}
-                lineHeight={"26px"}
-                fontSize={{ md: "1rem", base: "0.65rem" }}
-                my={{ md: "2.15rem", base: "0.5rem" }}
-                display={"flex"}
-                cursor={"pointer"}
-                gap={{ md: "0.4rem", base: "0.2rem" }}
-                onClick={() =>
-                  window.open(
-                    "https://youtu.be/mXymL7IZBPg?si=lQ9CxJkU3bpFvDr8",
-                    "_blank",
-                  )
-                }
-              >
-                Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
-              </Text>
-            </GridItem>
-            <GridItem
+            {/* <GridItem
               borderRadius={"8px"}
               p={"1rem"}
               display={"flex"}
@@ -762,7 +684,7 @@ const ClientDemoBooking = () => {
               >
                 Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
               </Text>
-            </GridItem>
+            </GridItem> */}
           </Grid>
         </VStack>
       </Box>

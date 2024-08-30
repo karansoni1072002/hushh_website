@@ -34,7 +34,7 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { useToast } from "@chakra-ui/react";
 import ChromeDemo from "../_components/svg/demoImages/chromeExtensionDemo.svg";
-import ConciergeDemo from "../_components/svg/demoImages/conciergeAppDemo.svg";
+// import ConciergeDemo from "../_components/svg/demoImages/conciergeAppDemo.svg";
 import WalletDemo from "../_components/svg/demoImages/hushhWalletDemo.svg";
 import ValetDemo from "../_components/svg/demoImages/valetChatDemo.svg";
 import VibeSearchDemo from "../_components/svg/demoImages/vibeSearchDemo.svg";
@@ -645,45 +645,7 @@ const ClientDemoBooking = () => {
                 Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
               </Text>
             </GridItem>
-            <GridItem
-              borderRadius={"8px"}
-              p={"1rem"}
-              display={"flex"}
-              flexDirection={"column"}
-              border={"1px solid #4B4B4B"}
-              bg={"#121212"}
-            >
-              <Image src={ConciergeDemo} alt="ConciergeDemo" />
-              <Text
-                color={"#FFFFFF"}
-                fontWeight={"400"}
-                lineHeight={{ md: "32px", base: "20px" }}
-                fontSize={{ md: "1.5rem", base: "0.85rem" }}
-                letterSpacing={"-0.2px"}
-                my={{ md: "2.15rem", base: "0.5rem" }}
-              >
-                Concierge App
-              </Text>
-              <Text
-                color={"#0565FF"}
-                fontWeight={"400"}
-                letterSpacing={"-0.4px"}
-                lineHeight={"26px"}
-                fontSize={{ md: "1rem", base: "0.65rem" }}
-                my={{ md: "2.15rem", base: "0.5rem" }}
-                display={"flex"}
-                cursor={"pointer"}
-                gap={{ md: "0.4rem", base: "0.2rem" }}
-                onClick={() =>
-                  window.open(
-                    "https://youtu.be/J0Q_n6CWfO8?si=hqxXUFpUgNlvB1pE",
-                    "_blank",
-                  )
-                }
-              >
-                Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
-              </Text>
-            </GridItem>
+          
             <GridItem
               borderRadius={"8px"}
               p={"1rem"}

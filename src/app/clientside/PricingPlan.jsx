@@ -187,59 +187,59 @@ const planData = [
       },
     ],
   },
-  {
-    category: "Concierge App",
-    plans: [
-      {
-        name: "BASIC",
-        price: "Free",
-        advetisment: "Ads included",
-        freeTrial:"(Free trial for 90 days)",
-        brands: "Request Format",
-        perMonth: "/mo",
-        features: [
-          [
-            "Response Speed",
-            "Service Provider Choice",
-            "Basic Assistance",
-            "Request Anonymity Level",
-          ],
-        ],
-      },
-      {
-        name: "PRO",
-        price: "$9.99",
-        advetisment: "No Ads",
-        brands: "Request Format",
-        perMonth: "/mo",
-        features: [
-          [
-            "Response Speed",
-            "Service Provider Choice",
-            "Basic Assistance",
-            "Request Anonymity Level",
-          ],
-          ["Advanced AI Capabilities"],
-        ],
-      },
-      {
-        name: "PREMIUM",
-        price: "$19.99",
-        advetisment: "No Ads",
-        brands: "Request Format",
-        perMonth: "/mo",
-        features: [
-          [
-            "Response Speed",
-            "Service Provider Choice",
-            "Basic Assistance",
-            "Request Anonymity Level",
-          ],
-          ["Advanced AI Capabilities"],
-        ],
-      },
-    ],
-  },
+  // {
+  //   category: "Concierge App",
+  //   plans: [
+  //     {
+  //       name: "BASIC",
+  //       price: "Free",
+  //       advetisment: "Ads included",
+  //       freeTrial:"(Free trial for 90 days)",
+  //       brands: "Request Format",
+  //       perMonth: "/mo",
+  //       features: [
+  //         [
+  //           "Response Speed",
+  //           "Service Provider Choice",
+  //           "Basic Assistance",
+  //           "Request Anonymity Level",
+  //         ],
+  //       ],
+  //     },
+  //     {
+  //       name: "PRO",
+  //       price: "$9.99",
+  //       advetisment: "No Ads",
+  //       brands: "Request Format",
+  //       perMonth: "/mo",
+  //       features: [
+  //         [
+  //           "Response Speed",
+  //           "Service Provider Choice",
+  //           "Basic Assistance",
+  //           "Request Anonymity Level",
+  //         ],
+  //         ["Advanced AI Capabilities"],
+  //       ],
+  //     },
+  //     {
+  //       name: "PREMIUM",
+  //       price: "$19.99",
+  //       advetisment: "No Ads",
+  //       brands: "Request Format",
+  //       perMonth: "/mo",
+  //       features: [
+  //         [
+  //           "Response Speed",
+  //           "Service Provider Choice",
+  //           "Basic Assistance",
+  //           "Request Anonymity Level",
+  //         ],
+  //         ["Advanced AI Capabilities"],
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     category: "Browser Companion",
     plans: [

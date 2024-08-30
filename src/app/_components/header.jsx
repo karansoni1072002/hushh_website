@@ -287,7 +287,7 @@ export default function Header() {
                         </p>
                       </div>
                     </Link>
-                    <Link
+                    {/* <Link
                       href={"/products/conciergeApp"}
                       onClick={() => setProductsSubmenu(false)}
                       className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
@@ -301,7 +301,7 @@ export default function Header() {
                         Elevate your lifestyle with personalized <br /> recommendations and services  
                         </p>
                       </div>
-                    </Link>
+                    </Link> */}
                     
                   </div>
 
@@ -479,7 +479,7 @@ export default function Header() {
                           {/* <p className='text-sm font-medium text-fontColor3'>Enhanced recommendations &<br /> impactful marketing.</p> */}
                         </div>
                       </Link>
-                      <Link
+                      {/* <Link
                         href={"/products/conciergeApp"}
                         onClick={handleSubmenuClick}
                         className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
@@ -491,7 +491,7 @@ export default function Header() {
                           <h1 className="font-semibold">Hushh Concierge App</h1>
                           {/* <p className='text-sm font-medium text-fontColor3'>Speak your wish, get luxury <br /> redefined: Hushh Concierge</p> */}
                         </div>
-                      </Link>
+                      </Link> */}
                       <Link
                         href={"/products/vibeSearch"}
                         onClick={handleSubmenuClick}

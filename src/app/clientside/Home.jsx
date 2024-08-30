@@ -22,7 +22,7 @@ import {
 } from "@chakra-ui/react";
 import { BrandSlider } from "../_components/features/brandSlider";
 import BrandWalletSection from "../_components/features/brandWalletSection";
-import ConceirgeApp from "../_components/svg/conciergeApp";
+// import ConceirgeApp from "../_components/svg/conciergeApp";
 import VibeSearchApi from "../_components/svg/vibeSearchApi";
 import ValetChat from "../_components/svg/valetChat";
 import ChromeExtentionLogo from "../_components/svg/ChromeExtensionLogo";
@@ -789,6 +789,8 @@ const ClientHome = () => {
                     description="Personalized and powerful search engine across various brands (find what you want)"
                     onClick={() => router.push("/products/vibeSearch")}
                   />
+                 
+                  {/* 2nd row */}
                   <ServiceCard
                     icon={<ChromeExtentionLogo />}
                     title="Browser Companion​"
@@ -797,23 +799,6 @@ const ClientHome = () => {
                     description="Track web activity and capture interests (across brands)"
                     onClick={() => router.push("/products/browserCompanion")}
                   />
-                  {/* 2nd row */}
-                  <ServiceCard
-                    icon={<ConceirgeApp />}
-                    title="Concierge App​"
-                    alignItems={"center"}
-                    textAlign={"center"}
-                    description="Discreetly request services & connect with providers (anonymously)"
-                    onClick={() => router.push("/products/conciergeApp")}
-                  />
-                  <ServiceCard
-                    icon={<ValetChat />}
-                    title="Valet Chat​"
-                    alignItems={"center"}
-                    textAlign={"center"}
-                    description="AI finance assistant & insights (ditch receipts, manage finances)"
-                    onClick={() => router.push("/products/hushhValetChat")}
-                  />
                   <ServiceCard
                     icon={<VibeSearchApi />}
                     title="Developer API's​"
@@ -821,14 +806,6 @@ const ClientHome = () => {
                     textAlign={"center"}
                     description=" Secure, trusted, and incentivized way of relaying valuable personal information"
                     onClick={() => router.push("/developerApi")}
-                  />
-                  <ServiceCard
-                    icon={<ApiVibeSearch />}
-                    title="VIBE Search APIs​"
-                    alignItems={"center"}
-                    textAlign={"center"}
-                    description="Sell the best products for your clients based on their vibe (for agents and businesses)"
-                    onClick={() => router.push("/products/vibeSearch")}
                   />
                   <ServiceCard
                     icon={<HfsLogo />}

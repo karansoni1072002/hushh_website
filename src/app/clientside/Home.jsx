@@ -562,7 +562,7 @@ const ClientHome = () => {
                       <ShieldIcon />
                       <Text
                         fontWeight={"500"}
-                        fontSize={"1rem"}
+                        fontSize={{base:"1rem",md:'1.25rem'}}
                         ml={{ base: "0.5rem" }}
                         // lineHeight={{base:'18px'}}
                         color={extendedTheme.colors.secondary}
@@ -577,8 +577,8 @@ const ClientHome = () => {
                     />
                     <Text
                       fontWeight={"500"}
-                      fontSize={{ base: "0.75rem" }}
-                      lineHeight={{ md: "30px", base: "18px" }}
+                      fontSize={{ base: "0.75rem" ,md:'1rem'}}
+                      lineHeight={{ md: "22px", base: "18px" }}
                       mt={{ md: "1.25rem", base: "0.75rem" }}
                       color={extendedTheme.colors.secondary}
                     >
@@ -597,7 +597,7 @@ const ClientHome = () => {
                       <KeyIcon />
                       <Text
                         fontWeight={"500"}
-                        fontSize={"1rem"}
+                        fontSize={{base:"1rem",md:'1.25rem'}}
                         ml={{ base: "0.5rem" }}
                         color={extendedTheme.colors.secondary}
                       >
@@ -611,8 +611,8 @@ const ClientHome = () => {
                     />
                     <Text
                       fontWeight={"500"}
-                      lineHeight={{ md: "30px", base: "18px" }}
-                      fontSize={{ base: "0.75rem" }}
+                      lineHeight={{ md: "22px", base: "18px" }}
+                      fontSize={{ base: "0.75rem" ,md:'1rem'}}
                       mt={{ md: "1.25rem", base: "0.75rem" }}
                       color={extendedTheme.colors.secondary}
                     >
@@ -633,7 +633,7 @@ const ClientHome = () => {
                     <LockIcon />
                     <Text
                       fontWeight={"500"}
-                      fontSize={"1rem"}
+                      fontSize={{base:"1rem",md:'1.25rem'}}
                       color={extendedTheme.colors.secondary}
                     >
                       Consent-Driven <br></br> Excellence
@@ -646,9 +646,9 @@ const ClientHome = () => {
                   />
                   <Text
                     fontWeight={"500"}
-                    lineHeight={{ md: "30px", base: "18px" }}
+                    lineHeight={{ md: "22px", base: "18px" }}
                     mt={{ md: "1.25rem", base: "0.75rem" }}
-                    fontSize={{ base: "0.75rem" }}
+                    fontSize={{ base: "0.75rem" ,md:'1rem'}}
                     color={extendedTheme.colors.secondary}
                   >
                     Creating a fair and equitable environment for data sharing.
@@ -686,7 +686,7 @@ const ClientHome = () => {
             
             
             {/* Product Showcase section below */}
-            <HStack
+            {/* <HStack
               pt={{ md: "8rem", base: "5rem" }}
               justify={"center"}
               display={"flex"}
@@ -775,8 +775,7 @@ const ClientHome = () => {
                     description="Personalized and powerful search engine across various brands (find what you want)"
                     onClick={() => router.push("/products/vibeSearch")}
                   />
-                 
-                  {/* 2nd row */}
+                 // 2nd Row
                   <ServiceCard
                     icon={<ChromeExtentionLogo />}
                     title="Browser Companion​"
@@ -803,24 +802,8 @@ const ClientHome = () => {
                   />
                 </Grid>
               </Container>
-              {/* <Button
-                border={"3px solid #606060"}
-                borderRadius={"2px"}
-                w={{ md: "16rem", base: "10rem" }}
-                color={theme.colors._white}
-                lineHeight={"28px"}
-                background={"transparent"}
-                letterSpacing={{ md: "0.5rem", base: "0.1rem" }}
-                _hover={{
-                  background:
-                    "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                  border: "none",
-                }}
-                onClick={() => router.push("/pricingPlans")}
-              >
-                View Our Plans
-              </Button> */}
-            </HStack>
+              
+            </HStack> */}
 
             <TechnologySection />
 

@@ -8,6 +8,7 @@ const ServiceCard = ({
   alignItems,
   textAlign,
   onClick,
+  styles,
 }) => {
   return (
     <GridItem
@@ -15,6 +16,7 @@ const ServiceCard = ({
       onClick={onClick}
       width={{ base: "100%", md: "100%" }}
       px={{ base: "1rem" }}
+      style={styles}
     >
       <VStack
         display={"flex"}

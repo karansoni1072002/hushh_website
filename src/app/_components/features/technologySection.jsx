@@ -45,29 +45,38 @@ const TechnologySection = () => {
       <Container
         display={"flex"}
         pt={{ md: "2rem" }}
-        px={{ md: "10rem" }}
+        px={{ md: "10rem", base:'1rem' }}
         justifyContent={"center"}
         minW={{ md: "100%", base: "100%" }}
       >
         <Grid
           templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
-          gap={{ md: 10, base: 10 }}
+          gap={{ md: 10, base: 5 }}
           flexWrap="wrap"
         >
           <ServiceCard
+          styles={{
+            backgroundColor:'#1C1C1C', borderRadius:'2.5rem',padding:'1.25rem'
+          }}
             icon={<TrustedAIIcon />}
-            title="Redefining Personal Data Assistance​"
+            title="Personal Data Assistance​"
             textAlign={"left"}
             description="Leverage AI assistants that understand your data and provide personalized support – for information retrieval, streamline work, and more​"
           />
           <ServiceCard
             icon={<TechIntegrationIcon />}
+            styles={{
+              backgroundColor:'#1C1C1C', borderRadius:'2.5rem',padding:'1.25rem'
+            }}
             title="Seamless Tech Integrationn​​​"
             textAlign={"left"}
             description="Our platform seamlessly integrates with your existing tools to streamline your operations​​"
           />
           <ServiceCard
             icon={<ControlOver />}
+            styles={{
+              backgroundColor:'#1C1C1C', borderRadius:'2.5rem',padding:'1.25rem'
+            }}
             title="Control & Security​"
             textAlign={"left"}
             description="Built with trust in mind, our platform is SOC 2 and GDPR compliant, ensuring the security and privacy of your data"
@@ -86,7 +95,7 @@ const TechnologySection = () => {
           /> */}
         </Grid>
       </Container>
-      <Box w={"100%"} gap={{md:'5rem', base:'2rem'}} display={"flex"} justifyContent="center">
+      <Box px={{base:'1rem', md:'0rem'}} w={"100%"} gap={{md:'5rem', base:'2rem'}} display={"flex"} justifyContent="center">
         <Box
           mt={{ md: "4rem", base: "2rem" }}
           p={{ md: "0.5rem", base: "0.25rem" }}

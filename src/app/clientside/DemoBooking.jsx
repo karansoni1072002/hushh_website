@@ -53,24 +53,14 @@ const ClientDemoBooking = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phoneNumber: "",
-    product: "",
+    message: "",
   });
 
   const [errors, setErrors] = useState({
     name: "",
     email: "",
-    phoneNumber: "",
-    product: "",
+    message: "",
   });
-
-  const products = [
-    "Hushh Button",
-    "Hushh Wallet App",
-    "Browser Comapnion",
-    "Vibe Search",
-    "All",
-  ];
 
   const onEventScheduled = () => {
     setShowCalendly(false); // Hide Calendly widget
@@ -118,21 +108,11 @@ const ClientDemoBooking = () => {
       newErrors.email = "";
     }
 
-    if (!phoneNumber) {
-      newErrors.phoneNumber = "Phone number is required";
-      valid = false;
-    } else if (!/^\+?\d{8,15}$/.test(phoneNumber)) {
-      newErrors.phoneNumber = "Invalid phone number";
+    if (!formData.message) {
+      newErrors.message = "Message is required";
       valid = false;
     } else {
-      newErrors.phoneNumber = "";
-    }
-
-    if (!formData.product) {
-      newErrors.product = "Product selection is required";
-      valid = false;
-    } else {
-      newErrors.product = "";
+      newErrors.message = "";
     }
 
     setErrors(newErrors);
@@ -149,10 +129,6 @@ const ClientDemoBooking = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormData((prevData) => ({
-      ...prevData,
-      phoneNumber: phoneNumber,
-    }));
     if (validateForm()) {
       setShowCalendly(true);
       setScheduled(true);
@@ -262,7 +238,7 @@ const ClientDemoBooking = () => {
                     width: "760px",
                     marginTop: "-4rem",
                   }}
-                  url={`https://calendly.com/hushh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${phoneNumber}&product=${formData.product}`}
+                  url={`https://calendly.com/hushh/30min?name=${formData.name}&email=${formData.email}&message=${formData.message}`}
                   onSubmit={() => {
                     setScheduled(false);
                     setShowCalendly(false);
@@ -285,7 +261,7 @@ const ClientDemoBooking = () => {
                     marginTop: "0rem",
                     overflow: "hidden",
                   }}
-                  url={`https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&phoneNumber=${phoneNumber}&product=${formData.product}`}
+                  url={`https://calendly.com/damrianeelesh/30min?name=${formData.name}&email=${formData.email}&message=${formData.message}`}
                   onSubmit={() => {
                     setScheduled(false);
                     setShowCalendly(false);
@@ -338,6 +314,7 @@ const ClientDemoBooking = () => {
                     placeholder="Name"
                     border={"1px solid #242424"}
                     color={"#FFFFFF"}
+                    bg={"#151515 !important"}
                   />
                   <FormErrorMessage>{errors.name}</FormErrorMessage>
                 </FormControl>
@@ -362,11 +339,12 @@ const ClientDemoBooking = () => {
                     placeholder="Email"
                     border={"1px solid #242424"}
                     color={"#FFFFFF"}
+                    bg={"#151515 !important"} 
                   />
                   <FormErrorMessage>{errors.email}</FormErrorMessage>
                 </FormControl>
 
-                <FormControl isInvalid={errors.product} mt={4}>
+                <FormControl mt={4}>
                   <FormLabel
                     fontWeight={"400"}
                     fontSize={{ md: "14px", base: "12px" }}
@@ -374,52 +352,19 @@ const ClientDemoBooking = () => {
                     letterSpacing={"-0.4px"}
                     color={"#FFFFFF"}
                   >
-                    Product *
+                    Please share about you with us
                   </FormLabel>
-                  <Select
-                    name="product"
-                    className="formInput"
+                  <Textarea
+                    name="message"
                     focusBorderColor="#FFFFFF"
-                    value={formData.product}
+                    className="formInput"
+                    value={formData.message}
                     onChange={handleChange}
-                    placeholder="Please Select Product"
-                    color={"#FFFFFF"}
+                    placeholder="Your message"
                     border={"1px solid #242424"}
-                    bg={"#151515"}
-                  >
-                    {products.map((product, index) => (
-                      <option
-                        style={{ background: "#151515" }}
-                        key={index}
-                        value={product}
-                      >
-                        {product}
-                      </option>
-                    ))}
-                  </Select>
-                  <FormErrorMessage>{errors.product}</FormErrorMessage>
-                </FormControl>
-
-                <FormControl isInvalid={errors.phoneNumber} mt={4}>
-                  <FormLabel
                     color={"#FFFFFF"}
-                    fontWeight={"400"}
-                    fontSize={{ md: "14px", base: "12px" }}
-                    lineHeight={"26px"}
-                    letterSpacing={"-0.4px"}
-                  >
-                    Phone Number *
-                  </FormLabel>
-                  <Box borderRadius={"5px"}>
-                    <PhoneInput
-                      defaultCountry="US"
-                      color={"#FFFFFF"}
-                      placeholder="Enter phone number"
-                      value={phoneNumber}
-                      onChange={setPhoneNumber}
-                    />
-                  </Box>
-                  <FormErrorMessage>{errors.phoneNumber}</FormErrorMessage>
+                    bg={"#151515"} 
+                  />
                 </FormControl>
 
                 <Button
@@ -469,8 +414,8 @@ const ClientDemoBooking = () => {
                   color={"#FFFFFF"}
                   mb={{ md: "2.75rem", base: "1.75rem" }}
                 >
-                  You’re one step closer to rocking the social media strategy
-                  you’ve been dreaming about. One of our experts will be
+                  You're one step closer to rocking the social media strategy
+                  you've been dreaming about. One of our experts will be
                   reaching out soon.
                 </Text>
                 <Text
@@ -480,7 +425,7 @@ const ClientDemoBooking = () => {
                   fontSize={{ md: "1.25rem", base: "0.75rem" }}
                   color={"#FFFFFF"}
                 >
-                  While you’re here...
+                  While you're here...
                 </Text>
                 <Box
                   mt={{ md: "4rem", base: "2rem" }}

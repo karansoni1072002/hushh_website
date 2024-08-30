@@ -654,7 +654,7 @@ const ClientHome = () => {
                     Creating a fair and equitable environment for data sharing.
                   </Text>
                 </VStack>
-              <Box w={'100'} display={'flex'} alignItems={{ base:'center',md:'flex-start'}} justifyContent={{base:'center',md:'flex-start'}}> 
+              {/* <Box w={'100'} display={'flex'} alignItems={{ base:'center',md:'flex-start'}} justifyContent={{base:'center',md:'flex-start'}}> 
                 <Box
                   // leftIcon={<A />}
                   mt={{ md: "4rem", base: "3rem" }}
@@ -678,7 +678,7 @@ const ClientHome = () => {
                 >
                   Join Hushh Community
                 </Box>
-                </Box> 
+                </Box>  */}
               </VStack>
             </Box>
 

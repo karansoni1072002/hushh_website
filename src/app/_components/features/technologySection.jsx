@@ -119,8 +119,7 @@ const TechnologySection = () => {
           Book A Call
         </Box>
 
-        <Box
-                  // leftIcon={<A />}
+        {/* <Box
                   mt={{ md: "4rem", base: "2rem" }}
                   p={{ md: "0.5rem", base: "0.25rem" }}
                   align={"center"}
@@ -141,7 +140,7 @@ const TechnologySection = () => {
                   onClick={()=> router.push('/hushh-community')}
                 >
                   Join Hushh Community
-                </Box>
+                </Box> */}
       </Box>
     </>
   );

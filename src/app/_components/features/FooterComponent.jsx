@@ -93,10 +93,10 @@ const FooterComponent = () => {
                 Get the app
               </p>
               <div className="flex flex-col justify-between h-max gap-3.5">
-                <button className="flex px-4 hover:border-none py-2 gap-1.5 border border-myBorder rounded-full">
-                  <AndroidIcon /> Android
+                <button className="flex px-4 hover:bg-gradientColor2 py-2 gap-1.5 border border-myBorder rounded-full">
+                  <AndroidIcon /> Android 
                 </button>
-                <button className="flex px-4 hover:border-none py-2 gap-1.5 w-max border border-myBorder rounded-full">
+                <button className="flex px-4 hover:bg-gradientColor2  py-2 gap-1.5 w-max border border-myBorder rounded-full">
                   <IosIcon /> iOS
                 </button>
               </div>

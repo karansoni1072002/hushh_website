@@ -391,7 +391,7 @@ export default function Header() {
           { isDesktop && (
             <div className="login">
               <SearchBar />
-              <Button
+              {/* <Button
                 border={"1px solid #606060"}
                 borderRadius={"5px"}
                 w={"10.75rem"}
@@ -409,7 +409,7 @@ export default function Header() {
                 onClick={handleLoginClick}
               >
                 LOGIN
-              </Button>
+              </Button> */}
             </div>
           )}
         </div> 
@@ -620,14 +620,14 @@ export default function Header() {
               >
                 CONTACT US
               </ScrollLink> */}
-              <Link
+              {/* <Link
                 href="/"
                 className="py-2 w-1/2 border border-myBorder border-t-0 bg-black rounded-b"
-                // onClick={() => setIsMenuOpen(false) }
+                onClick={() => setIsMenuOpen(false) }
                 onClick={handleLoginClick}
               >
                 LOGIN
-              </Link>
+              </Link> */}
             </div>
           </div>
         ) : (

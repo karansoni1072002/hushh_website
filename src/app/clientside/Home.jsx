@@ -13,6 +13,12 @@ import {
   VStack,
   useDisclosure,
   useTheme,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
 } from "@chakra-ui/react";
 import { BrandSlider } from "../_components/features/brandSlider";
 import BrandWalletSection from "../_components/features/brandWalletSection";
@@ -54,6 +60,8 @@ import AppleIcon from "../_components/svg/icons/appleIconLogo.svg";
 import PlayStoreIcon from "../_components/svg/icons/playStoreIcon.svg";
 import YoutubeBG from "../_components/svg/youtubeBgEllipse.svg";
 import ImageGrid from "../_components/features/dynamicImageGrid";
+import { QRCode } from "react-qrcode-logo";
+import { isMobile, isAndroid, isIOS } from 'react-device-detect';
 
 const ClientHome = () => {
   const router = useRouter();
@@ -63,12 +71,19 @@ const ClientHome = () => {
   const theme = useTheme();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [hasHovered, setHasHovered] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentQRLink, setCurrentQRLink] = useState("");
 
   const handleMouseEnter = () => {
     if (!hasHovered) {
       onOpen();
       setHasHovered(true);
     }
+  };
+
+  const handleOpenModal = (link) => {
+    setCurrentQRLink(link);
+    setIsModalOpen(true);
   };
 
   useEffect(() => {
@@ -87,6 +102,16 @@ const ClientHome = () => {
     return () => clearTimeout(timeoutId);
   }, []);
 
+  const handleDownloadClick = () => {
+    if (isAndroid) {
+      window.location.href = "https://bit.ly/hushh-wallet-play-store";
+    } else if (isIOS) {
+      window.location.href = "https://bit.ly/hushh-app-ios";
+    } else {
+      handleOpenModal("https://bit.ly/hushh-wallet-play-store");
+    }
+  };
+
   return (
     <>
       <Head>
@@ -101,15 +126,35 @@ const ClientHome = () => {
           content="Data API Business, Data Autonomy, Data Equity, Consent-Driven Excellence, Technology For Everyone, Hushh Wallet App, Hushh Button, Vibe Search, Browser Companion, Concierge App, Valet Chat, Vibe Search API, Hushh For Students, Brand Wallet, Receipt Radar, Future of Digital Identity & Personalised Experiences, Gen AI, GenAI "
         />
       </Head>
-
+      <Modal isCentered isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Please Scan QR Code to Download App</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+            <QRCode value={currentQRLink} size={256} />
+            <Text fontSize={'1.75rem'} fontWeight={'bold'} className="hushh-gradient">Hushh Wallet App</Text>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
       <div className="relative">
+        {isMobile ?
         <Image
           src={PinkShadow}
           alt="PinkShadow"
           placeholder="blur"
+          style={{width:'50%',height:'50%'}}
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
+        /> :
+        <Image
+          src={PinkShadow}
+          alt="PinkShadow"
+          placeholder="blur"
+          style={{width:'80%',height:'80%'}}
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
         />
-        <main className="bg-myBG  font-Figtree">
+        }
+        <main className="bg-transparent font-Figtree">
           <div className="absolute top-0 w-full">
             {/* {showPopup && (
               <NotificationPopup message="Welcome! How can I help you today?" />
@@ -117,7 +162,7 @@ const ClientHome = () => {
             <Box
               display={"flex"}
               flexDirection={"row"}
-              px={{ base: "0.5rem", md: "32px" }}
+              px={{ base: "0.2rem", md: "32px" }}
             >
               <VStack
                 align={"flex-start"}
@@ -129,6 +174,7 @@ const ClientHome = () => {
                 gap={"1.5rem"}
                 mt={{ md: "5rem", base: "1rem" }}
                 ml={{ base: "1rem", md: "5.5rem" }}
+
               >
                 <HStack>
                   <Heading
@@ -137,31 +183,28 @@ const ClientHome = () => {
                     fontWeight={"400"}
                     display={"flex"}
                     flexDirection={"column"}
+                    bg={'transparent'}
                     className="text-headText"
                   >
                     Intelligence as a service powered by your{" "}
-                    <div className="wrapper">
+                    <div className="wrapper" style={{background:'transparent !important'}}>
                       <div className="words">
                         <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
-                          Data
+                          Business
                         </div>
                         <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
-                          Social Media
+                          Way
                         </div>
                         <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
-                          Phone Data
-                        </div>
-                        <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
-                          Shopping History
+                          Rewards
                         </div>
                       </div>
                     </div>
                   </Heading>
                 </HStack>
 
-                <Text color={"#656565"} fontSize={"18px"}>
-                  We're the Data API Business, helping you collect, manage, and
-                  monetize data
+                <Text color={"#656565"} fontSize={"18px"} >
+                Take control of your personal information and unlock exclusive rewards with Hushh Wallet
                 </Text>
                 <Box
                   mt={{ md: "2rem", base: "1rem" }}
@@ -169,155 +212,77 @@ const ClientHome = () => {
                   gap={{ md: "2rem", base: "1rem" }}
                   flexDirection={{ md: "row", base: "column" }}
                 >
-                  <Flex
-                    flexDirection="column"
-                    position={"relative"}
-                    alignItems="center"
-                    onMouseEnter={handleMouseEnter}
-                  >
-                    {isOpen && (
-                      <Flex
-                        zIndex={"2"}
-                        direction="row"
-                        gap={{ md: "2rem", base: "1rem" }}
-                        position="absolute"
-                        top={{ md: "-52px", base: "-30px" }}
-                        right={{ base: "-45%", md: "" }}
-                        mb="3rem"
-                        flexDirection={{ md: "row", base: "column" }}
-                        alignItems="center"
-                      >
-                        <Box
-                          _hover={{
-                            background:
-                              "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                            border: "none",
-                            color: "white",
-                          }}
-                          borderRightRadius={"3xl"}
-                          borderLeftRadius={"3xl"}
-                          bg={"white"}
-                          color={"black"}
-                          gap={{ md: "1rem", base: "0.5rem" }}
-                          display={"flex"}
-                          flexDirection={"row"}
-                          cursor={"pointer"}
-                          onClick={() =>
-                            window.open(
-                              "https://bit.ly/hushh-app-ios ",
-                              "_blank"
-                            )
-                          }
-                          p={{ md: "2", base: "2" }}
-                        >
-                          <Image src={AppleIcon} cursor="pointer" />
-                          <Text fontSize={{ md: "0.85rem", base: "0.5rem" }}>
-                            App Store
-                          </Text>
-                        </Box>
-                        <Box
-                          _hover={{
-                            background:
-                              "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                            border: "none",
-                            color: "white",
-                          }}
-                          borderRightRadius={"3xl"}
-                          borderLeftRadius={"3xl"}
-                          bg={"grey"}
-                          color={"white"}
-                          gap={{ md: "1rem", base: "0.5rem" }}
-                          display={"flex"}
-                          flexDirection={"row"}
-                          cursor={"pointer"}
-                          onClick={() =>
-                            window.open(
-                              "https://bit.ly/hushh-wallet-play-store",
-                              "_blank"
-                            )
-                          }
-                          p={{ md: "2", base: "0.35rem" }}
-                        >
-                          <Image src={PlayStoreIcon} cursor="pointer" />
-                          <Text
-                            color={"white"}
-                            fontSize={{ md: "0.85rem", base: "0.5rem" }}
-                          >
-                            Play Store
-                          </Text>
-                        </Box>
-                      </Flex>
-                    )}
-
+                  {isMobile ? (
                     <Button
-                      border="3px solid #606060"
+                      border="1px solid #606060"
                       borderRadius="2px"
                       color={theme.colors._white}
                       lineHeight="28px"
                       background="transparent"
-                      onClick={onOpen}
+                      onClick={handleDownloadClick}
                       px="21px"
                       py="15px"
                       fontSize={{ md: "1rem", base: "0.75rem" }}
                       fontWeight="400"
-                      letterSpacing={{ md: "0.29rem", base: "0.1rem" }}
+                      letterSpacing={{ md: "0.1rem", base: "0.1rem" }}
                       _hover={{
                         background:
                           "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                         border: "none",
                       }}
+                      w={{ md: "16rem", base: "14rem" }}
+                    >
+                      {/* <Image src={PlayStoreIcon} cursor="pointer" style={{width:'17px',height:'17px',marginRight:'7px'}}/> */}
+                      Download Hushh Wallet App
+                    </Button>
+                  ) : (
+                    <>
+                      <Button
+                        border="1px solid #606060"
+                        borderRadius="2px"
+                        color={theme.colors._white}
+                        lineHeight="28px"
+                        background="transparent"
+                        onClick={() => handleOpenModal("https://bit.ly/hushh-wallet-play-store")}                      
+                        px="21px"
+                        py="15px"
+                        fontSize={{ md: "1rem", base: "0.75rem" }}
+                        fontWeight="400"
+                        letterSpacing={{ md: "0.1rem", base: "0.1rem" }}
+                        _hover={{
+                          background:
+                            "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                          border: "none",
+                        }}
+                        w={{ md: "16rem", base: "12rem" }}
+                      >
+                        <Image src={PlayStoreIcon} cursor="pointer" style={{width:'17px',height:'17px',marginRight:'7px'}}/>
+                        Download on Google Play
+                    </Button>
+                    <Button
+                      border={"1px solid #606060"}
+                      borderRadius={"2px"}
+                      color={theme.colors._white}
+                      lineHeight={"28px"}
+                      fontSize={{ md: "1rem", base: "0.75rem" }}
+                      px={"21px"}
+                      py={"15px"}
+                      background={"transparent"}
+                      fontWeight={"400"}
+                      letterSpacing={{ md: "0.1rem", base: "0.1rem" }}
+                      _hover={{
+                        background:
+                          "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                        border: "none",
+                      }}
+                      onClick={() => handleOpenModal("https://bit.ly/hushh-app-ios")}                   
                       w={{ md: "16rem", base: "12rem" }}
                     >
-                      DOWNLOAD THE APP
+                      <Image src={AppleIcon} cursor="pointer"  style={{width:'17px',height:'17px',marginRight:'7px'}}/>
+                      Get it on the App Store
                     </Button>
-                  </Flex>
-                  {/* <Button
-                    border={"3px solid #606060"}
-                    borderRadius={"2px"}
-                    color={theme.colors._white}
-                    lineHeight={"28px"}
-                    background={"transparent"}
-                    px={"21px"}
-                    py={"15px"}
-                    fontSize={{ md: "1rem", base: "0.75rem" }}
-                    fontWeight={"400"}
-                    letterSpacing={{ md: "0.29rem", base: "0.1rem" }}
-                    _hover={{
-                      background:
-                        "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                      border: "none",
-                    }}
-                    onClick={() =>
-                      window.open(
-                        "https://play.google.com/store/apps/details?id=com.hushhone.hushh",
-                        "_blank"
-                      )
-                    }
-                    w={{ md: "16rem", base: "12rem" }}
-                  >
-                    DOWNLOAD THE APP
-                  </Button> */}
-                  <Button
-                    border={"3px solid #606060"}
-                    borderRadius={"2px"}
-                    color={theme.colors._white}
-                    lineHeight={"28px"}
-                    fontSize={{ md: "1rem", base: "0.75rem" }}
-                    px={"21px"}
-                    py={"15px"}
-                    background={"transparent"}
-                    fontWeight={"400"}
-                    letterSpacing={{ md: "0.29rem", base: "0.1rem" }}
-                    _hover={{
-                      background:
-                        "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                      border: "none",
-                    }}
-                    onClick={() => router.push("/demoBookingPage")}
-                    w={{ md: "16rem", base: "12rem" }}
-                  >
-                    SCHEDULE CALL
-                  </Button>
+                  </>
+                )}
                 </Box>
               </VStack>
               <VStack

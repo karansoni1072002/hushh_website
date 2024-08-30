@@ -479,19 +479,7 @@ export default function Header() {
                           {/* <p className='text-sm font-medium text-fontColor3'>Enhanced recommendations &<br /> impactful marketing.</p> */}
                         </div>
                       </Link>
-                      {/* <Link
-                        href={"/products/conciergeApp"}
-                        onClick={handleSubmenuClick}
-                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
-                      >
-                        <div className="">
-                          <ConciergeApp className="w-6 h-6" />
-                        </div>
-                        <div className="">
-                          <h1 className="font-semibold">Hushh Concierge App</h1>
-                          {/* <p className='text-sm font-medium text-fontColor3'>Speak your wish, get luxury <br /> redefined: Hushh Concierge</p> */}
-                        </div>
-                      </Link> */}
+                      
                       <Link
                         href={"/products/vibeSearch"}
                         onClick={handleSubmenuClick}

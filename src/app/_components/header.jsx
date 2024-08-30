@@ -295,7 +295,7 @@ export default function Header() {
                   <Link
                       href={"/products/vibeSearch"}
                       onClick={() => setProductsSubmenu(false)}
-                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                      className="flex gap-4 hover:text-white hover:bg-black px-0 py-2.5 rounded-xl"
                     >
                       <div className="">
                         <VibeSearchIcon className="w-6 h-6" />
@@ -303,15 +303,14 @@ export default function Header() {
                       <div className="">
                         <h1 className="font-semibold">VIBE Search App</h1>
                         <p className="text-sm font-medium text-fontColor3">
-                        Discover products you love with <br />{" "}
-                        image-based search and AI recommendations
+                        Discover products you love with image-based search and AI recommendations
                         </p>
                       </div>
                     </Link>
                     <Link
                       href={"/developerApi"}
                       onClick={() => setProductsSubmenu(false)}
-                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                      className="flex gap-4 hover:text-white hover:bg-black px-0 py-2.5 rounded-xl"
                     >
                       <div className="">
                         <VibeSearchApi className="w-6 h-6" />
@@ -324,21 +323,21 @@ export default function Header() {
                       </div>
                     </Link>
                 
-                    {/* <Link
+                    <Link
                       href={"/products/hushhValetChat"}
                       onClick={() => setProductsSubmenu(false)}
-                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
+                      className="flex gap-4 hover:text-white hover:bg-black px-0 py-2.5 rounded-xl"
                     >
                       <div className="">
                         <ValetChat className="w-6 h-6" />
                       </div>
                       <div className="">
-                        <h1 className="font-semibold">Valet Chat</h1>
+                        <h1 className="font-semibold">Hushh For Students</h1>
                         <p className="text-sm font-medium text-fontColor3">
-                        Your AI-powered financial assistant <br /> for effortless expense management 
+                        Rewards & empowers students with data  <br /> control (safe & secure) 
                         </p>
                       </div>
-                    </Link> */}
+                    </Link>
                     {/* <ToastContainer />   */}
                     {/* <Link
                       href={"#"}

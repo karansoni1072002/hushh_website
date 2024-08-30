@@ -11,6 +11,7 @@ import AboutVision from "../_components/svg/aboutImages/AboutVision.svg";
 import ContactForm from "../_components/features/contactForm";
 import AboutFaq from "../_components/features/faq/aboutFaq";
 import Head from "next/head";
+import ImageGrid from "../_components/features/dynamicImageGrid";
 
 export const metadata = {
   title: "Hushh | About Our Data Empowerment Mission",
@@ -29,6 +30,7 @@ export default function About() {
         <Box
           w={"100%"}
           h={"100%"}
+          minW={'100%'}
           pt={"10.5rem"}
           px={{ base: "1.5rem", md: "6.25rem" }}
           background={"black"}
@@ -162,6 +164,47 @@ export default function About() {
               </p>
             </div>
           </div>
+
+          <VStack
+            mt={{ md: "10rem", base: "6rem" }}
+            display={"flex"}
+            textAlign={"center"}
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <Text
+              className="hushh-gradient"
+              fontWeight={"600"}
+              fontSize={{ md: "1rem", base: "0.75rem" }}
+              lineHeight={"16px"}
+              letterSpacing={"0.255rem"}
+            >
+              HUSHH
+            </Text>
+            <Text
+              className="gradient"
+              fontWeight={"600"}
+              lineHeight={{ md: "63.3px", base: "40px" }}
+              fontSize={{ md: "3.75rem", base: "2rem" }}
+            >
+              #VIVATECH 2024
+            </Text>
+            <Text
+              mx={{ md: "20%", base: "5%" }}
+              color={"#ABABAB"}
+              fontWeight={"500"}
+              fontSize={{ md: "1rem", base: "0.75rem" }}
+              lineHeight={{ md: "30px", base: "24px" }}
+            >
+              VivaTech 2024 was a record-breaking Paris tech conference with
+              165,000+ attendees from 120+ countries. The event highlighted AI
+              advancements, sustainable tech, and diversity in the industry.
+              With global participation, VivaTech fostered business connections
+              and showcased innovations shaping the future of technology
+            </Text>
+          </VStack>
+          <ImageGrid />
+
           <div className="text-center md:mt-0 mt-24">
             <VStack>
               <Text

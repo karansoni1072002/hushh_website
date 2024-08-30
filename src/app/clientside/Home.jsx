@@ -375,16 +375,7 @@ const ClientHome = () => {
                 alt="YoutubeBG"
                 title="YoutubeBG"
               />
-              <Text
-                zIndex={"5"}
-                color={"#FFFFFF"}
-                fontWeight={"500"}
-                lineHeight={"32px"}
-                fontSize={{ md: "1.25rem", base: "0.9rem" }}
-                letterSpacing={"0.05rem"}
-              >
-                HUSHH
-              </Text>
+              
               <Text
                 zIndex={"5"}
                 className="gradient"
@@ -393,7 +384,7 @@ const ClientHome = () => {
                 fontSize={{ md: "4.625rem", base: "2rem" }}
                 letterSpacing={"0.05rem"}
               >
-                Glimpse into our products
+                Glimpse into our Hushh
               </Text>
               <iframe
                 width="960"
@@ -693,12 +684,7 @@ const ClientHome = () => {
 
             {/* <ReviewSlider /> */}
             
-            <VStack my={{md:'10rem',base:'6rem'}} display={'flex'} textAlign={'center'} alignItems={'center'} justifyContent={'center'}>
-              <Text className="hushh-gradient" fontWeight={'600'} fontSize={{md:'1rem',base:'0.75rem'}} lineHeight={'16px'} letterSpacing={'0.255rem'}>HUSHH</Text>
-              <Text className="gradient" fontWeight={'600'} lineHeight={{md:'63.3px',base:'40px'}} fontSize={{md:'3.75rem',base:'2rem'}}>#VIVATECH 2024</Text>
-              <Text mx={{md:'20%',base:'5%'}} color={'#ABABAB'} fontWeight={'500'} fontSize={{md:'1rem',base:"0.75rem"}} lineHeight={{md:'30px',base:'24px'}}>VivaTech 2024 was a record-breaking Paris tech conference with 165,000+ attendees from 120+ countries. The event highlighted AI advancements, sustainable tech, and diversity in the industry. With global participation, VivaTech fostered business connections and showcased innovations shaping the future of technology</Text>
-            </VStack>
-            <ImageGrid/>
+            
             {/* Product Showcase section below */}
             <HStack
               pt={{ md: "8rem", base: "5rem" }}

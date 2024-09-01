@@ -979,11 +979,11 @@ const OutBoundService = () => {
           <Image
             style={{
               position: "absolute",
-              zIndex: "-1",
+              zIndex: "2",
               right: "0px",
               overflow: "hidden",
               top: "900px",
-              width: "100%",
+              width: "80%",
             }}
             src={Shadow}
             alt="shadow"

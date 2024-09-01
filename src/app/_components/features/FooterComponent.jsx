@@ -20,7 +20,7 @@ const FooterComponent = () => {
   };
 
   return (
-    <div className=" bg-footerBG text-white pt-[375px]">
+    <div className=" bg-footerBG text-white pt-[375px]" style={{zIndex:'-2 !important'}}>
       {/* Desktop View */}
       <div className="hideDesktopSVG ml-32 mb-4">
         <HushhFooterLogo />

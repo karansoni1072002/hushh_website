@@ -142,7 +142,7 @@ export default function ContactForm() {
 
   return (
     <>
-      <div className="relative" id="contact-form">
+      <div className="relative" style={{backgroundColor:'#060606 !important'}} id="contact-form">
         <div className="relative z-10">
           <Container
             id="contact-form"
@@ -152,7 +152,7 @@ export default function ContactForm() {
             display={"flex"}
             flexDirection={{ base: "column", md: "row" }}
             bg={"#1D1D1D"}
-            mt={{ md: "5rem", base: "2rem" }}
+            // mt={{ md: "5rem", base: "2rem" }}
             zIndex={10}
           >
             <Box
@@ -429,7 +429,7 @@ export default function ContactForm() {
             </Box>
           </Container>
         </div>
-        <div className="z-1 absolute top-2/3 w-full">
+        <div className="z-0 absolute top-2/3 w-full">
           <FooterComponent />
         </div>
       </div>

@@ -174,7 +174,6 @@ const ClientHome = () => {
                 gap={"1.5rem"}
                 mt={{ md: "5rem", base: "1rem" }}
                 ml={{ base: "1rem", md: "5.5rem" }}
-
               >
                 <HStack>
                   <Heading
@@ -186,18 +185,14 @@ const ClientHome = () => {
                     bg={'transparent'}
                     className="text-headText"
                   >
-                    Intelligence as a service powered by your{" "}
+                    <span>Your data</span>
                     <div className="wrapper" style={{background:'transparent !important'}}>
+                      <span>Your </span>
                       <div className="words">
-                        <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
-                          Business
-                        </div>
-                        <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
-                          Way
-                        </div>
-                        <div className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
-                          Rewards
-                        </div>
+                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Business</span>
+                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Way</span>
+                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Rewards</span>
+                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Asset</span>
                       </div>
                     </div>
                   </Heading>

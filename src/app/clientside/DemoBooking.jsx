@@ -41,7 +41,7 @@ import VibeSearchDemo from "../_components/svg/demoImages/vibeSearchDemo.svg";
 import VibeSearchApiDemo from "../_components/svg/demoImages/vibeSearchApiDemo.svg";
 import VibeSearchMarketDemo from "../_components/svg/demoImages/vibeSearchMarketplaceDemo.svg";
 import { useMediaQuery } from "react-responsive";
-
+import YouTubeModal from "../_components/features/youtubeModal";
 const ClientDemoBooking = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   const [showCalendly, setShowCalendly] = useState(false);
@@ -61,6 +61,16 @@ const ClientDemoBooking = () => {
     email: "",
     message: "",
   });
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentVideoId, setCurrentVideoId] = useState('');
+  const [currentVideoTitle, setCurrentVideoTitle] = useState('');
+
+  const openVideoModal = (videoId, title) => {
+    setCurrentVideoId(videoId);
+    setCurrentVideoTitle(title);
+    setIsModalOpen(true);
+  };
 
   const onEventScheduled = () => {
     setShowCalendly(false); // Hide Calendly widget
@@ -494,6 +504,40 @@ const ClientDemoBooking = () => {
               border={"1px solid #4B4B4B"}
               bg={"#121212"}
             >
+              <Image src={WalletDemo} alt="WalletDemo" />
+              <Text
+                color={"#FFFFFF"}
+                fontWeight={"400"}
+                lineHeight={{ md: "32px", base: "20px" }}
+                fontSize={{ md: "1.5rem", base: "0.85rem" }}
+                letterSpacing={"-0.2px"}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+              >
+                Hushh Wallet App
+              </Text>
+              <Text
+                color={"#0565FF"}
+                fontWeight={"400"}
+                letterSpacing={"-0.4px"}
+                lineHeight={"26px"}
+                fontSize={{ md: "1rem", base: "0.65rem" }}
+                my={{ md: "2.15rem", base: "0.5rem" }}
+                display={"flex"}
+                cursor={"pointer"}
+                gap={{ md: "0.4rem", base: "0.2rem" }}
+                onClick={() => openVideoModal('CzGi_Z_hGaQ', 'Hushh Wallet App Demo')}
+              >
+                Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
+              </Text>
+            </GridItem>
+            <GridItem
+              borderRadius={"8px"}
+              p={"1rem"}
+              display={"flex"}
+              flexDirection={"column"}
+              border={"1px solid #4B4B4B"}
+              bg={"#121212"}
+            >
               <Image src={HushhButtonDemo} alt="HushhButtonDemo" />
               <Text
                 color={"#FFFFFF"}
@@ -515,12 +559,7 @@ const ClientDemoBooking = () => {
                 cursor={"pointer"}
                 display={"flex"}
                 gap={{ md: "0.4rem", base: "0.2rem" }}
-                onClick={() =>
-                  window.open(
-                    "https://youtu.be/k16zt1WSvnM?si=ZWkZt8Y-fahjyl4l",
-                    "_blank",
-                  )
-                }
+                onClick={() => openVideoModal('k16zt1WSvnM', 'Hushh Button Demo')}
               >
                 Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
               </Text>
@@ -596,55 +635,12 @@ const ClientDemoBooking = () => {
                 cursor={"pointer"}
                 display={"flex"}
                 gap={{ md: "0.4rem", base: "0.2rem" }}
-                onClick={() =>
-                  window.open(
-                    "https://youtu.be/2Ji8afCx5SI?si=1rLTsNcIixWE4Dh6",
-                    "_blank",
-                  )
-                }
+                onClick={() => openVideoModal('2Ji8afCx5SI', 'Vibe Search Demo')}
               >
                 Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
               </Text>
             </GridItem>
-            <GridItem
-              borderRadius={"8px"}
-              p={"1rem"}
-              display={"flex"}
-              flexDirection={"column"}
-              border={"1px solid #4B4B4B"}
-              bg={"#121212"}
-            >
-              <Image src={WalletDemo} alt="WalletDemo" />
-              <Text
-                color={"#FFFFFF"}
-                fontWeight={"400"}
-                lineHeight={{ md: "32px", base: "20px" }}
-                fontSize={{ md: "1.5rem", base: "0.85rem" }}
-                letterSpacing={"-0.2px"}
-                my={{ md: "2.15rem", base: "0.5rem" }}
-              >
-                Hushh Wallet App
-              </Text>
-              <Text
-                color={"#0565FF"}
-                fontWeight={"400"}
-                letterSpacing={"-0.4px"}
-                lineHeight={"26px"}
-                fontSize={{ md: "1rem", base: "0.65rem" }}
-                my={{ md: "2.15rem", base: "0.5rem" }}
-                display={"flex"}
-                cursor={"pointer"}
-                gap={{ md: "0.4rem", base: "0.2rem" }}
-                onClick={() =>
-                  window.open(
-                    "https://youtu.be/CzGi_Z_hGaQ?si=OCIPnw0boCSaTerW",
-                    "_blank",
-                  )
-                }
-              >
-                Watch Now <ArrowForwardIcon style={{ marginTop: "0.35rem" }} />
-              </Text>
-            </GridItem>
+            
           
             {/* <GridItem
               borderRadius={"8px"}
@@ -690,6 +686,12 @@ const ClientDemoBooking = () => {
       </Box>
       <AboutFaq />
       <ContactForm />
+      <YouTubeModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        videoId={currentVideoId}
+        title={currentVideoTitle}
+      />
     </>
   );
 };

@@ -11,6 +11,7 @@ import {
   ModalCloseButton,
   ModalBody,
   Button,
+  GridItem,
 } from "@chakra-ui/react";
 import React from "react";
 import linkedln from "../svg/icons/linkedIn.svg";
@@ -207,8 +208,6 @@ const TeamSection = () => {
               </div>
             </VStack>
 
-         
-
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
               <Image
                 alt="vivek"
@@ -274,8 +273,6 @@ const TeamSection = () => {
                 </Link>
               </div>
             </VStack>
-
-       
 
             <VStack mb={{ md: "3rem", base: "1.5rem" }}>
               <Image
@@ -659,7 +656,7 @@ const TeamSection = () => {
                 MEET OUR ADVISORS
               </Text>
             </div>
-            <div className="md:pb-10 pb-4">
+            <div className="md:pb-4 pb-4">
               <Text
                 className="gradient"
                 fontWeight={"400"}
@@ -679,69 +676,81 @@ const TeamSection = () => {
         </div>
         <div className="mt-12 md:mt-0">
           <Grid
-            templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
+            templateColumns={{
+              base: "repeat(2, 1fr)",
+              md: "repeat(4, 1fr)"
+            }}
+            gap={6}
           >
             {advisorsData.map((advisor, index) => (
-              <VStack key={index} mb={{ md: "3rem", base: "1.5rem" }}>
-                <Image
-                  onClick={() => openModal(advisor)}
-                  alt={advisor.name}
-                  src={advisor.avatar}
-                  width={260}
-                  height={276}
-                />
-                <div className="-translate-y-16 flex flex-col text-center items-center gap-3 md:gap-8">
-                  <div className="flex flex-col md:gap-4">
-                    <Text
-                      color={"#E5E5E5"}
-                      fontWeight={"700"}
-                      fontSize={{ md: "1.3rem", base: "1rem" }}
-                      mt={{ base: "1rem" }}
+              <GridItem
+                key={index}
+                colSpan={{
+                  base: 1,
+                  md: (index < 2 || index >= advisorsData.length - 2) ? 2 : 1
+                }}
+              >
+                <VStack mb={{ md: "3rem", base: "1.5rem" }}>
+                  <Image
+                    onClick={() => openModal(advisor)}
+                    alt={advisor.name}
+                    src={advisor.avatar}
+                    width={260}
+                    height={276}
+                  />
+                  <div className="-translate-y-16 flex flex-col text-center items-center gap-3 md:gap-8">
+                    <div className="flex flex-col md:gap-4">
+                      <Text
+                        color={"#E5E5E5"}
+                        fontWeight={"700"}
+                        fontSize={{ md: "1.3rem", base: "1rem" }}
+                        mt={{ base: "1rem" }}
+                      >
+                        {advisor.name}
+                      </Text>
+                      <Text
+                        color={"#ABABAB"}
+                        fontSize={{ base: "0.75rem", md: "1rem" }}
+                      >
+                        {advisor.position}
+                      </Text>
+                    </div>
+                    <Box
+                      mt={{ md: "0", base: "1rem" }}
+                      display="flex"
+                      flexDirection="row"
+                      gap="1rem"
+                      alignItems={"center"}
                     >
-                      {advisor.name}
-                    </Text>
-                    <Text
-                      color={"#ABABAB"}
-                      fontSize={{ base: "0.75rem", md: "1rem" }}
-                    >
-                      {advisor.position}
-                    </Text>
+                      <Link href={advisor.linkedin}>
+                        {!isTabletOrMobile && (
+                          <Image
+                            alt="sureshLinkedIn"
+                            src={linkedln}
+                            width={{ base: 12, md: 24 }}
+                            height={24}
+                          />
+                        )}
+                        {isTabletOrMobile && (
+                          <Image
+                            alt="sureshLinkedIn"
+                            src={linkedln}
+                            width={12}
+                            height={12}
+                          />
+                        )}
+                      </Link>
+                      <Button
+                        h={{ md: "1.75rem", base: "1rem" }}
+                        fontSize={{ md: "0.75rem", base: "0.5rem" }}
+                        onClick={() => openModal(advisor)}
+                      >
+                        Know More
+                      </Button>
+                    </Box>
                   </div>
-                  <Box
-                    mt={{ md: "0", base: "1rem" }}
-                    display="flex"
-                    flexDirection="row"
-                    gap="1rem"
-                    alignItems={"center"}
-                  >
-                    <Link href={advisor.linkedin}>
-                      {!isTabletOrMobile && (
-                        <Image
-                          alt="sureshLinkedIn"
-                          src={linkedln}
-                          width={{ base: 12, md: 24 }}
-                          height={24}
-                        />
-                      )}
-                      {isTabletOrMobile && (
-                        <Image
-                          alt="sureshLinkedIn"
-                          src={linkedln}
-                          width={12}
-                          height={12}
-                        />
-                      )}
-                    </Link>
-                    <Button
-                      h={{ md: "1.75rem", base: "1rem" }}
-                      fontSize={{ md: "0.75rem", base: "0.5rem" }}
-                      onClick={() => openModal(advisor)}
-                    >
-                      Know More
-                    </Button>
-                  </Box>
-                </div>
-              </VStack>
+                </VStack>
+              </GridItem>
             ))}
           </Grid>
         </div>

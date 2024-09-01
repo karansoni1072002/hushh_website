@@ -111,13 +111,13 @@ export const advisorsData = [
     currentLocation: "Washington DC-Baltimore Area",
     avatar: teamImages.YashMakan,
   },
-  {
-    name: "Nilanshu Raja",
-    position: "Business Advisor  - Finance",
-    linkedin: "https://www.linkedin.com/in/nilanshu/",
-    imageSrc: advisoryImages.nilanshu,
-    currentWork: "Chief Financial Officer @ Super (hellosuper.com)",
-    currentLocation: "San Francisco Bay Area",
-    avatar: teamImages.AkashKatla,
-  },
+  // {
+  //   name: "Nilanshu Raja",
+  //   position: "Business Advisor  - Finance",
+  //   linkedin: "https://www.linkedin.com/in/nilanshu/",
+  //   imageSrc: advisoryImages.nilanshu,
+  //   currentWork: "Chief Financial Officer @ Super (hellosuper.com)",
+  //   currentLocation: "San Francisco Bay Area",
+  //   avatar: teamImages.AkashKatla,
+  // },
 ];

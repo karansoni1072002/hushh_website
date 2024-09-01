@@ -31,7 +31,7 @@ export const advisorsData = [
   },
   {
     name: "Dan Sareen",
-    position: "GTM Advisor - Ecosytems and Partnerships",
+    position: "GTM Advisor",
     linkedin: "https://www.linkedin.com/in/dan-sareen-95259a274/",
     imageSrc: advisoryImages.danSareen,
     currentWork: "Market Development Director @ Accenture",
@@ -49,7 +49,7 @@ export const advisorsData = [
   },
   {
     name: "Stéphane Spinella",
-    position: "GTM Advisor - EMEA Sales and Business Development",
+    position: "GTM Advisor Sales & BD",
     linkedin: "https://www.linkedin.com/in/stephanespinella/",
     imageSrc: advisoryImages.stephane,
     currentWork: "Senior Director,Enterprise Sales @ Brickster | ex-Google",
@@ -76,7 +76,7 @@ export const advisorsData = [
   },
   {
     name: "Valliappa Lakshmanan",
-    position: "Technology Advisor - AI/ML, Data and Analytics",
+    position: "Technology Advisor - AI/ML",
     linkedin: "https://www.linkedin.com/in/valliappalakshmanan/",
     imageSrc: advisoryImages.valliappa,
     currentLocation: "Bellevue, Washington, United States",

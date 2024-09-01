@@ -197,7 +197,7 @@ export default function Header() {
                 onMouseEnter={() => setProductsSubmenu(false)}
                 className={`link ${pathname === '/outbound-services' ? 'gradient-text' : ''}`}
               >
-                SERVICES
+                ADVISORY SERVICES
               </Link>
               <Link
                 href="/UserGuide"
@@ -580,6 +580,13 @@ export default function Header() {
                 className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
               >
                 GUIDE
+              </Link>
+              <Link
+                href="/outbound-services"
+                onMouseEnter={() => setProductsSubmenu(false)}
+                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
+              >
+                ADVISORY SERVICES
               </Link>
               <Link
                 href="/hushhBlogs"

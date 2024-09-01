@@ -387,7 +387,7 @@ const ClientHome = () => {
                 zIndex="6"
                 src="https://www.youtube.com/embed/DSG8ltkgbJE?si=An83buhkileq1NFA"
                 title="YouTube video player"
-                style={{ zIndex: "6" , borderRadius:'28.57px',marginTop:'4rem'}}
+                style={{ zIndex: "6" , borderRadius:'28.57px',marginTop:'0rem'}}
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen

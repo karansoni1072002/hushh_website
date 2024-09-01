@@ -192,7 +192,7 @@ const ClientHome = () => {
                         <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Business</span>
                         <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Way</span>
                         <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Rewards</span>
-                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Money</span>
+                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Asset</span>
                       </div>
                     </div>
                   </Heading>

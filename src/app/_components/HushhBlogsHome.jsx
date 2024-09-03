@@ -45,23 +45,7 @@ export const HushhBlogsHome = () => {
         </Text>
         
     </Box>   
-    <Text display={'flex'}
-          textAlign={'center'}
-          align={'center'}
-          _hover={{
-            cursor:'pointer',
-            textDecoration:'underline',
-            textDecorationColor:'white'
-          }}
-          onClick={() =>
-            router.push(
-              "/hushhBlogs"
-            )
-          }
-          className="hushh-gradient"
-          justifyContent={'center'}
-           justifySelf={'center'}
-          fontWeight={"700"} fontSize={{md:'1.5rem',base:'0.75rem'}} href="/hushhBlogs">View More </Text>
+   
         <Flex mb={{md:'2rem',base:'1rem'}} justify="center" align="center" minHeight="40vh" padding="4">
           <Flex wrap="wrap" justify="center" gap="6">
             {/* Card 1 */}

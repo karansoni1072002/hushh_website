@@ -315,7 +315,7 @@ const ClientHome = () => {
               </VStack>
             </Box>
 
-            <HStack
+            {/* <HStack
               pt={{ md: "8rem", base: "6rem" }}
               justify={"center"}
               display={"flex"}
@@ -351,7 +351,7 @@ const ClientHome = () => {
               </Text>
             </HStack>
 
-            <BrandSlider />
+            <BrandSlider /> */}
 
             <VStack
               w={"100%"}

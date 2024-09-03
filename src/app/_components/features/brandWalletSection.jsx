@@ -1,5 +1,5 @@
-import { Box, Grid, HStack, Text, VStack, Button } from "@chakra-ui/react";
-
+'use client'
+import { Box, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, Grid, HStack, Text, VStack, Button, useDisclosure } from "@chakra-ui/react";
 import BrandWalletMobile from "../../../../public/Images/BrandWalletMobile.png";
 import NextImage from "next/image";
 import React from "react";
@@ -8,12 +8,39 @@ import ChartIcon from "../svg/icons/chartIcon";
 import RefreshIcon from "../svg/icons/refreshIcon";
 import WalletIcon from "../svg/icons/walletIcon";
 import { useRouter } from "next/navigation";
-
+import { isMobile, isAndroid, isIOS } from 'react-device-detect';
+import { QRCode } from "react-qrcode-logo";
+import { useState } from "react";
+import AppleIcon from "../../_components/svg/icons/appleIconLogo.svg";
+import PlayStoreIcon from "../../_components/svg/icons/playStoreIcon.svg";
 import extendedTheme from "../../theme";
+import Image from "next/image";
+import theme from "../../theme";
+
 const BrandWalletSection = () => {
   const router = useRouter();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentQRLink, setCurrentQRLink] = useState("");
+
+
+const handleOpenModal = (link) => {
+    setCurrentQRLink(link);
+    setIsModalOpen(true);
+  };
+
+  const handleDownloadClick = () => {
+    if (isAndroid) {
+      window.location.href = "https://bit.ly/hushh-wallet-play-store";
+    } else if (isIOS) {
+      window.location.href = "https://bit.ly/hushh-app-ios";
+    } else {
+      handleOpenModal("https://bit.ly/hushh-wallet-play-store");
+    }
+  };
 
   return (
+  <>
     <VStack mt={{ md: "8rem", base: "5rem" }}>
       <Text
         className="gradient"
@@ -289,30 +316,97 @@ const BrandWalletSection = () => {
         </HStack>
       </Grid>
       <Box
-        mt={"4rem"}
-        p={"0.75rem"}
-        align={"center"}
-        border={"1px solid #606060"}
-        borderRadius={"5px"}
-        w={"16rem"}
-        className="color-gradient"
-        lineHeight={"28px"}
-        letterSpacing={"0.5rem"}
-        _hover={{
-          background:
-            "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-          color: "white",
-        }}
-        cursor={"pointer"}
-        onClick={() =>
-          router.push(
-            "https://sites.google.com/hush1one.com/drops/products/test-builds",
-          )
-        }
-      >
-        DOWNLOAD APP
-      </Box>
+                  mt={{ md: "2rem", base: "1rem" }}
+                  display={"flex"}
+                  gap={{ md: "2rem", base: "1rem" }}
+                  flexDirection={{ md: "row", base: "column" }}
+                  zIndex={'9'}
+                >
+                  {isMobile ? (
+                    <Button
+                      border="1px solid #606060"
+                      borderRadius="2px"
+                      color={theme.colors._white}
+                      lineHeight="28px"
+                      background="transparent"
+                      onClick={handleDownloadClick}
+                      px="21px"
+                      py="15px"
+                      fontSize={{ md: "1rem", base: "0.75rem" }}
+                      fontWeight="400"
+                      letterSpacing={{ md: "0.1rem", base: "0.1rem" }}
+                      _hover={{
+                        background:
+                          "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                        border: "none",
+                      }}
+                      w={{ md: "16rem", base: "14rem" }}
+                    >
+                      {/* <Image src={PlayStoreIcon} cursor="pointer" style={{width:'17px',height:'17px',marginRight:'7px'}}/> */}
+                      Download Hushh Wallet App
+                    </Button>
+                  ) : (
+                    <>
+                      <Button
+                        border="1px solid #606060"
+                        borderRadius="2px"
+                        color={theme.colors._white}
+                        lineHeight="28px"
+                        background="transparent"
+                        onClick={() => handleOpenModal("https://bit.ly/hushh-wallet-play-store")}                      
+                        px="21px"
+                        py="15px"
+                        fontSize={{ md: "1rem", base: "0.75rem" }}
+                        fontWeight="400"
+                        letterSpacing={{ md: "0.1rem", base: "0.1rem" }}
+                        _hover={{
+                          background:
+                            "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                          border: "none",
+                        }}
+                        w={{ md: "16rem", base: "12rem" }}
+                      >
+                        <Image src={PlayStoreIcon} cursor="pointer" style={{width:'17px',height:'17px',marginRight:'7px'}}/>
+                        Download on Google Play
+                    </Button>
+                    <Button
+                      border={"1px solid #606060"}
+                      borderRadius={"2px"}
+                      color={theme.colors._white}
+                      lineHeight={"28px"}
+                      fontSize={{ md: "1rem", base: "0.75rem" }}
+                      px={"21px"}
+                      py={"15px"}
+                      background={"transparent"}
+                      fontWeight={"400"}
+                      letterSpacing={{ md: "0.1rem", base: "0.1rem" }}
+                      _hover={{
+                        background:
+                          "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                        border: "none",
+                      }}
+                      onClick={() => handleOpenModal("https://bit.ly/hushh-app-ios")}                   
+                      w={{ md: "16rem", base: "12rem" }}
+                    >
+                      <Image src={AppleIcon} cursor="pointer"  style={{width:'17px',height:'17px',marginRight:'7px'}}/>
+                      Get it on the App Store
+                    </Button>
+                  </>
+                )}
+                </Box>
     </VStack>
+     <Modal isCentered isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+     <ModalOverlay />
+     <ModalContent>
+       <ModalHeader>Please Scan QR Code to Download App</ModalHeader>
+       <ModalCloseButton />
+       <ModalBody display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+         <QRCode value={currentQRLink} size={256} />
+         <Text fontSize={'1.75rem'} fontWeight={'bold'} className="hushh-gradient">Hushh Wallet App</Text>
+       </ModalBody>
+     </ModalContent>
+   </Modal>
+   </>
   );
 };
 

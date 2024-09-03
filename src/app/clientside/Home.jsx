@@ -206,6 +206,7 @@ const ClientHome = () => {
                   display={"flex"}
                   gap={{ md: "2rem", base: "1rem" }}
                   flexDirection={{ md: "row", base: "column" }}
+                  zIndex={'9'}
                 >
                   {isMobile ? (
                     <Button

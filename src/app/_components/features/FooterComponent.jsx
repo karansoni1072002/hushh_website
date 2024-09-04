@@ -79,12 +79,12 @@ const FooterComponent = () => {
               <Link href="/UserGuide">
                   User Guide Book
                 </Link>
-                <Link href="https://sites.google.com/hush1one.com/drops/home/journey">
+                {/* <Link href="https://sites.google.com/hush1one.com/drops/home/journey">
                   Documentation
-                </Link>
-                <Link href="https://sites.google.com/hush1one.com/drops/home/journey">
+                </Link> */}
+                {/* <Link href="https://sites.google.com/hush1one.com/drops/home/journey">
                   Papers
-                </Link>
+                </Link> */}
                 <Link href="/demoBookingPage">Live Demonstration</Link>
               </div>
             </div>
@@ -177,12 +177,12 @@ const FooterComponent = () => {
               <Link href="/UserGuide">
                   User Guide Book
                 </Link>
-                <Link href="https://sites.google.com/hush1one.com/drops/home/journey">
+                {/* <Link href="https://sites.google.com/hush1one.com/drops/home/journey">
                   Documentation
                 </Link>
                 <Link href="https://sites.google.com/hush1one.com/drops/home/journey">
                   Papers
-                </Link>
+                </Link> */}
                 <Link href="/demoBookingPage">Live Demonstration</Link>
               </div>
             </div>

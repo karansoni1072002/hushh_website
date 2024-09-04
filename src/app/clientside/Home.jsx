@@ -227,7 +227,7 @@ const ClientHome = () => {
                         "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
                       border: "none",
                     }}
-                    w={{ md: "16rem", base: "14rem" }}
+                    w={{ md: "18rem", base: "14rem" }}
                   >
                     Download Hushh Wallet App
                   </Button>

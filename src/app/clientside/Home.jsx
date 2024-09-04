@@ -162,7 +162,8 @@ const ClientHome = () => {
             <Box
               display={"flex"}
               flexDirection={"row"}
-              px={{ base: "0.2rem", md: "32px" }}
+              px={{ base: "0.2rem", md: "2rem" }}
+              // py={{ base: "0.2rem", md: "2rem" }}
             >
               <VStack
                 align={"flex-start"}
@@ -172,7 +173,7 @@ const ClientHome = () => {
                 // mr={{ md: "60%", base: "10%" }}
                 display={"flex"}
                 gap={"1.5rem"}
-                mt={{ md: "5rem", base: "1rem" }}
+                mt={{ md: "7rem", base: "1rem" }}
                 ml={{ base: "1rem", md: "5.5rem" }}
               >
                 <HStack>
@@ -195,11 +196,11 @@ const ClientHome = () => {
                         <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Asset</span>
                       </div>
                     </div>
-                  </Heading>
+                  </Heading><
                 </HStack>
 
                 <Text color={"#656565"} fontSize={"18px"} >
-                Take control of your personal information and unlock exclusive rewards with Hushh Wallet
+                Take control of your personal information and unlock <br/> exclusive rewards with Hushh Wallet
                 </Text>
                 <Box
                   mt={{ md: "2rem", base: "1rem" }}

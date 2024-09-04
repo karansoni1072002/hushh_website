@@ -196,11 +196,11 @@ const ClientHome = () => {
                         <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Asset</span>
                       </div>
                     </div>
-                  </Heading><
+                  </Heading>
                 </HStack>
 
                 <Text color={"#656565"} fontSize={"18px"} >
-                Take control of your personal information and unlock <br/> exclusive rewards with Hushh Wallet
+                Take control of your personal information and unlock <br></br> exclusive rewards with Hushh Wallet
                 </Text>
                 <Box
                   mt={{ md: "2rem", base: "1rem" }}

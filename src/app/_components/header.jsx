@@ -184,7 +184,7 @@ export default function Header() {
         ) : (
           // This is for desktop screens
           <div className="w-full px-0">
-            <div className="text-white flex gap-12 px-7 md:gap-10 text-md">
+            <div className="text-white ml-12 flex gap-12 px-7 md:gap-10 text-md">
               {/* <Link
                 href="/"
                 className={`link ${pathname === '/' ? 'gradient-text' : ''}`}

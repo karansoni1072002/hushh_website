@@ -37,9 +37,9 @@ export default function ContactForm() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
-  const [subject, setSubject] = useState("");
+  const [subject, setSubject] = useState(null);
   const [message, setMessage] = useState("");
-
+  const form = useRef();
   const toast = useToast();
   const businessEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const freeEmailProviders = [
@@ -83,16 +83,6 @@ export default function ContactForm() {
       newErrors.fullName = "Full name is required";
     }
 
-    if (!firstName.trim()) {
-      newErrors.firstName = "First name is required";
-      isValid = false;
-    }
-
-    if (!lastName.trim()) {
-      newErrors.lastName = "Last name is required";
-      isValid = false;
-    }
-
     if (!email.trim()) {
       newErrors.email = "Email is required";
       isValid = false;
@@ -109,46 +99,90 @@ export default function ContactForm() {
       isValid = false;
     }
 
-    if (!number.trim()) {
-      newErrors.number = "Phone number is required";
-      isValid = false;
-    }
+    // if (!number.trim()) {
+    //   newErrors.number = "Phone number is required";
+    //   isValid = false;
+    // }
 
     setFormErrors(newErrors);
     return isValid;
   };
 
-  const sendEmail = (e) => {
+  const onSubmit = async (data, e) => {
+    e.preventDefault();
+    await sendEmail(data);
+    reset(); // This will reset the form fields after submission
+  };
+
+  const sendEmail = async (e) => {
     e.preventDefault();
     if (!validateForm()) {
       return;
     }
+    const previousSubmissionTime = localStorage.getItem(
+      `${email}_${firstName}`,
+    );
 
-    emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
-      .then(
-        (result) => {
-          console.log(result.text);
-          toast({
-            title: "Message sent.",
-            description:
-              "We've received your message and will get back to you shortly.",
-            status: "success",
-            duration: 5000,
-            isClosable: true,
-          });
-          setFullName("");
-          // setFirstName("");
-          // setLastName("");
-          setEmail("");
-          setNumber("");
-          setMessage("");
-          setSubject("");
-        },
-        (error) => {
-          console.error("Sending mail FAILED...", error.text);
-        }
+    if (previousSubmissionTime) {
+      const currentTime = new Date().getTime();
+      const timeDifference =
+        (currentTime - new Date(previousSubmissionTime).getTime()) /
+        (1000 * 3600); 
+
+      if (timeDifference < 2) {
+        toast({
+          title: "Please try again later!",
+          description:
+            "You have already submitted the form. Please try again after 2-3 hours",
+          status: "warning",
+          duration: 3000,
+          isClosable: true,
+        });
+      return;
+    }
+    }
+    localStorage.setItem(`${email}_${fullName}`, new Date().toISOString());
+console.log('local Storage',localStorage)
+    const serviceId = "service_kwvlp08";
+    const templateId = "template_nc0x47v";
+    const user_Id = "9KjZ-7TNPYvuqx3as";
+
+    const templateParams = {
+      from_name: firstName,
+      from_lname: lastName,
+      from_fullName: fullName,
+      from_email: email,
+      to_name: "Manish Sainani",
+      message: message,
+      subject: subject,
+      number: number,
+    };
+    try {
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        user_Id,
       );
+
+        toast({
+        title: "Form Submitted.",
+        description: "Thank you for reaching out to us",
+          status: "success",
+        duration: 3000,
+          isClosable: true,
+        });
+
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setNumber("");
+        setFullName("")
+        setMessage("");
+        setSubject("");
+    } catch (error) {
+        console.error("Sending mail FAILED...", error.text);
+    }
   };
 
   return (
@@ -284,7 +318,7 @@ export default function ContactForm() {
               flex={{ md: 1.75, base: 1 }}
               display={"flex"}
             >
-              <form id="form" onSubmit={sendEmail} style={{ color: "white" }}>
+              <form id="form" ref={form} onSubmit={sendEmail} style={{ color: "white" }}>
                 <HStack
                   display={{ base: "block", md: "flex" }}
                   flexDirection={{ base: "column", md: "row" }}
@@ -372,7 +406,13 @@ export default function ContactForm() {
                   <Text fontWeight={"500"} fontSize={"0.75rem"} color={"white"}>
                     Select Subject:{" "}
                   </Text>
-                  <RadioGroup defaultValue="ProductInquiry">
+                  <RadioGroup
+                    defaultValue="ProductInquiry"
+                    value={subject}
+                    onChange={(value) =>
+                      setSubject(value === subject ? null : value)
+                    }
+                  >
                     <HStack
                       display={{ md: "flex", base: "flex" }}
                       flexDirection={{ base: "column", md: "row" }}
@@ -425,12 +465,6 @@ export default function ContactForm() {
                     placeholder="Type your message here"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    sx={{
-                      _focus: {
-                        borderBottom: "none",
-                        boxShadow: "none",
-                      },
-                    }}
                   />
                   {formErrors.message && (
                     <Text color="red" fontSize="xs">

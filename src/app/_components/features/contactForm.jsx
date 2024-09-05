@@ -382,21 +382,24 @@ export default function ContactForm() {
                       <Radio
                         colorScheme="white"
                         name="subject"
-                        onChange={(e) => setSubject("Explore Hushh Products")}
+                        value="Explore Hushh Products"
+                        onChange={(e) => setSubject(e.target.value)}
                       >
                         <Text fontSize={"0.75rem"}>Explore Hushh Products</Text>
                       </Radio>
                       <Radio
                         colorScheme="white"
                         name="subject"
-                        onChange={(e) => setSubject("Partner with Hushh")}
+                        value="Partner with Hushh"
+                        onChange={(e) => setSubject(e.target.value)}
                       >
                         <Text fontSize={"0.75rem"}>Partner with Hushh</Text>
                       </Radio>
                       <Radio
                         colorScheme="white"
-                        onChange={(e) => setSubject("Get Support")}
                         name="subject"
+                        value="Get Support"
+                        onChange={(e) => setSubject(e.target.value)}
                       >
                         <Text fontSize={"0.75rem"}>Get Support</Text>
                       </Radio>

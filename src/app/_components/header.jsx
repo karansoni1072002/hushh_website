@@ -478,14 +478,14 @@ export default function Header() {
                   <Divider borderStyle={'solid'} borderWidth={"1px"} borderColor={"#5A5A5A"} />  
 
                   <li>
-                    <Link style={{fontWeight:'700'}}  onClick={() => setIsMenuOpen(false)} href="/solutions" className="text-lg text-white">
+                    <Link style={{fontWeight:'700'}}  onClick={() => setIsMenuOpen(false)} href="/contact-us" className="text-lg text-white">
                       Contact Us
                     </Link>
                   </li>
                   <Divider borderStyle={'solid'} borderWidth={"1px"} borderColor={"#5A5A5A"} />  
 
                   <li>
-                    <Link style={{fontWeight:'700'}} onClick={() => setIsMenuOpen(false)} href="/developers" className="text-lg text-white">
+                    <Link style={{fontWeight:'700'}} onClick={() => setIsMenuOpen(false)} href="/hushhBlogs" className="text-lg text-white">
                       Blogs
                     </Link>
                   </li>

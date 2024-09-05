@@ -199,13 +199,13 @@ export default function Header() {
               >
                 ADVISORY SERVICES
               </Link>
-              <Link
+              {/* <Link
                 href="/UserGuide"
                 onMouseEnter={() => setProductsSubmenu(false)}
                 className={`link ${pathname === '/UserGuide' ? 'gradient-text' : ''}`}
               >
                 GUIDE
-              </Link>
+              </Link> */}
               <Link
                 href="/contact-us"
                 onMouseEnter={() => setProductsSubmenu(false)}
@@ -574,13 +574,13 @@ export default function Header() {
               >
                 Pricing
               </Link> */}
-              <Link
+              {/* <Link
                 href="/UserGuide"
                 onClick={() => setIsMenuOpen(false)}
                 className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
               >
                 GUIDE
-              </Link>
+              </Link> */}
               <Link
                 href="/outbound-services"
                 onMouseEnter={() => setProductsSubmenu(false)}

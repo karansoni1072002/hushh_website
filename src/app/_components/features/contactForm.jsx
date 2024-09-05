@@ -33,6 +33,7 @@ export default function ContactForm() {
 
   const [formErrors, setFormErrors] = useState({});
   const [firstName, setFirstName] = useState("");
+  const [fullName, setFullName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
@@ -42,11 +43,11 @@ export default function ContactForm() {
   const toast = useToast();
   const businessEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const freeEmailProviders = [
-    'gmail.com',
-    'yahoo.com',
-    'hotmail.com',
-    'outlook.com',
-    'aol.com',
+    "gmail.com",
+    "yahoo.com",
+    "hotmail.com",
+    "outlook.com",
+    "aol.com",
     // Add more free email providers if needed
   ];
 
@@ -54,19 +55,19 @@ export default function ContactForm() {
     if (!businessEmailRegex.test(email)) {
       return false;
     }
-    const domain = email.split('@')[1];
+    const domain = email.split("@")[1];
     return !freeEmailProviders.includes(domain);
   };
 
   const validateEmail = () => {
-    const newErrors = { email: '' };
+    const newErrors = { email: "" };
     let isValid = true;
 
     if (!email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
       isValid = false;
     } else if (!isBusinessEmail(email)) {
-      newErrors.email = 'Please use a business email address';
+      newErrors.email = "Please use a business email address";
       isValid = false;
     }
 
@@ -77,6 +78,10 @@ export default function ContactForm() {
   const validateForm = () => {
     let isValid = true;
     let newErrors = {};
+
+    if (!fullName.trim()) {
+      newErrors.fullName = "Full name is required";
+    }
 
     if (!firstName.trim()) {
       newErrors.firstName = "First name is required";
@@ -89,10 +94,10 @@ export default function ContactForm() {
     }
 
     if (!email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
       isValid = false;
     } else if (!isBusinessEmail(email)) {
-      newErrors.email = 'Please use a business email address';
+      newErrors.email = "Please use a business email address";
       isValid = false;
     }
 
@@ -119,30 +124,40 @@ export default function ContactForm() {
       return;
     }
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
-      .then((result) => {
-        console.log(result.text);
-        toast({
-          title: "Message sent.",
-          description: "We've received your message and will get back to you shortly.",
-          status: "success",
-          duration: 5000,
-          isClosable: true,
-        });
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setNumber("");
-        setMessage("");
-        setSubject("");
-      }, (error) => {
-        console.error("Sending mail FAILED...", error.text);
-      });
+    emailjs
+      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast({
+            title: "Message sent.",
+            description:
+              "We've received your message and will get back to you shortly.",
+            status: "success",
+            duration: 5000,
+            isClosable: true,
+          });
+          setFullName("");
+          // setFirstName("");
+          // setLastName("");
+          setEmail("");
+          setNumber("");
+          setMessage("");
+          setSubject("");
+        },
+        (error) => {
+          console.error("Sending mail FAILED...", error.text);
+        }
+      );
   };
 
   return (
     <>
-      <div className="relative" style={{backgroundColor:'#060606 !important'}} id="contact-form">
+      <div
+        className="relative"
+        style={{ backgroundColor: "#060606 !important" }}
+        id="contact-form"
+      >
         <div className="relative z-10">
           <Container
             id="contact-form"
@@ -160,7 +175,7 @@ export default function ContactForm() {
               className="new-gradient-bg"
               borderRadius={"0.5rem"}
               flexDirection={"column"}
-              display={{md:"flex",base:'none'}}
+              display={{ md: "flex", base: "none" }}
               flex={1}
               position={"relative"}
             >
@@ -224,7 +239,7 @@ export default function ContactForm() {
               className="new-gradient-bg"
               borderRadius={"0.5rem"}
               flexDirection={"column"}
-              display={{md:"none",base:'flex'}}
+              display={{ md: "none", base: "flex" }}
               flex={1}
               position={"relative"}
             >
@@ -263,71 +278,86 @@ export default function ContactForm() {
               </HStack>
             </Box>
             {/* Contact Form */}
-            <Box p={{md:'4rem',base:'1rem'}} px={{ md: "4rem", base: "1rem" }} flex={{md:1.75,base:1}} display={"flex"}>
-              <form id="form" onSubmit={sendEmail}  style={{ color: "white" }}>
+            <Box
+              p={{ md: "4rem", base: "1rem" }}
+              px={{ md: "4rem", base: "1rem" }}
+              flex={{ md: 1.75, base: 1 }}
+              display={"flex"}
+            >
+              <form id="form" onSubmit={sendEmail} style={{ color: "white" }}>
                 <HStack
                   display={{ base: "block", md: "flex" }}
                   flexDirection={{ base: "column", md: "row" }}
                   gap={{ md: "2rem", base: "1rem" }}
-                  w={'100%'}
+                  w={"100%"}
                 >
                   <Stack
                     gap={{ md: "0rem", base: "0.5rem" }}
-                    mb={{ base: "1rem",md:'2rem' }}
+                    mb={{ base: "1rem", md: "2rem" }}
                   >
-                    <Text
+                    {/* <Text
                       fontWeight={"500"}
                       fontSize={"0.75rem"}
                       color={"white"}
                     >
                       Full Name
-                    </Text>
+                    </Text> */}
                     <Input
                       variant="unstyled"
-                      size={"sm"}
-                      w={{md:"22rem",base:'100%'}}
-                      p={{md:2,base:0}}
-                      border={'none'}
+                      size={{ md: "sm", base: "sm" }}
+                      w={{ md: "22rem", base: "100%" }}
+                      p={{ md: 2, base: 0 }}
+                      border={"none"}
                       placeholder="Full Name"
                       borderBottom="1px solid white"
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)} // Update state on change
+                      value={fullName}
+                      sx={{
+                        _focus: {
+                          borderBottom: "1px solid white",
+                          boxShadow: "none",
+                        },
+                      }}
+                      onChange={(e) => setFullName(e.target.value)} // Update state on change
                     />
                     {formErrors.firstName && (
-                      <Text color="red" fontSize="xs">
-                        {formErrors.firstName}
+                      <Text color="red" mt={"1rem"} fontSize="xs">
+                        {formErrors.fullName}
                       </Text>
                     )}
                   </Stack>
-
-                 
                 </HStack>
                 <HStack>
-                <Stack
+                  <Stack
                     gap={{ md: "0rem", base: "0.5rem" }}
-                    mb={{ base: "1rem",md:'2rem' }}
+                    mb={{ base: "1rem", md: "2rem" }}
                   >
-                    <Text
+                    {/* <Text
                       fontWeight={"500"}
                       fontSize={"0.75rem"}
                       color={"white"}
                     >
                       Business Email
-                    </Text>
+                    </Text> */}
                     <Input
                       variant="unstyled"
-                      size={"sm"}
-                      w={{md:"22rem",base:'100%'}}
-                      border={'none'}
-                      p={{md:2,base:0}}
+                      size={{ md: "sm", base: "sm" }}
+                      w={{ md: "22rem", base: "100%" }}
+                      border="none"
+                      p={{ md: 2, base: 0 }}
                       borderBottom="1px solid white"
                       placeholder="Email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
+                      sx={{
+                        _focus: {
+                          borderBottom: "1px solid white",
+                          boxShadow: "none",
+                        },
+                      }}
                     />
                     {formErrors.email && (
-                      <Text color="red" fontSize="xs">
-                      {formErrors.email}
+                      <Text color="red" mt={"1rem"} fontSize="xs">
+                        {formErrors.email}
                       </Text>
                     )}
                   </Stack>
@@ -373,7 +403,7 @@ export default function ContactForm() {
                     </HStack>
                   </RadioGroup>
                   {formErrors.subject && (
-                      <Text color="red" fontSize="xs">
+                    <Text color="red" fontSize="xs">
                       {formErrors.subject}
                     </Text>
                   )}
@@ -392,14 +422,24 @@ export default function ContactForm() {
                     placeholder="Type your message here"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
+                    sx={{
+                      _focus: {
+                        borderBottom: "none",
+                        boxShadow: "none",
+                      },
+                    }}
                   />
                   {formErrors.message && (
-                      <Text color="red" fontSize="xs">
+                    <Text color="red" fontSize="xs">
                       {formErrors.message}
                     </Text>
                   )}
                 </HStack>
-                <HStack alignItems={'flex-start'} justifyContent="flex-end" w={"100%"}>
+                <HStack
+                  alignItems={"flex-start"}
+                  justifyContent="flex-end"
+                  w={"100%"}
+                >
                   <Button
                     type="submit"
                     bg={"transparent"}

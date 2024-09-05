@@ -192,13 +192,13 @@ export default function Header() {
               >
                 PRICING
               </Link> */}
-              <Link
+              {/* <Link
                 href="/outbound-services"
                 onMouseEnter={() => setProductsSubmenu(false)}
                 className={`link ${pathname === '/outbound-services' ? 'gradient-text' : ''}`}
               >
                 ADVISORY SERVICES
-              </Link>
+              </Link> */}
               {/* <Link
                 href="/UserGuide"
                 onMouseEnter={() => setProductsSubmenu(false)}
@@ -581,13 +581,13 @@ export default function Header() {
               >
                 GUIDE
               </Link> */}
-              <Link
+              {/* <Link
                 href="/outbound-services"
                 onMouseEnter={() => setProductsSubmenu(false)}
                 className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
               >
                 ADVISORY SERVICES
-              </Link>
+              </Link> */}
               <Link
                 href="/hushhBlogs"
                 className="py-2 w-1/2 border border-myBorder bg-black border-t-0"

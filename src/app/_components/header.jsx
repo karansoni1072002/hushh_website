@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import HushhHeaderLogo from "./svg/hushhHeaderLogo";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
-import { Box, Button, Container, Flex, Text, Badge } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Text, Badge, Divider } from "@chakra-ui/react";
 import { useResponsiveSizes } from "../context/responsive";
 import { Bars3Icon } from "./svg/icons/hamburgerMenuIcon";
 import { CloseMenuIcon } from "./svg/icons/closeMenuIcon";
@@ -24,6 +24,8 @@ import { useMediaQuery } from "react-responsive";
 import SmallVibeSearch from "./svg/smallVibeSearch.svg";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Image from "next/image";
+import { ChevronRightIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 
 export default function Header() {
 
@@ -39,6 +41,8 @@ export default function Header() {
   const [userEmail, setUserEmail] = useState('');
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
+  const overlayRef = useRef(null);
 
   const noHeaderPaths = ['/vivaConnect', '/viva-connect', '/viva-connect/qrPage', '/qrCodePage'];
 
@@ -108,6 +112,26 @@ export default function Header() {
 
   const handleMenuIconToggle = () => {
     setIsMenuOpen(!isMenuOpen);
+    // document.body.style.overflow = !isMenuOpen ? 'hidden' : 'auto';
+  };
+  
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';  // Disable scroll
+    } else {
+      document.body.style.overflow = '';  // Reset scroll
+    }
+
+    // Cleanup on component unmount
+    return () => {
+      document.body.style.overflow = '';  // Reset scroll when the component is unmounted
+    };
+  }, [isMenuOpen]);
+
+  const handleMenuClick = (url) => {
+    router.push(url);
+    setIsOpen(false);
+    setProductsSubmenu(false);
   };
 
   let menuRef = useRef();
@@ -133,10 +157,15 @@ export default function Header() {
     window.open("https://hushh-button.vercel.app/user/login", "_blank");
   };
 
+  const handleLinkClick = () => {
+    // Close menu when any link is clicked
+    setIsMenuOpen(false);
+  };
+
   return (
     <>
   {shouldShowHeader &&
-    <div className={`w-full z-1000`} style={{ background: headerBackground }}>
+    <div className={`w-full z-1000`}>
       <div className=" flex items-center justify-between w-full px-3 py-2 z-1000 md:px-16 md:py-5">
         <div className="">
           <Link href="/">
@@ -153,8 +182,9 @@ export default function Header() {
             </Container>
           </div>
         ) : (
-          <div className="w-full px-3">
-            <div className="text-white flex gap-12 px-7 md:gap-10 text-md">
+          // This is for desktop screens
+          <div className="w-full px-0">
+            <div className="text-white ml-12 flex gap-12 px-7 md:gap-10 text-md">
               {/* <Link
                 href="/"
                 className={`link ${pathname === '/' ? 'gradient-text' : ''}`}
@@ -272,23 +302,6 @@ export default function Header() {
                         </p>
                       </div>
                     </Link>
-                   
-                    {/* <Link
-                      href={"/products/conciergeApp"}
-                      onClick={() => setProductsSubmenu(false)}
-                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
-                    >
-                      <div className="">
-                        <ConciergeApp className="w-6 h-6" />
-                      </div>
-                      <div className="">
-                        <h1 className="font-semibold">Hushh Concierge App</h1>
-                        <p className="text-sm font-medium text-fontColor3">
-                        Elevate your lifestyle with personalized <br /> recommendations and services  
-                        </p>
-                      </div>
-                    </Link> */}
-                    
                   </div>
 
                   <div className="flex-1 flex flex-col gap-2 w-full">
@@ -324,7 +337,7 @@ export default function Header() {
                     </Link>
                 
                     <Link
-                      href={"/products/hushhValetChat"}
+                      href={"/products/hushhForStudents"}
                       onClick={() => setProductsSubmenu(false)}
                       className="flex gap-4 hover:text-white hover:bg-black px-0 py-2.5 rounded-xl"
                     >
@@ -338,47 +351,6 @@ export default function Header() {
                         </p>
                       </div>
                     </Link>
-                    {/* <ToastContainer />   */}
-                    {/* <Link
-                      href={"#"}
-                      onClick={notify}
-                      className="flex gap-4 hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
-                    >
-                    
-                      <div className="">
-                        <VibeSearchApi className="w-6 h-6" />
-                      </div>
-                      <div className="flex-col">
-                        <h1 className="font-semibold flex-row">
-                          VIBE Search APIs
-                        <Badge className="gradient-bg p-1" ml={4} borderRadius={'0.6rem'} fontSize={'0.6rem'} color={'white'}>Coming Soon !</Badge>
-                        </h1>
-                        
-                        <p className="text-sm font-medium text-fontColor3">
-                        Integrate image-based product <br /> search into your app or website 
-                        </p>
-                      </div>
-                    </Link> */}
-                    {/* <ToastContainer/>  
-                    <Link
-                      href={"#"} 
-                      onClick={notify}
-                      // onClick={() => setProductsSubmenu(false)}
-                      className="flex gap-4 group hover:text-white hover:bg-black px-5 py-2.5 rounded-xl"
-                    >
-                      <div className="">
-                        <headerAssets.VibeSearchMarketplace className="w-6 h-6" />
-                      </div>
-                      <div className="flex-col">
-                        <h1 className="font-semibold flex-row">
-                          VIBE Search Marketplace
-                          <Badge className="gradient-bg p-1" ml={4} borderRadius={'0.6rem'} fontSize={'0.6rem'} color={'white'}>Coming Soon !</Badge>
-                        </h1>
-                        <p className="text-sm font-medium text-fontColor3">
-                        A platform for brands to showcase their <br/> products and reach new customers
-                        </p>
-                      </div>
-                    </Link> */}
                   </div>
                 </div>
               </div>
@@ -414,222 +386,123 @@ export default function Header() {
         </div> 
       </div>
 
-      <div className="w-full justify-end flex px-6 z-1000">
-        {isMenuOpen && (isTablet || isMobile )? (
-          <div className={`w-full flex flex-col gap-1`} ref={menuRef}>
-            <div className="text-white w-full flex items-end flex-col text-center">
-              {/* <Link
-                href="/"
-                className="py-2 border border-myBorder bg-black rounded-t w-1/2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                HOME
-              </Link> */}
-              <Link
-                href="/about"
-                className="py-2 w-1/2 border border-myBorder border-t-0 bg-black"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                ABOUT US
-              </Link>
-              <Link
-                href="#"
-                onClick={() => setProductsSubmenuMobile(!productsSubmenuMobile)}
-                className="py-2 w-1/2 border border-myBorder bg-black border-t-0 "
-              >
-                <div className="flex gap-2 items-center justify-center">
-                  PRODUCTS
-                  <ChevronArrowIcon
-                    className={`${productsSubmenuMobile ? "" : "rotate-180"} group-hover:rotate-0 transition-all duration-300`}
-                  />
-                </div>
-              </Link>
-              <div className="w-full z-10000">
-                {productsSubmenuMobile && (
-                  <div className=" flex flex-col w-full items-end">
-                    {/* <p className="text-xs text-fontColor2 font-semibold">HUSHH PRODUCTS</p> */}
+{/* This below is for mobile screens */}
 
-                    <div className=" flex flex-col w-3/4 ">
-                      <Link
-                        href={"/products/hushhButton"}
-                        onClick={handleSubmenuClick}
-                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
-                      >
-                        <div className="">
-                          <HushhButtonIcon size={24} />
-                        </div>
-                        <div className="">
-                          <h1 className="font-semibold">Hushh Button</h1>
-                          {/* <p className='text-sm font-medium text-fontColor3'>Share data for personalized <br /> recommendations.</p> */}
-                        </div>
-                      </Link>
-                      <Link
-                        href={"/products/browserCompanion"}
-                        onClick={handleSubmenuClick}
-                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
-                      >
-                        <div className="">
-                          <ChromeExtentionLogo className="w-6 h-6" />
-                        </div>
-                        <div className="">
-                          <h1 className="font-semibold">
-                            Hushh Browser Companion
-                          </h1>
-                          {/* <p className='text-sm font-medium text-fontColor3'>Enhanced recommendations &<br /> impactful marketing.</p> */}
-                        </div>
-                      </Link>
-                      
-                      <Link
-                        href={"/products/vibeSearch"}
-                        onClick={handleSubmenuClick}
-                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
-                      >
-                        <div className="">
-                          <VibeSearchIcon className="w-6 h-6" />
-                        </div>
-                        <div className="">
-                          <h1 className="font-semibold">VIBE Search App</h1>
-                          {/* <p className='text-sm font-medium text-fontColor3'>Find perfect items to express your <br /> individuality in just one click.</p> */}
-                        </div>
-                      </Link>
-                      <Link
-                        href={"/products/hushhWalletApp"}
-                        onClick={handleSubmenuClick}
-                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0"
-                      >
-                        <div className="">
-                          <HushhWalletIcon className="w-6 h-6" />
-                        </div>
-                        <div className="">
-                          <h1 className="font-semibold">Hushh Wallet App</h1>
-                          {/* <p className='text-sm font-medium text-fontColor3'>Customer User Flow + Client Advisor User Flow</p> */}
-                        </div>
-                      </Link>
-                      <Link
-                        href={"/developerApi"}
-                        onClick={handleSubmenuClick}
-                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
-                      >
-                        <div className="">
-                          <VibeSearchApi className="w-6 h-6" />
-                        </div>
-                        <div className="">
-                          <h1 className="font-semibold">Developer API</h1>
-                        </div>
-                      </Link>
-                      {/* <Link
-                        href={"/products/hushhValetChat"}
-                        onClick={handleSubmenuClick}
-                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
-                      >
-                        <div className="">
-                          <ValetChat className="w-6 h-6" />
-                        </div>
-                        <div className="">
-                          <h1 className="font-semibold">Valet Chat</h1>
-                          {/* <p className='text-sm font-medium text-fontColor3'>Valet Chat: Ditch receipts, unlock <br /> insights.</p> 
-                        </div>
-                      </Link> 
-                      */}
-                      <ToastContainer/>
-                      <Link
-                        href={"#"}
-                        onClick={notify}
-                        // onClick={handleSubmenuClick}
-                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
-                      >
-                        
-                        <div className="">
-                          <VibeSearchApi className="w-6 h-6" />
-                        </div>
-                        <div className="">
-                          <h1 className="font-semibold">VIBE Search APIs</h1>
-                          <Badge colorScheme='purple'>New</Badge>
-                        </div>
-                      </Link>
-                      <ToastContainer/>
-                      <Link
-                        href={"/"}
-                        onClick={notify}
-                        className="flex gap-4 pl-6 items-center w-full py-2 border border-myBorder rounded-tl-lg bg-black border-t-0 "
-                      >
-                        <div className="">
-                          <headerAssets.VibeSearchMarketplace className="w-6 h-6" />
-                        </div>
-                        <div className="">
-                          <h1 className="font-semibold">
-                            VIBE Search Marketplace
-                          </h1>
-                          {/* <p className='text-sm font-medium text-fontColor3'>News and updates</p> */}
-                        </div>
-                      </Link>
-                    </div>
-                  </div>
-                )}
+          {isMenuOpen && (isTablet || isMobile) ? (
+            <div style={{zIndex:'1000 !important', position:'absolute', width:'100%'}} className="top-0 bg-black overflow-hidden flex flex-col justify-between min-h-screen min-w-screen" ref={menuRef}>
+              {/* Header */}
+              <div className="px-6 mt-4 flex justify-between items-center">
+                {/* Logo */}
+                {/* <Image src={HushhHeaderLogo} alt="Hushh.ai" /> */}
+                <HushhHeaderLogo/>
+                <button onClick={() => setIsMenuOpen(false)} className="text-gray-600">
+                  <CloseIcon />
+                </button>
               </div>
-              {/* <Link
-                href="/pricingPlans"
-                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Pricing
-              </Link> */}
-              {/* <Link
-                href="/UserGuide"
-                onClick={() => setIsMenuOpen(false)}
-                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
-              >
-                GUIDE
-              </Link> */}
-              {/* <Link
-                href="/outbound-services"
-                onMouseEnter={() => setProductsSubmenu(false)}
-                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
-              >
-                ADVISORY SERVICES
-              </Link> */}
-              <Link
-                href="/hushhBlogs"
-                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Blogs
-              </Link>
-              <Link
-                href="/contact-us"
-                onClick={() => setIsMenuOpen(false)}
-                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
-              >
-                CONTACT US
-              </Link>
-              {/* <ScrollLink
-                to="contact-form"
-                spy={true}
-                smooth={true}
-                duration={7000}
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  scrollToContactForm();
-                }}
-                className="py-2 w-1/2 border border-myBorder bg-black border-t-0"
-              >
-                CONTACT US
-              </ScrollLink> */}
-              {/* <Link
-                href="/"
-                className="py-2 w-1/2 border border-myBorder border-t-0 bg-black rounded-b"
-                onClick={() => setIsMenuOpen(false) }
-                onClick={handleLoginClick}
-              >
-                LOGIN
-              </Link> */}
+        
+              {/* Menu Items */}
+              <div className="flex-1 bg-black mt-4 overflow-y-auto">
+                <ul style={{listStyle:'none'}} className="flex mt-6 flex-col px-6 space-y-4 bg-black">
+                <li>
+                    <Link href="/about" onClick={() => setIsMenuOpen(false)} style={{fontWeight:'700'}} className="text-lg text-white">
+                      About Us
+                    </Link>
+                  </li>
+                <Divider borderStyle={'solid'} borderWidth={"1px"} borderColor={"#5A5A5A"} />  
+                  <li>
+                    <Link
+                      style={{fontWeight:'700'}}
+                      href="#"
+                      className="flex justify-between items-center text-lg text-white"
+                      onClick={() => setProductsSubmenuMobile(!productsSubmenuMobile)}
+                    >
+                      Products
+                      <ChevronArrowIcon
+                        className={`${productsSubmenuMobile ? "rotate-180" : ""} transition-all`}
+                      />
+                    </Link>
+        
+                    {productsSubmenuMobile && (
+                      <ul style={{listStyle:'none'}} className="mt-2 space-y-3 bg-black pl-6 text-base text-white">
+                        <li>
+                          <Link style={{fontWeight:'500'}} onClick={() => setIsMenuOpen(false)} href="/products/hushhWalletApp" className="block">
+                          <span style={{display:'flex',flexDirection:'row', gap:'1rem'}}>
+                          <HushhWalletIcon className="w-6 h-6" />
+                            Hushh Wallet App
+                            </span>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link style={{fontWeight:'500'}}  onClick={() => setIsMenuOpen(false)} href="/products/browserCompanion" className="block text-white ">
+                          <span style={{display:'flex',flexDirection:'row', gap:'1rem'}}>
+                          <ChromeExtentionLogo className="w-6 h-6"/>
+                            Browser Companion
+                          </span>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link style={{fontWeight:'500'}}  onClick={() => setIsMenuOpen(false)} href="/products/vibeSearch" className="block text-white">
+                          <span style={{display:'flex',flexDirection:'row', gap:'1rem'}}>
+                          <VibeSearchIcon className="w-6 h-6"/>
+                          Vibe Search
+                          </span>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link style={{fontWeight:'500'}}  onClick={() => setIsMenuOpen(false)} href="/products/hushhButton" className="block text-white">
+                          <span style={{display:'flex',flexDirection:'row', gap:'1rem'}}>
+                         <HushhButtonIcon size={24} />
+                         Hushh Button
+                          </span> 
+                          </Link>
+                        </li>
+                        <li>
+                          <Link style={{fontWeight:'500'}}  onClick={() => setIsMenuOpen(false)} href="/products/developerApi" className="block text-white">
+                          <span style={{display:'flex',flexDirection:'row', gap:'1rem'}}>
+                          <VibeSearchApi className="w-6 h-6" />
+                          Developer API
+                          </span>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link style={{fontWeight:'500'}}  onClick={() => setIsMenuOpen(false)} href="/products/hushhForStudents" className="block text-white">
+                          <span style={{display:'flex',flexDirection:'row', gap:'1rem'}}>
+                          <headerAssets.VibeSearchMarketplace className="w-6 h-6" />
+                          Hushh For Students
+                          </span>
+                          </Link>
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+                  <Divider borderStyle={'solid'} borderWidth={"1px"} borderColor={"#5A5A5A"} />  
+
+                  <li>
+                    <Link style={{fontWeight:'700'}}  onClick={() => setIsMenuOpen(false)} href="/contact-us" className="text-lg text-white">
+                      Contact Us
+                    </Link>
+                  </li>
+                  <Divider borderStyle={'solid'} borderWidth={"1px"} borderColor={"#5A5A5A"} />  
+
+                  <li>
+                    <Link style={{fontWeight:'700'}} onClick={() => setIsMenuOpen(false)} href="/hushhBlogs" className="text-lg text-white">
+                      Blogs
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+        
+              {/* Sign In Button */}
+              <div className="px-6 pb-6">
+                <button style={{background:'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'}} className="w-full text-white py-2 rounded-full text-lg">
+                  Download Our App
+                </button>
+              </div>
             </div>
-          </div>
-        ) : (
-          <div className=""></div>
-        )}
-      </div>
-    </div>
+          ) : (
+            <div className=""></div>
+          )}
+        </div>
   }  
     </>
   );

@@ -89,46 +89,46 @@ const contentMap = [
       "Personalized search engine that lets you search across brands",
     icon: <VibeSearchApp />,
   },
-  {
-    keywords: [
-      "Valet Chat App",
-      "finance",
-      "Gen AI",
-      "Manage finance",
-      "Convenient Wallet Integration",
-      "Intelligent Finance and Receipts Management",
-      "Collect receipts from mail",
-    ],
-    url: "/products/hushhValetChat",
-    content:
-      "Valet Chat App ,  Hushh Valet Chat , Lets you collect all your receipts from mail and manage them to help you better understand your spending habits and finance with Gen AI , Manage all your receipts at one place and get insights on your finance with Gen AI , Tired of? all the receipts at your mail and don't know how to manage them ? Valet chat is your one stop solution to find and manage all your receipts at one place and also get useful insights from us to better manage your finance , Valet chat helps you manage finance , Track your recipts , Sync all your receipts automatically , Chat with our AI to understand your Finances better , Manage and categories receipts for easy access , Share your receipts with people and receive insights , Convenient Wallet Integration , Streamlined Integration via Valet Chat ,  Hushh Valet chat also enables users to share their Reciepts in their Hushh Wallet. This makes it easy to organize and access important information, such as receipts, warranty details, and more, all in one secure place , Intelligent Finance and Receipts Management , The Valet chat app utilizes advanced algorithms and AI technology to analyze the captured data and generate brilliant insights. Users receive personalized Insights on receipts, Manage their Receipts and receive intelligent insights on their spendings and Finance ",
-    showRecommentationContentHeading: "Valet Chat App",
-    showRecommentationContentDescription:
-      "Lets you collect all your receipts from mail and manage them to help you better understand your spending habits and finance",
-    icon: <ValetChat />,
-  },
-  {
-    keywords: [
-      "Concierge App",
-      "luxury experience",
-      "Gen AI",
-      "real time data",
-      "Real-Time Matching",
-      "Powered by AI",
-      "Flips the Script",
-      "Exclusive Opportunities",
-      "Discretion and Privacy",
-      "Personalized Recommendations",
-      "Effortless Service",
-    ],
-    url: "/products/conciergeApp",
-    content:
-      "Concierge App , Experience Luxury, Redefined , Hushh is a revolutionary concierge app that transforms luxury experiences through the power of voice, AI, and real-time data with Gen AI. Unlike traditional concierge services, Hushh prioritizes your needs, not just your preferences with Gen AI , Our technology services deliver cutting-edge solutions tailored to drive efficiency, enhance performance, and fuel growth in today's digital landscape , Effortless Service , Simply speak your request using the app, and Hushh translates it into action. No more searching or filling out forms , Personalized Recommendations , Hushh analyzes your intent, not just your preferences, to recommend services that truly match your needs , Real-Time Responses , Get immediate responses to your requests from top-tier service providers, competing for your attention , Discretion and Privacy , Your identity and preferences remain confidential. Requests are shared anonymously with relevant service providers , Exclusive Opportunities , Access exclusive deals and hidden gem recommendations you won't find anywhere else , Hushh caters to a wide range of needs, including - Travel ,  Bespoke itineraries, private jet charters, exclusive tours , Events , VIP access to high-profile events, private viewings, red carpet experiences , Lifestyle , Personal shopping, home management, day-to-day errands, specialized requests , Receipt Radar revolutionizes the way you handle receipts. With automatic scanning, smart categorization, and customizable options, managing expenses becomes a breeze. Simplify your life and take control of your finances with Receipt Radar today! , Flips the Script , Users seeking services become services seeking users, putting you in control , Powered by AI , Leverages cutting-edge technology to understand your intent and deliver personalized recommendations , Real-Time Matching , Connects you with the right service providers instantly ",
-    showRecommentationContentHeading: "Concierge App",
-    showRecommentationContentDescription:
-      "Speak your wish and get experience Luxury, Redefined by priotizing your needs and preferences through the power of voice, Gen AI, and real-time data",
-    icon: <ConciergeApp />,
-  },
+  // {
+  //   keywords: [
+  //     "Valet Chat App",
+  //     "finance",
+  //     "Gen AI",
+  //     "Manage finance",
+  //     "Convenient Wallet Integration",
+  //     "Intelligent Finance and Receipts Management",
+  //     "Collect receipts from mail",
+  //   ],
+  //   url: "/products/hushhValetChat",
+  //   content:
+  //     "Valet Chat App ,  Hushh Valet Chat , Lets you collect all your receipts from mail and manage them to help you better understand your spending habits and finance with Gen AI , Manage all your receipts at one place and get insights on your finance with Gen AI , Tired of? all the receipts at your mail and don't know how to manage them ? Valet chat is your one stop solution to find and manage all your receipts at one place and also get useful insights from us to better manage your finance , Valet chat helps you manage finance , Track your recipts , Sync all your receipts automatically , Chat with our AI to understand your Finances better , Manage and categories receipts for easy access , Share your receipts with people and receive insights , Convenient Wallet Integration , Streamlined Integration via Valet Chat ,  Hushh Valet chat also enables users to share their Reciepts in their Hushh Wallet. This makes it easy to organize and access important information, such as receipts, warranty details, and more, all in one secure place , Intelligent Finance and Receipts Management , The Valet chat app utilizes advanced algorithms and AI technology to analyze the captured data and generate brilliant insights. Users receive personalized Insights on receipts, Manage their Receipts and receive intelligent insights on their spendings and Finance ",
+  //   showRecommentationContentHeading: "Valet Chat App",
+  //   showRecommentationContentDescription:
+  //     "Lets you collect all your receipts from mail and manage them to help you better understand your spending habits and finance",
+  //   icon: <ValetChat />,
+  // },
+  // {
+  //   keywords: [
+  //     "Concierge App",
+  //     "luxury experience",
+  //     "Gen AI",
+  //     "real time data",
+  //     "Real-Time Matching",
+  //     "Powered by AI",
+  //     "Flips the Script",
+  //     "Exclusive Opportunities",
+  //     "Discretion and Privacy",
+  //     "Personalized Recommendations",
+  //     "Effortless Service",
+  //   ],
+  //   url: "/products/conciergeApp",
+  //   content:
+  //     "Concierge App , Experience Luxury, Redefined , Hushh is a revolutionary concierge app that transforms luxury experiences through the power of voice, AI, and real-time data with Gen AI. Unlike traditional concierge services, Hushh prioritizes your needs, not just your preferences with Gen AI , Our technology services deliver cutting-edge solutions tailored to drive efficiency, enhance performance, and fuel growth in today's digital landscape , Effortless Service , Simply speak your request using the app, and Hushh translates it into action. No more searching or filling out forms , Personalized Recommendations , Hushh analyzes your intent, not just your preferences, to recommend services that truly match your needs , Real-Time Responses , Get immediate responses to your requests from top-tier service providers, competing for your attention , Discretion and Privacy , Your identity and preferences remain confidential. Requests are shared anonymously with relevant service providers , Exclusive Opportunities , Access exclusive deals and hidden gem recommendations you won't find anywhere else , Hushh caters to a wide range of needs, including - Travel ,  Bespoke itineraries, private jet charters, exclusive tours , Events , VIP access to high-profile events, private viewings, red carpet experiences , Lifestyle , Personal shopping, home management, day-to-day errands, specialized requests , Receipt Radar revolutionizes the way you handle receipts. With automatic scanning, smart categorization, and customizable options, managing expenses becomes a breeze. Simplify your life and take control of your finances with Receipt Radar today! , Flips the Script , Users seeking services become services seeking users, putting you in control , Powered by AI , Leverages cutting-edge technology to understand your intent and deliver personalized recommendations , Real-Time Matching , Connects you with the right service providers instantly ",
+  //   showRecommentationContentHeading: "Concierge App",
+  //   showRecommentationContentDescription:
+  //     "Speak your wish and get experience Luxury, Redefined by priotizing your needs and preferences through the power of voice, Gen AI, and real-time data",
+  //   icon: <ConciergeApp />,
+  // },
   {
     keywords: [
       "Browser Companion",
@@ -145,27 +145,27 @@ const contentMap = [
       "Enhanced Recommendations and impactful marketing which helps you keep track of your digital footprint by tracking your own browsing activity",
     icon: <ChromeExtension />,
   },
-  {
-    keywords: [
-      "Pricing Plans",
-      "Pricing",
-      "Hushh Pricing",
-      "Aa-la-cart plans",
-      "Add ons",
-      "Customized Plans",
-      "Pricing details",
-      "Price Structure",
-      "Digital footprint",
-      "Gen AI",
-    ],
-    url: "/pricingPlans",
-    content:
-      "Find the right plan for your needs, USER PLANS, PROFESSIONAL PLANS, Build, publish, and host with ease, Add a team and stage multiple sites, Our user plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer, Billed Monthly, Yearly Billings, Monthly Plans, Yearly Plans, Save upto 22% , Vibe Search Plans, Wallet App Plans, Valet Chat Plans, Concierge App plans, Browser Companion Plans, Basic Plans, Pro Plan, Premium Plans, Unlimited Brands, All prices are in USD and charged per site with applicable taxes added at checkout, View All Plan features, View Plans, Luxury App agents, Vibe Search API plans, Agent Concierge App plans, Free trial, 90 days plan, Data Access, Hushh Plans, Hushh pricing, Hushh Data Plans, Hushh Addons, Hushh ADD-ons, $9.99/month, $9.99, $19.99 per month, Start for free, Hushh’s diverse pricing strategy aims to democratize access to powerful data and AI tools, making them accessible to a wide audience. Whether you’re a consumer trusting us with your data, a developer building the next big app, a sales agent aiming for your next target, or a creator curating unique experiences, Hushh provides the tools, support, and platform to achieve your goals. With Hushh, embrace a smarter, more secure, and personalized digital future, This summary aims to convey Hushh’s commitment to delivering value through innovative, user-centric products and services, ensuring clear communication of pricing and offerings to foster trust and loyalty across all user segments , Beyond the tools and platforms, Hushh fosters a community for support, learning, and collaboration, enhancing the value of every subscription., From free basic access to premium options, services are built to scale with the growth of individuals & businesses, ensuring long-term support, Scalable Solutions, Pricing is designed to be straightforward across all services, ensuring users can easily select the tools that best fit their needs without encountering hidden fees, Advanced Data Insights, User Targeting Options, Data Card Sharing, Commision Sharing, Brand Reputation tool, Campaign Management, Brand Interaction Analytics, Customizable Reporting, Advanced Integration, Maximum Products Indexed, Response Time, Recommendation Types, Customer Data Integration, Customizable Search Filters, Enchanced Search Analytics, Free trial for 90 days, maximum service categories,client matching, lead volumne, hushh coin commision, client match radius, featured agent listing, advanced AI capabilities, No advetisment, White lable products, receipt import, basic, pro, premium, Basic Search, Search history, share your vibe, advance search filters, unlimited searches, saved searches, add site plans, get plans, get pricing, pricing menu, customizable UI, Unlimited card, customized cards, Limited sources data aggregation, data card creation, selective data sharing, customized data sharing, security data sharing, security standard encryption, basic rewards, anonymization, advanced rewards, data backup, Customizable Privacy Settings, No ads, Receipt Import, Categorization, Conversational AI, Multimedia Sharing, Export Options, Customizable Themes, Chat Backup, Request Format,  Service Provider Choice, Basic Assistance, Request Anonymity Level, Advanced AI Capabilities, Hushh Browser Companion plans,  Valet chat plans, Hushh wallet app plans, Hushh Vibe Search plans , Gen AI plans, pricing plans, contact for pricing ",
-    showRecommentationContentHeading: "Hushh Pricing Plans",
-    showRecommentationContentDescription:
-      "Pricing is designed to be straightforward across all services, ensuring users can easily select the tools that best fit their needs without encountering hidden fees",
-    icon: <TbWorldDollar size={'1.5rem'} />,
-  },
+  // {
+  //   keywords: [
+  //     "Pricing Plans",
+  //     "Pricing",
+  //     "Hushh Pricing",
+  //     "Aa-la-cart plans",
+  //     "Add ons",
+  //     "Customized Plans",
+  //     "Pricing details",
+  //     "Price Structure",
+  //     "Digital footprint",
+  //     "Gen AI",
+  //   ],
+  //   url: "/pricingPlans",
+  //   content:
+  //     "Find the right plan for your needs, USER PLANS, PROFESSIONAL PLANS, Build, publish, and host with ease, Add a team and stage multiple sites, Our user plans provide easy 1-click publishing and hosting, right from inside our powerful visual designer, Billed Monthly, Yearly Billings, Monthly Plans, Yearly Plans, Save upto 22% , Vibe Search Plans, Wallet App Plans, Valet Chat Plans, Concierge App plans, Browser Companion Plans, Basic Plans, Pro Plan, Premium Plans, Unlimited Brands, All prices are in USD and charged per site with applicable taxes added at checkout, View All Plan features, View Plans, Luxury App agents, Vibe Search API plans, Agent Concierge App plans, Free trial, 90 days plan, Data Access, Hushh Plans, Hushh pricing, Hushh Data Plans, Hushh Addons, Hushh ADD-ons, $9.99/month, $9.99, $19.99 per month, Start for free, Hushh’s diverse pricing strategy aims to democratize access to powerful data and AI tools, making them accessible to a wide audience. Whether you’re a consumer trusting us with your data, a developer building the next big app, a sales agent aiming for your next target, or a creator curating unique experiences, Hushh provides the tools, support, and platform to achieve your goals. With Hushh, embrace a smarter, more secure, and personalized digital future, This summary aims to convey Hushh’s commitment to delivering value through innovative, user-centric products and services, ensuring clear communication of pricing and offerings to foster trust and loyalty across all user segments , Beyond the tools and platforms, Hushh fosters a community for support, learning, and collaboration, enhancing the value of every subscription., From free basic access to premium options, services are built to scale with the growth of individuals & businesses, ensuring long-term support, Scalable Solutions, Pricing is designed to be straightforward across all services, ensuring users can easily select the tools that best fit their needs without encountering hidden fees, Advanced Data Insights, User Targeting Options, Data Card Sharing, Commision Sharing, Brand Reputation tool, Campaign Management, Brand Interaction Analytics, Customizable Reporting, Advanced Integration, Maximum Products Indexed, Response Time, Recommendation Types, Customer Data Integration, Customizable Search Filters, Enchanced Search Analytics, Free trial for 90 days, maximum service categories,client matching, lead volumne, hushh coin commision, client match radius, featured agent listing, advanced AI capabilities, No advetisment, White lable products, receipt import, basic, pro, premium, Basic Search, Search history, share your vibe, advance search filters, unlimited searches, saved searches, add site plans, get plans, get pricing, pricing menu, customizable UI, Unlimited card, customized cards, Limited sources data aggregation, data card creation, selective data sharing, customized data sharing, security data sharing, security standard encryption, basic rewards, anonymization, advanced rewards, data backup, Customizable Privacy Settings, No ads, Receipt Import, Categorization, Conversational AI, Multimedia Sharing, Export Options, Customizable Themes, Chat Backup, Request Format,  Service Provider Choice, Basic Assistance, Request Anonymity Level, Advanced AI Capabilities, Hushh Browser Companion plans,  Valet chat plans, Hushh wallet app plans, Hushh Vibe Search plans , Gen AI plans, pricing plans, contact for pricing ",
+  //   showRecommentationContentHeading: "Hushh Pricing Plans",
+  //   showRecommentationContentDescription:
+  //     "Pricing is designed to be straightforward across all services, ensuring users can easily select the tools that best fit their needs without encountering hidden fees",
+  //   icon: <TbWorldDollar size={'1.5rem'} />,
+  // },
   {
     keywords: [
       "Contact Us",

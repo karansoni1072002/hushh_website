@@ -26,6 +26,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Image from "next/image";
 import { ChevronRightIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import UnicodeQR from "./svg/onelinkQrdownload.svg"
+import { isMobile, isAndroid, isIOS } from 'react-device-detect';
+
 
 export default function Header() {
 
@@ -43,7 +46,8 @@ export default function Header() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const overlayRef = useRef(null);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentQRLink, setCurrentQRLink] = useState("");
   const noHeaderPaths = ['/vivaConnect', '/viva-connect', '/viva-connect/qrPage', '/qrCodePage'];
 
   const shouldShowHeader = !noHeaderPaths.includes(pathname);
@@ -75,12 +79,26 @@ export default function Header() {
   const handleDropdownClick = () => {
     setIsDropdownOpen(!isDropdownOpen); 
   };
-
+  const handleOpenModal = (link) => {
+    setCurrentQRLink(link);
+    setIsModalOpen(true);
+  };
   const scrollToContactForm = () => {
     window.scrollTo({
       top: document.getElementById("contact-form").offsetTop,
       behavior: "smooth",
     });
+  };
+
+  const handleDownloadClick = () => {
+    console.log('Download clicked')
+    if (isAndroid) {
+      window.location.href = "https://bit.ly/hushh-wallet-play-store";
+    } else if (isIOS) {
+      window.location.href = "https://bit.ly/hushh-app-ios";
+    } else {
+      handleOpenModal();
+    }
   };
 
   useEffect(() => {
@@ -494,7 +512,7 @@ export default function Header() {
         
               {/* Sign In Button */}
               <div className="px-6 pb-6">
-                <button style={{background:'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'}} className="w-full text-white py-2 rounded-full text-lg">
+                <button onClick={handleDownloadClick} style={{background:'linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)'}} className="w-full text-white py-2 rounded-full text-lg">
                   Download Our App
                 </button>
               </div>

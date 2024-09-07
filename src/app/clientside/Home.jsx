@@ -63,6 +63,7 @@ import ImageGrid from "../_components/features/dynamicImageGrid";
 import { QRCode } from "react-qrcode-logo";
 import { isMobile, isAndroid, isIOS } from 'react-device-detect';
 import UnicodeQR from "../_components/svg/onelinkQrdownload.svg"
+import DownloadModal from "../_components/primitives/downloadModal";
 
 const ClientHome = () => {
   const router = useRouter();
@@ -103,16 +104,35 @@ const ClientHome = () => {
     return () => clearTimeout(timeoutId);
   }, []);
 
+  // const handleDownloadClick = () => {
+  //   if (isAndroid) {
+  //     window.location.href = "https://bit.ly/hushh-wallet-play-store";
+  //   } else if (isIOS) {
+  //     window.location.href = "https://bit.ly/hushh-app-ios";
+  //   } else {
+  //     handleOpenModal();
+  //   }
+  // };
   const handleDownloadClick = () => {
-    if (isAndroid) {
-      window.location.href = "https://bit.ly/hushh-wallet-play-store";
-    } else if (isIOS) {
-      window.location.href = "https://bit.ly/hushh-app-ios";
+    setIsModalOpen(true); // Open the modal instead of navigating
+  };
+
+const handleTestBuildClick = (platform) => {
+    if (platform === 'android') {
+      window.location.href = "https://bit.ly/hushh-wallet-android-dev"; // Test build for Android
     } else {
-      handleOpenModal();
+      window.location.href = "https://bit.ly/hushh-wallet-ios-dev"; // Test build for iOS
     }
   };
 
+  const handleProductionBuildClick = (platform) => {
+    if (platform === 'android') {
+      window.location.href = "https://bit.ly/hushh-wallet-play-store"; // Production build for Android
+    } else {
+      window.location.href = "https://bit.ly/hushh-app-ios"; // Production build for iOS
+    }
+  };
+  
   return (
     <>
       <Head>
@@ -127,17 +147,7 @@ const ClientHome = () => {
           content="Data API Business, Data Autonomy, Data Equity, Consent-Driven Excellence, Technology For Everyone, Hushh Wallet App, Hushh Button, Vibe Search, Browser Companion, Concierge App, Valet Chat, Vibe Search API, Hushh For Students, Brand Wallet, Receipt Radar, Future of Digital Identity & Personalised Experiences, Gen AI, GenAI "
         />
       </Head>
-      <Modal isCentered isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Please Scan QR Code to Download App</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
-            <Image src={UnicodeQR} size={256} alt="QR Code" style={{width:'80%',height:'80%'}}/>
-            <Text fontSize={'1.75rem'} fontWeight={'bold'} className="hushh-gradient">Hushh Wallet App</Text>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+      <DownloadModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}/>
       <div className="relative">
         {isMobile ?
         <Image

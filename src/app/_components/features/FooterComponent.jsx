@@ -19,6 +19,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import DownloadModal from "../primitives/downloadModal";
 
 const FooterComponent = () => {
   // const isMobile = useResponsiveSizes();
@@ -247,38 +248,7 @@ const FooterComponent = () => {
           </div>
         </div>
       </div>
-
-      <Modal
-        isCentered
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      >
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Please Scan QR Code to Download App</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody
-            display={"flex"}
-            flexDirection={"column"}
-            justifyContent={"center"}
-            alignItems={"center"}
-          >
-            <Image
-              src={UnicodeQR}
-              size={256}
-              alt="QR Code"
-              style={{ width: "80%", height: "80%" }}
-            />
-            <Text
-              fontSize={"1.75rem"}
-              fontWeight={"bold"}
-              className="hushh-gradient"
-            >
-              Hushh Wallet App
-            </Text>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+<DownloadModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}/>
     </>
   );
 };

@@ -56,6 +56,7 @@ import WhiteShadow from "../_components/svg/whiteShadow.svg";
 import { AndroidIcon } from "../_components/svg/icons/androidIcon";
 import UnicodeQR from "../_components/svg/onelinkQrdownload.svg"
 import { isMobile, isAndroid, isIOS } from 'react-device-detect';
+import DownloadModal from "../_components/primitives/downloadModal";
 
 const BrandContainer = styled.div`
   display: flex;
@@ -788,18 +789,7 @@ const ClientHushhWallet = () => {
 
       <WalletFaq />
       <ContactForm />
-
-      <Modal isCentered isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Please Scan QR Code to Download App</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
-            <Image src={UnicodeQR} size={256} alt="QR Code" style={{width:'80%',height:'80%'}}/>
-            <Text fontSize={'1.75rem'} fontWeight={'bold'} className="hushh-gradient">Hushh Wallet App</Text>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+<DownloadModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}/>
     </>
   );
 };

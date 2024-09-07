@@ -31,6 +31,7 @@ import extendedTheme from "../../theme";
 import Image from "next/image";
 import theme from "../../theme";
 import UnicodeQR from '../../_components/svg/onelinkQrdownload.svg'
+import DownloadModal from "../primitives/downloadModal";
 
 const BrandWalletSection = () => {
   const router = useRouter();
@@ -359,37 +360,7 @@ const BrandWalletSection = () => {
           </Button>
         </Box>
       </VStack>
-      <Modal
-        isCentered
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      >
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Please Scan QR Code to Download App</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody
-            display={"flex"}
-            flexDirection={"column"}
-            justifyContent={"center"}
-            alignItems={"center"}
-          >
-            <Image
-              src={UnicodeQR}
-              size={256}
-              alt="QR Code"
-              style={{ width: "80%", height: "80%" }}
-            />
-            <Text
-              fontSize={"1.75rem"}
-              fontWeight={"bold"}
-              className="hushh-gradient"
-            >
-              Hushh Wallet App
-            </Text>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+      <DownloadModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}/>
     </>
   );
 };

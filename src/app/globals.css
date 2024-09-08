@@ -480,3 +480,22 @@ body {
   grid-column-start: 2;
   grid-column-end: 4;
 }
+
+/* Header hiding for desktop and mobile issue */
+.mobile-header {
+  display: none; /* Hide mobile header by default */
+}
+
+.desktop-header {
+  display: block; /* Show desktop header by default */
+}
+
+/* Use media queries to control visibility */
+@media (max-width: 768px) {
+  .mobile-header {
+      display: block; /* Show mobile header on small screens */
+  }
+  .desktop-header {
+      display: none; /* Hide desktop header on small screens */
+  }
+}

@@ -32,7 +32,7 @@ import { isMobile, isAndroid, isIOS } from 'react-device-detect';
 
 export default function Header() {
 
-  const { isTablet, isMobile, isDesktop } = useResponsiveSizes();
+  const { isTablet, isDesktop } = useResponsiveSizes();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsSubmenu, setProductsSubmenu] = useState(false);
   const [productsSubmenuMobile, setProductsSubmenuMobile] = useState(false);
@@ -190,8 +190,8 @@ export default function Header() {
             <HushhHeaderLogo />
           </Link>
         </div>
-        {!isDesktop ? (
-          <div className="w-full flex py-2 justify-end">
+        {isMobile ? (
+          <div className={`w-full mobile-header flex py-2 justify-end ${isMobile ? '' : 'hidden'}`}>
             <Container display={"flex"} gap={"1rem"}>
               <SearchBar />
               <div className=" text-white" onClick={handleMenuIconToggle}>
@@ -201,7 +201,7 @@ export default function Header() {
           </div>
         ) : (
           // This is for desktop screens
-          <div className="w-full px-0">
+          <div className={`w-full px-0 desktop-header ${isMobile ? 'hidden' : ''}`}>
             <div className="text-white ml-12 flex gap-12 px-7 md:gap-10 text-md">
               {/* <Link
                 href="/"

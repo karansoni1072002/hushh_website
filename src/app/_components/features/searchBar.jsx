@@ -104,18 +104,24 @@ const SearchBar = () => {
     }
   };
 
+  const handleScroll = () => {
+    setIsClicked(false);
+    setShowRecommendations(false);
+  };
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <>
-    <div onClick={handleClick}>
+    <div onClick={() => setIsClicked(true)}>
       {!isClicked ? (
         <IconButton
           style={{marginTop: isDesktop ? '0.5rem':'0.5rem', marginRight: isDesktop ? '2rem':'0.1rem'}}

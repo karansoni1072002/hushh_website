@@ -178,12 +178,11 @@ body {
 .words {
   display: flex;
   flex-direction: column;
-  animation: cycleWords 9s infinite;
+  animation: cycleWords 12s infinite;
 }
 
 .slideText {
   height: 100%;
-  padding-left: 10px;
 }
 
 /* @keyframes cycleWords {
@@ -202,20 +201,23 @@ body {
 } */
 
 @keyframes cycleWords {
-  0%, 20% {
-    transform: translateY(0);
+  0%, 10% {
+    transform: translateY(0%); /* Show the first word */
   }
-  25%, 45% {
-    transform: translateY(-100%);
+  15%, 25% {
+    transform: translateY(-100%); /* Slide up to the second word */
   }
-  50%, 70% {
-    transform: translateY(-200%);
+  30%, 40% {
+    transform: translateY(-200%); /* Slide up to the third word */
   }
-  75%, 95% {
-    transform: translateY(-300%);
+  45%, 55% {
+    transform: translateY(-300%); /* Slide up to the third word */
   }
-  100% {
-    transform: translateY(-400%);
+  60%, 70% {
+    transform: translateY(-400%); /* Slide up to the third word */
+  }
+  75%, 85% {
+    transform: translateY(-500%); /* Slide up to the third word */
   }
 }
 

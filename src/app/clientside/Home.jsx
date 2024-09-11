@@ -61,8 +61,8 @@ import PlayStoreIcon from "../_components/svg/icons/playStoreIcon.svg";
 import YoutubeBG from "../_components/svg/youtubeBgEllipse.svg";
 import ImageGrid from "../_components/features/dynamicImageGrid";
 import { QRCode } from "react-qrcode-logo";
-import { isMobile, isAndroid, isIOS } from 'react-device-detect';
-import UnicodeQR from "../_components/svg/onelinkQrdownload.svg"
+import { isMobile, isAndroid, isIOS } from "react-device-detect";
+import UnicodeQR from "../_components/svg/onelinkQrdownload.svg";
 import DownloadModal from "../_components/primitives/downloadModal";
 
 const ClientHome = () => {
@@ -117,8 +117,8 @@ const ClientHome = () => {
     setIsModalOpen(true); // Open the modal instead of navigating
   };
 
-const handleTestBuildClick = (platform) => {
-    if (platform === 'android') {
+  const handleTestBuildClick = (platform) => {
+    if (platform === "android") {
       window.location.href = "https://bit.ly/hushh-wallet-android-dev"; // Test build for Android
     } else {
       window.location.href = "https://bit.ly/hushh-wallet-ios-dev"; // Test build for iOS
@@ -126,13 +126,13 @@ const handleTestBuildClick = (platform) => {
   };
 
   const handleProductionBuildClick = (platform) => {
-    if (platform === 'android') {
+    if (platform === "android") {
       window.location.href = "https://bit.ly/hushh-wallet-play-store"; // Production build for Android
     } else {
       window.location.href = "https://bit.ly/hushh-app-ios"; // Production build for iOS
     }
   };
-  
+
   return (
     <>
       <Head>
@@ -147,24 +147,28 @@ const handleTestBuildClick = (platform) => {
           content="Data API Business, Data Autonomy, Data Equity, Consent-Driven Excellence, Technology For Everyone, Hushh Wallet App, Hushh Button, Vibe Search, Browser Companion, Concierge App, Valet Chat, Vibe Search API, Hushh For Students, Brand Wallet, Receipt Radar, Future of Digital Identity & Personalised Experiences, Gen AI, GenAI "
         />
       </Head>
-      <DownloadModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}/>
+      <DownloadModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
       <div className="relative">
-        {isMobile ?
-        <Image
-          src={PinkShadow}
-          alt="PinkShadow"
-          placeholder="blur"
-          style={{width:'50%',height:'50%'}}
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
-        /> :
-        <Image
-          src={PinkShadow}
-          alt="PinkShadow"
-          placeholder="blur"
-          style={{width:'80%',height:'80%'}}
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
-        />
-        }
+        {isMobile ? (
+          <Image
+            src={PinkShadow}
+            alt="PinkShadow"
+            placeholder="blur"
+            style={{ width: "50%", height: "50%" }}
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
+          />
+        ) : (
+          <Image
+            src={PinkShadow}
+            alt="PinkShadow"
+            placeholder="blur"
+            style={{ width: "80%", height: "80%" }}
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANII="
+          />
+        )}
         <main className="bg-transparent font-Figtree">
           <div className="absolute top-0 w-full">
             {/* {showPopup && (
@@ -193,32 +197,54 @@ const handleTestBuildClick = (platform) => {
                     lineHeight={{ md: "5.5rem", base: "2.5rem" }}
                     fontWeight={"400"}
                     display={"flex"}
+                    textAlign={"left"}
+                    alignItems={"flex-start"}
+                    justifyContent={"flex-start"}
                     flexDirection={"column"}
-                    bg={'transparent'}
+                    bg={"transparent"}
                     className="text-headText"
                   >
-                    <span>Your data</span>
-                    <div className="wrapper" style={{background:'transparent !important'}}>
-                      <span>Your </span>
+                    <div
+                      className="wrapper"
+                      style={{ background: "transparent !important" }}
+                    >
                       <div className="words">
-                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Business</span>
-                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Way</span>
-                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Rewards</span>
-                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">Asset</span>
+                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                          Enable Customers
+                        </span>
+                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                          Enrich Data
+                        </span>
+                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                          Enhance Business
+                        </span>
+                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                          Enable Customers
+                        </span>
+                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                          Enrich Data
+                        </span>
+                        <span className="slideText bg-gradient-to-r from-purple-600 to-red-600 text-transparent bg-clip-text">
+                          Enhance Business
+                        </span>
                       </div>
                     </div>
                   </Heading>
                 </HStack>
 
-                <Text color={"#656565"} fontSize={"18px"} >
-                Take control of your personal information and unlock <br></br> exclusive rewards with Hushh Wallet
+                <Text
+                  color={"#656565"}
+                  fontSize={{ md: "1.15rem", base: "1rem" }}
+                >
+                  Revolutionize customer insights, Personalize commerce, Build
+                  deeper connections with your customers’ consent and control.
                 </Text>
                 <Box
                   mt={{ md: "2rem", base: "1rem" }}
                   display={"flex"}
                   gap={{ md: "2rem", base: "1rem" }}
                   flexDirection={{ md: "row", base: "column" }}
-                  zIndex={'9'}
+                  zIndex={"9"}
                 >
                   <Button
                     border="1px solid #606060"
@@ -240,6 +266,27 @@ const handleTestBuildClick = (platform) => {
                     w={{ md: "18rem", base: "14rem" }}
                   >
                     Download Hushh Wallet App
+                  </Button>
+                  <Button
+                    border="1px solid #606060"
+                    borderRadius="2px"
+                    color={theme.colors._white}
+                    lineHeight="28px"
+                    background="transparent"
+                    onClick={()=> router.push('/demoBookingPage')}
+                    px="21px"
+                    py="15px"
+                    fontSize={{ md: "1rem", base: "0.75rem" }}
+                    fontWeight="400"
+                    letterSpacing={{ md: "0.1rem", base: "0.1rem" }}
+                    _hover={{
+                      background:
+                        "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                      border: "none",
+                    }}
+                    w={{ md: "18rem", base: "14rem" }}
+                  >
+                    Schedule A Call 
                   </Button>
                 </Box>
               </VStack>
@@ -400,7 +447,11 @@ const handleTestBuildClick = (platform) => {
                 zIndex="6"
                 src="https://www.youtube.com/embed/DSG8ltkgbJE?si=An83buhkileq1NFA"
                 title="YouTube video player"
-                style={{ zIndex: "6" , borderRadius:'28.57px',marginTop:'2rem'}}
+                style={{
+                  zIndex: "6",
+                  borderRadius: "28.57px",
+                  marginTop: "2rem",
+                }}
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
@@ -502,7 +553,7 @@ const handleTestBuildClick = (platform) => {
                 </Text>
 
                 <Box
-                   //from here that full width issue was arising
+                  //from here that full width issue was arising
                   pt={{ md: "40px", base: "20px" }}
                   width={"100%"}
                   pr={{ base: "1.25rem" }}
@@ -511,7 +562,7 @@ const handleTestBuildClick = (platform) => {
                   gap={{ md: "4rem" }}
                 >
                   <VStack
-                   mx={{ base: "2rem", md: "0" }}
+                    mx={{ base: "2rem", md: "0" }}
                     maxW={{ md: "290px" }}
                     textAlign={"left"}
                     alignItems={"left"}
@@ -520,7 +571,7 @@ const handleTestBuildClick = (platform) => {
                       <ShieldIcon />
                       <Text
                         fontWeight={"500"}
-                        fontSize={{base:"1rem",md:'1.25rem'}}
+                        fontSize={{ base: "1rem", md: "1.25rem" }}
                         ml={{ base: "0.5rem" }}
                         // lineHeight={{base:'18px'}}
                         color={extendedTheme.colors.secondary}
@@ -535,7 +586,7 @@ const handleTestBuildClick = (platform) => {
                     />
                     <Text
                       fontWeight={"500"}
-                      fontSize={{ base: "0.75rem" ,md:'1rem'}}
+                      fontSize={{ base: "0.75rem", md: "1rem" }}
                       lineHeight={{ md: "22px", base: "18px" }}
                       mt={{ md: "1.25rem", base: "0.75rem" }}
                       color={extendedTheme.colors.secondary}
@@ -555,7 +606,7 @@ const handleTestBuildClick = (platform) => {
                       <KeyIcon />
                       <Text
                         fontWeight={"500"}
-                        fontSize={{base:"1rem",md:'1.25rem'}}
+                        fontSize={{ base: "1rem", md: "1.25rem" }}
                         ml={{ base: "0.5rem" }}
                         color={extendedTheme.colors.secondary}
                       >
@@ -570,7 +621,7 @@ const handleTestBuildClick = (platform) => {
                     <Text
                       fontWeight={"500"}
                       lineHeight={{ md: "22px", base: "18px" }}
-                      fontSize={{ base: "0.75rem" ,md:'1rem'}}
+                      fontSize={{ base: "0.75rem", md: "1rem" }}
                       mt={{ md: "1.25rem", base: "0.75rem" }}
                       color={extendedTheme.colors.secondary}
                     >
@@ -591,7 +642,7 @@ const handleTestBuildClick = (platform) => {
                     <LockIcon />
                     <Text
                       fontWeight={"500"}
-                      fontSize={{base:"1rem",md:'1.25rem'}}
+                      fontSize={{ base: "1rem", md: "1.25rem" }}
                       color={extendedTheme.colors.secondary}
                     >
                       Consent-Driven <br></br> Excellence
@@ -606,13 +657,13 @@ const handleTestBuildClick = (platform) => {
                     fontWeight={"500"}
                     lineHeight={{ md: "22px", base: "18px" }}
                     mt={{ md: "1.25rem", base: "0.75rem" }}
-                    fontSize={{ base: "0.75rem" ,md:'1rem'}}
+                    fontSize={{ base: "0.75rem", md: "1rem" }}
                     color={extendedTheme.colors.secondary}
                   >
                     Creating a fair and equitable environment for data sharing.
                   </Text>
                 </VStack>
-              {/* <Box w={'100'} display={'flex'} alignItems={{ base:'center',md:'flex-start'}} justifyContent={{base:'center',md:'flex-start'}}> 
+                {/* <Box w={'100'} display={'flex'} alignItems={{ base:'center',md:'flex-start'}} justifyContent={{base:'center',md:'flex-start'}}> 
                 <Box
                   // leftIcon={<A />}
                   mt={{ md: "4rem", base: "3rem" }}
@@ -641,8 +692,7 @@ const handleTestBuildClick = (platform) => {
             </Box>
 
             {/* <ReviewSlider /> */}
-            
-            
+
             {/* Product Showcase section below */}
             {/* <HStack
               pt={{ md: "8rem", base: "5rem" }}

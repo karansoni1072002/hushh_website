@@ -316,7 +316,7 @@ const handleTestBuildClick = (platform) => {
 
             <BrandSlider /> */}
 
-            <VStack
+            {/* <VStack
               w={"100%"}
               zIndex={2}
               mt={{ md: "14rem", base: "3rem" }}
@@ -355,7 +355,7 @@ const handleTestBuildClick = (platform) => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
-            </VStack>
+            </VStack> */}
 
             <VStack
               w={"100%"}

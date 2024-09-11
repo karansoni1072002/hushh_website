@@ -42,9 +42,9 @@ export function BrandSlider() {
       >
         <BrandContainer>
           <Accor key={1} width={50} height={50} />
-          <Reliance key={2} width={50} height={50}/>
-          <Aws key={3} width={50} height={50} />
-          <Brand2 key={4} width={50} height={50} />
+          <Aws key={2} width={50} height={50} />
+          <Brand2 key={3} width={50} height={50} />
+          <Reliance key={4} width={50} height={50}/>
           <Chalhoub key={5} width={50} height={50} />
           <Citadium key={6} width={50} height={50} />
           <Costco key={7} width={50} height={50} />

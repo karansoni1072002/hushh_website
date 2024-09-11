@@ -278,7 +278,7 @@ const handleTestBuildClick = (platform) => {
               </VStack>
             </Box>
 
-            {/* <HStack
+            <HStack
               pt={{ md: "8rem", base: "6rem" }}
               justify={"center"}
               display={"flex"}
@@ -292,7 +292,7 @@ const handleTestBuildClick = (platform) => {
                 mb={{ md: "1.25rem" }}
                 as={"h1"}
               >
-                BRANDS WE WORK WITH
+                BRANDS WE WANT TO WORK WITH
               </Text>
               <Text
                 align={"center"}
@@ -314,7 +314,7 @@ const handleTestBuildClick = (platform) => {
               </Text>
             </HStack>
 
-            <BrandSlider /> */}
+            <BrandSlider />
 
             {/* <VStack
               w={"100%"}

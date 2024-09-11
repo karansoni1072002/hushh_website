@@ -57,6 +57,7 @@ import { AndroidIcon } from "../_components/svg/icons/androidIcon";
 import UnicodeQR from "../_components/svg/onelinkQrdownload.svg"
 import { isMobile, isAndroid, isIOS } from 'react-device-detect';
 import DownloadModal from "../_components/primitives/downloadModal";
+import Reliance from "../_components/svg/images/reliance"
 
 const BrandContainer = styled.div`
   display: flex;
@@ -208,19 +209,20 @@ const ClientHushhWallet = () => {
         >
           <BrandContainer>
             <Accor key={1} />
-            <Aws key={2} />
-            <Brand1 key={3} />
-            <Brand2 key={4} />
-            <Chalhoub key={5} />
-            <Citadium key={6} />
-            <Costco key={7} />
-            <Fourseasons key={8} />
-            <Google key={9} />
-            <Gucci key={10} />
-            <Laredoute key={11} />
-            <Lvtetia key={12} />
-            <Microsoft key={13} />
-            <Nordstrom key={14} />
+            <Brand1 key={2} />
+            <Aws key={3} />
+            <Reliance key={4} />
+            <Brand2 key={5} />
+            <Chalhoub key={6} />
+            <Citadium key={7} />
+            <Costco key={8} />
+            <Fourseasons key={9} />
+            <Google key={10} />
+            <Gucci key={11} />
+            <Laredoute key={12} />
+            <Lvtetia key={13} />
+            <Microsoft key={14} />
+            <Nordstrom key={15} />
           </BrandContainer>
         </Marquee>
         <Divider

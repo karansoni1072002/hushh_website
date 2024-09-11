@@ -193,7 +193,7 @@ export default function Header() {
         {isMobile ? (
           <div className={`w-full mobile-header flex py-2 justify-end ${isMobile ? '' : 'hidden'}`}>
             <Container display={"flex"} gap={"1rem"}>
-              <SearchBar />
+              {/* <SearchBar /> */}
               <div className=" text-white" onClick={handleMenuIconToggle}>
                 {isMenuOpen ? <CloseMenuIcon /> : <Bars3Icon />}
               </div>
@@ -379,7 +379,7 @@ export default function Header() {
         <div className="">
           { isDesktop && (
             <div className="login">
-              <SearchBar />
+              {/* <SearchBar /> */}
               {/* <Button
                 border={"1px solid #606060"}
                 borderRadius={"5px"}

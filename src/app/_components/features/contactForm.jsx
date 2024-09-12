@@ -317,7 +317,7 @@ export default function ContactForm() {
               px={{ md: "4rem", base: "1rem" }}
               flex={{ md: 1.75 }}
               display={"flex"}
-              minW={{ base: "100%" }}
+              // minW={{ base: "100%" }}
             >
               <form
                 id="form"
@@ -327,7 +327,7 @@ export default function ContactForm() {
               >
                 <HStack
                   display={{ base: "block", md: "flex" }}
-                  flexDirection={{ base: "column", md: "row" }}
+                  flexDirection={{ base: "column", md: "column" }}
                   gap={{ md: "2rem", base: "1rem" }}
                   w={"100%"}
                 >
@@ -390,11 +390,14 @@ export default function ContactForm() {
                   </Stack>
 
                   <HStack
-                    mb={"2rem"}
+                    mb={{base:"2rem",md:'0'}}
                     py={"1rem"}
                     display={"flex"}
-                    alignItems={"left"}
+                    alignItems={"flex-start"}
+                    justifyContent={'flex-start'}
+                    textAlign={'left'}
                     flexDirection={"column"}
+                    w={'100%'}
                   >
                     <Text
                       fontWeight={"500"}
@@ -498,7 +501,7 @@ export default function ContactForm() {
                         sendEmail(e);
                       }}
                       color={'white'}
-                      w="full" // Full width button
+                      w={{base:"full",md:'15rem'}} // Full width button
                     >
                       HUSHH IT!
                     </Button>

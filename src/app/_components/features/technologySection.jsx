@@ -44,7 +44,7 @@ const TechnologySection = () => {
 
       <Container
         display={"flex"}
-        pt={{ md: "2rem" }}
+        pt={{ md: "2rem",base:'0.75rem' }}
         px={{ md: "10rem", base:'1rem' }}
         justifyContent={"center"}
         minW={{ md: "100%", base: "100%" }}

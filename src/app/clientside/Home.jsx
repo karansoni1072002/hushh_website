@@ -335,8 +335,8 @@ const ClientHome = () => {
                 className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text"
                 fontWeight={600}
                 letterSpacing={"0.25rem"}
-                fontSize={"1rem"}
-                mb={{ md: "1.25rem" }}
+                fontSize={{md:"1rem",base:'0.75rem'}}
+                mb={{ md: "1.25rem",base:'0' }}
                 as={"h1"}
               >
                 BRANDS WE WANT TO WORK WITH
@@ -525,7 +525,7 @@ const ClientHome = () => {
                   className="color-gradient"
                   fontWeight={600}
                   letterSpacing={"0.25rem"}
-                  fontSize={"1rem"}
+                  fontSize={{md:"1rem",base:'0.75rem'}}
                 >
                   OUR ADVANTAGES
                 </Text>
@@ -536,7 +536,7 @@ const ClientHome = () => {
                   fontWeight={"400"}
                   alignItems={{ md: "left", base: "center" }}
                   textAlign={{ md: "left", base: "center" }}
-                  fontSize={{ md: "3.75rem", base: "2.5rem" }}
+                  fontSize={{ md: "3.75rem", base: "2rem" }}
                 >
                   Why Us?
                 </Text>
@@ -545,12 +545,13 @@ const ClientHome = () => {
                   alignItems={{ base: "center" }}
                   pt={{ md: "1rem" }}
                   fontWeight={"500"}
+                  fontSize={{md:'',base:'1rem'}}
                   color={extendedTheme.colors.secondary}
                 >
                   Empower individuals with data control. Today, we're a
                   cutting-edge platform fostering trust, transparency, and
                   personalized experiences.
-                </Text>
+              </Text>
 
                 <Box
                   //from here that full width issue was arising

@@ -28,6 +28,7 @@ export const HushhBlogsHome = () => {
         mt={{ base: "4rem", md: "8rem" }}
         display="flex"
         alignItems="center"
+        mb={{md:'1rem',base:'2rem'}}
         justifyContent="space-between"
         flexDirection={{ base: "column", md: "column" }}
         minW={"100%"}
@@ -187,8 +188,8 @@ export const HushhBlogsHome = () => {
               )
             }
           >
-            VIEW ALL ARTICLES
-          </Button>
+            VIEW ALL
+        </Button>
       </Container>
     </>
   );

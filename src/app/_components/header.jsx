@@ -185,20 +185,19 @@ export default function Header() {
   {shouldShowHeader &&
     <div className={`w-full z-1000`}>
       <div className=" flex items-center justify-between w-full px-3 py-2 z-1000 md:px-16 md:py-5">
-        <div className="">
+        <div className="flex-1">
           <Link href="/">
             <HushhHeaderLogo />
           </Link>
         </div>
         {isMobile ? (
-          <div className={`w-full mobile-header flex py-2 justify-end ${isMobile ? '' : 'hidden'}`}>
-            <Container display={"flex"} gap={"1rem"}>
-              {/* <SearchBar /> */}
-              <div className=" text-white" onClick={handleMenuIconToggle}>
-                {isMenuOpen ? <CloseMenuIcon /> : <Bars3Icon />}
-              </div>
-            </Container>
-          </div>
+         <div className="flex items-center justify-end w-full mobile-header py-2">
+         <Container display={"flex"} gap={"1rem"}>
+           <div className="text-white" onClick={handleMenuIconToggle}>
+             {isMenuOpen ? <CloseMenuIcon /> : <Bars3Icon />}
+           </div>
+         </Container>
+       </div>
         ) : (
           // This is for desktop screens
           <div className={`w-full px-0 desktop-header ${isMobile ? 'hidden' : ''}`}>

@@ -495,7 +495,7 @@ body {
 /* Use media queries to control visibility */
 @media (max-width: 768px) {
   .mobile-header {
-      display: block; /* Show mobile header on small screens */
+      display: flex; /* Show mobile header on small screens */
   }
   .desktop-header {
       display: none; /* Hide desktop header on small screens */

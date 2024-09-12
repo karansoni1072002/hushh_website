@@ -120,14 +120,14 @@ export default function ContactForm() {
       return;
     }
     const previousSubmissionTime = localStorage.getItem(
-      `${email}_${firstName}`,
+      `${email}_${firstName}`
     );
 
     if (previousSubmissionTime) {
       const currentTime = new Date().getTime();
       const timeDifference =
         (currentTime - new Date(previousSubmissionTime).getTime()) /
-        (1000 * 3600); 
+        (1000 * 3600);
 
       if (timeDifference < 2) {
         toast({
@@ -138,11 +138,11 @@ export default function ContactForm() {
           duration: 3000,
           isClosable: true,
         });
-      return;
-    }
+        return;
+      }
     }
     localStorage.setItem(`${email}_${fullName}`, new Date().toISOString());
-console.log('local Storage',localStorage)
+    console.log("local Storage", localStorage);
     const serviceId = "service_kwvlp08";
     const templateId = "template_nc0x47v";
     const user_Id = "9KjZ-7TNPYvuqx3as";
@@ -162,26 +162,26 @@ console.log('local Storage',localStorage)
         serviceId,
         templateId,
         templateParams,
-        user_Id,
+        user_Id
       );
 
-        toast({
+      toast({
         title: "Form Submitted.",
         description: "Thank you for reaching out to us",
-          status: "success",
+        status: "success",
         duration: 3000,
-          isClosable: true,
-        });
+        isClosable: true,
+      });
 
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setNumber("");
-        setFullName("")
-        setMessage("");
-        setSubject("");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setNumber("");
+      setFullName("");
+      setMessage("");
+      setSubject("");
     } catch (error) {
-        console.error("Sending mail FAILED...", error.text);
+      console.error("Sending mail FAILED...", error.text);
     }
   };
 
@@ -315,10 +315,16 @@ console.log('local Storage',localStorage)
             <Box
               p={{ md: "4rem", base: "1rem" }}
               px={{ md: "4rem", base: "1rem" }}
-              flex={{ md: 1.75, base: 1 }}
+              flex={{ md: 1.75 }}
               display={"flex"}
+              minW={{ base: "100%" }}
             >
-              <form id="form" ref={form} onSubmit={sendEmail} style={{ color: "white" }}>
+              <form
+                id="form"
+                ref={form}
+                onSubmit={sendEmail}
+                style={{ color: "white", width: "100%" }}
+              >
                 <HStack
                   display={{ base: "block", md: "flex" }}
                   flexDirection={{ base: "column", md: "row" }}
@@ -328,30 +334,24 @@ console.log('local Storage',localStorage)
                   <Stack
                     gap={{ md: "0rem", base: "0.5rem" }}
                     mb={{ base: "1rem", md: "2rem" }}
+                    w="full"
                   >
-                    {/* <Text
-                      fontWeight={"500"}
-                      fontSize={"0.75rem"}
-                      color={"white"}
-                    >
-                      Full Name
-                    </Text> */}
                     <Input
                       variant="unstyled"
                       size={{ md: "sm", base: "sm" }}
-                      w={{ md: "22rem", base: "100%" }}
+                      w="full"
                       p={{ md: 2, base: 0 }}
                       border={"none"}
                       placeholder="Full Name"
                       borderBottom="1px solid white"
                       value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
                       sx={{
                         _focus: {
                           borderBottom: "1px solid white",
                           boxShadow: "none",
                         },
                       }}
-                      onChange={(e) => setFullName(e.target.value)} // Update state on change
                     />
                     {formErrors.firstName && (
                       <Text color="red" mt={"1rem"} fontSize="xs">
@@ -359,23 +359,16 @@ console.log('local Storage',localStorage)
                       </Text>
                     )}
                   </Stack>
-                </HStack>
-                <HStack>
+
                   <Stack
                     gap={{ md: "0rem", base: "0.5rem" }}
                     mb={{ base: "1rem", md: "2rem" }}
+                    w="full"
                   >
-                    {/* <Text
-                      fontWeight={"500"}
-                      fontSize={"0.75rem"}
-                      color={"white"}
-                    >
-                      Business Email
-                    </Text> */}
                     <Input
                       variant="unstyled"
                       size={{ md: "sm", base: "sm" }}
-                      w={{ md: "22rem", base: "100%" }}
+                      w="full"
                       border="none"
                       p={{ md: 2, base: 0 }}
                       borderBottom="1px solid white"
@@ -395,112 +388,121 @@ console.log('local Storage',localStorage)
                       </Text>
                     )}
                   </Stack>
-                </HStack>
-                <HStack
-                  mb={"2rem"}
-                  py={"1rem"}
-                  display={"flex"}
-                  alignItems={"left"}
-                  flexDirection={"column"}
-                >
-                  <Text fontWeight={"500"} fontSize={"0.75rem"} color={"white"}>
-                    Select Subject:{" "}
-                  </Text>
-                  <RadioGroup
-                    defaultValue="ProductInquiry"
-                    value={subject}
-                    onChange={(value) =>
-                      setSubject(value === subject ? null : value)
-                    }
-                  >
-                    <HStack
-                      display={{ md: "flex", base: "flex" }}
-                      flexDirection={{ base: "column", md: "row" }}
-                      spacing={{ md: "2rem", base: "1rem" }}
-                      align={"stretch"}
-                    >
-                      <Radio
-                        colorScheme="white"
-                        name="subject"
-                        value="Explore Hushh Products"
-                        onChange={(e) => setSubject(e.target.value)}
-                      >
-                        <Text fontSize={"0.75rem"}>Explore Hushh Products</Text>
-                      </Radio>
-                      <Radio
-                        colorScheme="white"
-                        name="subject"
-                        value="Partner with Hushh"
-                        onChange={(e) => setSubject(e.target.value)}
-                      >
-                        <Text fontSize={"0.75rem"}>Partner with Hushh</Text>
-                      </Radio>
-                      <Radio
-                        colorScheme="white"
-                        name="subject"
-                        value="Get Support"
-                        onChange={(e) => setSubject(e.target.value)}
-                      >
-                        <Text fontSize={"0.75rem"}>Get Support</Text>
-                      </Radio>
-                    </HStack>
-                  </RadioGroup>
-                  {formErrors.subject && (
-                    <Text color="red" fontSize="xs">
-                      {formErrors.subject}
-                    </Text>
-                  )}
-                </HStack>
-                <HStack
-                  mb={{ md: "2rem", base: "1rem" }}
-                  alignItems={"left"}
-                  flexDirection={"column"}
-                >
-                  <Text fontWeight={"500"} fontSize={"0.75rem"} color={"white"}>
-                    Message
-                  </Text>
-                  <Textarea
-                    h={"6.25rem"}
-                    w={{ base: "15.625rem", md: "100%" }}
-                    placeholder="Type your message here"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                  />
-                  {formErrors.message && (
-                    <Text color="red" fontSize="xs">
-                      {formErrors.message}
-                    </Text>
-                  )}
-                </HStack>
-                <HStack
-                  alignItems={"flex-start"}
-                  justifyContent="flex-end"
-                  w={"100%"}
-                >
-                  <Button
-                    type="submit"
-                    bg={"transparent"}
-                    px={"2rem"}
-                    border={"3px solid #606060"}
-                    borderRadius={"2px"}
-                    _hover={{
-                      background:
-                        "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
-                      border: "none",
-                    }}
-                    onClick={(e) => {
-                      sendEmail(e);
-                    }}
+
+                  <HStack
+                    mb={"2rem"}
+                    py={"1rem"}
+                    display={"flex"}
+                    alignItems={"left"}
+                    flexDirection={"column"}
                   >
                     <Text
+                      fontWeight={"500"}
+                      fontSize={"0.75rem"}
                       color={"white"}
-                      fontSize={"1rem"}
-                      letterSpacing={"0.29rem"}
-                      lineHeight={"28px"}
+                    >
+                      Select Subject:{" "}
+                    </Text>
+                    <RadioGroup
+                      defaultValue="ProductInquiry"
+                      value={subject}
+                      onChange={(value) =>
+                        setSubject(value === subject ? null : value)
+                      }
+                    >
+                      <HStack
+                        display={{ md: "flex", base: "flex" }}
+                        flexDirection={{ base: "column", md: "row" }}
+                        spacing={{ md: "2rem", base: "1rem" }}
+                        align={"stretch"}
+                      >
+                        <Radio
+                          colorScheme="white"
+                          name="subject"
+                          value="Explore Hushh Products"
+                          onChange={(e) => setSubject(e.target.value)}
+                        >
+                          <Text fontSize={"0.75rem"}>
+                            Explore Hushh Products
+                          </Text>
+                        </Radio>
+                        <Radio
+                          colorScheme="white"
+                          name="subject"
+                          value="Partner with Hushh"
+                          onChange={(e) => setSubject(e.target.value)}
+                        >
+                          <Text fontSize={"0.75rem"}>Partner with Hushh</Text>
+                        </Radio>
+                        <Radio
+                          colorScheme="white"
+                          name="subject"
+                          value="Get Support"
+                          onChange={(e) => setSubject(e.target.value)}
+                        >
+                          <Text fontSize={"0.75rem"}>Get Support</Text>
+                        </Radio>
+                      </HStack>
+                    </RadioGroup>
+                    {formErrors.subject && (
+                      <Text color="red" fontSize="xs">
+                        {formErrors.subject}
+                      </Text>
+                    )}
+                  </HStack>
+
+                  <HStack
+                    mb={{ md: "2rem", base: "1rem" }}
+                    alignItems={"left"}
+                    flexDirection={"column"}
+                    w="full"
+                  >
+                    <Text
+                      fontWeight={"500"}
+                      fontSize={"0.75rem"}
+                      color={"white"}
+                    >
+                      Message
+                    </Text>
+                    <Textarea
+                      h={"6.25rem"}
+                      w="full"
+                      placeholder="Type your message here"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                    />
+                    {formErrors.message && (
+                      <Text color="red" fontSize="xs">
+                        {formErrors.message}
+                      </Text>
+                    )}
+                  </HStack>
+
+                  <HStack
+                    alignItems={"flex-start"}
+                    justifyContent="flex-end"
+                    w={"100%"}
+                  >
+                    <Button
+                      type="submit"
+                      bg={"transparent"}
+                      px={"2rem"}
+                      border={"3px solid #606060"}
+                      borderRadius={"2px"}
+                      _hover={{
+                        background:
+                          "linear-gradient(265.3deg, #E54D60 8.81%, #A342FF 94.26%)",
+                        border: "none",
+                      }}
+                      onClick={(e) => {
+                        sendEmail(e);
+                      }}
+                      color={'white'}
+                      w="full" // Full width button
                     >
                       HUSHH IT!
-                    </Text>
-                  </Button>
+                    </Button>
+                  </HStack>
                 </HStack>
               </form>
             </Box>

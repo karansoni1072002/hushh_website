@@ -185,21 +185,6 @@ body {
   height: 100%;
 }
 
-/* @keyframes cycleWords {
-  0%, 33.33% {
-    transform: translateY(0);
-  }
-  33.34%, 66.66% {
-    transform: translateY(-100%);
-  }
-  66.67%, 99.99% {
-    transform: translateY(-200%);
-  }
-  100% {
-    transform: translateY(-300%);
-  }
-} */
-
 @keyframes cycleWords {
   0%, 10% {
     transform: translateY(0%); /* Show the first word */
@@ -221,27 +206,22 @@ body {
   }
 }
 
-/* .words span:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.words span:nth-child(2) {
-  animation-delay: 3s;
-}
-
-.words span:nth-child(3) {
-  animation-delay: 6s;
-} */
 
 /* Responsiveness */
 @media screen and (max-width: 768px) {
     .slideText {
       font-size: 2rem;
       line-height: 2.5rem;
+      width: 100%;
+      white-space: nowrap;
+    }
+    .words {
+      width: 100%; /* Ensure full width for mobile */
     }
   
     .wrapper {
       height: 2.5rem;
+      width: 100% !important;
     }
 }
   
@@ -249,6 +229,7 @@ body {
     .slideText {
       font-size: 5rem;
       line-height: 5.5rem;
+      white-space: nowrap;
     }
   
     .wrapper {

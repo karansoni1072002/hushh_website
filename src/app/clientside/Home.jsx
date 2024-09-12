@@ -330,6 +330,7 @@ const ClientHome = () => {
               justify={"center"}
               display={"flex"}
               flexDirection={"column"}
+              mt={{md:'6rem',base:'0'}}
             >
               <Text
                 className="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text"

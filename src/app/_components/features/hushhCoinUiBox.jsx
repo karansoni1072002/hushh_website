@@ -1,11 +1,11 @@
 import { Container, Box, VStack, Heading, Text } from "@chakra-ui/react";
 import NextImage from "next/image";
 import React from "react";
-import ReceiptRadar from "../../../../public/Images/mobileIcons/receiptRadar.png";
 import MarketIcon from "../svg/marketIcon";
 import extendedTheme from "../../theme";
 import TransparentLock from "../svg/transparetLock";
 import BoltIcon from "../svg/boltIcon";
+import ReceiptRadar from '../svg/receiptRadar.svg';
 
 const HushhCoinUiBox = () => {
   return (

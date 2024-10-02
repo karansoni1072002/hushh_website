@@ -1,24 +1,10 @@
 import React, { useState } from "react";
 import HushhFooterLogo from "../svg/hushhFooterLogo";
 import Link from "next/link";
-import { AndroidIcon } from "../svg/icons/androidIcon";
-import { IosIcon } from "../svg/icons/iosIcon";
-import { useResponsiveSizes } from "../../context/responsive";
 import "../../globals.css";
 import HushhMobileFooterLogo from "../svg/hushhMobileFooterLogo";
 import { animateScroll as scroll } from "react-scroll";
-import { isMobile, isAndroid, isIOS } from "react-device-detect";
-import UnicodeQR from "../../_components/svg/onelinkQrdownload.svg";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  Text,
-} from "@chakra-ui/react";
-import Image from "next/image";
+import { isAndroid, isIOS } from "react-device-detect";
 import DownloadModal from "../primitives/downloadModal";
 
 const FooterComponent = () => {

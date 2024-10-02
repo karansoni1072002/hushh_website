@@ -28,7 +28,9 @@ import Image from "next/image";
 import { ChevronRightIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import UnicodeQR from "./svg/onelinkQrdownload.svg"
 import { isMobile, isAndroid, isIOS } from 'react-device-detect';
-
+import { createClient } from '@supabase/supabase-js';
+// import supabaseClient from '../supabaseClient';
+import supabase from "../supabaseClient";
 
 export default function Header() {
 
@@ -49,10 +51,25 @@ export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentQRLink, setCurrentQRLink] = useState("");
   const noHeaderPaths = ['/vivaConnect', '/viva-connect', '/viva-connect/qrPage', '/qrCodePage'];
-
+  const [user, setUser] = useState(null); 
   const shouldShowHeader = !noHeaderPaths.includes(pathname);
   const notify = () => toast("This Product is Coming Soon!");
 
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const { data: { user }, error } = await supabase.auth.getUser();
+      if (error) {
+        console.error('Error fetching user data:', error);
+      } else {
+        console.log('Data:',data); 
+        setUser(user); // Set user data in state
+        console.log('User:', user)
+      }
+    };
+
+    fetchUserData(); // Fetch user data on component mount
+  }, []);
+  
   // useEffect(() => {
   //   const checkLoginStatus = async () => {
   //     const { data } = await supabase.auth.getSession(); // Get the session data
@@ -75,6 +92,9 @@ export default function Header() {
   //   };
   //   checkLoginStatus(); 
   // }, [supabase]);
+  const handleLoginRedirect = () => {
+    router.push('/login'); // Redirect to the login page
+  };
 
   const handleDropdownClick = () => {
     setIsDropdownOpen(!isDropdownOpen); 
@@ -376,10 +396,10 @@ export default function Header() {
         )}
 
         <div className="">
-          { isDesktop && (
+          { isDesktop || !user ? (
             <div className="login">
               {/* <SearchBar /> */}
-              {/* <Button
+              <Button
                 border={"1px solid #606060"}
                 borderRadius={"5px"}
                 w={"10.75rem"}
@@ -394,12 +414,22 @@ export default function Header() {
                   color: "white",
                   border: "none",
                 }}
-                onClick={handleLoginClick}
+                onClick={handleLoginRedirect}
               >
                 LOGIN
-              </Button> */}
+              </Button>
             </div>
-          )}
+          ):(
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+            <Image
+              src={user.user_metadata.avatar_url} 
+              alt="User Avatar"
+              style={{ width: '50px', borderRadius: '50%', marginRight: '10px' }}
+            />
+            <span>{user.user_metadata.full_name || user.email}</span> {/* Display user's name or email */}
+          </div>
+          )
+          }
         </div> 
       </div>
 

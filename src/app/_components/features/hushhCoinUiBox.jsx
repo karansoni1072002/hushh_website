@@ -8,6 +8,7 @@ import BoltIcon from "../svg/boltIcon";
 import ReceiptRadar from '../svg/receiptRadar.svg';
 
 const HushhCoinUiBox = () => {
+  
   return (
     <>
       <Container

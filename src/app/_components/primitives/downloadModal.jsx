@@ -2,7 +2,8 @@ import React from 'react';
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, Button, Text } from '@chakra-ui/react';
 import { isAndroid, isIOS, isMobile } from 'react-device-detect';
 import Image from 'next/image';
-import UnicodeQR from '../svg/onelinkQrdownload.svg';
+// import UnicodeQR from '../svg/onelinkQrdownload.svg';
+import UnicodeQR from '../svg/hushhWalletQR.svg';
 
 const DownloadModal = ({ isOpen, onClose }) => {
   return (

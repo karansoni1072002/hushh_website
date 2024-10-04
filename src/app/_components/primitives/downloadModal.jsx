@@ -6,6 +6,7 @@ import Image from 'next/image';
 import UnicodeQR from '../svg/hushhWalletQR.svg';
 
 const DownloadModal = ({ isOpen, onClose }) => {
+  
   return (
     <Modal isCentered isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />

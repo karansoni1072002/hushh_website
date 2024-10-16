@@ -103,23 +103,26 @@ export default function BlogPage({ params }) {
       />
       <Box w={'100%'} display={'flex'} flexDirection={'column'}>
         <Box
-          mb="8"
+          mb="4"
           textAlign="center"
           position="relative"
-          w="full"
+          w="100%"
           h="70vh"
           mt={'6rem'}
           bg={bgColor}
         >
-          <Flex
-            w="full"
+          <Box
+            w="100%"
             zIndex="10"
             flexDir="column"
-            alignItems="center"
-            justifyContent="center"
+            alignItems="flex-start"
+            justifyContent="flex-start"
+            // textAlign={'left'}
             position="absolute"
-            top="50%"
+            bottom="0%"
+            // mx={{md:'2rem'}}
             left="50%"
+            // ml={{md:'4rem'}}
             transform="translate(-50%, -50%)"
           >
             <Tag
@@ -137,16 +140,10 @@ export default function BlogPage({ params }) {
             >
               {blog.title}
             </Heading>
-          </Flex>
-          <Box
-            position="absolute"
-            top="0"
-            left="0"
-            right="0"
-            bottom="0"
-            h="full"
-            bg={overlayColor}
-          />
+          </Box>
+          <div style={{ '--tw-gradient-to': 'rgba(27, 27, 27, .9)' }}  className='absolute top-0 left-0 bottom-0 right-0 h-full
+            bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-3xl z-0
+            ' />
           <Image
             src={blog.image.filePath.replace("../public", "")}
             placeholder="blur"

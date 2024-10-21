@@ -175,7 +175,7 @@ const ClientVibeSearch = () => {
               border: "none",
             }}
             onClick={() =>
-              window.open("https://vibesearch-vercel.vercel.app/", "_blank")
+              window.open("https://www.vibesearch.ai/", "_blank")
             }
           >
             Try Vibe Search
@@ -438,7 +438,7 @@ const ClientVibeSearch = () => {
                 border: "none",
               }}
               onClick={() =>
-                window.open("https://vibesearch-vercel.vercel.app/", "_blank")
+                window.open("https://www.vibesearch.ai/", "_blank")
               }
             >
               Checkout Vibe Search
@@ -539,12 +539,12 @@ const ClientVibeSearch = () => {
               }}
               onClick={() =>
                 window.open(
-                  "https://testflight.apple.com/join/CDYPEfJ5",
+                  "https://www.vibesearch.ai/",
                   "_blank"
                 )
               }
             >
-              REQUEST ACCESS
+              Explore Vibe Search
             </Button>
           </Box>
         </HStack>
@@ -613,12 +613,12 @@ const ClientVibeSearch = () => {
               }}
               onClick={() =>
                 window.open(
-                  "https://testflight.apple.com/join/CDYPEfJ5",
+                  "https://www.vibesearch.ai/",
                   "_blank"
                 )
               }
             >
-              Download App
+              Checkout Vibe Search
             </Button>
           </Box>
         </Stack>

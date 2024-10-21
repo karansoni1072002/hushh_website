@@ -167,7 +167,7 @@ export default function BlogPage({ params }) {
               <RenderMdx blog={blog} />
             </Box>
             <Divider h={'auto'} orientation="vertical" borderColor={'#262626'} display={{md:'block',base:'none'}}/>
-            <Box  as="aside" flex={{md:"1 1 30%",base:'1'}} display={{md:'flex',base:'none'}}>
+            <Box  as="aside" flex={{md:"1 1 30%"}} flexDirection={{md:'column',base:'none'}} display={{md:'flex',base:'none'}}>
             <BlogDetails blog={blog} slug={params.slug} />
 
               <details

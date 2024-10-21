@@ -166,8 +166,8 @@ export default function BlogPage({ params }) {
             <Box flex="1 1 70%">
               <RenderMdx blog={blog} />
             </Box>
-            <Divider h={'auto'} orientation="vertical" borderColor={'#262626'}/>
-            <Box  as="aside" flex="1 1 30%">
+            <Divider h={'auto'} orientation="vertical" borderColor={'#262626'} display={{md:'block',base:'none'}}/>
+            <Box  as="aside" flex={{md:"1 1 30%",base:'1'}}>
             <BlogDetails blog={blog} slug={params.slug} />
 
               <details
@@ -186,10 +186,10 @@ export default function BlogPage({ params }) {
                 }}
                 open
               >
-                <summary className="text-lg text-#98989A font-400 capitalize cursor-pointer">
-                  Table Of Content
+<summary className="text-lg text-#98989A font-400 capitalize cursor-pointer hidden md:block">
+Table Of Content
                 </summary>
-                <VStack as="ul" mt="4" fontSize="base" bg={'#1A1A1A'} borderRadius={'10px'} p={{md:'2rem',base:'0.75rem'}} align="stretch">
+                <VStack display={{md:'flex',base:'none'}} as="ul" mt="4" fontSize="base" bg={'#1A1A1A'} borderRadius={'10px'} p={{md:'2rem',base:'0.75rem'}} align="stretch">
                   {blog.toc.map((heading) => (
                     <Box as={heading.level === ('one'|| 'two') ? "li": ''} py="1" key={`#${heading.slug}`}>
                       <Link

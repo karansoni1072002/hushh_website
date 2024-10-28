@@ -8,7 +8,7 @@ export default function hushhBlogs() {
   
   return (
     <>
-    <main className="flex flex-col items-center justify-center">
+    <main className="flex flex-col mb-10 items-center justify-center">
       <HomeCoverSection blogs={allBlogs} />
       <FeaturedPosts blogs={allBlogs} />
       <RecentPosts blogs={allBlogs} />

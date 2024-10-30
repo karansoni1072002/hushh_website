@@ -206,7 +206,11 @@ body {
   }
 }
 
-
+pre {
+  overflow-x: auto; /* Allows horizontal scrolling within the code block */
+  white-space: pre-wrap; /* Wraps long lines */
+  word-wrap: break-word; /* Breaks long words */
+}
 /* Responsiveness */
 @media screen and (max-width: 768px) {
     .slideText {

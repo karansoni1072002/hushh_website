@@ -160,7 +160,7 @@ export default function BlogPage({ params }) {
             textColor="white"
             gridColumnGap={{ lg: 8, sxl: 16 }}
             // gridRowGap={12}
-            gap={{md:'4rem',base:'2rem'}}
+            gap={{md:'1.5rem',base:'0.5rem'}}
             mt="8"
           >
             <Box flex="1 1 70%">

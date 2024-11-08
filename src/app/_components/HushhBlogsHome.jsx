@@ -1,3 +1,4 @@
+'use client'
 import {
   Avatar,
   Badge,
@@ -11,16 +12,29 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Apporv from "../_components/svg/aboutImages/TeamImages/ApoorvBedmutha.svg";
 import PythonEng from "../../../public/blogs/python_Eng_with_hushh.png";
 import { useRouter } from "next/navigation";
 import DiscoverFashion from '../../../public/blogs/discoveryFashion1.png'
 import WalletBlog from "../../../public/blogs/hushhwalletBlog.png"
 import Link from "next/link";
+import { allBlogs } from "contentlayer/generated";
+import BlogImage from '../../../public/blogs/blog2o.png'
 
 export const HushhBlogsHome = () => {
     const router = useRouter();
+    const [topBlogs, setTopBlogs] = useState([]);
+    
+    useEffect(() => {
+    // Sort blogs by updatedAt or publishedAt
+    console.log('All blogs',allBlogs)
+    const sortedBlogs = allBlogs
+      .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+      .slice(0, 3); // Get top 3 blogs
+    setTopBlogs(sortedBlogs);
+  }, []);
+  console.log('All blogs',allBlogs)
 
   return (
     <>
@@ -49,122 +63,46 @@ export const HushhBlogsHome = () => {
    
         <Flex mb={{md:'2rem',base:'1rem'}} justify="center" align="center" minHeight="40vh" padding="4">
           <Flex wrap="wrap" justify="center" gap="6">
-            {/* Card 1 */}
-            <Box
-              maxW="sm"
-              borderRadius="2.5rem"
-              overflow="hidden"
-              bg={"#1C1C1C"}
-              cursor={"pointer"}
-              onClick={() =>
-                router.push(
-                  "/blogs/trusted-python-engineering-at-hushh"
-                )
-              }
-            >
-              <Image
-                src={PythonEng}
-                alt="PythonEng"
-                style={{ width: "382", height: "320px" }}
-              />
-              <Box p="6">
-              <Badge borderRadius="full" px="2" color={'white'} background = 'linear-gradient(#e54d60 8.81%, #a342ff 94.26%)' >
-                  #Python
-                </Badge>
-                <Heading size="md" my="2" color={"#FFFFFF"}>
-                  Trusted Python Engineering At Hushh
-                </Heading>
-                <Text fontSize="sm" color={"#FFFFFF"}>
-                  Maintaining trusted deployments at Hushh are paramount. Here
-                  we dive into our best practices on one of our open source
-                  libraries
+           {topBlogs.map((blog) => (
+          <Box
+            key={blog.slug}
+            maxW="sm"
+            borderRadius="2.5rem"
+            overflow="hidden"
+            bg={"#1C1C1C"}
+            cursor={"pointer"}
+            onClick={() => router.push(`${blog.url}`)}
+          >
+            <Image
+              src={BlogImage}
+              alt={blog.title}
+              style={{ width: "382", height: "300px" }}
+            />
+            <Box p="6">
+              <Badge
+                borderRadius="full"
+                px="2"
+                color={"white"}
+                background="linear-gradient(#e54d60 8.81%, #a342ff 94.26%)"
+              >
+                #{blog.tags[0]}
+              </Badge>
+              <Heading size="md" my="2" color={"#FFFFFF"}>
+                {blog.title}
+              </Heading>
+              <Text fontSize="sm" color={"#FFFFFF"}>
+                {blog.description}
+              </Text>
+              <Divider my={{ md: "1rem", base: "0.5rem" }} />
+              <Flex align="center" mt="4">
+                <Avatar size="xs" name={blog.author} src={blog.authorImage} />
+                <Text ml="2" fontSize="sm" color={"#FFFFFF"}>
+                  {blog.author} - {new Date(blog.publishedAt).toLocaleDateString()}
                 </Text>
-                <Divider my={{ md: "1rem", base: "0.5rem" }} />
-                <Flex align="center" mt="4">
-                  <Avatar size="xs" name="Justin Donaldson" src={Apporv} />
-                  <Text ml="2" fontSize="sm" color={"#FFFFFF"}>
-                    Justin Donaldson - March 7, 2024
-                  </Text>
-                </Flex>
-              </Box>
+                 </Flex>
             </Box>
-
-            {/* Card 2 */}
-            <Box
-              cursor={"pointer"}
-              onClick={() =>
-                router.push(
-                  "/blogs/search-and-discovery-for-luxury-fashion"
-                )
-              }
-              maxW="sm"
-              borderRadius="2.5rem"
-              overflow="hidden"
-              bg={"#1C1C1C"}
-            >
-              <Image
-                src={DiscoverFashion}
-                alt="DiscoverFashion"
-                style={{ width: "382", height: "320px" }}
-              />
-              <Box p="6">
-                <Badge borderRadius="full" px="2" color={'white'} background = 'linear-gradient(#e54d60 8.81%, #a342ff 94.26%)' >
-                  <Text >#Embedding</Text>
-                </Badge>
-                <Heading size="md" my="2" color={"#FFFFFF"}>
-                  Search And Discovery For Luxury Fashion
-                </Heading>
-                <Text fontSize="sm" color={"#FFFFFF"}>
-                  Enhancing the search for luxury fashion & embedding fashion
-                  related media for style discovery & unleashing the potential of LLM Embeddings
-                </Text>
-                <Divider my={{ md: "1rem", base: "0.5rem" }} />
-                <Flex align="center" mt="4">
-                  <Avatar size="xs" name="Justin Donaldson" src={Apporv} />
-                  <Text ml="2" fontSize="sm" color={"#FFFFFF"}>
-                    Justin Donaldson - July 10, 2023
-                  </Text>
-                </Flex>
-              </Box>
-            </Box>
-
-            <Box
-              maxW="sm"
-              borderRadius="2.5rem"
-              overflow="hidden"
-              bg={"#1C1C1C"}
-              cursor={"pointer"}
-              onClick={() =>
-                router.push(
-                  "/blogs/revolutionizing-shopping-with-hushh-wallet"
-                )
-              }
-            >
-              <Image
-                src={WalletBlog}
-                alt="PythonEng"
-                style={{ width: "382", height: "320px" }}
-              />
-              <Box p="6">
-              <Badge borderRadius="full"  px="2" color={'white'} background = 'linear-gradient(#e54d60 8.81%, #a342ff 94.26%)' >
-                  #hushhWallet
-                </Badge>
-                <Heading size="md" my="2" color={"#FFFFFF"}>
-                  Revolutionizing Shopping With Hushh Wallet
-                </Heading>
-                <Text fontSize="sm" color={"#FFFFFF"}>
-                  A Blend Of Magic And Innovation shopping with GenAI hushh wallet
-                  we dive into our best practices on our genAI products
-                </Text>
-                <Divider my={{ md: "1rem", base: "0.5rem" }} />
-                <Flex align="center" mt="4">
-                  <Avatar size="xs" name="Anurag Ghose" src={Apporv} />
-                  <Text ml="2" fontSize="sm" color={"#FFFFFF"}>
-                     Anurag Ghose - April 12, 2024
-                  </Text>
-                </Flex>
-              </Box>
-            </Box>
+          </Box>
+        ))}
           </Flex>
         </Flex>
 

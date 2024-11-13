@@ -16,7 +16,6 @@ Imagine you have 50000 data points that you have to process using OpenAI’s GPT
 One that comes to the top of the mind would be to setup a loop , If we utilise this method , it has too many drawback’s
 
 1. If your code is deployed on a server , it will keep on executing for 50K requests and morever 50000 data points meaning , it would be a lot of tokens to proess which may incur a hefty amount, you can refer to the price chart given by OpenAI.
-<img src="/blogs/token.png" alt="Supabase" width="798" height="200" />
 
 2. If while processing the requests with above method , your code throws any error , then further execution would be stopped .
 
@@ -228,7 +227,7 @@ for (ress) in res:
 
 Now once you have decoded the outputs and prompt and completion tokens , you can store this data into your database .
 
-**Conclusion**
+## **Conclusion**
 Batch processing is a reliable approach to handle large amounts of data, which enables the organisations to automate workflows, streamline data processing, and manage costs more effectively .
 
 Stay tuned ! As I would be uploading a part 2 of the blog on how you can setup a entire automated batch processing pipeline utilising supabase , OpenAI batching service , supabase CRUD and supabase cron job.

@@ -244,6 +244,7 @@ const FooterComponent = () => {
             </div>
             <div className=" w-full">
               <p>© 2023 Hush1One Inc. All rights reserved.</p>
+              <p>Duns # 119019629</p>
             </div>
           </div>
         </div>

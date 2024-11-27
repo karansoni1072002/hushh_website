@@ -246,7 +246,7 @@ const FooterComponent = () => {
               <p>© 2023 Hush1One Inc. All rights reserved.</p>
               <p>Duns # 119019629</p>
             </div>
-          </div>
+          </div>  
         </div>
       </div>
 <DownloadModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}/>

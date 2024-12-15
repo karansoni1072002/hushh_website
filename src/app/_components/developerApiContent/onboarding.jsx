@@ -39,7 +39,7 @@ const Onboarding = () => {
       try {
         console.log(response);
         const response = await axios.post(
-          "https://hushhdevenv.hushh.ai/dev/v1/api/sign_in",
+          "https://developer-api-53407187172.us-central1.run.app/login",
           {
             email: session?.token?.email,
             first_name: session?.token?.name,

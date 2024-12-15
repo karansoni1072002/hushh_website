@@ -67,7 +67,7 @@ const authOptions = {
         try {
           // Make a POST request to your backend API to get the API token key
           const response = await axios.post(
-            "https://hushhdevenv.hushh.ai/dev/v1/api/sign_in",
+            "https://developer-api-53407187172.us-central1.run.app/login",
             {
               email: session.user.email,
               first_name: session.user.name,

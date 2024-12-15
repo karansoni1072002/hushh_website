@@ -27,7 +27,7 @@ const userManagementEndpoints = [
 const UserManagement = () => (
     <Box p={5}>
       <Heading mb={6} color="teal.500">User Management APIs</Heading>
-      {userEndpoints.map((endpoint, idx) => <ApiSection key={idx} endpoint={endpoint} />)}
+      {userManagementEndpoints.map((endpoint, idx) => <ApiSection key={idx} endpoint={endpoint} />)}
     </Box>
   );
   

@@ -181,7 +181,7 @@ export default function LoginPage() {
       const countryCode = getCountryCallingCode(phoneNumber);
       const phoneNumberWithoutCountryCode = phoneNumber.slice(countryCode.length);
         const response = await axios.post(
-          "https://hushhdevenv.hushh.ai/dev/v1/api/sign_in",
+          "https://developer-api-53407187172.us-central1.run.app/login",
           {
             number: phoneNumberWithoutCountryCode,
             code: countryCode,

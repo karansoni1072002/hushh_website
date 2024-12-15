@@ -331,7 +331,7 @@ import {
   
   const ApiDocumentation = () => {
     return (
-      <Box p={5} borderRadius="lg" bg="gray.100" maxW="100%">
+      <Box p={{ base: 3, md: 5 }} borderRadius="lg" bg="gray.100" maxW="100%">
         <Heading size="lg" mb={6} textAlign="center" color="teal.600">
           API Documentation
         </Heading>
@@ -349,7 +349,7 @@ import {
     return (
       <Box
         mb={6}
-        p={{md:4,base:2}}
+        p={{ base: 3, md: 4 }}
         borderWidth="1px"
         borderRadius="md"
         bg="white"
@@ -357,34 +357,51 @@ import {
         transition="all 0.3s ease"
         _hover={{ transform: "translateY(-4px)", shadow: "lg" }}
       >
-        {/* API Header */}
-        <Flex align="center" justify="space-between">
-          <Flex align="center" cursor="pointer" onClick={onToggle}>
+        {/* Header */}
+        <Flex
+          align={{ base: "flex-start", md: "center" }}
+          justify="space-between"
+          flexDirection={{ base: "column", md: "row" }}
+        >
+          <Flex
+            align="center"
+            flexDirection={{ base: "column", md: "row" }}
+            cursor="pointer"
+            onClick={onToggle}
+            w="full"
+          >
             <Badge
               colorScheme={endpoint.method === "GET" ? "blue" : "green"}
-              mr={3}
+              mb={{ base: 2, md: 0 }}
+              mr={{ base: 0, md: 3 }}
               px={2}
               py={1}
               borderRadius="md"
-              fontSize="0.9em"
+              fontSize={{ base: "0.8em", md: "0.9em" }}
             >
               {endpoint.method}
             </Badge>
-            <Text fontSize={{md:"lg",base:'md'}} fontWeight="bold" color="gray.700" mr={2}>
+            <Text
+              fontSize={{ base: "md", md: "lg" }}
+              fontWeight="bold"
+              color="gray.700"
+              mb={{ base: 1, md: 0 }}
+            >
               {endpoint.path}
             </Text>
-            <Text fontSize={{md:"sm",base:'xs'}} color="gray.500">
+            <Text fontSize={{ base: "sm", md: "md" }} color="gray.500">
               {endpoint.description}
             </Text>
           </Flex>
           <Spacer />
-          {/* Copy Button at the Rightmost Side */}
-          <CopyButton textToCopy={endpoint.path} />
+          <Box alignSelf={{ base: "flex-end", md: "center" }}>
+            <CopyButton textToCopy={endpoint.path} />
+          </Box>
           <Icon
             as={isOpen ? FaChevronUp : FaChevronDown}
             boxSize={5}
-            ml={4}
             cursor="pointer"
+            mt={{ base: 2, md: 0 }}
             onClick={onToggle}
           />
         </Flex>
@@ -396,16 +413,22 @@ import {
             spacing={4}
             mt={4}
             bg="gray.50"
-            p={4}
+            p={{ base: 2, md: 4 }}
             borderRadius="md"
           >
             {/* Request Body */}
-            {Object.keys(endpoint.requestBody).length > 0 && (
+            {endpoint.requestBody && (
               <Box w="full">
                 <Text fontWeight="semibold" fontSize="md" mb={2}>
                   Request Body:
                 </Text>
-                <Box p={3} bg="gray.100" borderRadius="md" fontSize="sm">
+                <Box
+                  p={3}
+                  bg="gray.100"
+                  borderRadius="md"
+                  fontSize="sm"
+                  overflowX="auto"
+                >
                   <pre>{JSON.stringify(endpoint.requestBody, null, 2)}</pre>
                 </Box>
               </Box>
@@ -439,64 +462,45 @@ import {
       </Box>
     );
   };
-
+  
   const SchemaSection = () => {
     return (
-      <Box mt={8} p={4} borderWidth="1px" borderRadius="md" bg="white" shadow="md">
+      <Box mt={8} p={{ base: 3, md: 4 }} borderWidth="1px" borderRadius="md" bg="white" shadow="md">
         <Heading size="md" mb={4} color="teal.500">
           Schemas
         </Heading>
         {schemas.map((schema, index) => (
-          <SchemaCard key={index} schema={schema} />
+          <Box key={index} p={3} bg="gray.50" borderRadius="md" borderWidth="1px" mb={4}>
+            <Text fontWeight="semibold" color="gray.600">
+              {schema.name}
+            </Text>
+            <Box mt={2}>
+              {schema.fields.map((field, idx) => (
+                <Text key={idx} fontSize="sm" color="gray.700" mb={1}>
+                  <strong>{field.key}</strong> <span style={{ color: "teal" }}>{field.type}</span>{" "}
+                  {field.required && (
+                    <Badge colorScheme="red" ml={1} fontSize="0.7em">
+                      Required
+                    </Badge>
+                  )}
+                </Text>
+              ))}
+            </Box>
+          </Box>
         ))}
       </Box>
     );
   };
   
-  const SchemaCard = ({ schema }) => {
-    const { isOpen, onToggle } = useDisclosure();
-    return (
-      <Box mb={4} p={3} bg="gray.50" borderRadius="md" borderWidth="1px">
-        <Flex align="center" justify="space-between" onClick={onToggle}>
-          <Text fontWeight="semibold" color="gray.600">
-            {schema.name}
-          </Text>
-          <Icon as={isOpen ? FaChevronUp : FaChevronDown} boxSize={4} />
-        </Flex>
-        <Collapse in={isOpen} animateOpacity>
-          <Box mt={2}>
-            {schema.fields.map((field, idx) => (
-              <Text key={idx} fontSize="sm" color="gray.700" mb={1}>
-                <strong>{field.key}</strong>{" "}
-                <span style={{ color: "teal" }}>{field.type}</span>{" "}
-                {field.required && (
-                  <Badge colorScheme="red" ml={1} fontSize="0.7em">
-                    Required
-                  </Badge>
-                )}
-              </Text>
-            ))}
-          </Box>
-        </Collapse>
-      </Box>
-    );
-  };
-  // Copy Button Component
   const CopyButton = ({ textToCopy }) => {
     const [copied, setCopied] = useState(false);
-  
     const handleCopy = async () => {
       await navigator.clipboard.writeText(textToCopy);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     };
-  
     return (
-      <Tooltip
-        label={copied ? "Copied!" : "Copy to clipboard"}
-        placement="top"
-        hasArrow
-      >
+      <Tooltip label={copied ? "Copied!" : "Copy"} placement="top" hasArrow>
         <Button
           size="sm"
           colorScheme={copied ? "green" : "teal"}
@@ -504,15 +508,10 @@ import {
           onClick={handleCopy}
           leftIcon={copied ? <FaCheck /> : <FaCopy />}
         >
-          {copied ? "Copied" : "Copy"}
+          Copy
         </Button>
       </Tooltip>
     );
   };
   
   export default ApiDocumentation;
-  
- 
-  
-
-  

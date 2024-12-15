@@ -1,6 +1,8 @@
 import {
     Box,
     Button,
+    FormControl,
+    FormLabel,
     Collapse,
     Heading,
     Text,
@@ -24,10 +26,11 @@ import {
   import { FaChevronDown, FaChevronUp, FaCopy, FaCheck } from "react-icons/fa";
   import { useState } from "react"; 
   import axios from "axios";
-  
+  import { useApiKey } from "../../context/apiKeyContext";
   // List of API endpoints
   const apiEndpoints = [
     {
+      category: "Authentication",
       method: "POST",
       path: "/register/",
       description: "Signup",
@@ -39,6 +42,7 @@ import {
       responses: { 200: `"string"`, 422: `{"detail": "Validation Error"}` },
     },
     {
+      category: "User Management",
       method: "POST",
       path: "/profilesetup",
       description: "Profile Setup",
@@ -54,6 +58,7 @@ import {
       responses: { 200: `"string"`, 422: `{"detail": "Validation Error"}` },
     },
     {
+      category: "User Management",
         method: "POST",
         path: "/generateapikey",
         description: "Generate Api Key",
@@ -74,6 +79,7 @@ import {
 }` },
       },
     {
+      category: "Authentication",
       method: "POST",
       path: "/login",
       description: "Login",
@@ -84,6 +90,7 @@ import {
       responses: { 200: `"string"`, 422: `{"detail": "Validation Error"}` },
     },
     {
+      category: "Authentication",
         method: "POST",
         path: "/validatetoken",
         description: "Validate Token",
@@ -104,6 +111,7 @@ import {
 }` },
       },
       {
+        category: "Authentication",
         method: "POST",
         path: "/refreshtoken",
         description: "Refresh Token",
@@ -125,6 +133,7 @@ import {
 }` },
       },
       {
+        category: "User Management",
         method: "GET",
         path: "/getapikey",
         description: "Get Api Key",
@@ -144,7 +153,7 @@ import {
   ]
 }` },
       },
-      {
+      {    category: "Data Retrieval",
         method: "POST",
         path: "/api/v1/receipt_data",
         description: "Receipt User Data",
@@ -166,6 +175,7 @@ import {
 }` },
       },
       {
+        category: "Data Retrieval",
         method: "POST",
         path: "/api/v1/health-data",
         description: "Get Health Data",
@@ -187,6 +197,7 @@ import {
 }` },
       },
       {
+        category: "Data Retrieval",
         method: "POST",
         path: "/api/v1/browsing",
         description: "Get Browsing Data",
@@ -208,6 +219,7 @@ import {
 }` },
       },
       {
+        category: "Data Retrieval",
         method: "POST",
         path: "/api/v1/app-usage",
         description: "Get App Usage",
@@ -229,6 +241,7 @@ import {
 }` },
       },
       {
+        category: "Data Retrieval",
         method: "POST",
         path: "/api/v1/brand-preferences",
         description: "Get Brand Preferences",
@@ -250,6 +263,7 @@ import {
 }` },
       },
       {
+        category: "Data Retrieval",
         method: "POST",
         path: "/api/v1/food-data",
         description: "Get Food Data",
@@ -271,6 +285,7 @@ import {
 }` },
       },
       {
+        category: "Data Retrieval",
         method: "POST",
         path: "/api/v1/insurance-data",
         description: "Get Insurance Data",
@@ -336,7 +351,7 @@ import {
   const ApiDocumentation = () => {
     return (
       <Box p={{ base: 3, md: 5 }} borderRadius="lg" bg="gray.100" maxW="100%">
-        <Heading size="lg" mb={6} textAlign="center" color="teal.600">
+        <Heading size="lg" mb={6} textAlign="center" color="black">
           API Documentation
         </Heading>
         {apiEndpoints.map((endpoint, index) => (
@@ -351,19 +366,30 @@ import {
     const { isOpen, onToggle } = useDisclosure();
     const [requestBody, setRequestBody] = useState(endpoint.requestBody || {});
     const [response, setResponse] = useState(null);
-  
+    const [requestedUrl, setRequestedUrl] = useState('');
+    const { apiKey } = useApiKey(); // Retrieve the access token
+
     const handleInputChange = (key, value) => {
       setRequestBody({ ...requestBody, [key]: value });
     };
   
     const handleSubmit = async () => {
+      if (!apiKey) {
+        alert('You must be logged in to use this API.');
+        return;
+      }
+  
+      const fullUrl = `${BASE_URL}${endpoint.path}`;
+      setRequestedUrl(fullUrl);
+  
       try {
         const res = await axios({
           method: endpoint.method.toLowerCase(),
-          url: `${BASE_URL}${endpoint.path}`, // Use the base URL
+          url: fullUrl,
           data: requestBody,
           headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`, // Include the access token
           },
         });
         setResponse(res.data);
@@ -443,26 +469,45 @@ import {
             p={{ base: 2, md: 4 }}
             borderRadius="md"
           >
-            {Object.keys(endpoint.requestBody).length > 0 && (
+             {Object.keys(endpoint.requestBody).length > 0 && (
             <Box w="full">
               <Text fontWeight="semibold" fontSize="md" mb={2}>
                 Request Body:
               </Text>
-              {Object.keys(endpoint.requestBody).map((key) => (
-                <Input
-                  key={key}
-                  placeholder={key}
-                  value={requestBody[key] || ''}
-                  onChange={(e) => handleInputChange(key, e.target.value)}
-                  mb={2}
-                />
-              ))}
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
+                {Object.keys(endpoint.requestBody).map((key) => (
+                  <FormControl key={key}>
+                    <FormLabel>{key}</FormLabel>
+                    <Input
+                      placeholder={`Enter ${key}`}
+                      value={requestBody[key] || ''}
+                      onChange={(e) => handleInputChange(key, e.target.value)}
+                    />
+                  </FormControl>
+                ))}
+              </SimpleGrid>
             </Box>
           )}
-  
   <Button colorScheme="teal" onClick={handleSubmit}>
             Send Request
           </Button>
+
+          {requestedUrl && (
+            <Box w="full" mt={4}>
+              <Text fontWeight="semibold" fontSize="md" mb={2}>
+                Requested URL:
+              </Text>
+              <Textarea
+                value={requestedUrl}
+                readOnly
+                bg="gray.100"
+                borderRadius="md"
+                fontSize="sm"
+                overflowX="auto"
+              />
+            </Box>
+          )}
+
           {response && (
             <Box w="full" mt={4}>
               <Text fontWeight="semibold" fontSize="md" mb={2}>
@@ -498,7 +543,7 @@ import {
             <Box mt={2}>
               {schema.fields.map((field, idx) => (
                 <Text key={idx} fontSize="sm" color="gray.700" mb={1}>
-                  <strong>{field.key}</strong> <span style={{ color: "teal" }}>{field.type}</span>{" "}
+                  <strong>{field.key}:</strong> <span style={{ color: "teal" }}>{field.type}</span>{" "}
                   {field.required && (
                     <Badge colorScheme="red" ml={1} fontSize="0.7em">
                       Required

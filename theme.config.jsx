@@ -55,6 +55,9 @@ export default {
         titleTemplate: '%s – Developer API'
       }
     },
+    // navbar: {
+    //   component:  <CustomNavbar />
+    // },
     content: {
       components: MDXComponents,
     },

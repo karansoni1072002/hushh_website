@@ -7,6 +7,8 @@ import {
     VStack,
     useDisclosure,
     Flex,
+    Input,
+    Textarea,
     Spacer,
     Icon,
     Tooltip,
@@ -21,6 +23,7 @@ import {
   } from "@chakra-ui/react";
   import { FaChevronDown, FaChevronUp, FaCopy, FaCheck } from "react-icons/fa";
   import { useState } from "react"; 
+  import axios from "axios";
   
   // List of API endpoints
   const apiEndpoints = [
@@ -328,7 +331,8 @@ import {
       },
   ];
   
-  
+  const BASE_URL = 'https://developer-api-53407187172.us-central1.run.app';
+
   const ApiDocumentation = () => {
     return (
       <Box p={{ base: 3, md: 5 }} borderRadius="lg" bg="gray.100" maxW="100%">
@@ -345,6 +349,29 @@ import {
   
   const ApiSection = ({ endpoint }) => {
     const { isOpen, onToggle } = useDisclosure();
+    const [requestBody, setRequestBody] = useState(endpoint.requestBody || {});
+    const [response, setResponse] = useState(null);
+  
+    const handleInputChange = (key, value) => {
+      setRequestBody({ ...requestBody, [key]: value });
+    };
+  
+    const handleSubmit = async () => {
+      try {
+        const res = await axios({
+          method: endpoint.method.toLowerCase(),
+          url: `${BASE_URL}${endpoint.path}`, // Use the base URL
+          data: requestBody,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        setResponse(res.data);
+      } catch (error) {
+        console.error('Error:', error);
+        setResponse(error.response ? error.response.data : 'Error');
+      }
+    };
   
     return (
       <Box
@@ -416,50 +443,44 @@ import {
             p={{ base: 2, md: 4 }}
             borderRadius="md"
           >
-            {/* Request Body */}
-            {endpoint.requestBody && (
-              <Box w="full">
-                <Text fontWeight="semibold" fontSize="md" mb={2}>
-                  Request Body:
-                </Text>
-                <Box
-                  p={3}
-                  bg="gray.100"
-                  borderRadius="md"
-                  fontSize="sm"
-                  overflowX="auto"
-                >
-                  <pre>{JSON.stringify(endpoint.requestBody, null, 2)}</pre>
-                </Box>
-              </Box>
-            )}
-  
-            {/* Responses */}
+            {Object.keys(endpoint.requestBody).length > 0 && (
             <Box w="full">
               <Text fontWeight="semibold" fontSize="md" mb={2}>
-                Responses:
+                Request Body:
               </Text>
-              {Object.entries(endpoint.responses).map(([code, response]) => (
-                <Box key={code} mt={2}>
-                  <Text fontWeight="bold" color="teal.600">
-                    {code} Response:
-                  </Text>
-                  <Box
-                    p={3}
-                    bg="gray.700"
-                    color="white"
-                    fontSize="sm"
-                    overflowX="auto"
-                    borderRadius="md"
-                  >
-                    <pre>{response}</pre>
-                  </Box>
-                </Box>
+              {Object.keys(endpoint.requestBody).map((key) => (
+                <Input
+                  key={key}
+                  placeholder={key}
+                  value={requestBody[key] || ''}
+                  onChange={(e) => handleInputChange(key, e.target.value)}
+                  mb={2}
+                />
               ))}
             </Box>
-          </VStack>
-        </Collapse>
-      </Box>
+          )}
+  
+  <Button colorScheme="teal" onClick={handleSubmit}>
+            Send Request
+          </Button>
+          {response && (
+            <Box w="full" mt={4}>
+              <Text fontWeight="semibold" fontSize="md" mb={2}>
+                Response:
+              </Text>
+              <Textarea
+                value={JSON.stringify(response, null, 2)}
+                readOnly
+                bg="gray.100"
+                borderRadius="md"
+                fontSize="sm"
+                overflowX="auto"
+              />
+            </Box>
+          )}
+        </VStack>
+      </Collapse>
+    </Box>
     );
   };
   

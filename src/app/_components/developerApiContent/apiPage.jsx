@@ -144,7 +144,7 @@ import {
       {
         method: "POST",
         path: "/api/v1/receipt_data",
-        description: "Get Receipt User Data",
+        description: "Receipt User Data",
         requestBody: {
           user_id: "string",
           token:"string"
@@ -289,6 +289,45 @@ import {
 }` },
       },
   ];
+
+  const schemas = [
+    {
+      name: "CandidateLogin",
+      fields: [
+        { key: "mail", type: "string", required: true },
+        { key: "password", type: "string", required: true },
+      ],
+    },
+    {
+      name: "ProfileSetup",
+      fields: [
+        { key: "firstname", type: "string" },
+        { key: "lastname", type: "string" },
+        { key: "mobilenumber", type: "string" },
+        { key: "companyname", type: "string" },
+        { key: "website", type: "string" },
+        { key: "purpose", type: "string" },
+        { key: "mail", type: "string" },
+      ],
+    },
+    {
+      name: "UserCreate",
+      fields: [
+        { key: "mail", type: "string", required: true },
+        { key: "password", type: "string", required: true },
+        { key: "confirmpassword", type: "string", required: true },
+      ],
+    },
+    {
+        name: "ValidationError",
+        fields: [
+          { key: "loc", type: "string || integer", required: true },
+          { key: "msg", type: "string", required: true },
+          { key: "type", type: "string", required: true },
+        ],
+      },
+  ];
+  
   
   const ApiDocumentation = () => {
     return (
@@ -299,6 +338,7 @@ import {
         {apiEndpoints.map((endpoint, index) => (
           <ApiSection key={index} endpoint={endpoint} />
         ))}
+        <SchemaSection />
       </Box>
     );
   };
@@ -309,7 +349,7 @@ import {
     return (
       <Box
         mb={6}
-        p={4}
+        p={{md:4,base:2}}
         borderWidth="1px"
         borderRadius="md"
         bg="white"
@@ -330,10 +370,10 @@ import {
             >
               {endpoint.method}
             </Badge>
-            <Text fontSize="lg" fontWeight="bold" color="gray.700" mr={2}>
+            <Text fontSize={{md:"lg",base:'md'}} fontWeight="bold" color="gray.700" mr={2}>
               {endpoint.path}
             </Text>
-            <Text fontSize="sm" color="gray.500">
+            <Text fontSize={{md:"sm",base:'xs'}} color="gray.500">
               {endpoint.description}
             </Text>
           </Flex>
@@ -399,8 +439,48 @@ import {
       </Box>
     );
   };
+
+  const SchemaSection = () => {
+    return (
+      <Box mt={8} p={4} borderWidth="1px" borderRadius="md" bg="white" shadow="md">
+        <Heading size="md" mb={4} color="teal.500">
+          Schemas
+        </Heading>
+        {schemas.map((schema, index) => (
+          <SchemaCard key={index} schema={schema} />
+        ))}
+      </Box>
+    );
+  };
   
-  
+  const SchemaCard = ({ schema }) => {
+    const { isOpen, onToggle } = useDisclosure();
+    return (
+      <Box mb={4} p={3} bg="gray.50" borderRadius="md" borderWidth="1px">
+        <Flex align="center" justify="space-between" onClick={onToggle}>
+          <Text fontWeight="semibold" color="gray.600">
+            {schema.name}
+          </Text>
+          <Icon as={isOpen ? FaChevronUp : FaChevronDown} boxSize={4} />
+        </Flex>
+        <Collapse in={isOpen} animateOpacity>
+          <Box mt={2}>
+            {schema.fields.map((field, idx) => (
+              <Text key={idx} fontSize="sm" color="gray.700" mb={1}>
+                <strong>{field.key}</strong>{" "}
+                <span style={{ color: "teal" }}>{field.type}</span>{" "}
+                {field.required && (
+                  <Badge colorScheme="red" ml={1} fontSize="0.7em">
+                    Required
+                  </Badge>
+                )}
+              </Text>
+            ))}
+          </Box>
+        </Collapse>
+      </Box>
+    );
+  };
   // Copy Button Component
   const CopyButton = ({ textToCopy }) => {
     const [copied, setCopied] = useState(false);

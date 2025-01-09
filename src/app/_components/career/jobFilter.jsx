@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
-const offices = ["Any", "Remote", "Seattle , US", "Pune, India"];
+const offices = ["Any", "Remote", "United States", "Pune, India"];
 const departments = ["Any","SDE-1", "Product Management","Software Development","Research, Engineering & Product", "Human Data", "Data Center Operations", "Other"];
 
 const jobs = [
@@ -24,19 +24,19 @@ const jobs = [
   {
     id: 2,
     title: "Datacenter Infrastructure Engineer Lead",
-    location: "Seattle , US",
+    location: "United States",
     department: "Software Development",
   },
   {
     id: 3,
     title: "Electrical Engineer",
-    location: "Seattle , US",
+    location: "United States",
     department: "Data Center Operations",
   },
   {
     id: 4,
     title: "Mechanical Engineer (HVAC / Chilled Water)",
-    location: "Seattle , US",
+    location: "United States",
     department: "Data Center Operations",
   },
   {

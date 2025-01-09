@@ -28,7 +28,7 @@ const CareerPage = () => {
   const [selectedDepartment, setSelectedDepartment] = useState("Any");
   const router = useRouter();
 
-  const offices = ["Any", "Pune, India", "Seattle , US"];
+  const offices = ["Any", "Pune, India", "United States"];
   const departments = [
     "Any",
     "Research, Engineering & Product",
@@ -39,7 +39,7 @@ const CareerPage = () => {
 
   const filteredJobs = jobs.filter((job) => {
     const matchesOffice =
-      selectedOffice === "Any" || job.location.includes(selectedOffice);
+      selectedOffice === "Any" || job.location.includes(selectedOffice) || job.country.includes(selectedOffice);
     const matchesDepartment =
       selectedDepartment === "Any" || job.department === selectedDepartment;
     return matchesOffice && matchesDepartment;
@@ -65,7 +65,7 @@ const CareerPage = () => {
             fontSize={{ md: "1.8rem", base: "0.9rem" }}
             color="#9fa1a3"
           >
-            Careers at xAI
+            Careers at hushh.ai
           </Heading>
           <Text
             fontSize={{ md: "3.5rem", base: "1.75rem" }}
@@ -102,7 +102,7 @@ const CareerPage = () => {
           <Box
             bg="black"
             color="white"
-            minH="100vh"
+            // minH="100vh"
             w="100%"
             display="flex"
             flexDirection="row"
@@ -120,7 +120,7 @@ const CareerPage = () => {
               justifyContent="flex-start"
               alignItems="flex-start"
             >
-              Coding ≥ x ∀ x
+              Why Hushh ?
             </Text>
 
             {/* Content Block */}
@@ -145,18 +145,14 @@ const CareerPage = () => {
                 alignItems="flex-start"
                 textAlign="left"
               >
-                We are a team of AI researchers and engineers on a mission to
-                build AI systems that can help humanity understand the world
-                better. We are driven by ambitious goals, fast execution, and a
-                strong sense of urgency. Join us if you want to shape the next
-                generation of AI models and products.
+                At Hushh, you’ll join an innovative, ambitious startup that values creativity, perseverance, and teamwork. We believe in the transformational power of personal data in the hands of the individual and are committed to building a platform that champions this belief. As part of our team, you’ll have the rare opportunity to shape something meaningful from its inception.
               </Text>
 
               <Text fontWeight="400">
-                We offer the following employee benefits:
+              Hushh is an equal opportunity employer, championing inclusivity and diversity. We welcome all qualified applicants irrespective of race, religion, gender, sexual orientation, age, disability, or veteran status.
               </Text>
 
-              <List
+              {/* <List
                 spacing={2}
                 display="flex"
                 flexDirection="column"
@@ -178,7 +174,7 @@ const CareerPage = () => {
                   • Short-term and long-term disability insurance
                 </ListItem>
                 <ListItem>• 401(k) plan</ListItem>
-              </List>
+              </List> */}
             </VStack>
           </Box>
 
@@ -250,10 +246,10 @@ const CareerPage = () => {
                         fontWeight="bold"
                         mb={2}
                       >
-                        US, India
+                        United States
                       </Text>
                       <Text fontSize={{ base: "sm", md: "md" }} color="#aaa">
-                        Our India office houses the majority of our core
+                        Our US office houses the majority of our core
                         research teams including our pre-training,
                         post-training, and vision teams.
                       </Text>
@@ -266,11 +262,11 @@ const CareerPage = () => {
                         fontWeight="bold"
                         mb={2}
                       >
-                        US
+                        Pune, India
                       </Text>
                       <Text fontSize={{ base: "sm", md: "md" }} color="#aaa">
                         Our infrastructure team takes care of our large compute
-                        clusters and is predominantly located in San Francisco.
+                        clusters and is predominantly located in Pune, Maharashtra, India.
                       </Text>
                     </Box>
                   </SimpleGrid>

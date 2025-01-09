@@ -89,14 +89,20 @@ const JobDetailPage = () => {
       <Box py={10} px={{ base: 6, md: 12 }} fontSize={{md:'1.1rem',base:'0.62rem'}} bg="white" color="black">
         <VStack align="start" spacing={6}>
         <Box>
-            <Text fontWeight="bold" mb={4}>
+            <Text fontSize="xl" fontWeight="bold" mb={4}>
               About the Company
             </Text>
             <Text>We are a user data api (visa for data) business that Builds products and solutions helping our users organize, manage and extract meaningful value from their own data, including ai monetization options to turn their data into a financial asset.</Text>
             <Text>Our motto is 'Your Data, Your Business', and we prioritize ownership, observability, and control of your data and its privacy. With hushh, you can monetize your data while prioritizing your privacy preferences if you choose to, allowing your trusted brands to serve you via the best virtual and human assistants. </Text>
             <Text>Our mission is to help make “your” data “your” business. We do this by helping you extract meaningful insights & solutions from your most valuable personal data that helps you and your family understand the power that lies within your personal data once you start collecting, organizing and managing it as a personal asset on your own devices.</Text>
           </Box> 
-
+          <Box>
+            <Text fontSize="xl" fontWeight="bold" mb={4}>
+              Why Hushh ?
+            </Text>
+            <Text>At Hushh, you’ll join an innovative, ambitious startup that values creativity, perseverance, and teamwork. We believe in the transformational power of personal data in the hands of the individual and are committed to building a platform that champions this belief. As part of our team, you’ll have the rare opportunity to shape something meaningful from its inception.</Text>
+            <Text>Hushh is an equal opportunity employer, championing inclusivity and diversity. We welcome all qualified applicants irrespective of race, religion, gender, sexual orientation, age, disability, or veteran status.</Text>
+          </Box> 
           <Box>
             <Text  fontWeight="bold" mb={4}>
               Responsibilities
@@ -108,26 +114,41 @@ const JobDetailPage = () => {
             </UnorderedList>
           </Box>
 
-          <Box>
-            <Text fontWeight="bold" mb={4}>
-              Basic Qualifications
-            </Text>
-            <UnorderedList spacing={0}>
-              {job.basicQualifications.map((item, index) => (
-                <ListItem key={index}>{item}</ListItem>
-              ))}
-            </UnorderedList>
-          </Box>
+          {job?.basicQualifications && job.basicQualifications.length > 0 && (
+            <Box>
+              <Text fontWeight="bold" mb={4}>
+                Basic Qualifications
+              </Text>
+              <UnorderedList spacing={0}>
+                {job.basicQualifications.map((item, index) => (
+                  <ListItem key={index}>{item}</ListItem>
+                ))}
+              </UnorderedList>
+            </Box>
+          )}
 
           <Box>
-            <Text fontWeight="bold" mb={4}>
+            <Text fontSize="xl" fontWeight="bold" mb={4}>
               Additional Requirements
             </Text>
-            <UnorderedList spacing={0}>
-              {job.additionalRequirements.map((item, index) => (
-                <ListItem key={index}>{item}</ListItem>
-              ))}
+            <UnorderedList spacing={3}>
+              {job.additionalRequirements.length > 0 ? (
+                job.additionalRequirements.map((item, index) => (
+                  <ListItem key={index}>{item}</ListItem>
+                ))
+              ) : (
+                job.personalRequirements.map((item, index) => (
+                  <ListItem key={index}>{item}</ListItem>
+                ))
+              )}
             </UnorderedList>
+            {job.additionalRequirements.length > 0 && job.personalRequirements.length > 0 && (
+              <UnorderedList spacing={3}>
+                {job.personalRequirements.map((item, index) => (
+                  <ListItem key={index}>{item}</ListItem>
+                ))}
+              </UnorderedList>
+            )}
           </Box>
         </VStack>
       </Box>

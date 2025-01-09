@@ -41,13 +41,13 @@ const Onboarding = () => {
         const response = await axios.post(
           "https://developer-api-53407187172.us-central1.run.app/login",
           {
-            email: session?.token?.email,
+            mail: session?.token?.email,
             first_name: session?.token?.name,
             password: session?.token?.sub
           },          
           {
             headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
+              "Content-Type": "application/json",
             },
           }
         );

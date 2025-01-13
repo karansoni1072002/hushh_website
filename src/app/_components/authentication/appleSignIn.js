@@ -1,17 +1,18 @@
 import config from "../config/config";
 export default async function appleSignIn() {
-  const supabase = config.supabaseClient;
-  // console.log(config.redirect_url);
-  await supabase.auth
-    .signInWithOAuth({
-      provider: "apple",
+  try {
+    console.log('Starting Google Sign-In process...');
+    const { error } = await config.supabaseClient.auth.signInWithOAuth({
+      provider: 'apple',
       options: {
-        redirectTo: config.redirect_url,
-        queryParams: {
-          access_type: "offline",
-          prompt: "select_account",
-        },
+        redirectTo: 'http://localhost:3000/developer-Api/on-boarding',
       },
-    })
-    .then(() => {});
+    });
+
+    if (error) {
+      console.error('Error during Google Sign-In:', error.message);
+    }
+  } catch (error) {
+    console.error('Unexpected error during Google Sign-In:', error);
+  }
 }
